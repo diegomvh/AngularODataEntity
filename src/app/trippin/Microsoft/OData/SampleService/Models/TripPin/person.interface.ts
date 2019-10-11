@@ -9,7 +9,7 @@ export interface Person {
   LastName: string;
   Emails: string[];
   AddressInfo: Location[];
-  Gender: PersonGender;
+  Gender: PersonGender | string;
   Concurrency: number;
   Friends?: Person[];
   Trips?: Trip[];
