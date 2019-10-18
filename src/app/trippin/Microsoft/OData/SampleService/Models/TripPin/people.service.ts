@@ -3,22 +3,20 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityRequest, ODataEntitySet } from 'angular-odata';
+import { ODataEntityService, ODataEntityRequest, EntityCollection } from 'angular-odata';
 
 import { PersonGender } from './persongender.enum';
-import { Location } from './location.interface';
-import { Photo } from './photo.interface';
-import { Person } from './person.interface';
-import { Trip } from './trip.interface';
+import { Location, LocationSchema } from './location.entity';
+import { Photo, PhotoSchema } from './photo.entity';
+import { Person, PersonSchema } from './person.entity';
+import { Trip, TripSchema } from './trip.entity';
 
 
 @Injectable()
 export class PeopleService extends ODataEntityService<Person> {
   static set: string = 'People';
+  static entity: string = 'Microsoft.OData.SampleService.Models.TripPin.Person';
   
-  protected resolveEntityKey(entity: Partial<Person>) {
-    return entity.UserName;
-  }
   // Actions
   
   // Functions
@@ -29,7 +27,7 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<ODataEntitySet<Person>> {
+  }): Observable<EntityCollection<Person>> {
     return this.navigationProperty<Person>(entity, 'Friends', {
         headers: options && options.headers,
         params: options && options.params,
@@ -43,11 +41,10 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }) {
+  }): Observable<any> {
     return this.createRef(entity, 'Friends', target, {
         headers: options && options.headers,
         params: options && options.params,
-        responseType: 'entityset',
         reportProgress: options && options.reportProgress,
         withCredentials: options && options.withCredentials
     });
@@ -57,7 +54,7 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }) {
+  }): Observable<any> {
     return this.deleteRef(entity, 'Friends', {
         target: target,
         headers: options && options.headers,
@@ -71,7 +68,7 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<ODataEntitySet<Trip>> {
+  }): Observable<EntityCollection<Trip>> {
     return this.navigationProperty<Trip>(entity, 'Trips', {
         headers: options && options.headers,
         params: options && options.params,
@@ -85,11 +82,10 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }) {
+  }): Observable<any> {
     return this.createRef(entity, 'Trips', target, {
         headers: options && options.headers,
         params: options && options.params,
-        responseType: 'entityset',
         reportProgress: options && options.reportProgress,
         withCredentials: options && options.withCredentials
     });
@@ -99,7 +95,7 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }) {
+  }): Observable<any> {
     return this.deleteRef(entity, 'Trips', {
         target: target,
         headers: options && options.headers,
@@ -127,11 +123,10 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }) {
+  }): Observable<any> {
     return this.createRef(entity, 'Photo', target, {
         headers: options && options.headers,
         params: options && options.params,
-        responseType: 'entity',
         reportProgress: options && options.reportProgress,
         withCredentials: options && options.withCredentials
     });
@@ -141,7 +136,7 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }) {
+  }): Observable<any> {
     return this.deleteRef(entity, 'Photo', {
         target: target,
         headers: options && options.headers,

@@ -53,16 +53,25 @@ export class AppComponent {
 
   useEntityService() {
     // Fetch all
-    this.people.fetchAll().subscribe(console.log);
-    this.people.create({
-      Concurrency: 0,
-      FirstName: "Diego", 
-      Emails: ["diego@vanhaaster.com"], 
-      Gender: PersonGender[PersonGender.Male], 
-      LastName: "van Haaster", 
-      AddressInfo: [],
-      UserName: "diegomvh"
-    }).subscribe(console.log);
-    this.people.fetchPage({withCount: true}).subscribe(console.log);
+    this.photos.fetchCollection(40).toPromise()
+      .then(col => {
+        return col.size(10).toPromise();
+      })
+      .then(col => {
+        console.log([...col.entities]);
+        console.log(col);
+        return col.nextPage().toPromise();
+      })
+      .then(col => {
+        console.log([...col.entities]);
+        console.log(col);
+        return col.nextPage().toPromise();
+      })
+      .then(col => {
+        console.log([...col.entities]);
+        console.log(col);
+        return col.nextPage().toPromise();
+      })
+
   }
 }

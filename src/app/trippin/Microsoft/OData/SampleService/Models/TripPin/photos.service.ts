@@ -3,18 +3,16 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityRequest, ODataEntitySet } from 'angular-odata';
+import { ODataEntityService, ODataEntityRequest, EntityCollection } from 'angular-odata';
 
-import { Photo } from './photo.interface';
+import { Photo, PhotoSchema } from './photo.entity';
 
 
 @Injectable()
 export class PhotosService extends ODataEntityService<Photo> {
   static set: string = 'Photos';
+  static entity: string = 'Microsoft.OData.SampleService.Models.TripPin.Photo';
   
-  protected resolveEntityKey(entity: Partial<Photo>) {
-    return entity.Id;
-  }
   // Actions
   
   // Functions
