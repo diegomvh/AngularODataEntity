@@ -53,9 +53,9 @@ export class AppComponent {
 
   useEntityService() {
     // Fetch all
-    this.photos.fetchCollection(40).toPromise()
+    this.people.fetchCollection(5).toPromise()
       .then(col => {
-        return col.size(10).toPromise();
+        return col.size(7).toPromise();
       })
       .then(col => {
         console.log([...col.entities]);
@@ -72,6 +72,5 @@ export class AppComponent {
         console.log(col);
         return col.nextPage().toPromise();
       })
-
   }
 }
