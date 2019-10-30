@@ -6,13 +6,7 @@ export interface Event extends PlanItem {
   OccursAt: EventLocation
 }
 
-export const EventSchema = {
-  base: 'Microsoft.OData.SampleService.Models.TripPin.PlanItem',
-  keys: [ 
-    
-  ],
-  fields: [
-    {name: 'Description', type: 'string'},
-    {name: 'OccursAt', type: 'Microsoft.OData.SampleService.Models.TripPin.EventLocation'}
-  ]
-};
+export const EventSchema = Object.assign({}, PlanItemSchema, {
+  Description: {type: 'string'},
+  OccursAt: {type: 'Microsoft.OData.SampleService.Models.TripPin.EventLocation'}
+});

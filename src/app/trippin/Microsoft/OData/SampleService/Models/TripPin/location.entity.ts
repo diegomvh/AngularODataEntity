@@ -6,12 +6,6 @@ export interface Location {
 }
 
 export const LocationSchema = {
-  
-  keys: [ 
-    
-  ],
-  fields: [
-    {name: 'Address', type: 'string'},
-    {name: 'City', type: 'Microsoft.OData.SampleService.Models.TripPin.City'}
-  ]
+  Address: {type: 'string'},
+  City: {type: 'Microsoft.OData.SampleService.Models.TripPin.City'}
 };

@@ -15,20 +15,14 @@ export interface Trip {
 }
 
 export const TripSchema = {
-  
-  keys: [ 
-    {name: 'TripId'}
-  ],
-  fields: [
-    {name: 'TripId', type: 'number'},
-    {name: 'ShareId', type: 'string'},
-    {name: 'Description', type: 'string'},
-    {name: 'Name', type: 'string'},
-    {name: 'Budget', type: 'number'},
-    {name: 'StartsAt', type: 'Date'},
-    {name: 'EndsAt', type: 'Date'},
-    {name: 'Tags', type: 'string', isCollection: true},
-    {name: 'Photos', type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', isNullable: true, isCollection: true, isNavigation: true},
-    {name: 'PlanItems', type: 'Microsoft.OData.SampleService.Models.TripPin.PlanItem', isNullable: true, isCollection: true, isNavigation: true}
-  ]
+  TripId: {type: 'number', isKey: true, ref: 'TripId'},
+  ShareId: {type: 'string'},
+  Description: {type: 'string'},
+  Name: {type: 'string'},
+  Budget: {type: 'number'},
+  StartsAt: {type: 'Date'},
+  EndsAt: {type: 'Date'},
+  Tags: {type: 'string', isCollection: true},
+  Photos: {type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', isNullable: true, isCollection: true, isNavigation: true},
+  PlanItems: {type: 'Microsoft.OData.SampleService.Models.TripPin.PlanItem', isNullable: true, isCollection: true, isNavigation: true}
 };

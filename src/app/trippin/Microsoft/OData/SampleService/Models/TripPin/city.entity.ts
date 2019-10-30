@@ -6,13 +6,7 @@ export interface City {
 }
 
 export const CitySchema = {
-  
-  keys: [ 
-    
-  ],
-  fields: [
-    {name: 'CountryRegion', type: 'string'},
-    {name: 'Name', type: 'string'},
-    {name: 'Region', type: 'string'}
-  ]
+  CountryRegion: {type: 'string'},
+  Name: {type: 'string'},
+  Region: {type: 'string'}
 };

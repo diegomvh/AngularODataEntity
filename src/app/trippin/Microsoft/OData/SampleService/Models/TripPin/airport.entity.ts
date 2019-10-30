@@ -8,14 +8,8 @@ export interface Airport {
 }
 
 export const AirportSchema = {
-  
-  keys: [ 
-    {name: 'IcaoCode'}
-  ],
-  fields: [
-    {name: 'IcaoCode', type: 'string'},
-    {name: 'Name', type: 'string'},
-    {name: 'IataCode', type: 'string'},
-    {name: 'Location', type: 'Microsoft.OData.SampleService.Models.TripPin.AirportLocation'}
-  ]
+  IcaoCode: {type: 'string', isKey: true, ref: 'IcaoCode'},
+  Name: {type: 'string'},
+  IataCode: {type: 'string'},
+  Location: {type: 'Microsoft.OData.SampleService.Models.TripPin.AirportLocation'}
 };

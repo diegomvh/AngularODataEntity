@@ -4,12 +4,6 @@ export interface AirportLocation extends Location {
   Loc: any
 }
 
-export const AirportLocationSchema = {
-  base: 'Microsoft.OData.SampleService.Models.TripPin.Location',
-  keys: [ 
-    
-  ],
-  fields: [
-    {name: 'Loc', type: 'Object'}
-  ]
-};
+export const AirportLocationSchema = Object.assign({}, LocationSchema, {
+  Loc: {type: 'Object'}
+});

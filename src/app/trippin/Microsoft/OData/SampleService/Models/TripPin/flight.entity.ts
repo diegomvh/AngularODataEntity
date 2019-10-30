@@ -9,15 +9,9 @@ export interface Flight extends PublicTransportation {
   Airline?: Airline
 }
 
-export const FlightSchema = {
-  base: 'Microsoft.OData.SampleService.Models.TripPin.PublicTransportation',
-  keys: [ 
-    
-  ],
-  fields: [
-    {name: 'FlightNumber', type: 'string'},
-    {name: 'From', type: 'Microsoft.OData.SampleService.Models.TripPin.Airport', isNullable: true, isNavigation: true},
-    {name: 'To', type: 'Microsoft.OData.SampleService.Models.TripPin.Airport', isNullable: true, isNavigation: true},
-    {name: 'Airline', type: 'Microsoft.OData.SampleService.Models.TripPin.Airline', isNullable: true, isNavigation: true}
-  ]
-};
+export const FlightSchema = Object.assign({}, PublicTransportationSchema, {
+  FlightNumber: {type: 'string'},
+  From: {type: 'Microsoft.OData.SampleService.Models.TripPin.Airport', isNullable: true, isNavigation: true},
+  To: {type: 'Microsoft.OData.SampleService.Models.TripPin.Airport', isNullable: true, isNavigation: true},
+  Airline: {type: 'Microsoft.OData.SampleService.Models.TripPin.Airline', isNullable: true, isNavigation: true}
+});

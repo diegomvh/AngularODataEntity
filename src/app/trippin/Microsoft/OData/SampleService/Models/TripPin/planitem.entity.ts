@@ -8,15 +8,9 @@ export interface PlanItem {
 }
 
 export const PlanItemSchema = {
-  
-  keys: [ 
-    {name: 'PlanItemId'}
-  ],
-  fields: [
-    {name: 'PlanItemId', type: 'number'},
-    {name: 'ConfirmationCode', type: 'string'},
-    {name: 'StartsAt', type: 'Date'},
-    {name: 'EndsAt', type: 'Date'},
-    {name: 'Duration', type: 'string'}
-  ]
+  PlanItemId: {type: 'number', isKey: true, ref: 'PlanItemId'},
+  ConfirmationCode: {type: 'string'},
+  StartsAt: {type: 'Date'},
+  EndsAt: {type: 'Date'},
+  Duration: {type: 'string'}
 };

@@ -5,12 +5,6 @@ export interface Airline {
 }
 
 export const AirlineSchema = {
-  
-  keys: [ 
-    {name: 'AirlineCode'}
-  ],
-  fields: [
-    {name: 'AirlineCode', type: 'string'},
-    {name: 'Name', type: 'string'}
-  ]
+  AirlineCode: {type: 'string', isKey: true, ref: 'AirlineCode'},
+  Name: {type: 'string'}
 };

@@ -4,12 +4,6 @@ export interface EventLocation extends Location {
   BuildingInfo: string
 }
 
-export const EventLocationSchema = {
-  base: 'Microsoft.OData.SampleService.Models.TripPin.Location',
-  keys: [ 
-    
-  ],
-  fields: [
-    {name: 'BuildingInfo', type: 'string'}
-  ]
-};
+export const EventLocationSchema = Object.assign({}, LocationSchema, {
+  BuildingInfo: {type: 'string'}
+});

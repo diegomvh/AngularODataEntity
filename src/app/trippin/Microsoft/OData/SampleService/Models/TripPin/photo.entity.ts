@@ -5,12 +5,6 @@ export interface Photo {
 }
 
 export const PhotoSchema = {
-  
-  keys: [ 
-    {name: 'Id'}
-  ],
-  fields: [
-    {name: 'Id', type: 'number'},
-    {name: 'Name', type: 'string'}
-  ]
+  Id: {type: 'number', isKey: true, ref: 'Id'},
+  Name: {type: 'string'}
 };
