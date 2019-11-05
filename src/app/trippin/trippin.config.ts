@@ -18,9 +18,9 @@ import { Trip, TripSchema } from './Microsoft/OData/SampleService/Models/TripPin
 export const TripPinConfig: ODataConfig = {
   baseUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
   metadataUrl: 'https://services.odata.org/V4/TripPinServiceRW/$metadata',
-  withCredentials: true,
+  withCredentials: false,
   stringAsEnum: true,
-  creation: new Date('2019-10-30T17:31:49.4788556-03:00'),
+  creation: new Date('2019-11-05T01:11:40.5984044+00:00'),
   version: '4.0',
   enums: {
     'Microsoft.OData.SampleService.Models.TripPin.PersonGender': PersonGender},

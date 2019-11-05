@@ -16,11 +16,12 @@ export class AppComponent {
     private airlines: AirlinesService,
     private airports: AirportsService
   ) {
-    //this.useODataClient();
-    this.useEntityService();
+    //this.queries();
+    this.fetchPeople();
+    this.createPerson();
   }
 
-  useODataClient() {
+  queries() {
     let airports = this.odata.entitySet<Airport>("Airports");
 
     // Fetch set
@@ -51,11 +52,12 @@ export class AppComponent {
     people.get({withCount: true}).subscribe(console.log);
   }
 
-  useEntityService() {
+  fetchPeople() {
     // Fetch all
-    this.people.fetchCollection(5).toPromise()
+    this.people.entities().collection().toPromise()
       .then(col => {
-        return col.size(7).toPromise();
+        // Change collection size
+        return col.size(4).toPromise();
       })
       .then(col => {
         console.log([...col.entities]);
@@ -71,6 +73,22 @@ export class AppComponent {
         console.log([...col.entities]);
         console.log(col);
         return col.nextPage().toPromise();
-      })
+      });
+  }
+
+  createPerson() {
+    // Create Person 
+    this.people.create({
+      Concurrency: 0,
+      Emails: ['some@email.com'], 
+      UserName: 'diegomvh', 
+      Gender: PersonGender.Male, 
+      FirstName: 'Diego',
+      LastName: 'van Haaster',
+      AddressInfo: []
+    }).subscribe(p => {
+      console.log(p);
+      this.people.destroy(p).subscribe();
+    });
   }
 }

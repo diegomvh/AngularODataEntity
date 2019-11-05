@@ -3,8 +3,10 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntitySet, ODataProperty, ODataEntityRequest, ODataCollection } from 'angular-odata';
+import { ODataEntityService, ODataEntitySet, ODataProperty, ODataEntityResource, ODataCollection } from 'angular-odata';
 
+import { AirportLocation, AirportLocationSchema } from './airportlocation.entity';
+import { Airport, AirportSchema } from './airport.entity';
 
 
 @Injectable()
