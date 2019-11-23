@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { ODataClient } from 'angular-odata';
-import { AirportsService, AirlinesService, PeopleService, PhotosService, Airport, Person, PersonGender } from './trippin';
+import { ODataClient, ODATA_ETAG } from 'angular-odata';
+import { AirportsService, AirlinesService, PeopleService, PhotosService, Airport, Person, PersonGender, TripPinService } from './trippin';
+import { switchMap, map } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,17 +10,17 @@ import { AirportsService, AirlinesService, PeopleService, PhotosService, Airport
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TripPinEntity';
   constructor(
     private odata: ODataClient,
+    private api: TripPinService,
     private photos: PhotosService,
     private people: PeopleService,
     private airlines: AirlinesService,
     private airports: AirportsService
   ) {
+    this.api.resetDataSource().toPromise();
+    this.createPerson().toPromise();
     //this.queries();
-    this.fetchPeople();
-    this.createPerson();
   }
 
   queries() {
@@ -52,33 +54,9 @@ export class AppComponent {
     people.get({withCount: true}).subscribe(console.log);
   }
 
-  fetchPeople() {
-    // Fetch all
-    this.people.entities().collection().toPromise()
-      .then(col => {
-        // Change collection size
-        return col.size(4).toPromise();
-      })
-      .then(col => {
-        console.log([...col.entities]);
-        console.log(col);
-        return col.nextPage().toPromise();
-      })
-      .then(col => {
-        console.log([...col.entities]);
-        console.log(col);
-        return col.nextPage().toPromise();
-      })
-      .then(col => {
-        console.log([...col.entities]);
-        console.log(col);
-        return col.nextPage().toPromise();
-      });
-  }
-
   createPerson() {
     // Create Person 
-    this.people.create({
+    return this.people.create({
       Concurrency: 0,
       Emails: ['some@email.com'], 
       UserName: 'diegomvh', 
@@ -86,9 +64,11 @@ export class AppComponent {
       FirstName: 'Diego',
       LastName: 'van Haaster',
       AddressInfo: []
-    }).subscribe(p => {
-      console.log(p);
-      this.people.destroy(p).subscribe();
-    });
+    }).pipe(
+      switchMap(res => {
+        let person = res.value;
+        return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, res.etag);
+      })
+    );
   }
 }
