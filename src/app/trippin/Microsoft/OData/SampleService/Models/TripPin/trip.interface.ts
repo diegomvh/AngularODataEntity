@@ -1,5 +1,5 @@
-import { Photo, PhotoSchema } from './photo.entity';
-import { PlanItem, PlanItemSchema } from './planitem.entity';
+import { Photo, PhotoSchema } from './photo.interface';
+import { PlanItem, PlanItemSchema } from './planitem.interface';
 
 export interface Trip {
   TripId: number;

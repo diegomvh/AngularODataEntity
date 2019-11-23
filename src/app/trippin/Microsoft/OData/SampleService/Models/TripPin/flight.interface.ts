@@ -1,6 +1,6 @@
-import { Airline, AirlineSchema } from './airline.entity';
-import { Airport, AirportSchema } from './airport.entity';
-import { PublicTransportation, PublicTransportationSchema } from './publictransportation.entity';
+import { Airline, AirlineSchema } from './airline.interface';
+import { Airport, AirportSchema } from './airport.interface';
+import { PublicTransportation, PublicTransportationSchema } from './publictransportation.interface';
 
 export interface Flight extends PublicTransportation {
   FlightNumber: string;

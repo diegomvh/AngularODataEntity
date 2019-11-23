@@ -1,7 +1,7 @@
 import { PersonGender } from './persongender.enum';
-import { Location, LocationSchema } from './location.entity';
-import { Photo, PhotoSchema } from './photo.entity';
-import { Trip, TripSchema } from './trip.entity';
+import { Location, LocationSchema } from './location.interface';
+import { Photo, PhotoSchema } from './photo.interface';
+import { Trip, TripSchema } from './trip.interface';
 
 export interface Person {
   UserName: string;

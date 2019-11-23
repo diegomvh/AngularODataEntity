@@ -1,4 +1,4 @@
-import { PlanItem, PlanItemSchema } from './planitem.entity';
+import { PlanItem, PlanItemSchema } from './planitem.interface';
 
 export interface PublicTransportation extends PlanItem {
   SeatNumber: string

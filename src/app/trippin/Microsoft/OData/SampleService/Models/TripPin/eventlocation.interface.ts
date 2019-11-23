@@ -1,4 +1,4 @@
-import { Location, LocationSchema } from './location.entity';
+import { Location, LocationSchema } from './location.interface';
 
 export interface EventLocation extends Location {
   BuildingInfo: string

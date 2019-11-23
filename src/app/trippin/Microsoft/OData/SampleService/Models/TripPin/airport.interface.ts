@@ -1,4 +1,4 @@
-import { AirportLocation, AirportLocationSchema } from './airportlocation.entity';
+import { AirportLocation, AirportLocationSchema } from './airportlocation.interface';
 
 export interface Airport {
   IcaoCode: string;

@@ -1,4 +1,4 @@
-import { City, CitySchema } from './city.entity';
+import { City, CitySchema } from './city.interface';
 
 export interface Location {
   Address: string;

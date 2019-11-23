@@ -3,18 +3,18 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntitySet, ODataProperty, ODataEntityResource, ODataCollection } from 'angular-odata';
+import { ODataEntityService, ODataCollection, ODataValue, ODataEntityResource } from 'angular-odata';
 
 import { PersonGender } from './persongender.enum';
-import { Location, LocationSchema } from './location.entity';
-import { Photo, PhotoSchema } from './photo.entity';
-import { Person, PersonSchema } from './person.entity';
-import { Trip, TripSchema } from './trip.entity';
+import { Location, LocationSchema } from './location.interface';
+import { Photo, PhotoSchema } from './photo.interface';
+import { Person, PersonSchema } from './person.interface';
+import { Trip, TripSchema } from './trip.interface';
 
 
 @Injectable()
 export class PeopleService extends ODataEntityService<Person> {
-  static set: string = 'People';
+  static path: string = 'People';
   static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Person';
   
   // Actions

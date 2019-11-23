@@ -1,26 +1,26 @@
 import { ODataConfig } from 'angular-odata';
 
 import { PersonGender } from './Microsoft/OData/SampleService/Models/TripPin/persongender.enum';
-import { City, CitySchema } from './Microsoft/OData/SampleService/Models/TripPin/city.entity';
-import { Location, LocationSchema } from './Microsoft/OData/SampleService/Models/TripPin/location.entity';
-import { EventLocation, EventLocationSchema } from './Microsoft/OData/SampleService/Models/TripPin/eventlocation.entity';
-import { AirportLocation, AirportLocationSchema } from './Microsoft/OData/SampleService/Models/TripPin/airportlocation.entity';
-import { Photo, PhotoSchema } from './Microsoft/OData/SampleService/Models/TripPin/photo.entity';
-import { Person, PersonSchema } from './Microsoft/OData/SampleService/Models/TripPin/person.entity';
-import { Airline, AirlineSchema } from './Microsoft/OData/SampleService/Models/TripPin/airline.entity';
-import { Airport, AirportSchema } from './Microsoft/OData/SampleService/Models/TripPin/airport.entity';
-import { PlanItem, PlanItemSchema } from './Microsoft/OData/SampleService/Models/TripPin/planitem.entity';
-import { PublicTransportation, PublicTransportationSchema } from './Microsoft/OData/SampleService/Models/TripPin/publictransportation.entity';
-import { Flight, FlightSchema } from './Microsoft/OData/SampleService/Models/TripPin/flight.entity';
-import { Event, EventSchema } from './Microsoft/OData/SampleService/Models/TripPin/event.entity';
-import { Trip, TripSchema } from './Microsoft/OData/SampleService/Models/TripPin/trip.entity';
+import { City, CitySchema } from './Microsoft/OData/SampleService/Models/TripPin/city.interface';
+import { Location, LocationSchema } from './Microsoft/OData/SampleService/Models/TripPin/location.interface';
+import { EventLocation, EventLocationSchema } from './Microsoft/OData/SampleService/Models/TripPin/eventlocation.interface';
+import { AirportLocation, AirportLocationSchema } from './Microsoft/OData/SampleService/Models/TripPin/airportlocation.interface';
+import { Photo, PhotoSchema } from './Microsoft/OData/SampleService/Models/TripPin/photo.interface';
+import { Person, PersonSchema } from './Microsoft/OData/SampleService/Models/TripPin/person.interface';
+import { Airline, AirlineSchema } from './Microsoft/OData/SampleService/Models/TripPin/airline.interface';
+import { Airport, AirportSchema } from './Microsoft/OData/SampleService/Models/TripPin/airport.interface';
+import { PlanItem, PlanItemSchema } from './Microsoft/OData/SampleService/Models/TripPin/planitem.interface';
+import { PublicTransportation, PublicTransportationSchema } from './Microsoft/OData/SampleService/Models/TripPin/publictransportation.interface';
+import { Flight, FlightSchema } from './Microsoft/OData/SampleService/Models/TripPin/flight.interface';
+import { Event, EventSchema } from './Microsoft/OData/SampleService/Models/TripPin/event.interface';
+import { Trip, TripSchema } from './Microsoft/OData/SampleService/Models/TripPin/trip.interface';
 
 export const TripPinConfig: ODataConfig = {
   baseUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
   metadataUrl: 'https://services.odata.org/V4/TripPinServiceRW/$metadata',
   withCredentials: false,
   stringAsEnum: true,
-  creation: new Date('2019-11-05T01:11:40.5984044+00:00'),
+  creation: new Date('2019-11-23T09:12:48.4618875-03:00'),
   version: '4.0',
   enums: {
     'Microsoft.OData.SampleService.Models.TripPin.PersonGender': PersonGender},

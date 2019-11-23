@@ -1,5 +1,5 @@
-import { EventLocation, EventLocationSchema } from './eventlocation.entity';
-import { PlanItem, PlanItemSchema } from './planitem.entity';
+import { EventLocation, EventLocationSchema } from './eventlocation.interface';
+import { PlanItem, PlanItemSchema } from './planitem.interface';
 
 export interface Event extends PlanItem {
   Description: string;

@@ -3,18 +3,34 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataCollection, ODataValue, ODataEntityResource } from 'angular-odata';
+import { ODataClient, ODataCollection, ODataValue, ODataEntityResource } from 'angular-odata';
 
-import { AirportLocation, AirportLocationSchema } from './airportlocation.interface';
 import { Airport, AirportSchema } from './airport.interface';
 
 
 @Injectable()
-export class AirportsService extends ODataEntityService<Airport> {
-  static path: string = 'Airports';
-  static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Airport';
-  
+export class TripPinService {
+ 
+  constructor(protected client: ODataClient) { }
+
   // Actions
+  public resetDataSource(options?: {
+    headers?: HttpHeaders | {[header: string]: string | string[]},
+    params?: HttpParams|{[param: string]: string | string[]},
+    reportProgress?: boolean,
+    withCredentials?: boolean
+  }): Observable<any> {
+    var body = Object.entries({  })
+      .filter(pair => pair[1] !== null)
+      .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
+    return this.client.action<any>('ResetDataSource', 'any')
+      .post(body, {
+        headers: options && options.headers,
+        params: options && options.params,
+        reportProgress: options && options.reportProgress,
+        withCredentials: options && options.withCredentials
+      });
+  }
   
   // Functions
   public getNearestAirport(lat: number, lon: number, options?: {
@@ -35,7 +51,5 @@ export class AirportsService extends ODataEntityService<Airport> {
         withCredentials: options && options.withCredentials
       });
   }
-  
-  // Navigations
   
 }
