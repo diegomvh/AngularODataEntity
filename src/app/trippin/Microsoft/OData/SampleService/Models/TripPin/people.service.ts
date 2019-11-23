@@ -3,7 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataCollection, ODataValue, ODataEntityResource } from 'angular-odata';
+import { ODataEntityService, ODataSingle, ODataCollection, ODataValue, ODataEntityResource } from 'angular-odata';
 
 import { PersonGender } from './persongender.enum';
 import { Location, LocationSchema } from './location.interface';

@@ -3,7 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataClient, ODataCollection, ODataValue, ODataEntityResource } from 'angular-odata';
+import { ODataClient, ODataSingle, ODataCollection, ODataValue, ODataEntityResource } from 'angular-odata';
 
 import { Airport, AirportSchema } from './airport.interface';
 
@@ -19,7 +19,7 @@ export class TripPinService {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<any> {
+  }): Observable<ODataSingle<any>> {
     var body = Object.entries({  })
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
@@ -38,7 +38,7 @@ export class TripPinService {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<Airport> {
+  }): Observable<ODataSingle<Airport>> {
     var body = Object.entries({ lat, lon })
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
