@@ -48,7 +48,6 @@ export class PeopleComponent {
   }
 
   loadPeopleLazy(event) {
-    console.log(event);
     this.loading = true;
     //datasource imitation
     let res = this.people.entities();

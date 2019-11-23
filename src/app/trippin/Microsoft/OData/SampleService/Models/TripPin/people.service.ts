@@ -61,7 +61,7 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<Photo> {
+  }): Observable<ODataSingle<Photo>> {
     return this.navigationProperty<Photo>(entity, 'Photo')
       .single(options);
   }

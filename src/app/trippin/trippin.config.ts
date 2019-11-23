@@ -20,7 +20,7 @@ export const TripPinConfig: ODataConfig = {
   metadataUrl: 'https://services.odata.org/V4/TripPinServiceRW/$metadata',
   withCredentials: false,
   stringAsEnum: true,
-  creation: new Date('2019-11-23T12:09:38.7914736-03:00'),
+  creation: new Date('2019-11-23T12:14:34.0946524-03:00'),
   version: '4.0',
   enums: {
     'Microsoft.OData.SampleService.Models.TripPin.PersonGender': PersonGender},
