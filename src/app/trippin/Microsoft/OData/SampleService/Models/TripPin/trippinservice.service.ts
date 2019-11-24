@@ -19,7 +19,7 @@ export class TripPinService {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<any> {
+  }): Observable<ODataSingle<any>> {
     var body = Object.entries({  })
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});

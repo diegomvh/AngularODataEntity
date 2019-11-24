@@ -62,9 +62,9 @@ export class PeopleComponent {
     res.get({withCount: true}).subscribe(people => {
       this.rows = people.value;
       if (!this.total)
-        this.total = people.count;
+        this.total = people.annotations.count;
       if (!this.size)
-        this.size = people.skip;
+        this.size = people.annotations.skip;
       this.loading = false;
     });
   }

@@ -31,13 +31,13 @@ export class PeopleService extends ODataEntityService<Person> {
     return this.navigationProperty<Person>(entity, 'Friends')
       .collection(options);
   }
-  public addPersonToFriends<Person>(entity: Person, target: ODataEntityResource<Person>): Observable<any> {
+  public addPersonToFriends<Person>(entity: Person, target: ODataEntityResource<Person>, etag?: string): Observable<any> {
     return this.ref(entity, 'Friends')
       .add(target);
   }
-  public removePersonFromFriends<Person>(entity: Person, target?: ODataEntityResource<Person>): Observable<any> {
+  public removePersonFromFriends<Person>(entity: Person, target?: ODataEntityResource<Person>, etag?: string): Observable<any> {
     return this.ref(entity, 'Friends')
-      .remove({etag: this.client.resolveEtag(entity), target});
+      .remove({etag, target});
   }
   public Trips(entity: Person, options?: {
     headers?: HttpHeaders | {[header: string]: string | string[]},
@@ -48,13 +48,13 @@ export class PeopleService extends ODataEntityService<Person> {
     return this.navigationProperty<Trip>(entity, 'Trips')
       .collection(options);
   }
-  public addTripToTrips<Trip>(entity: Person, target: ODataEntityResource<Trip>): Observable<any> {
+  public addTripToTrips<Trip>(entity: Person, target: ODataEntityResource<Trip>, etag?: string): Observable<any> {
     return this.ref(entity, 'Trips')
       .add(target);
   }
-  public removeTripFromTrips<Trip>(entity: Person, target?: ODataEntityResource<Trip>): Observable<any> {
+  public removeTripFromTrips<Trip>(entity: Person, target?: ODataEntityResource<Trip>, etag?: string): Observable<any> {
     return this.ref(entity, 'Trips')
-      .remove({etag: this.client.resolveEtag(entity), target});
+      .remove({etag, target});
   }
   public Photo(entity: Person, options?: {
     headers?: HttpHeaders | {[header: string]: string | string[]},
@@ -65,13 +65,13 @@ export class PeopleService extends ODataEntityService<Person> {
     return this.navigationProperty<Photo>(entity, 'Photo')
       .single(options);
   }
-  public setPhotoAsPhoto<Photo>(entity: Person, target: ODataEntityResource<Photo>): Observable<any> {
+  public setPhotoAsPhoto<Photo>(entity: Person, target: ODataEntityResource<Photo>, etag?: string): Observable<any> {
     return this.ref(entity, 'Photo')
-      .set(target, {etag: this.client.resolveEtag(entity)});
+      .set(target, {etag});
   }
-  public unsetPhotoAsPhoto<Photo>(entity: Person, target?: ODataEntityResource<Photo>): Observable<any> {
+  public unsetPhotoAsPhoto<Photo>(entity: Person, target?: ODataEntityResource<Photo>, etag?: string): Observable<any> {
     return this.ref(entity, 'Photo')
-      .remove({etag: this.client.resolveEtag(entity), target});
+      .remove({etag, target});
   }
   
 }
