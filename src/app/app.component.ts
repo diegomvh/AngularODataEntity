@@ -20,7 +20,7 @@ export class AppComponent {
   ) {
     this.api.resetDataSource().toPromise();
     this.createPerson().toPromise();
-    //this.queries();
+    this.queries();
   }
 
   queries() {
@@ -65,8 +65,8 @@ export class AppComponent {
       LastName: 'van Haaster',
       AddressInfo: []
     }).pipe(
-      switchMap(person => {
-        return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, person.annotations.etag);
+      switchMap(([person, odata]) => {
+        return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, odata.etag);
       })
     );
   }

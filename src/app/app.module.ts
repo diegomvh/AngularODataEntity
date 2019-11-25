@@ -6,6 +6,7 @@ import { ODataModule } from 'angular-odata';
 import { TripPinConfig, TripPinModule } from './trippin';
 import { PeopleComponent } from './components';
 import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { TableModule } from 'primeng/table';
   ],
   imports: [
     BrowserModule,
+    InputTextModule,
     TableModule,
     ODataModule.forRoot(Object.assign(TripPinConfig, {baseUrl: 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW/' })),
     TripPinModule
