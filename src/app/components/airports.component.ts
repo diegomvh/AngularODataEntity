@@ -1,10 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { PeopleService, Person } from '../trippin';
+import { Component, OnInit } from '@angular/core';
+import { Airport, AirportsService } from '../trippin';
 import { ODataEntitySetResource, ODataSettings } from 'angular-odata';
-import { PersonComponent } from './person.component';
 
 @Component({
-  selector: 'trip-people',
+  selector: 'trip-airports',
   template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadPeopleLazy($event)" [paginator]="true" 
     [rows]="size" [totalRecords]="total" [loading]="loading">
     <ng-template pTemplate="header" let-columns>
@@ -16,43 +15,40 @@ import { PersonComponent } from './person.component';
         </tr>
         <tr>
             <th *ngFor="let col of columns" [ngSwitch]="col.field">
-              <input *ngSwitchCase="'UserName'" pInputText type="text" (input)="filter($event.target.value, col.field)">
-              <input *ngSwitchCase="'FirstName'" pInputText type="text" (input)="filter($event.target.value, col.field)">
-              <input *ngSwitchCase="'LastName'" pInputText type="text" (input)="filter($event.target.value, col.field)">
+              <input *ngSwitchCase="'IcaoCode'" pInputText type="text" (input)="filter($event.target.value, col.field)">
+              <input *ngSwitchCase="'Name'" pInputText type="text" (input)="filter($event.target.value, col.field)">
+              <input *ngSwitchCase="'IataCode'" pInputText type="text" (input)="filter($event.target.value, col.field)">
             </th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <tr (click)="viewPerson(rowData)">
+        <tr>
             <td *ngFor="let col of columns">
                 {{rowData[col.field]}}
             </td>
         </tr>
     </ng-template>
-</p-table>
-<trip-person #person></trip-person>`,
+</p-table>`,
 })
-export class PeopleComponent implements OnInit {
-  rows: Person[];
+export class AirportsComponent implements OnInit {
+  rows: Airport[];
   cols: any[];
 
   total: number;
   size: number;
 
-  query: ODataEntitySetResource<Person>;
+  query: ODataEntitySetResource<Airport>;
   loading: boolean;
-
-  @ViewChild('person', {static: false}) person: PersonComponent;
 
   constructor(
     private settings: ODataSettings,
-    private people: PeopleService
+    private airports: AirportsService
   ) { 
-    this.query = this.people.entities();
+    this.query = this.airports.entities();
   }
 
   ngOnInit() {
-    let schema = this.settings.schemaForType<Person>(this.query.type()) 
+    let schema = this.settings.schemaForType<Airport>(this.query.type()) 
     this.cols = schema.fields
       .filter(f => !f.isNavigation)
       .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.isCollection) }));
@@ -93,9 +89,5 @@ export class PeopleComponent implements OnInit {
     if (event.sortField)
       this.query.orderBy(event.sortField + (event.sortOrder == -1 ? " desc": " asc"));
     this.fetch();
-  }
-
-  viewPerson(person: Person) {
-    this.person.show(person.UserName);
   }
 }
