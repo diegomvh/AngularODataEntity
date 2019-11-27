@@ -65,8 +65,8 @@ export class AppComponent {
       LastName: 'van Haaster',
       AddressInfo: []
     }).pipe(
-      switchMap(([person, odata]) => {
-        return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, odata.etag);
+      switchMap(([person, entity]) => {
+        return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, entity.etag);
       })
     );
   }

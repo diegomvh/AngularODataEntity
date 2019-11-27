@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PeopleService, Person, PhotosService } from '../trippin';
-import { ODataClient } from 'angular-odata';
+import { ODataClient, ODataEntityAnnotations } from 'angular-odata';
 
 @Component({
   selector: 'trip-person',
@@ -22,11 +22,10 @@ export class PersonComponent {
     let person = this.people.entity({UserName: name});
     person.expand({Friends: {}, Trips: {expand: {Photos: {}, PlanItems: {}}}, Photo: {}});
     person.get()
-      .subscribe(([person, _]) => {
-        console.log(person);
+      .subscribe(([person, annots]) => {
         this.person = person;
         if (person.Photo) {
-          let annotations = this.odata.annotations(person.Photo);
+          let pannots = ODataEntityAnnotations.factory(person.Photo);
           let media = this.photos.entity(person.Photo).media();
           media.blob().subscribe(console.log);
         }
