@@ -32,10 +32,9 @@ export class PersonComponent {
       Photo: {}
     });
     person.get()
-      .subscribe(([person, annots]) => {
+      .subscribe(([person, ]) => {
         this.person = person;
         if (person.Photo) {
-          let pannots = ODataEntityAnnotations.factory(person.Photo);
           let media = this.photos.entity(person.Photo).media();
           media.blob().subscribe(console.log);
         }
