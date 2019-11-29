@@ -1,7 +1,7 @@
 import { PlanItem, PlanItemSchema } from './planitem.interface';
 
 export interface PublicTransportation extends PlanItem {
-  SeatNumber: string
+  SeatNumber?: string
 }
 
 export const PublicTransportationSchema = Object.assign({}, PlanItemSchema, {

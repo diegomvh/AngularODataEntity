@@ -7,9 +7,9 @@ export interface Person {
   UserName: string;
   FirstName: string;
   LastName: string;
-  Emails: string[];
-  AddressInfo: Location[];
-  Gender: PersonGender;
+  Emails?: string[];
+  AddressInfo?: Location[];
+  Gender?: PersonGender;
   Concurrency: number;
   Friends?: Person[];
   Trips?: Trip[];
@@ -17,14 +17,14 @@ export interface Person {
 }
 
 export const PersonSchema = {
-  UserName: {type: 'string', isKey: true, ref: 'UserName'},
-  FirstName: {type: 'string'},
-  LastName: {type: 'string'},
-  Emails: {type: 'string', isCollection: true},
-  AddressInfo: {type: 'Microsoft.OData.SampleService.Models.TripPin.Location', isCollection: true},
-  Gender: {type: 'Microsoft.OData.SampleService.Models.TripPin.PersonGender', isFlags: false},
-  Concurrency: {type: 'number'},
-  Friends: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', isNullable: true, isCollection: true, isNavigation: true},
-  Trips: {type: 'Microsoft.OData.SampleService.Models.TripPin.Trip', isNullable: true, isCollection: true, isNavigation: true},
-  Photo: {type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', isNullable: true, isNavigation: true}
+  UserName: {type: 'string', key: true, ref: 'UserName', nullable: false},
+  FirstName: {type: 'string', nullable: false},
+  LastName: {type: 'string', nullable: false},
+  Emails: {type: 'string', many: true},
+  AddressInfo: {type: 'Microsoft.OData.SampleService.Models.TripPin.Location', many: true},
+  Gender: {type: 'Microsoft.OData.SampleService.Models.TripPin.PersonGender', flags: false},
+  Concurrency: {type: 'number', nullable: false},
+  Friends: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', many: true, navigation: true},
+  Trips: {type: 'Microsoft.OData.SampleService.Models.TripPin.Trip', many: true, navigation: true},
+  Photo: {type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', navigation: true}
 };

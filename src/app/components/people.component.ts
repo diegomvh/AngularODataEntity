@@ -54,8 +54,8 @@ export class PeopleComponent implements OnInit {
   ngOnInit() {
     let schema = this.settings.schemaForType<Person>(this.query.type()) 
     this.cols = schema.fields
-      .filter(f => !f.isNavigation)
-      .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.isCollection) }));
+      .filter(f => !f.navigation)
+      .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.many) }));
     this.loading = true;
   }
 

@@ -3,7 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataClient, ODataAnnotations, ODataEntityResource } from 'angular-odata';
+import { ODataClient, ODataEntityAnnotations, ODataCollectionAnnotations, ODataPropertyAnnotations, ODataEntityResource } from 'angular-odata';
 
 import { Airport, AirportSchema } from './airport.interface';
 
@@ -19,7 +19,7 @@ export class TripPinService {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<[any, ODataAnnotations]> {
+  }): Observable<[any, ODataEntityAnnotations]> {
     var body = Object.entries({  })
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
@@ -27,6 +27,7 @@ export class TripPinService {
       .post(body, {
         headers: options && options.headers,
         params: options && options.params,
+        responseType: 'entity',
         reportProgress: options && options.reportProgress,
         withCredentials: options && options.withCredentials
       });
@@ -38,7 +39,7 @@ export class TripPinService {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<[Airport, ODataAnnotations]> {
+  }): Observable<[Airport, ODataEntityAnnotations]> {
     var body = Object.entries({ lat, lon })
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});

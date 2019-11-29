@@ -3,7 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataAnnotations, ODataEntityResource } from 'angular-odata';
+import { ODataEntityService, ODataEntityAnnotations, ODataCollectionAnnotations, ODataPropertyAnnotations, ODataEntityResource } from 'angular-odata';
 
 import { PersonGender } from './persongender.enum';
 import { Location, LocationSchema } from './location.interface';
@@ -27,7 +27,7 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<[Person[], ODataAnnotations]> {
+  }): Observable<[Person[], ODataCollectionAnnotations]> {
     return this.navigationProperty<Person>(entity, 'Friends')
       .collection(options);
   }
@@ -44,7 +44,7 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<[Trip[], ODataAnnotations]> {
+  }): Observable<[Trip[], ODataCollectionAnnotations]> {
     return this.navigationProperty<Trip>(entity, 'Trips')
       .collection(options);
   }
@@ -61,7 +61,7 @@ export class PeopleService extends ODataEntityService<Person> {
     params?: HttpParams|{[param: string]: string | string[]},
     reportProgress?: boolean,
     withCredentials?: boolean
-  }): Observable<[Photo, ODataAnnotations]> {
+  }): Observable<[Photo, ODataEntityAnnotations]> {
     return this.navigationProperty<Photo>(entity, 'Photo')
       .single(options);
   }

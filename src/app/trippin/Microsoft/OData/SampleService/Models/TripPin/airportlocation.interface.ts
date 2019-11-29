@@ -5,5 +5,5 @@ export interface AirportLocation extends Location {
 }
 
 export const AirportLocationSchema = Object.assign({}, LocationSchema, {
-  Loc: {type: 'Object'}
+  Loc: {type: 'Object', nullable: false, srid: 4326}
 });

@@ -6,7 +6,7 @@ export interface City {
 }
 
 export const CitySchema = {
-  CountryRegion: {type: 'string'},
-  Name: {type: 'string'},
-  Region: {type: 'string'}
+  CountryRegion: {type: 'string', nullable: false},
+  Name: {type: 'string', nullable: false},
+  Region: {type: 'string', nullable: false}
 };
