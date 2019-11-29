@@ -23,11 +23,10 @@ export class TripPinService {
     var body = Object.entries({  })
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
-    return this.client.action<any>('ResetDataSource', 'any')
+    return this.client.action<any>('ResetDataSource')
       .post(body, {
         headers: options && options.headers,
         params: options && options.params,
-        responseType: 'entity',
         reportProgress: options && options.reportProgress,
         withCredentials: options && options.withCredentials
       });

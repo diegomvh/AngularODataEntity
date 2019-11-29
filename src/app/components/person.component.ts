@@ -4,7 +4,8 @@ import { ODataClient, ODataEntityAnnotations } from 'angular-odata';
 
 @Component({
   selector: 'trip-person',
-  template: `<p-dialog [visible]="display">
+  template: `<p-dialog [(visible)]="display">
+    {{person | json}}
   </p-dialog>`,
 })
 export class PersonComponent {
@@ -20,7 +21,16 @@ export class PersonComponent {
 
   show(name: string) {
     let person = this.people.entity({UserName: name});
-    person.expand({Friends: {}, Trips: {expand: {Photos: {}, PlanItems: {}}}, Photo: {}});
+    person.expand({
+      Friends: {}, 
+      Trips: {
+        expand: {
+          Photos: {}, 
+          PlanItems: {}
+        }
+      }, 
+      Photo: {}
+    });
     person.get()
       .subscribe(([person, annots]) => {
         this.person = person;

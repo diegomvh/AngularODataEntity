@@ -20,7 +20,7 @@ export class AppComponent {
   ) {
     this.api.resetDataSource().toPromise();
     this.createPerson().toPromise();
-    this.queries();
+    //this.queries();
   }
 
   queries() {
