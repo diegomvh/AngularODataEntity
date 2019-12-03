@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { ODataClient, ODataEntityAnnotations, ODataCollectionAnnotations, ODataPropertyAnnotations, ODataEntityResource } from 'angular-odata';
 
-import { Airport, AirportSchema } from './airport.interface';
+import { Airport, AirportSchema } from './Microsoft/OData/SampleService/Models/TripPin/airport.interface';
 
 
 @Injectable()

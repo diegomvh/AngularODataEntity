@@ -12,7 +12,7 @@ export * from './Microsoft/OData/SampleService/Models/TripPin/publictransportati
 export * from './Microsoft/OData/SampleService/Models/TripPin/flight.interface';
 export * from './Microsoft/OData/SampleService/Models/TripPin/event.interface';
 export * from './Microsoft/OData/SampleService/Models/TripPin/trip.interface';
-export * from './Microsoft/OData/SampleService/Models/TripPin/trippinservice.service';
+export * from './trippinservice.service';
 export * from './Microsoft/OData/SampleService/Models/TripPin/photos.service';
 export * from './Microsoft/OData/SampleService/Models/TripPin/people.service';
 export * from './Microsoft/OData/SampleService/Models/TripPin/airlines.service';

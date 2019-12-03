@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { TripPinService } from './Microsoft/OData/SampleService/Models/TripPin/trippinservice.service';
+import { TripPinService } from './trippinservice.service';
 import { PhotosService } from './Microsoft/OData/SampleService/Models/TripPin/photos.service';
 import { PeopleService } from './Microsoft/OData/SampleService/Models/TripPin/people.service';
 import { AirlinesService } from './Microsoft/OData/SampleService/Models/TripPin/airlines.service';
