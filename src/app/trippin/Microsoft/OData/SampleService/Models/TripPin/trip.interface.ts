@@ -22,7 +22,7 @@ export const TripSchema = {
   Budget: {type: 'number', nullable: false},
   StartsAt: {type: 'Date', nullable: false},
   EndsAt: {type: 'Date', nullable: false},
-  Tags: {type: 'string', nullable: false, many: true},
-  Photos: {type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', many: true, navigation: true},
-  PlanItems: {type: 'Microsoft.OData.SampleService.Models.TripPin.PlanItem', many: true, navigation: true}
+  Tags: {type: 'string', nullable: false, collection: true},
+  Photos: {type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', collection: true, navigation: true},
+  PlanItems: {type: 'Microsoft.OData.SampleService.Models.TripPin.PlanItem', collection: true, navigation: true}
 };

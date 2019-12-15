@@ -50,7 +50,7 @@ export class AirlinesComponent implements OnInit {
     let schema = this.settings.schemaForType<Airline>(this.query.type()) 
     this.cols = schema.fields
       .filter(f => !f.navigation)
-      .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.many) }));
+      .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));
     this.loading = true;
   }
 
