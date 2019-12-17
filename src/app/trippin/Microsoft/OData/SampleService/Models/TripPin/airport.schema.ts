@@ -1,11 +1,4 @@
-import { AirportLocation, AirportLocationSchema } from './airportlocation.interface';
-
-export interface Airport {
-  IcaoCode: string;
-  Name: string;
-  IataCode: string;
-  Location: AirportLocation
-}
+import { AirportLocationSchema } from './airportlocation.schema';
 
 export const AirportSchema = {
   IcaoCode: {type: 'string', key: true, ref: 'IcaoCode', nullable: false},

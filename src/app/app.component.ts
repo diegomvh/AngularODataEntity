@@ -66,6 +66,7 @@ export class AppComponent {
       AddressInfo: []
     }).pipe(
       switchMap(([person, entity]) => {
+        console.log(person, entity);
         return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, entity.etag);
       })
     );

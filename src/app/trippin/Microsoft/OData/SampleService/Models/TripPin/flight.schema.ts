@@ -1,13 +1,6 @@
-import { Airline, AirlineSchema } from './airline.interface';
-import { Airport, AirportSchema } from './airport.interface';
-import { PublicTransportation, PublicTransportationSchema } from './publictransportation.interface';
-
-export interface Flight extends PublicTransportation {
-  FlightNumber: string;
-  From?: Airport;
-  To?: Airport;
-  Airline?: Airline
-}
+import { AirlineSchema } from './airline.schema';
+import { AirportSchema } from './airport.schema';
+import { PublicTransportationSchema } from './publictransportation.schema';
 
 export const FlightSchema = Object.assign({}, PublicTransportationSchema, {
   FlightNumber: {type: 'string', nullable: false},

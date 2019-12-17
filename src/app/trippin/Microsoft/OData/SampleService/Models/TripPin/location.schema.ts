@@ -1,9 +1,4 @@
-import { City, CitySchema } from './city.interface';
-
-export interface Location {
-  Address: string;
-  City: City
-}
+import { CitySchema } from './city.schema';
 
 export const LocationSchema = {
   Address: {type: 'string', nullable: false},

@@ -61,12 +61,13 @@ export class PeopleComponent implements OnInit {
 
   fetch() {
     this.loading = true;
-    this.query.get({withCount: true}).subscribe(([people, odata]) => {
+    this.query.get({withCount: true}).subscribe(([people, annots]) => {
+      console.log(people, annots);
       this.rows = people;
       if (!this.total)
-        this.total = odata.count;
+        this.total = annots.count;
       if (!this.size)
-        this.size = odata.skip;
+        this.size = annots.skip;
       this.loading = false;
     });
   }

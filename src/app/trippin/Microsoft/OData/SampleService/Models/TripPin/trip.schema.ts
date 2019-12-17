@@ -1,18 +1,5 @@
-import { Photo, PhotoSchema } from './photo.interface';
-import { PlanItem, PlanItemSchema } from './planitem.interface';
-
-export interface Trip {
-  TripId: number;
-  ShareId?: string;
-  Description?: string;
-  Name: string;
-  Budget: number;
-  StartsAt: Date;
-  EndsAt: Date;
-  Tags: string[];
-  Photos?: Photo[];
-  PlanItems?: PlanItem[]
-}
+import { PhotoSchema } from './photo.schema';
+import { PlanItemSchema } from './planitem.schema';
 
 export const TripSchema = {
   TripId: {type: 'number', key: true, ref: 'TripId', nullable: false},

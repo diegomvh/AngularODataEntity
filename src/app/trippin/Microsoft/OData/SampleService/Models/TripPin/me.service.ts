@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataPropertyAnnotations, ODataEntityResource } from 'angular-odata';
+import { ODataEntityService, ODataEntityAnnotations, ODataCollectionAnnotations, ODataPropertyAnnotations, ODataEntityResource } from 'angular-odata';
 
 import { PersonGender } from './persongender.enum';
-import { Location, LocationSchema } from './location.interface';
-import { Photo, PhotoSchema } from './photo.interface';
-import { Person, PersonSchema } from './person.interface';
-import { Trip, TripSchema } from './trip.interface';
+import { Location } from './location.entity';
+import { Photo } from './photo.entity';
+import { Person } from './person.entity';
+import { Trip } from './trip.entity';
 
 
 @Injectable()

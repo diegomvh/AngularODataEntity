@@ -3,9 +3,9 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataPropertyAnnotations, ODataEntityResource } from 'angular-odata';
+import { ODataEntityService, ODataEntityAnnotations, ODataCollectionAnnotations, ODataPropertyAnnotations, ODataEntityResource } from 'angular-odata';
 
-import { Airline, AirlineSchema } from './airline.interface';
+import { Airline } from './airline.entity';
 
 
 @Injectable()
