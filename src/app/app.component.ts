@@ -19,8 +19,8 @@ export class AppComponent {
     private airports: AirportsService
   ) {
     this.api.resetDataSource().toPromise();
-    this.createPerson().toPromise();
-    //this.queries();
+    //this.createPerson().toPromise();
+    this.queries();
   }
 
   queries() {

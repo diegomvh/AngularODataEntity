@@ -32,7 +32,8 @@ export class PersonComponent {
       Photo: {}
     });
     person.get()
-      .subscribe(([person, ]) => {
+      .subscribe(([person, annots]) => {
+        console.log(person, annots);
         this.person = person;
         if (person.Photo) {
           let media = this.photos.entity(person.Photo).media();
