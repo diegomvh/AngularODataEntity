@@ -42,7 +42,7 @@ export class PeopleComponent implements OnInit {
   query: ODataEntitySetResource<Person>;
   loading: boolean;
 
-  @ViewChild('person', {static: false}) person: PersonComponent;
+  @ViewChild('person') person: PersonComponent;
 
   constructor(
     private settings: ODataSettings,
