@@ -1,3 +1,4 @@
+import { PersonGender } from './persongender.enum';
 import { LocationSchema } from './location.schema';
 import { PhotoSchema } from './photo.schema';
 import { TripSchema } from './trip.schema';
@@ -8,7 +9,7 @@ export const PersonSchema = {
   LastName: {type: 'string', nullable: false},
   Emails: {type: 'string', collection: true},
   AddressInfo: {type: 'Microsoft.OData.SampleService.Models.TripPin.Location', collection: true},
-  Gender: {type: 'Microsoft.OData.SampleService.Models.TripPin.PersonGender'},
+  Gender: {type: 'Microsoft.OData.SampleService.Models.TripPin.PersonGender', flags: false},
   Concurrency: {type: 'number', nullable: false},
   Friends: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', collection: true, navigation: true},
   Trips: {type: 'Microsoft.OData.SampleService.Models.TripPin.Trip', collection: true, navigation: true},

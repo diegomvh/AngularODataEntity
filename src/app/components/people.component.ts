@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { PeopleService, Person } from '../trippin';
 import { ODataEntitySetResource, ODataSettings } from 'angular-odata';
 import { PersonComponent } from './person.component';
+import { Types } from 'projects/angular-odata/src/lib';
 
 @Component({
   selector: 'trip-people',
@@ -62,7 +63,6 @@ export class PeopleComponent implements OnInit {
   fetch() {
     this.loading = true;
     this.query.get({withCount: true}).subscribe(([people, annots]) => {
-      console.log(people, annots);
       this.rows = people;
       if (!this.total)
         this.total = annots.count;
@@ -91,8 +91,9 @@ export class PeopleComponent implements OnInit {
     this.query.skip(event.first);
     this.query.top(event.rows);
     //Ordering
-    if (event.sortField)
-      this.query.orderBy(event.sortField + (event.sortOrder == -1 ? " desc": " asc"));
+    if (event.sortField) {
+      this.query.orderBy([[event.sortField, event.sortOrder == -1 ? "desc": "asc"]]);
+    }
     this.fetch();
   }
 

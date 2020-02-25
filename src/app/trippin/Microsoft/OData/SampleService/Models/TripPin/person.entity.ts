@@ -11,7 +11,7 @@ export interface Person {
   Emails?: string[];
   AddressInfo?: Location[];
   Gender?: PersonGender;
-  Concurrency: number;
+  Concurrency?: number;
   Friends?: Person[];
   Trips?: Trip[];
   Photo?: Photo

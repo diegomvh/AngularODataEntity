@@ -86,7 +86,7 @@ export class AirlinesComponent implements OnInit {
     this.query.top(event.rows);
     //Ordering
     if (event.sortField)
-      this.query.orderBy(event.sortField + (event.sortOrder == -1 ? " desc": " asc"));
+      this.query.orderBy([[event.sortField, event.sortOrder == -1 ? "desc": "asc"]]);
     this.fetch();
   }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ODataClient, ODATA_ETAG } from 'angular-odata';
-import { AirportsService, AirlinesService, PeopleService, PhotosService, Airport, Person, PersonGender, TripPinService } from './trippin';
+import { ODataClient, ExpandOptions } from 'angular-odata';
+import { AirportsService, AirlinesService, PeopleService, PhotosService, Airport, Person, PersonGender, TripPinService, Trip } from './trippin';
 import { switchMap, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -19,8 +19,8 @@ export class AppComponent {
     private airports: AirportsService
   ) {
     this.api.resetDataSource().toPromise();
-    //this.createPerson().toPromise();
-    this.queries();
+    this.createPerson().toPromise();
+    //this.queries();
   }
 
   queries() {
@@ -50,7 +50,13 @@ export class AppComponent {
     let people = this.odata.entitySet<Person>("People");
 
     // Expand
-    people.expand({Friends: {}, Trips: {expand: {PlanItems: {}, Photos: {}}}});
+    people.expand({
+      Friends: <ExpandOptions<Person>>{ 
+        select: ["LastName"],
+        expand: { Friends: <ExpandOptions<Person>>{ select: ['AddressInfo']}} 
+      }, 
+      Trips: <ExpandOptions<Trip>>{ select: ["Name"] },
+    });
     people.get({withCount: true}).subscribe(console.log);
   }
 
