@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ODataClient, ExpandOptions } from 'angular-odata';
+import { ExpandOptions, ODataServiceFactory } from 'angular-odata';
 import { AirportsService, AirlinesService, PeopleService, PhotosService, Airport, Person, PersonGender, TripPinService, Trip } from './trippin';
 import { switchMap, map } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -11,57 +11,70 @@ import { of } from 'rxjs';
 })
 export class AppComponent {
   constructor(
-    private odata: ODataClient,
+    private factory: ODataServiceFactory,
     private api: TripPinService,
-    private photos: PhotosService,
-    private people: PeopleService,
-    private airlines: AirlinesService,
-    private airports: AirportsService
+    private people: PeopleService
   ) {
-    this.api.resetDataSource().toPromise();
-    this.createPerson().toPromise();
-    //this.queries();
+    // Reset api
+    this.api.resetDataSource().subscribe(() => {
+      this.createPerson().toPromise();
+      this.queries();
+    });
   }
 
   queries() {
-    let airports = this.odata.entitySet<Airport>("Airports");
+    // Use OData Service Factory
+    let airportsService = this.factory.create<Airport>("Airports");
+    let peopleService = this.factory.create<Person>("People");
+
+    let airports = airportsService.entities();
 
     // Fetch set
-    airports.get().subscribe(console.log);
+    airports.all()
+      .subscribe(aports => console.log("All: ", aports));
 
     // Fetch with count
-    airports.get({withCount: true}).subscribe(console.log);
+    airports.get({withCount: true})
+      .subscribe(([aports, annots]) => console.log("Airports: ", aports, "Annotations: ", annots));
 
     // Fetch by key
     let airport = airports.entity("CYYZ");
-    airport.get().subscribe(console.log);
+    airport.get()
+      .subscribe(([aport, annots]) => console.log("Airport: ", aport, "Annotations: ", annots));
 
     // Filter
     airports.filter({Location: {City: {CountryRegion: "United States"}}});
-    airports.get().subscribe(console.log);
+    airports.get()
+      .subscribe(([aports, annots]) => console.log("Airports of United States: ", aports, "Annotations: ", annots));
 
     // Add filter
     airports.filter().push({Location: {City: {Region: "California"}}});
-    airports.get().subscribe(console.log);
+    airports.get()
+      .subscribe(([aports, annots]) => console.log("Airports in California: ", aports, "Annotations: ", annots));
 
     // Remove filter
     airports.filter().clear();
+    airports.get()
+      .subscribe(([aports, annots]) => console.log("Airports: ", aports, "Annotations: ", annots));
 
-    let people = this.odata.entitySet<Person>("People");
+    let people = peopleService.entities();
 
     // Expand
     people.expand({
-      Friends: <ExpandOptions<Person>>{ 
-        select: ["LastName"],
-        expand: { Friends: <ExpandOptions<Person>>{ select: ['AddressInfo']}} 
+      Friends: { 
+        expand: { Friends: { select: ['AddressInfo']}} 
       }, 
-      Trips: <ExpandOptions<Trip>>{ select: ["Name"] },
+      Trips: { select: ['Name', 'Tags'] },
     });
-    people.get({withCount: true}).subscribe(console.log);
+    people.get({withCount: true})
+      .subscribe(([peop, annots]) => console.log("People with Friends and Trips: ", peop, "Annotations: ", annots));
+
+    // Remove Expand
+    people.expand().clear();
   }
 
   createPerson() {
-    // Create Person 
+    // Use Person Service
     return this.people.create({
       Concurrency: 0,
       Emails: ['some@email.com'], 
@@ -72,7 +85,6 @@ export class AppComponent {
       AddressInfo: []
     }).pipe(
       switchMap(([person, entity]) => {
-        console.log(person, entity);
         return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, entity.etag);
       })
     );

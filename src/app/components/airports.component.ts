@@ -23,8 +23,9 @@ import { ODataEntitySetResource, ODataSettings } from 'angular-odata';
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr>
-            <td *ngFor="let col of columns">
-                {{rowData[col.field]}}
+            <td *ngFor="let col of columns" [ngSwitch]="col.field">
+              <span *ngSwitchCase="'Location'">{{rowData[col.field] | json}}</span>
+              <span *ngSwitchDefault>{{rowData[col.field]}}</span>
             </td>
         </tr>
     </ng-template>

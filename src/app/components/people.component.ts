@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PeopleService, Person } from '../trippin';
+import { PeopleService, Person, PersonGender } from '../trippin';
 import { ODataEntitySetResource, ODataSettings } from 'angular-odata';
 import { PersonComponent } from './person.component';
-import { Types } from 'projects/angular-odata/src/lib';
 
 @Component({
   selector: 'trip-people',
@@ -25,8 +24,10 @@ import { Types } from 'projects/angular-odata/src/lib';
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr (click)="viewPerson(rowData)">
-            <td *ngFor="let col of columns">
-                {{rowData[col.field]}}
+            <td *ngFor="let col of columns" [ngSwitch]="col.field">
+              <span *ngSwitchCase="'AddressInfo'">{{rowData[col.field] | json}}</span>
+              <span *ngSwitchCase="'Gender'">{{Gender[rowData[col.field]]}}</span>
+              <span *ngSwitchDefault>{{rowData[col.field]}}</span>
             </td>
         </tr>
     </ng-template>
@@ -34,6 +35,7 @@ import { Types } from 'projects/angular-odata/src/lib';
 <trip-person #person></trip-person>`,
 })
 export class PeopleComponent implements OnInit {
+  Gender = PersonGender;
   rows: Person[];
   cols: any[];
 
