@@ -20,9 +20,7 @@ export class TripPinService {
     reportProgress?: boolean,
     withCredentials?: boolean
   }): Observable<[any, ODataEntityAnnotations]> {
-    var body = Object.entries({  })
-      .filter(pair => pair[1] !== null)
-      .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
+    let body = null;
     return this.client.action<any>('ResetDataSource')
       .post(body, {
         headers: options && options.headers,
@@ -39,7 +37,8 @@ export class TripPinService {
     reportProgress?: boolean,
     withCredentials?: boolean
   }): Observable<[Airport, ODataEntityAnnotations]> {
-    var body = Object.entries({ lat, lon })
+    
+    let body = Object.entries({ lat, lon })
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
     return this.client.function<Airport>('GetNearestAirport', body, 'Microsoft.OData.SampleService.Models.TripPin.Airport')

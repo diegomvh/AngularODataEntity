@@ -23,7 +23,8 @@ export class AirportsService extends ODataEntityService<Airport> {
     reportProgress?: boolean,
     withCredentials?: boolean
   }): Observable<[Airport, ODataEntityAnnotations]> {
-    var body = Object.entries({ lat, lon })
+    
+    let body = Object.entries({ lat, lon })
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
     return this.client.function<Airport>('GetNearestAirport', body, 'Microsoft.OData.SampleService.Models.TripPin.Airport')

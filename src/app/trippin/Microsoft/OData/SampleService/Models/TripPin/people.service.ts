@@ -32,11 +32,11 @@ export class PeopleService extends ODataEntityService<Person> {
       .collection(options);
   }
   public addPersonToFriends<Person>(entity: Person, target: ODataEntityResource<Person>, etag?: string): Observable<any> {
-    return this.ref(entity, 'Friends')
+    return this.navigationProperty<Person>(entity, 'Friends').reference()
       .add(target);
   }
   public removePersonFromFriends<Person>(entity: Person, target?: ODataEntityResource<Person>, etag?: string): Observable<any> {
-    return this.ref(entity, 'Friends')
+    return this.navigationProperty<Person>(entity, 'Friends').reference()
       .remove({etag, target});
   }
   public Trips(entity: Person, options?: {
@@ -49,11 +49,11 @@ export class PeopleService extends ODataEntityService<Person> {
       .collection(options);
   }
   public addTripToTrips<Trip>(entity: Person, target: ODataEntityResource<Trip>, etag?: string): Observable<any> {
-    return this.ref(entity, 'Trips')
+    return this.navigationProperty<Trip>(entity, 'Trips').reference()
       .add(target);
   }
   public removeTripFromTrips<Trip>(entity: Person, target?: ODataEntityResource<Trip>, etag?: string): Observable<any> {
-    return this.ref(entity, 'Trips')
+    return this.navigationProperty<Trip>(entity, 'Trips').reference()
       .remove({etag, target});
   }
   public Photo(entity: Person, options?: {
@@ -66,11 +66,11 @@ export class PeopleService extends ODataEntityService<Person> {
       .single(options);
   }
   public setPhotoAsPhoto<Photo>(entity: Person, target: ODataEntityResource<Photo>, etag?: string): Observable<any> {
-    return this.ref(entity, 'Photo')
+    return this.navigationProperty<Photo>(entity, 'Photo').reference()
       .set(target, {etag});
   }
   public unsetPhotoAsPhoto<Photo>(entity: Person, target?: ODataEntityResource<Photo>, etag?: string): Observable<any> {
-    return this.ref(entity, 'Photo')
+    return this.navigationProperty<Photo>(entity, 'Photo').reference()
       .remove({etag, target});
   }
   
