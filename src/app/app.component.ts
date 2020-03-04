@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { ExpandOptions, ODataServiceFactory } from 'angular-odata';
-import { AirportsService, AirlinesService, PeopleService, PhotosService, Airport, Person, PersonGender, TripPinService, Trip } from './trippin';
-import { switchMap, map } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { ODataServiceFactory, ODataClient } from 'angular-odata';
+import { PeopleService, Airport, Person, PersonGender, TripPinService } from './trippin';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +10,7 @@ import { of } from 'rxjs';
 })
 export class AppComponent {
   constructor(
+    private odata: ODataClient,
     private factory: ODataServiceFactory,
     private api: TripPinService,
     private people: PeopleService
@@ -29,6 +29,7 @@ export class AppComponent {
 
     let airports = airportsService.entities();
 
+    console.log(airportsService.entities());
     // Fetch set
     airports.all()
       .subscribe(aports => console.log("All: ", aports));
@@ -42,6 +43,8 @@ export class AppComponent {
     airport.get()
       .subscribe(([aport, annots]) => console.log("Airport: ", aport, "Annotations: ", annots));
 
+    console.log(airport.toJSON());
+    console.log(this.odata.fromJSON(airport.toJSON()));
     // Filter
     airports.filter({Location: {City: {CountryRegion: "United States"}}});
     airports.get()
@@ -52,6 +55,8 @@ export class AppComponent {
     airports.get()
       .subscribe(([aports, annots]) => console.log("Airports in California: ", aports, "Annotations: ", annots));
 
+    console.log(airports.toJSON());
+    console.log(this.odata.fromJSON(airports.toJSON()));
     // Remove filter
     airports.filter().clear();
     airports.get()
@@ -69,6 +74,8 @@ export class AppComponent {
     people.get({withCount: true})
       .subscribe(([peop, annots]) => console.log("People with Friends and Trips: ", peop, "Annotations: ", annots));
 
+    console.log(people.toJSON());
+    console.log(this.odata.fromJSON(people.toJSON()));
     // Remove Expand
     people.expand().clear();
   }

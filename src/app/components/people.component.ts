@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PeopleService, Person, PersonGender } from '../trippin';
-import { ODataEntitySetResource, ODataSettings } from 'angular-odata';
+import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odata';
 import { PersonComponent } from './person.component';
 
 @Component({
@@ -42,20 +42,23 @@ export class PeopleComponent implements OnInit {
   total: number;
   size: number;
 
-  query: ODataEntitySetResource<Person>;
+  resource: ODataEntitySetResource<Person>;
   loading: boolean;
 
   @ViewChild('person') person: PersonComponent;
 
   constructor(
     private settings: ODataSettings,
+    private odata: ODataClient,
     private people: PeopleService
   ) { 
-    this.query = this.people.entities();
+    this.resource = this.people.entities();
+    console.log(this.resource.toJSON());
+    console.log(this.odata.fromJSON(this.resource.toJSON()));
   }
 
   ngOnInit() {
-    let schema = this.settings.schemaForType<Person>(this.query.type()) 
+    let schema = this.settings.schemaForType<Person>(this.resource.type()) 
     this.cols = schema.fields
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));
@@ -64,7 +67,7 @@ export class PeopleComponent implements OnInit {
 
   fetch() {
     this.loading = true;
-    this.query.get({withCount: true}).subscribe(([people, annots]) => {
+    this.resource.get({withCount: true}).subscribe(([people, annots]) => {
       this.rows = people;
       if (!this.total)
         this.total = annots.count;
@@ -78,23 +81,23 @@ export class PeopleComponent implements OnInit {
     field = `tolower(${field})`; 
     if (value) {
       let filter = {[field]: {contains: value.toLowerCase()}};
-      this.query.filter().assign(filter);
+      this.resource.filter().assign(filter);
     } else {
-      this.query.filter().unset(field);
+      this.resource.filter().unset(field);
     }
-    this.query.skip().clear();
-    this.query.top().clear();
+    this.resource.skip().clear();
+    this.resource.top().clear();
     this.total = 0;
     this.fetch();
   }
 
   loadPeopleLazy(event) {
     //Pagination
-    this.query.skip(event.first);
-    this.query.top(event.rows);
+    this.resource.skip(event.first);
+    this.resource.top(event.rows);
     //Ordering
     if (event.sortField) {
-      this.query.orderBy([[event.sortField, event.sortOrder == -1 ? "desc": "asc"]]);
+      this.resource.orderBy([[event.sortField, event.sortOrder == -1 ? "desc": "asc"]]);
     }
     this.fetch();
   }
