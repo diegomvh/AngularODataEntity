@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { PeopleService, Person, PersonGender } from '../trippin';
 import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odata';
 import { PersonComponent } from './person.component';
+import { config } from 'rxjs';
 
 @Component({
   selector: 'trip-people',
@@ -59,6 +60,7 @@ export class PeopleComponent implements OnInit {
 
   ngOnInit() {
     let schema = this.settings.schemaForType<Person>(this.resource.type()) 
+    console.log(schema.toJsonSchema());
     this.cols = schema.fields
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));

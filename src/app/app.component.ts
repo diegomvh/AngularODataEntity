@@ -17,8 +17,8 @@ export class AppComponent {
   ) {
     // Reset api
     this.api.resetDataSource().subscribe(() => {
-      this.createPerson().toPromise();
-      this.queries();
+      //this.createPerson().toPromise();
+      //this.queries();
     });
   }
 
