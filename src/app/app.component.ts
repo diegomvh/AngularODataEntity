@@ -17,12 +17,17 @@ export class AppComponent {
   ) {
     // Reset api
     this.api.resetDataSource().subscribe(() => {
-      //this.createPerson().toPromise();
-      //this.queries();
+      this.queries();
+      this.mutate();
     });
   }
 
   queries() {
+    this.entities();
+    this.navigation();
+  }
+
+  entities() {
     // Use OData Service Factory
     let airportsService = this.factory.create<Airport>("Airports");
     let peopleService = this.factory.create<Person>("People");
@@ -80,9 +85,21 @@ export class AppComponent {
     people.expand().clear();
   }
 
+  navigation() {
+    let peopleService = this.factory.create<Person>("People");
+    let person = peopleService.entity("scottketchum");
+
+    let friends = person.navigationProperty<Person>("Friends");
+    friends.get({responseType: 'entities'}).subscribe(console.log);
+  }
+
+  mutate() {
+    this.createPerson();
+  }
+
   createPerson() {
     // Use Person Service
-    return this.people.create({
+    this.people.create({
       Concurrency: 0,
       Emails: ['some@email.com'], 
       UserName: 'diegomvh', 
@@ -94,6 +111,6 @@ export class AppComponent {
       switchMap(([person, entity]) => {
         return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, entity.etag);
       })
-    );
+    ).toPromise();
   }
 }
