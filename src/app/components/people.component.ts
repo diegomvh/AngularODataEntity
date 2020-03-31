@@ -59,9 +59,9 @@ export class PeopleComponent implements OnInit {
   }
 
   ngOnInit() {
-    let schema = this.settings.metaForType<Person>(this.resource.type()) 
-    console.log(schema.parser.toJsonSchema());
-    this.cols = schema.fields
+    let meta = this.settings.metaForType<Person>(this.resource.type()) 
+    console.log(meta.parser.toJsonSchema());
+    this.cols = meta.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));
     this.loading = true;
