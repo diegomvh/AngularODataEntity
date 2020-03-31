@@ -3,7 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityAnnotations, ODataCollectionAnnotations, ODataPropertyAnnotations, ODataEntityResource } from 'angular-odata';
+import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataPropertyAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
 
 import { PersonGender } from './persongender.enum';
 import { Location } from './location.entity';
@@ -22,12 +22,7 @@ export class PeopleService extends ODataEntityService<Person> {
   // Functions
   
   // Navigations
-  public Friends(entity: Person, options?: {
-    headers?: HttpHeaders | {[header: string]: string | string[]},
-    params?: HttpParams|{[param: string]: string | string[]},
-    reportProgress?: boolean,
-    withCredentials?: boolean
-  }): Observable<[Person[], ODataCollectionAnnotations]> {
+  public Friends(entity: Person, options?: HttpOptions): Observable<[Person[], ODataEntitiesAnnotations]> {
     return this.navigationProperty<Person>(entity, 'Friends')
       .collection(options);
   }
@@ -39,12 +34,7 @@ export class PeopleService extends ODataEntityService<Person> {
     return this.navigationProperty<Person>(entity, 'Friends').reference()
       .remove({etag, target});
   }
-  public Trips(entity: Person, options?: {
-    headers?: HttpHeaders | {[header: string]: string | string[]},
-    params?: HttpParams|{[param: string]: string | string[]},
-    reportProgress?: boolean,
-    withCredentials?: boolean
-  }): Observable<[Trip[], ODataCollectionAnnotations]> {
+  public Trips(entity: Person, options?: HttpOptions): Observable<[Trip[], ODataEntitiesAnnotations]> {
     return this.navigationProperty<Trip>(entity, 'Trips')
       .collection(options);
   }
@@ -56,12 +46,7 @@ export class PeopleService extends ODataEntityService<Person> {
     return this.navigationProperty<Trip>(entity, 'Trips').reference()
       .remove({etag, target});
   }
-  public Photo(entity: Person, options?: {
-    headers?: HttpHeaders | {[header: string]: string | string[]},
-    params?: HttpParams|{[param: string]: string | string[]},
-    reportProgress?: boolean,
-    withCredentials?: boolean
-  }): Observable<[Photo, ODataEntityAnnotations]> {
+  public Photo(entity: Person, options?: HttpOptions): Observable<[Photo, ODataEntityAnnotations]> {
     return this.navigationProperty<Photo>(entity, 'Photo')
       .single(options);
   }

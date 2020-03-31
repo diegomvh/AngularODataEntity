@@ -1,4 +1,4 @@
-import { TripSchema } from './trip.schema';
+import { TripMeta } from './trip.meta';
 import { Photo } from './photo.entity';
 import { PlanItem } from './planitem.entity';
 

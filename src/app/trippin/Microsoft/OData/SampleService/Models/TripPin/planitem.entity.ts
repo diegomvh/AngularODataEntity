@@ -1,4 +1,4 @@
-import { PlanItemSchema } from './planitem.schema';
+import { PlanItemMeta } from './planitem.meta';
 
 export interface PlanItem {
   PlanItemId: number;

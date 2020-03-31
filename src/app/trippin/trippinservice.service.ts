@@ -3,7 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataClient, ODataEntityAnnotations, ODataCollectionAnnotations, ODataPropertyAnnotations, ODataEntityResource } from 'angular-odata';
+import { ODataClient, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataPropertyAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
 
 import { Airport } from './Microsoft/OData/SampleService/Models/TripPin/airport.entity';
 
@@ -14,41 +14,19 @@ export class TripPinService {
   constructor(protected client: ODataClient) { }
 
   // Actions
-  public resetDataSource(options?: {
-    headers?: HttpHeaders | {[header: string]: string | string[]},
-    params?: HttpParams|{[param: string]: string | string[]},
-    reportProgress?: boolean,
-    withCredentials?: boolean
-  }): Observable<[any, ODataEntityAnnotations]> {
-    let body = null;
-    return this.client.action<any>('ResetDataSource')
-      .post(body, {
-        headers: options && options.headers,
-        params: options && options.params,
-        reportProgress: options && options.reportProgress,
-        withCredentials: options && options.withCredentials
-      });
+  public resetDataSource(options?: HttpOptions): Observable<[any, ODataEntityAnnotations]> {
+    let args = null;
+    var res = this.client.action<any>('ResetDataSource', '');
+    return res.call(args, 'entity', options);
   }
   
   // Functions
-  public getNearestAirport(lat: number, lon: number, options?: {
-    headers?: HttpHeaders | {[header: string]: string | string[]},
-    params?: HttpParams|{[param: string]: string | string[]},
-    reportProgress?: boolean,
-    withCredentials?: boolean
-  }): Observable<[Airport, ODataEntityAnnotations]> {
-    
-    let body = Object.entries({ lat, lon })
+  public getNearestAirport(lat: number, lon: number, options?: HttpOptions): Observable<[Airport, ODataEntityAnnotations]> {
+    let args = Object.entries({ lat, lon })
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
-    return this.client.function<Airport>('GetNearestAirport', body, 'Microsoft.OData.SampleService.Models.TripPin.Airport')
-      .get({
-        headers: options && options.headers,
-        params: options && options.params,
-        responseType: 'entity',
-        reportProgress: options && options.reportProgress,
-        withCredentials: options && options.withCredentials
-      });
+    var res = this.client.function<Airport>('GetNearestAirport', 'Microsoft.OData.SampleService.Models.TripPin.Airport');
+    return res.call(args, 'entity', options);
   }
   
 }

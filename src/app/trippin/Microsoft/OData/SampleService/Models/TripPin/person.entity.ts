@@ -1,4 +1,5 @@
-import { PersonSchema } from './person.schema';
+import { PersonMeta } from './person.meta';
+import { PeopleService } from './people.service';
 import { PersonGender } from './persongender.enum';
 import { Location } from './location.entity';
 import { Photo } from './photo.entity';

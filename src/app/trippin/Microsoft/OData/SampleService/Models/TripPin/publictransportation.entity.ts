@@ -1,4 +1,4 @@
-import { PublicTransportationSchema } from './publictransportation.schema';
+import { PublicTransportationMeta } from './publictransportation.meta';
 import { PlanItem } from './planitem.entity';
 
 export interface PublicTransportation extends PlanItem {

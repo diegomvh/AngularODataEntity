@@ -1,4 +1,4 @@
-import { EventLocationSchema } from './eventlocation.schema';
+import { EventLocationMeta } from './eventlocation.meta';
 import { Location } from './location.entity';
 
 export interface EventLocation extends Location {

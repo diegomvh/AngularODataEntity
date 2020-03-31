@@ -1,4 +1,4 @@
-import { AirportLocationSchema } from './airportlocation.schema';
+import { AirportLocationMeta } from './airportlocation.meta';
 import { Location } from './location.entity';
 
 export interface AirportLocation extends Location {

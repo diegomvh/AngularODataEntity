@@ -1,4 +1,4 @@
-import { CitySchema } from './city.schema';
+import { CityMeta } from './city.meta';
 
 export interface City {
   CountryRegion: string;

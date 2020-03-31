@@ -50,8 +50,8 @@ export class AirlinesComponent implements OnInit {
   }
 
   ngOnInit() {
-    let schema = this.settings.schemaForType<Airline>(this.resource.type()) 
-    console.log(schema.toJsonSchema());
+    let schema = this.settings.metaForType<Airline>(this.resource.type()) 
+    console.log(schema.parser.toJsonSchema());
     this.cols = schema.fields
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));
