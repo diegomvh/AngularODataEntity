@@ -3,7 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataClient, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataPropertyAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
+import { ODataClient, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
 
 import { Airport } from './Microsoft/OData/SampleService/Models/TripPin/airport.entity';
 
