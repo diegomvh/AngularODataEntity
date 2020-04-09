@@ -37,7 +37,7 @@ export class PersonComponent {
         console.log(person, annots);
         this.person = person;
         if (person.Photo) {
-          let media = this.photos.entity(person.Photo).media();
+          let media = this.photos.entity(person.Photo).value();
           media.blob().subscribe(console.log);
         }
         this.display = true;

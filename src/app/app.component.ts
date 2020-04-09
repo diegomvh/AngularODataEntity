@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient } from 'angular-odata';
-import { PeopleService, Airport, Person, PersonGender, TripPinService } from './trippin';
+import { PeopleService, Airport, Person, PersonGender, TripPinService, Photo } from './trippin';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -18,13 +18,14 @@ export class AppComponent {
     // Reset api
     this.api.resetDataSource().subscribe(() => {
       this.queries();
-      this.mutate();
+      //this.mutate();
     });
   }
 
   queries() {
-    this.entities();
-    this.navigation();
+    //this.entities();
+    //this.navigation();
+    this.property();
   }
 
   entities() {
@@ -91,6 +92,28 @@ export class AppComponent {
 
     let friends = person.navigationProperty<Person>("Friends");
     friends.get({responseType: 'entities'}).subscribe(console.log);
+  }
+
+  property() {
+    let peopleService = this.factory.create<Person>("People");
+    let person = peopleService.entity("scottketchum");
+
+    // Person locations
+    let locations = person.property<Location[]>("AddressInfo");
+    locations.get({responseType: 'entities'}).subscribe(console.log);
+
+    // Person name
+    let name = person.property<string>("UserName");
+    name.get({responseType: 'value'}).subscribe(console.log);
+
+    // Person photo
+    let photo = person.property<Photo>("Photo");
+    photo.get({responseType: 'entity'}).subscribe(console.log);
+    photo.value().arraybuffer().subscribe(console.log);
+    let photoName = photo.property<string>("Name");
+    photoName.get({responseType: 'value'}).subscribe(console.log);
+
+    name.value().text().subscribe(console.log);
   }
 
   mutate() {
