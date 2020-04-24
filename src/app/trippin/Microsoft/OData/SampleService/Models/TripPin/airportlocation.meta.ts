@@ -1,4 +1,3 @@
-import { LocationMeta } from './location.meta';
 
 export const AirportLocationMeta = {
   type: "Microsoft.OData.SampleService.Models.TripPin.AirportLocation",

@@ -1,4 +1,3 @@
-import { PlanItemMeta } from './planitem.meta';
 
 export const PublicTransportationMeta = {
   type: "Microsoft.OData.SampleService.Models.TripPin.PublicTransportation",

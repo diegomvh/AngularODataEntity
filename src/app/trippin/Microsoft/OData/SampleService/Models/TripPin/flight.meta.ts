@@ -1,6 +1,3 @@
-import { PublicTransportationMeta } from './publictransportation.meta';
-import { AirlineMeta } from './airline.meta';
-import { AirportMeta } from './airport.meta';
 
 export const FlightMeta = {
   type: "Microsoft.OData.SampleService.Models.TripPin.Flight",

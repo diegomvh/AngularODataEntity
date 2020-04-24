@@ -1,5 +1,4 @@
 import { PersonMeta } from './person.meta';
-import { PeopleService } from './people.service';
 import { PersonGender } from './persongender.enum';
 import { Location } from './location.entity';
 import { Photo } from './photo.entity';
@@ -12,7 +11,7 @@ export interface Person {
   Emails?: string[];
   AddressInfo?: Location[];
   Gender?: PersonGender;
-  Concurrency?: number;
+  Concurrency: number;
   Friends?: Person[];
   Trips?: Trip[];
   Photo?: Photo

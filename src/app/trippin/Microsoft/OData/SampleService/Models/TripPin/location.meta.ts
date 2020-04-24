@@ -1,4 +1,3 @@
-import { CityMeta } from './city.meta';
 
 export const LocationMeta = {
   type: "Microsoft.OData.SampleService.Models.TripPin.Location",

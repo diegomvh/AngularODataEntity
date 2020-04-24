@@ -1,14 +1,12 @@
-import { PhotoMeta } from './photo.meta';
-import { PlanItemMeta } from './planitem.meta';
 
 export const TripMeta = {
   type: "Microsoft.OData.SampleService.Models.TripPin.Trip",
   fields: {
-    TripId: {type: 'number', key: true, ref: 'TripId', nullable: false},
+    TripId: {type: 'number', key: true, ref: 'TripId', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     ShareId: {type: 'string'},
     Description: {type: 'string'},
     Name: {type: 'string', nullable: false},
-    Budget: {type: 'number', nullable: false},
+    Budget: {type: 'number', nullable: false, annotations: [{"type":"Org.OData.Measures.V1.ISOCurrency","string":"USD"},{"type":"Org.OData.Measures.V1.Scale","int":2}]},
     StartsAt: {type: 'Date', nullable: false},
     EndsAt: {type: 'Date', nullable: false},
     Tags: {type: 'string', nullable: false, collection: true},
