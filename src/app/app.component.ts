@@ -97,23 +97,32 @@ export class AppComponent {
   property() {
     let peopleService = this.factory.create<Person>("People");
     let person = peopleService.entity("scottketchum");
+    person.get().subscribe(console.log);
 
     // Person locations
     let locations = person.property<Location[]>("AddressInfo");
     locations.get({responseType: 'entities'}).subscribe(console.log);
 
+    // Person gender
+    let gender = person.property<PersonGender>("Gender");
+    gender.get({responseType: 'value'}).subscribe(console.log);
+    gender.value().get().subscribe(console.log);
+
     // Person name
     let name = person.property<string>("UserName");
     name.get({responseType: 'value'}).subscribe(console.log);
+    name.value().get().subscribe(console.log);
 
     // Person photo
     let photo = person.property<Photo>("Photo");
     photo.get({responseType: 'entity'}).subscribe(console.log);
     photo.value().arraybuffer().subscribe(console.log);
+    photo.value().get().subscribe(console.log);
     let photoName = photo.property<string>("Name");
     photoName.get({responseType: 'value'}).subscribe(console.log);
 
     name.value().text().subscribe(console.log);
+    name.value().get().subscribe(console.log);
   }
 
   mutate() {

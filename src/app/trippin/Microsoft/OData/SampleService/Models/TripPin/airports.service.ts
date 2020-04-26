@@ -5,6 +5,8 @@ import { map } from 'rxjs/operators';
 
 import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
 
+import { AirportLocationMeta } from './airportlocation.meta';
+import { AirportMeta } from './airport.meta';
 import { AirportLocation } from './airportlocation.entity';
 import { Airport } from './airport.entity';
 

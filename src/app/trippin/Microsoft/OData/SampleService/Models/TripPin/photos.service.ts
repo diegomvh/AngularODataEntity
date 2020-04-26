@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
 
+import { PhotoMeta } from './photo.meta';
 import { Photo } from './photo.entity';
 
 

@@ -5,7 +5,9 @@ import { map } from 'rxjs/operators';
 
 import { ODataClient, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
 
+import { AirportMeta } from './Microsoft/OData/SampleService/Models/TripPin/airport.meta';
 import { Airport } from './Microsoft/OData/SampleService/Models/TripPin/airport.entity';
+import { AirportsService } from './Microsoft/OData/SampleService/Models/TripPin/airports.service';
 
 
 @Injectable()
