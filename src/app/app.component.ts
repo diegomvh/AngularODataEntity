@@ -95,7 +95,8 @@ export class AppComponent {
   }
 
   property() {
-    let peopleService = this.factory.create<Person>("People");
+    // Create Service with Metadata Type
+    let peopleService = this.factory.create<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
     let person = peopleService.entity("scottketchum");
     person.get().subscribe(console.log);
 
@@ -121,7 +122,6 @@ export class AppComponent {
     let photoName = photo.property<string>("Name");
     photoName.get({responseType: 'value'}).subscribe(console.log);
 
-    name.value().text().subscribe(console.log);
     name.value().get().subscribe(console.log);
   }
 

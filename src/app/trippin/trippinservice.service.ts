@@ -5,9 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { ODataClient, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
 
-import { AirportMeta } from './Microsoft/OData/SampleService/Models/TripPin/airport.meta';
 import { Airport } from './Microsoft/OData/SampleService/Models/TripPin/airport.entity';
-import { AirportsService } from './Microsoft/OData/SampleService/Models/TripPin/airports.service';
 
 
 @Injectable()
@@ -24,7 +22,10 @@ export class TripPinService {
   
   // Functions
   public getNearestAirport(lat: number, lon: number, options?: HttpOptions): Observable<[Airport, ODataEntityAnnotations]> {
-    let args = Object.entries({ lat, lon })
+    let args = Object.entries({
+        lat: lat, 
+        lon: lon
+      })
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
     var res = this.client.function<Airport>('GetNearestAirport', 'Microsoft.OData.SampleService.Models.TripPin.Airport');
