@@ -23,8 +23,8 @@ export class AppComponent {
   }
 
   queries() {
-    //this.entities();
-    //this.navigation();
+    this.entities();
+    this.navigation();
     this.property();
   }
 
@@ -118,7 +118,7 @@ export class AppComponent {
     let photo = person.property<Photo>("Photo");
     photo.get({responseType: 'entity'}).subscribe(console.log);
     photo.value().arraybuffer().subscribe(console.log);
-    photo.value().get().subscribe(console.log);
+    photo.value().blob().subscribe(console.log);
     let photoName = photo.property<string>("Name");
     photoName.get({responseType: 'value'}).subscribe(console.log);
 
