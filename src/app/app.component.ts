@@ -18,7 +18,7 @@ export class AppComponent {
     // Reset api
     this.api.resetDataSource().subscribe(() => {
       this.queries();
-      //this.mutate();
+      this.mutate();
     });
   }
 
