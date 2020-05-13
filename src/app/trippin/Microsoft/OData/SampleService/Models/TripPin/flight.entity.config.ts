@@ -1,8 +1,8 @@
-import { MetaEntity } from 'angular-odata';
+import { EntityConfig } from 'angular-odata';
 
 import { Flight } from './flight.entity';
 
-export const FlightMetaEntity = {
+export const FlightEntityConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.Flight",
   base: "Microsoft.OData.SampleService.Models.TripPin.PublicTransportation",
   annotations: [],
@@ -12,4 +12,4 @@ export const FlightMetaEntity = {
     To: {type: 'Microsoft.OData.SampleService.Models.TripPin.Airport', navigation: true},
     Airline: {type: 'Microsoft.OData.SampleService.Models.TripPin.Airline', navigation: true}
   }
-} as MetaEntity<Flight>;
+} as EntityConfig<Flight>;

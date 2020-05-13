@@ -13,7 +13,8 @@ import { Airport } from './airport.entity';
 export class AirportsService extends ODataEntityService<Airport> {
   static path: string = 'Airports';
   static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Airport';
-  
+  annotations = [{"type":"Org.OData.Core.V1.ResourcePath"},{"type":"Org.OData.Capabilities.V1.SearchRestrictions"},{"type":"Org.OData.Capabilities.V1.InsertRestrictions"},{"type":"Org.OData.Capabilities.V1.DeleteRestrictions"}];
+
   // Actions
   
   // Functions

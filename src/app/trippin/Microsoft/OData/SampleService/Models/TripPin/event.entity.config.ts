@@ -1,8 +1,8 @@
-import { MetaEntity } from 'angular-odata';
+import { EntityConfig } from 'angular-odata';
 
 import { Event } from './event.entity';
 
-export const EventMetaEntity = {
+export const EventEntityConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.Event",
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
   annotations: [],
@@ -10,4 +10,4 @@ export const EventMetaEntity = {
     Description: {type: 'string'},
     OccursAt: {type: 'Microsoft.OData.SampleService.Models.TripPin.EventLocation', nullable: false}
   }
-} as MetaEntity<Event>;
+} as EntityConfig<Event>;

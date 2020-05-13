@@ -1,8 +1,8 @@
-import { MetaEntity } from 'angular-odata';
+import { EntityConfig } from 'angular-odata';
 
 import { PlanItem } from './planitem.entity';
 
-export const PlanItemMetaEntity = {
+export const PlanItemEntityConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}],
   fields: {
@@ -12,4 +12,4 @@ export const PlanItemMetaEntity = {
     EndsAt: {type: 'Date'},
     Duration: {type: 'string'}
   }
-} as MetaEntity<PlanItem>;
+} as EntityConfig<PlanItem>;

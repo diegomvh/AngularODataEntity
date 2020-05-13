@@ -1,8 +1,8 @@
-import { MetaEntity } from 'angular-odata';
+import { EntityConfig } from 'angular-odata';
 
 import { Trip } from './trip.entity';
 
-export const TripMetaEntity = {
+export const TripEntityConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.Trip",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]},{"type":"Org.OData.Measures.V1.ISOCurrency","string":"USD"},{"type":"Org.OData.Measures.V1.Scale","int":2}],
   fields: {
@@ -17,4 +17,4 @@ export const TripMetaEntity = {
     Photos: {type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', collection: true, navigation: true},
     PlanItems: {type: 'Microsoft.OData.SampleService.Models.TripPin.PlanItem', collection: true, navigation: true}
   }
-} as MetaEntity<Trip>;
+} as EntityConfig<Trip>;

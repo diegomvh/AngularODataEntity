@@ -52,8 +52,7 @@ export class AirportsComponent implements OnInit {
   }
 
   ngOnInit() {
-    let meta = this.settings.metaForType<Airport>(this.resource.type()) 
-    console.log(JSON.stringify(meta.parser.toJsonSchema()));
+    let meta = this.settings.entityConfigForType<Airport>(this.resource.type()) 
     this.cols = meta.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));

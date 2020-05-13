@@ -1,8 +1,8 @@
-import { MetaEntity } from 'angular-odata';
+import { EntityConfig } from 'angular-odata';
 
 import { City } from './city.entity';
 
-export const CityMetaEntity = {
+export const CityEntityConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.City",
   annotations: [],
   fields: {
@@ -10,4 +10,4 @@ export const CityMetaEntity = {
     Name: {type: 'string', nullable: false},
     Region: {type: 'string', nullable: false}
   }
-} as MetaEntity<City>;
+} as EntityConfig<City>;

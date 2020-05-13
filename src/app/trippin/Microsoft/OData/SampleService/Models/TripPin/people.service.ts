@@ -7,8 +7,8 @@ import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, O
 
 import { PersonGender } from './persongender.enum';
 import { Location } from './location.entity';
-import { Photo } from './photo.entity';
 import { Person } from './person.entity';
+import { Flight } from './flight.entity';
 import { Trip } from './trip.entity';
 
 
@@ -16,7 +16,8 @@ import { Trip } from './trip.entity';
 export class PeopleService extends ODataEntityService<Person> {
   static path: string = 'People';
   static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Person';
-  
+  annotations = [{"type":"Org.OData.Core.V1.OptimisticConcurrency","values":["Concurrency"]},{"type":"Org.OData.Core.V1.ResourcePath"},{"type":"Org.OData.Capabilities.V1.NavigationRestrictions"},{"type":"Org.OData.Capabilities.V1.SearchRestrictions"},{"type":"Org.OData.Capabilities.V1.InsertRestrictions"}];
+
   // Actions
   
   // Functions
@@ -34,28 +35,64 @@ export class PeopleService extends ODataEntityService<Person> {
     return this.navigationProperty<Person>(entity, 'Friends').reference()
       .remove({etag, target});
   }
-  public Trips(entity: Person, options?: HttpOptions): Observable<[Trip[], ODataEntitiesAnnotations]> {
-    return this.navigationProperty<Trip>(entity, 'Trips')
-      .collection(options);
-  }
-  public addTripToTrips<Trip>(entity: Person, target: ODataEntityResource<Trip>, etag?: string): Observable<any> {
-    return this.navigationProperty<Trip>(entity, 'Trips').reference()
-      .add(target);
-  }
-  public removeTripFromTrips<Trip>(entity: Person, target?: ODataEntityResource<Trip>, etag?: string): Observable<any> {
-    return this.navigationProperty<Trip>(entity, 'Trips').reference()
-      .remove({etag, target});
-  }
-  public Photo(entity: Person, options?: HttpOptions): Observable<[Photo, ODataEntityAnnotations]> {
-    return this.navigationProperty<Photo>(entity, 'Photo')
+  public Airline(entity: Person, options?: HttpOptions): Observable<[Flight, ODataEntityAnnotations]> {
+    return this.navigationProperty<Flight>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/Airline')
       .single(options);
   }
-  public setPhotoAsPhoto<Photo>(entity: Person, target: ODataEntityResource<Photo>, etag?: string): Observable<any> {
-    return this.navigationProperty<Photo>(entity, 'Photo').reference()
+  public setFlightAsAirline<Flight>(entity: Person, target: ODataEntityResource<Flight>, etag?: string): Observable<any> {
+    return this.navigationProperty<Flight>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/Airline').reference()
       .set(target, {etag});
   }
-  public unsetPhotoAsPhoto<Photo>(entity: Person, target?: ODataEntityResource<Photo>, etag?: string): Observable<any> {
-    return this.navigationProperty<Photo>(entity, 'Photo').reference()
+  public unsetFlightAsAirline<Flight>(entity: Person, target?: ODataEntityResource<Flight>, etag?: string): Observable<any> {
+    return this.navigationProperty<Flight>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/Airline').reference()
+      .remove({etag, target});
+  }
+  public From(entity: Person, options?: HttpOptions): Observable<[Flight, ODataEntityAnnotations]> {
+    return this.navigationProperty<Flight>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/From')
+      .single(options);
+  }
+  public setFlightAsFrom<Flight>(entity: Person, target: ODataEntityResource<Flight>, etag?: string): Observable<any> {
+    return this.navigationProperty<Flight>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/From').reference()
+      .set(target, {etag});
+  }
+  public unsetFlightAsFrom<Flight>(entity: Person, target?: ODataEntityResource<Flight>, etag?: string): Observable<any> {
+    return this.navigationProperty<Flight>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/From').reference()
+      .remove({etag, target});
+  }
+  public To(entity: Person, options?: HttpOptions): Observable<[Flight, ODataEntityAnnotations]> {
+    return this.navigationProperty<Flight>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/To')
+      .single(options);
+  }
+  public setFlightAsTo<Flight>(entity: Person, target: ODataEntityResource<Flight>, etag?: string): Observable<any> {
+    return this.navigationProperty<Flight>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/To').reference()
+      .set(target, {etag});
+  }
+  public unsetFlightAsTo<Flight>(entity: Person, target?: ODataEntityResource<Flight>, etag?: string): Observable<any> {
+    return this.navigationProperty<Flight>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/To').reference()
+      .remove({etag, target});
+  }
+  public Photo(entity: Person, options?: HttpOptions): Observable<[Person, ODataEntityAnnotations]> {
+    return this.navigationProperty<Person>(entity, 'Photo')
+      .single(options);
+  }
+  public setPersonAsPhoto<Person>(entity: Person, target: ODataEntityResource<Person>, etag?: string): Observable<any> {
+    return this.navigationProperty<Person>(entity, 'Photo').reference()
+      .set(target, {etag});
+  }
+  public unsetPersonAsPhoto<Person>(entity: Person, target?: ODataEntityResource<Person>, etag?: string): Observable<any> {
+    return this.navigationProperty<Person>(entity, 'Photo').reference()
+      .remove({etag, target});
+  }
+  public Photos(entity: Person, options?: HttpOptions): Observable<[Trip[], ODataEntitiesAnnotations]> {
+    return this.navigationProperty<Trip>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Trip/Photos')
+      .collection(options);
+  }
+  public addTripToPhotos<Trip>(entity: Person, target: ODataEntityResource<Trip>, etag?: string): Observable<any> {
+    return this.navigationProperty<Trip>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Trip/Photos').reference()
+      .add(target);
+  }
+  public removeTripFromPhotos<Trip>(entity: Person, target?: ODataEntityResource<Trip>, etag?: string): Observable<any> {
+    return this.navigationProperty<Trip>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Trip/Photos').reference()
       .remove({etag, target});
   }
   
