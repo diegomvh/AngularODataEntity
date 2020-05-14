@@ -59,7 +59,7 @@ export class PeopleComponent implements OnInit {
   }
 
   ngOnInit() {
-    let config = this.resource.entityConfigForType()
+    let config = this.resource.config()
     this.cols = config.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));

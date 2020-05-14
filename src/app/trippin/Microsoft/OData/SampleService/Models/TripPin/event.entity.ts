@@ -1,5 +1,5 @@
-import { PlanItem } from './planitem.entity';
 import { EventLocation } from './eventlocation.entity';
+import { PlanItem } from './planitem.entity';
 
 export interface Event extends PlanItem {
   Description?: string;

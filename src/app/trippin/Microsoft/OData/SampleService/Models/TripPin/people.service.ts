@@ -15,8 +15,8 @@ import { Trip } from './trip.entity';
 @Injectable()
 export class PeopleService extends ODataEntityService<Person> {
   static path: string = 'People';
-  static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Person';
-  annotations = [{"type":"Org.OData.Core.V1.OptimisticConcurrency","values":["Concurrency"]},{"type":"Org.OData.Core.V1.ResourcePath"},{"type":"Org.OData.Capabilities.V1.NavigationRestrictions"},{"type":"Org.OData.Capabilities.V1.SearchRestrictions"},{"type":"Org.OData.Capabilities.V1.InsertRestrictions"}];
+  static type: string = 'Microsoft.OData.SampleService.Models.TripPin.People';
+  static entity: string = 'Microsoft.OData.SampleService.Models.TripPin.Person';
 
   // Actions
   

@@ -15,8 +15,8 @@ import { Trip } from './trip.entity';
 @Injectable()
 export class MeService extends ODataEntityService<Person> {
   static path: string = 'Me';
-  static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Person';
-  annotations = [{"type":"Org.OData.Core.V1.ResourcePath"}];
+  static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Me';
+  static entity: string = 'Microsoft.OData.SampleService.Models.TripPin.Person';
   
   // Actions
   

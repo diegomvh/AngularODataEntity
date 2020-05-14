@@ -11,8 +11,8 @@ import { Airline } from './airline.entity';
 @Injectable()
 export class AirlinesService extends ODataEntityService<Airline> {
   static path: string = 'Airlines';
-  static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Airline';
-  annotations = [{"type":"Org.OData.Core.V1.ResourcePath"},{"type":"Org.OData.Capabilities.V1.SearchRestrictions"},{"type":"Org.OData.Capabilities.V1.InsertRestrictions"}];
+  static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Airlines';
+  static entity: string = 'Microsoft.OData.SampleService.Models.TripPin.Airline';
 
   // Actions
   
