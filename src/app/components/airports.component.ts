@@ -42,18 +42,16 @@ export class AirportsComponent implements OnInit {
   loading: boolean;
 
   constructor(
-    private settings: ODataSettings,
     private odata: ODataClient,
     private airports: AirportsService
   ) { 
     this.resource = this.airports.entities();
-    console.log(this.resource.toJSON());
     console.log(this.odata.fromJSON(this.resource.toJSON()));
   }
 
   ngOnInit() {
-    let meta = this.settings.entityConfigForType<Airport>(this.resource.type()) 
-    this.cols = meta.fields()
+    let config = this.resource.config();
+    this.cols = config.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));
     this.loading = true;

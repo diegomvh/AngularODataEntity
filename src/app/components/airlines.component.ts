@@ -40,12 +40,10 @@ export class AirlinesComponent implements OnInit {
   loading: boolean;
 
   constructor(
-    private settings: ODataSettings,
     private odata: ODataClient,
     private airlines: AirlinesService
   ) { 
     this.resource = this.airlines.entities();
-    console.log(this.resource.toJSON());
     console.log(this.odata.fromJSON(this.resource.toJSON()));
   }
 

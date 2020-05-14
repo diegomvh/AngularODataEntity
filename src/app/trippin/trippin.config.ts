@@ -24,7 +24,7 @@ export const TripPinConfig = {
   metadataUrl: 'https://services.odata.org/V4/TripPinServiceRW/$metadata',
   withCredentials: false,
   stringAsEnum: true,
-  creation: new Date('2020-05-14T08:58:48.0428754-03:00'),
+  creation: new Date('2020-05-14T20:31:56.5869198-03:00'),
   version: '4.0',
   apis: {
     'Microsoft.OData.SampleService.Models.TripPin.DefaultContainer': DefaultContainerApiConfig},

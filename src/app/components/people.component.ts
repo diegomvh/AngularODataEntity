@@ -49,12 +49,10 @@ export class PeopleComponent implements OnInit {
   @ViewChild('person') person: PersonComponent;
 
   constructor(
-    private settings: ODataSettings,
     private odata: ODataClient,
     private people: PeopleService
   ) { 
     this.resource = this.people.entities();
-    console.log(this.resource.toJSON());
     console.log(this.odata.fromJSON(this.resource.toJSON()));
   }
 
