@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { PeopleService, Person, PhotosService, Trip } from '../trippin';
-import { ODataClient, ODataEntityAnnotations, ExpandOptions } from 'angular-odata';
+import { PeopleService, Person, PhotosService } from '../trippin';
 
 @Component({
   selector: 'trip-person',
@@ -13,7 +12,6 @@ export class PersonComponent {
   display: boolean;
 
   constructor(
-    private odata: ODataClient,
     private photos: PhotosService,
     private people: PeopleService
   ) { 
@@ -22,8 +20,8 @@ export class PersonComponent {
   show(name: string) {
     let person = this.people.entity({UserName: name});
     person.expand({
-      Friends: <ExpandOptions<Person>>{orderBy: [["UserName", 'asc']]}, 
-      Trips: <ExpandOptions<Trip>>{
+      Friends: {orderBy: [["UserName", 'asc']]}, 
+      Trips: {
         orderBy: ['StartsAt', ['Name', 'desc'], ['Description', 'asc']],
         expand: {
           Photos: {}, 
