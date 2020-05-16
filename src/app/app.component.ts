@@ -30,8 +30,8 @@ export class AppComponent {
 
   entities() {
     // Use OData Service Factory
-    let airportsService = this.factory.create<Airport>("Airports");
-    let peopleService = this.factory.create<Person>("People");
+    let airportsService = this.factory.createEntityService<Airport>("Airports");
+    let peopleService = this.factory.createEntityService<Person>("People");
 
     let airports = airportsService.entities();
 
@@ -87,7 +87,7 @@ export class AppComponent {
   }
 
   navigation() {
-    let peopleService = this.factory.create<Person>("People");
+    let peopleService = this.factory.createEntityService<Person>("People");
     let person = peopleService.entity("scottketchum");
 
     let friends = person.navigationProperty<Person>("Friends");
@@ -95,8 +95,8 @@ export class AppComponent {
   }
 
   property() {
-    // Create Service with Metadata Type
-    let peopleService = this.factory.create<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
+    // Create Service with Entity Type
+    let peopleService = this.factory.createEntityService<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
     let person = peopleService.entity("scottketchum");
     person.get().subscribe(console.log);
 

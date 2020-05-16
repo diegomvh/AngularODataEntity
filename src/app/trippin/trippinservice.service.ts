@@ -1,26 +1,27 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { ODataClient, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
 
+//#region ODataApi Imports
 import { Airport } from './Microsoft/OData/SampleService/Models/TripPin/airport.entity';
-
+//#endregion
 
 @Injectable()
 export class TripPinService {
  
   constructor(protected client: ODataClient) { }
 
-  // Actions
+  //#region ODataApi Actions
   public resetDataSource(options?: HttpOptions): Observable<[any, ODataEntityAnnotations]> {
     let args = null;
     var res = this.client.action<any>('ResetDataSource', '');
     return res.call(args, 'entity', options);
   }
-  
-  // Functions
+  //#endregion
+  //#region ODataApi Functions
   public getNearestAirport(lat: number, lon: number, options?: HttpOptions): Observable<[Airport, ODataEntityAnnotations]> {
     let args = Object.entries({
         lat: lat, 
@@ -31,5 +32,5 @@ export class TripPinService {
     var res = this.client.function<Airport>('GetNearestAirport', 'Microsoft.OData.SampleService.Models.TripPin.Airport');
     return res.call(args, 'entity', options);
   }
-  
+  //#endregion
 }

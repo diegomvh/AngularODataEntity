@@ -1,5 +1,7 @@
-import { ApiConfig } from 'angular-odata';
+﻿import { ApiConfig } from 'angular-odata';
 
+//#region ODataApi Imports
+//#endregion
 
 export const DefaultContainerApiConfig = {
   type: "",

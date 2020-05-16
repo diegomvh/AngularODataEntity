@@ -1,6 +1,8 @@
-import { EntityConfig } from 'angular-odata';
+﻿import { EntityConfig } from 'angular-odata';
 
+//#region ODataApi Imports
 import { Photo } from './photo.entity';
+//#endregion
 
 export const PhotoEntityConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.Photo",

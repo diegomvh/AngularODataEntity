@@ -1,3 +1,4 @@
+﻿//#region ODataApi Imports
 export * from './Microsoft/OData/SampleService/Models/TripPin/persongender.enum';
 export * from './Microsoft/OData/SampleService/Models/TripPin/persongender.enum.config';
 export * from './Microsoft/OData/SampleService/Models/TripPin/city.entity';
@@ -13,6 +14,19 @@ export * from './Microsoft/OData/SampleService/Models/TripPin/publictransportati
 export * from './Microsoft/OData/SampleService/Models/TripPin/flight.entity';
 export * from './Microsoft/OData/SampleService/Models/TripPin/event.entity';
 export * from './Microsoft/OData/SampleService/Models/TripPin/trip.entity';
+export * from './Microsoft/OData/SampleService/Models/TripPin/city.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/location.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/eventlocation.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/airportlocation.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/photo.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/person.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/airline.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/airport.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/planitem.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/publictransportation.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/flight.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/event.entity.config';
+export * from './Microsoft/OData/SampleService/Models/TripPin/trip.entity.config';
 export * from './trippinservice.service';
 export * from './Microsoft/OData/SampleService/Models/TripPin/photos.service';
 export * from './Microsoft/OData/SampleService/Models/TripPin/people.service';
@@ -23,6 +37,7 @@ export * from './Microsoft/OData/SampleService/Models/TripPin/photos.service.con
 export * from './Microsoft/OData/SampleService/Models/TripPin/people.service.config';
 export * from './Microsoft/OData/SampleService/Models/TripPin/airlines.service.config';
 export * from './Microsoft/OData/SampleService/Models/TripPin/airports.service.config';
-export * from './Microsoft/OData/SampleService/Models/TripPin/me.service.config'
+export * from './Microsoft/OData/SampleService/Models/TripPin/me.service.config';
+//#endregion
 export * from './trippin.config';
 export * from './trippin.module';

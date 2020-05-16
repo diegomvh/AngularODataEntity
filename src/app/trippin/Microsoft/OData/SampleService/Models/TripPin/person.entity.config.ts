@@ -1,6 +1,8 @@
-import { EntityConfig } from 'angular-odata';
+﻿import { EntityConfig } from 'angular-odata';
 
+//#region ODataApi Imports
 import { Person } from './person.entity';
+//#endregion
 
 export const PersonEntityConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.Person",

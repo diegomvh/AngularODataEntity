@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
+import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, ODataNavigationPropertyResource, HttpOptions } from 'angular-odata';
 
+//#region ODataApi Imports
 import { Airline } from './airline.entity';
-
+//#endregion
 
 @Injectable()
 export class AirlinesService extends ODataEntityService<Airline> {
@@ -14,10 +15,10 @@ export class AirlinesService extends ODataEntityService<Airline> {
   static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Airlines';
   static entity: string = 'Microsoft.OData.SampleService.Models.TripPin.Airline';
 
-  // Actions
-  
-  // Functions
-  
-  // Navigations
-  
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

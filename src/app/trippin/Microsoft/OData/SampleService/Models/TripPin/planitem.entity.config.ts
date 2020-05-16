@@ -1,6 +1,8 @@
-import { EntityConfig } from 'angular-odata';
+﻿import { EntityConfig } from 'angular-odata';
 
+//#region ODataApi Imports
 import { PlanItem } from './planitem.entity';
+//#endregion
 
 export const PlanItemEntityConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",

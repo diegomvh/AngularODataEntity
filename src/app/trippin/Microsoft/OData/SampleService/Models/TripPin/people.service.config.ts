@@ -1,5 +1,7 @@
-import { ServiceConfig } from 'angular-odata';
+﻿import { ServiceConfig } from 'angular-odata';
 
+//#region ODataApi Imports
+//#endregion
 
 export const PeopleServiceConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.People",

@@ -1,7 +1,10 @@
+﻿//#region ODataApi Imports
 import { Photo } from './photo.entity';
 import { PlanItem } from './planitem.entity';
+//#endregion
 
 export interface Trip {
+  //#region ODataApi Properties
   TripId: number;
   ShareId?: string;
   Description?: string;
@@ -11,5 +14,6 @@ export interface Trip {
   EndsAt: Date;
   Tags: string[];
   Photos?: Photo[];
-  PlanItems?: PlanItem[]
+  PlanItems?: PlanItem[];
+  //#endregion
 }

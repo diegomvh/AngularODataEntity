@@ -1,3 +1,4 @@
+﻿//#region ODataApi Imports
 import { DefaultContainerApiConfig } from './Microsoft/OData/SampleService/Models/TripPin/defaultcontainer.api.config';
 import { PersonGenderEnumConfig } from './Microsoft/OData/SampleService/Models/TripPin/persongender.enum.config';
 import { CityEntityConfig } from './Microsoft/OData/SampleService/Models/TripPin/city.entity.config';
@@ -18,13 +19,14 @@ import { PeopleServiceConfig } from './Microsoft/OData/SampleService/Models/Trip
 import { AirlinesServiceConfig } from './Microsoft/OData/SampleService/Models/TripPin/airlines.service.config';
 import { AirportsServiceConfig } from './Microsoft/OData/SampleService/Models/TripPin/airports.service.config';
 import { MeServiceConfig } from './Microsoft/OData/SampleService/Models/TripPin/me.service.config';
+//#endregion
 
 export const TripPinConfig = {
   baseUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
   metadataUrl: 'https://services.odata.org/V4/TripPinServiceRW/$metadata',
   withCredentials: false,
   stringAsEnum: true,
-  creation: new Date('2020-05-14T20:31:56.5869198-03:00'),
+  creation: new Date('2020-05-16T10:13:04.8660983-03:00'),
   version: '4.0',
   apis: {
     'Microsoft.OData.SampleService.Models.TripPin.DefaultContainer': DefaultContainerApiConfig},

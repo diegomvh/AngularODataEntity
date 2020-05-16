@@ -1,5 +1,9 @@
+﻿//#region ODataApi Imports
 import { PlanItem } from './planitem.entity';
+//#endregion
 
 export interface PublicTransportation extends PlanItem {
-  SeatNumber?: string
+  //#region ODataApi Properties
+  SeatNumber?: string;
+  //#endregion
 }

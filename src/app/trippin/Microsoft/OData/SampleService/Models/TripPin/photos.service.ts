@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
+import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, ODataNavigationPropertyResource, HttpOptions } from 'angular-odata';
 
+//#region ODataApi Imports
 import { Photo } from './photo.entity';
-
+//#endregion
 
 @Injectable()
 export class PhotosService extends ODataEntityService<Photo> {
@@ -14,10 +15,10 @@ export class PhotosService extends ODataEntityService<Photo> {
   static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Photos';
   static entity: string = 'Microsoft.OData.SampleService.Models.TripPin.Photo';
 
-  // Actions
-  
-  // Functions
-  
-  // Navigations
-  
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

@@ -1,6 +1,8 @@
-import { EntityConfig } from 'angular-odata';
+﻿import { EntityConfig } from 'angular-odata';
 
+//#region ODataApi Imports
 import { Event } from './event.entity';
+//#endregion
 
 export const EventEntityConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.Event",

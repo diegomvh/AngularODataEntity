@@ -1,5 +1,7 @@
-import { ServiceConfig } from 'angular-odata';
+﻿import { ServiceConfig } from 'angular-odata';
 
+//#region ODataApi Imports
+//#endregion
 
 export const PhotosServiceConfig = {
   type: "Microsoft.OData.SampleService.Models.TripPin.Photos",
