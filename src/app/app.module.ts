@@ -24,7 +24,7 @@ import { DialogModule } from 'primeng/dialog';
     InputTextModule,
     TableModule,
     DialogModule,
-    ODataModule.forRoot(Object.assign(TripPinConfig, {baseUrl: 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW/' })),
+    ODataModule.forRoot(Object.assign(TripPinConfig, {serviceRootUrl: 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW/' })),
     TripPinModule
   ],
   providers: [],
