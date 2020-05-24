@@ -24,7 +24,7 @@ import { MeServiceConfig } from './Microsoft/OData/SampleService/Models/TripPin/
 export const TripPinConfig = {
   serviceRootUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
   metadataUrl: 'https://services.odata.org/V4/TripPinServiceRW/$metadata',
-  creation: new Date('2020-05-19T07:20:38.5450114-03:00'),
+  creation: new Date('2020-05-24T20:41:17.9562362-03:00'),
   apis: {
     'Microsoft.OData.SampleService.Models.TripPin.DefaultContainer': DefaultContainerApiConfig},
   enums: {
