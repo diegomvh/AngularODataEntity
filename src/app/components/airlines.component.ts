@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Airline, AirlinesService } from '../trippin';
-import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odata';
+import { ODataEntitySetResource, ODataSettings, ODataClient, Alias } from 'angular-odata';
 
 @Component({
   selector: 'trip-airlines',
@@ -38,13 +38,13 @@ export class AirlinesComponent implements OnInit {
 
   resource: ODataEntitySetResource<Airline>;
   loading: boolean;
+  alias: Alias;
 
   constructor(
-    private odata: ODataClient,
     private airlines: AirlinesService
   ) { 
     this.resource = this.airlines.entities();
-    console.log(this.odata.fromJSON(this.resource.toJSON()));
+    this.alias = this.resource.alias("alias");
   }
 
   ngOnInit() {
@@ -70,7 +70,8 @@ export class AirlinesComponent implements OnInit {
   filter(value: string, field: string) {
     field = `tolower(${field})`; 
     if (value) {
-      let filter = {[field]: {contains: value.toLowerCase()}};
+      this.alias.value = value.toLowerCase();
+      let filter = {[field]: {contains: this.alias}};
       this.resource.filter().assign(filter);
     } else {
       this.resource.filter().unset(field);

@@ -53,7 +53,6 @@ export class PeopleComponent implements OnInit {
     private people: PeopleService
   ) { 
     this.resource = this.people.entities();
-    console.log(this.odata.fromJSON(this.resource.toJSON()));
   }
 
   ngOnInit() {

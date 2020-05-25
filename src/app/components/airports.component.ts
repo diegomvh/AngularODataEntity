@@ -42,11 +42,9 @@ export class AirportsComponent implements OnInit {
   loading: boolean;
 
   constructor(
-    private odata: ODataClient,
     private airports: AirportsService
   ) { 
     this.resource = this.airports.entities();
-    console.log(this.odata.fromJSON(this.resource.toJSON()));
   }
 
   ngOnInit() {
