@@ -3,7 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, ODataNavigationPropertyResource, HttpOptions } from 'angular-odata';
+import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, EntityKey, ODataValueAnnotations, ODataEntityResource, ODataEntitySetResource, ODataNavigationPropertyResource, HttpOptions } from 'angular-odata';
 
 //#region ODataApi Imports
 import { PersonGender } from './persongender.enum';
@@ -25,23 +25,23 @@ export class PeopleService extends ODataEntityService<Person> {
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public friends(entity: Person): ODataNavigationPropertyResource<Person> {
-    return this.navigationProperty<Person>(entity, 'Friends');
+  public friends(entity: EntityKey<Person>): ODataNavigationPropertyResource<Person> {
+    return this.entity(entity).navigationProperty<Person>('Friends');
   }
-  public airline(entity: Person): ODataNavigationPropertyResource<Airline> {
-    return this.navigationProperty<Airline>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/Airline');
+  public airline(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airline> {
+    return this.entity(entity).navigationProperty<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline');
   }
-  public from(entity: Person): ODataNavigationPropertyResource<Airport> {
-    return this.navigationProperty<Airport>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/From');
+  public from(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airport> {
+    return this.entity(entity).navigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From');
   }
-  public to(entity: Person): ODataNavigationPropertyResource<Airport> {
-    return this.navigationProperty<Airport>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Flight/To');
+  public to(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airport> {
+    return this.entity(entity).navigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To');
   }
-  public photo(entity: Person): ODataNavigationPropertyResource<Photo> {
-    return this.navigationProperty<Photo>(entity, 'Photo');
+  public photo(entity: EntityKey<Person>): ODataNavigationPropertyResource<Photo> {
+    return this.entity(entity).navigationProperty<Photo>('Photo');
   }
-  public photos(entity: Person): ODataNavigationPropertyResource<Photo> {
-    return this.navigationProperty<Photo>(entity, 'Microsoft.OData.SampleService.Models.TripPin.Trip/Photos');
+  public photos(entity: EntityKey<Person>): ODataNavigationPropertyResource<Photo> {
+    return this.entity(entity).navigationProperty<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos');
   }
   //#endregion
 }
