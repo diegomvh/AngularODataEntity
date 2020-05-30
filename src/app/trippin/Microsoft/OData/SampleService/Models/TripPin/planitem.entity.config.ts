@@ -4,7 +4,7 @@
 import { PlanItem } from './planitem.entity';
 //#endregion
 
-export const PlanItemEntityConfig = {
+export const PlanItemConfig = {
   name: "PlanItem",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}],
   fields: {

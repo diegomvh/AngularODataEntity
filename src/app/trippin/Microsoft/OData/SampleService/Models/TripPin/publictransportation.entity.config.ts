@@ -4,9 +4,9 @@
 import { PublicTransportation } from './publictransportation.entity';
 //#endregion
 
-export const PublicTransportationEntityConfig = {
+export const PublicTransportationConfig = {
   name: "PublicTransportation",
-  base: "",
+  base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
   annotations: [],
   fields: {
     SeatNumber: {type: 'string'}

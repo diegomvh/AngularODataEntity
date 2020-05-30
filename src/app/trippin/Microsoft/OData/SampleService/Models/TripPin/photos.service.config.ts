@@ -4,7 +4,7 @@
 //#endregion
 
 export const PhotosServiceConfig = {
-  name: "Photos",
+  name: "PhotosService",
   annotations: [
   {
     "type": "Org.OData.Core.V1.ResourcePath"

@@ -4,9 +4,9 @@
 import { Event } from './event.entity';
 //#endregion
 
-export const EventEntityConfig = {
+export const EventConfig = {
   name: "Event",
-  base: "",
+  base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
   annotations: [],
   fields: {
     Description: {type: 'string'},

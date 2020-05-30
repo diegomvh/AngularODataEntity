@@ -4,7 +4,7 @@
 import { Photo } from './photo.entity';
 //#endregion
 
-export const PhotoEntityConfig = {
+export const PhotoConfig = {
   name: "Photo",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]},{"type":"Org.OData.Core.V1.AcceptableMediaTypes"}],
   fields: {

@@ -4,7 +4,7 @@
 import { PersonGender } from './persongender.enum';
 //#endregion
 
-export const PersonGenderEnumConfig = {
+export const PersonGenderConfig = {
   name: "PersonGender",
   members: PersonGender
 } as EnumConfig<PersonGender>;

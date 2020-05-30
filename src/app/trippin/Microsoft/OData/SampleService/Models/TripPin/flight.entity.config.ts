@@ -4,9 +4,9 @@
 import { Flight } from './flight.entity';
 //#endregion
 
-export const FlightEntityConfig = {
+export const FlightConfig = {
   name: "Flight",
-  base: "",
+  base: "Microsoft.OData.SampleService.Models.TripPin.PublicTransportation",
   annotations: [],
   fields: {
     FlightNumber: {type: 'string', nullable: false},

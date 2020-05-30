@@ -4,9 +4,9 @@
 import { EventLocation } from './eventlocation.entity';
 //#endregion
 
-export const EventLocationEntityConfig = {
+export const EventLocationConfig = {
   name: "EventLocation",
-  base: "",
+  base: "Microsoft.OData.SampleService.Models.TripPin.Location",
   annotations: [],
   fields: {
     BuildingInfo: {type: 'string'}

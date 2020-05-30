@@ -4,7 +4,7 @@
 import { Location } from './location.entity';
 //#endregion
 
-export const LocationEntityConfig = {
+export const LocationConfig = {
   name: "Location",
   annotations: [],
   fields: {

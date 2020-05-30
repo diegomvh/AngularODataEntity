@@ -4,7 +4,7 @@
 import { Trip } from './trip.entity';
 //#endregion
 
-export const TripEntityConfig = {
+export const TripConfig = {
   name: "Trip",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]},{"type":"Org.OData.Measures.V1.ISOCurrency","string":"USD"},{"type":"Org.OData.Measures.V1.Scale","int":2}],
   fields: {

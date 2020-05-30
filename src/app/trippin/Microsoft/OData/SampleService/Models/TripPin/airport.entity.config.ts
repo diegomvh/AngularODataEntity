@@ -4,7 +4,7 @@
 import { Airport } from './airport.entity';
 //#endregion
 
-export const AirportEntityConfig = {
+export const AirportConfig = {
   name: "Airport",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]},{"type":"Org.OData.Core.V1.Immutable","bool":true}],
   fields: {

@@ -1,42 +1,42 @@
 ﻿import { Schema } from 'angular-odata';
 
 //#region ODataApi Imports
-import { PersonGenderEnumConfig } from './persongender.enum.config';
-import { CityEntityConfig } from './city.entity.config';
-import { LocationEntityConfig } from './location.entity.config';
-import { EventLocationEntityConfig } from './eventlocation.entity.config';
-import { AirportLocationEntityConfig } from './airportlocation.entity.config';
-import { PhotoEntityConfig } from './photo.entity.config';
-import { PersonEntityConfig } from './person.entity.config';
-import { AirlineEntityConfig } from './airline.entity.config';
-import { AirportEntityConfig } from './airport.entity.config';
-import { PlanItemEntityConfig } from './planitem.entity.config';
-import { PublicTransportationEntityConfig } from './publictransportation.entity.config';
-import { FlightEntityConfig } from './flight.entity.config';
-import { EventEntityConfig } from './event.entity.config';
-import { TripEntityConfig } from './trip.entity.config';
+import { PersonGenderConfig } from './persongender.enum.config';
+import { CityConfig } from './city.entity.config';
+import { LocationConfig } from './location.entity.config';
+import { EventLocationConfig } from './eventlocation.entity.config';
+import { AirportLocationConfig } from './airportlocation.entity.config';
+import { PhotoConfig } from './photo.entity.config';
+import { PersonConfig } from './person.entity.config';
+import { AirlineConfig } from './airline.entity.config';
+import { AirportConfig } from './airport.entity.config';
+import { PlanItemConfig } from './planitem.entity.config';
+import { PublicTransportationConfig } from './publictransportation.entity.config';
+import { FlightConfig } from './flight.entity.config';
+import { EventConfig } from './event.entity.config';
+import { TripConfig } from './trip.entity.config';
 import { DefaultContainerContainer } from './defaultcontainer.container';
 //#endregion
 
 export const TripPinSchema = {
   namespace: "Microsoft.OData.SampleService.Models.TripPin",
   enums: [
-    PersonGenderEnumConfig
+    PersonGenderConfig
   ],
   entities: [
-    CityEntityConfig,
-    LocationEntityConfig,
-    EventLocationEntityConfig,
-    AirportLocationEntityConfig,
-    PhotoEntityConfig,
-    PersonEntityConfig,
-    AirlineEntityConfig,
-    AirportEntityConfig,
-    PlanItemEntityConfig,
-    PublicTransportationEntityConfig,
-    FlightEntityConfig,
-    EventEntityConfig,
-    TripEntityConfig
+    CityConfig,
+    LocationConfig,
+    EventLocationConfig,
+    AirportLocationConfig,
+    PhotoConfig,
+    PersonConfig,
+    AirlineConfig,
+    AirportConfig,
+    PlanItemConfig,
+    PublicTransportationConfig,
+    FlightConfig,
+    EventConfig,
+    TripConfig
   ],
   containers: [
     DefaultContainerContainer

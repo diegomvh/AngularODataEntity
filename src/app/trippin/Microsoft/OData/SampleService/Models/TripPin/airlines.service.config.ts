@@ -4,7 +4,7 @@
 //#endregion
 
 export const AirlinesServiceConfig = {
-  name: "Airlines",
+  name: "AirlinesService",
   annotations: [
   {
     "type": "Org.OData.Core.V1.ResourcePath"

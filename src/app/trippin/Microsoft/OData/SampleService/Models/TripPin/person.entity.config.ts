@@ -4,7 +4,7 @@
 import { Person } from './person.entity';
 //#endregion
 
-export const PersonEntityConfig = {
+export const PersonConfig = {
   name: "Person",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]},{"type":"Org.OData.Core.V1.Computed","bool":true}],
   fields: {

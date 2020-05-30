@@ -4,7 +4,7 @@
 import { Airline } from './airline.entity';
 //#endregion
 
-export const AirlineEntityConfig = {
+export const AirlineConfig = {
   name: "Airline",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}],
   fields: {

@@ -4,7 +4,7 @@
 import { City } from './city.entity';
 //#endregion
 
-export const CityEntityConfig = {
+export const CityConfig = {
   name: "City",
   annotations: [],
   fields: {

@@ -133,13 +133,11 @@ export class AppComponent {
   createPerson() {
     // Use Person Service
     this.people.create({
-      Concurrency: 0,
       Emails: ['some@email.com'], 
       UserName: 'diegomvh', 
       Gender: PersonGender.Male, 
       FirstName: 'Diego',
-      LastName: 'van Haaster',
-      AddressInfo: []
+      LastName: 'van Haaster'
     }).pipe(
       switchMap(([person, entity]) => {
         return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, entity.etag);
