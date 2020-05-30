@@ -5,7 +5,7 @@ import { Person } from './person.entity';
 //#endregion
 
 export const PersonEntityConfig = {
-  type: "Microsoft.OData.SampleService.Models.TripPin.Person",
+  name: "Person",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]},{"type":"Org.OData.Core.V1.Computed","bool":true}],
   fields: {
     UserName: {type: 'string', key: true, ref: 'UserName', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},

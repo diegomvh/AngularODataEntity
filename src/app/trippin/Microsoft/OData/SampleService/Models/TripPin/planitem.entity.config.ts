@@ -5,7 +5,7 @@ import { PlanItem } from './planitem.entity';
 //#endregion
 
 export const PlanItemEntityConfig = {
-  type: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
+  name: "PlanItem",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}],
   fields: {
     PlanItemId: {type: 'number', key: true, ref: 'PlanItemId', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},

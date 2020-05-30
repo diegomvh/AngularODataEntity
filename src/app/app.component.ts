@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient } from 'angular-odata';
-import { PeopleService, Airport, Person, PersonGender, TripPinService, Photo } from './trippin';
+import { PeopleService, Airport, Person, PersonGender, Photo } from './trippin';
 import { switchMap } from 'rxjs/operators';
+import { TripPinApi } from './trippin/trippinapi.api';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
   constructor(
     private odata: ODataClient,
     private factory: ODataServiceFactory,
-    private api: TripPinService,
+    private api: TripPinApi,
     private people: PeopleService
   ) {
     // Reset api

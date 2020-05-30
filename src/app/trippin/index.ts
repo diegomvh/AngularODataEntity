@@ -27,7 +27,6 @@ export * from './Microsoft/OData/SampleService/Models/TripPin/publictransportati
 export * from './Microsoft/OData/SampleService/Models/TripPin/flight.entity.config';
 export * from './Microsoft/OData/SampleService/Models/TripPin/event.entity.config';
 export * from './Microsoft/OData/SampleService/Models/TripPin/trip.entity.config';
-export * from './trippinservice.service';
 export * from './Microsoft/OData/SampleService/Models/TripPin/photos.service';
 export * from './Microsoft/OData/SampleService/Models/TripPin/people.service';
 export * from './Microsoft/OData/SampleService/Models/TripPin/airlines.service';

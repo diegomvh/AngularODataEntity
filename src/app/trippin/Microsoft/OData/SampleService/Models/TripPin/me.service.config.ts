@@ -4,7 +4,7 @@
 //#endregion
 
 export const MeServiceConfig = {
-  type: "Microsoft.OData.SampleService.Models.TripPin.Me",
+  name: "Me",
   annotations: [
   {
     "type": "Org.OData.Core.V1.ResourcePath"

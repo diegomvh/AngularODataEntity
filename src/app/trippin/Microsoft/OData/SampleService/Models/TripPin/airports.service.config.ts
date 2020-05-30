@@ -4,7 +4,7 @@
 //#endregion
 
 export const AirportsServiceConfig = {
-  type: "Microsoft.OData.SampleService.Models.TripPin.Airports",
+  name: "Airports",
   annotations: [
   {
     "type": "Org.OData.Core.V1.ResourcePath"

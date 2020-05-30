@@ -5,8 +5,8 @@ import { AirportLocation } from './airportlocation.entity';
 //#endregion
 
 export const AirportLocationEntityConfig = {
-  type: "Microsoft.OData.SampleService.Models.TripPin.AirportLocation",
-  base: "Microsoft.OData.SampleService.Models.TripPin.Location",
+  name: "AirportLocation",
+  base: "",
   annotations: [],
   fields: {
     Loc: {type: 'Object', nullable: false, srid: 4326}

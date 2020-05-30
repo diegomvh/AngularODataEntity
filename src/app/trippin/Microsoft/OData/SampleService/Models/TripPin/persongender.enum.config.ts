@@ -5,6 +5,6 @@ import { PersonGender } from './persongender.enum';
 //#endregion
 
 export const PersonGenderEnumConfig = {
-  type: "Microsoft.OData.SampleService.Models.TripPin.PersonGender",
+  name: "PersonGender",
   members: PersonGender
 } as EnumConfig<PersonGender>;

@@ -4,7 +4,7 @@
 //#endregion
 
 export const PeopleServiceConfig = {
-  type: "Microsoft.OData.SampleService.Models.TripPin.People",
+  name: "People",
   annotations: [
   {
     "type": "Org.OData.Core.V1.OptimisticConcurrency",

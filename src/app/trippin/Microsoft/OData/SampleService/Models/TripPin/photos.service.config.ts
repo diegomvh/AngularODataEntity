@@ -4,7 +4,7 @@
 //#endregion
 
 export const PhotosServiceConfig = {
-  type: "Microsoft.OData.SampleService.Models.TripPin.Photos",
+  name: "Photos",
   annotations: [
   {
     "type": "Org.OData.Core.V1.ResourcePath"

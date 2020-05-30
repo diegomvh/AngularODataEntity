@@ -5,7 +5,7 @@ import { City } from './city.entity';
 //#endregion
 
 export const CityEntityConfig = {
-  type: "Microsoft.OData.SampleService.Models.TripPin.City",
+  name: "City",
   annotations: [],
   fields: {
     CountryRegion: {type: 'string', nullable: false},

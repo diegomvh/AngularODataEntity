@@ -5,7 +5,7 @@ import { Trip } from './trip.entity';
 //#endregion
 
 export const TripEntityConfig = {
-  type: "Microsoft.OData.SampleService.Models.TripPin.Trip",
+  name: "Trip",
   annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]},{"type":"Org.OData.Measures.V1.ISOCurrency","string":"USD"},{"type":"Org.OData.Measures.V1.Scale","int":2}],
   fields: {
     TripId: {type: 'number', key: true, ref: 'TripId', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
