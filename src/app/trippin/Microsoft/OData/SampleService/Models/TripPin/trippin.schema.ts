@@ -20,22 +20,25 @@ import { DefaultContainerContainer } from './defaultcontainer.container';
 
 export const TripPinSchema = {
   namespace: "Microsoft.OData.SampleService.Models.TripPin",
-  enums: {
-    'PersonGender': PersonGenderEnumConfig},
-  entities: {
-    'City': CityEntityConfig,
-    'Location': LocationEntityConfig,
-    'EventLocation': EventLocationEntityConfig,
-    'AirportLocation': AirportLocationEntityConfig,
-    'Photo': PhotoEntityConfig,
-    'Person': PersonEntityConfig,
-    'Airline': AirlineEntityConfig,
-    'Airport': AirportEntityConfig,
-    'PlanItem': PlanItemEntityConfig,
-    'PublicTransportation': PublicTransportationEntityConfig,
-    'Flight': FlightEntityConfig,
-    'Event': EventEntityConfig,
-    'Trip': TripEntityConfig},
-  containers: {
-    'DefaultContainerContainer': DefaultContainerContainer}
+  enums: [
+    PersonGenderEnumConfig
+  ],
+  entities: [
+    CityEntityConfig,
+    LocationEntityConfig,
+    EventLocationEntityConfig,
+    AirportLocationEntityConfig,
+    PhotoEntityConfig,
+    PersonEntityConfig,
+    AirlineEntityConfig,
+    AirportEntityConfig,
+    PlanItemEntityConfig,
+    PublicTransportationEntityConfig,
+    FlightEntityConfig,
+    EventEntityConfig,
+    TripEntityConfig
+  ],
+  containers: [
+    DefaultContainerContainer
+  ]
 } as Schema;

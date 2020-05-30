@@ -10,10 +10,11 @@ import { MeServiceConfig } from './me.service.config';
 
 export const DefaultContainerContainer = {
   name: "DefaultContainerContainer",
-  services: {
-    'Photos': PhotosServiceConfig,
-    'People': PeopleServiceConfig,
-    'Airlines': AirlinesServiceConfig,
-    'Airports': AirportsServiceConfig,
-    'Me': MeServiceConfig}
+  services: [
+    PhotosServiceConfig,
+    PeopleServiceConfig,
+    AirlinesServiceConfig,
+    AirportsServiceConfig,
+    MeServiceConfig
+  ]
 } as Container;

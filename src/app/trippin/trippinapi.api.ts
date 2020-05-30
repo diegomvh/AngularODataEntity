@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { ODataClient, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
-import { Airport } from './Microsoft/OData/SampleService/Models/TripPin/airport.entity';
 
 //#region ODataApi Imports
+import { Airport } from './Microsoft/OData/SampleService/Models/TripPin/airport.entity';
 //#endregion
 
 @Injectable()
