@@ -24,7 +24,7 @@ export class AppComponent {
   }
 
   queries() {
-    this.entities();
+    //this.entities();
     this.navigation();
     this.property();
   }
@@ -99,7 +99,7 @@ export class AppComponent {
     // Create Service with Entity Type
     let peopleService = this.factory.createEntityService<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
     let person = peopleService.entity("scottketchum");
-    person.get().subscribe(console.log);
+    console.log(person);
 
     // Person locations
     let locations = person.property<Location[]>("AddressInfo");
