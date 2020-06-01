@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient } from 'angular-odata';
 import { PeopleService, Airport, Person, PersonGender, Photo } from './trippin';
 import { switchMap } from 'rxjs/operators';
-import { TripPinApi } from './trippin/trippinapi.api';
+import { DefaultContainerService } from './trippin/index';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(
     private odata: ODataClient,
     private factory: ODataServiceFactory,
-    private api: TripPinApi,
+    private api: DefaultContainerService,
     private people: PeopleService
   ) {
     // Reset api
@@ -31,8 +31,8 @@ export class AppComponent {
 
   entities() {
     // Use OData Service Factory
-    let airportsService = this.factory.createEntityService<Airport>("Airports");
-    let peopleService = this.factory.createEntityService<Person>("People");
+    let airportsService = this.factory.createEntityService<Airport>("Airports", 'Microsoft.OData.SampleService.Models.TripPin.Airport');
+    let peopleService = this.factory.createEntityService<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
 
     let airports = airportsService.entities();
 

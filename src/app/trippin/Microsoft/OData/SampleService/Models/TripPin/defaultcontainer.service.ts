@@ -6,18 +6,18 @@ import { map } from 'rxjs/operators';
 import { ODataClient, ODataEntityAnnotations, ODataEntitiesAnnotations, ODataValueAnnotations, ODataEntityResource, HttpOptions } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Airport } from './Microsoft/OData/SampleService/Models/TripPin/airport.entity';
+import { Airport } from './airport.entity';
 //#endregion
 
 @Injectable()
-export class TripPinApi {
+export class DefaultContainerService {
  
   constructor(protected client: ODataClient) { }
 
   //#region ODataApi Actions
   public resetDataSource(options?: HttpOptions): Observable<[any, ODataEntityAnnotations]> {
     let args = null;
-    var res = this.client.action<any>('ResetDataSource', '');
+    var res = this.client.action<any>('ResetDataSource');
     return res.call(args, 'entity', options);
   }
   //#endregion
