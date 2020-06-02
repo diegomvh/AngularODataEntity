@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PeopleService, Person, PhotosService } from '../trippin';
+import { PeopleService, Person, PhotosService } from '../../trippin';
 
 @Component({
   selector: 'trip-person',

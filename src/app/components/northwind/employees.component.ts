@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Airline, AirlinesService } from '../trippin';
-import { ODataEntitySetResource, ODataSettings, ODataClient, Alias } from 'angular-odata';
+import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odata';
+import { Product, ProductsService, Employee, EmployeesService } from 'src/app/northwind';
 
 @Component({
-  selector: 'trip-airlines',
+  selector: 'northwind-employees',
   template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadPeopleLazy($event)" [paginator]="true" 
     [rows]="size" [totalRecords]="total" [loading]="loading">
     <ng-template pTemplate="header" let-columns>
@@ -13,42 +13,35 @@ import { ODataEntitySetResource, ODataSettings, ODataClient, Alias } from 'angul
               <p-sortIcon *ngIf="col.sort" [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
             </th>
         </tr>
-        <tr>
-            <th *ngFor="let col of columns" [ngSwitch]="col.field">
-              <input *ngSwitchCase="'Name'" pInputText type="text" (input)="filter($event.target.value, col.field)">
-              <input *ngSwitchCase="'AirlineCode'" pInputText type="text" (input)="filter($event.target.value, col.field)">
-            </th>
-        </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr>
-            <td *ngFor="let col of columns">
-                {{rowData[col.field]}}
+            <td *ngFor="let col of columns" [ngSwitch]="col.field">
+              <span>{{rowData[col.field]}}</span>
             </td>
         </tr>
     </ng-template>
 </p-table>`,
 })
-export class AirlinesComponent implements OnInit {
-  rows: Airline[];
+export class EmployeesComponent implements OnInit {
+  rows: Employee[];
   cols: any[];
 
   total: number;
-  size: number;
+  size: number = 6;
 
-  resource: ODataEntitySetResource<Airline>;
+  resource: ODataEntitySetResource<Employee>;
   loading: boolean;
-  alias: Alias;
 
   constructor(
-    private airlines: AirlinesService
+    private employees: EmployeesService
   ) { 
-    this.resource = this.airlines.entities();
-    this.alias = this.resource.alias("alias");
+    this.resource = this.employees.entities();
+    this.resource.top(this.size);
   }
 
   ngOnInit() {
-    let config = this.resource.config()
+    let config = this.resource.config();
     this.cols = config.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));
@@ -57,8 +50,8 @@ export class AirlinesComponent implements OnInit {
 
   fetch() {
     this.loading = true;
-    this.resource.get({withCount: true}).subscribe(([people, odata]) => {
-      this.rows = people;
+    this.resource.get({withCount: true}).subscribe(([employees, odata]) => {
+      this.rows = employees;
       if (!this.total)
         this.total = odata.count;
       if (!this.size)
@@ -70,8 +63,7 @@ export class AirlinesComponent implements OnInit {
   filter(value: string, field: string) {
     field = `tolower(${field})`; 
     if (value) {
-      this.alias.value = value.toLowerCase();
-      let filter = {[field]: {contains: this.alias}};
+      let filter = {[field]: {contains: value.toLowerCase()}};
       this.resource.filter().assign(filter);
     } else {
       this.resource.filter().unset(field);

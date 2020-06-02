@@ -18,8 +18,8 @@ export class AppComponent {
   ) {
     // Reset api
     this.api.resetDataSource().subscribe(() => {
-      this.queries();
-      this.mutate();
+      //this.queries();
+      //this.mutate();
     });
   }
 
@@ -88,15 +88,17 @@ export class AppComponent {
   }
 
   navigation() {
+    // Create service without Type for Person entity
     let peopleService = this.factory.createEntityService<Person>("People");
     let person = peopleService.entity("scottketchum");
 
     let friends = person.navigationProperty<Person>("Friends");
-    friends.get({config: 'TripPin', responseType: 'entities'}).subscribe(console.log);
+    // Use TripPin config
+    friends.get({responseType: 'entities', config: 'TripPin'}).subscribe(console.log);
   }
 
   property() {
-    // Create Service with Entity Type
+    // Create Service with Type
     let peopleService = this.factory.createEntityService<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
     let person = peopleService.entity("scottketchum");
     console.log(person);

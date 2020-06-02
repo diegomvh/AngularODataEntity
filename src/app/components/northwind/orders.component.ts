@@ -1,11 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { PeopleService, Person, PersonGender } from '../trippin';
-import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odata';
-import { PersonComponent } from './person.component';
-import { config } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { ODataEntitySetResource } from 'angular-odata';
+import { Category, CategoriesService, Order, OrdersService } from 'src/app/northwind';
 
 @Component({
-  selector: 'trip-people',
+  selector: 'northwind-orders',
   template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadPeopleLazy($event)" [paginator]="true" 
     [rows]="size" [totalRecords]="total" [loading]="loading">
     <ng-template pTemplate="header" let-columns>
@@ -15,48 +13,35 @@ import { config } from 'rxjs';
               <p-sortIcon *ngIf="col.sort" [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
             </th>
         </tr>
-        <tr>
-            <th *ngFor="let col of columns" [ngSwitch]="col.field">
-              <input *ngSwitchCase="'UserName'" pInputText type="text" (input)="filter($event.target.value, col.field)">
-              <input *ngSwitchCase="'FirstName'" pInputText type="text" (input)="filter($event.target.value, col.field)">
-              <input *ngSwitchCase="'LastName'" pInputText type="text" (input)="filter($event.target.value, col.field)">
-            </th>
-        </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <tr (click)="viewPerson(rowData)">
+        <tr>
             <td *ngFor="let col of columns" [ngSwitch]="col.field">
-              <span *ngSwitchCase="'AddressInfo'">{{rowData[col.field] | json}}</span>
-              <span *ngSwitchCase="'Gender'">{{Gender[rowData[col.field]]}}</span>
-              <span *ngSwitchDefault>{{rowData[col.field]}}</span>
+              <span>{{rowData[col.field]}}</span>
             </td>
         </tr>
     </ng-template>
-</p-table>
-<trip-person #person></trip-person>`,
+</p-table>`,
 })
-export class PeopleComponent implements OnInit {
-  Gender = PersonGender;
-  rows: Person[];
+export class OrdersComponent implements OnInit {
+  rows: Order[];
   cols: any[];
 
   total: number;
-  size: number;
+  size: number = 6;
 
-  resource: ODataEntitySetResource<Person>;
+  resource: ODataEntitySetResource<Order>;
   loading: boolean;
 
-  @ViewChild('person') person: PersonComponent;
-
   constructor(
-    private odata: ODataClient,
-    private people: PeopleService
+    private orders: OrdersService
   ) { 
-    this.resource = this.people.entities();
+    this.resource = this.orders.entities();
+    this.resource.top(this.size);
   }
 
   ngOnInit() {
-    let config = this.resource.config()
+    let config = this.resource.config();
     this.cols = config.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));
@@ -65,12 +50,13 @@ export class PeopleComponent implements OnInit {
 
   fetch() {
     this.loading = true;
-    this.resource.get({withCount: true}).subscribe(([people, annots]) => {
-      this.rows = people;
+    this.resource.get({withCount: true}).subscribe(([orders, odata]) => {
+      this.rows = orders;
       if (!this.total)
-        this.total = annots.count;
-      if (!this.size)
-        this.size = annots.skip;
+        this.total = odata.count;
+      if (!this.size) {
+        this.size = odata.skip;
+      }
       this.loading = false;
     });
   }
@@ -94,13 +80,8 @@ export class PeopleComponent implements OnInit {
     this.resource.skip(event.first);
     this.resource.top(event.rows);
     //Ordering
-    if (event.sortField) {
+    if (event.sortField)
       this.resource.orderBy([[event.sortField, event.sortOrder == -1 ? "desc": "asc"]]);
-    }
     this.fetch();
-  }
-
-  viewPerson(person: Person) {
-    this.person.show(person.UserName);
   }
 }
