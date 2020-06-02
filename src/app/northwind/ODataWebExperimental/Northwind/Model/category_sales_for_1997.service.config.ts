@@ -4,6 +4,6 @@
 //#endregion
 
 export const Category_Sales_for_1997ServiceConfig = {
-  name: "Category_Sales_for_1997Service",
+  name: "Category_Sales_for_1997",
   annotations: []
 } as ServiceConfig;

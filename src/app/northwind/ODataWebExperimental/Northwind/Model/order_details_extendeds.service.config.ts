@@ -4,6 +4,6 @@
 //#endregion
 
 export const Order_Details_ExtendedsServiceConfig = {
-  name: "Order_Details_ExtendedsService",
+  name: "Order_Details_Extendeds",
   annotations: []
 } as ServiceConfig;

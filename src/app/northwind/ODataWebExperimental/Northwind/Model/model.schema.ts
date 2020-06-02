@@ -4,7 +4,7 @@
 import { NorthwindEntitiesContainer } from './northwindentities.container';
 //#endregion
 
-export const ODataWebExperimentalSchema = {
+export const ModelSchema = {
   namespace: "ODataWebExperimental.Northwind.Model",
   enums: [
     

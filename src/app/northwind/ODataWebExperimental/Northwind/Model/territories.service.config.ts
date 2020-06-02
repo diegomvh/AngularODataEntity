@@ -4,6 +4,6 @@
 //#endregion
 
 export const TerritoriesServiceConfig = {
-  name: "TerritoriesService",
+  name: "Territories",
   annotations: []
 } as ServiceConfig;

@@ -104,6 +104,6 @@ export * from './ODataWebExperimental/Northwind/Model/sales_by_categories.servic
 export * from './ODataWebExperimental/Northwind/Model/sales_totals_by_amounts.service.config';
 export * from './ODataWebExperimental/Northwind/Model/summary_of_sales_by_quarters.service.config';
 export * from './ODataWebExperimental/Northwind/Model/summary_of_sales_by_years.service.config';
-//#endregion
 export * from './northwind.config';
 export * from './northwind.module';
+//#endregion

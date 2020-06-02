@@ -4,7 +4,7 @@
 //#endregion
 
 export const PeopleServiceConfig = {
-  name: "PeopleService",
+  name: "People",
   annotations: [
   {
     "type": "Org.OData.Core.V1.OptimisticConcurrency",

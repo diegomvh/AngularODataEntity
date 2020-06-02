@@ -1,13 +1,14 @@
 ﻿//#region ODataApi Imports
 import { NorthwindModelSchema } from './NorthwindModel/northwindmodel.schema';
-import { ODataWebExperimentalSchema } from './ODataWebExperimental/Northwind/Model/odatawebexperimental.schema';
+import { ModelSchema } from './ODataWebExperimental/Northwind/Model/model.schema';
 //#endregion
 
 export const NorthwindConfig = {
+  name: 'Northwind',
   serviceRootUrl: 'https://services.odata.org/V4/Northwind/Northwind.svc/',
-  creation: new Date('2020-05-31T22:56:44.4590970-03:00'),
+  creation: new Date('2020-06-01T20:42:53.4171679-03:00'),
   schemas: [
     NorthwindModelSchema,
-    ODataWebExperimentalSchema
+    ModelSchema
   ]
 }

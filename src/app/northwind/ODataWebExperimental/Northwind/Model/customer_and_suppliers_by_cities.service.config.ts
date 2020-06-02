@@ -4,6 +4,6 @@
 //#endregion
 
 export const Customer_and_Suppliers_by_CitiesServiceConfig = {
-  name: "Customer_and_Suppliers_by_CitiesService",
+  name: "Customer_and_Suppliers_by_Cities",
   annotations: []
 } as ServiceConfig;

@@ -4,6 +4,6 @@
 //#endregion
 
 export const Order_SubtotalsServiceConfig = {
-  name: "Order_SubtotalsService",
+  name: "Order_Subtotals",
   annotations: []
 } as ServiceConfig;

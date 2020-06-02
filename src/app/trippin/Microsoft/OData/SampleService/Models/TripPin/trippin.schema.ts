@@ -18,7 +18,7 @@ import { TripConfig } from './trip.entity.config';
 import { DefaultContainerContainer } from './defaultcontainer.container';
 //#endregion
 
-export const MicrosoftSchema = {
+export const TripPinSchema = {
   namespace: "Microsoft.OData.SampleService.Models.TripPin",
   enums: [
     PersonGenderConfig

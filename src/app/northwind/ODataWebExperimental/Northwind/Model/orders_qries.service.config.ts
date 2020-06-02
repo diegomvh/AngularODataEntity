@@ -4,6 +4,6 @@
 //#endregion
 
 export const Orders_QriesServiceConfig = {
-  name: "Orders_QriesService",
+  name: "Orders_Qries",
   annotations: []
 } as ServiceConfig;

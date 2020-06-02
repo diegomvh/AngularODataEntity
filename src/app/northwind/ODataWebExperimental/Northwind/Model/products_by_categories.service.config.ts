@@ -4,6 +4,6 @@
 //#endregion
 
 export const Products_by_CategoriesServiceConfig = {
-  name: "Products_by_CategoriesService",
+  name: "Products_by_Categories",
   annotations: []
 } as ServiceConfig;

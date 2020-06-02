@@ -4,7 +4,7 @@
 //#endregion
 
 export const MeServiceConfig = {
-  name: "MeService",
+  name: "Me",
   annotations: [
   {
     "type": "Org.OData.Core.V1.ResourcePath"

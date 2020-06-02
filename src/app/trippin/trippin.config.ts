@@ -1,11 +1,12 @@
 ﻿//#region ODataApi Imports
-import { MicrosoftSchema } from './Microsoft/OData/SampleService/Models/TripPin/microsoft.schema';
+import { TripPinSchema } from './Microsoft/OData/SampleService/Models/TripPin/trippin.schema';
 //#endregion
 
 export const TripPinConfig = {
+  name: 'TripPin',
   serviceRootUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
-  creation: new Date('2020-05-31T22:56:54.9148120-03:00'),
+  creation: new Date('2020-06-01T20:43:36.9838225-03:00'),
   schemas: [
-    MicrosoftSchema
+    TripPinSchema
   ]
 }

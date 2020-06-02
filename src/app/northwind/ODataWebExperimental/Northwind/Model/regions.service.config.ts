@@ -4,6 +4,6 @@
 //#endregion
 
 export const RegionsServiceConfig = {
-  name: "RegionsService",
+  name: "Regions",
   annotations: []
 } as ServiceConfig;

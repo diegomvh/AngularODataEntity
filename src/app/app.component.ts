@@ -24,7 +24,7 @@ export class AppComponent {
   }
 
   queries() {
-    //this.entities();
+    this.entities();
     this.navigation();
     this.property();
   }
@@ -92,7 +92,7 @@ export class AppComponent {
     let person = peopleService.entity("scottketchum");
 
     let friends = person.navigationProperty<Person>("Friends");
-    friends.get({responseType: 'entities'}).subscribe(console.log);
+    friends.get({config: 'TripPin', responseType: 'entities'}).subscribe(console.log);
   }
 
   property() {

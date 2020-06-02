@@ -4,6 +4,6 @@
 //#endregion
 
 export const Products_Above_Average_PricesServiceConfig = {
-  name: "Products_Above_Average_PricesService",
+  name: "Products_Above_Average_Prices",
   annotations: []
 } as ServiceConfig;
