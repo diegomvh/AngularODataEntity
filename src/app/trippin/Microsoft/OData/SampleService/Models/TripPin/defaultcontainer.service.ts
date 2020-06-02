@@ -18,7 +18,7 @@ export class DefaultContainerService {
   public resetDataSource(options?: HttpOptions): Observable<[any, ODataEntityAnnotations]> {
     let args = null;
     var res = this.client.action<any>('ResetDataSource');
-    return res.call(args, 'entity', Object.assign({config: 'TripPin'}, options));
+    return res.call(args, 'entity', options);
   }
   //#endregion
   //#region ODataApi Functions
