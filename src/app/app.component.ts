@@ -142,7 +142,7 @@ export class AppComponent {
       LastName: 'van Haaster'
     }).pipe(
       switchMap(([person, entity]) => {
-        return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, entity.etag);
+        return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, {etag: entity.etag});
       })
     ).toPromise();
   }
