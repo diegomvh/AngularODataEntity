@@ -18,6 +18,7 @@ export class DefaultContainerService {
   public resetDataSource(options?: HttpOptions): Observable<[any, ODataEntityAnnotations]> {
     let args = null;
     var res = this.client.action<any>('ResetDataSource');
+    options = Object.assign({config: 'TripPin'}, options || {});
     return res.call(args, 'entity', options);
   }
   //#endregion
@@ -30,6 +31,7 @@ export class DefaultContainerService {
       .filter(pair => pair[1] !== null)
       .reduce((acc, val) => (acc[val[0]] = val[1], acc), {});
     var res = this.client.function<Airport>('GetNearestAirport', 'Microsoft.OData.SampleService.Models.TripPin.Airport');
+    options = Object.assign({config: 'TripPin'}, options || {});
     return res.call(args, 'entity', options);
   }
   //#endregion

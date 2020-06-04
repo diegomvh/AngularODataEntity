@@ -12,6 +12,8 @@ import { Photo } from './photo.entity';
 import { Person } from './person.entity';
 import { Airline } from './airline.entity';
 import { Airport } from './airport.entity';
+import { Flight } from './flight.entity';
+import { Trip } from './trip.entity';
 //#endregion
 
 @Injectable()
