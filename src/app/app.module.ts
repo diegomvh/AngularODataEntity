@@ -22,7 +22,7 @@ import { EmployeesComponent } from './components/northwind/employees.component';
     AirlinesComponent,
     AirportsComponent,
     PersonComponent,
-    //Nortwind
+    //Northwind
     CategoriesComponent,
     ProductsComponent,
     OrdersComponent,
