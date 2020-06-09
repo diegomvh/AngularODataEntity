@@ -49,9 +49,12 @@ export class PeopleComponent implements OnInit {
   @ViewChild('person') person: PersonComponent;
 
   constructor(
+    private client: ODataClient,
     private people: PeopleService
   ) { 
     this.resource = this.people.entities();
+    // Try toJSON, fromJSON
+    this.resource = this.client.fromJSON<ODataEntitySetResource<Person>>(this.resource.toJSON());
   }
 
   ngOnInit() {

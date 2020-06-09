@@ -14,8 +14,7 @@ export class PersonComponent {
   constructor(
     private photos: PhotosService,
     private people: PeopleService
-  ) { 
-  }
+  ) { }
 
   show(name: string) {
     let person = this.people.entity({UserName: name});

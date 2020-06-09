@@ -7,7 +7,8 @@ export const MeServiceConfig = {
   name: "Me",
   annotations: [
   {
-    "type": "Org.OData.Core.V1.ResourcePath"
+    "type": "Org.OData.Core.V1.ResourcePath",
+    "string": "Me"
   }
 ]
 } as ServiceConfig;

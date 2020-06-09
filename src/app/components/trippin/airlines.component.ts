@@ -41,9 +41,12 @@ export class AirlinesComponent implements OnInit {
   alias: Alias;
 
   constructor(
+    private client: ODataClient,
     private airlines: AirlinesService
   ) { 
     this.resource = this.airlines.entities();
+    // Try toJSON, fromJSON
+    this.resource = this.client.fromJSON<ODataEntitySetResource<Airline>>(this.resource.toJSON());
     this.alias = this.resource.alias("alias");
   }
 

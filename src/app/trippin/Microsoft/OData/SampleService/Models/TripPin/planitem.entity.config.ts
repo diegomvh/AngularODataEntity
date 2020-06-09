@@ -6,7 +6,7 @@ import { PlanItem } from './planitem.entity';
 
 export const PlanItemConfig = {
   name: "PlanItem",
-  annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}],
+  annotations: [],
   fields: {
     PlanItemId: {type: 'number', key: true, ref: 'PlanItemId', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     ConfirmationCode: {type: 'string'},
