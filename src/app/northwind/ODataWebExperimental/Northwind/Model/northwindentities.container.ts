@@ -31,6 +31,7 @@ import { Summary_of_Sales_by_YearsServiceConfig } from './summary_of_sales_by_ye
 
 export const NorthwindEntitiesContainer = {
   name: "NorthwindEntitiesContainer",
+  annotations: [],
   services: [
     CategoriesServiceConfig,
     CustomerDemographicsServiceConfig,
