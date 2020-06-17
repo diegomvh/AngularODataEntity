@@ -8,7 +8,7 @@ export const PhotoConfig = {
   name: "Photo",
   annotations: [{"type":"Org.OData.Core.V1.AcceptableMediaTypes"}],
   fields: {
-    Id: {type: 'number', key: true, ref: 'Id', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
-    Name: {type: 'string'}
+    Id: {type: 'Number', key: true, ref: 'Id', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
+    Name: {type: 'String'}
   }
 } as EntityConfig<Photo>;

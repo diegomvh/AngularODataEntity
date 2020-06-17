@@ -8,7 +8,7 @@ export const LocationConfig = {
   name: "Location",
   annotations: [],
   fields: {
-    Address: {type: 'string', nullable: false},
+    Address: {type: 'String', nullable: false},
     City: {type: 'Microsoft.OData.SampleService.Models.TripPin.City', nullable: false}
   }
 } as EntityConfig<Location>;
