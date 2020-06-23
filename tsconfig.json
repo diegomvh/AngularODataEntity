@@ -20,10 +20,10 @@
     ],
     "paths": {
       "angular-odata": [
-        "dist/angular-odata"
+        "projects/angular-odata/dist/angular-odata"
       ],
       "angular-odata/*": [
-        "dist/angular-odata/*"
+        "projects/angular-odata/dist/angular-odata/*"
       ]
     }
   },
