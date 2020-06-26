@@ -9,7 +9,7 @@ export const Summary_of_Sales_by_YearConfig = {
   annotations: [],
   fields: {
     ShippedDate: {type: 'Date'},
-    OrderID: {type: 'number', key: true, ref: 'OrderID', nullable: false},
-    Subtotal: {type: 'number'}
+    OrderID: {type: 'Number', key: true, ref: 'OrderID', nullable: false},
+    Subtotal: {type: 'Number', scale: 4}
   }
 } as EntityConfig<Summary_of_Sales_by_Year>;

@@ -8,11 +8,11 @@ export const Order_DetailConfig = {
   name: "Order_Detail",
   annotations: [],
   fields: {
-    OrderID: {type: 'number', key: true, ref: 'OrderID', nullable: false},
-    ProductID: {type: 'number', key: true, ref: 'ProductID', nullable: false},
-    UnitPrice: {type: 'number', nullable: false},
-    Quantity: {type: 'number', nullable: false},
-    Discount: {type: 'number', nullable: false},
+    OrderID: {type: 'Number', key: true, ref: 'OrderID', nullable: false},
+    ProductID: {type: 'Number', key: true, ref: 'ProductID', nullable: false},
+    UnitPrice: {type: 'Number', nullable: false, scale: 4},
+    Quantity: {type: 'Number', nullable: false},
+    Discount: {type: 'Number', nullable: false},
     Order: {type: 'NorthwindModel.Order', navigation: true, field: 'OrderID', ref: 'OrderID'},
     Product: {type: 'NorthwindModel.Product', navigation: true, field: 'ProductID', ref: 'ProductID'}
   }

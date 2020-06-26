@@ -8,8 +8,8 @@ export const Product_Sales_for_1997Config = {
   name: "Product_Sales_for_1997",
   annotations: [],
   fields: {
-    CategoryName: {type: 'string', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
-    ProductName: {type: 'string', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    ProductSales: {type: 'number'}
+    CategoryName: {type: 'String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
+    ProductName: {type: 'String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
+    ProductSales: {type: 'Number', scale: 4}
   }
 } as EntityConfig<Product_Sales_for_1997>;

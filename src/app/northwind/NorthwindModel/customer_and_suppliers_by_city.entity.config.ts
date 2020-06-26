@@ -8,9 +8,9 @@ export const Customer_and_Suppliers_by_CityConfig = {
   name: "Customer_and_Suppliers_by_City",
   annotations: [],
   fields: {
-    City: {type: 'string', maxLength: 15},
-    CompanyName: {type: 'string', key: true, ref: 'CompanyName', nullable: false, maxLength: 40},
-    ContactName: {type: 'string', maxLength: 30},
-    Relationship: {type: 'string', key: true, ref: 'Relationship', nullable: false, maxLength: 9}
+    City: {type: 'String', maxLength: 15},
+    CompanyName: {type: 'String', key: true, ref: 'CompanyName', nullable: false, maxLength: 40},
+    ContactName: {type: 'String', maxLength: 30},
+    Relationship: {type: 'String', key: true, ref: 'Relationship', nullable: false, maxLength: 9}
   }
 } as EntityConfig<Customer_and_Suppliers_by_City>;

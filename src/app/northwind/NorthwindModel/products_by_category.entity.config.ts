@@ -8,10 +8,10 @@ export const Products_by_CategoryConfig = {
   name: "Products_by_Category",
   annotations: [],
   fields: {
-    CategoryName: {type: 'string', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
-    ProductName: {type: 'string', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    QuantityPerUnit: {type: 'string', maxLength: 20},
-    UnitsInStock: {type: 'number'},
-    Discontinued: {type: 'boolean', key: true, ref: 'Discontinued', nullable: false}
+    CategoryName: {type: 'String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
+    ProductName: {type: 'String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
+    QuantityPerUnit: {type: 'String', maxLength: 20},
+    UnitsInStock: {type: 'Number'},
+    Discontinued: {type: 'Boolean', key: true, ref: 'Discontinued', nullable: false}
   }
 } as EntityConfig<Products_by_Category>;

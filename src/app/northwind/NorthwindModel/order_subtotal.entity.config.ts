@@ -8,7 +8,7 @@ export const Order_SubtotalConfig = {
   name: "Order_Subtotal",
   annotations: [],
   fields: {
-    OrderID: {type: 'number', key: true, ref: 'OrderID', nullable: false},
-    Subtotal: {type: 'number'}
+    OrderID: {type: 'Number', key: true, ref: 'OrderID', nullable: false},
+    Subtotal: {type: 'Number', scale: 4}
   }
 } as EntityConfig<Order_Subtotal>;

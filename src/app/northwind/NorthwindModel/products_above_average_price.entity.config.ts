@@ -8,7 +8,7 @@ export const Products_Above_Average_PriceConfig = {
   name: "Products_Above_Average_Price",
   annotations: [],
   fields: {
-    ProductName: {type: 'string', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    UnitPrice: {type: 'number'}
+    ProductName: {type: 'String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
+    UnitPrice: {type: 'Number', scale: 4}
   }
 } as EntityConfig<Products_Above_Average_Price>;
