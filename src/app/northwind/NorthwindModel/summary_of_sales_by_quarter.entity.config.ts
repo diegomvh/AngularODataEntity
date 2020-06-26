@@ -10,6 +10,6 @@ export const Summary_of_Sales_by_QuarterConfig = {
   fields: {
     ShippedDate: {type: 'Date'},
     OrderID: {type: 'Number', key: true, ref: 'OrderID', nullable: false},
-    Subtotal: {type: 'Number', scale: 4}
+    Subtotal: {type: 'Decimal', precition: 19, scale: 4}
   }
 } as EntityConfig<Summary_of_Sales_by_Quarter>;

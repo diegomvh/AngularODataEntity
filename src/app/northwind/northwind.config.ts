@@ -8,7 +8,7 @@ import { ModelSchema } from './ODataWebExperimental/Northwind/Model/model.schema
 export const NorthwindConfig = {
   name: 'Northwind',
   serviceRootUrl: 'https://services.odata.org/V4/Northwind/Northwind.svc/',
-  creation: new Date('2020-06-26T17:52:04.0475614-03:00'),
+  creation: new Date('2020-06-26T17:55:09.3258693-03:00'),
   schemas: [
     NorthwindModelSchema,
     ModelSchema

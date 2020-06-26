@@ -9,6 +9,6 @@ export const Order_SubtotalConfig = {
   annotations: [],
   fields: {
     OrderID: {type: 'Number', key: true, ref: 'OrderID', nullable: false},
-    Subtotal: {type: 'Number', scale: 4}
+    Subtotal: {type: 'Decimal', precition: 19, scale: 4}
   }
 } as EntityConfig<Order_Subtotal>;

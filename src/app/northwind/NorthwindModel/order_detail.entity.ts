@@ -7,7 +7,7 @@ export interface Order_Detail {
   //#region ODataApi Properties
   OrderID: number;
   ProductID: number;
-  UnitPrice: number;
+  UnitPrice: Decimal;
   Quantity: number;
   Discount: number;
   Order?: Order;

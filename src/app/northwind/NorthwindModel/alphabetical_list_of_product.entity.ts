@@ -8,7 +8,7 @@ export interface Alphabetical_list_of_product {
   SupplierID?: number;
   CategoryID?: number;
   QuantityPerUnit?: string;
-  UnitPrice?: number;
+  UnitPrice?: Decimal;
   UnitsInStock?: number;
   UnitsOnOrder?: number;
   ReorderLevel?: number;

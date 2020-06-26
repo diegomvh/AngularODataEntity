@@ -10,7 +10,7 @@ export const Order_DetailConfig = {
   fields: {
     OrderID: {type: 'Number', key: true, ref: 'OrderID', nullable: false},
     ProductID: {type: 'Number', key: true, ref: 'ProductID', nullable: false},
-    UnitPrice: {type: 'Number', nullable: false, scale: 4},
+    UnitPrice: {type: 'Decimal', nullable: false, precition: 19, scale: 4},
     Quantity: {type: 'Number', nullable: false},
     Discount: {type: 'Number', nullable: false},
     Order: {type: 'NorthwindModel.Order', navigation: true, field: 'OrderID', ref: 'OrderID'},

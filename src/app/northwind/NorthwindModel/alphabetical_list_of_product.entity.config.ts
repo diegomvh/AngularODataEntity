@@ -13,7 +13,7 @@ export const Alphabetical_list_of_productConfig = {
     SupplierID: {type: 'Number'},
     CategoryID: {type: 'Number'},
     QuantityPerUnit: {type: 'String', maxLength: 20},
-    UnitPrice: {type: 'Number', scale: 4},
+    UnitPrice: {type: 'Decimal', precition: 19, scale: 4},
     UnitsInStock: {type: 'Number'},
     UnitsOnOrder: {type: 'Number'},
     ReorderLevel: {type: 'Number'},

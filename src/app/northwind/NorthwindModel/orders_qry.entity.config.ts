@@ -15,7 +15,7 @@ export const Orders_QryConfig = {
     RequiredDate: {type: 'Date'},
     ShippedDate: {type: 'Date'},
     ShipVia: {type: 'Number'},
-    Freight: {type: 'Number', scale: 4},
+    Freight: {type: 'Decimal', precition: 19, scale: 4},
     ShipName: {type: 'String', maxLength: 40},
     ShipAddress: {type: 'String', maxLength: 60},
     ShipCity: {type: 'String', maxLength: 15},

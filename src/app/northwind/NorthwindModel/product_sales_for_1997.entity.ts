@@ -5,6 +5,6 @@ export interface Product_Sales_for_1997 {
   //#region ODataApi Properties
   CategoryName: string;
   ProductName: string;
-  ProductSales?: number;
+  ProductSales?: Decimal;
   //#endregion
 }

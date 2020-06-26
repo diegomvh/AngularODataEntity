@@ -6,9 +6,9 @@ export interface Order_Details_Extended {
   OrderID: number;
   ProductID: number;
   ProductName: string;
-  UnitPrice: number;
+  UnitPrice: Decimal;
   Quantity: number;
   Discount: number;
-  ExtendedPrice?: number;
+  ExtendedPrice?: Decimal;
   //#endregion
 }

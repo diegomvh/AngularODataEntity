@@ -9,6 +9,6 @@ export const Category_Sales_for_1997Config = {
   annotations: [],
   fields: {
     CategoryName: {type: 'String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
-    CategorySales: {type: 'Number', scale: 4}
+    CategorySales: {type: 'Decimal', precition: 19, scale: 4}
   }
 } as EntityConfig<Category_Sales_for_1997>;

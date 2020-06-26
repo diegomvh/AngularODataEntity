@@ -9,6 +9,6 @@ export const Products_Above_Average_PriceConfig = {
   annotations: [],
   fields: {
     ProductName: {type: 'String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    UnitPrice: {type: 'Number', scale: 4}
+    UnitPrice: {type: 'Decimal', precition: 19, scale: 4}
   }
 } as EntityConfig<Products_Above_Average_Price>;
