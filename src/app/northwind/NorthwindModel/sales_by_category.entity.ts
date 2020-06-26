@@ -6,6 +6,6 @@ export interface Sales_by_Category {
   CategoryID: number;
   CategoryName: string;
   ProductName: string;
-  ProductSales?: Decimal;
+  ProductSales?: number;
   //#endregion
 }

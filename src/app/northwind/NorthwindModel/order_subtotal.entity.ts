@@ -4,6 +4,6 @@
 export interface Order_Subtotal {
   //#region ODataApi Properties
   OrderID: number;
-  Subtotal?: Decimal;
+  Subtotal?: number;
   //#endregion
 }

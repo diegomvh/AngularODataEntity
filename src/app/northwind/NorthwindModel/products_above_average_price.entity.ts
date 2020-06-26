@@ -4,6 +4,6 @@
 export interface Products_Above_Average_Price {
   //#region ODataApi Properties
   ProductName: string;
-  UnitPrice?: Decimal;
+  UnitPrice?: number;
   //#endregion
 }

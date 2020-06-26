@@ -3,7 +3,7 @@
 
 export interface Sales_Totals_by_Amount {
   //#region ODataApi Properties
-  SaleAmount?: Decimal;
+  SaleAmount?: number;
   OrderID: number;
   CompanyName: string;
   ShippedDate?: Date;

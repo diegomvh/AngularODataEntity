@@ -14,7 +14,7 @@ export interface Order {
   RequiredDate?: Date;
   ShippedDate?: Date;
   ShipVia?: number;
-  Freight?: Decimal;
+  Freight?: number;
   ShipName?: string;
   ShipAddress?: string;
   ShipCity?: string;

@@ -24,10 +24,10 @@ export interface Invoice {
   ShipperName: string;
   ProductID: number;
   ProductName: string;
-  UnitPrice: Decimal;
+  UnitPrice: number;
   Quantity: number;
   Discount: number;
-  ExtendedPrice?: Decimal;
-  Freight?: Decimal;
+  ExtendedPrice?: number;
+  Freight?: number;
   //#endregion
 }

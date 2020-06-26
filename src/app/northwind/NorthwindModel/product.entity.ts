@@ -11,7 +11,7 @@ export interface Product {
   SupplierID?: number;
   CategoryID?: number;
   QuantityPerUnit?: string;
-  UnitPrice?: Decimal;
+  UnitPrice?: number;
   UnitsInStock?: number;
   UnitsOnOrder?: number;
   ReorderLevel?: number;

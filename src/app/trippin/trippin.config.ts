@@ -1,4 +1,4 @@
-﻿import { DATE_PARSER, Configuration } from 'angular-odata';
+﻿import { DATE_PARSER, Configuration, DECIMAL_PARSER } from 'angular-odata';
 
 //#region ODataApi Imports
 import { TripPinSchema } from './Microsoft/OData/SampleService/Models/TripPin/trippin.schema';
@@ -12,6 +12,7 @@ export const TripPinConfig = {
     TripPinSchema
   ],
   parsers: {
-    ...DATE_PARSER
+    ...DATE_PARSER,
+    ...DECIMAL_PARSER
   }
 } as Configuration;
