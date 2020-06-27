@@ -24,9 +24,12 @@ export class AppComponent {
   }
 
   queries() {
+    /*
     this.entities();
     this.navigation();
     this.property();
+    */
+    this.batch();
   }
 
   entities() {
@@ -145,5 +148,10 @@ export class AppComponent {
         return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, {etag: entity.etag});
       })
     ).toPromise();
+  }
+
+  batch() {
+    let batch = this.odata.batch();
+    batch.execute({config: 'Northwind'}).subscribe(console.log);
   }
 }
