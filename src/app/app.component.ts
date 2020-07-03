@@ -152,6 +152,5 @@ export class AppComponent {
 
   batch() {
     let batch = this.odata.batch();
-    batch.execute({config: 'Northwind'}).subscribe(console.log);
   }
 }
