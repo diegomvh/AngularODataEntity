@@ -9,6 +9,6 @@ export const EventLocationConfig = {
   base: "Microsoft.OData.SampleService.Models.TripPin.Location",
   annotations: [],
   fields: {
-    BuildingInfo: {type: 'String'}
+    BuildingInfo: {type: 'Edm.String'}
   }
 } as EntityConfig<EventLocation>;

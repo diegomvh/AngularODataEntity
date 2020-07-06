@@ -9,7 +9,7 @@ export const EventConfig = {
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
   annotations: [],
   fields: {
-    Description: {type: 'String'},
+    Description: {type: 'Edm.String'},
     OccursAt: {type: 'Microsoft.OData.SampleService.Models.TripPin.EventLocation', nullable: false}
   }
 } as EntityConfig<Event>;

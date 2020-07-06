@@ -34,10 +34,18 @@ import { EmployeesComponent } from './components/northwind/employees.component';
     InputTextModule,
     TableModule,
     DialogModule,
-    ODataModule.forRoot(Object.assign(TripPinConfig, {
-      serviceRootUrl: 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW/',
-      stringAsEnum: true
-    }), NorthwindConfig),
+    ODataModule.forRoot(
+      // TripPin
+      Object.assign(TripPinConfig, {
+        serviceRootUrl: 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW/',
+        acceptMetadata: 'full',
+        stringAsEnum: true
+      }), 
+      // Nortwind
+      Object.assign(NorthwindConfig, {
+        ieee754Compatible: true
+      })
+    ),
     TripPinModule,
     NorthwindModule
   ],

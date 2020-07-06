@@ -8,8 +8,8 @@ export const CityConfig = {
   name: "City",
   annotations: [],
   fields: {
-    CountryRegion: {type: 'String', nullable: false},
-    Name: {type: 'String', nullable: false},
-    Region: {type: 'String', nullable: false}
+    CountryRegion: {type: 'Edm.String', nullable: false},
+    Name: {type: 'Edm.String', nullable: false},
+    Region: {type: 'Edm.String', nullable: false}
   }
 } as EntityConfig<City>;

@@ -8,7 +8,7 @@ export const Category_Sales_for_1997Config = {
   name: "Category_Sales_for_1997",
   annotations: [],
   fields: {
-    CategoryName: {type: 'String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
-    CategorySales: {type: 'Decimal', precition: 19, scale: 4}
+    CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
+    CategorySales: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as EntityConfig<Category_Sales_for_1997>;

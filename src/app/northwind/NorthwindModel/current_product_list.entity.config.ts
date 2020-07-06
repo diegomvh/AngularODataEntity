@@ -8,7 +8,7 @@ export const Current_Product_ListConfig = {
   name: "Current_Product_List",
   annotations: [],
   fields: {
-    ProductID: {type: 'Number', key: true, ref: 'ProductID', nullable: false},
-    ProductName: {type: 'String', key: true, ref: 'ProductName', nullable: false, maxLength: 40}
+    ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},
+    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40}
   }
 } as EntityConfig<Current_Product_List>;

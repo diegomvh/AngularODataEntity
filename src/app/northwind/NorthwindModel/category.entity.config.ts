@@ -8,10 +8,10 @@ export const CategoryConfig = {
   name: "Category",
   annotations: [],
   fields: {
-    CategoryID: {type: 'Number', key: true, ref: 'CategoryID', nullable: false},
-    CategoryName: {type: 'String', nullable: false, maxLength: 15},
-    Description: {type: 'String'},
-    Picture: {type: 'String'},
+    CategoryID: {type: 'Edm.Int32', key: true, ref: 'CategoryID', nullable: false},
+    CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
+    Description: {type: 'Edm.String'},
+    Picture: {type: 'Edm.Binary'},
     Products: {type: 'NorthwindModel.Product', collection: true, navigation: true}
   }
 } as EntityConfig<Category>;

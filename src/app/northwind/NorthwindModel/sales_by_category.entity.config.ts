@@ -8,9 +8,9 @@ export const Sales_by_CategoryConfig = {
   name: "Sales_by_Category",
   annotations: [],
   fields: {
-    CategoryID: {type: 'Number', key: true, ref: 'CategoryID', nullable: false},
-    CategoryName: {type: 'String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
-    ProductName: {type: 'String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    ProductSales: {type: 'Decimal', precition: 19, scale: 4}
+    CategoryID: {type: 'Edm.Int32', key: true, ref: 'CategoryID', nullable: false},
+    CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
+    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
+    ProductSales: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as EntityConfig<Sales_by_Category>;
