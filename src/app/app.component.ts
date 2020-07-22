@@ -24,12 +24,10 @@ export class AppComponent {
   }
 
   queries() {
-    /*
-    this.entities();
-    this.navigation();
+    //this.entities();
+    //this.navigation();
     this.property();
-    */
-    this.batch();
+    //this.batch();
   }
 
   entities() {
