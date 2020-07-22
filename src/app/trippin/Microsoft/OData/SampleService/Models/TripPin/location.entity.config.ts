@@ -6,6 +6,7 @@ import { Location } from './location.entity';
 
 export const LocationConfig = {
   name: "Location",
+  open: true,
   annotations: [],
   fields: {
     Address: {type: 'Edm.String', nullable: false},

@@ -40,54 +40,57 @@ export class AppComponent {
     let airports = airportsService.entities();
 
     console.log(airportsService.entities());
-    // Fetch set
-    airports.all()
-      .subscribe(aports => console.log("All: ", aports));
 
-    // Fetch with count
-    airports.get({withCount: true})
-      .subscribe(([aports, annots]) => console.log("Airports: ", aports, "Annotations: ", annots));
+    // Fetch all airports
+    airports
+    .all()
+    .subscribe(aports => console.log("All: ", aports));
 
-    // Fetch by key
-    let airport = airports.entity("CYYZ");
-    airport.get()
-      .subscribe(([aport, annots]) => console.log("Airport: ", aport, "Annotations: ", annots));
+    // Fetch airports with count
+    airports
+    .get({withCount: true})
+    .subscribe(([aports, annots]) => console.log("Airports: ", aports, "Annotations: ", annots));
 
-    console.log(airport.toJSON());
-    console.log(this.odata.fromJSON(airport.toJSON()));
-    // Filter
-    airports.filter({Location: {City: {CountryRegion: "United States"}}});
-    airports.get()
-      .subscribe(([aports, annots]) => console.log("Airports of United States: ", aports, "Annotations: ", annots));
+    // Fetch airport with key
+    airports
+    .entity("CYYZ").get()
+    .subscribe(([aport, annots]) => console.log("Airport: ", aport, "Annotations: ", annots));
 
-    // Add filter
-    airports.filter().push({Location: {City: {Region: "California"}}});
-    airports.get()
-      .subscribe(([aports, annots]) => console.log("Airports in California: ", aports, "Annotations: ", annots));
+    // Filter airports (inmutable resource)
+    airports
+    .filter({Location: {City: {CountryRegion: "United States"}}})
+    .get()
+    .subscribe(([aports, annots]) => console.log("Airports of United States: ", aports, "Annotations: ", annots));
+
+    // Add filter (mutable resource)
+    airports.query.filter().push({Location: {City: {Region: "California"}}});
+    airports
+    .get()
+    .subscribe(([aports, annots]) => console.log("Airports in California: ", aports, "Annotations: ", annots));
 
     console.log(airports.toJSON());
     console.log(this.odata.fromJSON(airports.toJSON()));
-    // Remove filter
-    airports.filter().clear();
-    airports.get()
-      .subscribe(([aports, annots]) => console.log("Airports: ", aports, "Annotations: ", annots));
+
+    // Remove filter (mutable resource)
+    airports.query.filter().clear();
+    airports
+    .get()
+    .subscribe(([aports, annots]) => console.log("Airports: ", aports, "Annotations: ", annots));
 
     let people = peopleService.entities();
 
-    // Expand
+    // Expand (inmutable resource)
     people.expand({
       Friends: { 
         expand: { Friends: { select: ['AddressInfo']}} 
       }, 
       Trips: { select: ['Name', 'Tags'] },
-    });
-    people.get({withCount: true})
-      .subscribe(([peop, annots]) => console.log("People with Friends and Trips: ", peop, "Annotations: ", annots));
+    })
+    .get({withCount: true})
+    .subscribe(([peop, annots]) => console.log("People with Friends and Trips: ", peop, "Annotations: ", annots));
 
     console.log(people.toJSON());
     console.log(this.odata.fromJSON(people.toJSON()));
-    // Remove Expand
-    people.expand().clear();
   }
 
   navigation() {

@@ -1,4 +1,6 @@
-﻿//#region ODataApi Imports
+﻿import { Duration } from 'angular-odata';
+
+//#region ODataApi Imports
 import { PersonGender } from './persongender.enum';
 import { Location } from './location.entity';
 import { Photo } from './photo.entity';

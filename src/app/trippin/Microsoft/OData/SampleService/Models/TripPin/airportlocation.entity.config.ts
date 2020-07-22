@@ -7,6 +7,7 @@ import { AirportLocation } from './airportlocation.entity';
 export const AirportLocationConfig = {
   name: "AirportLocation",
   base: "Microsoft.OData.SampleService.Models.TripPin.Location",
+  open: true,
   annotations: [],
   fields: {
     Loc: {type: 'Edm.GeographyPoint', nullable: false, srid: 4326}

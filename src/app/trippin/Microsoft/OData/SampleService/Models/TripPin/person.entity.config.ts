@@ -6,6 +6,7 @@ import { Person } from './person.entity';
 
 export const PersonConfig = {
   name: "Person",
+  open: true,
   annotations: [],
   fields: {
     UserName: {type: 'Edm.String', key: true, ref: 'UserName', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},

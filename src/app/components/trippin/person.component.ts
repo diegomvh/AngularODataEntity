@@ -17,8 +17,8 @@ export class PersonComponent {
   ) { }
 
   show(name: string) {
-    let person = this.people.entity({UserName: name});
-    person.expand({
+    let person = this.people.entity({UserName: name})
+    .expand({
       Friends: {orderBy: [["UserName", 'asc']]}, 
       Trips: {
         orderBy: ['StartsAt', ['Name', 'desc'], ['Description', 'asc']],
@@ -28,16 +28,19 @@ export class PersonComponent {
         }
       }, 
       Photo: {}
+    })
+    .get()
+    .subscribe(([person, annots]) => {
+      console.log(person, annots);
+      this.person = person;
+      if (person.Photo) {
+        this.photos
+        .entity(person.Photo)
+        .value()
+        .blob()
+        .subscribe(console.log);
+      }
+      this.display = true;
     });
-    person.get()
-      .subscribe(([person, annots]) => {
-        console.log(person, annots);
-        this.person = person;
-        if (person.Photo) {
-          let media = this.photos.entity(person.Photo).value();
-          media.blob().subscribe(console.log);
-        }
-        this.display = true;
-      });
   }
 }

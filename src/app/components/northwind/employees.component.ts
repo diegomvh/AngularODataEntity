@@ -13,6 +13,11 @@ import { Product, ProductsService, Employee, EmployeesService } from 'src/app/no
               <p-sortIcon *ngIf="col.sort" [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
             </th>
         </tr>
+        <tr>
+            <th *ngFor="let col of columns" [ngSwitch]="col.field">
+              <input *ngIf="col.filter" pInputText type="text" (input)="filter($event.target.value, col.field)">
+            </th>
+        </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr>
@@ -36,21 +41,20 @@ export class EmployeesComponent implements OnInit {
   constructor(
     private employees: EmployeesService
   ) { 
-    this.resource = this.employees.entities();
-    this.resource.top(this.size);
+    this.resource = this.employees.entities().top(this.size);
   }
 
   ngOnInit() {
     let config = this.resource.config();
     this.cols = config.fields()
       .filter(f => !f.navigation)
-      .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));
+      .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
     this.loading = true;
   }
 
-  fetch() {
+  fetch(resource: ODataEntitySetResource<Employee>) {
     this.loading = true;
-    this.resource.get({withCount: true}).subscribe(([employees, odata]) => {
+    resource.get({withCount: true}).subscribe(([employees, odata]) => {
       this.rows = employees;
       if (!this.total)
         this.total = odata.count;
@@ -64,23 +68,20 @@ export class EmployeesComponent implements OnInit {
     field = `tolower(${field})`; 
     if (value) {
       let filter = {[field]: {contains: value.toLowerCase()}};
-      this.resource.filter().assign(filter);
+      this.resource.query.filter().assign(filter);
     } else {
-      this.resource.filter().unset(field);
+      this.resource.query.filter().unset(field);
     }
-    this.resource.skip().clear();
-    this.resource.top().clear();
     this.total = 0;
-    this.fetch();
+    this.fetch(this.resource);
   }
 
   loadPeopleLazy(event) {
     //Pagination
-    this.resource.skip(event.first);
-    this.resource.top(event.rows);
+    let resource = this.resource.skip(event.first).top(event.rows);
     //Ordering
     if (event.sortField)
-      this.resource.orderBy([[event.sortField, event.sortOrder == -1 ? "desc": "asc"]]);
-    this.fetch();
+      resource = resource.orderBy([[event.sortField, event.sortOrder == -1 ? "desc": "asc"]]);
+    this.fetch(resource);
   }
 }

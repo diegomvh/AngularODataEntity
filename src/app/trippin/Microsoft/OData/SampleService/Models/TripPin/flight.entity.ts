@@ -1,4 +1,6 @@
-﻿//#region ODataApi Imports
+﻿import { Duration } from 'angular-odata';
+
+//#region ODataApi Imports
 import { PublicTransportation } from './publictransportation.entity';
 import { Airline } from './airline.entity';
 import { Airport } from './airport.entity';

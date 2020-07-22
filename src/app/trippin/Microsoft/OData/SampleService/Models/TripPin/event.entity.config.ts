@@ -7,6 +7,7 @@ import { Event } from './event.entity';
 export const EventConfig = {
   name: "Event",
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
+  open: true,
   annotations: [],
   fields: {
     Description: {type: 'Edm.String'},

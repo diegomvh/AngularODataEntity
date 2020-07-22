@@ -1,4 +1,6 @@
-﻿//#region ODataApi Imports
+﻿import { Duration } from 'angular-odata';
+
+//#region ODataApi Imports
 import { Point } from 'geojson';
 import { Location } from './location.entity';
 //#endregion

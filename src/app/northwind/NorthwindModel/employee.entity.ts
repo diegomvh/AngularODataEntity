@@ -1,4 +1,6 @@
-﻿//#region ODataApi Imports
+﻿import { Duration } from 'angular-odata';
+
+//#region ODataApi Imports
 import { Order } from './order.entity';
 import { Territory } from './territory.entity';
 //#endregion
@@ -19,7 +21,7 @@ export interface Employee {
   Country?: string;
   HomePhone?: string;
   Extension?: string;
-  Photo?: string;
+  Photo?: ArrayBuffer;
   Notes?: string;
   ReportsTo?: number;
   PhotoPath?: string;

@@ -1,4 +1,6 @@
-﻿//#region ODataApi Imports
+﻿import { Duration } from 'angular-odata';
+
+//#region ODataApi Imports
 import { Category } from './category.entity';
 import { Order_Detail } from './order_detail.entity';
 import { Supplier } from './supplier.entity';

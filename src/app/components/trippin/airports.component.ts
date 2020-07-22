@@ -15,9 +15,7 @@ import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odat
         </tr>
         <tr>
             <th *ngFor="let col of columns" [ngSwitch]="col.field">
-              <input *ngSwitchCase="'IcaoCode'" pInputText type="text" (input)="filter($event.target.value, col.field)">
-              <input *ngSwitchCase="'Name'" pInputText type="text" (input)="filter($event.target.value, col.field)">
-              <input *ngSwitchCase="'IataCode'" pInputText type="text" (input)="filter($event.target.value, col.field)">
+              <input *ngIf="col.filter" pInputText type="text" (input)="filter($event.target.value, col.field)">
             </th>
         </tr>
     </ng-template>
@@ -54,13 +52,13 @@ export class AirportsComponent implements OnInit {
     let config = this.resource.config();
     this.cols = config.fields()
       .filter(f => !f.navigation)
-      .map(f => ({ field: f.name, header: f.name, sort: (f.type === 'string' && !f.collection) }));
+      .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
     this.loading = true;
   }
 
-  fetch() {
+  fetch(resource: ODataEntitySetResource<Airport>) {
     this.loading = true;
-    this.resource.get({withCount: true}).subscribe(([airports, annots]) => {
+    resource.get({withCount: true}).subscribe(([airports, annots]) => {
       this.rows = airports;
       if (!this.total)
         this.total = annots.count;
@@ -74,23 +72,20 @@ export class AirportsComponent implements OnInit {
     field = `tolower(${field})`; 
     if (value) {
       let filter = {[field]: {contains: value.toLowerCase()}};
-      this.resource.filter().assign(filter);
+      this.resource.query.filter().assign(filter);
     } else {
-      this.resource.filter().unset(field);
+      this.resource.query.filter().unset(field);
     }
-    this.resource.skip().clear();
-    this.resource.top().clear();
     this.total = 0;
-    this.fetch();
+    this.fetch(this.resource);
   }
 
   loadPeopleLazy(event) {
     //Pagination
-    this.resource.skip(event.first);
-    this.resource.top(event.rows);
+    let resource = this.resource.skip(event.first).top(event.rows);
     //Ordering
     if (event.sortField)
-      this.resource.orderBy([[event.sortField, event.sortOrder == -1 ? "desc": "asc"]]);
-    this.fetch();
+      resource = resource.orderBy([[event.sortField, event.sortOrder == -1 ? "desc": "asc"]]);
+    this.fetch(resource);
   }
 }

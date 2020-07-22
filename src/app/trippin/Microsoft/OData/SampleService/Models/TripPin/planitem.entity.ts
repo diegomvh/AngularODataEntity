@@ -1,4 +1,6 @@
-﻿//#region ODataApi Imports
+﻿import { Duration } from 'angular-odata';
+
+//#region ODataApi Imports
 //#endregion
 
 export interface PlanItem {
@@ -7,6 +9,6 @@ export interface PlanItem {
   ConfirmationCode?: string;
   StartsAt?: Date;
   EndsAt?: Date;
-  Duration?: string;
+  Duration?: Duration;
   //#endregion
 }

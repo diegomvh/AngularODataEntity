@@ -7,6 +7,7 @@ import { EventLocation } from './eventlocation.entity';
 export const EventLocationConfig = {
   name: "EventLocation",
   base: "Microsoft.OData.SampleService.Models.TripPin.Location",
+  open: true,
   annotations: [],
   fields: {
     BuildingInfo: {type: 'Edm.String'}

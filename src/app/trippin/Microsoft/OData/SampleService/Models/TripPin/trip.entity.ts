@@ -1,4 +1,6 @@
-﻿//#region ODataApi Imports
+﻿import { Duration } from 'angular-odata';
+
+//#region ODataApi Imports
 import { Photo } from './photo.entity';
 import { PlanItem } from './planitem.entity';
 //#endregion
