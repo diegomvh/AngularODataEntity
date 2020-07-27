@@ -3,7 +3,17 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, EntityKey, ODataValueAnnotations, ODataEntityResource, ODataEntitySetResource, ODataNavigationPropertyResource, HttpOptions } from 'angular-odata';
+import { 
+  ODataEntityService, 
+  ODataEntityAnnotations, 
+  ODataEntitiesAnnotations, 
+  ODataPropertyAnnotations, 
+  EntityKey,
+  ODataEntityResource,
+  ODataEntitySetResource,
+  ODataNavigationPropertyResource,
+  HttpOptions
+} from 'angular-odata';
 
 //#region ODataApi Imports
 import { Photo } from './photo.entity';
@@ -13,7 +23,7 @@ import { Photo } from './photo.entity';
 export class PhotosService extends ODataEntityService<Photo> {
   static path: string = 'Photos';
   static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Photos';
-  static entity: string = 'Microsoft.OData.SampleService.Models.TripPin.Photo';
+  static entityType: string = 'Microsoft.OData.SampleService.Models.TripPin.Photo';
 
   //#region ODataApi Actions
   //#endregion

@@ -3,7 +3,17 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, EntityKey, ODataValueAnnotations, ODataEntityResource, ODataEntitySetResource, ODataNavigationPropertyResource, HttpOptions } from 'angular-odata';
+import { 
+  ODataEntityService, 
+  ODataEntityAnnotations, 
+  ODataEntitiesAnnotations, 
+  ODataPropertyAnnotations, 
+  EntityKey,
+  ODataEntityResource,
+  ODataEntitySetResource,
+  ODataNavigationPropertyResource,
+  HttpOptions
+} from 'angular-odata';
 
 //#region ODataApi Imports
 import { Employee } from '../../../NorthwindModel/employee.entity';
@@ -15,7 +25,7 @@ import { Territory } from '../../../NorthwindModel/territory.entity';
 export class EmployeesService extends ODataEntityService<Employee> {
   static path: string = 'Employees';
   static type: string = 'ODataWebExperimental.Northwind.Model.Employees';
-  static entity: string = 'NorthwindModel.Employee';
+  static entityType: string = 'NorthwindModel.Employee';
 
   //#region ODataApi Actions
   //#endregion

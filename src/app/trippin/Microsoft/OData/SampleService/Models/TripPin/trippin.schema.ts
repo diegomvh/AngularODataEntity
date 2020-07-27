@@ -20,11 +20,8 @@ import { DefaultContainerContainer } from './defaultcontainer.container';
 
 export const TripPinSchema = {
   namespace: "Microsoft.OData.SampleService.Models.TripPin",
-  enums: [
-    PersonGenderConfig
-  ],
-  entities: [
-    CityConfig,
+  enums: [PersonGenderConfig],
+  entities: [CityConfig,
     LocationConfig,
     EventLocationConfig,
     AirportLocationConfig,
@@ -36,9 +33,42 @@ export const TripPinSchema = {
     PublicTransportationConfig,
     FlightConfig,
     EventConfig,
-    TripConfig
-  ],
-  containers: [
-    DefaultContainerContainer
-  ]
+    TripConfig],
+  callables: [{
+    name: 'GetFavoriteAirline',
+    path: "person/Trips/PlanItems/Microsoft.OData.SampleService.Models.TripPin.Flight/Airline",
+    bound: true,
+    composable: true,
+    parameters: { person: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', nullable: false} },
+    return: "Microsoft.OData.SampleService.Models.TripPin.Airline"
+  }, {
+    name: 'GetInvolvedPeople',
+    bound: true,
+    composable: true,
+    parameters: { trip: {type: 'Microsoft.OData.SampleService.Models.TripPin.Trip', nullable: false} },
+    return: "Microsoft.OData.SampleService.Models.TripPin.Person"
+  }, {
+    name: 'GetFriendsTrips',
+    path: "person/Friends/Trips",
+    bound: true,
+    composable: true,
+    parameters: { person: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', nullable: false}, userName: {type: 'Edm.String', nullable: false} },
+    return: "Microsoft.OData.SampleService.Models.TripPin.Trip"
+  }, {
+    name: 'GetNearestAirport',
+    bound: false,
+    composable: true,
+    parameters: { lat: {type: 'Edm.Double', nullable: false}, lon: {type: 'Edm.Double', nullable: false} },
+    return: "Microsoft.OData.SampleService.Models.TripPin.Airport"
+  }, {
+    name: 'ResetDataSource',
+    bound: false,
+    composable: false,
+  }, {
+    name: 'ShareTrip',
+    bound: true,
+    composable: false,
+    parameters: { person: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', nullable: false}, userName: {type: 'Edm.String', nullable: false}, tripId: {type: 'Edm.Int32', nullable: false} },
+  }],
+  containers: [DefaultContainerContainer]
 } as Schema;

@@ -113,12 +113,12 @@ export class AppComponent {
 
     // Person gender
     let gender = person.property<PersonGender>("Gender");
-    gender.get({responseType: 'value'}).subscribe(console.log);
+    gender.get({responseType: 'property'}).subscribe(console.log);
     gender.value().get().subscribe(console.log);
 
     // Person name
     let name = person.property<string>("UserName");
-    name.get({responseType: 'value'}).subscribe(console.log);
+    name.get({responseType: 'property'}).subscribe(console.log);
     name.value().get().subscribe(console.log);
 
     // Person photo
@@ -127,7 +127,7 @@ export class AppComponent {
     photo.value().arraybuffer().subscribe(console.log);
     photo.value().blob().subscribe(console.log);
     let photoName = photo.property<string>("Name");
-    photoName.get({responseType: 'value'}).subscribe(console.log);
+    photoName.get({responseType: 'property'}).subscribe(console.log);
 
     name.value().get().subscribe(console.log);
   }

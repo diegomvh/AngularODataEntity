@@ -3,7 +3,17 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ODataEntityService, ODataEntityAnnotations, ODataEntitiesAnnotations, EntityKey, ODataValueAnnotations, ODataEntityResource, ODataEntitySetResource, ODataNavigationPropertyResource, HttpOptions } from 'angular-odata';
+import { 
+  ODataEntityService, 
+  ODataEntityAnnotations, 
+  ODataEntitiesAnnotations, 
+  ODataPropertyAnnotations, 
+  EntityKey,
+  ODataEntityResource,
+  ODataEntitySetResource,
+  ODataNavigationPropertyResource,
+  HttpOptions
+} from 'angular-odata';
 
 //#region ODataApi Imports
 import { Category } from '../../../NorthwindModel/category.entity';
@@ -14,7 +24,7 @@ import { Product } from '../../../NorthwindModel/product.entity';
 export class CategoriesService extends ODataEntityService<Category> {
   static path: string = 'Categories';
   static type: string = 'ODataWebExperimental.Northwind.Model.Categories';
-  static entity: string = 'NorthwindModel.Category';
+  static entityType: string = 'NorthwindModel.Category';
 
   //#region ODataApi Actions
   //#endregion

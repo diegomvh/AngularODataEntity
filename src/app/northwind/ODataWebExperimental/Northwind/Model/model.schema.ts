@@ -6,13 +6,8 @@ import { NorthwindEntitiesContainer } from './northwindentities.container';
 
 export const ModelSchema = {
   namespace: "ODataWebExperimental.Northwind.Model",
-  enums: [
-    
-  ],
-  entities: [
-    
-  ],
-  containers: [
-    NorthwindEntitiesContainer
-  ]
+  enums: [  ],
+  entities: [  ],
+  callables: [  ],
+  containers: [ NorthwindEntitiesContainer ]
 } as Schema;
