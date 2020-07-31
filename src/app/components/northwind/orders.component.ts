@@ -54,12 +54,12 @@ export class OrdersComponent implements OnInit {
 
   fetch(resource: ODataEntitySetResource<Order>) {
     this.loading = true;
-    resource.get({withCount: true}).subscribe(([orders, odata]) => {
-      this.rows = orders;
+    resource.get({withCount: true}).subscribe(({entities, annotations}) => {
+      this.rows = entities;
       if (!this.total)
-        this.total = odata.count;
+        this.total = annotations.count;
       if (!this.size) {
-        this.size = odata.skip;
+        this.size = annotations.skip;
       }
       this.loading = false;
     });

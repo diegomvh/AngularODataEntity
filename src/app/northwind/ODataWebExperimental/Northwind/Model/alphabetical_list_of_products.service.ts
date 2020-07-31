@@ -4,14 +4,17 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { 
-  ODataEntityService, 
-  ODataEntityAnnotations, 
-  ODataEntitiesAnnotations, 
-  ODataPropertyAnnotations, 
+  ODataClient,
+  ODataService, 
+  ODataEntity, 
+  ODataEntities, 
+  ODataProperty, 
   EntityKey,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
+  ODataActionResource,
+  ODataFunctionResource,
   HttpOptions
 } from 'angular-odata';
 
@@ -20,10 +23,10 @@ import { Alphabetical_list_of_product } from '../../../NorthwindModel/alphabetic
 //#endregion
 
 @Injectable()
-export class Alphabetical_list_of_productsService extends ODataEntityService<Alphabetical_list_of_product> {
-  static path: string = 'Alphabetical_list_of_products';
-  static type: string = 'ODataWebExperimental.Northwind.Model.Alphabetical_list_of_products';
-  static entityType: string = 'NorthwindModel.Alphabetical_list_of_product';
+export class Alphabetical_list_of_productsService extends ODataService<Alphabetical_list_of_product> {
+  constructor(protected client: ODataClient) {
+    super(client, 'Alphabetical_list_of_products', 'NorthwindModel.Alphabetical_list_of_product');
+  }
 
   //#region ODataApi Actions
   //#endregion

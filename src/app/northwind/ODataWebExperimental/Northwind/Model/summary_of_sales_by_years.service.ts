@@ -4,14 +4,17 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { 
-  ODataEntityService, 
-  ODataEntityAnnotations, 
-  ODataEntitiesAnnotations, 
-  ODataPropertyAnnotations, 
+  ODataClient,
+  ODataService, 
+  ODataEntity, 
+  ODataEntities, 
+  ODataProperty, 
   EntityKey,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
+  ODataActionResource,
+  ODataFunctionResource,
   HttpOptions
 } from 'angular-odata';
 
@@ -20,10 +23,10 @@ import { Summary_of_Sales_by_Year } from '../../../NorthwindModel/summary_of_sal
 //#endregion
 
 @Injectable()
-export class Summary_of_Sales_by_YearsService extends ODataEntityService<Summary_of_Sales_by_Year> {
-  static path: string = 'Summary_of_Sales_by_Years';
-  static type: string = 'ODataWebExperimental.Northwind.Model.Summary_of_Sales_by_Years';
-  static entityType: string = 'NorthwindModel.Summary_of_Sales_by_Year';
+export class Summary_of_Sales_by_YearsService extends ODataService<Summary_of_Sales_by_Year> {
+  constructor(protected client: ODataClient) {
+    super(client, 'Summary_of_Sales_by_Years', 'NorthwindModel.Summary_of_Sales_by_Year');
+  }
 
   //#region ODataApi Actions
   //#endregion

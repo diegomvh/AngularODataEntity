@@ -59,12 +59,12 @@ export class AirlinesComponent implements OnInit {
 
   fetch(resource: ODataEntitySetResource<Airline>) {
     this.loading = true;
-    resource.get({withCount: true}).subscribe(([airlines, annots]) => {
-      this.rows = airlines;
+    resource.get({withCount: true}).subscribe(({entities, annotations}) => {
+      this.rows = entities;
       if (!this.total)
-        this.total = annots.count;
+        this.total = annotations.count;
       if (!this.size)
-        this.size = annots.skip || airlines.length;
+        this.size = annotations.skip || entities.length;
       this.loading = false;
     });
   }

@@ -17,7 +17,7 @@ export class AppComponent {
     private people: PeopleService
   ) {
     // Reset api
-    this.api.resetDataSource().subscribe(() => {
+    this.api.resetDataSource().call(null).subscribe(() => {
       this.queries();
       this.mutate();
     });
@@ -32,8 +32,8 @@ export class AppComponent {
 
   entities() {
     // Use OData Service Factory
-    let airportsService = this.factory.createEntityService<Airport>("Airports", 'Microsoft.OData.SampleService.Models.TripPin.Airport');
-    let peopleService = this.factory.createEntityService<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
+    let airportsService = this.factory.create<Airport>("Airports", 'Microsoft.OData.SampleService.Models.TripPin.Airport');
+    let peopleService = this.factory.create<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
 
     let airports = airportsService.entities();
 
@@ -47,24 +47,24 @@ export class AppComponent {
     // Fetch airports with count
     airports
     .get({withCount: true})
-    .subscribe(([aports, annots]) => console.log("Airports: ", aports, "Annotations: ", annots));
+    .subscribe(({entities, annotations}) => console.log("Airports: ", entities, "Annotations: ", annotations));
 
     // Fetch airport with key
     airports
     .entity("CYYZ").get()
-    .subscribe(([aport, annots]) => console.log("Airport: ", aport, "Annotations: ", annots));
+    .subscribe(({entity, annotations}) => console.log("Airport: ", entity, "Annotations: ", annotations));
 
     // Filter airports (inmutable resource)
     airports
     .filter({Location: {City: {CountryRegion: "United States"}}})
     .get()
-    .subscribe(([aports, annots]) => console.log("Airports of United States: ", aports, "Annotations: ", annots));
+    .subscribe(({entities, annotations}) => console.log("Airports of United States: ", entities, "Annotations: ", annotations));
 
     // Add filter (mutable resource)
     airports.query.filter().push({Location: {City: {Region: "California"}}});
     airports
     .get()
-    .subscribe(([aports, annots]) => console.log("Airports in California: ", aports, "Annotations: ", annots));
+    .subscribe(({entities, annotations}) => console.log("Airports in California: ", entities, "Annotations: ", annotations));
 
     console.log(airports.toJSON());
     console.log(this.odata.fromJSON(airports.toJSON()));
@@ -73,7 +73,7 @@ export class AppComponent {
     airports.query.filter().clear();
     airports
     .get()
-    .subscribe(([aports, annots]) => console.log("Airports: ", aports, "Annotations: ", annots));
+    .subscribe(({entities, annotations}) => console.log("Airports: ", entities, "Annotations: ", annotations));
 
     let people = peopleService.entities();
 
@@ -85,7 +85,7 @@ export class AppComponent {
       Trips: { select: ['Name', 'Tags'] },
     })
     .get({withCount: true})
-    .subscribe(([peop, annots]) => console.log("People with Friends and Trips: ", peop, "Annotations: ", annots));
+    .subscribe(({entities, annotations}) => console.log("People with Friends and Trips: ", entities, "Annotations: ", annotations));
 
     console.log(people.toJSON());
     console.log(this.odata.fromJSON(people.toJSON()));
@@ -93,8 +93,9 @@ export class AppComponent {
 
   navigation() {
     // Create service without Type for Person entity
-    let peopleService = this.factory.createEntityService<Person>("People");
+    let peopleService = this.factory.create<Person>("People");
     let person = peopleService.entity("scottketchum");
+    person.get({config: 'TripPin'}).subscribe(({entity, annotations}) => console.log(annotations.property('Emails')));
 
     let friends = person.navigationProperty<Person>("Friends");
     // Use TripPin config
@@ -103,31 +104,32 @@ export class AppComponent {
 
   property() {
     // Create Service with Type
-    let peopleService = this.factory.createEntityService<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
+    let peopleService = this.factory.create<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
     let person = peopleService.entity("scottketchum");
-    console.log(person);
+    person.property<string[]>("Emails").fetch().subscribe(console.log)
+    person.property<Person[]>("Friends").fetch().subscribe(console.log)
 
     // Person locations
     let locations = person.property<Location[]>("AddressInfo");
-    locations.get({responseType: 'entities'}).subscribe(console.log);
+    locations.fetch().subscribe(console.log);
 
     // Person gender
     let gender = person.property<PersonGender>("Gender");
-    gender.get({responseType: 'property'}).subscribe(console.log);
+    gender.fetch().subscribe(console.log);
     gender.value().get().subscribe(console.log);
 
     // Person name
     let name = person.property<string>("UserName");
-    name.get({responseType: 'property'}).subscribe(console.log);
+    name.fetch().subscribe(console.log);
     name.value().get().subscribe(console.log);
 
     // Person photo
-    let photo = person.property<Photo>("Photo");
-    photo.get({responseType: 'entity'}).subscribe(console.log);
+    let photo = person.navigationProperty<Photo>("Photo");
+    photo.fetch().subscribe(console.log);
     photo.value().arraybuffer().subscribe(console.log);
     photo.value().blob().subscribe(console.log);
     let photoName = photo.property<string>("Name");
-    photoName.get({responseType: 'property'}).subscribe(console.log);
+    photoName.fetch().subscribe(console.log);
 
     name.value().get().subscribe(console.log);
   }
@@ -138,15 +140,15 @@ export class AppComponent {
 
   createPerson() {
     // Use Person Service
-    this.people.create({
+    this.people.entities().post({
       Emails: ['some@email.com'], 
       UserName: 'diegomvh', 
       Gender: PersonGender.Male, 
       FirstName: 'Diego',
       LastName: 'van Haaster'
     }).pipe(
-      switchMap(([person, entity]) => {
-        return this.people.assign({UserName: person.UserName, Gender: PersonGender.Female}, {etag: entity.etag});
+      switchMap(({entity, annotations}) => {
+        return this.people.entity(entity).patch({UserName: entity.UserName, Gender: PersonGender.Female}, {etag: annotations.etag});
       })
     ).toPromise();
   }

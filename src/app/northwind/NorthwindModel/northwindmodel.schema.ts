@@ -31,8 +31,8 @@ import { Summary_of_Sales_by_YearConfig } from './summary_of_sales_by_year.entit
 
 export const NorthwindModelSchema = {
   namespace: "NorthwindModel",
-  enums: [  ],
-  entities: [ CategoryConfig,
+  enums: [],
+  entities: [CategoryConfig,
     CustomerDemographicConfig,
     CustomerConfig,
     EmployeeConfig,
@@ -57,7 +57,7 @@ export const NorthwindModelSchema = {
     Sales_by_CategoryConfig,
     Sales_Totals_by_AmountConfig,
     Summary_of_Sales_by_QuarterConfig,
-    Summary_of_Sales_by_YearConfig ],
-  callables: [  ],
-  containers: [  ]
+    Summary_of_Sales_by_YearConfig],
+  callables: [],
+  containers: []
 } as Schema;

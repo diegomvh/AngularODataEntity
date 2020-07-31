@@ -54,12 +54,12 @@ export class CategoriesComponent implements OnInit {
 
   fetch(resource: ODataEntitySetResource<Category>) {
     this.loading = true;
-    resource.get({withCount: true}).subscribe(([categories, odata]) => {
-      this.rows = categories;
+    resource.get({withCount: true}).subscribe(({entities, annotations}) => {
+      this.rows = entities;
       if (!this.total)
-        this.total = odata.count;
+        this.total = annotations.count;
       if (!this.size)
-        this.size = odata.skip;
+        this.size = annotations.skip;
       this.loading = false;
     });
   }

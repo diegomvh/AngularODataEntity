@@ -4,14 +4,17 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { 
-  ODataEntityService, 
-  ODataEntityAnnotations, 
-  ODataEntitiesAnnotations, 
-  ODataPropertyAnnotations, 
+  ODataClient,
+  ODataService, 
+  ODataEntity, 
+  ODataEntities, 
+  ODataProperty, 
   EntityKey,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
+  ODataActionResource,
+  ODataFunctionResource,
   HttpOptions
 } from 'angular-odata';
 
@@ -21,10 +24,10 @@ import { Supplier } from '../../../NorthwindModel/supplier.entity';
 //#endregion
 
 @Injectable()
-export class SuppliersService extends ODataEntityService<Supplier> {
-  static path: string = 'Suppliers';
-  static type: string = 'ODataWebExperimental.Northwind.Model.Suppliers';
-  static entityType: string = 'NorthwindModel.Supplier';
+export class SuppliersService extends ODataService<Supplier> {
+  constructor(protected client: ODataClient) {
+    super(client, 'Suppliers', 'NorthwindModel.Supplier');
+  }
 
   //#region ODataApi Actions
   //#endregion

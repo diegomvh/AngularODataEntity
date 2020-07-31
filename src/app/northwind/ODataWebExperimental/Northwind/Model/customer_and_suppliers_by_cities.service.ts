@@ -4,14 +4,17 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { 
-  ODataEntityService, 
-  ODataEntityAnnotations, 
-  ODataEntitiesAnnotations, 
-  ODataPropertyAnnotations, 
+  ODataClient,
+  ODataService, 
+  ODataEntity, 
+  ODataEntities, 
+  ODataProperty, 
   EntityKey,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
+  ODataActionResource,
+  ODataFunctionResource,
   HttpOptions
 } from 'angular-odata';
 
@@ -20,10 +23,10 @@ import { Customer_and_Suppliers_by_City } from '../../../NorthwindModel/customer
 //#endregion
 
 @Injectable()
-export class Customer_and_Suppliers_by_CitiesService extends ODataEntityService<Customer_and_Suppliers_by_City> {
-  static path: string = 'Customer_and_Suppliers_by_Cities';
-  static type: string = 'ODataWebExperimental.Northwind.Model.Customer_and_Suppliers_by_Cities';
-  static entityType: string = 'NorthwindModel.Customer_and_Suppliers_by_City';
+export class Customer_and_Suppliers_by_CitiesService extends ODataService<Customer_and_Suppliers_by_City> {
+  constructor(protected client: ODataClient) {
+    super(client, 'Customer_and_Suppliers_by_Cities', 'NorthwindModel.Customer_and_Suppliers_by_City');
+  }
 
   //#region ODataApi Actions
   //#endregion

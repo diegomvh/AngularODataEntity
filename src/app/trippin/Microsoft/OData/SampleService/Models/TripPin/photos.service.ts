@@ -4,14 +4,17 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { 
-  ODataEntityService, 
-  ODataEntityAnnotations, 
-  ODataEntitiesAnnotations, 
-  ODataPropertyAnnotations, 
+  ODataClient,
+  ODataService, 
+  ODataEntity, 
+  ODataEntities, 
+  ODataProperty, 
   EntityKey,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
+  ODataActionResource,
+  ODataFunctionResource,
   HttpOptions
 } from 'angular-odata';
 
@@ -20,10 +23,10 @@ import { Photo } from './photo.entity';
 //#endregion
 
 @Injectable()
-export class PhotosService extends ODataEntityService<Photo> {
-  static path: string = 'Photos';
-  static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Photos';
-  static entityType: string = 'Microsoft.OData.SampleService.Models.TripPin.Photo';
+export class PhotosService extends ODataService<Photo> {
+  constructor(protected client: ODataClient) {
+    super(client, 'Photos', 'Microsoft.OData.SampleService.Models.TripPin.Photo');
+  }
 
   //#region ODataApi Actions
   //#endregion

@@ -65,12 +65,12 @@ export class PeopleComponent implements OnInit {
 
   fetch(resource: ODataEntitySetResource<Person>) {
     this.loading = true;
-    resource.get({withCount: true}).subscribe(([people, annots]) => {
-      this.rows = people;
+    resource.get({withCount: true}).subscribe(({entities, annotations}) => {
+      this.rows = entities;
       if (!this.total)
-        this.total = annots.count;
+        this.total = annotations.count;
       if (!this.size)
-        this.size = annots.skip || people.length;
+        this.size = annotations.skip || entities.length;
       this.loading = false;
     });
   }

@@ -4,14 +4,17 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { 
-  ODataEntityService, 
-  ODataEntityAnnotations, 
-  ODataEntitiesAnnotations, 
-  ODataPropertyAnnotations, 
+  ODataClient,
+  ODataService, 
+  ODataEntity, 
+  ODataEntities, 
+  ODataProperty, 
   EntityKey,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
+  ODataActionResource,
+  ODataFunctionResource,
   HttpOptions
 } from 'angular-odata';
 
@@ -20,10 +23,10 @@ import { Airline } from './airline.entity';
 //#endregion
 
 @Injectable()
-export class AirlinesService extends ODataEntityService<Airline> {
-  static path: string = 'Airlines';
-  static type: string = 'Microsoft.OData.SampleService.Models.TripPin.Airlines';
-  static entityType: string = 'Microsoft.OData.SampleService.Models.TripPin.Airline';
+export class AirlinesService extends ODataService<Airline> {
+  constructor(protected client: ODataClient) {
+    super(client, 'Airlines', 'Microsoft.OData.SampleService.Models.TripPin.Airline');
+  }
 
   //#region ODataApi Actions
   //#endregion

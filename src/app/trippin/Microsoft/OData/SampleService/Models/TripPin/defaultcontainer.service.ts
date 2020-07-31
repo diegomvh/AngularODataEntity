@@ -5,14 +5,16 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
-  ODataEntityAnnotations, 
-  ODataEntitiesAnnotations, 
-  ODataPropertyAnnotations, 
+  ODataService, 
+  ODataEntity, 
+  ODataEntities, 
+  ODataProperty, 
   EntityKey,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
+  ODataActionResource,
+  ODataFunctionResource,
   HttpOptions
 } from 'angular-odata';
 
@@ -26,19 +28,15 @@ export class DefaultContainerService {
   constructor(protected client: ODataClient) { }
 
   //#region ODataApi Actions
-  public resetDataSource(options?: HttpOptions): Observable<[any, ODataEntityAnnotations]> {
-    let args = null;
-    var res = this.client.action<any>('ResetDataSource');
-    options = Object.assign({config: 'TripPin'}, options || {});
-    return res.call(args, 'entity', options);
+  public resetDataSource(): ODataActionResource<null, any> {
+    const resource = this.client.action<null, any>('Microsoft.OData.SampleService.Models.TripPin.ResetDataSource');
+    return resource;
   }
   //#endregion
   //#region ODataApi Functions
-  public getNearestAirport(lat: number, lon: number, options?: HttpOptions): Observable<[Airport, ODataEntityAnnotations]> {
-    let args = {lat, lon}
-    var res = this.client.function<Airport>('GetNearestAirport');
-    options = Object.assign({config: 'TripPin'}, options || {});
-    return res.call(args, 'entity', options);
+  public getNearestAirport(): ODataFunctionResource<{lat: number, lon: number}, Airport> {
+    const resource = this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport');
+    return resource;
   }
   //#endregion
 }

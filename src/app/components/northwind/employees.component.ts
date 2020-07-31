@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odata';
+import { ODataEntitySetResource, ODataSettings, ODataClient, ODataEntityConfig } from 'angular-odata';
 import { Product, ProductsService, Employee, EmployeesService } from 'src/app/northwind';
 
 @Component({
@@ -54,12 +54,12 @@ export class EmployeesComponent implements OnInit {
 
   fetch(resource: ODataEntitySetResource<Employee>) {
     this.loading = true;
-    resource.get({withCount: true}).subscribe(([employees, odata]) => {
-      this.rows = employees;
+    resource.get({withCount: true}).subscribe(({entities, annotations}) => {
+      this.rows = entities;
       if (!this.total)
-        this.total = odata.count;
+        this.total = annotations.count;
       if (!this.size)
-        this.size = odata.skip;
+        this.size = annotations.skip;
       this.loading = false;
     });
   }

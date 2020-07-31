@@ -4,14 +4,17 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { 
-  ODataEntityService, 
-  ODataEntityAnnotations, 
-  ODataEntitiesAnnotations, 
-  ODataPropertyAnnotations, 
+  ODataClient,
+  ODataService, 
+  ODataEntity, 
+  ODataEntities, 
+  ODataProperty, 
   EntityKey,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
+  ODataActionResource,
+  ODataFunctionResource,
   HttpOptions
 } from 'angular-odata';
 
@@ -20,10 +23,10 @@ import { Order_Subtotal } from '../../../NorthwindModel/order_subtotal.entity';
 //#endregion
 
 @Injectable()
-export class Order_SubtotalsService extends ODataEntityService<Order_Subtotal> {
-  static path: string = 'Order_Subtotals';
-  static type: string = 'ODataWebExperimental.Northwind.Model.Order_Subtotals';
-  static entityType: string = 'NorthwindModel.Order_Subtotal';
+export class Order_SubtotalsService extends ODataService<Order_Subtotal> {
+  constructor(protected client: ODataClient) {
+    super(client, 'Order_Subtotals', 'NorthwindModel.Order_Subtotal');
+  }
 
   //#region ODataApi Actions
   //#endregion
