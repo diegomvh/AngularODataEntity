@@ -1,14 +1,18 @@
 ﻿import { EntityConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Products_Above_Average_Price } from './products_above_average_price.entity';
+import { ProductsAboveAveragePrice } from './products_above_average_price.entity';
+import { ProductsAboveAveragePriceModel } from './products_above_average_price.model';
+import { ProductsAboveAveragePriceCollection } from './products_above_average_price.collection';
 //#endregion
 
-export const Products_Above_Average_PriceConfig = {
-  name: "Products_Above_Average_Price",
+export const ProductsAboveAveragePriceConfig = {
+  name: "ProductsAboveAveragePrice",
+  model: ProductsAboveAveragePriceModel,
+  collection: ProductsAboveAveragePriceCollection,
   annotations: [],
   fields: {
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    UnitPrice: {type: 'Edm.Decimal', precition: 19, scale: 4}
+    productName: {name: 'ProductName', type: 'Edm.String', key: true, ref: 'productName', nullable: false, maxLength: 40},
+    unitPrice: {name: 'UnitPrice', type: 'Edm.Decimal', precition: 19, scale: 4}
   }
-} as EntityConfig<Products_Above_Average_Price>;
+} as EntityConfig<ProductsAboveAveragePrice>;

@@ -7,7 +7,8 @@ import { TripPinSchema } from './Microsoft/OData/SampleService/Models/TripPin/tr
 export const TripPinConfig = {
   name: 'TripPin',
   serviceRootUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
-  creation: new Date('2020-07-31T18:32:54.8925171-03:00'),
+  version: '4.0',
+  creation: new Date('2020-08-02T19:13:22.6071985-03:00'),
   schemas: [
     TripPinSchema
   ],

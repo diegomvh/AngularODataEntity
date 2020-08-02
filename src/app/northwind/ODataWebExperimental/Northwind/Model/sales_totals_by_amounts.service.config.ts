@@ -3,7 +3,7 @@
 //#region ODataApi Imports
 //#endregion
 
-export const Sales_Totals_by_AmountsServiceConfig = {
+export const SalesTotalsByAmountsServiceConfig = {
   name: "Sales_Totals_by_Amounts",
   annotations: []
 } as ServiceConfig;

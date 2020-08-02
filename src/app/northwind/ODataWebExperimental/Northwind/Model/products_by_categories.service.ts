@@ -19,19 +19,22 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Products_by_Category } from '../../../NorthwindModel/products_by_category.entity';
+import { ProductsByCategory } from '../../../NorthwindModel/products_by_category.entity';
+import { ProductsByCategoryModel } from '../../../NorthwindModel/products_by_category.model';
+import { ProductsByCategoryCollection } from '../../../NorthwindModel/products_by_category.collection';
 //#endregion
 
 @Injectable()
-export class Products_by_CategoriesService extends ODataService<Products_by_Category> {
+export class ProductsByCategoriesService extends ODataService<ProductsByCategory> {
   constructor(protected client: ODataClient) {
     super(client, 'Products_by_Categories', 'NorthwindModel.Products_by_Category');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  productsByCategoryModel(): ProductsByCategoryModel<ProductsByCategory> {
+    return super.model() as ProductsByCategoryModel<ProductsByCategory>;
+  }
+  
+  productsByCategoriesCollection(): ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>> {
+    return super.collection() as ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>>;
+  }
 }

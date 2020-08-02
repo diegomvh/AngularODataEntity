@@ -3,11 +3,11 @@
 //#region ODataApi Imports
 //#endregion
 
-export interface Sales_Totals_by_Amount {
+export interface SalesTotalsByAmount {
   //#region ODataApi Properties
-  SaleAmount?: number;
-  OrderID: number;
-  CompanyName: string;
-  ShippedDate?: Date;
+  saleAmount?: number;
+  orderID: number;
+  companyName: string;
+  shippedDate?: Date;
   //#endregion
 }

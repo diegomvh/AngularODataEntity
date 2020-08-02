@@ -9,6 +9,6 @@ export const PublicTransportationConfig = {
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
   annotations: [],
   fields: {
-    SeatNumber: {type: 'Edm.String'}
+    seatNumber: {name: 'SeatNumber', type: 'Edm.String'}
   }
 } as EntityConfig<PublicTransportation>;

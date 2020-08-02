@@ -3,12 +3,12 @@
 //#region ODataApi Imports
 //#endregion
 
-export interface Products_by_Category {
+export interface ProductsByCategory {
   //#region ODataApi Properties
-  CategoryName: string;
-  ProductName: string;
-  QuantityPerUnit?: string;
-  UnitsInStock?: number;
-  Discontinued: boolean;
+  categoryName: string;
+  productName: string;
+  quantityPerUnit?: string;
+  unitsInStock?: number;
+  discontinued: boolean;
   //#endregion
 }

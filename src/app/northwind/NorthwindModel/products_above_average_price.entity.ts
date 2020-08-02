@@ -3,9 +3,9 @@
 //#region ODataApi Imports
 //#endregion
 
-export interface Products_Above_Average_Price {
+export interface ProductsAboveAveragePrice {
   //#region ODataApi Properties
-  ProductName: string;
-  UnitPrice?: number;
+  productName: string;
+  unitPrice?: number;
   //#endregion
 }

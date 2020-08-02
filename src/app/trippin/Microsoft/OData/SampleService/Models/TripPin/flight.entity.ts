@@ -8,9 +8,9 @@ import { Airport } from './airport.entity';
 
 export interface Flight extends PublicTransportation {
   //#region ODataApi Properties
-  FlightNumber: string;
-  From?: Airport;
-  To?: Airport;
-  Airline?: Airline;
+  flightNumber: string;
+  from?: Airport;
+  to?: Airport;
+  airline?: Airline;
   //#endregion
 }

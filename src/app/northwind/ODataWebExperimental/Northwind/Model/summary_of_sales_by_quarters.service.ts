@@ -19,19 +19,22 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Summary_of_Sales_by_Quarter } from '../../../NorthwindModel/summary_of_sales_by_quarter.entity';
+import { SummaryOfSalesByQuarter } from '../../../NorthwindModel/summary_of_sales_by_quarter.entity';
+import { SummaryOfSalesByQuarterModel } from '../../../NorthwindModel/summary_of_sales_by_quarter.model';
+import { SummaryOfSalesByQuarterCollection } from '../../../NorthwindModel/summary_of_sales_by_quarter.collection';
 //#endregion
 
 @Injectable()
-export class Summary_of_Sales_by_QuartersService extends ODataService<Summary_of_Sales_by_Quarter> {
+export class SummaryOfSalesByQuartersService extends ODataService<SummaryOfSalesByQuarter> {
   constructor(protected client: ODataClient) {
     super(client, 'Summary_of_Sales_by_Quarters', 'NorthwindModel.Summary_of_Sales_by_Quarter');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  summaryOfSalesByQuarterModel(): SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter> {
+    return super.model() as SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>;
+  }
+  
+  summaryOfSalesByQuartersCollection(): SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>> {
+    return super.collection() as SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>>;
+  }
 }

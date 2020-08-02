@@ -9,15 +9,15 @@ export const PersonConfig = {
   open: true,
   annotations: [],
   fields: {
-    UserName: {type: 'Edm.String', key: true, ref: 'UserName', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
-    FirstName: {type: 'Edm.String', nullable: false},
-    LastName: {type: 'Edm.String', nullable: false},
-    Emails: {type: 'Edm.String', collection: true},
-    AddressInfo: {type: 'Microsoft.OData.SampleService.Models.TripPin.Location', collection: true},
-    Gender: {type: 'Microsoft.OData.SampleService.Models.TripPin.PersonGender'},
-    Concurrency: {type: 'Edm.Int64', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Computed","bool":true}]},
-    Friends: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', collection: true, navigation: true},
-    Trips: {type: 'Microsoft.OData.SampleService.Models.TripPin.Trip', collection: true, navigation: true},
-    Photo: {type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', navigation: true}
+    userName: {name: 'UserName', type: 'Edm.String', key: true, ref: 'userName', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
+    firstName: {name: 'FirstName', type: 'Edm.String', nullable: false},
+    lastName: {name: 'LastName', type: 'Edm.String', nullable: false},
+    emails: {name: 'Emails', type: 'Edm.String', collection: true},
+    addressInfo: {name: 'AddressInfo', type: 'Microsoft.OData.SampleService.Models.TripPin.Location', collection: true},
+    gender: {name: 'Gender', type: 'Microsoft.OData.SampleService.Models.TripPin.PersonGender'},
+    concurrency: {name: 'Concurrency', type: 'Edm.Int64', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Computed","bool":true}]},
+    friends: {name: 'Friends', type: 'Microsoft.OData.SampleService.Models.TripPin.Person', collection: true, navigation: true},
+    trips: {name: 'Trips', type: 'Microsoft.OData.SampleService.Models.TripPin.Trip', collection: true, navigation: true},
+    photo: {name: 'Photo', type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', navigation: true}
   }
 } as EntityConfig<Person>;

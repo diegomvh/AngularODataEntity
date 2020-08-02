@@ -7,7 +7,7 @@ import { EventLocation } from './eventlocation.entity';
 
 export interface Event extends PlanItem {
   //#region ODataApi Properties
-  Description?: string;
-  OccursAt: EventLocation;
+  description?: string;
+  occursAt: EventLocation;
   //#endregion
 }

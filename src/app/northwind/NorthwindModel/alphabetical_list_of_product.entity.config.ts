@@ -1,23 +1,27 @@
 ﻿import { EntityConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Alphabetical_list_of_product } from './alphabetical_list_of_product.entity';
+import { AlphabeticalListOfProduct } from './alphabetical_list_of_product.entity';
+import { AlphabeticalListOfProductModel } from './alphabetical_list_of_product.model';
+import { AlphabeticalListOfProductCollection } from './alphabetical_list_of_product.collection';
 //#endregion
 
-export const Alphabetical_list_of_productConfig = {
-  name: "Alphabetical_list_of_product",
+export const AlphabeticalListOfProductConfig = {
+  name: "AlphabeticalListOfProduct",
+  model: AlphabeticalListOfProductModel,
+  collection: AlphabeticalListOfProductCollection,
   annotations: [],
   fields: {
-    ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    SupplierID: {type: 'Edm.Int32'},
-    CategoryID: {type: 'Edm.Int32'},
-    QuantityPerUnit: {type: 'Edm.String', maxLength: 20},
-    UnitPrice: {type: 'Edm.Decimal', precition: 19, scale: 4},
-    UnitsInStock: {type: 'Edm.Int16'},
-    UnitsOnOrder: {type: 'Edm.Int16'},
-    ReorderLevel: {type: 'Edm.Int16'},
-    Discontinued: {type: 'Edm.Boolean', key: true, ref: 'Discontinued', nullable: false},
-    CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15}
+    productID: {name: 'ProductID', type: 'Edm.Int32', key: true, ref: 'productID', nullable: false},
+    productName: {name: 'ProductName', type: 'Edm.String', key: true, ref: 'productName', nullable: false, maxLength: 40},
+    supplierID: {name: 'SupplierID', type: 'Edm.Int32'},
+    categoryID: {name: 'CategoryID', type: 'Edm.Int32'},
+    quantityPerUnit: {name: 'QuantityPerUnit', type: 'Edm.String', maxLength: 20},
+    unitPrice: {name: 'UnitPrice', type: 'Edm.Decimal', precition: 19, scale: 4},
+    unitsInStock: {name: 'UnitsInStock', type: 'Edm.Int16'},
+    unitsOnOrder: {name: 'UnitsOnOrder', type: 'Edm.Int16'},
+    reorderLevel: {name: 'ReorderLevel', type: 'Edm.Int16'},
+    discontinued: {name: 'Discontinued', type: 'Edm.Boolean', key: true, ref: 'discontinued', nullable: false},
+    categoryName: {name: 'CategoryName', type: 'Edm.String', key: true, ref: 'categoryName', nullable: false, maxLength: 15}
   }
-} as EntityConfig<Alphabetical_list_of_product>;
+} as EntityConfig<AlphabeticalListOfProduct>;

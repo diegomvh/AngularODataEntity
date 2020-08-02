@@ -21,6 +21,10 @@ import {
 //#region ODataApi Imports
 import { Order } from '../../../NorthwindModel/order.entity';
 import { Shipper } from '../../../NorthwindModel/shipper.entity';
+import { OrderModel } from '../../../NorthwindModel/order.model';
+import { ShipperModel } from '../../../NorthwindModel/shipper.model';
+import { OrderCollection } from '../../../NorthwindModel/order.collection';
+import { ShipperCollection } from '../../../NorthwindModel/shipper.collection';
 //#endregion
 
 @Injectable()
@@ -29,13 +33,11 @@ export class ShippersService extends ODataService<Shipper> {
     super(client, 'Shippers', 'NorthwindModel.Shipper');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  public orders(entity: EntityKey<Shipper>): ODataNavigationPropertyResource<Order> {
-    return this.entity(entity).navigationProperty<Order>('Orders');
+  shipperModel(): ShipperModel<Shipper> {
+    return super.model() as ShipperModel<Shipper>;
   }
-  //#endregion
+  
+  shippersCollection(): ShipperCollection<Shipper, ShipperModel<Shipper>> {
+    return super.collection() as ShipperCollection<Shipper, ShipperModel<Shipper>>;
+  }
 }

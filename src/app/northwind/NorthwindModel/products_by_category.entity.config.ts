@@ -1,17 +1,21 @@
 ﻿import { EntityConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Products_by_Category } from './products_by_category.entity';
+import { ProductsByCategory } from './products_by_category.entity';
+import { ProductsByCategoryModel } from './products_by_category.model';
+import { ProductsByCategoryCollection } from './products_by_category.collection';
 //#endregion
 
-export const Products_by_CategoryConfig = {
-  name: "Products_by_Category",
+export const ProductsByCategoryConfig = {
+  name: "ProductsByCategory",
+  model: ProductsByCategoryModel,
+  collection: ProductsByCategoryCollection,
   annotations: [],
   fields: {
-    CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    QuantityPerUnit: {type: 'Edm.String', maxLength: 20},
-    UnitsInStock: {type: 'Edm.Int16'},
-    Discontinued: {type: 'Edm.Boolean', key: true, ref: 'Discontinued', nullable: false}
+    categoryName: {name: 'CategoryName', type: 'Edm.String', key: true, ref: 'categoryName', nullable: false, maxLength: 15},
+    productName: {name: 'ProductName', type: 'Edm.String', key: true, ref: 'productName', nullable: false, maxLength: 40},
+    quantityPerUnit: {name: 'QuantityPerUnit', type: 'Edm.String', maxLength: 20},
+    unitsInStock: {name: 'UnitsInStock', type: 'Edm.Int16'},
+    discontinued: {name: 'Discontinued', type: 'Edm.Boolean', key: true, ref: 'discontinued', nullable: false}
   }
-} as EntityConfig<Products_by_Category>;
+} as EntityConfig<ProductsByCategory>;

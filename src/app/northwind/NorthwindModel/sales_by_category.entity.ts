@@ -3,11 +3,11 @@
 //#region ODataApi Imports
 //#endregion
 
-export interface Sales_by_Category {
+export interface SalesByCategory {
   //#region ODataApi Properties
-  CategoryID: number;
-  CategoryName: string;
-  ProductName: string;
-  ProductSales?: number;
+  categoryID: number;
+  categoryName: string;
+  productName: string;
+  productSales?: number;
   //#endregion
 }

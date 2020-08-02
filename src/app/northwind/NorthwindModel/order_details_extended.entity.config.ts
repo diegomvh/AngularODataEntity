@@ -1,19 +1,23 @@
 ﻿import { EntityConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Order_Details_Extended } from './order_details_extended.entity';
+import { OrderDetailsExtended } from './order_details_extended.entity';
+import { OrderDetailsExtendedModel } from './order_details_extended.model';
+import { OrderDetailsExtendedCollection } from './order_details_extended.collection';
 //#endregion
 
-export const Order_Details_ExtendedConfig = {
-  name: "Order_Details_Extended",
+export const OrderDetailsExtendedConfig = {
+  name: "OrderDetailsExtended",
+  model: OrderDetailsExtendedModel,
+  collection: OrderDetailsExtendedCollection,
   annotations: [],
   fields: {
-    OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
-    ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    UnitPrice: {type: 'Edm.Decimal', key: true, ref: 'UnitPrice', nullable: false, precition: 19, scale: 4},
-    Quantity: {type: 'Edm.Int16', key: true, ref: 'Quantity', nullable: false},
-    Discount: {type: 'Edm.Single', key: true, ref: 'Discount', nullable: false},
-    ExtendedPrice: {type: 'Edm.Decimal', precition: 19, scale: 4}
+    orderID: {name: 'OrderID', type: 'Edm.Int32', key: true, ref: 'orderID', nullable: false},
+    productID: {name: 'ProductID', type: 'Edm.Int32', key: true, ref: 'productID', nullable: false},
+    productName: {name: 'ProductName', type: 'Edm.String', key: true, ref: 'productName', nullable: false, maxLength: 40},
+    unitPrice: {name: 'UnitPrice', type: 'Edm.Decimal', key: true, ref: 'unitPrice', nullable: false, precition: 19, scale: 4},
+    quantity: {name: 'Quantity', type: 'Edm.Int16', key: true, ref: 'quantity', nullable: false},
+    discount: {name: 'Discount', type: 'Edm.Single', key: true, ref: 'discount', nullable: false},
+    extendedPrice: {name: 'ExtendedPrice', type: 'Edm.Decimal', precition: 19, scale: 4}
   }
-} as EntityConfig<Order_Details_Extended>;
+} as EntityConfig<OrderDetailsExtended>;

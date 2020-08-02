@@ -3,7 +3,7 @@
 //#region ODataApi Imports
 //#endregion
 
-export const Alphabetical_list_of_productsServiceConfig = {
+export const AlphabeticalListOfProductsServiceConfig = {
   name: "Alphabetical_list_of_products",
   annotations: []
 } as ServiceConfig;

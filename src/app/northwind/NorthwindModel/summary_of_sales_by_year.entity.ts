@@ -3,10 +3,10 @@
 //#region ODataApi Imports
 //#endregion
 
-export interface Summary_of_Sales_by_Year {
+export interface SummaryOfSalesByYear {
   //#region ODataApi Properties
-  ShippedDate?: Date;
-  OrderID: number;
-  Subtotal?: number;
+  shippedDate?: Date;
+  orderID: number;
+  subtotal?: number;
   //#endregion
 }

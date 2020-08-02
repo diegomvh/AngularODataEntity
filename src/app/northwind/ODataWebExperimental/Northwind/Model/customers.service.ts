@@ -22,6 +22,12 @@ import {
 import { CustomerDemographic } from '../../../NorthwindModel/customerdemographic.entity';
 import { Customer } from '../../../NorthwindModel/customer.entity';
 import { Order } from '../../../NorthwindModel/order.entity';
+import { CustomerDemographicModel } from '../../../NorthwindModel/customerdemographic.model';
+import { CustomerModel } from '../../../NorthwindModel/customer.model';
+import { OrderModel } from '../../../NorthwindModel/order.model';
+import { CustomerDemographicCollection } from '../../../NorthwindModel/customerdemographic.collection';
+import { CustomerCollection } from '../../../NorthwindModel/customer.collection';
+import { OrderCollection } from '../../../NorthwindModel/order.collection';
 //#endregion
 
 @Injectable()
@@ -30,16 +36,11 @@ export class CustomersService extends ODataService<Customer> {
     super(client, 'Customers', 'NorthwindModel.Customer');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  public customerDemographics(entity: EntityKey<Customer>): ODataNavigationPropertyResource<CustomerDemographic> {
-    return this.entity(entity).navigationProperty<CustomerDemographic>('CustomerDemographics');
+  customerModel(): CustomerModel<Customer> {
+    return super.model() as CustomerModel<Customer>;
   }
-  public orders(entity: EntityKey<Customer>): ODataNavigationPropertyResource<Order> {
-    return this.entity(entity).navigationProperty<Order>('Orders');
+  
+  customersCollection(): CustomerCollection<Customer, CustomerModel<Customer>> {
+    return super.collection() as CustomerCollection<Customer, CustomerModel<Customer>>;
   }
-  //#endregion
 }

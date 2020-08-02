@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ODataServiceFactory, ODataClient } from 'angular-odata';
+import { ODataServiceFactory, ODataClient, odataEtag } from 'angular-odata';
 import { PeopleService, Airport, Person, PersonGender, Photo } from './trippin';
 import { switchMap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin/index';
@@ -18,7 +18,7 @@ export class AppComponent {
   ) {
     // Reset api
     this.api.resetDataSource().call(null).subscribe(() => {
-      this.queries();
+      //this.queries();
       this.mutate();
     });
   }
@@ -140,15 +140,15 @@ export class AppComponent {
 
   createPerson() {
     // Use Person Service
-    this.people.entities().post({
+    this.people.entities().add({
       Emails: ['some@email.com'], 
       UserName: 'diegomvh', 
       Gender: PersonGender.Male, 
       FirstName: 'Diego',
       LastName: 'van Haaster'
     }).pipe(
-      switchMap(({entity, annotations}) => {
-        return this.people.entity(entity).patch({UserName: entity.UserName, Gender: PersonGender.Female}, {etag: annotations.etag});
+      switchMap((person) => {
+        return this.people.entity(person).assign({UserName: person.UserName, Gender: PersonGender.Female}, {etag: odataEtag(person)});
       })
     ).toPromise();
   }

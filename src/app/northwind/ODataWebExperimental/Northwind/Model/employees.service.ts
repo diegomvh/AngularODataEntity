@@ -22,6 +22,12 @@ import {
 import { Employee } from '../../../NorthwindModel/employee.entity';
 import { Order } from '../../../NorthwindModel/order.entity';
 import { Territory } from '../../../NorthwindModel/territory.entity';
+import { EmployeeModel } from '../../../NorthwindModel/employee.model';
+import { OrderModel } from '../../../NorthwindModel/order.model';
+import { TerritoryModel } from '../../../NorthwindModel/territory.model';
+import { EmployeeCollection } from '../../../NorthwindModel/employee.collection';
+import { OrderCollection } from '../../../NorthwindModel/order.collection';
+import { TerritoryCollection } from '../../../NorthwindModel/territory.collection';
 //#endregion
 
 @Injectable()
@@ -30,22 +36,11 @@ export class EmployeesService extends ODataService<Employee> {
     super(client, 'Employees', 'NorthwindModel.Employee');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  public employees1(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Employee> {
-    return this.entity(entity).navigationProperty<Employee>('Employees1');
+  employeeModel(): EmployeeModel<Employee> {
+    return super.model() as EmployeeModel<Employee>;
   }
-  public employee1(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Employee> {
-    return this.entity(entity).navigationProperty<Employee>('Employee1');
+  
+  employeesCollection(): EmployeeCollection<Employee, EmployeeModel<Employee>> {
+    return super.collection() as EmployeeCollection<Employee, EmployeeModel<Employee>>;
   }
-  public orders(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Order> {
-    return this.entity(entity).navigationProperty<Order>('Orders');
-  }
-  public territories(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Territory> {
-    return this.entity(entity).navigationProperty<Territory>('Territories');
-  }
-  //#endregion
 }

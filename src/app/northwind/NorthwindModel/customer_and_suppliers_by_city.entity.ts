@@ -3,11 +3,11 @@
 //#region ODataApi Imports
 //#endregion
 
-export interface Customer_and_Suppliers_by_City {
+export interface CustomerAndSuppliersByCity {
   //#region ODataApi Properties
-  City?: string;
-  CompanyName: string;
-  ContactName?: string;
-  Relationship: string;
+  city?: string;
+  companyName: string;
+  contactName?: string;
+  relationship: string;
   //#endregion
 }

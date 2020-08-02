@@ -3,7 +3,7 @@
 //#region ODataApi Imports
 //#endregion
 
-export const Product_Sales_for_1997ServiceConfig = {
+export const ProductSalesFor1997ServiceConfig = {
   name: "Product_Sales_for_1997",
   annotations: []
 } as ServiceConfig;

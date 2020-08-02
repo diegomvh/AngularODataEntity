@@ -1,15 +1,19 @@
 ﻿import { EntityConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Summary_of_Sales_by_Year } from './summary_of_sales_by_year.entity';
+import { SummaryOfSalesByYear } from './summary_of_sales_by_year.entity';
+import { SummaryOfSalesByYearModel } from './summary_of_sales_by_year.model';
+import { SummaryOfSalesByYearCollection } from './summary_of_sales_by_year.collection';
 //#endregion
 
-export const Summary_of_Sales_by_YearConfig = {
-  name: "Summary_of_Sales_by_Year",
+export const SummaryOfSalesByYearConfig = {
+  name: "SummaryOfSalesByYear",
+  model: SummaryOfSalesByYearModel,
+  collection: SummaryOfSalesByYearCollection,
   annotations: [],
   fields: {
-    ShippedDate: {type: 'Edm.DateTimeOffset'},
-    OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
-    Subtotal: {type: 'Edm.Decimal', precition: 19, scale: 4}
+    shippedDate: {name: 'ShippedDate', type: 'Edm.DateTimeOffset'},
+    orderID: {name: 'OrderID', type: 'Edm.Int32', key: true, ref: 'orderID', nullable: false},
+    subtotal: {name: 'Subtotal', type: 'Edm.Decimal', precition: 19, scale: 4}
   }
-} as EntityConfig<Summary_of_Sales_by_Year>;
+} as EntityConfig<SummaryOfSalesByYear>;

@@ -5,7 +5,7 @@
 
 export interface Airline {
   //#region ODataApi Properties
-  AirlineCode: string;
-  Name: string;
+  airlineCode: string;
+  name: string;
   //#endregion
 }

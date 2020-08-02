@@ -3,9 +3,9 @@
 //#region ODataApi Imports
 //#endregion
 
-export interface Current_Product_List {
+export interface CurrentProductList {
   //#region ODataApi Properties
-  ProductID: number;
-  ProductName: string;
+  productID: number;
+  productName: string;
   //#endregion
 }

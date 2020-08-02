@@ -19,19 +19,22 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Customer_and_Suppliers_by_City } from '../../../NorthwindModel/customer_and_suppliers_by_city.entity';
+import { CustomerAndSuppliersByCity } from '../../../NorthwindModel/customer_and_suppliers_by_city.entity';
+import { CustomerAndSuppliersByCityModel } from '../../../NorthwindModel/customer_and_suppliers_by_city.model';
+import { CustomerAndSuppliersByCityCollection } from '../../../NorthwindModel/customer_and_suppliers_by_city.collection';
 //#endregion
 
 @Injectable()
-export class Customer_and_Suppliers_by_CitiesService extends ODataService<Customer_and_Suppliers_by_City> {
+export class CustomerAndSuppliersByCitiesService extends ODataService<CustomerAndSuppliersByCity> {
   constructor(protected client: ODataClient) {
     super(client, 'Customer_and_Suppliers_by_Cities', 'NorthwindModel.Customer_and_Suppliers_by_City');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  customerAndSuppliersByCityModel(): CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity> {
+    return super.model() as CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>;
+  }
+  
+  customerAndSuppliersByCitiesCollection(): CustomerAndSuppliersByCityCollection<CustomerAndSuppliersByCity, CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>> {
+    return super.collection() as CustomerAndSuppliersByCityCollection<CustomerAndSuppliersByCity, CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>>;
+  }
 }

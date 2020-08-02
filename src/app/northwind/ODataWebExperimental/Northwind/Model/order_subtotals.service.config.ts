@@ -3,7 +3,7 @@
 //#region ODataApi Imports
 //#endregion
 
-export const Order_SubtotalsServiceConfig = {
+export const OrderSubtotalsServiceConfig = {
   name: "Order_Subtotals",
   annotations: []
 } as ServiceConfig;

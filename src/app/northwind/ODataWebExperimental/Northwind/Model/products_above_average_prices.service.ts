@@ -19,19 +19,22 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Products_Above_Average_Price } from '../../../NorthwindModel/products_above_average_price.entity';
+import { ProductsAboveAveragePrice } from '../../../NorthwindModel/products_above_average_price.entity';
+import { ProductsAboveAveragePriceModel } from '../../../NorthwindModel/products_above_average_price.model';
+import { ProductsAboveAveragePriceCollection } from '../../../NorthwindModel/products_above_average_price.collection';
 //#endregion
 
 @Injectable()
-export class Products_Above_Average_PricesService extends ODataService<Products_Above_Average_Price> {
+export class ProductsAboveAveragePricesService extends ODataService<ProductsAboveAveragePrice> {
   constructor(protected client: ODataClient) {
     super(client, 'Products_Above_Average_Prices', 'NorthwindModel.Products_Above_Average_Price');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  productsAboveAveragePriceModel(): ProductsAboveAveragePriceModel<ProductsAboveAveragePrice> {
+    return super.model() as ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>;
+  }
+  
+  productsAboveAveragePricesCollection(): ProductsAboveAveragePriceCollection<ProductsAboveAveragePrice, ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>> {
+    return super.collection() as ProductsAboveAveragePriceCollection<ProductsAboveAveragePrice, ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>>;
+  }
 }

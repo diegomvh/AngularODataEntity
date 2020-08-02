@@ -1,15 +1,19 @@
 ﻿import { EntityConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Product_Sales_for_1997 } from './product_sales_for_1997.entity';
+import { ProductSalesFor1997 } from './product_sales_for_1997.entity';
+import { ProductSalesFor1997Model } from './product_sales_for_1997.model';
+import { ProductSalesFor1997Collection } from './product_sales_for_1997.collection';
 //#endregion
 
-export const Product_Sales_for_1997Config = {
-  name: "Product_Sales_for_1997",
+export const ProductSalesFor1997Config = {
+  name: "ProductSalesFor1997",
+  model: ProductSalesFor1997Model,
+  collection: ProductSalesFor1997Collection,
   annotations: [],
   fields: {
-    CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    ProductSales: {type: 'Edm.Decimal', precition: 19, scale: 4}
+    categoryName: {name: 'CategoryName', type: 'Edm.String', key: true, ref: 'categoryName', nullable: false, maxLength: 15},
+    productName: {name: 'ProductName', type: 'Edm.String', key: true, ref: 'productName', nullable: false, maxLength: 40},
+    productSales: {name: 'ProductSales', type: 'Edm.Decimal', precition: 19, scale: 4}
   }
-} as EntityConfig<Product_Sales_for_1997>;
+} as EntityConfig<ProductSalesFor1997>;

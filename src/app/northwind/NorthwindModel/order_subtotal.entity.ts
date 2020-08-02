@@ -3,9 +3,9 @@
 //#region ODataApi Imports
 //#endregion
 
-export interface Order_Subtotal {
+export interface OrderSubtotal {
   //#region ODataApi Properties
-  OrderID: number;
-  Subtotal?: number;
+  orderID: number;
+  subtotal?: number;
   //#endregion
 }

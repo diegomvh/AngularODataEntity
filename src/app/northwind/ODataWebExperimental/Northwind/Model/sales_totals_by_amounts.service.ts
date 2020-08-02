@@ -19,19 +19,22 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Sales_Totals_by_Amount } from '../../../NorthwindModel/sales_totals_by_amount.entity';
+import { SalesTotalsByAmount } from '../../../NorthwindModel/sales_totals_by_amount.entity';
+import { SalesTotalsByAmountModel } from '../../../NorthwindModel/sales_totals_by_amount.model';
+import { SalesTotalsByAmountCollection } from '../../../NorthwindModel/sales_totals_by_amount.collection';
 //#endregion
 
 @Injectable()
-export class Sales_Totals_by_AmountsService extends ODataService<Sales_Totals_by_Amount> {
+export class SalesTotalsByAmountsService extends ODataService<SalesTotalsByAmount> {
   constructor(protected client: ODataClient) {
     super(client, 'Sales_Totals_by_Amounts', 'NorthwindModel.Sales_Totals_by_Amount');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  salesTotalsByAmountModel(): SalesTotalsByAmountModel<SalesTotalsByAmount> {
+    return super.model() as SalesTotalsByAmountModel<SalesTotalsByAmount>;
+  }
+  
+  salesTotalsByAmountsCollection(): SalesTotalsByAmountCollection<SalesTotalsByAmount, SalesTotalsByAmountModel<SalesTotalsByAmount>> {
+    return super.collection() as SalesTotalsByAmountCollection<SalesTotalsByAmount, SalesTotalsByAmountModel<SalesTotalsByAmount>>;
+  }
 }

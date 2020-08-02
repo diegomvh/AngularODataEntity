@@ -9,15 +9,15 @@ import { Trip } from './trip.entity';
 
 export interface Person {
   //#region ODataApi Properties
-  UserName: string;
-  FirstName: string;
-  LastName: string;
-  Emails?: string[];
-  AddressInfo?: Location[];
-  Gender?: PersonGender;
-  Concurrency: number;
-  Friends?: Person[];
-  Trips?: Trip[];
-  Photo?: Photo;
+  userName: string;
+  firstName: string;
+  lastName: string;
+  emails?: string[];
+  addressInfo?: Location[];
+  gender?: PersonGender;
+  concurrency: number;
+  friends?: Person[];
+  trips?: Trip[];
+  photo?: Photo;
   //#endregion
 }

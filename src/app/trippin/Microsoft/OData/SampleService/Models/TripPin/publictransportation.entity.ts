@@ -6,6 +6,6 @@ import { PlanItem } from './planitem.entity';
 
 export interface PublicTransportation extends PlanItem {
   //#region ODataApi Properties
-  SeatNumber?: string;
+  seatNumber?: string;
   //#endregion
 }

@@ -1,16 +1,20 @@
 ﻿import { EntityConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Customer_and_Suppliers_by_City } from './customer_and_suppliers_by_city.entity';
+import { CustomerAndSuppliersByCity } from './customer_and_suppliers_by_city.entity';
+import { CustomerAndSuppliersByCityModel } from './customer_and_suppliers_by_city.model';
+import { CustomerAndSuppliersByCityCollection } from './customer_and_suppliers_by_city.collection';
 //#endregion
 
-export const Customer_and_Suppliers_by_CityConfig = {
-  name: "Customer_and_Suppliers_by_City",
+export const CustomerAndSuppliersByCityConfig = {
+  name: "CustomerAndSuppliersByCity",
+  model: CustomerAndSuppliersByCityModel,
+  collection: CustomerAndSuppliersByCityCollection,
   annotations: [],
   fields: {
-    City: {type: 'Edm.String', maxLength: 15},
-    CompanyName: {type: 'Edm.String', key: true, ref: 'CompanyName', nullable: false, maxLength: 40},
-    ContactName: {type: 'Edm.String', maxLength: 30},
-    Relationship: {type: 'Edm.String', key: true, ref: 'Relationship', nullable: false, maxLength: 9}
+    city: {name: 'City', type: 'Edm.String', maxLength: 15},
+    companyName: {name: 'CompanyName', type: 'Edm.String', key: true, ref: 'companyName', nullable: false, maxLength: 40},
+    contactName: {name: 'ContactName', type: 'Edm.String', maxLength: 30},
+    relationship: {name: 'Relationship', type: 'Edm.String', key: true, ref: 'relationship', nullable: false, maxLength: 9}
   }
-} as EntityConfig<Customer_and_Suppliers_by_City>;
+} as EntityConfig<CustomerAndSuppliersByCity>;

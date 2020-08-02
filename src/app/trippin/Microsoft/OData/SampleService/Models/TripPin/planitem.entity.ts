@@ -5,10 +5,10 @@
 
 export interface PlanItem {
   //#region ODataApi Properties
-  PlanItemId: number;
-  ConfirmationCode?: string;
-  StartsAt?: Date;
-  EndsAt?: Date;
-  Duration?: Duration;
+  planItemId: number;
+  confirmationCode?: string;
+  startsAt?: Date;
+  endsAt?: Date;
+  duration?: Duration;
   //#endregion
 }

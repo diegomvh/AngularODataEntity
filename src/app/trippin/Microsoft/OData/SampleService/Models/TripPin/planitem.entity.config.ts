@@ -8,10 +8,10 @@ export const PlanItemConfig = {
   name: "PlanItem",
   annotations: [],
   fields: {
-    PlanItemId: {type: 'Edm.Int32', key: true, ref: 'PlanItemId', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
-    ConfirmationCode: {type: 'Edm.String'},
-    StartsAt: {type: 'Edm.DateTimeOffset'},
-    EndsAt: {type: 'Edm.DateTimeOffset'},
-    Duration: {type: 'Edm.Duration'}
+    planItemId: {name: 'PlanItemId', type: 'Edm.Int32', key: true, ref: 'planItemId', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
+    confirmationCode: {name: 'ConfirmationCode', type: 'Edm.String'},
+    startsAt: {name: 'StartsAt', type: 'Edm.DateTimeOffset'},
+    endsAt: {name: 'EndsAt', type: 'Edm.DateTimeOffset'},
+    duration: {name: 'Duration', type: 'Edm.Duration'}
   }
 } as EntityConfig<PlanItem>;
