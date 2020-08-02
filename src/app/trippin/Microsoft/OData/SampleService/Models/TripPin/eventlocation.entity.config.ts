@@ -10,6 +10,6 @@ export const EventLocationConfig = {
   open: true,
   annotations: [],
   fields: {
-    buildingInfo: {name: 'BuildingInfo', type: 'Edm.String'}
+    BuildingInfo: {type: 'Edm.String'}
   }
 } as EntityConfig<EventLocation>;

@@ -14,18 +14,18 @@ import { SupplierCollection } from './supplier.collection';
 
 export interface Product {
   //#region ODataApi Properties
-  productID: number;
-  productName: string;
-  supplierID?: number;
-  categoryID?: number;
-  quantityPerUnit?: string;
-  unitPrice?: number;
-  unitsInStock?: number;
-  unitsOnOrder?: number;
-  reorderLevel?: number;
-  discontinued: boolean;
-  category?: Category;
-  orderDetails?: Order_Detail[];
-  supplier?: Supplier;
+  ProductID: number;
+  ProductName: string;
+  SupplierID?: number;
+  CategoryID?: number;
+  QuantityPerUnit?: string;
+  UnitPrice?: number;
+  UnitsInStock?: number;
+  UnitsOnOrder?: number;
+  ReorderLevel?: number;
+  Discontinued: boolean;
+  Category?: Category;
+  Order_Details?: Order_Detail[];
+  Supplier?: Supplier;
   //#endregion
 }

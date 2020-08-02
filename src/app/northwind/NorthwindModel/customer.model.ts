@@ -16,19 +16,19 @@ import { OrderCollection } from './order.collection';
 
 export class CustomerModel<E extends Customer> extends ODataModel<E> {
   //#region ODataApi Properties
-  customerID: string;
-  companyName: string;
-  contactName?: string;
-  contactTitle?: string;
-  address?: string;
-  city?: string;
-  region?: string;
-  postalCode?: string;
-  country?: string;
-  phone?: string;
-  fax?: string;
-  orders?: OrderCollection<Order, OrderModel<Order>>;
-  customerDemographics?: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
+  CustomerID: string;
+  CompanyName: string;
+  ContactName?: string;
+  ContactTitle?: string;
+  Address?: string;
+  City?: string;
+  Region?: string;
+  PostalCode?: string;
+  Country?: string;
+  Phone?: string;
+  Fax?: string;
+  Orders?: OrderCollection<Order, OrderModel<Order>>;
+  CustomerDemographics?: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

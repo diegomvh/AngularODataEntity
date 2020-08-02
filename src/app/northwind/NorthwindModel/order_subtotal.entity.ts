@@ -5,7 +5,7 @@
 
 export interface OrderSubtotal {
   //#region ODataApi Properties
-  orderID: number;
-  subtotal?: number;
+  OrderID: number;
+  Subtotal?: number;
   //#endregion
 }

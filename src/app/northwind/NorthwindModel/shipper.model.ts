@@ -13,10 +13,10 @@ import { ShipperCollection } from './shipper.collection';
 
 export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   //#region ODataApi Properties
-  shipperID: number;
-  companyName: string;
-  phone?: string;
-  orders?: OrderCollection<Order, OrderModel<Order>>;
+  ShipperID: number;
+  CompanyName: string;
+  Phone?: string;
+  Orders?: OrderCollection<Order, OrderModel<Order>>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

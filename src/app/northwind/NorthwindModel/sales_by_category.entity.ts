@@ -5,9 +5,9 @@
 
 export interface SalesByCategory {
   //#region ODataApi Properties
-  categoryID: number;
-  categoryName: string;
-  productName: string;
-  productSales?: number;
+  CategoryID: number;
+  CategoryName: string;
+  ProductName: string;
+  ProductSales?: number;
   //#endregion
 }

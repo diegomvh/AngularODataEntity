@@ -13,19 +13,19 @@ import { SupplierCollection } from './supplier.collection';
 
 export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   //#region ODataApi Properties
-  supplierID: number;
-  companyName: string;
-  contactName?: string;
-  contactTitle?: string;
-  address?: string;
-  city?: string;
-  region?: string;
-  postalCode?: string;
-  country?: string;
-  phone?: string;
-  fax?: string;
-  homePage?: string;
-  products?: ProductCollection<Product, ProductModel<Product>>;
+  SupplierID: number;
+  CompanyName: string;
+  ContactName?: string;
+  ContactTitle?: string;
+  Address?: string;
+  City?: string;
+  Region?: string;
+  PostalCode?: string;
+  Country?: string;
+  Phone?: string;
+  Fax?: string;
+  HomePage?: string;
+  Products?: ProductCollection<Product, ProductModel<Product>>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

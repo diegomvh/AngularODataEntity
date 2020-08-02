@@ -16,28 +16,28 @@ import { TerritoryCollection } from './territory.collection';
 
 export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   //#region ODataApi Properties
-  employeeID: number;
-  lastName: string;
-  firstName: string;
-  title?: string;
-  titleOfCourtesy?: string;
-  birthDate?: Date;
-  hireDate?: Date;
-  address?: string;
-  city?: string;
-  region?: string;
-  postalCode?: string;
-  country?: string;
-  homePhone?: string;
-  extension?: string;
-  photo?: ArrayBuffer;
-  notes?: string;
-  reportsTo?: number;
-  photoPath?: string;
-  employees1?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
-  employee1?: EmployeeModel<Employee>;
-  orders?: OrderCollection<Order, OrderModel<Order>>;
-  territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
+  EmployeeID: number;
+  LastName: string;
+  FirstName: string;
+  Title?: string;
+  TitleOfCourtesy?: string;
+  BirthDate?: Date;
+  HireDate?: Date;
+  Address?: string;
+  City?: string;
+  Region?: string;
+  PostalCode?: string;
+  Country?: string;
+  HomePhone?: string;
+  Extension?: string;
+  Photo?: ArrayBuffer;
+  Notes?: string;
+  ReportsTo?: number;
+  PhotoPath?: string;
+  Employees1?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
+  Employee1?: EmployeeModel<Employee>;
+  Orders?: OrderCollection<Order, OrderModel<Order>>;
+  Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

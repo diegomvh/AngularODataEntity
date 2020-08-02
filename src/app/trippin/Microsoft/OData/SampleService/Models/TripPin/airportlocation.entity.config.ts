@@ -10,6 +10,6 @@ export const AirportLocationConfig = {
   open: true,
   annotations: [],
   fields: {
-    loc: {name: 'Loc', type: 'Edm.GeographyPoint', nullable: false, srid: 4326}
+    Loc: {type: 'Edm.GeographyPoint', nullable: false, srid: 4326}
   }
 } as EntityConfig<AirportLocation>;

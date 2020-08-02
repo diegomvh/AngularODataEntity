@@ -5,12 +5,12 @@
 
 export interface OrderDetailsExtended {
   //#region ODataApi Properties
-  orderID: number;
-  productID: number;
-  productName: string;
-  unitPrice: number;
-  quantity: number;
-  discount: number;
-  extendedPrice?: number;
+  OrderID: number;
+  ProductID: number;
+  ProductName: string;
+  UnitPrice: number;
+  Quantity: number;
+  Discount: number;
+  ExtendedPrice?: number;
   //#endregion
 }

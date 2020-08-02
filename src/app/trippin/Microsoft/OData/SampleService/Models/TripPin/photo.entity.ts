@@ -5,7 +5,7 @@
 
 export interface Photo {
   //#region ODataApi Properties
-  id: number;
-  name?: string;
+  Id: number;
+  Name?: string;
   //#endregion
 }

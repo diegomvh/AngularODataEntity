@@ -6,9 +6,9 @@ import { AirportLocation } from './airportlocation.entity';
 
 export interface Airport {
   //#region ODataApi Properties
-  icaoCode: string;
-  name: string;
-  iataCode: string;
-  location: AirportLocation;
+  IcaoCode: string;
+  Name: string;
+  IataCode: string;
+  Location: AirportLocation;
   //#endregion
 }

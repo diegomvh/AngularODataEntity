@@ -12,8 +12,8 @@ export const ProductSalesFor1997Config = {
   collection: ProductSalesFor1997Collection,
   annotations: [],
   fields: {
-    categoryName: {name: 'CategoryName', type: 'Edm.String', key: true, ref: 'categoryName', nullable: false, maxLength: 15},
-    productName: {name: 'ProductName', type: 'Edm.String', key: true, ref: 'productName', nullable: false, maxLength: 40},
-    productSales: {name: 'ProductSales', type: 'Edm.Decimal', precition: 19, scale: 4}
+    CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
+    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
+    ProductSales: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as EntityConfig<ProductSalesFor1997>;

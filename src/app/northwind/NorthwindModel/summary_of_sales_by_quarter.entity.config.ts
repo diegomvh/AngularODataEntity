@@ -12,8 +12,8 @@ export const SummaryOfSalesByQuarterConfig = {
   collection: SummaryOfSalesByQuarterCollection,
   annotations: [],
   fields: {
-    shippedDate: {name: 'ShippedDate', type: 'Edm.DateTimeOffset'},
-    orderID: {name: 'OrderID', type: 'Edm.Int32', key: true, ref: 'orderID', nullable: false},
-    subtotal: {name: 'Subtotal', type: 'Edm.Decimal', precition: 19, scale: 4}
+    ShippedDate: {type: 'Edm.DateTimeOffset'},
+    OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
+    Subtotal: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as EntityConfig<SummaryOfSalesByQuarter>;

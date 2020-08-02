@@ -5,8 +5,8 @@
 
 export interface SummaryOfSalesByQuarter {
   //#region ODataApi Properties
-  shippedDate?: Date;
-  orderID: number;
-  subtotal?: number;
+  ShippedDate?: Date;
+  OrderID: number;
+  Subtotal?: number;
   //#endregion
 }

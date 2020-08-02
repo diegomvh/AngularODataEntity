@@ -12,7 +12,7 @@ export const CurrentProductListConfig = {
   collection: CurrentProductListCollection,
   annotations: [],
   fields: {
-    productID: {name: 'ProductID', type: 'Edm.Int32', key: true, ref: 'productID', nullable: false},
-    productName: {name: 'ProductName', type: 'Edm.String', key: true, ref: 'productName', nullable: false, maxLength: 40}
+    ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},
+    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40}
   }
 } as EntityConfig<CurrentProductList>;

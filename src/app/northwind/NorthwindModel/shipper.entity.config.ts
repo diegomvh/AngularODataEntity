@@ -12,9 +12,9 @@ export const ShipperConfig = {
   collection: ShipperCollection,
   annotations: [],
   fields: {
-    shipperID: {name: 'ShipperID', type: 'Edm.Int32', key: true, ref: 'shipperID', nullable: false},
-    companyName: {name: 'CompanyName', type: 'Edm.String', nullable: false, maxLength: 40},
-    phone: {name: 'Phone', type: 'Edm.String', maxLength: 24},
-    orders: {name: 'Orders', type: 'NorthwindModel.Order', collection: true, navigation: true}
+    ShipperID: {type: 'Edm.Int32', key: true, ref: 'ShipperID', nullable: false},
+    CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},
+    Phone: {type: 'Edm.String', maxLength: 24},
+    Orders: {type: 'NorthwindModel.Order', collection: true, navigation: true}
   }
 } as EntityConfig<Shipper>;

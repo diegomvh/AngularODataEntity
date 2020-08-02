@@ -19,19 +19,19 @@ import { SupplierCollection } from './supplier.collection';
 
 export class ProductModel<E extends Product> extends ODataModel<E> {
   //#region ODataApi Properties
-  productID: number;
-  productName: string;
-  supplierID?: number;
-  categoryID?: number;
-  quantityPerUnit?: string;
-  unitPrice?: number;
-  unitsInStock?: number;
-  unitsOnOrder?: number;
-  reorderLevel?: number;
-  discontinued: boolean;
-  category?: CategoryModel<Category>;
-  orderDetails?: Order_DetailCollection<Order_Detail, Order_DetailModel<Order_Detail>>;
-  supplier?: SupplierModel<Supplier>;
+  ProductID: number;
+  ProductName: string;
+  SupplierID?: number;
+  CategoryID?: number;
+  QuantityPerUnit?: string;
+  UnitPrice?: number;
+  UnitsInStock?: number;
+  UnitsOnOrder?: number;
+  ReorderLevel?: number;
+  Discontinued: boolean;
+  Category?: CategoryModel<Category>;
+  Order_Details?: Order_DetailCollection<Order_Detail, Order_DetailModel<Order_Detail>>;
+  Supplier?: SupplierModel<Supplier>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

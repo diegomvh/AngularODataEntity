@@ -5,9 +5,9 @@
 
 export interface SalesTotalsByAmount {
   //#region ODataApi Properties
-  saleAmount?: number;
-  orderID: number;
-  companyName: string;
-  shippedDate?: Date;
+  SaleAmount?: number;
+  OrderID: number;
+  CompanyName: string;
+  ShippedDate?: Date;
   //#endregion
 }

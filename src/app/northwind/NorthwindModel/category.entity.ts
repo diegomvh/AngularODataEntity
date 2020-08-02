@@ -8,10 +8,10 @@ import { ProductCollection } from './product.collection';
 
 export interface Category {
   //#region ODataApi Properties
-  categoryID: number;
-  categoryName: string;
-  description?: string;
-  picture?: ArrayBuffer;
-  products?: Product[];
+  CategoryID: number;
+  CategoryName: string;
+  Description?: string;
+  Picture?: ArrayBuffer;
+  Products?: Product[];
   //#endregion
 }

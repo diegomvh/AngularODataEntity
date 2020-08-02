@@ -12,18 +12,18 @@ export const CustomerConfig = {
   collection: CustomerCollection,
   annotations: [],
   fields: {
-    customerID: {name: 'CustomerID', type: 'Edm.String', key: true, ref: 'customerID', nullable: false, maxLength: 5},
-    companyName: {name: 'CompanyName', type: 'Edm.String', nullable: false, maxLength: 40},
-    contactName: {name: 'ContactName', type: 'Edm.String', maxLength: 30},
-    contactTitle: {name: 'ContactTitle', type: 'Edm.String', maxLength: 30},
-    address: {name: 'Address', type: 'Edm.String', maxLength: 60},
-    city: {name: 'City', type: 'Edm.String', maxLength: 15},
-    region: {name: 'Region', type: 'Edm.String', maxLength: 15},
-    postalCode: {name: 'PostalCode', type: 'Edm.String', maxLength: 10},
-    country: {name: 'Country', type: 'Edm.String', maxLength: 15},
-    phone: {name: 'Phone', type: 'Edm.String', maxLength: 24},
-    fax: {name: 'Fax', type: 'Edm.String', maxLength: 24},
-    orders: {name: 'Orders', type: 'NorthwindModel.Order', collection: true, navigation: true},
-    customerDemographics: {name: 'CustomerDemographics', type: 'NorthwindModel.CustomerDemographic', collection: true, navigation: true}
+    CustomerID: {type: 'Edm.String', key: true, ref: 'CustomerID', nullable: false, maxLength: 5},
+    CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},
+    ContactName: {type: 'Edm.String', maxLength: 30},
+    ContactTitle: {type: 'Edm.String', maxLength: 30},
+    Address: {type: 'Edm.String', maxLength: 60},
+    City: {type: 'Edm.String', maxLength: 15},
+    Region: {type: 'Edm.String', maxLength: 15},
+    PostalCode: {type: 'Edm.String', maxLength: 10},
+    Country: {type: 'Edm.String', maxLength: 15},
+    Phone: {type: 'Edm.String', maxLength: 24},
+    Fax: {type: 'Edm.String', maxLength: 24},
+    Orders: {type: 'NorthwindModel.Order', collection: true, navigation: true},
+    CustomerDemographics: {type: 'NorthwindModel.CustomerDemographic', collection: true, navigation: true}
   }
 } as EntityConfig<Customer>;

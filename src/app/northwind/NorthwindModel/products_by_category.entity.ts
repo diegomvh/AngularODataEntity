@@ -5,10 +5,10 @@
 
 export interface ProductsByCategory {
   //#region ODataApi Properties
-  categoryName: string;
-  productName: string;
-  quantityPerUnit?: string;
-  unitsInStock?: number;
-  discontinued: boolean;
+  CategoryName: string;
+  ProductName: string;
+  QuantityPerUnit?: string;
+  UnitsInStock?: number;
+  Discontinued: boolean;
   //#endregion
 }

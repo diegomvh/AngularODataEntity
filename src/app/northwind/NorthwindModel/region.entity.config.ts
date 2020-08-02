@@ -12,8 +12,8 @@ export const RegionConfig = {
   collection: RegionCollection,
   annotations: [],
   fields: {
-    regionID: {name: 'RegionID', type: 'Edm.Int32', key: true, ref: 'regionID', nullable: false},
-    regionDescription: {name: 'RegionDescription', type: 'Edm.String', nullable: false, maxLength: 50},
-    territories: {name: 'Territories', type: 'NorthwindModel.Territory', collection: true, navigation: true}
+    RegionID: {type: 'Edm.Int32', key: true, ref: 'RegionID', nullable: false},
+    RegionDescription: {type: 'Edm.String', nullable: false, maxLength: 50},
+    Territories: {type: 'NorthwindModel.Territory', collection: true, navigation: true}
   }
 } as EntityConfig<Region>;

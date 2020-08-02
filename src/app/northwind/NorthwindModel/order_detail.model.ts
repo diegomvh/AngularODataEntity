@@ -16,13 +16,13 @@ import { ProductCollection } from './product.collection';
 
 export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   //#region ODataApi Properties
-  orderID: number;
-  productID: number;
-  unitPrice: number;
-  quantity: number;
-  discount: number;
-  order?: OrderModel<Order>;
-  product?: ProductModel<Product>;
+  OrderID: number;
+  ProductID: number;
+  UnitPrice: number;
+  Quantity: number;
+  Discount: number;
+  Order?: OrderModel<Order>;
+  Product?: ProductModel<Product>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

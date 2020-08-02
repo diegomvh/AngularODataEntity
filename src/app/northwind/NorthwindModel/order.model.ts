@@ -22,24 +22,24 @@ import { ShipperCollection } from './shipper.collection';
 
 export class OrderModel<E extends Order> extends ODataModel<E> {
   //#region ODataApi Properties
-  orderID: number;
-  customerID?: string;
-  employeeID?: number;
-  orderDate?: Date;
-  requiredDate?: Date;
-  shippedDate?: Date;
-  shipVia?: number;
-  freight?: number;
-  shipName?: string;
-  shipAddress?: string;
-  shipCity?: string;
-  shipRegion?: string;
-  shipPostalCode?: string;
-  shipCountry?: string;
-  customer?: CustomerModel<Customer>;
-  employee?: EmployeeModel<Employee>;
-  orderDetails?: Order_DetailCollection<Order_Detail, Order_DetailModel<Order_Detail>>;
-  shipper?: ShipperModel<Shipper>;
+  OrderID: number;
+  CustomerID?: string;
+  EmployeeID?: number;
+  OrderDate?: Date;
+  RequiredDate?: Date;
+  ShippedDate?: Date;
+  ShipVia?: number;
+  Freight?: number;
+  ShipName?: string;
+  ShipAddress?: string;
+  ShipCity?: string;
+  ShipRegion?: string;
+  ShipPostalCode?: string;
+  ShipCountry?: string;
+  Customer?: CustomerModel<Customer>;
+  Employee?: EmployeeModel<Employee>;
+  Order_Details?: Order_DetailCollection<Order_Detail, Order_DetailModel<Order_Detail>>;
+  Shipper?: ShipperModel<Shipper>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

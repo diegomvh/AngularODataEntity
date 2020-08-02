@@ -12,7 +12,7 @@ export const OrderSubtotalConfig = {
   collection: OrderSubtotalCollection,
   annotations: [],
   fields: {
-    orderID: {name: 'OrderID', type: 'Edm.Int32', key: true, ref: 'orderID', nullable: false},
-    subtotal: {name: 'Subtotal', type: 'Edm.Decimal', precition: 19, scale: 4}
+    OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
+    Subtotal: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as EntityConfig<OrderSubtotal>;

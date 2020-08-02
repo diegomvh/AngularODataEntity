@@ -7,15 +7,15 @@ import { PlanItem } from './planitem.entity';
 
 export interface Trip {
   //#region ODataApi Properties
-  tripId: number;
-  shareId?: string;
-  description?: string;
-  name: string;
-  budget: number;
-  startsAt: Date;
-  endsAt: Date;
-  tags: string[];
-  photos?: Photo[];
-  planItems?: PlanItem[];
+  TripId: number;
+  ShareId?: string;
+  Description?: string;
+  Name: string;
+  Budget: number;
+  StartsAt: Date;
+  EndsAt: Date;
+  Tags: string[];
+  Photos?: Photo[];
+  PlanItems?: PlanItem[];
   //#endregion
 }

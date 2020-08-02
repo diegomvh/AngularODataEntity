@@ -5,7 +5,7 @@
 
 export interface CategorySalesFor1997 {
   //#region ODataApi Properties
-  categoryName: string;
-  categorySales?: number;
+  CategoryName: string;
+  CategorySales?: number;
   //#endregion
 }

@@ -5,8 +5,8 @@
 
 export interface City {
   //#region ODataApi Properties
-  countryRegion: string;
-  name: string;
-  region: string;
+  CountryRegion: string;
+  Name: string;
+  Region: string;
   //#endregion
 }

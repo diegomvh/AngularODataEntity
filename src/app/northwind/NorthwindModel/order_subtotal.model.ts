@@ -10,8 +10,8 @@ import { OrderSubtotalCollection } from './order_subtotal.collection';
 
 export class OrderSubtotalModel<E extends OrderSubtotal> extends ODataModel<E> {
   //#region ODataApi Properties
-  orderID: number;
-  subtotal?: number;
+  OrderID: number;
+  Subtotal?: number;
   //#endregion
   //#region ODataApi Actions
   //#endregion

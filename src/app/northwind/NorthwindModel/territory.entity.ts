@@ -11,10 +11,10 @@ import { RegionCollection } from './region.collection';
 
 export interface Territory {
   //#region ODataApi Properties
-  territoryID: string;
-  territoryDescription: string;
-  regionID: number;
-  region?: Region;
-  employees?: Employee[];
+  TerritoryID: string;
+  TerritoryDescription: string;
+  RegionID: number;
+  Region?: Region;
+  Employees?: Employee[];
   //#endregion
 }

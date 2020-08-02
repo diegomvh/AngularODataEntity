@@ -5,25 +5,25 @@
 
 export interface OrdersQry {
   //#region ODataApi Properties
-  orderID: number;
-  customerID?: string;
-  employeeID?: number;
-  orderDate?: Date;
-  requiredDate?: Date;
-  shippedDate?: Date;
-  shipVia?: number;
-  freight?: number;
-  shipName?: string;
-  shipAddress?: string;
-  shipCity?: string;
-  shipRegion?: string;
-  shipPostalCode?: string;
-  shipCountry?: string;
-  companyName: string;
-  address?: string;
-  city?: string;
-  region?: string;
-  postalCode?: string;
-  country?: string;
+  OrderID: number;
+  CustomerID?: string;
+  EmployeeID?: number;
+  OrderDate?: Date;
+  RequiredDate?: Date;
+  ShippedDate?: Date;
+  ShipVia?: number;
+  Freight?: number;
+  ShipName?: string;
+  ShipAddress?: string;
+  ShipCity?: string;
+  ShipRegion?: string;
+  ShipPostalCode?: string;
+  ShipCountry?: string;
+  CompanyName: string;
+  Address?: string;
+  City?: string;
+  Region?: string;
+  PostalCode?: string;
+  Country?: string;
   //#endregion
 }

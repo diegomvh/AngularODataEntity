@@ -10,13 +10,13 @@ import { OrderDetailsExtendedCollection } from './order_details_extended.collect
 
 export class OrderDetailsExtendedModel<E extends OrderDetailsExtended> extends ODataModel<E> {
   //#region ODataApi Properties
-  orderID: number;
-  productID: number;
-  productName: string;
-  unitPrice: number;
-  quantity: number;
-  discount: number;
-  extendedPrice?: number;
+  OrderID: number;
+  ProductID: number;
+  ProductName: string;
+  UnitPrice: number;
+  Quantity: number;
+  Discount: number;
+  ExtendedPrice?: number;
   //#endregion
   //#region ODataApi Actions
   //#endregion

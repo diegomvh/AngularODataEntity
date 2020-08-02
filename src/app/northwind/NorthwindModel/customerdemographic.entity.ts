@@ -8,8 +8,8 @@ import { CustomerCollection } from './customer.collection';
 
 export interface CustomerDemographic {
   //#region ODataApi Properties
-  customerTypeID: string;
-  customerDesc?: string;
-  customers?: Customer[];
+  CustomerTypeID: string;
+  CustomerDesc?: string;
+  Customers?: Customer[];
   //#endregion
 }

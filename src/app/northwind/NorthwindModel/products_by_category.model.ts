@@ -10,11 +10,11 @@ import { ProductsByCategoryCollection } from './products_by_category.collection'
 
 export class ProductsByCategoryModel<E extends ProductsByCategory> extends ODataModel<E> {
   //#region ODataApi Properties
-  categoryName: string;
-  productName: string;
-  quantityPerUnit?: string;
-  unitsInStock?: number;
-  discontinued: boolean;
+  CategoryName: string;
+  ProductName: string;
+  QuantityPerUnit?: string;
+  UnitsInStock?: number;
+  Discontinued: boolean;
   //#endregion
   //#region ODataApi Actions
   //#endregion

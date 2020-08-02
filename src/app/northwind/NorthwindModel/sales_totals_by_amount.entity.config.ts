@@ -12,9 +12,9 @@ export const SalesTotalsByAmountConfig = {
   collection: SalesTotalsByAmountCollection,
   annotations: [],
   fields: {
-    saleAmount: {name: 'SaleAmount', type: 'Edm.Decimal', precition: 19, scale: 4},
-    orderID: {name: 'OrderID', type: 'Edm.Int32', key: true, ref: 'orderID', nullable: false},
-    companyName: {name: 'CompanyName', type: 'Edm.String', key: true, ref: 'companyName', nullable: false, maxLength: 40},
-    shippedDate: {name: 'ShippedDate', type: 'Edm.DateTimeOffset'}
+    SaleAmount: {type: 'Edm.Decimal', precition: 19, scale: 4},
+    OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
+    CompanyName: {type: 'Edm.String', key: true, ref: 'CompanyName', nullable: false, maxLength: 40},
+    ShippedDate: {type: 'Edm.DateTimeOffset'}
   }
 } as EntityConfig<SalesTotalsByAmount>;

@@ -6,7 +6,7 @@ import { City } from './city.entity';
 
 export interface Location {
   //#region ODataApi Properties
-  address: string;
-  city: City;
+  Address: string;
+  City: City;
   //#endregion
 }

@@ -12,12 +12,12 @@ export const OrderDetailsExtendedConfig = {
   collection: OrderDetailsExtendedCollection,
   annotations: [],
   fields: {
-    orderID: {name: 'OrderID', type: 'Edm.Int32', key: true, ref: 'orderID', nullable: false},
-    productID: {name: 'ProductID', type: 'Edm.Int32', key: true, ref: 'productID', nullable: false},
-    productName: {name: 'ProductName', type: 'Edm.String', key: true, ref: 'productName', nullable: false, maxLength: 40},
-    unitPrice: {name: 'UnitPrice', type: 'Edm.Decimal', key: true, ref: 'unitPrice', nullable: false, precition: 19, scale: 4},
-    quantity: {name: 'Quantity', type: 'Edm.Int16', key: true, ref: 'quantity', nullable: false},
-    discount: {name: 'Discount', type: 'Edm.Single', key: true, ref: 'discount', nullable: false},
-    extendedPrice: {name: 'ExtendedPrice', type: 'Edm.Decimal', precition: 19, scale: 4}
+    OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
+    ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},
+    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
+    UnitPrice: {type: 'Edm.Decimal', key: true, ref: 'UnitPrice', nullable: false, precition: 19, scale: 4},
+    Quantity: {type: 'Edm.Int16', key: true, ref: 'Quantity', nullable: false},
+    Discount: {type: 'Edm.Single', key: true, ref: 'Discount', nullable: false},
+    ExtendedPrice: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as EntityConfig<OrderDetailsExtended>;

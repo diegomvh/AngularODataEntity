@@ -5,7 +5,7 @@
 
 export interface CurrentProductList {
   //#region ODataApi Properties
-  productID: number;
-  productName: string;
+  ProductID: number;
+  ProductName: string;
   //#endregion
 }

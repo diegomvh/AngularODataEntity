@@ -5,31 +5,31 @@
 
 export interface Invoice {
   //#region ODataApi Properties
-  shipName?: string;
-  shipAddress?: string;
-  shipCity?: string;
-  shipRegion?: string;
-  shipPostalCode?: string;
-  shipCountry?: string;
-  customerID?: string;
-  customerName: string;
-  address?: string;
-  city?: string;
-  region?: string;
-  postalCode?: string;
-  country?: string;
-  salesperson: string;
-  orderID: number;
-  orderDate?: Date;
-  requiredDate?: Date;
-  shippedDate?: Date;
-  shipperName: string;
-  productID: number;
-  productName: string;
-  unitPrice: number;
-  quantity: number;
-  discount: number;
-  extendedPrice?: number;
-  freight?: number;
+  ShipName?: string;
+  ShipAddress?: string;
+  ShipCity?: string;
+  ShipRegion?: string;
+  ShipPostalCode?: string;
+  ShipCountry?: string;
+  CustomerID?: string;
+  CustomerName: string;
+  Address?: string;
+  City?: string;
+  Region?: string;
+  PostalCode?: string;
+  Country?: string;
+  Salesperson: string;
+  OrderID: number;
+  OrderDate?: Date;
+  RequiredDate?: Date;
+  ShippedDate?: Date;
+  ShipperName: string;
+  ProductID: number;
+  ProductName: string;
+  UnitPrice: number;
+  Quantity: number;
+  Discount: number;
+  ExtendedPrice?: number;
+  Freight?: number;
   //#endregion
 }

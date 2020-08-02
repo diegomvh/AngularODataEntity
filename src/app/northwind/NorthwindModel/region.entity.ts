@@ -8,8 +8,8 @@ import { TerritoryCollection } from './territory.collection';
 
 export interface Region {
   //#region ODataApi Properties
-  regionID: number;
-  regionDescription: string;
-  territories?: Territory[];
+  RegionID: number;
+  RegionDescription: string;
+  Territories?: Territory[];
   //#endregion
 }

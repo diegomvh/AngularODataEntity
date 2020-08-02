@@ -8,18 +8,18 @@ import { ProductCollection } from './product.collection';
 
 export interface Supplier {
   //#region ODataApi Properties
-  supplierID: number;
-  companyName: string;
-  contactName?: string;
-  contactTitle?: string;
-  address?: string;
-  city?: string;
-  region?: string;
-  postalCode?: string;
-  country?: string;
-  phone?: string;
-  fax?: string;
-  homePage?: string;
-  products?: Product[];
+  SupplierID: number;
+  CompanyName: string;
+  ContactName?: string;
+  ContactTitle?: string;
+  Address?: string;
+  City?: string;
+  Region?: string;
+  PostalCode?: string;
+  Country?: string;
+  Phone?: string;
+  Fax?: string;
+  HomePage?: string;
+  Products?: Product[];
   //#endregion
 }

@@ -11,12 +11,12 @@ import { ProductCollection } from './product.collection';
 
 export interface OrderDetail {
   //#region ODataApi Properties
-  orderID: number;
-  productID: number;
-  unitPrice: number;
-  quantity: number;
-  discount: number;
-  order?: Order;
-  product?: Product;
+  OrderID: number;
+  ProductID: number;
+  UnitPrice: number;
+  Quantity: number;
+  Discount: number;
+  Order?: Order;
+  Product?: Product;
   //#endregion
 }

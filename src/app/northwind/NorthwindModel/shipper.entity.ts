@@ -8,9 +8,9 @@ import { OrderCollection } from './order.collection';
 
 export interface Shipper {
   //#region ODataApi Properties
-  shipperID: number;
-  companyName: string;
-  phone?: string;
-  orders?: Order[];
+  ShipperID: number;
+  CompanyName: string;
+  Phone?: string;
+  Orders?: Order[];
   //#endregion
 }

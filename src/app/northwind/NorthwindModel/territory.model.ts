@@ -16,11 +16,11 @@ import { TerritoryCollection } from './territory.collection';
 
 export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   //#region ODataApi Properties
-  territoryID: string;
-  territoryDescription: string;
-  regionID: number;
-  region?: RegionModel<Region>;
-  employees?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
+  TerritoryID: string;
+  TerritoryDescription: string;
+  RegionID: number;
+  Region?: RegionModel<Region>;
+  Employees?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

@@ -7,6 +7,6 @@ import { Location } from './location.entity';
 
 export interface AirportLocation extends Location {
   //#region ODataApi Properties
-  loc: Point;
+  Loc: Point;
   //#endregion
 }

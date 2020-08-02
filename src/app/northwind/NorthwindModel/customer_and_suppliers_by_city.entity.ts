@@ -5,9 +5,9 @@
 
 export interface CustomerAndSuppliersByCity {
   //#region ODataApi Properties
-  city?: string;
-  companyName: string;
-  contactName?: string;
-  relationship: string;
+  City?: string;
+  CompanyName: string;
+  ContactName?: string;
+  Relationship: string;
   //#endregion
 }

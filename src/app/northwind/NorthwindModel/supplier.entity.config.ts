@@ -12,18 +12,18 @@ export const SupplierConfig = {
   collection: SupplierCollection,
   annotations: [],
   fields: {
-    supplierID: {name: 'SupplierID', type: 'Edm.Int32', key: true, ref: 'supplierID', nullable: false},
-    companyName: {name: 'CompanyName', type: 'Edm.String', nullable: false, maxLength: 40},
-    contactName: {name: 'ContactName', type: 'Edm.String', maxLength: 30},
-    contactTitle: {name: 'ContactTitle', type: 'Edm.String', maxLength: 30},
-    address: {name: 'Address', type: 'Edm.String', maxLength: 60},
-    city: {name: 'City', type: 'Edm.String', maxLength: 15},
-    region: {name: 'Region', type: 'Edm.String', maxLength: 15},
-    postalCode: {name: 'PostalCode', type: 'Edm.String', maxLength: 10},
-    country: {name: 'Country', type: 'Edm.String', maxLength: 15},
-    phone: {name: 'Phone', type: 'Edm.String', maxLength: 24},
-    fax: {name: 'Fax', type: 'Edm.String', maxLength: 24},
-    homePage: {name: 'HomePage', type: 'Edm.String'},
-    products: {name: 'Products', type: 'NorthwindModel.Product', collection: true, navigation: true}
+    SupplierID: {type: 'Edm.Int32', key: true, ref: 'SupplierID', nullable: false},
+    CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},
+    ContactName: {type: 'Edm.String', maxLength: 30},
+    ContactTitle: {type: 'Edm.String', maxLength: 30},
+    Address: {type: 'Edm.String', maxLength: 60},
+    City: {type: 'Edm.String', maxLength: 15},
+    Region: {type: 'Edm.String', maxLength: 15},
+    PostalCode: {type: 'Edm.String', maxLength: 10},
+    Country: {type: 'Edm.String', maxLength: 15},
+    Phone: {type: 'Edm.String', maxLength: 24},
+    Fax: {type: 'Edm.String', maxLength: 24},
+    HomePage: {type: 'Edm.String'},
+    Products: {type: 'NorthwindModel.Product', collection: true, navigation: true}
   }
 } as EntityConfig<Supplier>;

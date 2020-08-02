@@ -10,10 +10,10 @@ import { SalesTotalsByAmountCollection } from './sales_totals_by_amount.collecti
 
 export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODataModel<E> {
   //#region ODataApi Properties
-  saleAmount?: number;
-  orderID: number;
-  companyName: string;
-  shippedDate?: Date;
+  SaleAmount?: number;
+  OrderID: number;
+  CompanyName: string;
+  ShippedDate?: Date;
   //#endregion
   //#region ODataApi Actions
   //#endregion

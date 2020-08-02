@@ -12,10 +12,10 @@ export const TerritoryConfig = {
   collection: TerritoryCollection,
   annotations: [],
   fields: {
-    territoryID: {name: 'TerritoryID', type: 'Edm.String', key: true, ref: 'territoryID', nullable: false, maxLength: 20},
-    territoryDescription: {name: 'TerritoryDescription', type: 'Edm.String', nullable: false, maxLength: 50},
-    regionID: {name: 'RegionID', type: 'Edm.Int32', nullable: false},
-    region: {name: 'Region', type: 'NorthwindModel.Region', navigation: true, field: 'RegionID', ref: 'RegionID'},
-    employees: {name: 'Employees', type: 'NorthwindModel.Employee', collection: true, navigation: true}
+    TerritoryID: {type: 'Edm.String', key: true, ref: 'TerritoryID', nullable: false, maxLength: 20},
+    TerritoryDescription: {type: 'Edm.String', nullable: false, maxLength: 50},
+    RegionID: {type: 'Edm.Int32', nullable: false},
+    Region: {type: 'NorthwindModel.Region', navigation: true, field: 'RegionID', ref: 'RegionID'},
+    Employees: {type: 'NorthwindModel.Employee', collection: true, navigation: true}
   }
 } as EntityConfig<Territory>;

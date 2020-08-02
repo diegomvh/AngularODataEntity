@@ -12,8 +12,8 @@ export const CustomerDemographicConfig = {
   collection: CustomerDemographicCollection,
   annotations: [],
   fields: {
-    customerTypeID: {name: 'CustomerTypeID', type: 'Edm.String', key: true, ref: 'customerTypeID', nullable: false, maxLength: 10},
-    customerDesc: {name: 'CustomerDesc', type: 'Edm.String'},
-    customers: {name: 'Customers', type: 'NorthwindModel.Customer', collection: true, navigation: true}
+    CustomerTypeID: {type: 'Edm.String', key: true, ref: 'CustomerTypeID', nullable: false, maxLength: 10},
+    CustomerDesc: {type: 'Edm.String'},
+    Customers: {type: 'NorthwindModel.Customer', collection: true, navigation: true}
   }
 } as EntityConfig<CustomerDemographic>;

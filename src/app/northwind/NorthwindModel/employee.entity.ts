@@ -13,27 +13,27 @@ import { TerritoryCollection } from './territory.collection';
 
 export interface Employee {
   //#region ODataApi Properties
-  employeeID: number;
-  lastName: string;
-  firstName: string;
-  title?: string;
-  titleOfCourtesy?: string;
-  birthDate?: Date;
-  hireDate?: Date;
-  address?: string;
-  city?: string;
-  region?: string;
-  postalCode?: string;
-  country?: string;
-  homePhone?: string;
-  extension?: string;
-  photo?: ArrayBuffer;
-  notes?: string;
-  reportsTo?: number;
-  photoPath?: string;
-  employees1?: Employee[];
-  employee1?: Employee;
-  orders?: Order[];
-  territories?: Territory[];
+  EmployeeID: number;
+  LastName: string;
+  FirstName: string;
+  Title?: string;
+  TitleOfCourtesy?: string;
+  BirthDate?: Date;
+  HireDate?: Date;
+  Address?: string;
+  City?: string;
+  Region?: string;
+  PostalCode?: string;
+  Country?: string;
+  HomePhone?: string;
+  Extension?: string;
+  Photo?: ArrayBuffer;
+  Notes?: string;
+  ReportsTo?: number;
+  PhotoPath?: string;
+  Employees1?: Employee[];
+  Employee1?: Employee;
+  Orders?: Order[];
+  Territories?: Territory[];
   //#endregion
 }

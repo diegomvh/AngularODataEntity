@@ -5,7 +5,7 @@
 
 export interface ProductsAboveAveragePrice {
   //#region ODataApi Properties
-  productName: string;
-  unitPrice?: number;
+  ProductName: string;
+  UnitPrice?: number;
   //#endregion
 }

@@ -11,18 +11,18 @@ import { OrderCollection } from './order.collection';
 
 export interface Customer {
   //#region ODataApi Properties
-  customerID: string;
-  companyName: string;
-  contactName?: string;
-  contactTitle?: string;
-  address?: string;
-  city?: string;
-  region?: string;
-  postalCode?: string;
-  country?: string;
-  phone?: string;
-  fax?: string;
-  orders?: Order[];
-  customerDemographics?: CustomerDemographic[];
+  CustomerID: string;
+  CompanyName: string;
+  ContactName?: string;
+  ContactTitle?: string;
+  Address?: string;
+  City?: string;
+  Region?: string;
+  PostalCode?: string;
+  Country?: string;
+  Phone?: string;
+  Fax?: string;
+  Orders?: Order[];
+  CustomerDemographics?: CustomerDemographic[];
   //#endregion
 }

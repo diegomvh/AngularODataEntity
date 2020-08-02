@@ -10,8 +10,8 @@ import { CategorySalesFor1997Collection } from './category_sales_for_1997.collec
 
 export class CategorySalesFor1997Model<E extends CategorySalesFor1997> extends ODataModel<E> {
   //#region ODataApi Properties
-  categoryName: string;
-  categorySales?: number;
+  CategoryName: string;
+  CategorySales?: number;
   //#endregion
   //#region ODataApi Actions
   //#endregion

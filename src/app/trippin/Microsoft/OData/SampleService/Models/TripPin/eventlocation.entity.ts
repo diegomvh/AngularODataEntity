@@ -6,6 +6,6 @@ import { Location } from './location.entity';
 
 export interface EventLocation extends Location {
   //#region ODataApi Properties
-  buildingInfo?: string;
+  BuildingInfo?: string;
   //#endregion
 }
