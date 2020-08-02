@@ -2,14 +2,10 @@
 
 //#region ODataApi Imports
 import { Order } from './order.entity';
-import { OrderModel } from './order.model';
-import { OrderCollection } from './order.collection';
 //#endregion
 
 export const OrderConfig = {
   name: "Order",
-  model: OrderModel,
-  collection: OrderCollection,
   annotations: [],
   fields: {
     OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},

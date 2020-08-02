@@ -20,8 +20,6 @@ import {
 
 //#region ODataApi Imports
 import { ProductsByCategory } from '../../../NorthwindModel/products_by_category.entity';
-import { ProductsByCategoryModel } from '../../../NorthwindModel/products_by_category.model';
-import { ProductsByCategoryCollection } from '../../../NorthwindModel/products_by_category.collection';
 //#endregion
 
 @Injectable()
@@ -30,11 +28,10 @@ export class ProductsByCategoriesService extends ODataService<ProductsByCategory
     super(client, 'Products_by_Categories', 'NorthwindModel.Products_by_Category');
   }
 
-  productsByCategoryModel(): ProductsByCategoryModel<ProductsByCategory> {
-    return super.model() as ProductsByCategoryModel<ProductsByCategory>;
-  }
-  
-  productsByCategoriesCollection(): ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>> {
-    return super.collection() as ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>>;
-  }
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

@@ -3,10 +3,6 @@
 //#region ODataApi Imports
 import { CustomerDemographic } from './customerdemographic.entity';
 import { Order } from './order.entity';
-import { CustomerDemographicModel } from './customerdemographic.model';
-import { OrderModel } from './order.model';
-import { CustomerDemographicCollection } from './customerdemographic.collection';
-import { OrderCollection } from './order.collection';
 //#endregion
 
 export interface Customer {
@@ -22,7 +18,7 @@ export interface Customer {
   Country?: string;
   Phone?: string;
   Fax?: string;
-  Orders?: Order[];
-  CustomerDemographics?: CustomerDemographic[];
+  Orders?: Order;
+  CustomerDemographics?: CustomerDemographic;
   //#endregion
 }

@@ -21,10 +21,6 @@ import {
 //#region ODataApi Imports
 import { Product } from '../../../NorthwindModel/product.entity';
 import { Supplier } from '../../../NorthwindModel/supplier.entity';
-import { ProductModel } from '../../../NorthwindModel/product.model';
-import { SupplierModel } from '../../../NorthwindModel/supplier.model';
-import { ProductCollection } from '../../../NorthwindModel/product.collection';
-import { SupplierCollection } from '../../../NorthwindModel/supplier.collection';
 //#endregion
 
 @Injectable()
@@ -33,11 +29,13 @@ export class SuppliersService extends ODataService<Supplier> {
     super(client, 'Suppliers', 'NorthwindModel.Supplier');
   }
 
-  supplierModel(): SupplierModel<Supplier> {
-    return super.model() as SupplierModel<Supplier>;
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public products(entity: EntityKey<Supplier>): ODataNavigationPropertyResource<Product> {
+    return this.entity(entity).navigationProperty<Product>('Products');
   }
-  
-  suppliersCollection(): SupplierCollection<Supplier, SupplierModel<Supplier>> {
-    return super.collection() as SupplierCollection<Supplier, SupplierModel<Supplier>>;
-  }
+  //#endregion
 }

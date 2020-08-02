@@ -22,12 +22,6 @@ import {
 import { Employee } from '../../../NorthwindModel/employee.entity';
 import { Region } from '../../../NorthwindModel/region.entity';
 import { Territory } from '../../../NorthwindModel/territory.entity';
-import { EmployeeModel } from '../../../NorthwindModel/employee.model';
-import { RegionModel } from '../../../NorthwindModel/region.model';
-import { TerritoryModel } from '../../../NorthwindModel/territory.model';
-import { EmployeeCollection } from '../../../NorthwindModel/employee.collection';
-import { RegionCollection } from '../../../NorthwindModel/region.collection';
-import { TerritoryCollection } from '../../../NorthwindModel/territory.collection';
 //#endregion
 
 @Injectable()
@@ -36,11 +30,16 @@ export class TerritoriesService extends ODataService<Territory> {
     super(client, 'Territories', 'NorthwindModel.Territory');
   }
 
-  territoryModel(): TerritoryModel<Territory> {
-    return super.model() as TerritoryModel<Territory>;
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public employees(entity: EntityKey<Territory>): ODataNavigationPropertyResource<Employee> {
+    return this.entity(entity).navigationProperty<Employee>('Employees');
   }
-  
-  territoriesCollection(): TerritoryCollection<Territory, TerritoryModel<Territory>> {
-    return super.collection() as TerritoryCollection<Territory, TerritoryModel<Territory>>;
+  public region(entity: EntityKey<Territory>): ODataNavigationPropertyResource<Region> {
+    return this.entity(entity).navigationProperty<Region>('Region');
   }
+  //#endregion
 }

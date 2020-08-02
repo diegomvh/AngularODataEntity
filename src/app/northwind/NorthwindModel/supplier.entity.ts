@@ -2,8 +2,6 @@
 
 //#region ODataApi Imports
 import { Product } from './product.entity';
-import { ProductModel } from './product.model';
-import { ProductCollection } from './product.collection';
 //#endregion
 
 export interface Supplier {
@@ -20,6 +18,6 @@ export interface Supplier {
   Phone?: string;
   Fax?: string;
   HomePage?: string;
-  Products?: Product[];
+  Products?: Product;
   //#endregion
 }

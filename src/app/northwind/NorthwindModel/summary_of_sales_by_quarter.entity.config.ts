@@ -2,14 +2,10 @@
 
 //#region ODataApi Imports
 import { SummaryOfSalesByQuarter } from './summary_of_sales_by_quarter.entity';
-import { SummaryOfSalesByQuarterModel } from './summary_of_sales_by_quarter.model';
-import { SummaryOfSalesByQuarterCollection } from './summary_of_sales_by_quarter.collection';
 //#endregion
 
 export const SummaryOfSalesByQuarterConfig = {
   name: "SummaryOfSalesByQuarter",
-  model: SummaryOfSalesByQuarterModel,
-  collection: SummaryOfSalesByQuarterCollection,
   annotations: [],
   fields: {
     ShippedDate: {type: 'Edm.DateTimeOffset'},

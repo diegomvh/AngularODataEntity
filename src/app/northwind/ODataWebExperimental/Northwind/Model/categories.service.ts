@@ -21,10 +21,6 @@ import {
 //#region ODataApi Imports
 import { Category } from '../../../NorthwindModel/category.entity';
 import { Product } from '../../../NorthwindModel/product.entity';
-import { CategoryModel } from '../../../NorthwindModel/category.model';
-import { ProductModel } from '../../../NorthwindModel/product.model';
-import { CategoryCollection } from '../../../NorthwindModel/category.collection';
-import { ProductCollection } from '../../../NorthwindModel/product.collection';
 //#endregion
 
 @Injectable()
@@ -33,11 +29,13 @@ export class CategoriesService extends ODataService<Category> {
     super(client, 'Categories', 'NorthwindModel.Category');
   }
 
-  categoryModel(): CategoryModel<Category> {
-    return super.model() as CategoryModel<Category>;
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public products(entity: EntityKey<Category>): ODataNavigationPropertyResource<Product> {
+    return this.entity(entity).navigationProperty<Product>('Products');
   }
-  
-  categoriesCollection(): CategoryCollection<Category, CategoryModel<Category>> {
-    return super.collection() as CategoryCollection<Category, CategoryModel<Category>>;
-  }
+  //#endregion
 }

@@ -2,14 +2,10 @@
 
 //#region ODataApi Imports
 import { SalesTotalsByAmount } from './sales_totals_by_amount.entity';
-import { SalesTotalsByAmountModel } from './sales_totals_by_amount.model';
-import { SalesTotalsByAmountCollection } from './sales_totals_by_amount.collection';
 //#endregion
 
 export const SalesTotalsByAmountConfig = {
   name: "SalesTotalsByAmount",
-  model: SalesTotalsByAmountModel,
-  collection: SalesTotalsByAmountCollection,
   annotations: [],
   fields: {
     SaleAmount: {type: 'Edm.Decimal', precition: 19, scale: 4},

@@ -5,14 +5,6 @@ import { Customer } from './customer.entity';
 import { Employee } from './employee.entity';
 import { OrderDetail } from './order_detail.entity';
 import { Shipper } from './shipper.entity';
-import { CustomerModel } from './customer.model';
-import { EmployeeModel } from './employee.model';
-import { OrderDetailModel } from './order_detail.model';
-import { ShipperModel } from './shipper.model';
-import { CustomerCollection } from './customer.collection';
-import { EmployeeCollection } from './employee.collection';
-import { OrderDetailCollection } from './order_detail.collection';
-import { ShipperCollection } from './shipper.collection';
 //#endregion
 
 export interface Order {
@@ -33,7 +25,7 @@ export interface Order {
   ShipCountry?: string;
   Customer?: Customer;
   Employee?: Employee;
-  Order_Details?: Order_Detail[];
+  Order_Details?: OrderDetail;
   Shipper?: Shipper;
   //#endregion
 }

@@ -2,14 +2,10 @@
 
 //#region ODataApi Imports
 import { Customer } from './customer.entity';
-import { CustomerModel } from './customer.model';
-import { CustomerCollection } from './customer.collection';
 //#endregion
 
 export const CustomerConfig = {
   name: "Customer",
-  model: CustomerModel,
-  collection: CustomerCollection,
   annotations: [],
   fields: {
     CustomerID: {type: 'Edm.String', key: true, ref: 'CustomerID', nullable: false, maxLength: 5},

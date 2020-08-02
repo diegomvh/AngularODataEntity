@@ -20,8 +20,6 @@ import {
 
 //#region ODataApi Imports
 import { SummaryOfSalesByYear } from '../../../NorthwindModel/summary_of_sales_by_year.entity';
-import { SummaryOfSalesByYearModel } from '../../../NorthwindModel/summary_of_sales_by_year.model';
-import { SummaryOfSalesByYearCollection } from '../../../NorthwindModel/summary_of_sales_by_year.collection';
 //#endregion
 
 @Injectable()
@@ -30,11 +28,10 @@ export class SummaryOfSalesByYearsService extends ODataService<SummaryOfSalesByY
     super(client, 'Summary_of_Sales_by_Years', 'NorthwindModel.Summary_of_Sales_by_Year');
   }
 
-  summaryOfSalesByYearModel(): SummaryOfSalesByYearModel<SummaryOfSalesByYear> {
-    return super.model() as SummaryOfSalesByYearModel<SummaryOfSalesByYear>;
-  }
-  
-  summaryOfSalesByYearsCollection(): SummaryOfSalesByYearCollection<SummaryOfSalesByYear, SummaryOfSalesByYearModel<SummaryOfSalesByYear>> {
-    return super.collection() as SummaryOfSalesByYearCollection<SummaryOfSalesByYear, SummaryOfSalesByYearModel<SummaryOfSalesByYear>>;
-  }
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

@@ -20,8 +20,6 @@ import {
 
 //#region ODataApi Imports
 import { Invoice } from '../../../NorthwindModel/invoice.entity';
-import { InvoiceModel } from '../../../NorthwindModel/invoice.model';
-import { InvoiceCollection } from '../../../NorthwindModel/invoice.collection';
 //#endregion
 
 @Injectable()
@@ -30,11 +28,10 @@ export class InvoicesService extends ODataService<Invoice> {
     super(client, 'Invoices', 'NorthwindModel.Invoice');
   }
 
-  invoiceModel(): InvoiceModel<Invoice> {
-    return super.model() as InvoiceModel<Invoice>;
-  }
-  
-  invoicesCollection(): InvoiceCollection<Invoice, InvoiceModel<Invoice>> {
-    return super.collection() as InvoiceCollection<Invoice, InvoiceModel<Invoice>>;
-  }
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

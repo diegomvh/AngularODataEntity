@@ -20,8 +20,6 @@ import {
 
 //#region ODataApi Imports
 import { OrdersQry } from '../../../NorthwindModel/orders_qry.entity';
-import { OrdersQryModel } from '../../../NorthwindModel/orders_qry.model';
-import { OrdersQryCollection } from '../../../NorthwindModel/orders_qry.collection';
 //#endregion
 
 @Injectable()
@@ -30,11 +28,10 @@ export class OrdersQriesService extends ODataService<OrdersQry> {
     super(client, 'Orders_Qries', 'NorthwindModel.Orders_Qry');
   }
 
-  ordersQryModel(): OrdersQryModel<OrdersQry> {
-    return super.model() as OrdersQryModel<OrdersQry>;
-  }
-  
-  ordersQriesCollection(): OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>> {
-    return super.collection() as OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>>;
-  }
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

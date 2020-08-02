@@ -2,14 +2,10 @@
 
 //#region ODataApi Imports
 import { OrderSubtotal } from './order_subtotal.entity';
-import { OrderSubtotalModel } from './order_subtotal.model';
-import { OrderSubtotalCollection } from './order_subtotal.collection';
 //#endregion
 
 export const OrderSubtotalConfig = {
   name: "OrderSubtotal",
-  model: OrderSubtotalModel,
-  collection: OrderSubtotalCollection,
   annotations: [],
   fields: {
     OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
