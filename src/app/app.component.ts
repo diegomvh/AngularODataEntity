@@ -16,9 +16,14 @@ export class AppComponent {
     private api: DefaultContainerService,
     private people: PeopleService
   ) {
-    // Reset api
+    var north = this.factory.create("Customers");
+    north.entities().all({config: "North2"}).subscribe(console.log);
+    north.entities().all({config: "North3"}).subscribe(console.log);
+  }
+
+  trippin() {
     this.api.resetDataSource().call(null).subscribe(() => {
-      //this.queries();
+      this.queries();
       this.mutate();
     });
   }
@@ -47,24 +52,24 @@ export class AppComponent {
     // Fetch airports with count
     airports
     .get({withCount: true})
-    .subscribe(({entities, annotations}) => console.log("Airports: ", entities, "Annotations: ", annotations));
+    .subscribe(({entities, meta}) => console.log("Airports: ", entities, "Annotations: ", meta));
 
     // Fetch airport with key
     airports
     .entity("CYYZ").get()
-    .subscribe(({entity, annotations}) => console.log("Airport: ", entity, "Annotations: ", annotations));
+    .subscribe(({entity, meta}) => console.log("Airport: ", entity, "Annotations: ", meta));
 
     // Filter airports (inmutable resource)
     airports
     .filter({Location: {City: {CountryRegion: "United States"}}})
     .get()
-    .subscribe(({entities, annotations}) => console.log("Airports of United States: ", entities, "Annotations: ", annotations));
+    .subscribe(({entities, meta}) => console.log("Airports of United States: ", entities, "Annotations: ", meta));
 
     // Add filter (mutable resource)
     airports.query.filter().push({Location: {City: {Region: "California"}}});
     airports
     .get()
-    .subscribe(({entities, annotations}) => console.log("Airports in California: ", entities, "Annotations: ", annotations));
+    .subscribe(({entities, meta}) => console.log("Airports in California: ", entities, "Annotations: ", meta));
 
     console.log(airports.toJSON());
     console.log(this.odata.fromJSON(airports.toJSON()));
@@ -73,7 +78,7 @@ export class AppComponent {
     airports.query.filter().clear();
     airports
     .get()
-    .subscribe(({entities, annotations}) => console.log("Airports: ", entities, "Annotations: ", annotations));
+    .subscribe(({entities, meta}) => console.log("Airports: ", entities, "Annotations: ", meta));
 
     let people = peopleService.entities();
 
@@ -85,7 +90,7 @@ export class AppComponent {
       Trips: { select: ['Name', 'Tags'] },
     })
     .get({withCount: true})
-    .subscribe(({entities, annotations}) => console.log("People with Friends and Trips: ", entities, "Annotations: ", annotations));
+    .subscribe(({entities, meta}) => console.log("People with Friends and Trips: ", entities, "Annotations: ", meta));
 
     console.log(people.toJSON());
     console.log(this.odata.fromJSON(people.toJSON()));
@@ -95,7 +100,7 @@ export class AppComponent {
     // Create service without Type for Person entity
     let peopleService = this.factory.create<Person>("People");
     let person = peopleService.entity("scottketchum");
-    person.get({config: 'TripPin'}).subscribe(({entity, annotations}) => console.log(annotations.property('Emails')));
+    person.get({config: 'TripPin'}).subscribe(({entity, meta}) => console.log(meta.property('Emails')));
 
     let friends = person.navigationProperty<Person>("Friends");
     // Use TripPin config

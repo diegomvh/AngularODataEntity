@@ -1,0 +1,26 @@
+{
+  "/trippin": {
+    "target": "https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW/",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/trippin": ""
+    }
+  },
+  "/north2": {
+    "target": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/north2": ""
+    }
+  },
+  "/north3": {
+    "target": "https://services.odata.org/V3/Northwind/Northwind.svc/",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/north3": ""
+    }
+  }
+}

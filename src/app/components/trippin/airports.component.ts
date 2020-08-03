@@ -58,12 +58,12 @@ export class AirportsComponent implements OnInit {
 
   fetch(resource: ODataEntitySetResource<Airport>) {
     this.loading = true;
-    resource.get({withCount: true}).subscribe(({entities, annotations}) => {
+    resource.get({withCount: true}).subscribe(({entities, meta}) => {
       this.rows = entities;
       if (!this.total)
-        this.total = annotations.count;
+        this.total = meta.count;
       if (!this.size)
-        this.size = annotations.skip || entities.length;
+        this.size = meta.skip || entities.length;
       this.loading = false;
     });
   }

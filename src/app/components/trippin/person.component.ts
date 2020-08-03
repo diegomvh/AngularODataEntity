@@ -30,8 +30,8 @@ export class PersonComponent {
       Photo: {}
     })
     .get()
-    .subscribe(({entity, annotations}) => {
-      console.log(entity, annotations);
+    .subscribe(({entity, meta}) => {
+      console.log(entity, meta);
       this.person = entity;
       if (this.person.Photo) {
         this.photos

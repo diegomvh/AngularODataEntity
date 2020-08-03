@@ -37,11 +37,27 @@ import { EmployeesComponent } from './components/northwind/employees.component';
     ODataModule.forRoot(
       // TripPin
       Object.assign(TripPinConfig, {
-        serviceRootUrl: 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW/',
+        serviceRootUrl: 'http://localhost:4200/trippin/',
         acceptMetadata: 'full',
         stringAsEnum: true
       }), 
-      // Nortwind
+      // North version 2
+      Object.assign({
+        name: 'North2',
+        serviceRootUrl: 'http://localhost:4200/north2/',
+        version: '2.0',
+        withCredentials: true,
+        params: {"$format": "json"}
+      }),
+      // North version 3
+      Object.assign({
+        name: 'North3',
+        serviceRootUrl: 'http://localhost:4200/north3/',
+        version: '3.0',
+        withCredentials: true,
+        params: {"$format": "json"}
+      }),
+      // Northwind version 4
       Object.assign(NorthwindConfig, {
         ieee754Compatible: true
       })
