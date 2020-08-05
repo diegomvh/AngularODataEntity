@@ -1,4 +1,4 @@
-﻿import { Schema } from 'angular-odata';
+﻿import { SchemaConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { PersonGenderConfig } from './persongender.enum.config';
@@ -71,4 +71,4 @@ export const TripPinSchema = {
     parameters: { person: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', nullable: false}, userName: {type: 'Edm.String', nullable: false}, tripId: {type: 'Edm.Int32', nullable: false} },
   }],
   containers: [DefaultContainerContainer]
-} as Schema;
+} as SchemaConfig;

@@ -1,4 +1,4 @@
-﻿import { Container } from 'angular-odata';
+﻿import { ContainerConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { PhotosServiceConfig } from './photos.service.config';
@@ -9,7 +9,7 @@ import { MeServiceConfig } from './me.service.config';
 //#endregion
 
 export const DefaultContainerContainer = {
-  name: "DefaultContainerContainer",
+  name: "DefaultContainer",
   annotations: [
   {
     "type": "Org.OData.Core.V1.Description",
@@ -79,4 +79,4 @@ export const DefaultContainerContainer = {
     AirportsServiceConfig,
     MeServiceConfig
   ]
-} as Container;
+} as ContainerConfig;
