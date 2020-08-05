@@ -11,7 +11,7 @@ export const SupplierConfig = {
     ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},
     Name: {type: 'Edm.String'},
     Address: {type: 'ODataDemo.Address'},
-    Location: {type: 'Edm.GeographyPoint', srid: 'Variable'},
+    Location: {type: 'Edm.GeographyPoint', srid: Variable},
     Concurrency: {type: 'Edm.Int32', nullable: false},
     Products: {type: 'ODataDemo.Product', collection: true, navigation: true}
   }

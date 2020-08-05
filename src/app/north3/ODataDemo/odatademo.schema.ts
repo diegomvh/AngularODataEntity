@@ -1,4 +1,4 @@
-﻿import { Schema } from 'angular-odata';
+﻿import { SchemaConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { AddressConfig } from './address.entity.config';
@@ -31,4 +31,4 @@ export const ODataDemoSchema = {
     AdvertisementConfig],
   callables: [],
   containers: [DemoServiceContainer]
-} as Schema;
+} as SchemaConfig;
