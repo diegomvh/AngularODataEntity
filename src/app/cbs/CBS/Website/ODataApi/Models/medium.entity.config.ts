@@ -10,7 +10,7 @@ export const MediumConfig = {
   fields: {
     UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
     Title: {type: 'Edm.String'},
-    MediaType: {type: 'BS.Website.ODataApi.Models.MediaType', nullable: false},
+    MediaType: {type: 'CBS.Website.ODataApi.Models.MediaType', nullable: false},
     MediaTypeInt: {type: 'Edm.Int32', nullable: false},
     ReleaseTime: {type: 'Edm.DateTimeOffset', nullable: false},
     Description: {type: 'Edm.String'},

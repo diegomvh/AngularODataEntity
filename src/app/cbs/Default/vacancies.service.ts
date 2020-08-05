@@ -19,6 +19,7 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
+import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.entity';
 import { Vacancy } from '../CBS/Website/ODataApi/Models/vacancy.entity';
 //#endregion
 

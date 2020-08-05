@@ -1,0 +1,14 @@
+﻿import { EntityConfig } from 'angular-odata';
+
+//#region ODataApi Imports
+import { ShiftPreferences } from './shiftpreferences.entity';
+//#endregion
+
+export const ShiftPreferencesConfig = {
+  name: "ShiftPreferences",
+  base: "microsoft.graph.changeTrackedEntity",
+  annotations: [],
+  fields: {
+    availability: {type: 'graph.shiftAvailability', collection: true}
+  }
+} as EntityConfig<ShiftPreferences>;

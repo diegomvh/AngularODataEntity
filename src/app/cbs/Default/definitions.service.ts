@@ -19,6 +19,8 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
+import { DefinitionType } from '../CBS/Website/ODataApi/Models/definitiontype.enum';
+import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.entity';
 import { Definition } from '../CBS/Website/ODataApi/Models/definition.entity';
 //#endregion
 

@@ -1,13 +1,14 @@
 ﻿import { Duration } from 'angular-odata';
 
 //#region ODataApi Imports
+import { MediaType } from './mediatype.enum';
 //#endregion
 
 export interface Medium {
   //#region ODataApi Properties
   UniqueId: string;
   Title?: string;
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
+  MediaType: MediaType;
   MediaTypeInt: number;
   ReleaseTime: Date;
   Description?: string;

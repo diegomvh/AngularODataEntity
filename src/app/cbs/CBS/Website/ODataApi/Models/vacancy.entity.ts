@@ -1,6 +1,7 @@
 ﻿import { Duration } from 'angular-odata';
 
 //#region ODataApi Imports
+import { LinkList } from './linklist.entity';
 //#endregion
 
 export interface Vacancy {
@@ -27,9 +28,9 @@ export interface Vacancy {
   Salary?: string;
   LevelOfEducation?: string[];
   WorkLocation?: string[];
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
+  References?: LinkList;
+  Downloads?: LinkList;
+  Links?: LinkList;
   Language?: string;
   Version: number;
   SortOrder: number;

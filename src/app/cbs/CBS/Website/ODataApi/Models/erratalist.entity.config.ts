@@ -8,6 +8,6 @@ export const ErrataListConfig = {
   name: "ErrataList",
   annotations: [],
   fields: {
-    Items: {type: 'BS.Website.ODataApi.Models.ErratumItem', collection: true}
+    Items: {type: 'CBS.Website.ODataApi.Models.ErratumItem', collection: true}
   }
 } as EntityConfig<ErrataList>;

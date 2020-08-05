@@ -1,13 +1,15 @@
 ﻿import { Duration } from 'angular-odata';
 
 //#region ODataApi Imports
+import { DefinitionType } from './definitiontype.enum';
+import { LinkList } from './linklist.entity';
 //#endregion
 
 export interface Definition {
   //#region ODataApi Properties
   UniqueId: string;
   Title?: string;
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
+  DefinitionType: DefinitionType;
   Description?: string;
   LeadText?: string;
   Url?: string;
@@ -20,7 +22,7 @@ export interface Definition {
   Updated: Date;
   Created: Date;
   Permalink?: string;
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
+  References?: LinkList;
+  Links?: LinkList;
   //#endregion
 }

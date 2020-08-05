@@ -19,6 +19,7 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
+import { MediaType } from '../CBS/Website/ODataApi/Models/mediatype.enum';
 import { Medium } from '../CBS/Website/ODataApi/Models/medium.entity';
 //#endregion
 

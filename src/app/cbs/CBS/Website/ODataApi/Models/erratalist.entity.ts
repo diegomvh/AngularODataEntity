@@ -1,10 +1,11 @@
 ﻿import { Duration } from 'angular-odata';
 
 //#region ODataApi Imports
+import { ErratumItem } from './erratumitem.entity';
 //#endregion
 
 export interface ErrataList {
   //#region ODataApi Properties
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
+  Items?: ErratumItem[];
   //#endregion
 }

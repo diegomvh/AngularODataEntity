@@ -25,4 +25,4 @@ import { VacanciesService } from './Default/vacancies.service';
     VacanciesService
   ]
 })
-export class cbsModule { }
+export class CBSModule { }

@@ -19,6 +19,13 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
+import { ArticleType } from '../CBS/Website/ODataApi/Models/articletype.enum';
+import { MediaType } from '../CBS/Website/ODataApi/Models/mediatype.enum';
+import { PageType } from '../CBS/Website/ODataApi/Models/pagetype.enum';
+import { Article } from '../CBS/Website/ODataApi/Models/article.entity';
+import { Medium } from '../CBS/Website/ODataApi/Models/medium.entity';
+import { Page } from '../CBS/Website/ODataApi/Models/page.entity';
+import { SearchResultItem } from '../CBS/Website/ODataApi/Models/searchresultitem.entity';
 //#endregion
 
 @Injectable()

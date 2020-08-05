@@ -19,6 +19,9 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
+import { ArticleType } from '../CBS/Website/ODataApi/Models/articletype.enum';
+import { ErrataList } from '../CBS/Website/ODataApi/Models/erratalist.entity';
+import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.entity';
 import { Article } from '../CBS/Website/ODataApi/Models/article.entity';
 //#endregion
 

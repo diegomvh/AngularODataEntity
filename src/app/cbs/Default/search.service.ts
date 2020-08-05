@@ -19,6 +19,7 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
+import { ArticleType } from '../CBS/Website/ODataApi/Models/articletype.enum';
 import { SearchResultItem } from '../CBS/Website/ODataApi/Models/searchresultitem.entity';
 //#endregion
 

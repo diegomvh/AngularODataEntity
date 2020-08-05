@@ -1,0 +1,15 @@
+﻿import { EntityConfig } from 'angular-odata';
+
+//#region ODataApi Imports
+import { ManagedApp } from './managedapp.entity';
+//#endregion
+
+export const ManagedAppConfig = {
+  name: "ManagedApp",
+  base: "microsoft.graph.mobileApp",
+  annotations: [],
+  fields: {
+    appAvailability: {type: 'graph.managedAppAvailability', nullable: false},
+    version: {type: 'Edm.String'}
+  }
+} as EntityConfig<ManagedApp>;

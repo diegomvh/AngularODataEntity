@@ -11,6 +11,8 @@ import { TripPinConfig, TripPinModule } from './trippin';
 import { NorthwindConfig, NorthwindModule } from './northwind';
 import { North2Config, North2Module } from './north2';
 import { North3Config, North3Module } from './north3';
+import { MsGraphConfig, MsGraphModule } from './msgraph';
+import { CBSConfig, CBSModule } from './cbs';
 import { PeopleComponent, AirlinesComponent, AirportsComponent, PersonComponent } from './components/trippin';
 import { ProductsComponent, CategoriesComponent } from './components/northwind';
 import { OrdersComponent } from './components/northwind/orders.component';
@@ -60,12 +62,16 @@ import { EmployeesComponent } from './components/northwind/employees.component';
       // Northwind version 4
       Object.assign(NorthwindConfig, {
         ieee754Compatible: true
-      })
+      }),
+      Object.assign(MsGraphConfig),
+      Object.assign(CBSConfig)
     ),
     TripPinModule,
     NorthwindModule,
     North2Module, 
-    North3Module
+    North3Module,
+    MsGraphModule,
+    CBSModule
   ],
   providers: [],
   bootstrap: [AppComponent]

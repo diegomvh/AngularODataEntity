@@ -10,7 +10,7 @@ export const DefinitionConfig = {
   fields: {
     UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
     Title: {type: 'Edm.String'},
-    DefinitionType: {type: 'BS.Website.ODataApi.Models.DefinitionType', nullable: false},
+    DefinitionType: {type: 'CBS.Website.ODataApi.Models.DefinitionType', nullable: false},
     Description: {type: 'Edm.String'},
     LeadText: {type: 'Edm.String'},
     Url: {type: 'Edm.String'},
@@ -23,7 +23,7 @@ export const DefinitionConfig = {
     Updated: {type: 'Edm.DateTimeOffset', nullable: false},
     Created: {type: 'Edm.DateTimeOffset', nullable: false},
     Permalink: {type: 'Edm.String'},
-    References: {type: 'BS.Website.ODataApi.Models.LinkList'},
-    Links: {type: 'BS.Website.ODataApi.Models.LinkList'}
+    References: {type: 'CBS.Website.ODataApi.Models.LinkList'},
+    Links: {type: 'CBS.Website.ODataApi.Models.LinkList'}
   }
 } as EntityConfig<Definition>;

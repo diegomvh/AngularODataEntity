@@ -19,6 +19,8 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
+import { PageType } from '../CBS/Website/ODataApi/Models/pagetype.enum';
+import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.entity';
 import { Page } from '../CBS/Website/ODataApi/Models/page.entity';
 //#endregion
 

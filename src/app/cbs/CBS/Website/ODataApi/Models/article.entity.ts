@@ -1,12 +1,15 @@
 ﻿import { Duration } from 'angular-odata';
 
 //#region ODataApi Imports
+import { ArticleType } from './articletype.enum';
+import { ErrataList } from './erratalist.entity';
+import { LinkList } from './linklist.entity';
 //#endregion
 
 export interface Article {
   //#region ODataApi Properties
   UniqueId: string;
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
+  ArticleType: ArticleType;
   ArticleTypeInt: number;
   Title?: string;
   ReleaseTime: Date;
@@ -19,7 +22,7 @@ export interface Article {
   LeadText?: string;
   Body?: string;
   Footnote?: string;
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
+  Errata?: ErrataList;
   Authors?: string;
   Location?: string;
   ISSN?: string;
@@ -27,9 +30,9 @@ export interface Article {
   TaxonomyTags?: string[];
   Themes?: string[];
   Series?: string[];
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
-  Liquid error: Object reference not set to an instance of an object.: Liquid error: Object reference not set to an instance of an object.;
+  References?: LinkList;
+  Downloads?: LinkList;
+  Links?: LinkList;
   Language?: string;
   Version: number;
   SortOrder: number;

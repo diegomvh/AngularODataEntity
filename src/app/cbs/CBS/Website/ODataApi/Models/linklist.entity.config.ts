@@ -8,6 +8,6 @@ export const LinkListConfig = {
   name: "LinkList",
   annotations: [],
   fields: {
-    Items: {type: 'BS.Website.ODataApi.Models.Link', collection: true}
+    Items: {type: 'CBS.Website.ODataApi.Models.Link', collection: true}
   }
 } as EntityConfig<LinkList>;
