@@ -8,6 +8,6 @@ export interface CustomerDemographic {
   //#region ODataApi Properties
   CustomerTypeID: string;
   CustomerDesc?: string;
-  Customers?: Customer;
+  Customers?: Customer[];
   //#endregion
 }

@@ -1,4 +1,4 @@
-﻿import { Container } from 'angular-odata';
+﻿import { ContainerConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { CategoriesServiceConfig } from './categories.service.config';
@@ -30,7 +30,7 @@ import { SummaryOfSalesByYearsServiceConfig } from './summary_of_sales_by_years.
 //#endregion
 
 export const NorthwindEntitiesContainer = {
-  name: "NorthwindEntitiesContainer",
+  name: "NorthwindEntities",
   annotations: [],
   services: [
     CategoriesServiceConfig,
@@ -60,4 +60,4 @@ export const NorthwindEntitiesContainer = {
     SummaryOfSalesByQuartersServiceConfig,
     SummaryOfSalesByYearsServiceConfig
   ]
-} as Container;
+} as ContainerConfig;

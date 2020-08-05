@@ -25,7 +25,7 @@ export interface Order {
   ShipCountry?: string;
   Customer?: Customer;
   Employee?: Employee;
-  Order_Details?: OrderDetail;
+  Order_Details?: OrderDetail[];
   Shipper?: Shipper;
   //#endregion
 }

@@ -11,6 +11,6 @@ export interface Territory {
   TerritoryDescription: string;
   RegionID: number;
   Region?: Region;
-  Employees?: Employee;
+  Employees?: Employee[];
   //#endregion
 }

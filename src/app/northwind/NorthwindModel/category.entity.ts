@@ -10,6 +10,6 @@ export interface Category {
   CategoryName: string;
   Description?: string;
   Picture?: ArrayBuffer;
-  Products?: Product;
+  Products?: Product[];
   //#endregion
 }

@@ -25,9 +25,9 @@ export interface Employee {
   Notes?: string;
   ReportsTo?: number;
   PhotoPath?: string;
-  Employees1?: Employee;
+  Employees1?: Employee[];
   Employee1?: Employee;
-  Orders?: Order;
-  Territories?: Territory;
+  Orders?: Order[];
+  Territories?: Territory[];
   //#endregion
 }

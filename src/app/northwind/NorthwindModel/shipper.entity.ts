@@ -9,6 +9,6 @@ export interface Shipper {
   ShipperID: number;
   CompanyName: string;
   Phone?: string;
-  Orders?: Order;
+  Orders?: Order[];
   //#endregion
 }

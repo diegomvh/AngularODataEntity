@@ -18,7 +18,7 @@ export interface Customer {
   Country?: string;
   Phone?: string;
   Fax?: string;
-  Orders?: Order;
-  CustomerDemographics?: CustomerDemographic;
+  Orders?: Order[];
+  CustomerDemographics?: CustomerDemographic[];
   //#endregion
 }

@@ -8,6 +8,6 @@ export interface Region {
   //#region ODataApi Properties
   RegionID: number;
   RegionDescription: string;
-  Territories?: Territory;
+  Territories?: Territory[];
   //#endregion
 }

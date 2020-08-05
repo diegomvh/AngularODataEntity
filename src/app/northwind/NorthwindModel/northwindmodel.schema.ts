@@ -1,4 +1,4 @@
-﻿import { Schema } from 'angular-odata';
+﻿import { SchemaConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { CategoryConfig } from './category.entity.config';
@@ -60,4 +60,4 @@ export const NorthwindModelSchema = {
     SummaryOfSalesByYearConfig],
   callables: [],
   containers: []
-} as Schema;
+} as SchemaConfig;

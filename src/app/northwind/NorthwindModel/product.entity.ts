@@ -19,7 +19,7 @@ export interface Product {
   ReorderLevel?: number;
   Discontinued: boolean;
   Category?: Category;
-  Order_Details?: OrderDetail;
+  Order_Details?: OrderDetail[];
   Supplier?: Supplier;
   //#endregion
 }

@@ -18,6 +18,6 @@ export interface Supplier {
   Phone?: string;
   Fax?: string;
   HomePage?: string;
-  Products?: Product;
+  Products?: Product[];
   //#endregion
 }

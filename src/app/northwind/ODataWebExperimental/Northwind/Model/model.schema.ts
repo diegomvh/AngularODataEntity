@@ -1,4 +1,4 @@
-﻿import { Schema } from 'angular-odata';
+﻿import { SchemaConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { NorthwindEntitiesContainer } from './northwindentities.container';
@@ -10,4 +10,4 @@ export const ModelSchema = {
   entities: [],
   callables: [],
   containers: [NorthwindEntitiesContainer]
-} as Schema;
+} as SchemaConfig;
