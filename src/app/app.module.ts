@@ -9,6 +9,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
 import { TripPinConfig, TripPinModule } from './trippin';
 import { NorthwindConfig, NorthwindModule } from './northwind';
+import { North2Config, North2Module } from './north2';
+import { North3Config, North3Module } from './north3';
 import { PeopleComponent, AirlinesComponent, AirportsComponent, PersonComponent } from './components/trippin';
 import { ProductsComponent, CategoriesComponent } from './components/northwind';
 import { OrdersComponent } from './components/northwind/orders.component';
@@ -38,22 +40,20 @@ import { EmployeesComponent } from './components/northwind/employees.component';
       // TripPin
       Object.assign(TripPinConfig, {
         serviceRootUrl: 'http://localhost:4200/trippin/',
-        acceptMetadata: 'full',
+        metadata: 'full',
         stringAsEnum: true
       }), 
       // North version 2
-      Object.assign({
-        name: 'North2',
+      Object.assign(North2Config, {
         serviceRootUrl: 'http://localhost:4200/north2/',
-        version: '2.0',
+        metadata: 'full',
         withCredentials: true,
         params: {"$format": "json"}
       }),
       // North version 3
-      Object.assign({
-        name: 'North3',
+      Object.assign(North3Config, {
         serviceRootUrl: 'http://localhost:4200/north3/',
-        version: '3.0',
+        metadata: 'full',
         withCredentials: true,
         params: {"$format": "json"}
       }),
@@ -63,7 +63,9 @@ import { EmployeesComponent } from './components/northwind/employees.component';
       })
     ),
     TripPinModule,
-    NorthwindModule
+    NorthwindModule,
+    North2Module, 
+    North3Module
   ],
   providers: [],
   bootstrap: [AppComponent]

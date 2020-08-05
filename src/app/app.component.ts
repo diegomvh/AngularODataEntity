@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { ODataServiceFactory, ODataClient, odataEtag } from 'angular-odata';
+import { ODataServiceFactory, ODataClient } from 'angular-odata';
 import { PeopleService, Airport, Person, PersonGender, Photo } from './trippin';
 import { switchMap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin/index';
+import { ProductsService } from './north3';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +15,11 @@ export class AppComponent {
     private odata: ODataClient,
     private factory: ODataServiceFactory,
     private api: DefaultContainerService,
-    private people: PeopleService
+    private people: PeopleService,
+    private products: ProductsService
   ) {
-    var north = this.factory.create("Customers");
-    north.entities().all({config: "North2"}).subscribe(console.log);
-    north.entities().all({config: "North3"}).subscribe(console.log);
+    this.products.entities().get({withCount: true, config: "North2"}).subscribe(console.log);
+    this.products.entities().get({withCount: true, config: "North3"}).subscribe(console.log);
   }
 
   trippin() {
@@ -153,7 +154,7 @@ export class AppComponent {
       LastName: 'van Haaster'
     }).pipe(
       switchMap((person) => {
-        return this.people.entity(person).assign({UserName: person.UserName, Gender: PersonGender.Female}, {etag: odataEtag(person)});
+        return this.people.entity(person).assign(person, {UserName: person.UserName, Gender: PersonGender.Female});
       })
     ).toPromise();
   }
