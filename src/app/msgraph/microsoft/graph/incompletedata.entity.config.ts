@@ -5,7 +5,7 @@ import { IncompleteData } from './incompletedata.entity';
 //#endregion
 
 export const IncompleteDataConfig = {
-  name: "IncompleteData",
+  name: "incompleteData",
   open: true,
   annotations: [],
   fields: {

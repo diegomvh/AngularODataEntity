@@ -5,7 +5,7 @@ import { ThreatAssessmentRequest } from './threatassessmentrequest.entity';
 //#endregion
 
 export const ThreatAssessmentRequestConfig = {
-  name: "ThreatAssessmentRequest",
+  name: "threatAssessmentRequest",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

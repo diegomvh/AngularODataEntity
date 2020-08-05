@@ -5,6 +5,6 @@ import { TimeOffReasonIconType } from './timeoffreasonicontype.enum';
 //#endregion
 
 export const TimeOffReasonIconTypeConfig = {
-  name: "TimeOffReasonIconType",
+  name: "timeOffReasonIconType",
   members: TimeOffReasonIconType
 } as EnumConfig<TimeOffReasonIconType>;

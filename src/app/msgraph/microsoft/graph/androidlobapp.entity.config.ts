@@ -5,7 +5,7 @@ import { AndroidLobApp } from './androidlobapp.entity';
 //#endregion
 
 export const AndroidLobAppConfig = {
-  name: "AndroidLobApp",
+  name: "androidLobApp",
   base: "microsoft.graph.mobileLobApp",
   annotations: [],
   fields: {

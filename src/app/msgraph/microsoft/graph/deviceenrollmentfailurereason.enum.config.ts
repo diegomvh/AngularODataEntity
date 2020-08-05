@@ -5,6 +5,6 @@ import { DeviceEnrollmentFailureReason } from './deviceenrollmentfailurereason.e
 //#endregion
 
 export const DeviceEnrollmentFailureReasonConfig = {
-  name: "DeviceEnrollmentFailureReason",
+  name: "deviceEnrollmentFailureReason",
   members: DeviceEnrollmentFailureReason
 } as EnumConfig<DeviceEnrollmentFailureReason>;

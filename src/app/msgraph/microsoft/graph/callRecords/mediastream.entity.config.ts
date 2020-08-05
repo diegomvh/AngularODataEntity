@@ -5,7 +5,7 @@ import { MediaStream } from './mediastream.entity';
 //#endregion
 
 export const MediaStreamConfig = {
-  name: "MediaStream",
+  name: "mediaStream",
   annotations: [],
   fields: {
     streamId: {type: 'Edm.String'},

@@ -5,6 +5,6 @@ import { MessageActionFlag } from './messageactionflag.enum';
 //#endregion
 
 export const MessageActionFlagConfig = {
-  name: "MessageActionFlag",
+  name: "messageActionFlag",
   members: MessageActionFlag
 } as EnumConfig<MessageActionFlag>;

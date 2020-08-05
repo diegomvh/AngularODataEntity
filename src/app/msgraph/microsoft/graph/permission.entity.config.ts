@@ -5,7 +5,7 @@ import { Permission } from './permission.entity';
 //#endregion
 
 export const PermissionConfig = {
-  name: "Permission",
+  name: "permission",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

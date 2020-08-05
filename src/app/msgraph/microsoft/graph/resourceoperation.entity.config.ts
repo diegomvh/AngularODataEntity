@@ -5,7 +5,7 @@ import { ResourceOperation } from './resourceoperation.entity';
 //#endregion
 
 export const ResourceOperationConfig = {
-  name: "ResourceOperation",
+  name: "resourceOperation",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

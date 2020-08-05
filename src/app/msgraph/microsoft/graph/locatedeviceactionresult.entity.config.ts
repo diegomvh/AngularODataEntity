@@ -5,7 +5,7 @@ import { LocateDeviceActionResult } from './locatedeviceactionresult.entity';
 //#endregion
 
 export const LocateDeviceActionResultConfig = {
-  name: "LocateDeviceActionResult",
+  name: "locateDeviceActionResult",
   base: "microsoft.graph.deviceActionResult",
   annotations: [],
   fields: {

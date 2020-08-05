@@ -5,7 +5,7 @@ import { AddIn } from './addin.entity';
 //#endregion
 
 export const AddInConfig = {
-  name: "AddIn",
+  name: "addIn",
   annotations: [],
   fields: {
     id: {type: 'Edm.Guid'},

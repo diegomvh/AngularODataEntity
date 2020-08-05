@@ -5,7 +5,7 @@ import { ResponseStatus } from './responsestatus.entity';
 //#endregion
 
 export const ResponseStatusConfig = {
-  name: "ResponseStatus",
+  name: "responseStatus",
   annotations: [],
   fields: {
     response: {type: 'graph.responseType'},

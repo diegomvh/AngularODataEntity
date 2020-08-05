@@ -5,7 +5,7 @@ import { CurrentProductList } from './current_product_list.entity';
 //#endregion
 
 export const CurrentProductListConfig = {
-  name: "CurrentProductList",
+  name: "Current_Product_List",
   annotations: [],
   fields: {
     ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},

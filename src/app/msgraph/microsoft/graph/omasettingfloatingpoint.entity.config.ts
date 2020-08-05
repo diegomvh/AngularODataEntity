@@ -5,7 +5,7 @@ import { OmaSettingFloatingPoint } from './omasettingfloatingpoint.entity';
 //#endregion
 
 export const OmaSettingFloatingPointConfig = {
-  name: "OmaSettingFloatingPoint",
+  name: "omaSettingFloatingPoint",
   base: "microsoft.graph.omaSetting",
   annotations: [],
   fields: {

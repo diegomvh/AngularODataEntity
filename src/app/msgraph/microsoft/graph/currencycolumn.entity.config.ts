@@ -5,7 +5,7 @@ import { CurrencyColumn } from './currencycolumn.entity';
 //#endregion
 
 export const CurrencyColumnConfig = {
-  name: "CurrencyColumn",
+  name: "currencyColumn",
   annotations: [],
   fields: {
     locale: {type: 'Edm.String'}

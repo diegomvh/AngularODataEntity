@@ -5,6 +5,6 @@ import { DeviceManagementPartnerTenantState } from './devicemanagementpartnerten
 //#endregion
 
 export const DeviceManagementPartnerTenantStateConfig = {
-  name: "DeviceManagementPartnerTenantState",
+  name: "deviceManagementPartnerTenantState",
   members: DeviceManagementPartnerTenantState
 } as EnumConfig<DeviceManagementPartnerTenantState>;

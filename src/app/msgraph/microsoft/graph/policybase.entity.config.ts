@@ -5,7 +5,7 @@ import { PolicyBase } from './policybase.entity';
 //#endregion
 
 export const PolicyBaseConfig = {
-  name: "PolicyBase",
+  name: "policyBase",
   base: "microsoft.graph.directoryObject",
   annotations: [],
   fields: {

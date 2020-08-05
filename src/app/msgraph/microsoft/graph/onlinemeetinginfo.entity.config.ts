@@ -5,7 +5,7 @@ import { OnlineMeetingInfo } from './onlinemeetinginfo.entity';
 //#endregion
 
 export const OnlineMeetingInfoConfig = {
-  name: "OnlineMeetingInfo",
+  name: "onlineMeetingInfo",
   annotations: [],
   fields: {
     joinUrl: {type: 'Edm.String'},

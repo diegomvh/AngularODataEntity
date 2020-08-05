@@ -5,7 +5,7 @@ import { RecipientScopeType } from './recipientscopetype.enum';
 //#endregion
 
 export const RecipientScopeTypeConfig = {
-  name: "RecipientScopeType",
+  name: "recipientScopeType",
   flags: true,
   members: RecipientScopeType
 } as EnumConfig<RecipientScopeType>;

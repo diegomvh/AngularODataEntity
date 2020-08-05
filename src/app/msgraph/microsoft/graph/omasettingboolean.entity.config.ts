@@ -5,7 +5,7 @@ import { OmaSettingBoolean } from './omasettingboolean.entity';
 //#endregion
 
 export const OmaSettingBooleanConfig = {
-  name: "OmaSettingBoolean",
+  name: "omaSettingBoolean",
   base: "microsoft.graph.omaSetting",
   annotations: [],
   fields: {

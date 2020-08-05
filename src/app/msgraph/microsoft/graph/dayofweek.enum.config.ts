@@ -5,6 +5,6 @@ import { DayOfWeek } from './dayofweek.enum';
 //#endregion
 
 export const DayOfWeekConfig = {
-  name: "DayOfWeek",
+  name: "dayOfWeek",
   members: DayOfWeek
 } as EnumConfig<DayOfWeek>;

@@ -5,7 +5,7 @@ import { ProductsByCategory } from './products_by_category.entity';
 //#endregion
 
 export const ProductsByCategoryConfig = {
-  name: "ProductsByCategory",
+  name: "Products_by_Category",
   annotations: [],
   fields: {
     CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},

@@ -5,7 +5,7 @@ import { EventMessage } from './eventmessage.entity';
 //#endregion
 
 export const EventMessageConfig = {
-  name: "EventMessage",
+  name: "eventMessage",
   base: "microsoft.graph.message",
   annotations: [],
   fields: {

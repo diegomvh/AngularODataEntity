@@ -5,7 +5,7 @@ import { AllDevicesAssignmentTarget } from './alldevicesassignmenttarget.entity'
 //#endregion
 
 export const AllDevicesAssignmentTargetConfig = {
-  name: "AllDevicesAssignmentTarget",
+  name: "allDevicesAssignmentTarget",
   base: "microsoft.graph.deviceAndAppManagementAssignmentTarget",
   annotations: [],
   fields: {

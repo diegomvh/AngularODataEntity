@@ -5,6 +5,6 @@ import { ActivityDomain } from './activitydomain.enum';
 //#endregion
 
 export const ActivityDomainConfig = {
-  name: "ActivityDomain",
+  name: "activityDomain",
   members: ActivityDomain
 } as EnumConfig<ActivityDomain>;

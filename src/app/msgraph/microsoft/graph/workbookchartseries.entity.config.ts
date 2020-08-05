@@ -5,7 +5,7 @@ import { WorkbookChartSeries } from './workbookchartseries.entity';
 //#endregion
 
 export const WorkbookChartSeriesConfig = {
-  name: "WorkbookChartSeries",
+  name: "workbookChartSeries",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

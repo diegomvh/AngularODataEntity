@@ -5,7 +5,7 @@ import { PersonOrGroupColumn } from './personorgroupcolumn.entity';
 //#endregion
 
 export const PersonOrGroupColumnConfig = {
-  name: "PersonOrGroupColumn",
+  name: "personOrGroupColumn",
   annotations: [],
   fields: {
     allowMultipleSelection: {type: 'Edm.Boolean'},

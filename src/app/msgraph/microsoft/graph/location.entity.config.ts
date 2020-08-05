@@ -5,7 +5,7 @@ import { Location } from './location.entity';
 //#endregion
 
 export const LocationConfig = {
-  name: "Location",
+  name: "location",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String'},

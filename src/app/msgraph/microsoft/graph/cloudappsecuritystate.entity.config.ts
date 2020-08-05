@@ -5,7 +5,7 @@ import { CloudAppSecurityState } from './cloudappsecuritystate.entity';
 //#endregion
 
 export const CloudAppSecurityStateConfig = {
-  name: "CloudAppSecurityState",
+  name: "cloudAppSecurityState",
   annotations: [],
   fields: {
     destinationServiceIp: {type: 'Edm.String'},

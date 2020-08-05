@@ -5,7 +5,7 @@ import { MultiValueLegacyExtendedProperty } from './multivaluelegacyextendedprop
 //#endregion
 
 export const MultiValueLegacyExtendedPropertyConfig = {
-  name: "MultiValueLegacyExtendedProperty",
+  name: "multiValueLegacyExtendedProperty",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

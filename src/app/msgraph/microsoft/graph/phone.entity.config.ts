@@ -5,7 +5,7 @@ import { Phone } from './phone.entity';
 //#endregion
 
 export const PhoneConfig = {
-  name: "Phone",
+  name: "phone",
   annotations: [],
   fields: {
     type: {type: 'graph.phoneType'},

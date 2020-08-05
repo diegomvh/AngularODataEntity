@@ -5,7 +5,7 @@ import { MediaInfo } from './mediainfo.entity';
 //#endregion
 
 export const MediaInfoConfig = {
-  name: "MediaInfo",
+  name: "mediaInfo",
   annotations: [],
   fields: {
     uri: {type: 'Edm.String', nullable: false},

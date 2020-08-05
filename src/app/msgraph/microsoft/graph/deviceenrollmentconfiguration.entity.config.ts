@@ -5,7 +5,7 @@ import { DeviceEnrollmentConfiguration } from './deviceenrollmentconfiguration.e
 //#endregion
 
 export const DeviceEnrollmentConfigurationConfig = {
-  name: "DeviceEnrollmentConfiguration",
+  name: "deviceEnrollmentConfiguration",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { IosVppEBook } from './iosvppebook.entity';
 //#endregion
 
 export const IosVppEBookConfig = {
-  name: "IosVppEBook",
+  name: "iosVppEBook",
   base: "microsoft.graph.managedEBook",
   annotations: [],
   fields: {

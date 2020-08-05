@@ -5,7 +5,7 @@ import { FolderView } from './folderview.entity';
 //#endregion
 
 export const FolderViewConfig = {
-  name: "FolderView",
+  name: "folderView",
   annotations: [],
   fields: {
     sortBy: {type: 'Edm.String'},

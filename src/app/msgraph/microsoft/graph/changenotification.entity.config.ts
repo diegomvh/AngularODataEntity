@@ -5,7 +5,7 @@ import { ChangeNotification } from './changenotification.entity';
 //#endregion
 
 export const ChangeNotificationConfig = {
-  name: "ChangeNotification",
+  name: "changeNotification",
   annotations: [],
   fields: {
     id: {type: 'Edm.String'},

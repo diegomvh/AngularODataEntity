@@ -5,7 +5,7 @@ import { SamlSingleSignOnSettings } from './samlsinglesignonsettings.entity';
 //#endregion
 
 export const SamlSingleSignOnSettingsConfig = {
-  name: "SamlSingleSignOnSettings",
+  name: "samlSingleSignOnSettings",
   annotations: [],
   fields: {
     relayState: {type: 'Edm.String'}

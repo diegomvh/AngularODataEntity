@@ -5,7 +5,7 @@ import { DaylightTimeZoneOffset } from './daylighttimezoneoffset.entity';
 //#endregion
 
 export const DaylightTimeZoneOffsetConfig = {
-  name: "DaylightTimeZoneOffset",
+  name: "daylightTimeZoneOffset",
   base: "microsoft.graph.standardTimeZoneOffset",
   annotations: [],
   fields: {

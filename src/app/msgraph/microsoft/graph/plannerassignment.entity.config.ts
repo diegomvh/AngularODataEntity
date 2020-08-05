@@ -5,7 +5,7 @@ import { PlannerAssignment } from './plannerassignment.entity';
 //#endregion
 
 export const PlannerAssignmentConfig = {
-  name: "PlannerAssignment",
+  name: "plannerAssignment",
   annotations: [],
   fields: {
     assignedBy: {type: 'graph.identitySet'},

@@ -5,7 +5,7 @@ import { AlternativeSecurityId } from './alternativesecurityid.entity';
 //#endregion
 
 export const AlternativeSecurityIdConfig = {
-  name: "AlternativeSecurityId",
+  name: "alternativeSecurityId",
   annotations: [],
   fields: {
     type: {type: 'Edm.Int32'},

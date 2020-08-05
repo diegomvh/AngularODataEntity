@@ -5,7 +5,7 @@ import { ChangeNotificationCollection } from './changenotificationcollection.ent
 //#endregion
 
 export const ChangeNotificationCollectionConfig = {
-  name: "ChangeNotificationCollection",
+  name: "changeNotificationCollection",
   annotations: [],
   fields: {
     value: {type: 'graph.changeNotification', nullable: false, collection: true}

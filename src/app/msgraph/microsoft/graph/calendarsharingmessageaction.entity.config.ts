@@ -5,7 +5,7 @@ import { CalendarSharingMessageAction } from './calendarsharingmessageaction.ent
 //#endregion
 
 export const CalendarSharingMessageActionConfig = {
-  name: "CalendarSharingMessageAction",
+  name: "calendarSharingMessageAction",
   annotations: [],
   fields: {
     importance: {type: 'graph.calendarSharingActionImportance'},

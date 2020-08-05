@@ -5,7 +5,7 @@ import { TeamsTab } from './teamstab.entity';
 //#endregion
 
 export const TeamsTabConfig = {
-  name: "TeamsTab",
+  name: "teamsTab",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

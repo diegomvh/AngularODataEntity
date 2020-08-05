@@ -5,6 +5,6 @@ import { MailDestinationRoutingReason } from './maildestinationroutingreason.enu
 //#endregion
 
 export const MailDestinationRoutingReasonConfig = {
-  name: "MailDestinationRoutingReason",
+  name: "mailDestinationRoutingReason",
   members: MailDestinationRoutingReason
 } as EnumConfig<MailDestinationRoutingReason>;

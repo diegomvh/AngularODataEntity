@@ -5,7 +5,7 @@ import { MobileAppIdentifier } from './mobileappidentifier.entity';
 //#endregion
 
 export const MobileAppIdentifierConfig = {
-  name: "MobileAppIdentifier",
+  name: "mobileAppIdentifier",
   annotations: [],
   fields: {
     

@@ -5,7 +5,7 @@ import { ConvertIdResult } from './convertidresult.entity';
 //#endregion
 
 export const ConvertIdResultConfig = {
-  name: "ConvertIdResult",
+  name: "convertIdResult",
   annotations: [],
   fields: {
     sourceId: {type: 'Edm.String'},

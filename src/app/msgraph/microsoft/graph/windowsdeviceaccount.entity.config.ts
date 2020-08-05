@@ -5,7 +5,7 @@ import { WindowsDeviceAccount } from './windowsdeviceaccount.entity';
 //#endregion
 
 export const WindowsDeviceAccountConfig = {
-  name: "WindowsDeviceAccount",
+  name: "windowsDeviceAccount",
   annotations: [],
   fields: {
     password: {type: 'Edm.String'}

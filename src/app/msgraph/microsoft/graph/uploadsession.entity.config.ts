@@ -5,7 +5,7 @@ import { UploadSession } from './uploadsession.entity';
 //#endregion
 
 export const UploadSessionConfig = {
-  name: "UploadSession",
+  name: "uploadSession",
   annotations: [],
   fields: {
     uploadUrl: {type: 'Edm.String'},

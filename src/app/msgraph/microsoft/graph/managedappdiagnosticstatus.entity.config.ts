@@ -5,7 +5,7 @@ import { ManagedAppDiagnosticStatus } from './managedappdiagnosticstatus.entity'
 //#endregion
 
 export const ManagedAppDiagnosticStatusConfig = {
-  name: "ManagedAppDiagnosticStatus",
+  name: "managedAppDiagnosticStatus",
   annotations: [],
   fields: {
     validationName: {type: 'Edm.String'},

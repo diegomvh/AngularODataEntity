@@ -5,7 +5,7 @@ import { AudioConferencing } from './audioconferencing.entity';
 //#endregion
 
 export const AudioConferencingConfig = {
-  name: "AudioConferencing",
+  name: "audioConferencing",
   annotations: [],
   fields: {
     conferenceId: {type: 'Edm.String'},

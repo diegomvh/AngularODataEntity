@@ -5,7 +5,7 @@ import { WorkbookChartPointFormat } from './workbookchartpointformat.entity';
 //#endregion
 
 export const WorkbookChartPointFormatConfig = {
-  name: "WorkbookChartPointFormat",
+  name: "workbookChartPointFormat",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

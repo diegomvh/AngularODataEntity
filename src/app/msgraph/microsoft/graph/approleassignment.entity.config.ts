@@ -5,7 +5,7 @@ import { AppRoleAssignment } from './approleassignment.entity';
 //#endregion
 
 export const AppRoleAssignmentConfig = {
-  name: "AppRoleAssignment",
+  name: "appRoleAssignment",
   base: "microsoft.graph.directoryObject",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { File } from './file.entity';
 //#endregion
 
 export const FileConfig = {
-  name: "File",
+  name: "file",
   annotations: [],
   fields: {
     hashes: {type: 'graph.hashes'},

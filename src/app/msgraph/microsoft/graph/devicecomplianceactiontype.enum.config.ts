@@ -5,6 +5,6 @@ import { DeviceComplianceActionType } from './devicecomplianceactiontype.enum';
 //#endregion
 
 export const DeviceComplianceActionTypeConfig = {
-  name: "DeviceComplianceActionType",
+  name: "deviceComplianceActionType",
   members: DeviceComplianceActionType
 } as EnumConfig<DeviceComplianceActionType>;

@@ -5,7 +5,7 @@ import { TimeRange } from './timerange.entity';
 //#endregion
 
 export const TimeRangeConfig = {
-  name: "TimeRange",
+  name: "timeRange",
   annotations: [],
   fields: {
     startTime: {type: 'Edm.TimeOfDay'},

@@ -5,7 +5,7 @@ import { ContentTypeOrder } from './contenttypeorder.entity';
 //#endregion
 
 export const ContentTypeOrderConfig = {
-  name: "ContentTypeOrder",
+  name: "contentTypeOrder",
   annotations: [],
   fields: {
     default: {type: 'Edm.Boolean'},

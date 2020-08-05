@@ -5,7 +5,7 @@ import { ClaimsMappingPolicy } from './claimsmappingpolicy.entity';
 //#endregion
 
 export const ClaimsMappingPolicyConfig = {
-  name: "ClaimsMappingPolicy",
+  name: "claimsMappingPolicy",
   base: "microsoft.graph.stsPolicy",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { ColumnLink } from './columnlink.entity';
 //#endregion
 
 export const ColumnLinkConfig = {
-  name: "ColumnLink",
+  name: "columnLink",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

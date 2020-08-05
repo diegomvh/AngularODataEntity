@@ -5,7 +5,7 @@ import { IosHomeScreenItem } from './ioshomescreenitem.entity';
 //#endregion
 
 export const IosHomeScreenItemConfig = {
-  name: "IosHomeScreenItem",
+  name: "iosHomeScreenItem",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String'}

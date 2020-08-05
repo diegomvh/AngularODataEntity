@@ -5,7 +5,7 @@ import { MacOSCustomConfiguration } from './macoscustomconfiguration.entity';
 //#endregion
 
 export const MacOSCustomConfigurationConfig = {
-  name: "MacOSCustomConfiguration",
+  name: "macOSCustomConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

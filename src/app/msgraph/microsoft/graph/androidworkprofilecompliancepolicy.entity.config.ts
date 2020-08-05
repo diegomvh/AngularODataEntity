@@ -5,7 +5,7 @@ import { AndroidWorkProfileCompliancePolicy } from './androidworkprofilecomplian
 //#endregion
 
 export const AndroidWorkProfileCompliancePolicyConfig = {
-  name: "AndroidWorkProfileCompliancePolicy",
+  name: "androidWorkProfileCompliancePolicy",
   base: "microsoft.graph.deviceCompliancePolicy",
   annotations: [],
   fields: {

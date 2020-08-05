@@ -5,7 +5,7 @@ import { ConditionalAccessGrantControls } from './conditionalaccessgrantcontrols
 //#endregion
 
 export const ConditionalAccessGrantControlsConfig = {
-  name: "ConditionalAccessGrantControls",
+  name: "conditionalAccessGrantControls",
   annotations: [],
   fields: {
     operator: {type: 'Edm.String'},

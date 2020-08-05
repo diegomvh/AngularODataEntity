@@ -5,7 +5,7 @@ import { MeetingTimeSuggestion } from './meetingtimesuggestion.entity';
 //#endregion
 
 export const MeetingTimeSuggestionConfig = {
-  name: "MeetingTimeSuggestion",
+  name: "meetingTimeSuggestion",
   annotations: [],
   fields: {
     confidence: {type: 'Edm.Double'},

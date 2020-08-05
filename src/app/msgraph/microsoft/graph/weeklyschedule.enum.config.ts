@@ -5,6 +5,6 @@ import { WeeklySchedule } from './weeklyschedule.enum';
 //#endregion
 
 export const WeeklyScheduleConfig = {
-  name: "WeeklySchedule",
+  name: "weeklySchedule",
   members: WeeklySchedule
 } as EnumConfig<WeeklySchedule>;

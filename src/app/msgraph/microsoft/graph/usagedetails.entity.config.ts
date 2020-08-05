@@ -5,7 +5,7 @@ import { UsageDetails } from './usagedetails.entity';
 //#endregion
 
 export const UsageDetailsConfig = {
-  name: "UsageDetails",
+  name: "usageDetails",
   annotations: [],
   fields: {
     lastAccessedDateTime: {type: 'Edm.DateTimeOffset'},

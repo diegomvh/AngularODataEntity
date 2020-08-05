@@ -5,7 +5,7 @@ import { EducationStudent } from './educationstudent.entity';
 //#endregion
 
 export const EducationStudentConfig = {
-  name: "EducationStudent",
+  name: "educationStudent",
   annotations: [],
   fields: {
     graduationYear: {type: 'Edm.String'},

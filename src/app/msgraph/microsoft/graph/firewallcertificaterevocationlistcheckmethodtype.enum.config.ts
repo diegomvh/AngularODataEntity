@@ -5,6 +5,6 @@ import { FirewallCertificateRevocationListCheckMethodType } from './firewallcert
 //#endregion
 
 export const FirewallCertificateRevocationListCheckMethodTypeConfig = {
-  name: "FirewallCertificateRevocationListCheckMethodType",
+  name: "firewallCertificateRevocationListCheckMethodType",
   members: FirewallCertificateRevocationListCheckMethodType
 } as EnumConfig<FirewallCertificateRevocationListCheckMethodType>;

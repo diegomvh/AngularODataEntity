@@ -5,7 +5,7 @@ import { OnPremisesExtensionAttributes } from './onpremisesextensionattributes.e
 //#endregion
 
 export const OnPremisesExtensionAttributesConfig = {
-  name: "OnPremisesExtensionAttributes",
+  name: "onPremisesExtensionAttributes",
   annotations: [],
   fields: {
     extensionAttribute1: {type: 'Edm.String'},

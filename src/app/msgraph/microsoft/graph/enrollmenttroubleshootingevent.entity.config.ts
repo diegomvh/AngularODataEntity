@@ -5,7 +5,7 @@ import { EnrollmentTroubleshootingEvent } from './enrollmenttroubleshootingevent
 //#endregion
 
 export const EnrollmentTroubleshootingEventConfig = {
-  name: "EnrollmentTroubleshootingEvent",
+  name: "enrollmentTroubleshootingEvent",
   base: "microsoft.graph.deviceManagementTroubleshootingEvent",
   annotations: [],
   fields: {

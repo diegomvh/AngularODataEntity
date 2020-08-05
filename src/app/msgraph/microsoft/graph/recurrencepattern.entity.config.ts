@@ -5,7 +5,7 @@ import { RecurrencePattern } from './recurrencepattern.entity';
 //#endregion
 
 export const RecurrencePatternConfig = {
-  name: "RecurrencePattern",
+  name: "recurrencePattern",
   annotations: [],
   fields: {
     type: {type: 'graph.recurrencePatternType'},

@@ -5,7 +5,7 @@ import { PlayPromptOperation } from './playpromptoperation.entity';
 //#endregion
 
 export const PlayPromptOperationConfig = {
-  name: "PlayPromptOperation",
+  name: "playPromptOperation",
   base: "microsoft.graph.commsOperation",
   open: true,
   annotations: [],

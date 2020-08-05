@@ -5,7 +5,7 @@ import { PlannerUser } from './planneruser.entity';
 //#endregion
 
 export const PlannerUserConfig = {
-  name: "PlannerUser",
+  name: "plannerUser",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { DeviceEnrollmentLimitConfiguration } from './deviceenrollmentlimitconfi
 //#endregion
 
 export const DeviceEnrollmentLimitConfigurationConfig = {
-  name: "DeviceEnrollmentLimitConfiguration",
+  name: "deviceEnrollmentLimitConfiguration",
   base: "microsoft.graph.deviceEnrollmentConfiguration",
   annotations: [],
   fields: {

@@ -5,6 +5,6 @@ import { ScreenSharingRole } from './screensharingrole.enum';
 //#endregion
 
 export const ScreenSharingRoleConfig = {
-  name: "ScreenSharingRole",
+  name: "screenSharingRole",
   members: ScreenSharingRole
 } as EnumConfig<ScreenSharingRole>;

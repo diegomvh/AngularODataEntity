@@ -5,7 +5,7 @@ import { ShiftItem } from './shiftitem.entity';
 //#endregion
 
 export const ShiftItemConfig = {
-  name: "ShiftItem",
+  name: "shiftItem",
   base: "microsoft.graph.scheduleEntity",
   annotations: [],
   fields: {

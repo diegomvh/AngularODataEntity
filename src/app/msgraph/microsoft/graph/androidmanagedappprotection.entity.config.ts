@@ -5,7 +5,7 @@ import { AndroidManagedAppProtection } from './androidmanagedappprotection.entit
 //#endregion
 
 export const AndroidManagedAppProtectionConfig = {
-  name: "AndroidManagedAppProtection",
+  name: "androidManagedAppProtection",
   base: "microsoft.graph.targetedManagedAppProtection",
   annotations: [],
   fields: {

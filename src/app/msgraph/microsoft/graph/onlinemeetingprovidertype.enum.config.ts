@@ -5,6 +5,6 @@ import { OnlineMeetingProviderType } from './onlinemeetingprovidertype.enum';
 //#endregion
 
 export const OnlineMeetingProviderTypeConfig = {
-  name: "OnlineMeetingProviderType",
+  name: "onlineMeetingProviderType",
   members: OnlineMeetingProviderType
 } as EnumConfig<OnlineMeetingProviderType>;

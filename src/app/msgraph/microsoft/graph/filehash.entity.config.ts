@@ -5,7 +5,7 @@ import { FileHash } from './filehash.entity';
 //#endregion
 
 export const FileHashConfig = {
-  name: "FileHash",
+  name: "fileHash",
   annotations: [],
   fields: {
     hashType: {type: 'graph.fileHashType'},

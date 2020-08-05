@@ -5,6 +5,6 @@ import { PrereleaseFeatures } from './prereleasefeatures.enum';
 //#endregion
 
 export const PrereleaseFeaturesConfig = {
-  name: "PrereleaseFeatures",
+  name: "prereleaseFeatures",
   members: PrereleaseFeatures
 } as EnumConfig<PrereleaseFeatures>;

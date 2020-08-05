@@ -5,7 +5,7 @@ import { TermsAndConditions } from './termsandconditions.entity';
 //#endregion
 
 export const TermsAndConditionsConfig = {
-  name: "TermsAndConditions",
+  name: "termsAndConditions",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

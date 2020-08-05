@@ -5,7 +5,7 @@ import { SecureScoreControlProfile } from './securescorecontrolprofile.entity';
 //#endregion
 
 export const SecureScoreControlProfileConfig = {
-  name: "SecureScoreControlProfile",
+  name: "secureScoreControlProfile",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

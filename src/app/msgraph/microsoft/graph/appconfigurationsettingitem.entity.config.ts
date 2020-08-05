@@ -5,7 +5,7 @@ import { AppConfigurationSettingItem } from './appconfigurationsettingitem.entit
 //#endregion
 
 export const AppConfigurationSettingItemConfig = {
-  name: "AppConfigurationSettingItem",
+  name: "appConfigurationSettingItem",
   annotations: [],
   fields: {
     appConfigKey: {type: 'Edm.String', nullable: false},

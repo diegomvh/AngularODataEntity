@@ -5,7 +5,7 @@ import { ScheduleEntity } from './scheduleentity.entity';
 //#endregion
 
 export const ScheduleEntityConfig = {
-  name: "ScheduleEntity",
+  name: "scheduleEntity",
   annotations: [],
   fields: {
     startDateTime: {type: 'Edm.DateTimeOffset'},

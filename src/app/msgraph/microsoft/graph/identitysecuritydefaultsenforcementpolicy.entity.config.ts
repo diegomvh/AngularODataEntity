@@ -5,7 +5,7 @@ import { IdentitySecurityDefaultsEnforcementPolicy } from './identitysecuritydef
 //#endregion
 
 export const IdentitySecurityDefaultsEnforcementPolicyConfig = {
-  name: "IdentitySecurityDefaultsEnforcementPolicy",
+  name: "identitySecurityDefaultsEnforcementPolicy",
   base: "microsoft.graph.policyBase",
   annotations: [],
   fields: {

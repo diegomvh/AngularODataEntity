@@ -5,7 +5,7 @@ import { ConfigurationManagerClientEnabledFeatures } from './configurationmanage
 //#endregion
 
 export const ConfigurationManagerClientEnabledFeaturesConfig = {
-  name: "ConfigurationManagerClientEnabledFeatures",
+  name: "configurationManagerClientEnabledFeatures",
   annotations: [],
   fields: {
     inventory: {type: 'Edm.Boolean', nullable: false},

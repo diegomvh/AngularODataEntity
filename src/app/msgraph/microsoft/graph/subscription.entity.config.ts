@@ -5,7 +5,7 @@ import { Subscription } from './subscription.entity';
 //#endregion
 
 export const SubscriptionConfig = {
-  name: "Subscription",
+  name: "subscription",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { ManagedAppStatus } from './managedappstatus.entity';
 //#endregion
 
 export const ManagedAppStatusConfig = {
-  name: "ManagedAppStatus",
+  name: "managedAppStatus",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

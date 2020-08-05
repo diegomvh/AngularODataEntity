@@ -5,7 +5,7 @@ import { DirectoryObjectPartnerReference } from './directoryobjectpartnerreferen
 //#endregion
 
 export const DirectoryObjectPartnerReferenceConfig = {
-  name: "DirectoryObjectPartnerReference",
+  name: "directoryObjectPartnerReference",
   base: "microsoft.graph.directoryObject",
   annotations: [],
   fields: {

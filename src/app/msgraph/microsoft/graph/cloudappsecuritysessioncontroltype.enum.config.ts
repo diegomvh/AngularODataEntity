@@ -5,6 +5,6 @@ import { CloudAppSecuritySessionControlType } from './cloudappsecuritysessioncon
 //#endregion
 
 export const CloudAppSecuritySessionControlTypeConfig = {
-  name: "CloudAppSecuritySessionControlType",
+  name: "cloudAppSecuritySessionControlType",
   members: CloudAppSecuritySessionControlType
 } as EnumConfig<CloudAppSecuritySessionControlType>;

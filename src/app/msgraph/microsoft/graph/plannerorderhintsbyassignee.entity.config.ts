@@ -5,7 +5,7 @@ import { PlannerOrderHintsByAssignee } from './plannerorderhintsbyassignee.entit
 //#endregion
 
 export const PlannerOrderHintsByAssigneeConfig = {
-  name: "PlannerOrderHintsByAssignee",
+  name: "plannerOrderHintsByAssignee",
   open: true,
   annotations: [],
   fields: {

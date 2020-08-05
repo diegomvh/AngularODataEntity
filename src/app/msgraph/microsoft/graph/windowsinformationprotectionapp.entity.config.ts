@@ -5,7 +5,7 @@ import { WindowsInformationProtectionApp } from './windowsinformationprotectiona
 //#endregion
 
 export const WindowsInformationProtectionAppConfig = {
-  name: "WindowsInformationProtectionApp",
+  name: "windowsInformationProtectionApp",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String', nullable: false},

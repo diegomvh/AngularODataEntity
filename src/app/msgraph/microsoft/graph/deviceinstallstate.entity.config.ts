@@ -5,7 +5,7 @@ import { DeviceInstallState } from './deviceinstallstate.entity';
 //#endregion
 
 export const DeviceInstallStateConfig = {
-  name: "DeviceInstallState",
+  name: "deviceInstallState",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

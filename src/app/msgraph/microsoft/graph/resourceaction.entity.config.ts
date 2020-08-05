@@ -5,7 +5,7 @@ import { ResourceAction } from './resourceaction.entity';
 //#endregion
 
 export const ResourceActionConfig = {
-  name: "ResourceAction",
+  name: "resourceAction",
   annotations: [],
   fields: {
     allowedResourceActions: {type: 'Edm.String', collection: true},

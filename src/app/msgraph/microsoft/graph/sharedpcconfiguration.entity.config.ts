@@ -5,7 +5,7 @@ import { SharedPCConfiguration } from './sharedpcconfiguration.entity';
 //#endregion
 
 export const SharedPCConfigurationConfig = {
-  name: "SharedPCConfiguration",
+  name: "sharedPCConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

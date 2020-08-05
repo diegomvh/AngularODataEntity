@@ -5,6 +5,6 @@ import { MdmAuthority } from './mdmauthority.enum';
 //#endregion
 
 export const MdmAuthorityConfig = {
-  name: "MdmAuthority",
+  name: "mdmAuthority",
   members: MdmAuthority
 } as EnumConfig<MdmAuthority>;

@@ -5,7 +5,7 @@ import { TimeOff } from './timeoff.entity';
 //#endregion
 
 export const TimeOffConfig = {
-  name: "TimeOff",
+  name: "timeOff",
   base: "microsoft.graph.changeTrackedEntity",
   annotations: [],
   fields: {

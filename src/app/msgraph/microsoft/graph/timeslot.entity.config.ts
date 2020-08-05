@@ -5,7 +5,7 @@ import { TimeSlot } from './timeslot.entity';
 //#endregion
 
 export const TimeSlotConfig = {
-  name: "TimeSlot",
+  name: "timeSlot",
   annotations: [],
   fields: {
     start: {type: 'graph.dateTimeTimeZone', nullable: false},

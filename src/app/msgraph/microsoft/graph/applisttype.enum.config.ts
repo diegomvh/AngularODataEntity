@@ -5,6 +5,6 @@ import { AppListType } from './applisttype.enum';
 //#endregion
 
 export const AppListTypeConfig = {
-  name: "AppListType",
+  name: "appListType",
   members: AppListType
 } as EnumConfig<AppListType>;

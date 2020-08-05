@@ -5,7 +5,7 @@ import { WebApplication } from './webapplication.entity';
 //#endregion
 
 export const WebApplicationConfig = {
-  name: "WebApplication",
+  name: "webApplication",
   annotations: [],
   fields: {
     homePageUrl: {type: 'Edm.String'},

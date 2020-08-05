@@ -5,7 +5,7 @@ import { Drive } from './drive.entity';
 //#endregion
 
 export const DriveConfig = {
-  name: "Drive",
+  name: "drive",
   base: "microsoft.graph.baseItem",
   annotations: [],
   fields: {

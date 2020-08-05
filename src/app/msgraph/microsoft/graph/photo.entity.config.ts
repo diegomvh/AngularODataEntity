@@ -5,7 +5,7 @@ import { Photo } from './photo.entity';
 //#endregion
 
 export const PhotoConfig = {
-  name: "Photo",
+  name: "photo",
   annotations: [],
   fields: {
     cameraMake: {type: 'Edm.String'},

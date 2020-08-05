@@ -5,7 +5,7 @@ import { WorkbookChartTitleFormat } from './workbookcharttitleformat.entity';
 //#endregion
 
 export const WorkbookChartTitleFormatConfig = {
-  name: "WorkbookChartTitleFormat",
+  name: "workbookChartTitleFormat",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

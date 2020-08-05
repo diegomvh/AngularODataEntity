@@ -5,7 +5,7 @@ import { IncomingContext } from './incomingcontext.entity';
 //#endregion
 
 export const IncomingContextConfig = {
-  name: "IncomingContext",
+  name: "incomingContext",
   annotations: [],
   fields: {
     sourceParticipantId: {type: 'Edm.String'},

@@ -5,7 +5,7 @@ import { Windows10CompliancePolicy } from './windows10compliancepolicy.entity';
 //#endregion
 
 export const Windows10CompliancePolicyConfig = {
-  name: "Windows10CompliancePolicy",
+  name: "windows10CompliancePolicy",
   base: "microsoft.graph.deviceCompliancePolicy",
   annotations: [],
   fields: {

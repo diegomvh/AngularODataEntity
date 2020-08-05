@@ -5,7 +5,7 @@ import { Extension } from './extension.entity';
 //#endregion
 
 export const ExtensionConfig = {
-  name: "Extension",
+  name: "extension",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

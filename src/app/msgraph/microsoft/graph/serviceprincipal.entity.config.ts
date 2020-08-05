@@ -5,7 +5,7 @@ import { ServicePrincipal } from './serviceprincipal.entity';
 //#endregion
 
 export const ServicePrincipalConfig = {
-  name: "ServicePrincipal",
+  name: "servicePrincipal",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

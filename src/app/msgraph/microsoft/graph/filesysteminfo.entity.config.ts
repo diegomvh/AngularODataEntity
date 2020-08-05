@@ -5,7 +5,7 @@ import { FileSystemInfo } from './filesysteminfo.entity';
 //#endregion
 
 export const FileSystemInfoConfig = {
-  name: "FileSystemInfo",
+  name: "fileSystemInfo",
   annotations: [],
   fields: {
     createdDateTime: {type: 'Edm.DateTimeOffset'},

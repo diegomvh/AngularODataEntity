@@ -5,7 +5,7 @@ import { PasswordProfile } from './passwordprofile.entity';
 //#endregion
 
 export const PasswordProfileConfig = {
-  name: "PasswordProfile",
+  name: "passwordProfile",
   annotations: [],
   fields: {
     password: {type: 'Edm.String'},

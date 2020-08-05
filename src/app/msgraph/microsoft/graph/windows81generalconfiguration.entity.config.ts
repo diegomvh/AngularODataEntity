@@ -5,7 +5,7 @@ import { Windows81GeneralConfiguration } from './windows81generalconfiguration.e
 //#endregion
 
 export const Windows81GeneralConfigurationConfig = {
-  name: "Windows81GeneralConfiguration",
+  name: "windows81GeneralConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

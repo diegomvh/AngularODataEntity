@@ -5,6 +5,6 @@ import { ChangeType } from './changetype.enum';
 //#endregion
 
 export const ChangeTypeConfig = {
-  name: "ChangeType",
+  name: "changeType",
   members: ChangeType
 } as EnumConfig<ChangeType>;

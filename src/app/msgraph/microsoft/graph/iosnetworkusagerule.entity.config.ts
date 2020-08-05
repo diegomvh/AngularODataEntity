@@ -5,7 +5,7 @@ import { IosNetworkUsageRule } from './iosnetworkusagerule.entity';
 //#endregion
 
 export const IosNetworkUsageRuleConfig = {
-  name: "IosNetworkUsageRule",
+  name: "iosNetworkUsageRule",
   annotations: [],
   fields: {
     managedApps: {type: 'graph.appListItem', collection: true},

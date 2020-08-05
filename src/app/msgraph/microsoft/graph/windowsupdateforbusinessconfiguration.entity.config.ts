@@ -5,7 +5,7 @@ import { WindowsUpdateForBusinessConfiguration } from './windowsupdateforbusines
 //#endregion
 
 export const WindowsUpdateForBusinessConfigurationConfig = {
-  name: "WindowsUpdateForBusinessConfiguration",
+  name: "windowsUpdateForBusinessConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

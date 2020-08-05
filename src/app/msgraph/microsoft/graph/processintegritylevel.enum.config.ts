@@ -5,6 +5,6 @@ import { ProcessIntegrityLevel } from './processintegritylevel.enum';
 //#endregion
 
 export const ProcessIntegrityLevelConfig = {
-  name: "ProcessIntegrityLevel",
+  name: "processIntegrityLevel",
   members: ProcessIntegrityLevel
 } as EnumConfig<ProcessIntegrityLevel>;

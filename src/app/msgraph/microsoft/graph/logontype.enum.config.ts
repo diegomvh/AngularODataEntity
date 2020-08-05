@@ -5,6 +5,6 @@ import { LogonType } from './logontype.enum';
 //#endregion
 
 export const LogonTypeConfig = {
-  name: "LogonType",
+  name: "logonType",
   members: LogonType
 } as EnumConfig<LogonType>;

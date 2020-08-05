@@ -5,7 +5,7 @@ import { IosHomeScreenFolderPage } from './ioshomescreenfolderpage.entity';
 //#endregion
 
 export const IosHomeScreenFolderPageConfig = {
-  name: "IosHomeScreenFolderPage",
+  name: "iosHomeScreenFolderPage",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String'},

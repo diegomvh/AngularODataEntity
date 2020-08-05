@@ -5,6 +5,6 @@ import { RejectReason } from './rejectreason.enum';
 //#endregion
 
 export const RejectReasonConfig = {
-  name: "RejectReason",
+  name: "rejectReason",
   members: RejectReason
 } as EnumConfig<RejectReason>;

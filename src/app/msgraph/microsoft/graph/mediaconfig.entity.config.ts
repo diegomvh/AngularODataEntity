@@ -5,7 +5,7 @@ import { MediaConfig } from './mediaconfig.entity';
 //#endregion
 
 export const MediaConfigConfig = {
-  name: "MediaConfig",
+  name: "mediaConfig",
   annotations: [],
   fields: {
     

@@ -5,6 +5,6 @@ import { RemoteAssistanceOnboardingStatus } from './remoteassistanceonboardingst
 //#endregion
 
 export const RemoteAssistanceOnboardingStatusConfig = {
-  name: "RemoteAssistanceOnboardingStatus",
+  name: "remoteAssistanceOnboardingStatus",
   members: RemoteAssistanceOnboardingStatus
 } as EnumConfig<RemoteAssistanceOnboardingStatus>;

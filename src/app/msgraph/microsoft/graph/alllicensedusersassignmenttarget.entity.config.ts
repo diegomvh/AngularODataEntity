@@ -5,7 +5,7 @@ import { AllLicensedUsersAssignmentTarget } from './alllicensedusersassignmentta
 //#endregion
 
 export const AllLicensedUsersAssignmentTargetConfig = {
-  name: "AllLicensedUsersAssignmentTarget",
+  name: "allLicensedUsersAssignmentTarget",
   base: "microsoft.graph.deviceAndAppManagementAssignmentTarget",
   annotations: [],
   fields: {

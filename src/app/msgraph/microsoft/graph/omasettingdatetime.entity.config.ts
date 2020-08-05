@@ -5,7 +5,7 @@ import { OmaSettingDateTime } from './omasettingdatetime.entity';
 //#endregion
 
 export const OmaSettingDateTimeConfig = {
-  name: "OmaSettingDateTime",
+  name: "omaSettingDateTime",
   base: "microsoft.graph.omaSetting",
   annotations: [],
   fields: {

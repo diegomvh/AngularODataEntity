@@ -5,7 +5,7 @@ import { CallMediaState } from './callmediastate.entity';
 //#endregion
 
 export const CallMediaStateConfig = {
-  name: "CallMediaState",
+  name: "callMediaState",
   annotations: [],
   fields: {
     audio: {type: 'graph.mediaState'}

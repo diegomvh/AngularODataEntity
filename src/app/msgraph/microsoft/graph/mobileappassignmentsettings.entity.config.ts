@@ -5,7 +5,7 @@ import { MobileAppAssignmentSettings } from './mobileappassignmentsettings.entit
 //#endregion
 
 export const MobileAppAssignmentSettingsConfig = {
-  name: "MobileAppAssignmentSettings",
+  name: "mobileAppAssignmentSettings",
   annotations: [],
   fields: {
     

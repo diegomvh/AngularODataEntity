@@ -5,6 +5,6 @@ import { TeamsAsyncOperationStatus } from './teamsasyncoperationstatus.enum';
 //#endregion
 
 export const TeamsAsyncOperationStatusConfig = {
-  name: "TeamsAsyncOperationStatus",
+  name: "teamsAsyncOperationStatus",
   members: TeamsAsyncOperationStatus
 } as EnumConfig<TeamsAsyncOperationStatus>;

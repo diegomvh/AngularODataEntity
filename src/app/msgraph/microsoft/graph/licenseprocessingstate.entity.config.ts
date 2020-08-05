@@ -5,7 +5,7 @@ import { LicenseProcessingState } from './licenseprocessingstate.entity';
 //#endregion
 
 export const LicenseProcessingStateConfig = {
-  name: "LicenseProcessingState",
+  name: "licenseProcessingState",
   annotations: [],
   fields: {
     state: {type: 'Edm.String'}

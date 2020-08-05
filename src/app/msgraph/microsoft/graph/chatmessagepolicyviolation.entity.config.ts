@@ -5,7 +5,7 @@ import { ChatMessagePolicyViolation } from './chatmessagepolicyviolation.entity'
 //#endregion
 
 export const ChatMessagePolicyViolationConfig = {
-  name: "ChatMessagePolicyViolation",
+  name: "chatMessagePolicyViolation",
   annotations: [],
   fields: {
     dlpAction: {type: 'graph.chatMessagePolicyViolationDlpActionTypes'},

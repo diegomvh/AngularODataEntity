@@ -5,7 +5,7 @@ import { ResetPasscodeActionResult } from './resetpasscodeactionresult.entity';
 //#endregion
 
 export const ResetPasscodeActionResultConfig = {
-  name: "ResetPasscodeActionResult",
+  name: "resetPasscodeActionResult",
   base: "microsoft.graph.deviceActionResult",
   annotations: [],
   fields: {

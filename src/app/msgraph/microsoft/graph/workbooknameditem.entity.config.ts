@@ -5,7 +5,7 @@ import { WorkbookNamedItem } from './workbooknameditem.entity';
 //#endregion
 
 export const WorkbookNamedItemConfig = {
-  name: "WorkbookNamedItem",
+  name: "workbookNamedItem",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

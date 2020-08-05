@@ -5,6 +5,6 @@ import { WifiRadioType } from './wifiradiotype.enum';
 //#endregion
 
 export const WifiRadioTypeConfig = {
-  name: "WifiRadioType",
+  name: "wifiRadioType",
   members: WifiRadioType
 } as EnumConfig<WifiRadioType>;

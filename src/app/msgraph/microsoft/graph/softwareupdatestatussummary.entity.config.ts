@@ -5,7 +5,7 @@ import { SoftwareUpdateStatusSummary } from './softwareupdatestatussummary.entit
 //#endregion
 
 export const SoftwareUpdateStatusSummaryConfig = {
-  name: "SoftwareUpdateStatusSummary",
+  name: "softwareUpdateStatusSummary",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

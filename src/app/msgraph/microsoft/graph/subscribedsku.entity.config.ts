@@ -5,7 +5,7 @@ import { SubscribedSku } from './subscribedsku.entity';
 //#endregion
 
 export const SubscribedSkuConfig = {
-  name: "SubscribedSku",
+  name: "subscribedSku",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

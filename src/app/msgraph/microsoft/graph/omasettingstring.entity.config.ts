@@ -5,7 +5,7 @@ import { OmaSettingString } from './omasettingstring.entity';
 //#endregion
 
 export const OmaSettingStringConfig = {
-  name: "OmaSettingString",
+  name: "omaSettingString",
   base: "microsoft.graph.omaSetting",
   annotations: [],
   fields: {

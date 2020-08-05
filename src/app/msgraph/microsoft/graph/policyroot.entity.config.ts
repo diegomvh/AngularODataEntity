@@ -5,7 +5,7 @@ import { PolicyRoot } from './policyroot.entity';
 //#endregion
 
 export const PolicyRootConfig = {
-  name: "PolicyRoot",
+  name: "policyRoot",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

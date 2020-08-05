@@ -5,7 +5,7 @@ import { UserSecurityState } from './usersecuritystate.entity';
 //#endregion
 
 export const UserSecurityStateConfig = {
-  name: "UserSecurityState",
+  name: "userSecurityState",
   annotations: [],
   fields: {
     aadUserId: {type: 'Edm.String'},

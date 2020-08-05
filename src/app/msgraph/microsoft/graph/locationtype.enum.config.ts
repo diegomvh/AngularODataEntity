@@ -5,6 +5,6 @@ import { LocationType } from './locationtype.enum';
 //#endregion
 
 export const LocationTypeConfig = {
-  name: "LocationType",
+  name: "locationType",
   members: LocationType
 } as EnumConfig<LocationType>;

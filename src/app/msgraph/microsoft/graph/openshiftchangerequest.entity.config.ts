@@ -5,7 +5,7 @@ import { OpenShiftChangeRequest } from './openshiftchangerequest.entity';
 //#endregion
 
 export const OpenShiftChangeRequestConfig = {
-  name: "OpenShiftChangeRequest",
+  name: "openShiftChangeRequest",
   base: "microsoft.graph.scheduleChangeRequest",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { DirectoryRole } from './directoryrole.entity';
 //#endregion
 
 export const DirectoryRoleConfig = {
-  name: "DirectoryRole",
+  name: "directoryRole",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

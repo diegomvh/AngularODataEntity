@@ -5,7 +5,7 @@ import { Device } from './device.entity';
 //#endregion
 
 export const DeviceConfig = {
-  name: "Device",
+  name: "device",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

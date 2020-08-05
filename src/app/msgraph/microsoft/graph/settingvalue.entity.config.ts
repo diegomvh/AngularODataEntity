@@ -5,7 +5,7 @@ import { SettingValue } from './settingvalue.entity';
 //#endregion
 
 export const SettingValueConfig = {
-  name: "SettingValue",
+  name: "settingValue",
   annotations: [],
   fields: {
     name: {type: 'Edm.String'},

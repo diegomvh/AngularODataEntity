@@ -5,7 +5,7 @@ import { TokenIssuancePolicy } from './tokenissuancepolicy.entity';
 //#endregion
 
 export const TokenIssuancePolicyConfig = {
-  name: "TokenIssuancePolicy",
+  name: "tokenIssuancePolicy",
   base: "microsoft.graph.stsPolicy",
   annotations: [],
   fields: {

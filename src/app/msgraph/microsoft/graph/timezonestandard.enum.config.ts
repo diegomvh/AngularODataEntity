@@ -5,6 +5,6 @@ import { TimeZoneStandard } from './timezonestandard.enum';
 //#endregion
 
 export const TimeZoneStandardConfig = {
-  name: "TimeZoneStandard",
+  name: "timeZoneStandard",
   members: TimeZoneStandard
 } as EnumConfig<TimeZoneStandard>;

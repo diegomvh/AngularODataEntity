@@ -5,7 +5,7 @@ import { CalculatedColumn } from './calculatedcolumn.entity';
 //#endregion
 
 export const CalculatedColumnConfig = {
-  name: "CalculatedColumn",
+  name: "calculatedColumn",
   annotations: [],
   fields: {
     format: {type: 'Edm.String'},

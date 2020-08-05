@@ -5,7 +5,7 @@ import { OnenotePage } from './onenotepage.entity';
 //#endregion
 
 export const OnenotePageConfig = {
-  name: "OnenotePage",
+  name: "onenotePage",
   base: "microsoft.graph.onenoteEntitySchemaObjectModel",
   annotations: [],
   fields: {

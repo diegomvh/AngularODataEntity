@@ -5,6 +5,6 @@ import { IosNotificationAlertType } from './iosnotificationalerttype.enum';
 //#endregion
 
 export const IosNotificationAlertTypeConfig = {
-  name: "IosNotificationAlertType",
+  name: "iosNotificationAlertType",
   members: IosNotificationAlertType
 } as EnumConfig<IosNotificationAlertType>;

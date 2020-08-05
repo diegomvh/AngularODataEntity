@@ -5,7 +5,7 @@ import { ScheduleInformation } from './scheduleinformation.entity';
 //#endregion
 
 export const ScheduleInformationConfig = {
-  name: "ScheduleInformation",
+  name: "scheduleInformation",
   annotations: [],
   fields: {
     scheduleId: {type: 'Edm.String'},

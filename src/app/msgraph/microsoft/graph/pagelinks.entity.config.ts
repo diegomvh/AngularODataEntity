@@ -5,7 +5,7 @@ import { PageLinks } from './pagelinks.entity';
 //#endregion
 
 export const PageLinksConfig = {
-  name: "PageLinks",
+  name: "pageLinks",
   annotations: [],
   fields: {
     oneNoteClientUrl: {type: 'graph.externalLink'},

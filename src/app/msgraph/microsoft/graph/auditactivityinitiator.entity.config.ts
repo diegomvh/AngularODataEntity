@@ -5,7 +5,7 @@ import { AuditActivityInitiator } from './auditactivityinitiator.entity';
 //#endregion
 
 export const AuditActivityInitiatorConfig = {
-  name: "AuditActivityInitiator",
+  name: "auditActivityInitiator",
   annotations: [],
   fields: {
     user: {type: 'graph.userIdentity'},

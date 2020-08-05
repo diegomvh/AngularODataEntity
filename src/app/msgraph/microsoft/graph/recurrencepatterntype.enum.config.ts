@@ -5,6 +5,6 @@ import { RecurrencePatternType } from './recurrencepatterntype.enum';
 //#endregion
 
 export const RecurrencePatternTypeConfig = {
-  name: "RecurrencePatternType",
+  name: "recurrencePatternType",
   members: RecurrencePatternType
 } as EnumConfig<RecurrencePatternType>;

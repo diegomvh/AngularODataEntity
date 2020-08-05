@@ -5,7 +5,7 @@ import { ListItemVersion } from './listitemversion.entity';
 //#endregion
 
 export const ListItemVersionConfig = {
-  name: "ListItemVersion",
+  name: "listItemVersion",
   base: "microsoft.graph.baseItemVersion",
   annotations: [],
   fields: {

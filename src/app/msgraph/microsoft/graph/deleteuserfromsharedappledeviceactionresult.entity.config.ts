@@ -5,7 +5,7 @@ import { DeleteUserFromSharedAppleDeviceActionResult } from './deleteuserfromsha
 //#endregion
 
 export const DeleteUserFromSharedAppleDeviceActionResultConfig = {
-  name: "DeleteUserFromSharedAppleDeviceActionResult",
+  name: "deleteUserFromSharedAppleDeviceActionResult",
   base: "microsoft.graph.deviceActionResult",
   annotations: [],
   fields: {

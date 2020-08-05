@@ -5,6 +5,6 @@ import { FileHashType } from './filehashtype.enum';
 //#endregion
 
 export const FileHashTypeConfig = {
-  name: "FileHashType",
+  name: "fileHashType",
   members: FileHashType
 } as EnumConfig<FileHashType>;

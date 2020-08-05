@@ -5,7 +5,7 @@ import { Windows10TeamGeneralConfiguration } from './windows10teamgeneralconfigu
 //#endregion
 
 export const Windows10TeamGeneralConfigurationConfig = {
-  name: "Windows10TeamGeneralConfiguration",
+  name: "windows10TeamGeneralConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

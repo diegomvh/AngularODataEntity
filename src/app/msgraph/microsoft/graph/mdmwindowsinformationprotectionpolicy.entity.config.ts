@@ -5,7 +5,7 @@ import { MdmWindowsInformationProtectionPolicy } from './mdmwindowsinformationpr
 //#endregion
 
 export const MdmWindowsInformationProtectionPolicyConfig = {
-  name: "MdmWindowsInformationProtectionPolicy",
+  name: "mdmWindowsInformationProtectionPolicy",
   base: "microsoft.graph.windowsInformationProtection",
   annotations: [],
   fields: {

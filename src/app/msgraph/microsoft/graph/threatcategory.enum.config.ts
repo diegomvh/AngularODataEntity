@@ -5,6 +5,6 @@ import { ThreatCategory } from './threatcategory.enum';
 //#endregion
 
 export const ThreatCategoryConfig = {
-  name: "ThreatCategory",
+  name: "threatCategory",
   members: ThreatCategory
 } as EnumConfig<ThreatCategory>;

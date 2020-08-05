@@ -5,7 +5,7 @@ import { WindowsUpdateActiveHoursInstall } from './windowsupdateactivehoursinsta
 //#endregion
 
 export const WindowsUpdateActiveHoursInstallConfig = {
-  name: "WindowsUpdateActiveHoursInstall",
+  name: "windowsUpdateActiveHoursInstall",
   base: "microsoft.graph.windowsUpdateInstallScheduleType",
   annotations: [],
   fields: {

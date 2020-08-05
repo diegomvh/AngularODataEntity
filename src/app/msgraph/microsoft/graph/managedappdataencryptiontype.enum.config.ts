@@ -5,6 +5,6 @@ import { ManagedAppDataEncryptionType } from './managedappdataencryptiontype.enu
 //#endregion
 
 export const ManagedAppDataEncryptionTypeConfig = {
-  name: "ManagedAppDataEncryptionType",
+  name: "managedAppDataEncryptionType",
   members: ManagedAppDataEncryptionType
 } as EnumConfig<ManagedAppDataEncryptionType>;

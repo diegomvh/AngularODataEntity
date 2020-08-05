@@ -5,7 +5,7 @@ import { MediaContentRatingNewZealand } from './mediacontentratingnewzealand.ent
 //#endregion
 
 export const MediaContentRatingNewZealandConfig = {
-  name: "MediaContentRatingNewZealand",
+  name: "mediaContentRatingNewZealand",
   annotations: [],
   fields: {
     movieRating: {type: 'graph.ratingNewZealandMoviesType', nullable: false},

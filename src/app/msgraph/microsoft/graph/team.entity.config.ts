@@ -5,7 +5,7 @@ import { Team } from './team.entity';
 //#endregion
 
 export const TeamConfig = {
-  name: "Team",
+  name: "team",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

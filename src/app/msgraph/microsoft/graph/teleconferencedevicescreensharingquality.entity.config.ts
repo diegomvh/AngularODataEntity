@@ -5,7 +5,7 @@ import { TeleconferenceDeviceScreenSharingQuality } from './teleconferencedevice
 //#endregion
 
 export const TeleconferenceDeviceScreenSharingQualityConfig = {
-  name: "TeleconferenceDeviceScreenSharingQuality",
+  name: "teleconferenceDeviceScreenSharingQuality",
   base: "microsoft.graph.teleconferenceDeviceVideoQuality",
   open: true,
   annotations: [],

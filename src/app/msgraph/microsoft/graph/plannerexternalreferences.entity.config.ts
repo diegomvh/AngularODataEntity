@@ -5,7 +5,7 @@ import { PlannerExternalReferences } from './plannerexternalreferences.entity';
 //#endregion
 
 export const PlannerExternalReferencesConfig = {
-  name: "PlannerExternalReferences",
+  name: "plannerExternalReferences",
   open: true,
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { CallRoute } from './callroute.entity';
 //#endregion
 
 export const CallRouteConfig = {
-  name: "CallRoute",
+  name: "callRoute",
   annotations: [],
   fields: {
     routingType: {type: 'graph.routingType', nullable: false},

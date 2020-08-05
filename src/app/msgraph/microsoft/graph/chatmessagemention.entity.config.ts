@@ -5,7 +5,7 @@ import { ChatMessageMention } from './chatmessagemention.entity';
 //#endregion
 
 export const ChatMessageMentionConfig = {
-  name: "ChatMessageMention",
+  name: "chatMessageMention",
   annotations: [],
   fields: {
     id: {type: 'Edm.Int32'},

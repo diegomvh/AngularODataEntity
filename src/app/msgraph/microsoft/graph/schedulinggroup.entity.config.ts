@@ -5,7 +5,7 @@ import { SchedulingGroup } from './schedulinggroup.entity';
 //#endregion
 
 export const SchedulingGroupConfig = {
-  name: "SchedulingGroup",
+  name: "schedulingGroup",
   base: "microsoft.graph.changeTrackedEntity",
   annotations: [],
   fields: {

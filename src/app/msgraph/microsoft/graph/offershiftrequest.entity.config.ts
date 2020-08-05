@@ -5,7 +5,7 @@ import { OfferShiftRequest } from './offershiftrequest.entity';
 //#endregion
 
 export const OfferShiftRequestConfig = {
-  name: "OfferShiftRequest",
+  name: "offerShiftRequest",
   base: "microsoft.graph.scheduleChangeRequest",
   annotations: [],
   fields: {

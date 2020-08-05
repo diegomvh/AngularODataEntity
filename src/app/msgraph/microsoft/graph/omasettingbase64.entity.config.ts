@@ -5,7 +5,7 @@ import { OmaSettingBase64 } from './omasettingbase64.entity';
 //#endregion
 
 export const OmaSettingBase64Config = {
-  name: "OmaSettingBase64",
+  name: "omaSettingBase64",
   base: "microsoft.graph.omaSetting",
   annotations: [],
   fields: {

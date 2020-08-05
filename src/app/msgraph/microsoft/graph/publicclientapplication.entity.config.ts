@@ -5,7 +5,7 @@ import { PublicClientApplication } from './publicclientapplication.entity';
 //#endregion
 
 export const PublicClientApplicationConfig = {
-  name: "PublicClientApplication",
+  name: "publicClientApplication",
   annotations: [],
   fields: {
     redirectUris: {type: 'Edm.String', nullable: false, collection: true}

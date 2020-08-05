@@ -5,6 +5,6 @@ import { SelectionLikelihoodInfo } from './selectionlikelihoodinfo.enum';
 //#endregion
 
 export const SelectionLikelihoodInfoConfig = {
-  name: "SelectionLikelihoodInfo",
+  name: "selectionLikelihoodInfo",
   members: SelectionLikelihoodInfo
 } as EnumConfig<SelectionLikelihoodInfo>;

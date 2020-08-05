@@ -5,6 +5,6 @@ import { RatingAppsType } from './ratingappstype.enum';
 //#endregion
 
 export const RatingAppsTypeConfig = {
-  name: "RatingAppsType",
+  name: "ratingAppsType",
   members: RatingAppsType
 } as EnumConfig<RatingAppsType>;

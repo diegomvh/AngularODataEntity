@@ -5,6 +5,6 @@ import { ConnectionStatus } from './connectionstatus.enum';
 //#endregion
 
 export const ConnectionStatusConfig = {
-  name: "ConnectionStatus",
+  name: "connectionStatus",
   members: ConnectionStatus
 } as EnumConfig<ConnectionStatus>;

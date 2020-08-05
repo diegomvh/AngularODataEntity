@@ -5,7 +5,7 @@ import { SignInLocation } from './signinlocation.entity';
 //#endregion
 
 export const SignInLocationConfig = {
-  name: "SignInLocation",
+  name: "signInLocation",
   annotations: [],
   fields: {
     city: {type: 'Edm.String'},

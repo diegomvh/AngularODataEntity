@@ -5,7 +5,7 @@ import { OrderDetail } from './order_detail.entity';
 //#endregion
 
 export const OrderDetailConfig = {
-  name: "OrderDetail",
+  name: "Order_Detail",
   annotations: [],
   fields: {
     OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},

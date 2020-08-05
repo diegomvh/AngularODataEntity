@@ -5,6 +5,6 @@ import { FailureStage } from './failurestage.enum';
 //#endregion
 
 export const FailureStageConfig = {
-  name: "FailureStage",
+  name: "failureStage",
   members: FailureStage
 } as EnumConfig<FailureStage>;

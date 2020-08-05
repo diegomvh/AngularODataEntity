@@ -5,6 +5,6 @@ import { VisibilitySetting } from './visibilitysetting.enum';
 //#endregion
 
 export const VisibilitySettingConfig = {
-  name: "VisibilitySetting",
+  name: "visibilitySetting",
   members: VisibilitySetting
 } as EnumConfig<VisibilitySetting>;

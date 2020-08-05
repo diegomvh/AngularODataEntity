@@ -5,7 +5,7 @@ import { CommsNotification } from './commsnotification.entity';
 //#endregion
 
 export const CommsNotificationConfig = {
-  name: "CommsNotification",
+  name: "commsNotification",
   open: true,
   annotations: [],
   fields: {

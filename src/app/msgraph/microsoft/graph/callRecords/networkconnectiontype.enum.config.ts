@@ -5,6 +5,6 @@ import { NetworkConnectionType } from './networkconnectiontype.enum';
 //#endregion
 
 export const NetworkConnectionTypeConfig = {
-  name: "NetworkConnectionType",
+  name: "networkConnectionType",
   members: NetworkConnectionType
 } as EnumConfig<NetworkConnectionType>;

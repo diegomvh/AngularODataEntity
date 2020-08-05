@@ -5,7 +5,7 @@ import { ImplicitGrantSettings } from './implicitgrantsettings.entity';
 //#endregion
 
 export const ImplicitGrantSettingsConfig = {
-  name: "ImplicitGrantSettings",
+  name: "implicitGrantSettings",
   annotations: [],
   fields: {
     enableIdTokenIssuance: {type: 'Edm.Boolean'},

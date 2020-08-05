@@ -5,7 +5,7 @@ import { OnenoteOperation } from './onenoteoperation.entity';
 //#endregion
 
 export const OnenoteOperationConfig = {
-  name: "OnenoteOperation",
+  name: "onenoteOperation",
   base: "microsoft.graph.operation",
   annotations: [],
   fields: {

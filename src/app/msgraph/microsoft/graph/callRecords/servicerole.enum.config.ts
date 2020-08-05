@@ -5,6 +5,6 @@ import { ServiceRole } from './servicerole.enum';
 //#endregion
 
 export const ServiceRoleConfig = {
-  name: "ServiceRole",
+  name: "serviceRole",
   members: ServiceRole
 } as EnumConfig<ServiceRole>;

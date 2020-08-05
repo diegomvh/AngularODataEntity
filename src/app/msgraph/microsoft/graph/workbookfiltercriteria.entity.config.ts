@@ -5,7 +5,7 @@ import { WorkbookFilterCriteria } from './workbookfiltercriteria.entity';
 //#endregion
 
 export const WorkbookFilterCriteriaConfig = {
-  name: "WorkbookFilterCriteria",
+  name: "workbookFilterCriteria",
   annotations: [],
   fields: {
     color: {type: 'Edm.String'},

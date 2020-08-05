@@ -5,6 +5,6 @@ import { DiagnosticDataSubmissionMode } from './diagnosticdatasubmissionmode.enu
 //#endregion
 
 export const DiagnosticDataSubmissionModeConfig = {
-  name: "DiagnosticDataSubmissionMode",
+  name: "diagnosticDataSubmissionMode",
   members: DiagnosticDataSubmissionMode
 } as EnumConfig<DiagnosticDataSubmissionMode>;

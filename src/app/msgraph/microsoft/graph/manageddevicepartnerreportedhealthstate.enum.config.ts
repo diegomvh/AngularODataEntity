@@ -5,6 +5,6 @@ import { ManagedDevicePartnerReportedHealthState } from './manageddevicepartnerr
 //#endregion
 
 export const ManagedDevicePartnerReportedHealthStateConfig = {
-  name: "ManagedDevicePartnerReportedHealthState",
+  name: "managedDevicePartnerReportedHealthState",
   members: ManagedDevicePartnerReportedHealthState
 } as EnumConfig<ManagedDevicePartnerReportedHealthState>;

@@ -5,6 +5,6 @@ import { CalendarSharingActionImportance } from './calendarsharingactionimportan
 //#endregion
 
 export const CalendarSharingActionImportanceConfig = {
-  name: "CalendarSharingActionImportance",
+  name: "calendarSharingActionImportance",
   members: CalendarSharingActionImportance
 } as EnumConfig<CalendarSharingActionImportance>;

@@ -5,6 +5,6 @@ import { AttendeeType } from './attendeetype.enum';
 //#endregion
 
 export const AttendeeTypeConfig = {
-  name: "AttendeeType",
+  name: "attendeeType",
   members: AttendeeType
 } as EnumConfig<AttendeeType>;

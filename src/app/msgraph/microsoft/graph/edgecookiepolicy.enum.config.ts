@@ -5,6 +5,6 @@ import { EdgeCookiePolicy } from './edgecookiepolicy.enum';
 //#endregion
 
 export const EdgeCookiePolicyConfig = {
-  name: "EdgeCookiePolicy",
+  name: "edgeCookiePolicy",
   members: EdgeCookiePolicy
 } as EnumConfig<EdgeCookiePolicy>;

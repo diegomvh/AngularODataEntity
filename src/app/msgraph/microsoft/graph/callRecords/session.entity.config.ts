@@ -5,7 +5,7 @@ import { Session } from './session.entity';
 //#endregion
 
 export const SessionConfig = {
-  name: "Session",
+  name: "session",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

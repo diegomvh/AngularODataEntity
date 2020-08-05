@@ -5,7 +5,7 @@ import { SummaryOfSalesByQuarter } from './summary_of_sales_by_quarter.entity';
 //#endregion
 
 export const SummaryOfSalesByQuarterConfig = {
-  name: "SummaryOfSalesByQuarter",
+  name: "Summary_of_Sales_by_Quarter",
   annotations: [],
   fields: {
     ShippedDate: {type: 'Edm.DateTimeOffset'},

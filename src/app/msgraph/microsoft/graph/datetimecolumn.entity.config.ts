@@ -5,7 +5,7 @@ import { DateTimeColumn } from './datetimecolumn.entity';
 //#endregion
 
 export const DateTimeColumnConfig = {
-  name: "DateTimeColumn",
+  name: "dateTimeColumn",
   annotations: [],
   fields: {
     displayAs: {type: 'Edm.String'},

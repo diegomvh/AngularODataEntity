@@ -5,7 +5,7 @@ import { DeviceExchangeAccessStateSummary } from './deviceexchangeaccessstatesum
 //#endregion
 
 export const DeviceExchangeAccessStateSummaryConfig = {
-  name: "DeviceExchangeAccessStateSummary",
+  name: "deviceExchangeAccessStateSummary",
   annotations: [],
   fields: {
     allowedDeviceCount: {type: 'Edm.Int32', nullable: false},

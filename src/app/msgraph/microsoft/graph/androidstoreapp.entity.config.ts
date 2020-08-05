@@ -5,7 +5,7 @@ import { AndroidStoreApp } from './androidstoreapp.entity';
 //#endregion
 
 export const AndroidStoreAppConfig = {
-  name: "AndroidStoreApp",
+  name: "androidStoreApp",
   base: "microsoft.graph.mobileApp",
   annotations: [],
   fields: {

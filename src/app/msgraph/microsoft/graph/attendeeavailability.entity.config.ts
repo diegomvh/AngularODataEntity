@@ -5,7 +5,7 @@ import { AttendeeAvailability } from './attendeeavailability.entity';
 //#endregion
 
 export const AttendeeAvailabilityConfig = {
-  name: "AttendeeAvailability",
+  name: "attendeeAvailability",
   annotations: [],
   fields: {
     attendee: {type: 'graph.attendeeBase'},

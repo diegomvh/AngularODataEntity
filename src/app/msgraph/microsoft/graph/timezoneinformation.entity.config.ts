@@ -5,7 +5,7 @@ import { TimeZoneInformation } from './timezoneinformation.entity';
 //#endregion
 
 export const TimeZoneInformationConfig = {
-  name: "TimeZoneInformation",
+  name: "timeZoneInformation",
   annotations: [],
   fields: {
     alias: {type: 'Edm.String'},

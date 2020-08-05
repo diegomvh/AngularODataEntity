@@ -5,7 +5,7 @@ import { DeviceComplianceScheduledActionForRule } from './devicecomplianceschedu
 //#endregion
 
 export const DeviceComplianceScheduledActionForRuleConfig = {
-  name: "DeviceComplianceScheduledActionForRule",
+  name: "deviceComplianceScheduledActionForRule",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

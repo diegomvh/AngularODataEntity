@@ -5,7 +5,7 @@ import { TeleconferenceDeviceMediaQuality } from './teleconferencedevicemediaqua
 //#endregion
 
 export const TeleconferenceDeviceMediaQualityConfig = {
-  name: "TeleconferenceDeviceMediaQuality",
+  name: "teleconferenceDeviceMediaQuality",
   open: true,
   annotations: [],
   fields: {

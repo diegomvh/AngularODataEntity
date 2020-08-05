@@ -5,7 +5,7 @@ import { IpNamedLocation } from './ipnamedlocation.entity';
 //#endregion
 
 export const IpNamedLocationConfig = {
-  name: "IpNamedLocation",
+  name: "ipNamedLocation",
   base: "microsoft.graph.namedLocation",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { OptionalClaim } from './optionalclaim.entity';
 //#endregion
 
 export const OptionalClaimConfig = {
-  name: "OptionalClaim",
+  name: "optionalClaim",
   annotations: [],
   fields: {
     name: {type: 'Edm.String', nullable: false},

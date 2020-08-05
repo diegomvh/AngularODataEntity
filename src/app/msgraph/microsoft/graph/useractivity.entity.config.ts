@@ -5,7 +5,7 @@ import { UserActivity } from './useractivity.entity';
 //#endregion
 
 export const UserActivityConfig = {
-  name: "UserActivity",
+  name: "userActivity",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

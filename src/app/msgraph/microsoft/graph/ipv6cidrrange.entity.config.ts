@@ -5,7 +5,7 @@ import { IPv6CidrRange } from './ipv6cidrrange.entity';
 //#endregion
 
 export const IPv6CidrRangeConfig = {
-  name: "IPv6CidrRange",
+  name: "iPv6CidrRange",
   base: "microsoft.graph.ipRange",
   annotations: [],
   fields: {

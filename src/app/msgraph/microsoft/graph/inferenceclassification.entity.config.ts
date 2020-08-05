@@ -5,7 +5,7 @@ import { InferenceClassification } from './inferenceclassification.entity';
 //#endregion
 
 export const InferenceClassificationConfig = {
-  name: "InferenceClassification",
+  name: "inferenceClassification",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

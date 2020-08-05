@@ -5,7 +5,7 @@ import { OutlookCategory } from './outlookcategory.entity';
 //#endregion
 
 export const OutlookCategoryConfig = {
-  name: "OutlookCategory",
+  name: "outlookCategory",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,6 +5,6 @@ import { InstallIntent } from './installintent.enum';
 //#endregion
 
 export const InstallIntentConfig = {
-  name: "InstallIntent",
+  name: "installIntent",
   members: InstallIntent
 } as EnumConfig<InstallIntent>;

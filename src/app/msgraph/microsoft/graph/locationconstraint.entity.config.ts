@@ -5,7 +5,7 @@ import { LocationConstraint } from './locationconstraint.entity';
 //#endregion
 
 export const LocationConstraintConfig = {
-  name: "LocationConstraint",
+  name: "locationConstraint",
   annotations: [],
   fields: {
     locations: {type: 'graph.locationConstraintItem', collection: true},

@@ -5,7 +5,7 @@ import { ComplianceManagementPartner } from './compliancemanagementpartner.entit
 //#endregion
 
 export const ComplianceManagementPartnerConfig = {
-  name: "ComplianceManagementPartner",
+  name: "complianceManagementPartner",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

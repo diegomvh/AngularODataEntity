@@ -5,7 +5,7 @@ import { OnenoteResource } from './onenoteresource.entity';
 //#endregion
 
 export const OnenoteResourceConfig = {
-  name: "OnenoteResource",
+  name: "onenoteResource",
   base: "microsoft.graph.onenoteEntityBaseModel",
   annotations: [],
   fields: {

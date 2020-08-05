@@ -5,7 +5,7 @@ import { ProvisionedPlan } from './provisionedplan.entity';
 //#endregion
 
 export const ProvisionedPlanConfig = {
-  name: "ProvisionedPlan",
+  name: "provisionedPlan",
   annotations: [],
   fields: {
     capabilityStatus: {type: 'Edm.String'},

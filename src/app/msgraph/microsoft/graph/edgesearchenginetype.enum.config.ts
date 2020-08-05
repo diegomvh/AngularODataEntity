@@ -5,6 +5,6 @@ import { EdgeSearchEngineType } from './edgesearchenginetype.enum';
 //#endregion
 
 export const EdgeSearchEngineTypeConfig = {
-  name: "EdgeSearchEngineType",
+  name: "edgeSearchEngineType",
   members: EdgeSearchEngineType
 } as EnumConfig<EdgeSearchEngineType>;

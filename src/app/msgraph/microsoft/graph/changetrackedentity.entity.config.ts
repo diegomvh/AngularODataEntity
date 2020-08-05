@@ -5,7 +5,7 @@ import { ChangeTrackedEntity } from './changetrackedentity.entity';
 //#endregion
 
 export const ChangeTrackedEntityConfig = {
-  name: "ChangeTrackedEntity",
+  name: "changeTrackedEntity",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

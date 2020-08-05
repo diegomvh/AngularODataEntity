@@ -5,7 +5,7 @@ import { SharedInsight } from './sharedinsight.entity';
 //#endregion
 
 export const SharedInsightConfig = {
-  name: "SharedInsight",
+  name: "sharedInsight",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

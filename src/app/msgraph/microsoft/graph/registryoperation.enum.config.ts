@@ -5,6 +5,6 @@ import { RegistryOperation } from './registryoperation.enum';
 //#endregion
 
 export const RegistryOperationConfig = {
-  name: "RegistryOperation",
+  name: "registryOperation",
   members: RegistryOperation
 } as EnumConfig<RegistryOperation>;

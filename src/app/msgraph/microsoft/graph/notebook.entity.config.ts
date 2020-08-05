@@ -5,7 +5,7 @@ import { Notebook } from './notebook.entity';
 //#endregion
 
 export const NotebookConfig = {
-  name: "Notebook",
+  name: "notebook",
   base: "microsoft.graph.onenoteEntityHierarchyModel",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { IosNotificationSettings } from './iosnotificationsettings.entity';
 //#endregion
 
 export const IosNotificationSettingsConfig = {
-  name: "IosNotificationSettings",
+  name: "iosNotificationSettings",
   annotations: [],
   fields: {
     bundleID: {type: 'Edm.String', nullable: false},

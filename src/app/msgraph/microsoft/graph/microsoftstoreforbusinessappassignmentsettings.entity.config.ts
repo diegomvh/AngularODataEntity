@@ -5,7 +5,7 @@ import { MicrosoftStoreForBusinessAppAssignmentSettings } from './microsoftstore
 //#endregion
 
 export const MicrosoftStoreForBusinessAppAssignmentSettingsConfig = {
-  name: "MicrosoftStoreForBusinessAppAssignmentSettings",
+  name: "microsoftStoreForBusinessAppAssignmentSettings",
   base: "microsoft.graph.mobileAppAssignmentSettings",
   annotations: [],
   fields: {

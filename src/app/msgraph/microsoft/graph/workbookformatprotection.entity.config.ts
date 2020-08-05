@@ -5,7 +5,7 @@ import { WorkbookFormatProtection } from './workbookformatprotection.entity';
 //#endregion
 
 export const WorkbookFormatProtectionConfig = {
-  name: "WorkbookFormatProtection",
+  name: "workbookFormatProtection",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { Alert } from './alert.entity';
 //#endregion
 
 export const AlertConfig = {
-  name: "Alert",
+  name: "alert",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

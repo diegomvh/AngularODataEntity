@@ -5,7 +5,7 @@ import { ApplicationEnforcedRestrictionsSessionControl } from './applicationenfo
 //#endregion
 
 export const ApplicationEnforcedRestrictionsSessionControlConfig = {
-  name: "ApplicationEnforcedRestrictionsSessionControl",
+  name: "applicationEnforcedRestrictionsSessionControl",
   base: "microsoft.graph.conditionalAccessSessionControl",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { FieldValueSet } from './fieldvalueset.entity';
 //#endregion
 
 export const FieldValueSetConfig = {
-  name: "FieldValueSet",
+  name: "fieldValueSet",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

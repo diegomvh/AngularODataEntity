@@ -5,7 +5,7 @@ import { RegistryKeyState } from './registrykeystate.entity';
 //#endregion
 
 export const RegistryKeyStateConfig = {
-  name: "RegistryKeyState",
+  name: "registryKeyState",
   annotations: [],
   fields: {
     hive: {type: 'graph.registryHive'},

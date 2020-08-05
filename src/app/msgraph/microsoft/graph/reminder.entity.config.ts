@@ -5,7 +5,7 @@ import { Reminder } from './reminder.entity';
 //#endregion
 
 export const ReminderConfig = {
-  name: "Reminder",
+  name: "reminder",
   annotations: [],
   fields: {
     eventId: {type: 'Edm.String'},

@@ -5,7 +5,7 @@ import { PlannerAssignments } from './plannerassignments.entity';
 //#endregion
 
 export const PlannerAssignmentsConfig = {
-  name: "PlannerAssignments",
+  name: "plannerAssignments",
   open: true,
   annotations: [],
   fields: {

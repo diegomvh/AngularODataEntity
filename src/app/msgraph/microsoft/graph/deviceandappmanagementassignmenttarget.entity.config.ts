@@ -5,7 +5,7 @@ import { DeviceAndAppManagementAssignmentTarget } from './deviceandappmanagement
 //#endregion
 
 export const DeviceAndAppManagementAssignmentTargetConfig = {
-  name: "DeviceAndAppManagementAssignmentTarget",
+  name: "deviceAndAppManagementAssignmentTarget",
   annotations: [],
   fields: {
     

@@ -5,7 +5,7 @@ import { PermissionScope } from './permissionscope.entity';
 //#endregion
 
 export const PermissionScopeConfig = {
-  name: "PermissionScope",
+  name: "permissionScope",
   annotations: [],
   fields: {
     adminConsentDescription: {type: 'Edm.String'},

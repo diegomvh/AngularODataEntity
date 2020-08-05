@@ -5,6 +5,6 @@ import { EndpointType } from './endpointtype.enum';
 //#endregion
 
 export const EndpointTypeConfig = {
-  name: "EndpointType",
+  name: "endpointType",
   members: EndpointType
 } as EnumConfig<EndpointType>;

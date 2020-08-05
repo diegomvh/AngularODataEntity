@@ -5,7 +5,7 @@ import { ControlScore } from './controlscore.entity';
 //#endregion
 
 export const ControlScoreConfig = {
-  name: "ControlScore",
+  name: "controlScore",
   open: true,
   annotations: [],
   fields: {

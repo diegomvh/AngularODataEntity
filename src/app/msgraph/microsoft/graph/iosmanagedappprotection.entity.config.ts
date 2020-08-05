@@ -5,7 +5,7 @@ import { IosManagedAppProtection } from './iosmanagedappprotection.entity';
 //#endregion
 
 export const IosManagedAppProtectionConfig = {
-  name: "IosManagedAppProtection",
+  name: "iosManagedAppProtection",
   base: "microsoft.graph.targetedManagedAppProtection",
   annotations: [],
   fields: {

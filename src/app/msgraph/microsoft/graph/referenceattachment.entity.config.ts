@@ -5,7 +5,7 @@ import { ReferenceAttachment } from './referenceattachment.entity';
 //#endregion
 
 export const ReferenceAttachmentConfig = {
-  name: "ReferenceAttachment",
+  name: "referenceAttachment",
   base: "microsoft.graph.attachment",
   annotations: [],
   fields: {

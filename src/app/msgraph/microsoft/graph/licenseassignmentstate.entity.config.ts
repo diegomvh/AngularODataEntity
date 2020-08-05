@@ -5,7 +5,7 @@ import { LicenseAssignmentState } from './licenseassignmentstate.entity';
 //#endregion
 
 export const LicenseAssignmentStateConfig = {
-  name: "LicenseAssignmentState",
+  name: "licenseAssignmentState",
   annotations: [],
   fields: {
     skuId: {type: 'Edm.Guid'},

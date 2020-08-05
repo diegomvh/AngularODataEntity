@@ -5,6 +5,6 @@ import { UserFeedbackRating } from './userfeedbackrating.enum';
 //#endregion
 
 export const UserFeedbackRatingConfig = {
-  name: "UserFeedbackRating",
+  name: "userFeedbackRating",
   members: UserFeedbackRating
 } as EnumConfig<UserFeedbackRating>;

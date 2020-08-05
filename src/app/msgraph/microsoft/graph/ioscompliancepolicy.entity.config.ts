@@ -5,7 +5,7 @@ import { IosCompliancePolicy } from './ioscompliancepolicy.entity';
 //#endregion
 
 export const IosCompliancePolicyConfig = {
-  name: "IosCompliancePolicy",
+  name: "iosCompliancePolicy",
   base: "microsoft.graph.deviceCompliancePolicy",
   annotations: [],
   fields: {

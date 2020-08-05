@@ -5,7 +5,7 @@ import { VppToken } from './vpptoken.entity';
 //#endregion
 
 export const VppTokenConfig = {
-  name: "VppToken",
+  name: "vppToken",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

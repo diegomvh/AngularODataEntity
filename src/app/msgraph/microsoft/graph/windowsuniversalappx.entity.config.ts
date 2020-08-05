@@ -5,7 +5,7 @@ import { WindowsUniversalAppX } from './windowsuniversalappx.entity';
 //#endregion
 
 export const WindowsUniversalAppXConfig = {
-  name: "WindowsUniversalAppX",
+  name: "windowsUniversalAppX",
   base: "microsoft.graph.mobileLobApp",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { ChatMessagePolicyViolationPolicyTip } from './chatmessagepolicyviolatio
 //#endregion
 
 export const ChatMessagePolicyViolationPolicyTipConfig = {
-  name: "ChatMessagePolicyViolationPolicyTip",
+  name: "chatMessagePolicyViolationPolicyTip",
   annotations: [],
   fields: {
     generalText: {type: 'Edm.String'},

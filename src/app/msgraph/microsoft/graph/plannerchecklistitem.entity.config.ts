@@ -5,7 +5,7 @@ import { PlannerChecklistItem } from './plannerchecklistitem.entity';
 //#endregion
 
 export const PlannerChecklistItemConfig = {
-  name: "PlannerChecklistItem",
+  name: "plannerChecklistItem",
   annotations: [],
   fields: {
     isChecked: {type: 'Edm.Boolean'},

@@ -5,7 +5,7 @@ import { Schedule } from './schedule.entity';
 //#endregion
 
 export const ScheduleConfig = {
-  name: "Schedule",
+  name: "schedule",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

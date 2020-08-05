@@ -5,7 +5,7 @@ import { EnrollmentConfigurationAssignment } from './enrollmentconfigurationassi
 //#endregion
 
 export const EnrollmentConfigurationAssignmentConfig = {
-  name: "EnrollmentConfigurationAssignment",
+  name: "enrollmentConfigurationAssignment",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

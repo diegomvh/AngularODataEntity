@@ -5,7 +5,7 @@ import { DeviceOperatingSystemSummary } from './deviceoperatingsystemsummary.ent
 //#endregion
 
 export const DeviceOperatingSystemSummaryConfig = {
-  name: "DeviceOperatingSystemSummary",
+  name: "deviceOperatingSystemSummary",
   annotations: [],
   fields: {
     androidCount: {type: 'Edm.Int32', nullable: false},

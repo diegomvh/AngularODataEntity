@@ -5,7 +5,7 @@ import { AttendeeBase } from './attendeebase.entity';
 //#endregion
 
 export const AttendeeBaseConfig = {
-  name: "AttendeeBase",
+  name: "attendeeBase",
   base: "microsoft.graph.recipient",
   annotations: [],
   fields: {

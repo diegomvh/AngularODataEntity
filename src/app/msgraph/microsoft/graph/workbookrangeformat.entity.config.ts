@@ -5,7 +5,7 @@ import { WorkbookRangeFormat } from './workbookrangeformat.entity';
 //#endregion
 
 export const WorkbookRangeFormatConfig = {
-  name: "WorkbookRangeFormat",
+  name: "workbookRangeFormat",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

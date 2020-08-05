@@ -5,7 +5,7 @@ import { ExtensionProperty } from './extensionproperty.entity';
 //#endregion
 
 export const ExtensionPropertyConfig = {
-  name: "ExtensionProperty",
+  name: "extensionProperty",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

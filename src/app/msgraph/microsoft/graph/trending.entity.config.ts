@@ -5,7 +5,7 @@ import { Trending } from './trending.entity';
 //#endregion
 
 export const TrendingConfig = {
-  name: "Trending",
+  name: "trending",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

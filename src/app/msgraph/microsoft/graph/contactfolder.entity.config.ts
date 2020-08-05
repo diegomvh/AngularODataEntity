@@ -5,7 +5,7 @@ import { ContactFolder } from './contactfolder.entity';
 //#endregion
 
 export const ContactFolderConfig = {
-  name: "ContactFolder",
+  name: "contactFolder",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

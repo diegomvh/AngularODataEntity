@@ -5,7 +5,7 @@ import { WindowsDefenderScanActionResult } from './windowsdefenderscanactionresu
 //#endregion
 
 export const WindowsDefenderScanActionResultConfig = {
-  name: "WindowsDefenderScanActionResult",
+  name: "windowsDefenderScanActionResult",
   base: "microsoft.graph.deviceActionResult",
   annotations: [],
   fields: {

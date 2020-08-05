@@ -5,7 +5,7 @@ import { AppCatalogs } from './appcatalogs.entity';
 //#endregion
 
 export const AppCatalogsConfig = {
-  name: "AppCatalogs",
+  name: "appCatalogs",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { WindowsPhone81CompliancePolicy } from './windowsphone81compliancepolicy
 //#endregion
 
 export const WindowsPhone81CompliancePolicyConfig = {
-  name: "WindowsPhone81CompliancePolicy",
+  name: "windowsPhone81CompliancePolicy",
   base: "microsoft.graph.deviceCompliancePolicy",
   annotations: [],
   fields: {

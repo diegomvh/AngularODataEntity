@@ -5,7 +5,7 @@ import { VerifiedDomain } from './verifieddomain.entity';
 //#endregion
 
 export const VerifiedDomainConfig = {
-  name: "VerifiedDomain",
+  name: "verifiedDomain",
   annotations: [],
   fields: {
     capabilities: {type: 'Edm.String'},

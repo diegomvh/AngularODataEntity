@@ -5,7 +5,7 @@ import { WorkbookTableRow } from './workbooktablerow.entity';
 //#endregion
 
 export const WorkbookTableRowConfig = {
-  name: "WorkbookTableRow",
+  name: "workbookTableRow",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { Website } from './website.entity';
 //#endregion
 
 export const WebsiteConfig = {
-  name: "Website",
+  name: "website",
   annotations: [],
   fields: {
     type: {type: 'graph.websiteType'},

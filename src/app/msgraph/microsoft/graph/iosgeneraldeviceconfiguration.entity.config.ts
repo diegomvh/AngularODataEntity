@@ -5,7 +5,7 @@ import { IosGeneralDeviceConfiguration } from './iosgeneraldeviceconfiguration.e
 //#endregion
 
 export const IosGeneralDeviceConfigurationConfig = {
-  name: "IosGeneralDeviceConfiguration",
+  name: "iosGeneralDeviceConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

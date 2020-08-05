@@ -5,7 +5,7 @@ import { WindowsMinimumOperatingSystem } from './windowsminimumoperatingsystem.e
 //#endregion
 
 export const WindowsMinimumOperatingSystemConfig = {
-  name: "WindowsMinimumOperatingSystem",
+  name: "windowsMinimumOperatingSystem",
   annotations: [],
   fields: {
     v8_0: {type: 'Edm.Boolean', nullable: false},

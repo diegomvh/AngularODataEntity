@@ -5,7 +5,7 @@ import { KeyCredential } from './keycredential.entity';
 //#endregion
 
 export const KeyCredentialConfig = {
-  name: "KeyCredential",
+  name: "keyCredential",
   annotations: [],
   fields: {
     customKeyIdentifier: {type: 'Edm.Binary'},

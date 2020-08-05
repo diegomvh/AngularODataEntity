@@ -5,7 +5,7 @@ import { TargetedManagedAppConfiguration } from './targetedmanagedappconfigurati
 //#endregion
 
 export const TargetedManagedAppConfigurationConfig = {
-  name: "TargetedManagedAppConfiguration",
+  name: "targetedManagedAppConfiguration",
   base: "microsoft.graph.managedAppConfiguration",
   annotations: [],
   fields: {

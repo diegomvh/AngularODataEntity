@@ -5,6 +5,6 @@ import { CategoryColor } from './categorycolor.enum';
 //#endregion
 
 export const CategoryColorConfig = {
-  name: "CategoryColor",
+  name: "categoryColor",
   members: CategoryColor
 } as EnumConfig<CategoryColor>;

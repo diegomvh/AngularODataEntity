@@ -5,7 +5,7 @@ import { WorkbookWorksheetProtectionOptions } from './workbookworksheetprotectio
 //#endregion
 
 export const WorkbookWorksheetProtectionOptionsConfig = {
-  name: "WorkbookWorksheetProtectionOptions",
+  name: "workbookWorksheetProtectionOptions",
   annotations: [],
   fields: {
     allowAutoFilter: {type: 'Edm.Boolean', nullable: false},

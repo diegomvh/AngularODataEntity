@@ -5,6 +5,6 @@ import { RegistryValueType } from './registryvaluetype.enum';
 //#endregion
 
 export const RegistryValueTypeConfig = {
-  name: "RegistryValueType",
+  name: "registryValueType",
   members: RegistryValueType
 } as EnumConfig<RegistryValueType>;

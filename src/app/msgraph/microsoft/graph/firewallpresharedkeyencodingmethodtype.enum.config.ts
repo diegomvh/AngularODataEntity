@@ -5,6 +5,6 @@ import { FirewallPreSharedKeyEncodingMethodType } from './firewallpresharedkeyen
 //#endregion
 
 export const FirewallPreSharedKeyEncodingMethodTypeConfig = {
-  name: "FirewallPreSharedKeyEncodingMethodType",
+  name: "firewallPreSharedKeyEncodingMethodType",
   members: FirewallPreSharedKeyEncodingMethodType
 } as EnumConfig<FirewallPreSharedKeyEncodingMethodType>;

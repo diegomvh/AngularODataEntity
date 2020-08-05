@@ -5,7 +5,7 @@ import { AppRole } from './approle.entity';
 //#endregion
 
 export const AppRoleConfig = {
-  name: "AppRole",
+  name: "appRole",
   annotations: [],
   fields: {
     allowedMemberTypes: {type: 'Edm.String', nullable: false, collection: true},

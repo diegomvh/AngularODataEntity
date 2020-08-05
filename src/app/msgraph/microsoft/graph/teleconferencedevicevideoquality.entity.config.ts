@@ -5,7 +5,7 @@ import { TeleconferenceDeviceVideoQuality } from './teleconferencedevicevideoqua
 //#endregion
 
 export const TeleconferenceDeviceVideoQualityConfig = {
-  name: "TeleconferenceDeviceVideoQuality",
+  name: "teleconferenceDeviceVideoQuality",
   base: "microsoft.graph.teleconferenceDeviceMediaQuality",
   open: true,
   annotations: [],

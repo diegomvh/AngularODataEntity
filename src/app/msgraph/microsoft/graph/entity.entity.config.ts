@@ -5,7 +5,7 @@ import { Entity } from './entity.entity';
 //#endregion
 
 export const EntityConfig = {
-  name: "Entity",
+  name: "entity",
   annotations: [],
   fields: {
     id: {type: 'Edm.String', key: true, ref: 'id', nullable: false}

@@ -5,7 +5,7 @@ import { SharedDriveItem } from './shareddriveitem.entity';
 //#endregion
 
 export const SharedDriveItemConfig = {
-  name: "SharedDriveItem",
+  name: "sharedDriveItem",
   base: "microsoft.graph.baseItem",
   annotations: [],
   fields: {

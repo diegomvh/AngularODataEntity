@@ -5,6 +5,6 @@ import { ApplicationType } from './applicationtype.enum';
 //#endregion
 
 export const ApplicationTypeConfig = {
-  name: "ApplicationType",
+  name: "applicationType",
   members: ApplicationType
 } as EnumConfig<ApplicationType>;

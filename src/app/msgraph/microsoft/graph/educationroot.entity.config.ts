@@ -5,7 +5,7 @@ import { EducationRoot } from './educationroot.entity';
 //#endregion
 
 export const EducationRootConfig = {
-  name: "EducationRoot",
+  name: "educationRoot",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

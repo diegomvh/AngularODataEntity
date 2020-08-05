@@ -5,6 +5,6 @@ import { DeviceManagementExchangeConnectorType } from './devicemanagementexchang
 //#endregion
 
 export const DeviceManagementExchangeConnectorTypeConfig = {
-  name: "DeviceManagementExchangeConnectorType",
+  name: "deviceManagementExchangeConnectorType",
   members: DeviceManagementExchangeConnectorType
 } as EnumConfig<DeviceManagementExchangeConnectorType>;

@@ -5,7 +5,7 @@ import { RecentNotebookLinks } from './recentnotebooklinks.entity';
 //#endregion
 
 export const RecentNotebookLinksConfig = {
-  name: "RecentNotebookLinks",
+  name: "recentNotebookLinks",
   annotations: [],
   fields: {
     oneNoteClientUrl: {type: 'graph.externalLink'},

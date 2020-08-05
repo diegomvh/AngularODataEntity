@@ -5,6 +5,6 @@ import { Status } from './status.enum';
 //#endregion
 
 export const StatusConfig = {
-  name: "Status",
+  name: "status",
   members: Status
 } as EnumConfig<Status>;

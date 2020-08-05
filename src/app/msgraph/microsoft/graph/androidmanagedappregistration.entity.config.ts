@@ -5,7 +5,7 @@ import { AndroidManagedAppRegistration } from './androidmanagedappregistration.e
 //#endregion
 
 export const AndroidManagedAppRegistrationConfig = {
-  name: "AndroidManagedAppRegistration",
+  name: "androidManagedAppRegistration",
   base: "microsoft.graph.managedAppRegistration",
   annotations: [],
   fields: {

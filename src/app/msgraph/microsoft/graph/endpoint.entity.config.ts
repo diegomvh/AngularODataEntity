@@ -5,7 +5,7 @@ import { Endpoint } from './endpoint.entity';
 //#endregion
 
 export const EndpointConfig = {
-  name: "Endpoint",
+  name: "endpoint",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

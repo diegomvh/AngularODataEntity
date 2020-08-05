@@ -5,6 +5,6 @@ import { RequiredPasswordType } from './requiredpasswordtype.enum';
 //#endregion
 
 export const RequiredPasswordTypeConfig = {
-  name: "RequiredPasswordType",
+  name: "requiredPasswordType",
   members: RequiredPasswordType
 } as EnumConfig<RequiredPasswordType>;

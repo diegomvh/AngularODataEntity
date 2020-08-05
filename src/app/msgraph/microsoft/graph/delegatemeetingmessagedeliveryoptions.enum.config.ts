@@ -5,6 +5,6 @@ import { DelegateMeetingMessageDeliveryOptions } from './delegatemeetingmessaged
 //#endregion
 
 export const DelegateMeetingMessageDeliveryOptionsConfig = {
-  name: "DelegateMeetingMessageDeliveryOptions",
+  name: "delegateMeetingMessageDeliveryOptions",
   members: DelegateMeetingMessageDeliveryOptions
 } as EnumConfig<DelegateMeetingMessageDeliveryOptions>;

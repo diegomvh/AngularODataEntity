@@ -5,7 +5,7 @@ import { Media } from './media.entity';
 //#endregion
 
 export const MediaConfig = {
-  name: "Media",
+  name: "media",
   annotations: [],
   fields: {
     label: {type: 'Edm.String'},

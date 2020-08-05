@@ -5,6 +5,6 @@ import { ChatMessageType } from './chatmessagetype.enum';
 //#endregion
 
 export const ChatMessageTypeConfig = {
-  name: "ChatMessageType",
+  name: "chatMessageType",
   members: ChatMessageType
 } as EnumConfig<ChatMessageType>;

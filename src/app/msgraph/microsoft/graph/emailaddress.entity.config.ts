@@ -5,7 +5,7 @@ import { EmailAddress } from './emailaddress.entity';
 //#endregion
 
 export const EmailAddressConfig = {
-  name: "EmailAddress",
+  name: "emailAddress",
   annotations: [],
   fields: {
     name: {type: 'Edm.String'},

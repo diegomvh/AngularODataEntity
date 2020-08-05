@@ -5,7 +5,7 @@ import { Thumbnail } from './thumbnail.entity';
 //#endregion
 
 export const ThumbnailConfig = {
-  name: "Thumbnail",
+  name: "thumbnail",
   annotations: [],
   fields: {
     content: {type: 'Edm.Stream'},

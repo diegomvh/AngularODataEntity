@@ -5,7 +5,7 @@ import { WorkbookChartPoint } from './workbookchartpoint.entity';
 //#endregion
 
 export const WorkbookChartPointConfig = {
-  name: "WorkbookChartPoint",
+  name: "workbookChartPoint",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

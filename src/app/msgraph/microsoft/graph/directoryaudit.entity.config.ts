@@ -5,7 +5,7 @@ import { DirectoryAudit } from './directoryaudit.entity';
 //#endregion
 
 export const DirectoryAuditConfig = {
-  name: "DirectoryAudit",
+  name: "directoryAudit",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

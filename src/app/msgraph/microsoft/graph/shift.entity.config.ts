@@ -5,7 +5,7 @@ import { Shift } from './shift.entity';
 //#endregion
 
 export const ShiftConfig = {
-  name: "Shift",
+  name: "shift",
   base: "microsoft.graph.changeTrackedEntity",
   annotations: [],
   fields: {

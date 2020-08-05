@@ -5,6 +5,6 @@ import { EventType } from './eventtype.enum';
 //#endregion
 
 export const EventTypeConfig = {
-  name: "EventType",
+  name: "eventType",
   members: EventType
 } as EnumConfig<EventType>;

@@ -5,6 +5,6 @@ import { ScheduleChangeRequestActor } from './schedulechangerequestactor.enum';
 //#endregion
 
 export const ScheduleChangeRequestActorConfig = {
-  name: "ScheduleChangeRequestActor",
+  name: "scheduleChangeRequestActor",
   members: ScheduleChangeRequestActor
 } as EnumConfig<ScheduleChangeRequestActor>;

@@ -5,6 +5,6 @@ import { DefenderPromptForSampleSubmission } from './defenderpromptforsamplesubm
 //#endregion
 
 export const DefenderPromptForSampleSubmissionConfig = {
-  name: "DefenderPromptForSampleSubmission",
+  name: "defenderPromptForSampleSubmission",
   members: DefenderPromptForSampleSubmission
 } as EnumConfig<DefenderPromptForSampleSubmission>;

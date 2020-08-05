@@ -5,7 +5,7 @@ import { AppListItem } from './applistitem.entity';
 //#endregion
 
 export const AppListItemConfig = {
-  name: "AppListItem",
+  name: "appListItem",
   annotations: [],
   fields: {
     name: {type: 'Edm.String', nullable: false},

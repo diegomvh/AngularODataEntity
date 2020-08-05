@@ -5,7 +5,7 @@ import { WindowsDeviceADAccount } from './windowsdeviceadaccount.entity';
 //#endregion
 
 export const WindowsDeviceADAccountConfig = {
-  name: "WindowsDeviceADAccount",
+  name: "windowsDeviceADAccount",
   base: "microsoft.graph.windowsDeviceAccount",
   annotations: [],
   fields: {

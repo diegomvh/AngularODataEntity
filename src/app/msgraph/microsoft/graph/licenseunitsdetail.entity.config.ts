@@ -5,7 +5,7 @@ import { LicenseUnitsDetail } from './licenseunitsdetail.entity';
 //#endregion
 
 export const LicenseUnitsDetailConfig = {
-  name: "LicenseUnitsDetail",
+  name: "licenseUnitsDetail",
   annotations: [],
   fields: {
     enabled: {type: 'Edm.Int32'},

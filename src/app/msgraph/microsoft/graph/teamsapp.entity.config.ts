@@ -5,7 +5,7 @@ import { TeamsApp } from './teamsapp.entity';
 //#endregion
 
 export const TeamsAppConfig = {
-  name: "TeamsApp",
+  name: "teamsApp",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

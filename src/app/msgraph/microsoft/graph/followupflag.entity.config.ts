@@ -5,7 +5,7 @@ import { FollowupFlag } from './followupflag.entity';
 //#endregion
 
 export const FollowupFlagConfig = {
-  name: "FollowupFlag",
+  name: "followupFlag",
   annotations: [],
   fields: {
     completedDateTime: {type: 'graph.dateTimeTimeZone'},

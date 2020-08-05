@@ -5,6 +5,6 @@ import { AndroidWorkProfileCrossProfileDataSharingType } from './androidworkprof
 //#endregion
 
 export const AndroidWorkProfileCrossProfileDataSharingTypeConfig = {
-  name: "AndroidWorkProfileCrossProfileDataSharingType",
+  name: "androidWorkProfileCrossProfileDataSharingType",
   members: AndroidWorkProfileCrossProfileDataSharingType
 } as EnumConfig<AndroidWorkProfileCrossProfileDataSharingType>;

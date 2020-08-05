@@ -5,7 +5,7 @@ import { SubscribeToToneOperation } from './subscribetotoneoperation.entity';
 //#endregion
 
 export const SubscribeToToneOperationConfig = {
-  name: "SubscribeToToneOperation",
+  name: "subscribeToToneOperation",
   base: "microsoft.graph.commsOperation",
   open: true,
   annotations: [],

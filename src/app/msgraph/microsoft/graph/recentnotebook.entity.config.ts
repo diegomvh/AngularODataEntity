@@ -5,7 +5,7 @@ import { RecentNotebook } from './recentnotebook.entity';
 //#endregion
 
 export const RecentNotebookConfig = {
-  name: "RecentNotebook",
+  name: "recentNotebook",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String'},

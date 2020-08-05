@@ -5,7 +5,7 @@ import { WorkbookChartLineFormat } from './workbookchartlineformat.entity';
 //#endregion
 
 export const WorkbookChartLineFormatConfig = {
-  name: "WorkbookChartLineFormat",
+  name: "workbookChartLineFormat",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

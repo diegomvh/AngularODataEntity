@@ -5,7 +5,7 @@ import { AlphabeticalListOfProduct } from './alphabetical_list_of_product.entity
 //#endregion
 
 export const AlphabeticalListOfProductConfig = {
-  name: "AlphabeticalListOfProduct",
+  name: "Alphabetical_list_of_product",
   annotations: [],
   fields: {
     ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},

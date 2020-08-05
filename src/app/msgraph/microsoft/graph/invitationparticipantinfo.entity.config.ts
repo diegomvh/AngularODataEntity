@@ -5,7 +5,7 @@ import { InvitationParticipantInfo } from './invitationparticipantinfo.entity';
 //#endregion
 
 export const InvitationParticipantInfoConfig = {
-  name: "InvitationParticipantInfo",
+  name: "invitationParticipantInfo",
   open: true,
   annotations: [],
   fields: {

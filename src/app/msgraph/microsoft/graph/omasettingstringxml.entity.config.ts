@@ -5,7 +5,7 @@ import { OmaSettingStringXml } from './omasettingstringxml.entity';
 //#endregion
 
 export const OmaSettingStringXmlConfig = {
-  name: "OmaSettingStringXml",
+  name: "omaSettingStringXml",
   base: "microsoft.graph.omaSetting",
   annotations: [],
   fields: {

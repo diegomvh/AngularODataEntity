@@ -5,7 +5,7 @@ import { ParentalControlSettings } from './parentalcontrolsettings.entity';
 //#endregion
 
 export const ParentalControlSettingsConfig = {
-  name: "ParentalControlSettings",
+  name: "parentalControlSettings",
   annotations: [],
   fields: {
     countriesBlockedForMinors: {type: 'Edm.String', collection: true},

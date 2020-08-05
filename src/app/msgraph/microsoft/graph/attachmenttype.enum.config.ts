@@ -5,6 +5,6 @@ import { AttachmentType } from './attachmenttype.enum';
 //#endregion
 
 export const AttachmentTypeConfig = {
-  name: "AttachmentType",
+  name: "attachmentType",
   members: AttachmentType
 } as EnumConfig<AttachmentType>;

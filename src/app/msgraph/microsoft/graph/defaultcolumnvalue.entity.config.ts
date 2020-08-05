@@ -5,7 +5,7 @@ import { DefaultColumnValue } from './defaultcolumnvalue.entity';
 //#endregion
 
 export const DefaultColumnValueConfig = {
-  name: "DefaultColumnValue",
+  name: "defaultColumnValue",
   annotations: [],
   fields: {
     formula: {type: 'Edm.String'},

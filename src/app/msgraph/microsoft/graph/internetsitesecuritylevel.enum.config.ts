@@ -5,6 +5,6 @@ import { InternetSiteSecurityLevel } from './internetsitesecuritylevel.enum';
 //#endregion
 
 export const InternetSiteSecurityLevelConfig = {
-  name: "InternetSiteSecurityLevel",
+  name: "internetSiteSecurityLevel",
   members: InternetSiteSecurityLevel
 } as EnumConfig<InternetSiteSecurityLevel>;

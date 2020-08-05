@@ -5,7 +5,7 @@ import { FeedbackTokenSet } from './feedbacktokenset.entity';
 //#endregion
 
 export const FeedbackTokenSetConfig = {
-  name: "FeedbackTokenSet",
+  name: "feedbackTokenSet",
   open: true,
   annotations: [],
   fields: {

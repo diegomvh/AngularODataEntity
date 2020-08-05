@@ -5,7 +5,7 @@ import { LocationConstraintItem } from './locationconstraintitem.entity';
 //#endregion
 
 export const LocationConstraintItemConfig = {
-  name: "LocationConstraintItem",
+  name: "locationConstraintItem",
   base: "microsoft.graph.location",
   annotations: [],
   fields: {

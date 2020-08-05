@@ -5,6 +5,6 @@ import { PhoneType } from './phonetype.enum';
 //#endregion
 
 export const PhoneTypeConfig = {
-  name: "PhoneType",
+  name: "phoneType",
   members: PhoneType
 } as EnumConfig<PhoneType>;

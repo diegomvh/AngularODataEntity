@@ -5,7 +5,7 @@ import { IosUpdateConfiguration } from './iosupdateconfiguration.entity';
 //#endregion
 
 export const IosUpdateConfigurationConfig = {
-  name: "IosUpdateConfiguration",
+  name: "iosUpdateConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

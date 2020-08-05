@@ -5,6 +5,6 @@ import { RecordingStatus } from './recordingstatus.enum';
 //#endregion
 
 export const RecordingStatusConfig = {
-  name: "RecordingStatus",
+  name: "recordingStatus",
   members: RecordingStatus
 } as EnumConfig<RecordingStatus>;

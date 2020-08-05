@@ -5,7 +5,7 @@ import { GroupSetting } from './groupsetting.entity';
 //#endregion
 
 export const GroupSettingConfig = {
-  name: "GroupSetting",
+  name: "groupSetting",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

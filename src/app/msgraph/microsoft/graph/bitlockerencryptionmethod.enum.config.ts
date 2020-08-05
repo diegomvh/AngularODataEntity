@@ -5,6 +5,6 @@ import { BitLockerEncryptionMethod } from './bitlockerencryptionmethod.enum';
 //#endregion
 
 export const BitLockerEncryptionMethodConfig = {
-  name: "BitLockerEncryptionMethod",
+  name: "bitLockerEncryptionMethod",
   members: BitLockerEncryptionMethod
 } as EnumConfig<BitLockerEncryptionMethod>;

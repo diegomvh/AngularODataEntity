@@ -5,7 +5,7 @@ import { ManagedIOSStoreApp } from './managediosstoreapp.entity';
 //#endregion
 
 export const ManagedIOSStoreAppConfig = {
-  name: "ManagedIOSStoreApp",
+  name: "managedIOSStoreApp",
   base: "microsoft.graph.managedApp",
   annotations: [],
   fields: {

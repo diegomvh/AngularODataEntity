@@ -5,7 +5,7 @@ import { ApplePushNotificationCertificate } from './applepushnotificationcertifi
 //#endregion
 
 export const ApplePushNotificationCertificateConfig = {
-  name: "ApplePushNotificationCertificate",
+  name: "applePushNotificationCertificate",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { Package } from './package.entity';
 //#endregion
 
 export const PackageConfig = {
-  name: "Package",
+  name: "package",
   annotations: [],
   fields: {
     type: {type: 'Edm.String'}

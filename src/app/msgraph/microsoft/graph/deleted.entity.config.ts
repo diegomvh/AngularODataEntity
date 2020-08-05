@@ -5,7 +5,7 @@ import { Deleted } from './deleted.entity';
 //#endregion
 
 export const DeletedConfig = {
-  name: "Deleted",
+  name: "deleted",
   annotations: [],
   fields: {
     state: {type: 'Edm.String'}

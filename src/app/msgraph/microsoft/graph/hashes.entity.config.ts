@@ -5,7 +5,7 @@ import { Hashes } from './hashes.entity';
 //#endregion
 
 export const HashesConfig = {
-  name: "Hashes",
+  name: "hashes",
   annotations: [],
   fields: {
     crc32Hash: {type: 'Edm.String'},

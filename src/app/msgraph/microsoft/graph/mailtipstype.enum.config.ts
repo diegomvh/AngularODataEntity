@@ -5,7 +5,7 @@ import { MailTipsType } from './mailtipstype.enum';
 //#endregion
 
 export const MailTipsTypeConfig = {
-  name: "MailTipsType",
+  name: "mailTipsType",
   flags: true,
   members: MailTipsType
 } as EnumConfig<MailTipsType>;

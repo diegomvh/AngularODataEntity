@@ -5,7 +5,7 @@ import { AppliedConditionalAccessPolicy } from './appliedconditionalaccesspolicy
 //#endregion
 
 export const AppliedConditionalAccessPolicyConfig = {
-  name: "AppliedConditionalAccessPolicy",
+  name: "appliedConditionalAccessPolicy",
   annotations: [],
   fields: {
     id: {type: 'Edm.String'},

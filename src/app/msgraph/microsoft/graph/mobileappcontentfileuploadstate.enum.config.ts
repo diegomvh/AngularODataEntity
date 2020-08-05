@@ -5,6 +5,6 @@ import { MobileAppContentFileUploadState } from './mobileappcontentfileuploadsta
 //#endregion
 
 export const MobileAppContentFileUploadStateConfig = {
-  name: "MobileAppContentFileUploadState",
+  name: "mobileAppContentFileUploadState",
   members: MobileAppContentFileUploadState
 } as EnumConfig<MobileAppContentFileUploadState>;

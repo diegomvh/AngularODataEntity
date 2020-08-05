@@ -5,7 +5,7 @@ import { FreeBusyError } from './freebusyerror.entity';
 //#endregion
 
 export const FreeBusyErrorConfig = {
-  name: "FreeBusyError",
+  name: "freeBusyError",
   annotations: [],
   fields: {
     message: {type: 'Edm.String'},

@@ -5,7 +5,7 @@ import { WindowsStartMenuAppListVisibilityType } from './windowsstartmenuapplist
 //#endregion
 
 export const WindowsStartMenuAppListVisibilityTypeConfig = {
-  name: "WindowsStartMenuAppListVisibilityType",
+  name: "windowsStartMenuAppListVisibilityType",
   flags: true,
   members: WindowsStartMenuAppListVisibilityType
 } as EnumConfig<WindowsStartMenuAppListVisibilityType>;

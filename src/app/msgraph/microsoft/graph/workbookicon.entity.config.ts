@@ -5,7 +5,7 @@ import { WorkbookIcon } from './workbookicon.entity';
 //#endregion
 
 export const WorkbookIconConfig = {
-  name: "WorkbookIcon",
+  name: "workbookIcon",
   annotations: [],
   fields: {
     index: {type: 'Edm.Int32', nullable: false},

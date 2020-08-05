@@ -5,7 +5,7 @@ import { Windows10NetworkProxyServer } from './windows10networkproxyserver.entit
 //#endregion
 
 export const Windows10NetworkProxyServerConfig = {
-  name: "Windows10NetworkProxyServer",
+  name: "windows10NetworkProxyServer",
   annotations: [],
   fields: {
     address: {type: 'Edm.String', nullable: false},

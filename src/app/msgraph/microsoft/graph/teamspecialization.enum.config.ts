@@ -5,6 +5,6 @@ import { TeamSpecialization } from './teamspecialization.enum';
 //#endregion
 
 export const TeamSpecializationConfig = {
-  name: "TeamSpecialization",
+  name: "teamSpecialization",
   members: TeamSpecialization
 } as EnumConfig<TeamSpecialization>;

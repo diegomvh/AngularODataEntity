@@ -5,6 +5,6 @@ import { ExternalAudienceScope } from './externalaudiencescope.enum';
 //#endregion
 
 export const ExternalAudienceScopeConfig = {
-  name: "ExternalAudienceScope",
+  name: "externalAudienceScope",
   members: ExternalAudienceScope
 } as EnumConfig<ExternalAudienceScope>;

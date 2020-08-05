@@ -5,6 +5,6 @@ import { SecurityNetworkProtocol } from './securitynetworkprotocol.enum';
 //#endregion
 
 export const SecurityNetworkProtocolConfig = {
-  name: "SecurityNetworkProtocol",
+  name: "securityNetworkProtocol",
   members: SecurityNetworkProtocol
 } as EnumConfig<SecurityNetworkProtocol>;

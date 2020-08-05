@@ -5,7 +5,7 @@ import { MacOSGeneralDeviceConfiguration } from './macosgeneraldeviceconfigurati
 //#endregion
 
 export const MacOSGeneralDeviceConfigurationConfig = {
-  name: "MacOSGeneralDeviceConfiguration",
+  name: "macOSGeneralDeviceConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

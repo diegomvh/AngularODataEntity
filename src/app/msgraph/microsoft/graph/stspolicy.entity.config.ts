@@ -5,7 +5,7 @@ import { StsPolicy } from './stspolicy.entity';
 //#endregion
 
 export const StsPolicyConfig = {
-  name: "StsPolicy",
+  name: "stsPolicy",
   base: "microsoft.graph.policyBase",
   annotations: [],
   fields: {

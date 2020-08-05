@@ -5,7 +5,7 @@ import { ResourceData } from './resourcedata.entity';
 //#endregion
 
 export const ResourceDataConfig = {
-  name: "ResourceData",
+  name: "resourceData",
   open: true,
   annotations: [],
   fields: {

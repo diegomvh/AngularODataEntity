@@ -5,6 +5,6 @@ import { EducationExternalSource } from './educationexternalsource.enum';
 //#endregion
 
 export const EducationExternalSourceConfig = {
-  name: "EducationExternalSource",
+  name: "educationExternalSource",
   members: EducationExternalSource
 } as EnumConfig<EducationExternalSource>;

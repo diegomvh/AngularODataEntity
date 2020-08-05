@@ -5,7 +5,7 @@ import { CallOptions } from './calloptions.entity';
 //#endregion
 
 export const CallOptionsConfig = {
-  name: "CallOptions",
+  name: "callOptions",
   annotations: [],
   fields: {
     

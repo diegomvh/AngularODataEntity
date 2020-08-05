@@ -5,7 +5,7 @@ import { CustomerAndSuppliersByCity } from './customer_and_suppliers_by_city.ent
 //#endregion
 
 export const CustomerAndSuppliersByCityConfig = {
-  name: "CustomerAndSuppliersByCity",
+  name: "Customer_and_Suppliers_by_City",
   annotations: [],
   fields: {
     City: {type: 'Edm.String', maxLength: 15},

@@ -5,7 +5,7 @@ import { TargetResource } from './targetresource.entity';
 //#endregion
 
 export const TargetResourceConfig = {
-  name: "TargetResource",
+  name: "targetResource",
   annotations: [],
   fields: {
     id: {type: 'Edm.String'},

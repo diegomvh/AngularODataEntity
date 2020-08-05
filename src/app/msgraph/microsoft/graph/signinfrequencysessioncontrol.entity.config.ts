@@ -5,7 +5,7 @@ import { SignInFrequencySessionControl } from './signinfrequencysessioncontrol.e
 //#endregion
 
 export const SignInFrequencySessionControlConfig = {
-  name: "SignInFrequencySessionControl",
+  name: "signInFrequencySessionControl",
   base: "microsoft.graph.conditionalAccessSessionControl",
   annotations: [],
   fields: {

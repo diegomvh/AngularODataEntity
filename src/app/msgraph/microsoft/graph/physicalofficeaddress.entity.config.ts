@@ -5,7 +5,7 @@ import { PhysicalOfficeAddress } from './physicalofficeaddress.entity';
 //#endregion
 
 export const PhysicalOfficeAddressConfig = {
-  name: "PhysicalOfficeAddress",
+  name: "physicalOfficeAddress",
   annotations: [],
   fields: {
     city: {type: 'Edm.String'},

@@ -5,7 +5,7 @@ import { WorkforceIntegration } from './workforceintegration.entity';
 //#endregion
 
 export const WorkforceIntegrationConfig = {
-  name: "WorkforceIntegration",
+  name: "workforceIntegration",
   base: "microsoft.graph.changeTrackedEntity",
   annotations: [],
   fields: {

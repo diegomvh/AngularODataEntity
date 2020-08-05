@@ -5,7 +5,7 @@ import { PersonType } from './persontype.entity';
 //#endregion
 
 export const PersonTypeConfig = {
-  name: "PersonType",
+  name: "personType",
   annotations: [],
   fields: {
     class: {type: 'Edm.String'},

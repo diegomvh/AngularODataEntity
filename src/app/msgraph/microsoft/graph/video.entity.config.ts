@@ -5,7 +5,7 @@ import { Video } from './video.entity';
 //#endregion
 
 export const VideoConfig = {
-  name: "Video",
+  name: "video",
   annotations: [],
   fields: {
     audioBitsPerSample: {type: 'Edm.Int32'},

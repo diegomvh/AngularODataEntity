@@ -5,6 +5,6 @@ import { TeamsAppDistributionMethod } from './teamsappdistributionmethod.enum';
 //#endregion
 
 export const TeamsAppDistributionMethodConfig = {
-  name: "TeamsAppDistributionMethod",
+  name: "teamsAppDistributionMethod",
   members: TeamsAppDistributionMethod
 } as EnumConfig<TeamsAppDistributionMethod>;

@@ -5,7 +5,7 @@ import { CustomTimeZone } from './customtimezone.entity';
 //#endregion
 
 export const CustomTimeZoneConfig = {
-  name: "CustomTimeZone",
+  name: "customTimeZone",
   base: "microsoft.graph.timeZoneBase",
   annotations: [],
   fields: {

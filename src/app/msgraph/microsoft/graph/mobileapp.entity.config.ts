@@ -5,7 +5,7 @@ import { MobileApp } from './mobileapp.entity';
 //#endregion
 
 export const MobileAppConfig = {
-  name: "MobileApp",
+  name: "mobileApp",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { EdgeSearchEngine } from './edgesearchengine.entity';
 //#endregion
 
 export const EdgeSearchEngineConfig = {
-  name: "EdgeSearchEngine",
+  name: "edgeSearchEngine",
   base: "microsoft.graph.edgeSearchEngineBase",
   annotations: [],
   fields: {

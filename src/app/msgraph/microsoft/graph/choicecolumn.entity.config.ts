@@ -5,7 +5,7 @@ import { ChoiceColumn } from './choicecolumn.entity';
 //#endregion
 
 export const ChoiceColumnConfig = {
-  name: "ChoiceColumn",
+  name: "choiceColumn",
   annotations: [],
   fields: {
     allowTextEntry: {type: 'Edm.Boolean'},

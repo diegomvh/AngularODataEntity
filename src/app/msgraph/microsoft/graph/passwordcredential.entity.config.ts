@@ -5,7 +5,7 @@ import { PasswordCredential } from './passwordcredential.entity';
 //#endregion
 
 export const PasswordCredentialConfig = {
-  name: "PasswordCredential",
+  name: "passwordCredential",
   annotations: [],
   fields: {
     customKeyIdentifier: {type: 'Edm.Binary'},

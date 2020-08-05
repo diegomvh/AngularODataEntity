@@ -5,7 +5,7 @@ import { CloudAppSecuritySessionControl } from './cloudappsecuritysessioncontrol
 //#endregion
 
 export const CloudAppSecuritySessionControlConfig = {
-  name: "CloudAppSecuritySessionControl",
+  name: "cloudAppSecuritySessionControl",
   base: "microsoft.graph.conditionalAccessSessionControl",
   annotations: [],
   fields: {

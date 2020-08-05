@@ -5,7 +5,7 @@ import { ObjectIdentity } from './objectidentity.entity';
 //#endregion
 
 export const ObjectIdentityConfig = {
-  name: "ObjectIdentity",
+  name: "objectIdentity",
   annotations: [],
   fields: {
     signInType: {type: 'Edm.String'},

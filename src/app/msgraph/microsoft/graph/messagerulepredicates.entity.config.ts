@@ -5,7 +5,7 @@ import { MessageRulePredicates } from './messagerulepredicates.entity';
 //#endregion
 
 export const MessageRulePredicatesConfig = {
-  name: "MessageRulePredicates",
+  name: "messageRulePredicates",
   annotations: [],
   fields: {
     categories: {type: 'Edm.String', collection: true},

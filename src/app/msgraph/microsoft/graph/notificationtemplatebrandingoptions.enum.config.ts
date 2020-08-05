@@ -5,7 +5,7 @@ import { NotificationTemplateBrandingOptions } from './notificationtemplatebrand
 //#endregion
 
 export const NotificationTemplateBrandingOptionsConfig = {
-  name: "NotificationTemplateBrandingOptions",
+  name: "notificationTemplateBrandingOptions",
   flags: true,
   members: NotificationTemplateBrandingOptions
 } as EnumConfig<NotificationTemplateBrandingOptions>;

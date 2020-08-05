@@ -5,7 +5,7 @@ import { NotificationMessageTemplate } from './notificationmessagetemplate.entit
 //#endregion
 
 export const NotificationMessageTemplateConfig = {
-  name: "NotificationMessageTemplate",
+  name: "notificationMessageTemplate",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

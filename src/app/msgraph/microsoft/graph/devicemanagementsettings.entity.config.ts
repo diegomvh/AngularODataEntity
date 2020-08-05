@@ -5,7 +5,7 @@ import { DeviceManagementSettings } from './devicemanagementsettings.entity';
 //#endregion
 
 export const DeviceManagementSettingsConfig = {
-  name: "DeviceManagementSettings",
+  name: "deviceManagementSettings",
   annotations: [],
   fields: {
     deviceComplianceCheckinThresholdDays: {type: 'Edm.Int32', nullable: false},

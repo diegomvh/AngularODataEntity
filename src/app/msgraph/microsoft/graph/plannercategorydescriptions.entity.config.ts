@@ -5,7 +5,7 @@ import { PlannerCategoryDescriptions } from './plannercategorydescriptions.entit
 //#endregion
 
 export const PlannerCategoryDescriptionsConfig = {
-  name: "PlannerCategoryDescriptions",
+  name: "plannerCategoryDescriptions",
   annotations: [],
   fields: {
     category1: {type: 'Edm.String'},

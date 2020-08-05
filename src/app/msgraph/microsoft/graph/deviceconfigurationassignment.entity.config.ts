@@ -5,7 +5,7 @@ import { DeviceConfigurationAssignment } from './deviceconfigurationassignment.e
 //#endregion
 
 export const DeviceConfigurationAssignmentConfig = {
-  name: "DeviceConfigurationAssignment",
+  name: "deviceConfigurationAssignment",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

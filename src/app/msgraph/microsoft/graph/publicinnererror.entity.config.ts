@@ -5,7 +5,7 @@ import { PublicInnerError } from './publicinnererror.entity';
 //#endregion
 
 export const PublicInnerErrorConfig = {
-  name: "PublicInnerError",
+  name: "publicInnerError",
   open: true,
   annotations: [],
   fields: {

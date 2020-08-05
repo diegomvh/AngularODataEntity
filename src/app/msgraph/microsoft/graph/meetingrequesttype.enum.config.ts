@@ -5,6 +5,6 @@ import { MeetingRequestType } from './meetingrequesttype.enum';
 //#endregion
 
 export const MeetingRequestTypeConfig = {
-  name: "MeetingRequestType",
+  name: "meetingRequestType",
   members: MeetingRequestType
 } as EnumConfig<MeetingRequestType>;

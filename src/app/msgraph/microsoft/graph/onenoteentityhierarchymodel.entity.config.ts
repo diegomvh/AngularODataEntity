@@ -5,7 +5,7 @@ import { OnenoteEntityHierarchyModel } from './onenoteentityhierarchymodel.entit
 //#endregion
 
 export const OnenoteEntityHierarchyModelConfig = {
-  name: "OnenoteEntityHierarchyModel",
+  name: "onenoteEntityHierarchyModel",
   base: "microsoft.graph.onenoteEntitySchemaObjectModel",
   annotations: [],
   fields: {

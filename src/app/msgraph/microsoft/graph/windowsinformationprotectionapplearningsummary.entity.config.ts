@@ -5,7 +5,7 @@ import { WindowsInformationProtectionAppLearningSummary } from './windowsinforma
 //#endregion
 
 export const WindowsInformationProtectionAppLearningSummaryConfig = {
-  name: "WindowsInformationProtectionAppLearningSummary",
+  name: "windowsInformationProtectionAppLearningSummary",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

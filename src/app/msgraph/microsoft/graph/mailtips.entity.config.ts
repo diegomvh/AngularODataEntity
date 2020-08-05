@@ -5,7 +5,7 @@ import { MailTips } from './mailtips.entity';
 //#endregion
 
 export const MailTipsConfig = {
-  name: "MailTips",
+  name: "mailTips",
   annotations: [],
   fields: {
     emailAddress: {type: 'graph.emailAddress'},

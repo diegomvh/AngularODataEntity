@@ -5,7 +5,7 @@ import { WorkbookApplication } from './workbookapplication.entity';
 //#endregion
 
 export const WorkbookApplicationConfig = {
-  name: "WorkbookApplication",
+  name: "workbookApplication",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

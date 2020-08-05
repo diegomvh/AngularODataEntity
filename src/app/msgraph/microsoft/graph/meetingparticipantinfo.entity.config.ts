@@ -5,7 +5,7 @@ import { MeetingParticipantInfo } from './meetingparticipantinfo.entity';
 //#endregion
 
 export const MeetingParticipantInfoConfig = {
-  name: "MeetingParticipantInfo",
+  name: "meetingParticipantInfo",
   annotations: [],
   fields: {
     identity: {type: 'graph.identitySet'},

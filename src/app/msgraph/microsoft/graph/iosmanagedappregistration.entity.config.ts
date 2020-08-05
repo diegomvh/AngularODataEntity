@@ -5,7 +5,7 @@ import { IosManagedAppRegistration } from './iosmanagedappregistration.entity';
 //#endregion
 
 export const IosManagedAppRegistrationConfig = {
-  name: "IosManagedAppRegistration",
+  name: "iosManagedAppRegistration",
   base: "microsoft.graph.managedAppRegistration",
   annotations: [],
   fields: {

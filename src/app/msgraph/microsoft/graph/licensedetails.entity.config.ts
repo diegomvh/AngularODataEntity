@@ -5,7 +5,7 @@ import { LicenseDetails } from './licensedetails.entity';
 //#endregion
 
 export const LicenseDetailsConfig = {
-  name: "LicenseDetails",
+  name: "licenseDetails",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { SchemaExtension } from './schemaextension.entity';
 //#endregion
 
 export const SchemaExtensionConfig = {
-  name: "SchemaExtension",
+  name: "schemaExtension",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

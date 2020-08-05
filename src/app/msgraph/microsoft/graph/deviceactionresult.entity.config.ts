@@ -5,7 +5,7 @@ import { DeviceActionResult } from './deviceactionresult.entity';
 //#endregion
 
 export const DeviceActionResultConfig = {
-  name: "DeviceActionResult",
+  name: "deviceActionResult",
   annotations: [],
   fields: {
     actionName: {type: 'Edm.String'},

@@ -5,7 +5,7 @@ import { WindowsArchitecture } from './windowsarchitecture.enum';
 //#endregion
 
 export const WindowsArchitectureConfig = {
-  name: "WindowsArchitecture",
+  name: "windowsArchitecture",
   flags: true,
   members: WindowsArchitecture
 } as EnumConfig<WindowsArchitecture>;

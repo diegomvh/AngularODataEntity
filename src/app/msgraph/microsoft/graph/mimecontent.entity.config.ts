@@ -5,7 +5,7 @@ import { MimeContent } from './mimecontent.entity';
 //#endregion
 
 export const MimeContentConfig = {
-  name: "MimeContent",
+  name: "mimeContent",
   annotations: [],
   fields: {
     type: {type: 'Edm.String'},

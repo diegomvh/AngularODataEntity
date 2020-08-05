@@ -5,7 +5,7 @@ import { SecurityVendorInformation } from './securityvendorinformation.entity';
 //#endregion
 
 export const SecurityVendorInformationConfig = {
-  name: "SecurityVendorInformation",
+  name: "securityVendorInformation",
   annotations: [],
   fields: {
     provider: {type: 'Edm.String'},

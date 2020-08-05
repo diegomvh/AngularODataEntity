@@ -5,7 +5,7 @@ import { ConditionalAccessRoot } from './conditionalaccessroot.entity';
 //#endregion
 
 export const ConditionalAccessRootConfig = {
-  name: "ConditionalAccessRoot",
+  name: "conditionalAccessRoot",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

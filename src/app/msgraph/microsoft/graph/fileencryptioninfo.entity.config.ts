@@ -5,7 +5,7 @@ import { FileEncryptionInfo } from './fileencryptioninfo.entity';
 //#endregion
 
 export const FileEncryptionInfoConfig = {
-  name: "FileEncryptionInfo",
+  name: "fileEncryptionInfo",
   annotations: [],
   fields: {
     encryptionKey: {type: 'Edm.Binary'},

@@ -5,7 +5,7 @@ import { TeamsTabConfiguration } from './teamstabconfiguration.entity';
 //#endregion
 
 export const TeamsTabConfigurationConfig = {
-  name: "TeamsTabConfiguration",
+  name: "teamsTabConfiguration",
   open: true,
   annotations: [],
   fields: {

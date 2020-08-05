@@ -5,6 +5,6 @@ import { DefenderMonitorFileActivity } from './defendermonitorfileactivity.enum'
 //#endregion
 
 export const DefenderMonitorFileActivityConfig = {
-  name: "DefenderMonitorFileActivity",
+  name: "defenderMonitorFileActivity",
   members: DefenderMonitorFileActivity
 } as EnumConfig<DefenderMonitorFileActivity>;

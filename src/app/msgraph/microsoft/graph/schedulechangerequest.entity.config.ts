@@ -5,7 +5,7 @@ import { ScheduleChangeRequest } from './schedulechangerequest.entity';
 //#endregion
 
 export const ScheduleChangeRequestConfig = {
-  name: "ScheduleChangeRequest",
+  name: "scheduleChangeRequest",
   base: "microsoft.graph.changeTrackedEntity",
   annotations: [],
   fields: {

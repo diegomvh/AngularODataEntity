@@ -5,7 +5,7 @@ import { RecordingInfo } from './recordinginfo.entity';
 //#endregion
 
 export const RecordingInfoConfig = {
-  name: "RecordingInfo",
+  name: "recordingInfo",
   annotations: [],
   fields: {
     recordingStatus: {type: 'graph.recordingStatus', nullable: false},

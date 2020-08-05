@@ -5,7 +5,7 @@ import { WindowsMobileMSI } from './windowsmobilemsi.entity';
 //#endregion
 
 export const WindowsMobileMSIConfig = {
-  name: "WindowsMobileMSI",
+  name: "windowsMobileMSI",
   base: "microsoft.graph.mobileLobApp",
   annotations: [],
   fields: {

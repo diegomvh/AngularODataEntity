@@ -5,7 +5,7 @@ import { Windows10EnterpriseModernAppManagementConfiguration } from './windows10
 //#endregion
 
 export const Windows10EnterpriseModernAppManagementConfigurationConfig = {
-  name: "Windows10EnterpriseModernAppManagementConfiguration",
+  name: "windows10EnterpriseModernAppManagementConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

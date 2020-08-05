@@ -5,7 +5,7 @@ import { WorkbookPivotTable } from './workbookpivottable.entity';
 //#endregion
 
 export const WorkbookPivotTableConfig = {
-  name: "WorkbookPivotTable",
+  name: "workbookPivotTable",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

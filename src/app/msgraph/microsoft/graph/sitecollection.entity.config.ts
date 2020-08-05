@@ -5,7 +5,7 @@ import { SiteCollection } from './sitecollection.entity';
 //#endregion
 
 export const SiteCollectionConfig = {
-  name: "SiteCollection",
+  name: "siteCollection",
   annotations: [],
   fields: {
     dataLocationCode: {type: 'Edm.String'},

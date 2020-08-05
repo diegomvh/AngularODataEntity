@@ -5,7 +5,7 @@ import { WindowsInformationProtectionResourceCollection } from './windowsinforma
 //#endregion
 
 export const WindowsInformationProtectionResourceCollectionConfig = {
-  name: "WindowsInformationProtectionResourceCollection",
+  name: "windowsInformationProtectionResourceCollection",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String', nullable: false},

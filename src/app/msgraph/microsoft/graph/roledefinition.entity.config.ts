@@ -5,7 +5,7 @@ import { RoleDefinition } from './roledefinition.entity';
 //#endregion
 
 export const RoleDefinitionConfig = {
-  name: "RoleDefinition",
+  name: "roleDefinition",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

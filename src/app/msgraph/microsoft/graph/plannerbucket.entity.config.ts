@@ -5,7 +5,7 @@ import { PlannerBucket } from './plannerbucket.entity';
 //#endregion
 
 export const PlannerBucketConfig = {
-  name: "PlannerBucket",
+  name: "plannerBucket",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

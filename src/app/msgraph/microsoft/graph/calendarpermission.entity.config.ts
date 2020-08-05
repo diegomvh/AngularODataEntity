@@ -5,7 +5,7 @@ import { CalendarPermission } from './calendarpermission.entity';
 //#endregion
 
 export const CalendarPermissionConfig = {
-  name: "CalendarPermission",
+  name: "calendarPermission",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

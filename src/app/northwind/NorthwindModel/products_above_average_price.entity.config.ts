@@ -5,7 +5,7 @@ import { ProductsAboveAveragePrice } from './products_above_average_price.entity
 //#endregion
 
 export const ProductsAboveAveragePriceConfig = {
-  name: "ProductsAboveAveragePrice",
+  name: "Products_Above_Average_Price",
   annotations: [],
   fields: {
     ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},

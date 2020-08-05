@@ -5,6 +5,6 @@ import { CalendarColor } from './calendarcolor.enum';
 //#endregion
 
 export const CalendarColorConfig = {
-  name: "CalendarColor",
+  name: "calendarColor",
   members: CalendarColor
 } as EnumConfig<CalendarColor>;

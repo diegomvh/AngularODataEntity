@@ -5,7 +5,7 @@ import { DeviceCategory } from './devicecategory.entity';
 //#endregion
 
 export const DeviceCategoryConfig = {
-  name: "DeviceCategory",
+  name: "deviceCategory",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

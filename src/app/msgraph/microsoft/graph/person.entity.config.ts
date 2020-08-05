@@ -5,7 +5,7 @@ import { Person } from './person.entity';
 //#endregion
 
 export const PersonConfig = {
-  name: "Person",
+  name: "person",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

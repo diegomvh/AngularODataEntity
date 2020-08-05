@@ -5,7 +5,7 @@ import { NetworkConnection } from './networkconnection.entity';
 //#endregion
 
 export const NetworkConnectionConfig = {
-  name: "NetworkConnection",
+  name: "networkConnection",
   annotations: [],
   fields: {
     applicationName: {type: 'Edm.String'},

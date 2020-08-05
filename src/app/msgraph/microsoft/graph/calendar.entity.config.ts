@@ -5,7 +5,7 @@ import { Calendar } from './calendar.entity';
 //#endregion
 
 export const CalendarConfig = {
-  name: "Calendar",
+  name: "calendar",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

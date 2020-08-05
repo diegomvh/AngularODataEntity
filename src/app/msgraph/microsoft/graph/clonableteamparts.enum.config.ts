@@ -5,7 +5,7 @@ import { ClonableTeamParts } from './clonableteamparts.enum';
 //#endregion
 
 export const ClonableTeamPartsConfig = {
-  name: "ClonableTeamParts",
+  name: "clonableTeamParts",
   flags: true,
   members: ClonableTeamParts
 } as EnumConfig<ClonableTeamParts>;

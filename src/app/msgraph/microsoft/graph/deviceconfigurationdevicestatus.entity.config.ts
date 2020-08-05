@@ -5,7 +5,7 @@ import { DeviceConfigurationDeviceStatus } from './deviceconfigurationdevicestat
 //#endregion
 
 export const DeviceConfigurationDeviceStatusConfig = {
-  name: "DeviceConfigurationDeviceStatus",
+  name: "deviceConfigurationDeviceStatus",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { PlannerAppliedCategories } from './plannerappliedcategories.entity';
 //#endregion
 
 export const PlannerAppliedCategoriesConfig = {
-  name: "PlannerAppliedCategories",
+  name: "plannerAppliedCategories",
   open: true,
   annotations: [],
   fields: {

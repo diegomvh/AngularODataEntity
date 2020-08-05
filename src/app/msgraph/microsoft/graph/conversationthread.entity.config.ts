@@ -5,7 +5,7 @@ import { ConversationThread } from './conversationthread.entity';
 //#endregion
 
 export const ConversationThreadConfig = {
-  name: "ConversationThread",
+  name: "conversationThread",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { Domain } from './domain.entity';
 //#endregion
 
 export const DomainConfig = {
-  name: "Domain",
+  name: "domain",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

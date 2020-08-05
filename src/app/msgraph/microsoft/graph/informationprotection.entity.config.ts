@@ -5,7 +5,7 @@ import { InformationProtection } from './informationprotection.entity';
 //#endregion
 
 export const InformationProtectionConfig = {
-  name: "InformationProtection",
+  name: "informationProtection",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

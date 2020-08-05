@@ -5,7 +5,7 @@ import { ServicePlanInfo } from './serviceplaninfo.entity';
 //#endregion
 
 export const ServicePlanInfoConfig = {
-  name: "ServicePlanInfo",
+  name: "servicePlanInfo",
   annotations: [],
   fields: {
     servicePlanId: {type: 'Edm.Guid'},

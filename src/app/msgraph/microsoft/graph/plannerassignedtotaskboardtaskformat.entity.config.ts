@@ -5,7 +5,7 @@ import { PlannerAssignedToTaskBoardTaskFormat } from './plannerassignedtotaskboa
 //#endregion
 
 export const PlannerAssignedToTaskBoardTaskFormatConfig = {
-  name: "PlannerAssignedToTaskBoardTaskFormat",
+  name: "plannerAssignedToTaskBoardTaskFormat",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

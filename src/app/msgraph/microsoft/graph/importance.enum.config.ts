@@ -5,6 +5,6 @@ import { Importance } from './importance.enum';
 //#endregion
 
 export const ImportanceConfig = {
-  name: "Importance",
+  name: "importance",
   members: Importance
 } as EnumConfig<Importance>;

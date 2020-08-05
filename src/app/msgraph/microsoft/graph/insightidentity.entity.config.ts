@@ -5,7 +5,7 @@ import { InsightIdentity } from './insightidentity.entity';
 //#endregion
 
 export const InsightIdentityConfig = {
-  name: "InsightIdentity",
+  name: "insightIdentity",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String'},

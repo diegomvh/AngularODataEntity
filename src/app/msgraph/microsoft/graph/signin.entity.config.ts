@@ -5,7 +5,7 @@ import { SignIn } from './signin.entity';
 //#endregion
 
 export const SignInConfig = {
-  name: "SignIn",
+  name: "signIn",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

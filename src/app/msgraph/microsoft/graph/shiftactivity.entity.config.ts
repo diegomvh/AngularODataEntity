@@ -5,7 +5,7 @@ import { ShiftActivity } from './shiftactivity.entity';
 //#endregion
 
 export const ShiftActivityConfig = {
-  name: "ShiftActivity",
+  name: "shiftActivity",
   annotations: [],
   fields: {
     isPaid: {type: 'Edm.Boolean'},

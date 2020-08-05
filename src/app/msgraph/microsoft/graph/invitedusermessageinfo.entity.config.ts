@@ -5,7 +5,7 @@ import { InvitedUserMessageInfo } from './invitedusermessageinfo.entity';
 //#endregion
 
 export const InvitedUserMessageInfoConfig = {
-  name: "InvitedUserMessageInfo",
+  name: "invitedUserMessageInfo",
   annotations: [],
   fields: {
     ccRecipients: {type: 'graph.recipient', collection: true},

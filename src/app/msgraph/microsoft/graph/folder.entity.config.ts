@@ -5,7 +5,7 @@ import { Folder } from './folder.entity';
 //#endregion
 
 export const FolderConfig = {
-  name: "Folder",
+  name: "folder",
   annotations: [],
   fields: {
     childCount: {type: 'Edm.Int32'},

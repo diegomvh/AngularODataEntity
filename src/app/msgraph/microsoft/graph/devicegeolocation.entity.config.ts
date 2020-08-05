@@ -5,7 +5,7 @@ import { DeviceGeoLocation } from './devicegeolocation.entity';
 //#endregion
 
 export const DeviceGeoLocationConfig = {
-  name: "DeviceGeoLocation",
+  name: "deviceGeoLocation",
   annotations: [],
   fields: {
     lastCollectedDateTime: {type: 'Edm.DateTimeOffset', nullable: false},

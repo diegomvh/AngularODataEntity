@@ -5,7 +5,7 @@ import { IosCertificateProfile } from './ioscertificateprofile.entity';
 //#endregion
 
 export const IosCertificateProfileConfig = {
-  name: "IosCertificateProfile",
+  name: "iosCertificateProfile",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

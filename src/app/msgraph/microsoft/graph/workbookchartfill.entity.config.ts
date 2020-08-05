@@ -5,7 +5,7 @@ import { WorkbookChartFill } from './workbookchartfill.entity';
 //#endregion
 
 export const WorkbookChartFillConfig = {
-  name: "WorkbookChartFill",
+  name: "workbookChartFill",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

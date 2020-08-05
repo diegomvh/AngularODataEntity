@@ -5,7 +5,7 @@ import { OmaSetting } from './omasetting.entity';
 //#endregion
 
 export const OmaSettingConfig = {
-  name: "OmaSetting",
+  name: "omaSetting",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String', nullable: false},

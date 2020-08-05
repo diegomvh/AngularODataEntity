@@ -5,7 +5,7 @@ import { IpRange } from './iprange.entity';
 //#endregion
 
 export const IpRangeConfig = {
-  name: "IpRange",
+  name: "ipRange",
   annotations: [],
   fields: {
     

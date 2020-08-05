@@ -5,7 +5,7 @@ import { SettingStateDeviceSummary } from './settingstatedevicesummary.entity';
 //#endregion
 
 export const SettingStateDeviceSummaryConfig = {
-  name: "SettingStateDeviceSummary",
+  name: "settingStateDeviceSummary",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

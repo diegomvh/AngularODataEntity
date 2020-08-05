@@ -5,7 +5,7 @@ import { ContentType } from './contenttype.entity';
 //#endregion
 
 export const ContentTypeConfig = {
-  name: "ContentType",
+  name: "contentType",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

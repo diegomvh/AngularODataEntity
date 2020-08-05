@@ -5,7 +5,7 @@ import { SalesTotalsByAmount } from './sales_totals_by_amount.entity';
 //#endregion
 
 export const SalesTotalsByAmountConfig = {
-  name: "SalesTotalsByAmount",
+  name: "Sales_Totals_by_Amount",
   annotations: [],
   fields: {
     SaleAmount: {type: 'Edm.Decimal', precition: 19, scale: 4},

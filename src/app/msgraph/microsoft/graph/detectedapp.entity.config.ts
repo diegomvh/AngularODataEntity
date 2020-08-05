@@ -5,7 +5,7 @@ import { DetectedApp } from './detectedapp.entity';
 //#endregion
 
 export const DetectedAppConfig = {
-  name: "DetectedApp",
+  name: "detectedApp",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

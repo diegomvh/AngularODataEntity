@@ -5,6 +5,6 @@ import { WelcomeScreenMeetingInformation } from './welcomescreenmeetinginformati
 //#endregion
 
 export const WelcomeScreenMeetingInformationConfig = {
-  name: "WelcomeScreenMeetingInformation",
+  name: "welcomeScreenMeetingInformation",
   members: WelcomeScreenMeetingInformation
 } as EnumConfig<WelcomeScreenMeetingInformation>;

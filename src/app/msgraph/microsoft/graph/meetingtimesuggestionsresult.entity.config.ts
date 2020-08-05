@@ -5,7 +5,7 @@ import { MeetingTimeSuggestionsResult } from './meetingtimesuggestionsresult.ent
 //#endregion
 
 export const MeetingTimeSuggestionsResultConfig = {
-  name: "MeetingTimeSuggestionsResult",
+  name: "meetingTimeSuggestionsResult",
   annotations: [],
   fields: {
     meetingTimeSuggestions: {type: 'graph.meetingTimeSuggestion', collection: true},

@@ -5,7 +5,7 @@ import { PendingOperations } from './pendingoperations.entity';
 //#endregion
 
 export const PendingOperationsConfig = {
-  name: "PendingOperations",
+  name: "pendingOperations",
   annotations: [],
   fields: {
     pendingContentUpdate: {type: 'graph.pendingContentUpdate'}

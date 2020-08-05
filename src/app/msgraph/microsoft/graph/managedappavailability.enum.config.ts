@@ -5,6 +5,6 @@ import { ManagedAppAvailability } from './managedappavailability.enum';
 //#endregion
 
 export const ManagedAppAvailabilityConfig = {
-  name: "ManagedAppAvailability",
+  name: "managedAppAvailability",
   members: ManagedAppAvailability
 } as EnumConfig<ManagedAppAvailability>;

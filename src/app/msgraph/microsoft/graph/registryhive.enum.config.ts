@@ -5,6 +5,6 @@ import { RegistryHive } from './registryhive.enum';
 //#endregion
 
 export const RegistryHiveConfig = {
-  name: "RegistryHive",
+  name: "registryHive",
   members: RegistryHive
 } as EnumConfig<RegistryHive>;

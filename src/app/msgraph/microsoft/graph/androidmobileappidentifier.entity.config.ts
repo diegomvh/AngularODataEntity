@@ -5,7 +5,7 @@ import { AndroidMobileAppIdentifier } from './androidmobileappidentifier.entity'
 //#endregion
 
 export const AndroidMobileAppIdentifierConfig = {
-  name: "AndroidMobileAppIdentifier",
+  name: "androidMobileAppIdentifier",
   base: "microsoft.graph.mobileAppIdentifier",
   annotations: [],
   fields: {

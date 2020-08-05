@@ -5,6 +5,6 @@ import { ScheduleChangeState } from './schedulechangestate.enum';
 //#endregion
 
 export const ScheduleChangeStateConfig = {
-  name: "ScheduleChangeState",
+  name: "scheduleChangeState",
   members: ScheduleChangeState
 } as EnumConfig<ScheduleChangeState>;

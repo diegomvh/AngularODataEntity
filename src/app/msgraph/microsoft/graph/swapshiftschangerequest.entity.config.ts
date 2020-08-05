@@ -5,7 +5,7 @@ import { SwapShiftsChangeRequest } from './swapshiftschangerequest.entity';
 //#endregion
 
 export const SwapShiftsChangeRequestConfig = {
-  name: "SwapShiftsChangeRequest",
+  name: "swapShiftsChangeRequest",
   base: "microsoft.graph.offerShiftRequest",
   annotations: [],
   fields: {

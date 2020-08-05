@@ -5,7 +5,7 @@ import { DeviceManagementTroubleshootingEvent } from './devicemanagementtroubles
 //#endregion
 
 export const DeviceManagementTroubleshootingEventConfig = {
-  name: "DeviceManagementTroubleshootingEvent",
+  name: "deviceManagementTroubleshootingEvent",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

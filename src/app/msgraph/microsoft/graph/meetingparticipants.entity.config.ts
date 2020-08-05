@@ -5,7 +5,7 @@ import { MeetingParticipants } from './meetingparticipants.entity';
 //#endregion
 
 export const MeetingParticipantsConfig = {
-  name: "MeetingParticipants",
+  name: "meetingParticipants",
   annotations: [],
   fields: {
     organizer: {type: 'graph.meetingParticipantInfo'},

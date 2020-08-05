@@ -5,6 +5,6 @@ import { MediaDirection } from './mediadirection.enum';
 //#endregion
 
 export const MediaDirectionConfig = {
-  name: "MediaDirection",
+  name: "mediaDirection",
   members: MediaDirection
 } as EnumConfig<MediaDirection>;

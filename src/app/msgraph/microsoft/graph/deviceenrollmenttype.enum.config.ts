@@ -5,6 +5,6 @@ import { DeviceEnrollmentType } from './deviceenrollmenttype.enum';
 //#endregion
 
 export const DeviceEnrollmentTypeConfig = {
-  name: "DeviceEnrollmentType",
+  name: "deviceEnrollmentType",
   members: DeviceEnrollmentType
 } as EnumConfig<DeviceEnrollmentType>;

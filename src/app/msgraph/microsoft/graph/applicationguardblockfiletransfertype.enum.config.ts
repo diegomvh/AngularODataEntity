@@ -5,6 +5,6 @@ import { ApplicationGuardBlockFileTransferType } from './applicationguardblockfi
 //#endregion
 
 export const ApplicationGuardBlockFileTransferTypeConfig = {
-  name: "ApplicationGuardBlockFileTransferType",
+  name: "applicationGuardBlockFileTransferType",
   members: ApplicationGuardBlockFileTransferType
 } as EnumConfig<ApplicationGuardBlockFileTransferType>;

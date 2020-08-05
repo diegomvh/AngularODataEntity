@@ -5,7 +5,7 @@ import { OutlookUser } from './outlookuser.entity';
 //#endregion
 
 export const OutlookUserConfig = {
-  name: "OutlookUser",
+  name: "outlookUser",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

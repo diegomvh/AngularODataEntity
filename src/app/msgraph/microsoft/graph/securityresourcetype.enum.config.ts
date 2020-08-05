@@ -5,6 +5,6 @@ import { SecurityResourceType } from './securityresourcetype.enum';
 //#endregion
 
 export const SecurityResourceTypeConfig = {
-  name: "SecurityResourceType",
+  name: "securityResourceType",
   members: SecurityResourceType
 } as EnumConfig<SecurityResourceType>;

@@ -5,7 +5,7 @@ import { WorkbookFunctions } from './workbookfunctions.entity';
 //#endregion
 
 export const WorkbookFunctionsConfig = {
-  name: "WorkbookFunctions",
+  name: "workbookFunctions",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

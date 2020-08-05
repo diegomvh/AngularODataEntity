@@ -5,7 +5,7 @@ import { DriveItemUploadableProperties } from './driveitemuploadableproperties.e
 //#endregion
 
 export const DriveItemUploadablePropertiesConfig = {
-  name: "DriveItemUploadableProperties",
+  name: "driveItemUploadableProperties",
   annotations: [],
   fields: {
     description: {type: 'Edm.String'},

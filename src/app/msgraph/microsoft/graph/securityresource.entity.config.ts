@@ -5,7 +5,7 @@ import { SecurityResource } from './securityresource.entity';
 //#endregion
 
 export const SecurityResourceConfig = {
-  name: "SecurityResource",
+  name: "securityResource",
   annotations: [],
   fields: {
     resource: {type: 'Edm.String'},

@@ -5,7 +5,7 @@ import { WorkbookOperationError } from './workbookoperationerror.entity';
 //#endregion
 
 export const WorkbookOperationErrorConfig = {
-  name: "WorkbookOperationError",
+  name: "workbookOperationError",
   annotations: [],
   fields: {
     code: {type: 'Edm.String'},

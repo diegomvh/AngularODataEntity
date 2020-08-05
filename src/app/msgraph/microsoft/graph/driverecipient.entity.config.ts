@@ -5,7 +5,7 @@ import { DriveRecipient } from './driverecipient.entity';
 //#endregion
 
 export const DriveRecipientConfig = {
-  name: "DriveRecipient",
+  name: "driveRecipient",
   annotations: [],
   fields: {
     alias: {type: 'Edm.String'},

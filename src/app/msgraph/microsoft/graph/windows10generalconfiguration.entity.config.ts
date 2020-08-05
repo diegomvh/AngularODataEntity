@@ -5,7 +5,7 @@ import { Windows10GeneralConfiguration } from './windows10generalconfiguration.e
 //#endregion
 
 export const Windows10GeneralConfigurationConfig = {
-  name: "Windows10GeneralConfiguration",
+  name: "windows10GeneralConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

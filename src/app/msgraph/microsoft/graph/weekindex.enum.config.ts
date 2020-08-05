@@ -5,6 +5,6 @@ import { WeekIndex } from './weekindex.enum';
 //#endregion
 
 export const WeekIndexConfig = {
-  name: "WeekIndex",
+  name: "weekIndex",
   members: WeekIndex
 } as EnumConfig<WeekIndex>;

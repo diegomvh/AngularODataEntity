@@ -5,7 +5,7 @@ import { OnenotePagePreview } from './onenotepagepreview.entity';
 //#endregion
 
 export const OnenotePagePreviewConfig = {
-  name: "OnenotePagePreview",
+  name: "onenotePagePreview",
   annotations: [],
   fields: {
     previewText: {type: 'Edm.String'},

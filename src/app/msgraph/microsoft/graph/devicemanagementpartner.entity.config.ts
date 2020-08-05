@@ -5,7 +5,7 @@ import { DeviceManagementPartner } from './devicemanagementpartner.entity';
 //#endregion
 
 export const DeviceManagementPartnerConfig = {
-  name: "DeviceManagementPartner",
+  name: "deviceManagementPartner",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

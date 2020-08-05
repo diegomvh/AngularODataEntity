@@ -5,7 +5,7 @@ import { TeamMemberSettings } from './teammembersettings.entity';
 //#endregion
 
 export const TeamMemberSettingsConfig = {
-  name: "TeamMemberSettings",
+  name: "teamMemberSettings",
   annotations: [],
   fields: {
     allowCreateUpdateChannels: {type: 'Edm.Boolean'},

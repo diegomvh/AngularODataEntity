@@ -5,7 +5,7 @@ import { HostSecurityState } from './hostsecuritystate.entity';
 //#endregion
 
 export const HostSecurityStateConfig = {
-  name: "HostSecurityState",
+  name: "hostSecurityState",
   annotations: [],
   fields: {
     fqdn: {type: 'Edm.String'},

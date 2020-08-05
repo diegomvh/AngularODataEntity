@@ -5,6 +5,6 @@ import { EmailRole } from './emailrole.enum';
 //#endregion
 
 export const EmailRoleConfig = {
-  name: "EmailRole",
+  name: "emailRole",
   members: EmailRole
 } as EnumConfig<EmailRole>;

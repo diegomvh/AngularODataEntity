@@ -5,7 +5,7 @@ import { ComplianceInformation } from './complianceinformation.entity';
 //#endregion
 
 export const ComplianceInformationConfig = {
-  name: "ComplianceInformation",
+  name: "complianceInformation",
   open: true,
   annotations: [],
   fields: {

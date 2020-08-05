@@ -5,7 +5,7 @@ import { BaseItem } from './baseitem.entity';
 //#endregion
 
 export const BaseItemConfig = {
-  name: "BaseItem",
+  name: "baseItem",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,6 +5,6 @@ import { ManagedAppDataStorageLocation } from './managedappdatastoragelocation.e
 //#endregion
 
 export const ManagedAppDataStorageLocationConfig = {
-  name: "ManagedAppDataStorageLocation",
+  name: "managedAppDataStorageLocation",
   members: ManagedAppDataStorageLocation
 } as EnumConfig<ManagedAppDataStorageLocation>;

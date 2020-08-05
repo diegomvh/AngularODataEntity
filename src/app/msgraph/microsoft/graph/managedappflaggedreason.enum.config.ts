@@ -5,6 +5,6 @@ import { ManagedAppFlaggedReason } from './managedappflaggedreason.enum';
 //#endregion
 
 export const ManagedAppFlaggedReasonConfig = {
-  name: "ManagedAppFlaggedReason",
+  name: "managedAppFlaggedReason",
   members: ManagedAppFlaggedReason
 } as EnumConfig<ManagedAppFlaggedReason>;

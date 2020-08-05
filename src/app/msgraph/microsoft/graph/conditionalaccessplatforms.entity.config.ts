@@ -5,7 +5,7 @@ import { ConditionalAccessPlatforms } from './conditionalaccessplatforms.entity'
 //#endregion
 
 export const ConditionalAccessPlatformsConfig = {
-  name: "ConditionalAccessPlatforms",
+  name: "conditionalAccessPlatforms",
   annotations: [],
   fields: {
     includePlatforms: {type: 'graph.conditionalAccessDevicePlatform', nullable: false, collection: true},

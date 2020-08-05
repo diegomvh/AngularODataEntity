@@ -5,7 +5,7 @@ import { MessageRule } from './messagerule.entity';
 //#endregion
 
 export const MessageRuleConfig = {
-  name: "MessageRule",
+  name: "messageRule",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

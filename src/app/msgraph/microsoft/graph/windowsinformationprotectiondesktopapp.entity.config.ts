@@ -5,7 +5,7 @@ import { WindowsInformationProtectionDesktopApp } from './windowsinformationprot
 //#endregion
 
 export const WindowsInformationProtectionDesktopAppConfig = {
-  name: "WindowsInformationProtectionDesktopApp",
+  name: "windowsInformationProtectionDesktopApp",
   base: "microsoft.graph.windowsInformationProtectionApp",
   annotations: [],
   fields: {

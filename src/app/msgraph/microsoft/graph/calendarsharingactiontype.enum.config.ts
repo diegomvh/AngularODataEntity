@@ -5,6 +5,6 @@ import { CalendarSharingActionType } from './calendarsharingactiontype.enum';
 //#endregion
 
 export const CalendarSharingActionTypeConfig = {
-  name: "CalendarSharingActionType",
+  name: "calendarSharingActionType",
   members: CalendarSharingActionType
 } as EnumConfig<CalendarSharingActionType>;

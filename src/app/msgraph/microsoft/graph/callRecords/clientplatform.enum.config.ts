@@ -5,6 +5,6 @@ import { ClientPlatform } from './clientplatform.enum';
 //#endregion
 
 export const ClientPlatformConfig = {
-  name: "ClientPlatform",
+  name: "clientPlatform",
   members: ClientPlatform
 } as EnumConfig<ClientPlatform>;

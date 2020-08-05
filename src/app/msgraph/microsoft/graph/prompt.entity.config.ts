@@ -5,7 +5,7 @@ import { Prompt } from './prompt.entity';
 //#endregion
 
 export const PromptConfig = {
-  name: "Prompt",
+  name: "prompt",
   annotations: [],
   fields: {
     

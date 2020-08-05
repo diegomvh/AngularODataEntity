@@ -5,7 +5,7 @@ import { FileSecurityState } from './filesecuritystate.entity';
 //#endregion
 
 export const FileSecurityStateConfig = {
-  name: "FileSecurityState",
+  name: "fileSecurityState",
   annotations: [],
   fields: {
     fileHash: {type: 'graph.fileHash'},

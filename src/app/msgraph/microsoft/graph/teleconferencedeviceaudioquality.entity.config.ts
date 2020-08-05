@@ -5,7 +5,7 @@ import { TeleconferenceDeviceAudioQuality } from './teleconferencedeviceaudioqua
 //#endregion
 
 export const TeleconferenceDeviceAudioQualityConfig = {
-  name: "TeleconferenceDeviceAudioQuality",
+  name: "teleconferenceDeviceAudioQuality",
   base: "microsoft.graph.teleconferenceDeviceMediaQuality",
   open: true,
   annotations: [],

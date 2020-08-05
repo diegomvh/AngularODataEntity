@@ -5,6 +5,6 @@ import { TeamVisibilityType } from './teamvisibilitytype.enum';
 //#endregion
 
 export const TeamVisibilityTypeConfig = {
-  name: "TeamVisibilityType",
+  name: "teamVisibilityType",
   members: TeamVisibilityType
 } as EnumConfig<TeamVisibilityType>;

@@ -5,7 +5,7 @@ import { AppIdentity } from './appidentity.entity';
 //#endregion
 
 export const AppIdentityConfig = {
-  name: "AppIdentity",
+  name: "appIdentity",
   annotations: [],
   fields: {
     appId: {type: 'Edm.String'},

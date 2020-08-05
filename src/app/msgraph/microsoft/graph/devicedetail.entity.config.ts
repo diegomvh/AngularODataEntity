@@ -5,7 +5,7 @@ import { DeviceDetail } from './devicedetail.entity';
 //#endregion
 
 export const DeviceDetailConfig = {
-  name: "DeviceDetail",
+  name: "deviceDetail",
   annotations: [],
   fields: {
     deviceId: {type: 'Edm.String'},

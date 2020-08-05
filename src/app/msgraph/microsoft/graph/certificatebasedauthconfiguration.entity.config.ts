@@ -5,7 +5,7 @@ import { CertificateBasedAuthConfiguration } from './certificatebasedauthconfigu
 //#endregion
 
 export const CertificateBasedAuthConfigurationConfig = {
-  name: "CertificateBasedAuthConfiguration",
+  name: "certificateBasedAuthConfiguration",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

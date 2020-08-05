@@ -5,7 +5,7 @@ import { RemoteItem } from './remoteitem.entity';
 //#endregion
 
 export const RemoteItemConfig = {
-  name: "RemoteItem",
+  name: "remoteItem",
   annotations: [],
   fields: {
     createdBy: {type: 'graph.identitySet'},

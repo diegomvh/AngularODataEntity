@@ -5,7 +5,7 @@ import { DriveItemVersion } from './driveitemversion.entity';
 //#endregion
 
 export const DriveItemVersionConfig = {
-  name: "DriveItemVersion",
+  name: "driveItemVersion",
   base: "microsoft.graph.baseItemVersion",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { UrlAssessmentRequest } from './urlassessmentrequest.entity';
 //#endregion
 
 export const UrlAssessmentRequestConfig = {
-  name: "UrlAssessmentRequest",
+  name: "urlAssessmentRequest",
   base: "microsoft.graph.threatAssessmentRequest",
   annotations: [],
   fields: {

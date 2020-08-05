@@ -5,7 +5,7 @@ import { TimeOffItem } from './timeoffitem.entity';
 //#endregion
 
 export const TimeOffItemConfig = {
-  name: "TimeOffItem",
+  name: "timeOffItem",
   base: "microsoft.graph.scheduleEntity",
   annotations: [],
   fields: {

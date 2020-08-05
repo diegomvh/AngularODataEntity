@@ -5,7 +5,7 @@ import { SizeRange } from './sizerange.entity';
 //#endregion
 
 export const SizeRangeConfig = {
-  name: "SizeRange",
+  name: "sizeRange",
   annotations: [],
   fields: {
     minimumSize: {type: 'Edm.Int32'},

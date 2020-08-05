@@ -5,6 +5,6 @@ import { EditionUpgradeLicenseType } from './editionupgradelicensetype.enum';
 //#endregion
 
 export const EditionUpgradeLicenseTypeConfig = {
-  name: "EditionUpgradeLicenseType",
+  name: "editionUpgradeLicenseType",
   members: EditionUpgradeLicenseType
 } as EnumConfig<EditionUpgradeLicenseType>;

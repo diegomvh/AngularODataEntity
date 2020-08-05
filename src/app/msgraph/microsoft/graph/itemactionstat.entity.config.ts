@@ -5,7 +5,7 @@ import { ItemActionStat } from './itemactionstat.entity';
 //#endregion
 
 export const ItemActionStatConfig = {
-  name: "ItemActionStat",
+  name: "itemActionStat",
   open: true,
   annotations: [],
   fields: {

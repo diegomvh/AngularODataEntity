@@ -5,7 +5,7 @@ import { ProxiedDomain } from './proxieddomain.entity';
 //#endregion
 
 export const ProxiedDomainConfig = {
-  name: "ProxiedDomain",
+  name: "proxiedDomain",
   annotations: [],
   fields: {
     ipAddressOrFQDN: {type: 'Edm.String', nullable: false},

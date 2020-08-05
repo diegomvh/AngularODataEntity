@@ -5,7 +5,7 @@ import { SingleValueLegacyExtendedProperty } from './singlevaluelegacyextendedpr
 //#endregion
 
 export const SingleValueLegacyExtendedPropertyConfig = {
-  name: "SingleValueLegacyExtendedProperty",
+  name: "singleValueLegacyExtendedProperty",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

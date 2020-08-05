@@ -5,7 +5,7 @@ import { OpenShift } from './openshift.entity';
 //#endregion
 
 export const OpenShiftConfig = {
-  name: "OpenShift",
+  name: "openShift",
   base: "microsoft.graph.changeTrackedEntity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { InformationalUrl } from './informationalurl.entity';
 //#endregion
 
 export const InformationalUrlConfig = {
-  name: "InformationalUrl",
+  name: "informationalUrl",
   annotations: [],
   fields: {
     logoUrl: {type: 'Edm.String'},

@@ -5,6 +5,6 @@ import { DeviceManagementPartnerAppType } from './devicemanagementpartnerapptype
 //#endregion
 
 export const DeviceManagementPartnerAppTypeConfig = {
-  name: "DeviceManagementPartnerAppType",
+  name: "deviceManagementPartnerAppType",
   members: DeviceManagementPartnerAppType
 } as EnumConfig<DeviceManagementPartnerAppType>;

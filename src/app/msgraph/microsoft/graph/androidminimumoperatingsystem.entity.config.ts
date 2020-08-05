@@ -5,7 +5,7 @@ import { AndroidMinimumOperatingSystem } from './androidminimumoperatingsystem.e
 //#endregion
 
 export const AndroidMinimumOperatingSystemConfig = {
-  name: "AndroidMinimumOperatingSystem",
+  name: "androidMinimumOperatingSystem",
   annotations: [],
   fields: {
     v4_0: {type: 'Edm.Boolean', nullable: false},

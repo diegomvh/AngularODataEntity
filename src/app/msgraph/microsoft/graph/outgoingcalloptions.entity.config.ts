@@ -5,7 +5,7 @@ import { OutgoingCallOptions } from './outgoingcalloptions.entity';
 //#endregion
 
 export const OutgoingCallOptionsConfig = {
-  name: "OutgoingCallOptions",
+  name: "outgoingCallOptions",
   base: "microsoft.graph.callOptions",
   annotations: [],
   fields: {

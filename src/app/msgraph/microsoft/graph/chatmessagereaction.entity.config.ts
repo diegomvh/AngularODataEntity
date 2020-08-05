@@ -5,7 +5,7 @@ import { ChatMessageReaction } from './chatmessagereaction.entity';
 //#endregion
 
 export const ChatMessageReactionConfig = {
-  name: "ChatMessageReaction",
+  name: "chatMessageReaction",
   annotations: [],
   fields: {
     reactionType: {type: 'Edm.String', nullable: false},

@@ -5,7 +5,7 @@ import { PersistentBrowserSessionControl } from './persistentbrowsersessioncontr
 //#endregion
 
 export const PersistentBrowserSessionControlConfig = {
-  name: "PersistentBrowserSessionControl",
+  name: "persistentBrowserSessionControl",
   base: "microsoft.graph.conditionalAccessSessionControl",
   annotations: [],
   fields: {

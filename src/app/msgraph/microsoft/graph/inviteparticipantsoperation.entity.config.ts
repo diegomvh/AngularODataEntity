@@ -5,7 +5,7 @@ import { InviteParticipantsOperation } from './inviteparticipantsoperation.entit
 //#endregion
 
 export const InviteParticipantsOperationConfig = {
-  name: "InviteParticipantsOperation",
+  name: "inviteParticipantsOperation",
   base: "microsoft.graph.commsOperation",
   open: true,
   annotations: [],

@@ -5,6 +5,6 @@ import { ChatMessageImportance } from './chatmessageimportance.enum';
 //#endregion
 
 export const ChatMessageImportanceConfig = {
-  name: "ChatMessageImportance",
+  name: "chatMessageImportance",
   members: ChatMessageImportance
 } as EnumConfig<ChatMessageImportance>;

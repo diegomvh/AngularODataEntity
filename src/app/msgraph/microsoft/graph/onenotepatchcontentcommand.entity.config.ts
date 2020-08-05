@@ -5,7 +5,7 @@ import { OnenotePatchContentCommand } from './onenotepatchcontentcommand.entity'
 //#endregion
 
 export const OnenotePatchContentCommandConfig = {
-  name: "OnenotePatchContentCommand",
+  name: "onenotePatchContentCommand",
   annotations: [],
   fields: {
     action: {type: 'graph.onenotePatchActionType', nullable: false},

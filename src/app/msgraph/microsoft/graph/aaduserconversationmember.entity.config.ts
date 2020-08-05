@@ -5,7 +5,7 @@ import { AadUserConversationMember } from './aaduserconversationmember.entity';
 //#endregion
 
 export const AadUserConversationMemberConfig = {
-  name: "AadUserConversationMember",
+  name: "aadUserConversationMember",
   base: "microsoft.graph.conversationMember",
   annotations: [],
   fields: {

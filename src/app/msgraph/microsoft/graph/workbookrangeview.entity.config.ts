@@ -5,7 +5,7 @@ import { WorkbookRangeView } from './workbookrangeview.entity';
 //#endregion
 
 export const WorkbookRangeViewConfig = {
-  name: "WorkbookRangeView",
+  name: "workbookRangeView",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

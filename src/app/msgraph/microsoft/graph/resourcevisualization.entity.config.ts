@@ -5,7 +5,7 @@ import { ResourceVisualization } from './resourcevisualization.entity';
 //#endregion
 
 export const ResourceVisualizationConfig = {
-  name: "ResourceVisualization",
+  name: "resourceVisualization",
   annotations: [],
   fields: {
     title: {type: 'Edm.String'},

@@ -5,6 +5,6 @@ import { MobileAppPublishingState } from './mobileapppublishingstate.enum';
 //#endregion
 
 export const MobileAppPublishingStateConfig = {
-  name: "MobileAppPublishingState",
+  name: "mobileAppPublishingState",
   members: MobileAppPublishingState
 } as EnumConfig<MobileAppPublishingState>;

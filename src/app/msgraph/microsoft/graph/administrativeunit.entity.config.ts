@@ -5,7 +5,7 @@ import { AdministrativeUnit } from './administrativeunit.entity';
 //#endregion
 
 export const AdministrativeUnitConfig = {
-  name: "AdministrativeUnit",
+  name: "administrativeUnit",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

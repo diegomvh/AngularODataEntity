@@ -5,7 +5,7 @@ import { SignInStatus } from './signinstatus.entity';
 //#endregion
 
 export const SignInStatusConfig = {
-  name: "SignInStatus",
+  name: "signInStatus",
   annotations: [],
   fields: {
     errorCode: {type: 'Edm.Int32'},

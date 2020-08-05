@@ -5,7 +5,7 @@ import { MobileAppCategory } from './mobileappcategory.entity';
 //#endregion
 
 export const MobileAppCategoryConfig = {
-  name: "MobileAppCategory",
+  name: "mobileAppCategory",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

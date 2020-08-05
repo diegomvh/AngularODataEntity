@@ -5,6 +5,6 @@ import { RecurrenceRangeType } from './recurrencerangetype.enum';
 //#endregion
 
 export const RecurrenceRangeTypeConfig = {
-  name: "RecurrenceRangeType",
+  name: "recurrenceRangeType",
   members: RecurrenceRangeType
 } as EnumConfig<RecurrenceRangeType>;

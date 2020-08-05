@@ -5,7 +5,7 @@ import { ScoredEmailAddress } from './scoredemailaddress.entity';
 //#endregion
 
 export const ScoredEmailAddressConfig = {
-  name: "ScoredEmailAddress",
+  name: "scoredEmailAddress",
   annotations: [],
   fields: {
     address: {type: 'Edm.String'},

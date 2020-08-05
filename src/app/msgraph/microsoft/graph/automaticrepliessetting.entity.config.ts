@@ -5,7 +5,7 @@ import { AutomaticRepliesSetting } from './automaticrepliessetting.entity';
 //#endregion
 
 export const AutomaticRepliesSettingConfig = {
-  name: "AutomaticRepliesSetting",
+  name: "automaticRepliesSetting",
   annotations: [],
   fields: {
     status: {type: 'graph.automaticRepliesStatus'},

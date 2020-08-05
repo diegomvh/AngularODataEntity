@@ -5,7 +5,7 @@ import { ContentTypeInfo } from './contenttypeinfo.entity';
 //#endregion
 
 export const ContentTypeInfoConfig = {
-  name: "ContentTypeInfo",
+  name: "contentTypeInfo",
   annotations: [],
   fields: {
     id: {type: 'Edm.String'},

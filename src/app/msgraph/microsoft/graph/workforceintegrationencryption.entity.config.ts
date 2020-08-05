@@ -5,7 +5,7 @@ import { WorkforceIntegrationEncryption } from './workforceintegrationencryption
 //#endregion
 
 export const WorkforceIntegrationEncryptionConfig = {
-  name: "WorkforceIntegrationEncryption",
+  name: "workforceIntegrationEncryption",
   annotations: [],
   fields: {
     protocol: {type: 'graph.workforceIntegrationEncryptionProtocol'},

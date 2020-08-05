@@ -5,7 +5,7 @@ import { CertificationControl } from './certificationcontrol.entity';
 //#endregion
 
 export const CertificationControlConfig = {
-  name: "CertificationControl",
+  name: "certificationControl",
   open: true,
   annotations: [],
   fields: {

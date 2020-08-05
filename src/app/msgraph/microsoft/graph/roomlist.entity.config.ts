@@ -5,7 +5,7 @@ import { RoomList } from './roomlist.entity';
 //#endregion
 
 export const RoomListConfig = {
-  name: "RoomList",
+  name: "roomList",
   base: "microsoft.graph.place",
   annotations: [],
   fields: {

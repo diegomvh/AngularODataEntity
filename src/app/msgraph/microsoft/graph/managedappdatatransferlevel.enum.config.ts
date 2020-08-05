@@ -5,6 +5,6 @@ import { ManagedAppDataTransferLevel } from './managedappdatatransferlevel.enum'
 //#endregion
 
 export const ManagedAppDataTransferLevelConfig = {
-  name: "ManagedAppDataTransferLevel",
+  name: "managedAppDataTransferLevel",
   members: ManagedAppDataTransferLevel
 } as EnumConfig<ManagedAppDataTransferLevel>;

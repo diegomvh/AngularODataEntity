@@ -5,7 +5,7 @@ import { MicrosoftStoreForBusinessApp } from './microsoftstoreforbusinessapp.ent
 //#endregion
 
 export const MicrosoftStoreForBusinessAppConfig = {
-  name: "MicrosoftStoreForBusinessApp",
+  name: "microsoftStoreForBusinessApp",
   base: "microsoft.graph.mobileApp",
   annotations: [],
   fields: {

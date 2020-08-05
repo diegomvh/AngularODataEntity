@@ -5,6 +5,6 @@ import { ConditionalAccessDevicePlatform } from './conditionalaccessdeviceplatfo
 //#endregion
 
 export const ConditionalAccessDevicePlatformConfig = {
-  name: "ConditionalAccessDevicePlatform",
+  name: "conditionalAccessDevicePlatform",
   members: ConditionalAccessDevicePlatform
 } as EnumConfig<ConditionalAccessDevicePlatform>;

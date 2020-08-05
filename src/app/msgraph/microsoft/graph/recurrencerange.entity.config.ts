@@ -5,7 +5,7 @@ import { RecurrenceRange } from './recurrencerange.entity';
 //#endregion
 
 export const RecurrenceRangeConfig = {
-  name: "RecurrenceRange",
+  name: "recurrenceRange",
   annotations: [],
   fields: {
     type: {type: 'graph.recurrenceRangeType'},

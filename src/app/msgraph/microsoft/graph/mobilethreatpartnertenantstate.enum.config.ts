@@ -5,6 +5,6 @@ import { MobileThreatPartnerTenantState } from './mobilethreatpartnertenantstate
 //#endregion
 
 export const MobileThreatPartnerTenantStateConfig = {
-  name: "MobileThreatPartnerTenantState",
+  name: "mobileThreatPartnerTenantState",
   members: MobileThreatPartnerTenantState
 } as EnumConfig<MobileThreatPartnerTenantState>;

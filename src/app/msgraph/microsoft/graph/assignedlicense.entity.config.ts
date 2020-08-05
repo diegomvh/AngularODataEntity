@@ -5,7 +5,7 @@ import { AssignedLicense } from './assignedlicense.entity';
 //#endregion
 
 export const AssignedLicenseConfig = {
-  name: "AssignedLicense",
+  name: "assignedLicense",
   annotations: [],
   fields: {
     disabledPlans: {type: 'Edm.Guid', nullable: false, collection: true},

@@ -5,7 +5,7 @@ import { WorkbookRangeFont } from './workbookrangefont.entity';
 //#endregion
 
 export const WorkbookRangeFontConfig = {
-  name: "WorkbookRangeFont",
+  name: "workbookRangeFont",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

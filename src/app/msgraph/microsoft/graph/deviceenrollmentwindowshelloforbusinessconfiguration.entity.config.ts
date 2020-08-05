@@ -5,7 +5,7 @@ import { DeviceEnrollmentWindowsHelloForBusinessConfiguration } from './deviceen
 //#endregion
 
 export const DeviceEnrollmentWindowsHelloForBusinessConfigurationConfig = {
-  name: "DeviceEnrollmentWindowsHelloForBusinessConfiguration",
+  name: "deviceEnrollmentWindowsHelloForBusinessConfiguration",
   base: "microsoft.graph.deviceEnrollmentConfiguration",
   annotations: [],
   fields: {

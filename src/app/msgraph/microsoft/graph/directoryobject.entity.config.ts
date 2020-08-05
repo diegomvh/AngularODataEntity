@@ -5,7 +5,7 @@ import { DirectoryObject } from './directoryobject.entity';
 //#endregion
 
 export const DirectoryObjectConfig = {
-  name: "DirectoryObject",
+  name: "directoryObject",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

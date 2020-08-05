@@ -5,7 +5,7 @@ import { IosStoreApp } from './iosstoreapp.entity';
 //#endregion
 
 export const IosStoreAppConfig = {
-  name: "IosStoreApp",
+  name: "iosStoreApp",
   base: "microsoft.graph.mobileApp",
   annotations: [],
   fields: {

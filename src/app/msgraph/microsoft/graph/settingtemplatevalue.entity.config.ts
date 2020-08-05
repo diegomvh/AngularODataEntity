@@ -5,7 +5,7 @@ import { SettingTemplateValue } from './settingtemplatevalue.entity';
 //#endregion
 
 export const SettingTemplateValueConfig = {
-  name: "SettingTemplateValue",
+  name: "settingTemplateValue",
   annotations: [],
   fields: {
     name: {type: 'Edm.String'},

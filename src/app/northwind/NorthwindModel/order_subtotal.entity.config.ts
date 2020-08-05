@@ -5,7 +5,7 @@ import { OrderSubtotal } from './order_subtotal.entity';
 //#endregion
 
 export const OrderSubtotalConfig = {
-  name: "OrderSubtotal",
+  name: "Order_Subtotal",
   annotations: [],
   fields: {
     OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},

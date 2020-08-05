@@ -5,6 +5,6 @@ import { OnenoteSourceService } from './onenotesourceservice.enum';
 //#endregion
 
 export const OnenoteSourceServiceConfig = {
-  name: "OnenoteSourceService",
+  name: "onenoteSourceService",
   members: OnenoteSourceService
 } as EnumConfig<OnenoteSourceService>;

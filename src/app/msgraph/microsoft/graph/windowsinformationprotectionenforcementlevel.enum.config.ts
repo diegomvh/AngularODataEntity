@@ -5,6 +5,6 @@ import { WindowsInformationProtectionEnforcementLevel } from './windowsinformati
 //#endregion
 
 export const WindowsInformationProtectionEnforcementLevelConfig = {
-  name: "WindowsInformationProtectionEnforcementLevel",
+  name: "windowsInformationProtectionEnforcementLevel",
   members: WindowsInformationProtectionEnforcementLevel
 } as EnumConfig<WindowsInformationProtectionEnforcementLevel>;

@@ -5,7 +5,7 @@ import { ComplianceManagementPartnerAssignment } from './compliancemanagementpar
 //#endregion
 
 export const ComplianceManagementPartnerAssignmentConfig = {
-  name: "ComplianceManagementPartnerAssignment",
+  name: "complianceManagementPartnerAssignment",
   annotations: [],
   fields: {
     target: {type: 'graph.deviceAndAppManagementAssignmentTarget'}

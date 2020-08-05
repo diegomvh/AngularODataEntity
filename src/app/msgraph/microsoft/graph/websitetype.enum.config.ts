@@ -5,6 +5,6 @@ import { WebsiteType } from './websitetype.enum';
 //#endregion
 
 export const WebsiteTypeConfig = {
-  name: "WebsiteType",
+  name: "websiteType",
   members: WebsiteType
 } as EnumConfig<WebsiteType>;

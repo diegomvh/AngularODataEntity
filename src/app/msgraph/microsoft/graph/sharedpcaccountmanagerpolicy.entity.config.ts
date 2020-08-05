@@ -5,7 +5,7 @@ import { SharedPCAccountManagerPolicy } from './sharedpcaccountmanagerpolicy.ent
 //#endregion
 
 export const SharedPCAccountManagerPolicyConfig = {
-  name: "SharedPCAccountManagerPolicy",
+  name: "sharedPCAccountManagerPolicy",
   annotations: [],
   fields: {
     accountDeletionPolicy: {type: 'graph.sharedPCAccountDeletionPolicyType', nullable: false},

@@ -5,7 +5,7 @@ import { PublicationFacet } from './publicationfacet.entity';
 //#endregion
 
 export const PublicationFacetConfig = {
-  name: "PublicationFacet",
+  name: "publicationFacet",
   annotations: [],
   fields: {
     level: {type: 'Edm.String'},

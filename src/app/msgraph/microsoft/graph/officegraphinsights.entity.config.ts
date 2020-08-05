@@ -5,7 +5,7 @@ import { OfficeGraphInsights } from './officegraphinsights.entity';
 //#endregion
 
 export const OfficeGraphInsightsConfig = {
-  name: "OfficeGraphInsights",
+  name: "officeGraphInsights",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

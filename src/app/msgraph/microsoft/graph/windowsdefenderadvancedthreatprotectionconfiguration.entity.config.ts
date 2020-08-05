@@ -5,7 +5,7 @@ import { WindowsDefenderAdvancedThreatProtectionConfiguration } from './windowsd
 //#endregion
 
 export const WindowsDefenderAdvancedThreatProtectionConfigurationConfig = {
-  name: "WindowsDefenderAdvancedThreatProtectionConfiguration",
+  name: "windowsDefenderAdvancedThreatProtectionConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

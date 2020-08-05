@@ -5,7 +5,7 @@ import { Root } from './root.entity';
 //#endregion
 
 export const RootConfig = {
-  name: "Root",
+  name: "root",
   annotations: [],
   fields: {
     

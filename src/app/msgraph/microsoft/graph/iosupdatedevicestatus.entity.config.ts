@@ -5,7 +5,7 @@ import { IosUpdateDeviceStatus } from './iosupdatedevicestatus.entity';
 //#endregion
 
 export const IosUpdateDeviceStatusConfig = {
-  name: "IosUpdateDeviceStatus",
+  name: "iosUpdateDeviceStatus",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

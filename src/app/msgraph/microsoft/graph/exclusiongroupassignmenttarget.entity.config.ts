@@ -5,7 +5,7 @@ import { ExclusionGroupAssignmentTarget } from './exclusiongroupassignmenttarget
 //#endregion
 
 export const ExclusionGroupAssignmentTargetConfig = {
-  name: "ExclusionGroupAssignmentTarget",
+  name: "exclusionGroupAssignmentTarget",
   base: "microsoft.graph.groupAssignmentTarget",
   annotations: [],
   fields: {

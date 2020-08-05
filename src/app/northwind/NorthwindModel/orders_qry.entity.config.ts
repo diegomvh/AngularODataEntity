@@ -5,7 +5,7 @@ import { OrdersQry } from './orders_qry.entity';
 //#endregion
 
 export const OrdersQryConfig = {
-  name: "OrdersQry",
+  name: "Orders_Qry",
   annotations: [],
   fields: {
     OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},

@@ -5,7 +5,7 @@ import { MacOSOfficeSuiteApp } from './macosofficesuiteapp.entity';
 //#endregion
 
 export const MacOSOfficeSuiteAppConfig = {
-  name: "MacOSOfficeSuiteApp",
+  name: "macOSOfficeSuiteApp",
   base: "microsoft.graph.mobileApp",
   annotations: [],
   fields: {

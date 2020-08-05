@@ -5,6 +5,6 @@ import { BodyType } from './bodytype.enum';
 //#endregion
 
 export const BodyTypeConfig = {
-  name: "BodyType",
+  name: "bodyType",
   members: BodyType
 } as EnumConfig<BodyType>;

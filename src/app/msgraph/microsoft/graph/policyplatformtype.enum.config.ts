@@ -5,6 +5,6 @@ import { PolicyPlatformType } from './policyplatformtype.enum';
 //#endregion
 
 export const PolicyPlatformTypeConfig = {
-  name: "PolicyPlatformType",
+  name: "policyPlatformType",
   members: PolicyPlatformType
 } as EnumConfig<PolicyPlatformType>;

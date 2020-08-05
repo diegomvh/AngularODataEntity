@@ -5,7 +5,7 @@ import { ListInfo } from './listinfo.entity';
 //#endregion
 
 export const ListInfoConfig = {
-  name: "ListInfo",
+  name: "listInfo",
   annotations: [],
   fields: {
     contentTypesEnabled: {type: 'Edm.Boolean'},

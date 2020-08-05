@@ -5,7 +5,7 @@ import { ItemActivity } from './itemactivity.entity';
 //#endregion
 
 export const ItemActivityConfig = {
-  name: "ItemActivity",
+  name: "itemActivity",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

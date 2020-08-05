@@ -5,7 +5,7 @@ import { OutlookGeoCoordinates } from './outlookgeocoordinates.entity';
 //#endregion
 
 export const OutlookGeoCoordinatesConfig = {
-  name: "OutlookGeoCoordinates",
+  name: "outlookGeoCoordinates",
   annotations: [],
   fields: {
     latitude: {type: 'Edm.Double'},

@@ -5,6 +5,6 @@ import { ManagedAppPinCharacterSet } from './managedapppincharacterset.enum';
 //#endregion
 
 export const ManagedAppPinCharacterSetConfig = {
-  name: "ManagedAppPinCharacterSet",
+  name: "managedAppPinCharacterSet",
   members: ManagedAppPinCharacterSet
 } as EnumConfig<ManagedAppPinCharacterSet>;

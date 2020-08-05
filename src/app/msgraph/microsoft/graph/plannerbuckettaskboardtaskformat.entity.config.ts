@@ -5,7 +5,7 @@ import { PlannerBucketTaskBoardTaskFormat } from './plannerbuckettaskboardtaskfo
 //#endregion
 
 export const PlannerBucketTaskBoardTaskFormatConfig = {
-  name: "PlannerBucketTaskBoardTaskFormat",
+  name: "plannerBucketTaskBoardTaskFormat",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

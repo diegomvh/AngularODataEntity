@@ -5,7 +5,7 @@ import { ManagedEBookAssignment } from './managedebookassignment.entity';
 //#endregion
 
 export const ManagedEBookAssignmentConfig = {
-  name: "ManagedEBookAssignment",
+  name: "managedEBookAssignment",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

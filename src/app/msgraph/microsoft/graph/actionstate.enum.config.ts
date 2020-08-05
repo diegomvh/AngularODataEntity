@@ -5,6 +5,6 @@ import { ActionState } from './actionstate.enum';
 //#endregion
 
 export const ActionStateConfig = {
-  name: "ActionState",
+  name: "actionState",
   members: ActionState
 } as EnumConfig<ActionState>;

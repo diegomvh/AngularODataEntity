@@ -5,7 +5,7 @@ import { AndroidCompliancePolicy } from './androidcompliancepolicy.entity';
 //#endregion
 
 export const AndroidCompliancePolicyConfig = {
-  name: "AndroidCompliancePolicy",
+  name: "androidCompliancePolicy",
   base: "microsoft.graph.deviceCompliancePolicy",
   annotations: [],
   fields: {

@@ -5,6 +5,6 @@ import { SiteSecurityLevel } from './sitesecuritylevel.enum';
 //#endregion
 
 export const SiteSecurityLevelConfig = {
-  name: "SiteSecurityLevel",
+  name: "siteSecurityLevel",
   members: SiteSecurityLevel
 } as EnumConfig<SiteSecurityLevel>;

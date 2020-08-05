@@ -5,7 +5,7 @@ import { GeoCoordinates } from './geocoordinates.entity';
 //#endregion
 
 export const GeoCoordinatesConfig = {
-  name: "GeoCoordinates",
+  name: "geoCoordinates",
   annotations: [],
   fields: {
     altitude: {type: 'Edm.Double'},

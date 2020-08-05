@@ -5,6 +5,6 @@ import { MediaStreamDirection } from './mediastreamdirection.enum';
 //#endregion
 
 export const MediaStreamDirectionConfig = {
-  name: "MediaStreamDirection",
+  name: "mediaStreamDirection",
   members: MediaStreamDirection
 } as EnumConfig<MediaStreamDirection>;

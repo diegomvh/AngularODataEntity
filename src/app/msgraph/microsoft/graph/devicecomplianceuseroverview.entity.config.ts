@@ -5,7 +5,7 @@ import { DeviceComplianceUserOverview } from './devicecomplianceuseroverview.ent
 //#endregion
 
 export const DeviceComplianceUserOverviewConfig = {
-  name: "DeviceComplianceUserOverview",
+  name: "deviceComplianceUserOverview",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

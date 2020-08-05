@@ -5,7 +5,7 @@ import { ChatMessageAttachment } from './chatmessageattachment.entity';
 //#endregion
 
 export const ChatMessageAttachmentConfig = {
-  name: "ChatMessageAttachment",
+  name: "chatMessageAttachment",
   annotations: [],
   fields: {
     id: {type: 'Edm.String'},

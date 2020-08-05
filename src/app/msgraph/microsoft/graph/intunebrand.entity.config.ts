@@ -5,7 +5,7 @@ import { IntuneBrand } from './intunebrand.entity';
 //#endregion
 
 export const IntuneBrandConfig = {
-  name: "IntuneBrand",
+  name: "intuneBrand",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String'},

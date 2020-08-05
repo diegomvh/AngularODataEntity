@@ -5,7 +5,7 @@ import { CountryNamedLocation } from './countrynamedlocation.entity';
 //#endregion
 
 export const CountryNamedLocationConfig = {
-  name: "CountryNamedLocation",
+  name: "countryNamedLocation",
   base: "microsoft.graph.namedLocation",
   annotations: [],
   fields: {

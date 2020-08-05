@@ -5,7 +5,7 @@ import { ItemPreviewInfo } from './itempreviewinfo.entity';
 //#endregion
 
 export const ItemPreviewInfoConfig = {
-  name: "ItemPreviewInfo",
+  name: "itemPreviewInfo",
   annotations: [],
   fields: {
     getUrl: {type: 'Edm.String'},

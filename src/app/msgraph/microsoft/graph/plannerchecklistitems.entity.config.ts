@@ -5,7 +5,7 @@ import { PlannerChecklistItems } from './plannerchecklistitems.entity';
 //#endregion
 
 export const PlannerChecklistItemsConfig = {
-  name: "PlannerChecklistItems",
+  name: "plannerChecklistItems",
   open: true,
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { NamedLocation } from './namedlocation.entity';
 //#endregion
 
 export const NamedLocationConfig = {
-  name: "NamedLocation",
+  name: "namedLocation",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

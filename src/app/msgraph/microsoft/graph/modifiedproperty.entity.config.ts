@@ -5,7 +5,7 @@ import { ModifiedProperty } from './modifiedproperty.entity';
 //#endregion
 
 export const ModifiedPropertyConfig = {
-  name: "ModifiedProperty",
+  name: "modifiedProperty",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String'},

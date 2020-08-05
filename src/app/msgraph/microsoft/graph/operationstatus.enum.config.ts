@@ -5,6 +5,6 @@ import { OperationStatus } from './operationstatus.enum';
 //#endregion
 
 export const OperationStatusConfig = {
-  name: "OperationStatus",
+  name: "operationStatus",
   members: OperationStatus
 } as EnumConfig<OperationStatus>;

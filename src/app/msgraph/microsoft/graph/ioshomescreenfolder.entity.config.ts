@@ -5,7 +5,7 @@ import { IosHomeScreenFolder } from './ioshomescreenfolder.entity';
 //#endregion
 
 export const IosHomeScreenFolderConfig = {
-  name: "IosHomeScreenFolder",
+  name: "iosHomeScreenFolder",
   base: "microsoft.graph.iosHomeScreenItem",
   annotations: [],
   fields: {

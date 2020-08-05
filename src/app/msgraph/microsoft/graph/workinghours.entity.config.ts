@@ -5,7 +5,7 @@ import { WorkingHours } from './workinghours.entity';
 //#endregion
 
 export const WorkingHoursConfig = {
-  name: "WorkingHours",
+  name: "workingHours",
   annotations: [],
   fields: {
     daysOfWeek: {type: 'graph.dayOfWeek', collection: true},

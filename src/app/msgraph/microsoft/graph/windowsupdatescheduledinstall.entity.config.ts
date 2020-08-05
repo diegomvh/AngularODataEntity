@@ -5,7 +5,7 @@ import { WindowsUpdateScheduledInstall } from './windowsupdatescheduledinstall.e
 //#endregion
 
 export const WindowsUpdateScheduledInstallConfig = {
-  name: "WindowsUpdateScheduledInstall",
+  name: "windowsUpdateScheduledInstall",
   base: "microsoft.graph.windowsUpdateInstallScheduleType",
   annotations: [],
   fields: {

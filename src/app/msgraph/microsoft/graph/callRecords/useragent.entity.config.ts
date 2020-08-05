@@ -5,7 +5,7 @@ import { UserAgent } from './useragent.entity';
 //#endregion
 
 export const UserAgentConfig = {
-  name: "UserAgent",
+  name: "userAgent",
   annotations: [],
   fields: {
     headerValue: {type: 'Edm.String'},

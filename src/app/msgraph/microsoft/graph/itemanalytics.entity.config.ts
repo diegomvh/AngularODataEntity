@@ -5,7 +5,7 @@ import { ItemAnalytics } from './itemanalytics.entity';
 //#endregion
 
 export const ItemAnalyticsConfig = {
-  name: "ItemAnalytics",
+  name: "itemAnalytics",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

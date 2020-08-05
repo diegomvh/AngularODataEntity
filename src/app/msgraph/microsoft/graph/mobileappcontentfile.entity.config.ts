@@ -5,7 +5,7 @@ import { MobileAppContentFile } from './mobileappcontentfile.entity';
 //#endregion
 
 export const MobileAppContentFileConfig = {
-  name: "MobileAppContentFile",
+  name: "mobileAppContentFile",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

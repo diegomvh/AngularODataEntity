@@ -5,7 +5,7 @@ import { GenericError } from './genericerror.entity';
 //#endregion
 
 export const GenericErrorConfig = {
-  name: "GenericError",
+  name: "genericError",
   annotations: [],
   fields: {
     message: {type: 'Edm.String'},

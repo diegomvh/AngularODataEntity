@@ -5,7 +5,7 @@ import { DomainDnsTxtRecord } from './domaindnstxtrecord.entity';
 //#endregion
 
 export const DomainDnsTxtRecordConfig = {
-  name: "DomainDnsTxtRecord",
+  name: "domainDnsTxtRecord",
   base: "microsoft.graph.domainDnsRecord",
   annotations: [],
   fields: {

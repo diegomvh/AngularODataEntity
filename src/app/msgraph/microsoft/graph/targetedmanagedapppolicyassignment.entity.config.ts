@@ -5,7 +5,7 @@ import { TargetedManagedAppPolicyAssignment } from './targetedmanagedapppolicyas
 //#endregion
 
 export const TargetedManagedAppPolicyAssignmentConfig = {
-  name: "TargetedManagedAppPolicyAssignment",
+  name: "targetedManagedAppPolicyAssignment",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

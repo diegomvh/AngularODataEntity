@@ -5,7 +5,7 @@ import { AssignedLabel } from './assignedlabel.entity';
 //#endregion
 
 export const AssignedLabelConfig = {
-  name: "AssignedLabel",
+  name: "assignedLabel",
   annotations: [],
   fields: {
     labelId: {type: 'Edm.String'},

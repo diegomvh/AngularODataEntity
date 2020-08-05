@@ -5,6 +5,6 @@ import { WebBrowserCookieSettings } from './webbrowsercookiesettings.enum';
 //#endregion
 
 export const WebBrowserCookieSettingsConfig = {
-  name: "WebBrowserCookieSettings",
+  name: "webBrowserCookieSettings",
   members: WebBrowserCookieSettings
 } as EnumConfig<WebBrowserCookieSettings>;

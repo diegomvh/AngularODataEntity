@@ -5,7 +5,7 @@ import { TeleconferenceDeviceQuality } from './teleconferencedevicequality.entit
 //#endregion
 
 export const TeleconferenceDeviceQualityConfig = {
-  name: "TeleconferenceDeviceQuality",
+  name: "teleconferenceDeviceQuality",
   open: true,
   annotations: [],
   fields: {

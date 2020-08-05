@@ -5,6 +5,6 @@ import { OnenotePatchActionType } from './onenotepatchactiontype.enum';
 //#endregion
 
 export const OnenotePatchActionTypeConfig = {
-  name: "OnenotePatchActionType",
+  name: "onenotePatchActionType",
   members: OnenotePatchActionType
 } as EnumConfig<OnenotePatchActionType>;

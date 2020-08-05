@@ -5,7 +5,7 @@ import { Post } from './post.entity';
 //#endregion
 
 export const PostConfig = {
-  name: "Post",
+  name: "post",
   base: "microsoft.graph.outlookItem",
   open: true,
   annotations: [],

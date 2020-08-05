@@ -5,7 +5,7 @@ import { IosMinimumOperatingSystem } from './iosminimumoperatingsystem.entity';
 //#endregion
 
 export const IosMinimumOperatingSystemConfig = {
-  name: "IosMinimumOperatingSystem",
+  name: "iosMinimumOperatingSystem",
   annotations: [],
   fields: {
     v8_0: {type: 'Edm.Boolean', nullable: false},

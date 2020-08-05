@@ -5,7 +5,7 @@ import { TelecomExpenseManagementPartner } from './telecomexpensemanagementpartn
 //#endregion
 
 export const TelecomExpenseManagementPartnerConfig = {
-  name: "TelecomExpenseManagementPartner",
+  name: "telecomExpenseManagementPartner",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

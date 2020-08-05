@@ -5,7 +5,7 @@ import { NetworkInfo } from './networkinfo.entity';
 //#endregion
 
 export const NetworkInfoConfig = {
-  name: "NetworkInfo",
+  name: "networkInfo",
   annotations: [],
   fields: {
     ipAddress: {type: 'Edm.String'},

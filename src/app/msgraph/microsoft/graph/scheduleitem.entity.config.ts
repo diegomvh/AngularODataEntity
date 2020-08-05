@@ -5,7 +5,7 @@ import { ScheduleItem } from './scheduleitem.entity';
 //#endregion
 
 export const ScheduleItemConfig = {
-  name: "ScheduleItem",
+  name: "scheduleItem",
   annotations: [],
   fields: {
     start: {type: 'graph.dateTimeTimeZone'},

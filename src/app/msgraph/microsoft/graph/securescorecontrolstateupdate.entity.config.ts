@@ -5,7 +5,7 @@ import { SecureScoreControlStateUpdate } from './securescorecontrolstateupdate.e
 //#endregion
 
 export const SecureScoreControlStateUpdateConfig = {
-  name: "SecureScoreControlStateUpdate",
+  name: "secureScoreControlStateUpdate",
   annotations: [],
   fields: {
     assignedTo: {type: 'Edm.String'},

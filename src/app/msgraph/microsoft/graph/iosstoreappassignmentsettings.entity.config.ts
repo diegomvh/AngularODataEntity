@@ -5,7 +5,7 @@ import { IosStoreAppAssignmentSettings } from './iosstoreappassignmentsettings.e
 //#endregion
 
 export const IosStoreAppAssignmentSettingsConfig = {
-  name: "IosStoreAppAssignmentSettings",
+  name: "iosStoreAppAssignmentSettings",
   base: "microsoft.graph.mobileAppAssignmentSettings",
   annotations: [],
   fields: {

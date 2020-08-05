@@ -5,7 +5,7 @@ import { CalendarSharingMessage } from './calendarsharingmessage.entity';
 //#endregion
 
 export const CalendarSharingMessageConfig = {
-  name: "CalendarSharingMessage",
+  name: "calendarSharingMessage",
   base: "microsoft.graph.message",
   annotations: [],
   fields: {

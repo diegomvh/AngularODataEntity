@@ -5,7 +5,7 @@ import { Security } from './security.entity';
 //#endregion
 
 export const SecurityConfig = {
-  name: "Security",
+  name: "security",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

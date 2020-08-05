@@ -5,7 +5,7 @@ import { AndroidCustomConfiguration } from './androidcustomconfiguration.entity'
 //#endregion
 
 export const AndroidCustomConfigurationConfig = {
-  name: "AndroidCustomConfiguration",
+  name: "androidCustomConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

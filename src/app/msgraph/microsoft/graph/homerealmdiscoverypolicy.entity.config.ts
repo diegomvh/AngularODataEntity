@@ -5,7 +5,7 @@ import { HomeRealmDiscoveryPolicy } from './homerealmdiscoverypolicy.entity';
 //#endregion
 
 export const HomeRealmDiscoveryPolicyConfig = {
-  name: "HomeRealmDiscoveryPolicy",
+  name: "homeRealmDiscoveryPolicy",
   base: "microsoft.graph.stsPolicy",
   annotations: [],
   fields: {

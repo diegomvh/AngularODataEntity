@@ -5,7 +5,7 @@ import { ProfilePhoto } from './profilephoto.entity';
 //#endregion
 
 export const ProfilePhotoConfig = {
-  name: "ProfilePhoto",
+  name: "profilePhoto",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

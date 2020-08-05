@@ -5,7 +5,7 @@ import { WindowsInformationProtection } from './windowsinformationprotection.ent
 //#endregion
 
 export const WindowsInformationProtectionConfig = {
-  name: "WindowsInformationProtection",
+  name: "windowsInformationProtection",
   base: "microsoft.graph.managedAppPolicy",
   annotations: [],
   fields: {

@@ -5,6 +5,6 @@ import { WifiBand } from './wifiband.enum';
 //#endregion
 
 export const WifiBandConfig = {
-  name: "WifiBand",
+  name: "wifiBand",
   members: WifiBand
 } as EnumConfig<WifiBand>;

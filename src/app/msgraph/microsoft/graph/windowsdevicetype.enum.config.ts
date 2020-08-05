@@ -5,7 +5,7 @@ import { WindowsDeviceType } from './windowsdevicetype.enum';
 //#endregion
 
 export const WindowsDeviceTypeConfig = {
-  name: "WindowsDeviceType",
+  name: "windowsDeviceType",
   flags: true,
   members: WindowsDeviceType
 } as EnumConfig<WindowsDeviceType>;

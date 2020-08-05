@@ -5,7 +5,7 @@ import { EditionUpgradeConfiguration } from './editionupgradeconfiguration.entit
 //#endregion
 
 export const EditionUpgradeConfigurationConfig = {
-  name: "EditionUpgradeConfiguration",
+  name: "editionUpgradeConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

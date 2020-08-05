@@ -5,7 +5,7 @@ import { DefaultManagedAppProtection } from './defaultmanagedappprotection.entit
 //#endregion
 
 export const DefaultManagedAppProtectionConfig = {
-  name: "DefaultManagedAppProtection",
+  name: "defaultManagedAppProtection",
   base: "microsoft.graph.managedAppProtection",
   annotations: [],
   fields: {

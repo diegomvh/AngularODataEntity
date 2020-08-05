@@ -1005,6 +1005,7 @@ import { GraphServiceContainer } from './graphservice.container';
 
 export const GraphSchema = {
   namespace: "microsoft.graph",
+  alias: "graph",
   enums: [RiskLevelConfig,
     AppliedConditionalAccessPolicyResultConfig,
     ConditionalAccessStatusConfig,

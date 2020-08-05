@@ -5,7 +5,7 @@ import { Image } from './image.entity';
 //#endregion
 
 export const ImageConfig = {
-  name: "Image",
+  name: "image",
   annotations: [],
   fields: {
     height: {type: 'Edm.Int32'},

@@ -5,7 +5,7 @@ import { SearchResult } from './searchresult.entity';
 //#endregion
 
 export const SearchResultConfig = {
-  name: "SearchResult",
+  name: "searchResult",
   annotations: [],
   fields: {
     onClickTelemetryUrl: {type: 'Edm.String'}

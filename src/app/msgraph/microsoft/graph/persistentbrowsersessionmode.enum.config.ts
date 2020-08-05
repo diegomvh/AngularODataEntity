@@ -5,6 +5,6 @@ import { PersistentBrowserSessionMode } from './persistentbrowsersessionmode.enu
 //#endregion
 
 export const PersistentBrowserSessionModeConfig = {
-  name: "PersistentBrowserSessionMode",
+  name: "persistentBrowserSessionMode",
   members: PersistentBrowserSessionMode
 } as EnumConfig<PersistentBrowserSessionMode>;

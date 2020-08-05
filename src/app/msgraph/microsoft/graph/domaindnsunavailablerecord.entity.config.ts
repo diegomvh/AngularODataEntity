@@ -5,7 +5,7 @@ import { DomainDnsUnavailableRecord } from './domaindnsunavailablerecord.entity'
 //#endregion
 
 export const DomainDnsUnavailableRecordConfig = {
-  name: "DomainDnsUnavailableRecord",
+  name: "domainDnsUnavailableRecord",
   base: "microsoft.graph.domainDnsRecord",
   annotations: [],
   fields: {

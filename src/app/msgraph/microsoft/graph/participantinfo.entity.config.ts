@@ -5,7 +5,7 @@ import { ParticipantInfo } from './participantinfo.entity';
 //#endregion
 
 export const ParticipantInfoConfig = {
-  name: "ParticipantInfo",
+  name: "participantInfo",
   annotations: [],
   fields: {
     identity: {type: 'graph.identitySet', nullable: false},

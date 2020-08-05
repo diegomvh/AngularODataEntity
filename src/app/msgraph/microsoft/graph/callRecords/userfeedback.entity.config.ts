@@ -5,7 +5,7 @@ import { UserFeedback } from './userfeedback.entity';
 //#endregion
 
 export const UserFeedbackConfig = {
-  name: "UserFeedback",
+  name: "userFeedback",
   annotations: [],
   fields: {
     text: {type: 'Edm.String'},

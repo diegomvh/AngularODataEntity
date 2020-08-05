@@ -5,7 +5,7 @@ import { WindowsInformationProtectionIPRangeCollection } from './windowsinformat
 //#endregion
 
 export const WindowsInformationProtectionIPRangeCollectionConfig = {
-  name: "WindowsInformationProtectionIPRangeCollection",
+  name: "windowsInformationProtectionIPRangeCollection",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String', nullable: false},

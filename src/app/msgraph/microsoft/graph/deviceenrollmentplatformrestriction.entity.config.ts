@@ -5,7 +5,7 @@ import { DeviceEnrollmentPlatformRestriction } from './deviceenrollmentplatformr
 //#endregion
 
 export const DeviceEnrollmentPlatformRestrictionConfig = {
-  name: "DeviceEnrollmentPlatformRestriction",
+  name: "deviceEnrollmentPlatformRestriction",
   annotations: [],
   fields: {
     platformBlocked: {type: 'Edm.Boolean', nullable: false},

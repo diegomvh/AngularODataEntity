@@ -5,6 +5,6 @@ import { AppliedConditionalAccessPolicyResult } from './appliedconditionalaccess
 //#endregion
 
 export const AppliedConditionalAccessPolicyResultConfig = {
-  name: "AppliedConditionalAccessPolicyResult",
+  name: "appliedConditionalAccessPolicyResult",
   members: AppliedConditionalAccessPolicyResult
 } as EnumConfig<AppliedConditionalAccessPolicyResult>;

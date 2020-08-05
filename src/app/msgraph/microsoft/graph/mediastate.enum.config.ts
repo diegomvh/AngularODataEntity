@@ -5,6 +5,6 @@ import { MediaState } from './mediastate.enum';
 //#endregion
 
 export const MediaStateConfig = {
-  name: "MediaState",
+  name: "mediaState",
   members: MediaState
 } as EnumConfig<MediaState>;

@@ -5,7 +5,7 @@ import { ConditionalAccessPolicy } from './conditionalaccesspolicy.entity';
 //#endregion
 
 export const ConditionalAccessPolicyConfig = {
-  name: "ConditionalAccessPolicy",
+  name: "conditionalAccessPolicy",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

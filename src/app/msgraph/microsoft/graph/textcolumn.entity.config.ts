@@ -5,7 +5,7 @@ import { TextColumn } from './textcolumn.entity';
 //#endregion
 
 export const TextColumnConfig = {
-  name: "TextColumn",
+  name: "textColumn",
   annotations: [],
   fields: {
     allowMultipleLines: {type: 'Edm.Boolean'},

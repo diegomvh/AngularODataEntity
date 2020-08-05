@@ -5,7 +5,7 @@ import { DomainState } from './domainstate.entity';
 //#endregion
 
 export const DomainStateConfig = {
-  name: "DomainState",
+  name: "domainState",
   annotations: [],
   fields: {
     status: {type: 'Edm.String'},

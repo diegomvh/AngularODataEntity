@@ -5,7 +5,7 @@ import { ManagedAppRegistration } from './managedappregistration.entity';
 //#endregion
 
 export const ManagedAppRegistrationConfig = {
-  name: "ManagedAppRegistration",
+  name: "managedAppRegistration",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

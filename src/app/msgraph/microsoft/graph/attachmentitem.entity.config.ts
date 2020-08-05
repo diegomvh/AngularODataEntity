@@ -5,7 +5,7 @@ import { AttachmentItem } from './attachmentitem.entity';
 //#endregion
 
 export const AttachmentItemConfig = {
-  name: "AttachmentItem",
+  name: "attachmentItem",
   annotations: [],
   fields: {
     attachmentType: {type: 'graph.attachmentType'},

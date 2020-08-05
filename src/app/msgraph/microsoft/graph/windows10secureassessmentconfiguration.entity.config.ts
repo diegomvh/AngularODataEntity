@@ -5,7 +5,7 @@ import { Windows10SecureAssessmentConfiguration } from './windows10secureassessm
 //#endregion
 
 export const Windows10SecureAssessmentConfigurationConfig = {
-  name: "Windows10SecureAssessmentConfiguration",
+  name: "windows10SecureAssessmentConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

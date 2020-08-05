@@ -5,6 +5,6 @@ import { OnenoteUserRole } from './onenoteuserrole.enum';
 //#endregion
 
 export const OnenoteUserRoleConfig = {
-  name: "OnenoteUserRole",
+  name: "onenoteUserRole",
   members: OnenoteUserRole
 } as EnumConfig<OnenoteUserRole>;

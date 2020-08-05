@@ -5,6 +5,6 @@ import { ConditionalAccessGrantControl } from './conditionalaccessgrantcontrol.e
 //#endregion
 
 export const ConditionalAccessGrantControlConfig = {
-  name: "ConditionalAccessGrantControl",
+  name: "conditionalAccessGrantControl",
   members: ConditionalAccessGrantControl
 } as EnumConfig<ConditionalAccessGrantControl>;

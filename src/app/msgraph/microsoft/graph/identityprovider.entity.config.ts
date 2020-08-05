@@ -5,7 +5,7 @@ import { IdentityProvider } from './identityprovider.entity';
 //#endregion
 
 export const IdentityProviderConfig = {
-  name: "IdentityProvider",
+  name: "identityProvider",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

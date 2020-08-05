@@ -5,7 +5,7 @@ import { AccessAction } from './accessaction.entity';
 //#endregion
 
 export const AccessActionConfig = {
-  name: "AccessAction",
+  name: "accessAction",
   open: true,
   annotations: [],
   fields: {

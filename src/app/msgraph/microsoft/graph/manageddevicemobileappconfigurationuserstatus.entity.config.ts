@@ -5,7 +5,7 @@ import { ManagedDeviceMobileAppConfigurationUserStatus } from './manageddevicemo
 //#endregion
 
 export const ManagedDeviceMobileAppConfigurationUserStatusConfig = {
-  name: "ManagedDeviceMobileAppConfigurationUserStatus",
+  name: "managedDeviceMobileAppConfigurationUserStatus",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

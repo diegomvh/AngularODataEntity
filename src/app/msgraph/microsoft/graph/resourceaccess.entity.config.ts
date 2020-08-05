@@ -5,7 +5,7 @@ import { ResourceAccess } from './resourceaccess.entity';
 //#endregion
 
 export const ResourceAccessConfig = {
-  name: "ResourceAccess",
+  name: "resourceAccess",
   annotations: [],
   fields: {
     id: {type: 'Edm.Guid', nullable: false},

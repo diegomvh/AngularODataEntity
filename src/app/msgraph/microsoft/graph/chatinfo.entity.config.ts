@@ -5,7 +5,7 @@ import { ChatInfo } from './chatinfo.entity';
 //#endregion
 
 export const ChatInfoConfig = {
-  name: "ChatInfo",
+  name: "chatInfo",
   annotations: [],
   fields: {
     threadId: {type: 'Edm.String'},

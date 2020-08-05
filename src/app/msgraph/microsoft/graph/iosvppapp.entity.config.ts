@@ -5,7 +5,7 @@ import { IosVppApp } from './iosvppapp.entity';
 //#endregion
 
 export const IosVppAppConfig = {
-  name: "IosVppApp",
+  name: "iosVppApp",
   base: "microsoft.graph.mobileApp",
   annotations: [],
   fields: {

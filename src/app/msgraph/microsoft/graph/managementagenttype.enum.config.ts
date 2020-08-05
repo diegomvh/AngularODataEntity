@@ -5,6 +5,6 @@ import { ManagementAgentType } from './managementagenttype.enum';
 //#endregion
 
 export const ManagementAgentTypeConfig = {
-  name: "ManagementAgentType",
+  name: "managementAgentType",
   members: ManagementAgentType
 } as EnumConfig<ManagementAgentType>;

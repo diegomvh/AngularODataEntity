@@ -5,7 +5,7 @@ import { KeyValuePair } from './keyvaluepair.entity';
 //#endregion
 
 export const KeyValuePairConfig = {
-  name: "KeyValuePair",
+  name: "keyValuePair",
   annotations: [],
   fields: {
     name: {type: 'Edm.String', nullable: false},

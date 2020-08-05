@@ -5,7 +5,7 @@ import { ServiceUserAgent } from './serviceuseragent.entity';
 //#endregion
 
 export const ServiceUserAgentConfig = {
-  name: "ServiceUserAgent",
+  name: "serviceUserAgent",
   base: "microsoft.graph.callRecords.userAgent",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { ManagedAppOperation } from './managedappoperation.entity';
 //#endregion
 
 export const ManagedAppOperationConfig = {
-  name: "ManagedAppOperation",
+  name: "managedAppOperation",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

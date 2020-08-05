@@ -5,7 +5,7 @@ import { ItemBody } from './itembody.entity';
 //#endregion
 
 export const ItemBodyConfig = {
-  name: "ItemBody",
+  name: "itemBody",
   annotations: [],
   fields: {
     contentType: {type: 'graph.bodyType'},

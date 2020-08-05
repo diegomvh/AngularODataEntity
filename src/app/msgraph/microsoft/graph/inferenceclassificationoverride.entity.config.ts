@@ -5,7 +5,7 @@ import { InferenceClassificationOverride } from './inferenceclassificationoverri
 //#endregion
 
 export const InferenceClassificationOverrideConfig = {
-  name: "InferenceClassificationOverride",
+  name: "inferenceClassificationOverride",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { RecordOperation } from './recordoperation.entity';
 //#endregion
 
 export const RecordOperationConfig = {
-  name: "RecordOperation",
+  name: "recordOperation",
   base: "microsoft.graph.commsOperation",
   open: true,
   annotations: [],

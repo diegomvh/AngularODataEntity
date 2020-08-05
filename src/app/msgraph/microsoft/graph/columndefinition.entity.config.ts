@@ -5,7 +5,7 @@ import { ColumnDefinition } from './columndefinition.entity';
 //#endregion
 
 export const ColumnDefinitionConfig = {
-  name: "ColumnDefinition",
+  name: "columnDefinition",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

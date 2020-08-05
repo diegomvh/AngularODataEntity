@@ -5,7 +5,7 @@ import { OnPremisesConditionalAccessSettings } from './onpremisesconditionalacce
 //#endregion
 
 export const OnPremisesConditionalAccessSettingsConfig = {
-  name: "OnPremisesConditionalAccessSettings",
+  name: "onPremisesConditionalAccessSettings",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

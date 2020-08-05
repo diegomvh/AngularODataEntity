@@ -5,7 +5,7 @@ import { ConditionalAccessApplications } from './conditionalaccessapplications.e
 //#endregion
 
 export const ConditionalAccessApplicationsConfig = {
-  name: "ConditionalAccessApplications",
+  name: "conditionalAccessApplications",
   annotations: [],
   fields: {
     includeApplications: {type: 'Edm.String', nullable: false, collection: true},

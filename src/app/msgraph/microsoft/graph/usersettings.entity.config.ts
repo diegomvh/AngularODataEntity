@@ -5,7 +5,7 @@ import { UserSettings } from './usersettings.entity';
 //#endregion
 
 export const UserSettingsConfig = {
-  name: "UserSettings",
+  name: "userSettings",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

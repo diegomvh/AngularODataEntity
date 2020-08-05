@@ -5,7 +5,7 @@ import { WorkbookRangeSort } from './workbookrangesort.entity';
 //#endregion
 
 export const WorkbookRangeSortConfig = {
-  name: "WorkbookRangeSort",
+  name: "workbookRangeSort",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

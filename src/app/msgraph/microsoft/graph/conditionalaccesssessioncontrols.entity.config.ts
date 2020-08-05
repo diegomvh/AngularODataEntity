@@ -5,7 +5,7 @@ import { ConditionalAccessSessionControls } from './conditionalaccesssessioncont
 //#endregion
 
 export const ConditionalAccessSessionControlsConfig = {
-  name: "ConditionalAccessSessionControls",
+  name: "conditionalAccessSessionControls",
   annotations: [],
   fields: {
     applicationEnforcedRestrictions: {type: 'graph.applicationEnforcedRestrictionsSessionControl'},

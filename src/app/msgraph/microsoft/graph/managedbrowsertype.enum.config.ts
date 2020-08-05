@@ -5,7 +5,7 @@ import { ManagedBrowserType } from './managedbrowsertype.enum';
 //#endregion
 
 export const ManagedBrowserTypeConfig = {
-  name: "ManagedBrowserType",
+  name: "managedBrowserType",
   flags: true,
   members: ManagedBrowserType
 } as EnumConfig<ManagedBrowserType>;

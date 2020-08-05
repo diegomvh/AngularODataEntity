@@ -5,7 +5,7 @@ import { MessageRuleActions } from './messageruleactions.entity';
 //#endregion
 
 export const MessageRuleActionsConfig = {
-  name: "MessageRuleActions",
+  name: "messageRuleActions",
   annotations: [],
   fields: {
     moveToFolder: {type: 'Edm.String'},

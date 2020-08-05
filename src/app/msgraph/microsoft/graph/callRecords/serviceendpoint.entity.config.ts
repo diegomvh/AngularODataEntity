@@ -5,7 +5,7 @@ import { ServiceEndpoint } from './serviceendpoint.entity';
 //#endregion
 
 export const ServiceEndpointConfig = {
-  name: "ServiceEndpoint",
+  name: "serviceEndpoint",
   base: "microsoft.graph.callRecords.endpoint",
   annotations: [],
   fields: {

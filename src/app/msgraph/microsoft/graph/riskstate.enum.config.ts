@@ -5,6 +5,6 @@ import { RiskState } from './riskstate.enum';
 //#endregion
 
 export const RiskStateConfig = {
-  name: "RiskState",
+  name: "riskState",
   members: RiskState
 } as EnumConfig<RiskState>;

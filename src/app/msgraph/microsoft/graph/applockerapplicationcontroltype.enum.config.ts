@@ -5,6 +5,6 @@ import { AppLockerApplicationControlType } from './applockerapplicationcontrolty
 //#endregion
 
 export const AppLockerApplicationControlTypeConfig = {
-  name: "AppLockerApplicationControlType",
+  name: "appLockerApplicationControlType",
   members: AppLockerApplicationControlType
 } as EnumConfig<AppLockerApplicationControlType>;

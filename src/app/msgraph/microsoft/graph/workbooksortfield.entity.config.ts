@@ -5,7 +5,7 @@ import { WorkbookSortField } from './workbooksortfield.entity';
 //#endregion
 
 export const WorkbookSortFieldConfig = {
-  name: "WorkbookSortField",
+  name: "workbookSortField",
   annotations: [],
   fields: {
     ascending: {type: 'Edm.Boolean', nullable: false},

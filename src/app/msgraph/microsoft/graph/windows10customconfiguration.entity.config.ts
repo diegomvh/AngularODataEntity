@@ -5,7 +5,7 @@ import { Windows10CustomConfiguration } from './windows10customconfiguration.ent
 //#endregion
 
 export const Windows10CustomConfigurationConfig = {
-  name: "Windows10CustomConfiguration",
+  name: "windows10CustomConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

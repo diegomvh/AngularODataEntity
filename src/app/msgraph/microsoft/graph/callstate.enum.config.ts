@@ -5,6 +5,6 @@ import { CallState } from './callstate.enum';
 //#endregion
 
 export const CallStateConfig = {
-  name: "CallState",
+  name: "callState",
   members: CallState
 } as EnumConfig<CallState>;

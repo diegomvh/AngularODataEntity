@@ -5,7 +5,7 @@ import { Message } from './message.entity';
 //#endregion
 
 export const MessageConfig = {
-  name: "Message",
+  name: "message",
   base: "microsoft.graph.outlookItem",
   open: true,
   annotations: [],

@@ -5,7 +5,7 @@ import { Diagnostic } from './diagnostic.entity';
 //#endregion
 
 export const DiagnosticConfig = {
-  name: "Diagnostic",
+  name: "diagnostic",
   annotations: [],
   fields: {
     message: {type: 'Edm.String'},

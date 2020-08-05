@@ -5,7 +5,7 @@ import { MobileThreatDefenseConnector } from './mobilethreatdefenseconnector.ent
 //#endregion
 
 export const MobileThreatDefenseConnectorConfig = {
-  name: "MobileThreatDefenseConnector",
+  name: "mobileThreatDefenseConnector",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

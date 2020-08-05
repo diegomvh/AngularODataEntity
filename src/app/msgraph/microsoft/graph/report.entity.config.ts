@@ -5,7 +5,7 @@ import { Report } from './report.entity';
 //#endregion
 
 export const ReportConfig = {
-  name: "Report",
+  name: "report",
   annotations: [],
   fields: {
     content: {type: 'Edm.Stream'}

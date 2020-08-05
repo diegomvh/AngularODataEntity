@@ -5,7 +5,7 @@ import { DeviceConfigurationDeviceOverview } from './deviceconfigurationdeviceov
 //#endregion
 
 export const DeviceConfigurationDeviceOverviewConfig = {
-  name: "DeviceConfigurationDeviceOverview",
+  name: "deviceConfigurationDeviceOverview",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

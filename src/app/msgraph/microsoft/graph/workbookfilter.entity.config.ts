@@ -5,7 +5,7 @@ import { WorkbookFilter } from './workbookfilter.entity';
 //#endregion
 
 export const WorkbookFilterConfig = {
-  name: "WorkbookFilter",
+  name: "workbookFilter",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

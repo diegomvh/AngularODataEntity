@@ -5,7 +5,7 @@ import { ManagedAndroidLobApp } from './managedandroidlobapp.entity';
 //#endregion
 
 export const ManagedAndroidLobAppConfig = {
-  name: "ManagedAndroidLobApp",
+  name: "managedAndroidLobApp",
   base: "microsoft.graph.managedMobileLobApp",
   annotations: [],
   fields: {

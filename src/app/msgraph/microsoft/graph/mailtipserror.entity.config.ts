@@ -5,7 +5,7 @@ import { MailTipsError } from './mailtipserror.entity';
 //#endregion
 
 export const MailTipsErrorConfig = {
-  name: "MailTipsError",
+  name: "mailTipsError",
   annotations: [],
   fields: {
     message: {type: 'Edm.String'},

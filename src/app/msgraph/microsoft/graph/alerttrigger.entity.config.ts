@@ -5,7 +5,7 @@ import { AlertTrigger } from './alerttrigger.entity';
 //#endregion
 
 export const AlertTriggerConfig = {
-  name: "AlertTrigger",
+  name: "alertTrigger",
   annotations: [],
   fields: {
     name: {type: 'Edm.String'},

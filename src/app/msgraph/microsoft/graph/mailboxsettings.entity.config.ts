@@ -5,7 +5,7 @@ import { MailboxSettings } from './mailboxsettings.entity';
 //#endregion
 
 export const MailboxSettingsConfig = {
-  name: "MailboxSettings",
+  name: "mailboxSettings",
   annotations: [],
   fields: {
     automaticRepliesSetting: {type: 'graph.automaticRepliesSetting'},

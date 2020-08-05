@@ -5,7 +5,7 @@ import { ConditionalAccessConditionSet } from './conditionalaccessconditionset.e
 //#endregion
 
 export const ConditionalAccessConditionSetConfig = {
-  name: "ConditionalAccessConditionSet",
+  name: "conditionalAccessConditionSet",
   annotations: [],
   fields: {
     applications: {type: 'graph.conditionalAccessApplications'},

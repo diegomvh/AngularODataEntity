@@ -5,6 +5,6 @@ import { ApplicationGuardBlockClipboardSharingType } from './applicationguardblo
 //#endregion
 
 export const ApplicationGuardBlockClipboardSharingTypeConfig = {
-  name: "ApplicationGuardBlockClipboardSharingType",
+  name: "applicationGuardBlockClipboardSharingType",
   members: ApplicationGuardBlockClipboardSharingType
 } as EnumConfig<ApplicationGuardBlockClipboardSharingType>;

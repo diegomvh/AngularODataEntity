@@ -5,6 +5,6 @@ import { Sensitivity } from './sensitivity.enum';
 //#endregion
 
 export const SensitivityConfig = {
-  name: "Sensitivity",
+  name: "sensitivity",
   members: Sensitivity
 } as EnumConfig<Sensitivity>;

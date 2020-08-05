@@ -5,7 +5,7 @@ import { ConditionalAccessLocations } from './conditionalaccesslocations.entity'
 //#endregion
 
 export const ConditionalAccessLocationsConfig = {
-  name: "ConditionalAccessLocations",
+  name: "conditionalAccessLocations",
   annotations: [],
   fields: {
     includeLocations: {type: 'Edm.String', nullable: false, collection: true},

@@ -5,7 +5,7 @@ import { WindowsInformationProtectionAppLockerFile } from './windowsinformationp
 //#endregion
 
 export const WindowsInformationProtectionAppLockerFileConfig = {
-  name: "WindowsInformationProtectionAppLockerFile",
+  name: "windowsInformationProtectionAppLockerFile",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

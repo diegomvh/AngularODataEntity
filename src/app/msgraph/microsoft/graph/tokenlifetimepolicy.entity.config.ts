@@ -5,7 +5,7 @@ import { TokenLifetimePolicy } from './tokenlifetimepolicy.entity';
 //#endregion
 
 export const TokenLifetimePolicyConfig = {
-  name: "TokenLifetimePolicy",
+  name: "tokenLifetimePolicy",
   base: "microsoft.graph.stsPolicy",
   annotations: [],
   fields: {

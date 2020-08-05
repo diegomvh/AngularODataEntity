@@ -5,7 +5,7 @@ import { OptionalClaims } from './optionalclaims.entity';
 //#endregion
 
 export const OptionalClaimsConfig = {
-  name: "OptionalClaims",
+  name: "optionalClaims",
   annotations: [],
   fields: {
     idToken: {type: 'graph.optionalClaim', collection: true},

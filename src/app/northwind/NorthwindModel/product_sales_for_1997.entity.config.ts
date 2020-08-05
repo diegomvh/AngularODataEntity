@@ -5,7 +5,7 @@ import { ProductSalesFor1997 } from './product_sales_for_1997.entity';
 //#endregion
 
 export const ProductSalesFor1997Config = {
-  name: "ProductSalesFor1997",
+  name: "Product_Sales_for_1997",
   annotations: [],
   fields: {
     CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},

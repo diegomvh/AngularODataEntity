@@ -5,7 +5,7 @@ import { IdentityContainer } from './identitycontainer.entity';
 //#endregion
 
 export const IdentityContainerConfig = {
-  name: "IdentityContainer",
+  name: "identityContainer",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

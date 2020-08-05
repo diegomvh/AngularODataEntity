@@ -5,7 +5,7 @@ import { OutlookItem } from './outlookitem.entity';
 //#endregion
 
 export const OutlookItemConfig = {
-  name: "OutlookItem",
+  name: "outlookItem",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { VisualInfo } from './visualinfo.entity';
 //#endregion
 
 export const VisualInfoConfig = {
-  name: "VisualInfo",
+  name: "visualInfo",
   annotations: [],
   fields: {
     attribution: {type: 'graph.imageInfo'},

@@ -5,7 +5,7 @@ import { OpenTypeExtension } from './opentypeextension.entity';
 //#endregion
 
 export const OpenTypeExtensionConfig = {
-  name: "OpenTypeExtension",
+  name: "openTypeExtension",
   base: "microsoft.graph.extension",
   open: true,
   annotations: [],

@@ -5,7 +5,7 @@ import { PlannerPlanDetails } from './plannerplandetails.entity';
 //#endregion
 
 export const PlannerPlanDetailsConfig = {
-  name: "PlannerPlanDetails",
+  name: "plannerPlanDetails",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { WorkbookRangeBorder } from './workbookrangeborder.entity';
 //#endregion
 
 export const WorkbookRangeBorderConfig = {
-  name: "WorkbookRangeBorder",
+  name: "workbookRangeBorder",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

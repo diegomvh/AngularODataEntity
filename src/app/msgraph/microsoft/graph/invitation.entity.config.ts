@@ -5,7 +5,7 @@ import { Invitation } from './invitation.entity';
 //#endregion
 
 export const InvitationConfig = {
-  name: "Invitation",
+  name: "invitation",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

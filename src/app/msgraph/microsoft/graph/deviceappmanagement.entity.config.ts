@@ -5,7 +5,7 @@ import { DeviceAppManagement } from './deviceappmanagement.entity';
 //#endregion
 
 export const DeviceAppManagementConfig = {
-  name: "DeviceAppManagement",
+  name: "deviceAppManagement",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

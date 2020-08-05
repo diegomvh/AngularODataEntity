@@ -5,7 +5,7 @@ import { EdgeSearchEngineBase } from './edgesearchenginebase.entity';
 //#endregion
 
 export const EdgeSearchEngineBaseConfig = {
-  name: "EdgeSearchEngineBase",
+  name: "edgeSearchEngineBase",
   annotations: [],
   fields: {
     

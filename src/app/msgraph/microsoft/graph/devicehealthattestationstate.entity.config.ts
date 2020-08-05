@@ -5,7 +5,7 @@ import { DeviceHealthAttestationState } from './devicehealthattestationstate.ent
 //#endregion
 
 export const DeviceHealthAttestationStateConfig = {
-  name: "DeviceHealthAttestationState",
+  name: "deviceHealthAttestationState",
   annotations: [],
   fields: {
     lastUpdateDateTime: {type: 'Edm.String'},

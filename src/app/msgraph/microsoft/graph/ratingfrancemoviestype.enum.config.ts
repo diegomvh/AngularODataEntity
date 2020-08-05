@@ -5,6 +5,6 @@ import { RatingFranceMoviesType } from './ratingfrancemoviestype.enum';
 //#endregion
 
 export const RatingFranceMoviesTypeConfig = {
-  name: "RatingFranceMoviesType",
+  name: "ratingFranceMoviesType",
   members: RatingFranceMoviesType
 } as EnumConfig<RatingFranceMoviesType>;

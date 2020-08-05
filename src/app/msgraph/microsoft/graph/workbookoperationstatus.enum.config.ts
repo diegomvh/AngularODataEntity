@@ -5,6 +5,6 @@ import { WorkbookOperationStatus } from './workbookoperationstatus.enum';
 //#endregion
 
 export const WorkbookOperationStatusConfig = {
-  name: "WorkbookOperationStatus",
+  name: "workbookOperationStatus",
   members: WorkbookOperationStatus
 } as EnumConfig<WorkbookOperationStatus>;

@@ -5,7 +5,7 @@ import { IosVppAppAssignmentSettings } from './iosvppappassignmentsettings.entit
 //#endregion
 
 export const IosVppAppAssignmentSettingsConfig = {
-  name: "IosVppAppAssignmentSettings",
+  name: "iosVppAppAssignmentSettings",
   base: "microsoft.graph.mobileAppAssignmentSettings",
   annotations: [],
   fields: {

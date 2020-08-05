@@ -5,7 +5,7 @@ import { ExternalLink } from './externallink.entity';
 //#endregion
 
 export const ExternalLinkConfig = {
-  name: "ExternalLink",
+  name: "externalLink",
   annotations: [],
   fields: {
     href: {type: 'Edm.String'}

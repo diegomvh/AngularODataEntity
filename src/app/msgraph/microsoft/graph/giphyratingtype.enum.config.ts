@@ -5,6 +5,6 @@ import { GiphyRatingType } from './giphyratingtype.enum';
 //#endregion
 
 export const GiphyRatingTypeConfig = {
-  name: "GiphyRatingType",
+  name: "giphyRatingType",
   members: GiphyRatingType
 } as EnumConfig<GiphyRatingType>;

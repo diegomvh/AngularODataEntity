@@ -5,6 +5,6 @@ import { Modality } from './modality.enum';
 //#endregion
 
 export const ModalityConfig = {
-  name: "Modality",
+  name: "modality",
   members: Modality
 } as EnumConfig<Modality>;

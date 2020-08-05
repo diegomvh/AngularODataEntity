@@ -5,7 +5,7 @@ import { ToneInfo } from './toneinfo.entity';
 //#endregion
 
 export const ToneInfoConfig = {
-  name: "ToneInfo",
+  name: "toneInfo",
   annotations: [],
   fields: {
     sequenceId: {type: 'Edm.Int64', nullable: false},

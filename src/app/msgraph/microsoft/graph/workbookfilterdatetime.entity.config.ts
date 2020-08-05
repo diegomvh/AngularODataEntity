@@ -5,7 +5,7 @@ import { WorkbookFilterDatetime } from './workbookfilterdatetime.entity';
 //#endregion
 
 export const WorkbookFilterDatetimeConfig = {
-  name: "WorkbookFilterDatetime",
+  name: "workbookFilterDatetime",
   annotations: [],
   fields: {
     date: {type: 'Edm.String'},

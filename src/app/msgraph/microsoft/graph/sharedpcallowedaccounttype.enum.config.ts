@@ -5,7 +5,7 @@ import { SharedPCAllowedAccountType } from './sharedpcallowedaccounttype.enum';
 //#endregion
 
 export const SharedPCAllowedAccountTypeConfig = {
-  name: "SharedPCAllowedAccountType",
+  name: "sharedPCAllowedAccountType",
   flags: true,
   members: SharedPCAllowedAccountType
 } as EnumConfig<SharedPCAllowedAccountType>;

@@ -5,6 +5,6 @@ import { AutomaticUpdateMode } from './automaticupdatemode.enum';
 //#endregion
 
 export const AutomaticUpdateModeConfig = {
-  name: "AutomaticUpdateMode",
+  name: "automaticUpdateMode",
   members: AutomaticUpdateMode
 } as EnumConfig<AutomaticUpdateMode>;

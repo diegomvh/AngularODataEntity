@@ -5,6 +5,6 @@ import { AndroidWorkProfileRequiredPasswordType } from './androidworkprofilerequ
 //#endregion
 
 export const AndroidWorkProfileRequiredPasswordTypeConfig = {
-  name: "AndroidWorkProfileRequiredPasswordType",
+  name: "androidWorkProfileRequiredPasswordType",
   members: AndroidWorkProfileRequiredPasswordType
 } as EnumConfig<AndroidWorkProfileRequiredPasswordType>;

@@ -5,7 +5,7 @@ import { RemoteLockActionResult } from './remotelockactionresult.entity';
 //#endregion
 
 export const RemoteLockActionResultConfig = {
-  name: "RemoteLockActionResult",
+  name: "remoteLockActionResult",
   base: "microsoft.graph.deviceActionResult",
   annotations: [],
   fields: {

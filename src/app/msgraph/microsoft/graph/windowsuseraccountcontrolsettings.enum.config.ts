@@ -5,6 +5,6 @@ import { WindowsUserAccountControlSettings } from './windowsuseraccountcontrolse
 //#endregion
 
 export const WindowsUserAccountControlSettingsConfig = {
-  name: "WindowsUserAccountControlSettings",
+  name: "windowsUserAccountControlSettings",
   members: WindowsUserAccountControlSettings
 } as EnumConfig<WindowsUserAccountControlSettings>;

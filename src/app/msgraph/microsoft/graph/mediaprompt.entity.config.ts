@@ -5,7 +5,7 @@ import { MediaPrompt } from './mediaprompt.entity';
 //#endregion
 
 export const MediaPromptConfig = {
-  name: "MediaPrompt",
+  name: "mediaPrompt",
   base: "microsoft.graph.prompt",
   annotations: [],
   fields: {

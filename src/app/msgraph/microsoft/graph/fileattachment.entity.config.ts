@@ -5,7 +5,7 @@ import { FileAttachment } from './fileattachment.entity';
 //#endregion
 
 export const FileAttachmentConfig = {
-  name: "FileAttachment",
+  name: "fileAttachment",
   base: "microsoft.graph.attachment",
   annotations: [],
   fields: {

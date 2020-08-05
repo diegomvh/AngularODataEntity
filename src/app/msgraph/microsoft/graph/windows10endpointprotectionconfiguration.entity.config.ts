@@ -5,7 +5,7 @@ import { Windows10EndpointProtectionConfiguration } from './windows10endpointpro
 //#endregion
 
 export const Windows10EndpointProtectionConfigurationConfig = {
-  name: "Windows10EndpointProtectionConfiguration",
+  name: "windows10EndpointProtectionConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

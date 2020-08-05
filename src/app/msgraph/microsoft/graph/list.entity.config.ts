@@ -5,7 +5,7 @@ import { List } from './list.entity';
 //#endregion
 
 export const ListConfig = {
-  name: "List",
+  name: "list",
   base: "microsoft.graph.baseItem",
   annotations: [],
   fields: {

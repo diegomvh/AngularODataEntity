@@ -5,7 +5,7 @@ import { TimeZoneBase } from './timezonebase.entity';
 //#endregion
 
 export const TimeZoneBaseConfig = {
-  name: "TimeZoneBase",
+  name: "timeZoneBase",
   annotations: [],
   fields: {
     name: {type: 'Edm.String'}

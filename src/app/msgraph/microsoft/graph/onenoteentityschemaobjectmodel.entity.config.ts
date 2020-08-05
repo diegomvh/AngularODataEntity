@@ -5,7 +5,7 @@ import { OnenoteEntitySchemaObjectModel } from './onenoteentityschemaobjectmodel
 //#endregion
 
 export const OnenoteEntitySchemaObjectModelConfig = {
-  name: "OnenoteEntitySchemaObjectModel",
+  name: "onenoteEntitySchemaObjectModel",
   base: "microsoft.graph.onenoteEntityBaseModel",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { BitLockerRemovableDrivePolicy } from './bitlockerremovabledrivepolicy.e
 //#endregion
 
 export const BitLockerRemovableDrivePolicyConfig = {
-  name: "BitLockerRemovableDrivePolicy",
+  name: "bitLockerRemovableDrivePolicy",
   annotations: [],
   fields: {
     encryptionMethod: {type: 'graph.bitLockerEncryptionMethod'},

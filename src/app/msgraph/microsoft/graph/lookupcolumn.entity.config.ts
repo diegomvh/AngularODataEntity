@@ -5,7 +5,7 @@ import { LookupColumn } from './lookupcolumn.entity';
 //#endregion
 
 export const LookupColumnConfig = {
-  name: "LookupColumn",
+  name: "lookupColumn",
   annotations: [],
   fields: {
     allowMultipleValues: {type: 'Edm.Boolean'},

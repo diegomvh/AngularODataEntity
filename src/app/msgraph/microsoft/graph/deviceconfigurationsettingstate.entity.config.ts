@@ -5,7 +5,7 @@ import { DeviceConfigurationSettingState } from './deviceconfigurationsettingsta
 //#endregion
 
 export const DeviceConfigurationSettingStateConfig = {
-  name: "DeviceConfigurationSettingState",
+  name: "deviceConfigurationSettingState",
   annotations: [],
   fields: {
     setting: {type: 'Edm.String'},

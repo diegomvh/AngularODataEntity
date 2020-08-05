@@ -5,6 +5,6 @@ import { DeviceManagementExchangeAccessStateReason } from './devicemanagementexc
 //#endregion
 
 export const DeviceManagementExchangeAccessStateReasonConfig = {
-  name: "DeviceManagementExchangeAccessStateReason",
+  name: "deviceManagementExchangeAccessStateReason",
   members: DeviceManagementExchangeAccessStateReason
 } as EnumConfig<DeviceManagementExchangeAccessStateReason>;

@@ -5,6 +5,6 @@ import { AutomaticRepliesStatus } from './automaticrepliesstatus.enum';
 //#endregion
 
 export const AutomaticRepliesStatusConfig = {
-  name: "AutomaticRepliesStatus",
+  name: "automaticRepliesStatus",
   members: AutomaticRepliesStatus
 } as EnumConfig<AutomaticRepliesStatus>;

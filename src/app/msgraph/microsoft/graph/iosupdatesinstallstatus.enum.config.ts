@@ -5,6 +5,6 @@ import { IosUpdatesInstallStatus } from './iosupdatesinstallstatus.enum';
 //#endregion
 
 export const IosUpdatesInstallStatusConfig = {
-  name: "IosUpdatesInstallStatus",
+  name: "iosUpdatesInstallStatus",
   members: IosUpdatesInstallStatus
 } as EnumConfig<IosUpdatesInstallStatus>;

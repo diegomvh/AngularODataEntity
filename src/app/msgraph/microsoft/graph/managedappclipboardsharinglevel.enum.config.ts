@@ -5,6 +5,6 @@ import { ManagedAppClipboardSharingLevel } from './managedappclipboardsharinglev
 //#endregion
 
 export const ManagedAppClipboardSharingLevelConfig = {
-  name: "ManagedAppClipboardSharingLevel",
+  name: "managedAppClipboardSharingLevel",
   members: ManagedAppClipboardSharingLevel
 } as EnumConfig<ManagedAppClipboardSharingLevel>;

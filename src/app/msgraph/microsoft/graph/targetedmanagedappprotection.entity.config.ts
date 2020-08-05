@@ -5,7 +5,7 @@ import { TargetedManagedAppProtection } from './targetedmanagedappprotection.ent
 //#endregion
 
 export const TargetedManagedAppProtectionConfig = {
-  name: "TargetedManagedAppProtection",
+  name: "targetedManagedAppProtection",
   base: "microsoft.graph.managedAppProtection",
   annotations: [],
   fields: {

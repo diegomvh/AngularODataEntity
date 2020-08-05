@@ -5,7 +5,7 @@ import { Windows10MobileCompliancePolicy } from './windows10mobilecompliancepoli
 //#endregion
 
 export const Windows10MobileCompliancePolicyConfig = {
-  name: "Windows10MobileCompliancePolicy",
+  name: "windows10MobileCompliancePolicy",
   base: "microsoft.graph.deviceCompliancePolicy",
   annotations: [],
   fields: {

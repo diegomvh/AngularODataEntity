@@ -5,7 +5,7 @@ import { TeamMessagingSettings } from './teammessagingsettings.entity';
 //#endregion
 
 export const TeamMessagingSettingsConfig = {
-  name: "TeamMessagingSettings",
+  name: "teamMessagingSettings",
   annotations: [],
   fields: {
     allowUserEditMessages: {type: 'Edm.Boolean'},

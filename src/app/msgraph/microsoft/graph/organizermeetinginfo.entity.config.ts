@@ -5,7 +5,7 @@ import { OrganizerMeetingInfo } from './organizermeetinginfo.entity';
 //#endregion
 
 export const OrganizerMeetingInfoConfig = {
-  name: "OrganizerMeetingInfo",
+  name: "organizerMeetingInfo",
   base: "microsoft.graph.meetingInfo",
   open: true,
   annotations: [],

@@ -5,6 +5,6 @@ import { WindowsStartMenuModeType } from './windowsstartmenumodetype.enum';
 //#endregion
 
 export const WindowsStartMenuModeTypeConfig = {
-  name: "WindowsStartMenuModeType",
+  name: "windowsStartMenuModeType",
   members: WindowsStartMenuModeType
 } as EnumConfig<WindowsStartMenuModeType>;

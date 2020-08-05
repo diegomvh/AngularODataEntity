@@ -5,6 +5,6 @@ import { MdmAppConfigKeyType } from './mdmappconfigkeytype.enum';
 //#endregion
 
 export const MdmAppConfigKeyTypeConfig = {
-  name: "MdmAppConfigKeyType",
+  name: "mdmAppConfigKeyType",
   members: MdmAppConfigKeyType
 } as EnumConfig<MdmAppConfigKeyType>;

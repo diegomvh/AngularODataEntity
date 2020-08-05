@@ -5,7 +5,7 @@ import { ImageInfo } from './imageinfo.entity';
 //#endregion
 
 export const ImageInfoConfig = {
-  name: "ImageInfo",
+  name: "imageInfo",
   annotations: [],
   fields: {
     iconUrl: {type: 'Edm.String'},

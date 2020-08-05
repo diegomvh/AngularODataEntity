@@ -5,7 +5,7 @@ import { Application } from './application.entity';
 //#endregion
 
 export const ApplicationConfig = {
-  name: "Application",
+  name: "application",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

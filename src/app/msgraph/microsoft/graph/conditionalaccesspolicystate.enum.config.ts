@@ -5,6 +5,6 @@ import { ConditionalAccessPolicyState } from './conditionalaccesspolicystate.enu
 //#endregion
 
 export const ConditionalAccessPolicyStateConfig = {
-  name: "ConditionalAccessPolicyState",
+  name: "conditionalAccessPolicyState",
   members: ConditionalAccessPolicyState
 } as EnumConfig<ConditionalAccessPolicyState>;

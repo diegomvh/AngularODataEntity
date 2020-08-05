@@ -5,7 +5,7 @@ import { SharingInvitation } from './sharinginvitation.entity';
 //#endregion
 
 export const SharingInvitationConfig = {
-  name: "SharingInvitation",
+  name: "sharingInvitation",
   annotations: [],
   fields: {
     email: {type: 'Edm.String'},

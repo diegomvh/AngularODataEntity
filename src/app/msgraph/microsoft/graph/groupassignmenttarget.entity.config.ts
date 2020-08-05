@@ -5,7 +5,7 @@ import { GroupAssignmentTarget } from './groupassignmenttarget.entity';
 //#endregion
 
 export const GroupAssignmentTargetConfig = {
-  name: "GroupAssignmentTarget",
+  name: "groupAssignmentTarget",
   base: "microsoft.graph.deviceAndAppManagementAssignmentTarget",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { MuteParticipantOperation } from './muteparticipantoperation.entity';
 //#endregion
 
 export const MuteParticipantOperationConfig = {
-  name: "MuteParticipantOperation",
+  name: "muteParticipantOperation",
   base: "microsoft.graph.commsOperation",
   open: true,
   annotations: [],

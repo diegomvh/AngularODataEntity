@@ -5,6 +5,6 @@ import { DeviceManagementSubscriptionState } from './devicemanagementsubscriptio
 //#endregion
 
 export const DeviceManagementSubscriptionStateConfig = {
-  name: "DeviceManagementSubscriptionState",
+  name: "deviceManagementSubscriptionState",
   members: DeviceManagementSubscriptionState
 } as EnumConfig<DeviceManagementSubscriptionState>;

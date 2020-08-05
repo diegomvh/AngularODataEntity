@@ -5,6 +5,6 @@ import { ProductFamily } from './productfamily.enum';
 //#endregion
 
 export const ProductFamilyConfig = {
-  name: "ProductFamily",
+  name: "productFamily",
   members: ProductFamily
 } as EnumConfig<ProductFamily>;

@@ -5,7 +5,7 @@ import { PublicErrorDetail } from './publicerrordetail.entity';
 //#endregion
 
 export const PublicErrorDetailConfig = {
-  name: "PublicErrorDetail",
+  name: "publicErrorDetail",
   annotations: [],
   fields: {
     code: {type: 'Edm.String'},

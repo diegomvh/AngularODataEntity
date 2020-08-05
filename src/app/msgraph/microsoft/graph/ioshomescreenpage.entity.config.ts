@@ -5,7 +5,7 @@ import { IosHomeScreenPage } from './ioshomescreenpage.entity';
 //#endregion
 
 export const IosHomeScreenPageConfig = {
-  name: "IosHomeScreenPage",
+  name: "iosHomeScreenPage",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String'},

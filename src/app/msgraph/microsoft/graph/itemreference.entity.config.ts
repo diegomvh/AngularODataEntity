@@ -5,7 +5,7 @@ import { ItemReference } from './itemreference.entity';
 //#endregion
 
 export const ItemReferenceConfig = {
-  name: "ItemReference",
+  name: "itemReference",
   annotations: [],
   fields: {
     driveId: {type: 'Edm.String'},

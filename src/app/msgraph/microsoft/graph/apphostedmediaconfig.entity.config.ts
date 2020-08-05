@@ -5,7 +5,7 @@ import { AppHostedMediaConfig } from './apphostedmediaconfig.entity';
 //#endregion
 
 export const AppHostedMediaConfigConfig = {
-  name: "AppHostedMediaConfig",
+  name: "appHostedMediaConfig",
   base: "microsoft.graph.mediaConfig",
   annotations: [],
   fields: {

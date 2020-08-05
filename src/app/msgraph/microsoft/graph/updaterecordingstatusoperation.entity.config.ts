@@ -5,7 +5,7 @@ import { UpdateRecordingStatusOperation } from './updaterecordingstatusoperation
 //#endregion
 
 export const UpdateRecordingStatusOperationConfig = {
-  name: "UpdateRecordingStatusOperation",
+  name: "updateRecordingStatusOperation",
   base: "microsoft.graph.commsOperation",
   open: true,
   annotations: [],

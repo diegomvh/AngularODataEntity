@@ -5,7 +5,7 @@ import { OperationError } from './operationerror.entity';
 //#endregion
 
 export const OperationErrorConfig = {
-  name: "OperationError",
+  name: "operationError",
   annotations: [],
   fields: {
     code: {type: 'Edm.String'},

@@ -5,6 +5,6 @@ import { WindowsHelloForBusinessPinUsage } from './windowshelloforbusinesspinusa
 //#endregion
 
 export const WindowsHelloForBusinessPinUsageConfig = {
-  name: "WindowsHelloForBusinessPinUsage",
+  name: "windowsHelloForBusinessPinUsage",
   members: WindowsHelloForBusinessPinUsage
 } as EnumConfig<WindowsHelloForBusinessPinUsage>;

@@ -5,6 +5,6 @@ import { WindowsUpdateType } from './windowsupdatetype.enum';
 //#endregion
 
 export const WindowsUpdateTypeConfig = {
-  name: "WindowsUpdateType",
+  name: "windowsUpdateType",
   members: WindowsUpdateType
 } as EnumConfig<WindowsUpdateType>;

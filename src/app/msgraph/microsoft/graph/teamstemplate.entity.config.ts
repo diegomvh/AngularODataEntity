@@ -5,7 +5,7 @@ import { TeamsTemplate } from './teamstemplate.entity';
 //#endregion
 
 export const TeamsTemplateConfig = {
-  name: "TeamsTemplate",
+  name: "teamsTemplate",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

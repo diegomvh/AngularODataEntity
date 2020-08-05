@@ -5,6 +5,6 @@ import { GroupType } from './grouptype.enum';
 //#endregion
 
 export const GroupTypeConfig = {
-  name: "GroupType",
+  name: "groupType",
   members: GroupType
 } as EnumConfig<GroupType>;

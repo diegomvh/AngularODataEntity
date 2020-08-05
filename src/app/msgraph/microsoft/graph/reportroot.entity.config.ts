@@ -5,7 +5,7 @@ import { ReportRoot } from './reportroot.entity';
 //#endregion
 
 export const ReportRootConfig = {
-  name: "ReportRoot",
+  name: "reportRoot",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

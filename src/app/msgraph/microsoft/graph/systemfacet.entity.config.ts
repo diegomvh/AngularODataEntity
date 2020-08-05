@@ -5,7 +5,7 @@ import { SystemFacet } from './systemfacet.entity';
 //#endregion
 
 export const SystemFacetConfig = {
-  name: "SystemFacet",
+  name: "systemFacet",
   annotations: [],
   fields: {
     

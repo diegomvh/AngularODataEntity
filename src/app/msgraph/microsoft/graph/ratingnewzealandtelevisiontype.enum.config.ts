@@ -5,6 +5,6 @@ import { RatingNewZealandTelevisionType } from './ratingnewzealandtelevisiontype
 //#endregion
 
 export const RatingNewZealandTelevisionTypeConfig = {
-  name: "RatingNewZealandTelevisionType",
+  name: "ratingNewZealandTelevisionType",
   members: RatingNewZealandTelevisionType
 } as EnumConfig<RatingNewZealandTelevisionType>;

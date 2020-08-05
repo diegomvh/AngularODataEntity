@@ -5,6 +5,6 @@ import { FirewallPacketQueueingMethodType } from './firewallpacketqueueingmethod
 //#endregion
 
 export const FirewallPacketQueueingMethodTypeConfig = {
-  name: "FirewallPacketQueueingMethodType",
+  name: "firewallPacketQueueingMethodType",
   members: FirewallPacketQueueingMethodType
 } as EnumConfig<FirewallPacketQueueingMethodType>;

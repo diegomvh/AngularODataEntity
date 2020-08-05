@@ -5,7 +5,7 @@ import { IosLobAppAssignmentSettings } from './ioslobappassignmentsettings.entit
 //#endregion
 
 export const IosLobAppAssignmentSettingsConfig = {
-  name: "IosLobAppAssignmentSettings",
+  name: "iosLobAppAssignmentSettings",
   base: "microsoft.graph.mobileAppAssignmentSettings",
   annotations: [],
   fields: {

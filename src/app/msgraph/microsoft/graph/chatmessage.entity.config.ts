@@ -5,7 +5,7 @@ import { ChatMessage } from './chatmessage.entity';
 //#endregion
 
 export const ChatMessageConfig = {
-  name: "ChatMessage",
+  name: "chatMessage",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

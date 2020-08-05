@@ -5,7 +5,7 @@ import { ResultInfo } from './resultinfo.entity';
 //#endregion
 
 export const ResultInfoConfig = {
-  name: "ResultInfo",
+  name: "resultInfo",
   annotations: [],
   fields: {
     code: {type: 'Edm.Int32', nullable: false},

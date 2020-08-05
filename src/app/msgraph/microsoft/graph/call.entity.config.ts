@@ -5,7 +5,7 @@ import { Call } from './call.entity';
 //#endregion
 
 export const CallConfig = {
-  name: "Call",
+  name: "call",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

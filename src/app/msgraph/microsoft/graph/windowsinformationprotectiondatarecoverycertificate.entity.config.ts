@@ -5,7 +5,7 @@ import { WindowsInformationProtectionDataRecoveryCertificate } from './windowsin
 //#endregion
 
 export const WindowsInformationProtectionDataRecoveryCertificateConfig = {
-  name: "WindowsInformationProtectionDataRecoveryCertificate",
+  name: "windowsInformationProtectionDataRecoveryCertificate",
   annotations: [],
   fields: {
     subjectName: {type: 'Edm.String'},

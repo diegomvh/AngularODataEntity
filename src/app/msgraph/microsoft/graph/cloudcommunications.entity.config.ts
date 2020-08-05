@@ -5,7 +5,7 @@ import { CloudCommunications } from './cloudcommunications.entity';
 //#endregion
 
 export const CloudCommunicationsConfig = {
-  name: "CloudCommunications",
+  name: "cloudCommunications",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

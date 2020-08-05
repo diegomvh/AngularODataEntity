@@ -5,7 +5,7 @@ import { LocalizedNotificationMessage } from './localizednotificationmessage.ent
 //#endregion
 
 export const LocalizedNotificationMessageConfig = {
-  name: "LocalizedNotificationMessage",
+  name: "localizedNotificationMessage",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

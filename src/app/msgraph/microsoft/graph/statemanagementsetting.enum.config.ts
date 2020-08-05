@@ -5,6 +5,6 @@ import { StateManagementSetting } from './statemanagementsetting.enum';
 //#endregion
 
 export const StateManagementSettingConfig = {
-  name: "StateManagementSetting",
+  name: "stateManagementSetting",
   members: StateManagementSetting
 } as EnumConfig<StateManagementSetting>;

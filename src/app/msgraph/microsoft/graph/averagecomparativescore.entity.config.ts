@@ -5,7 +5,7 @@ import { AverageComparativeScore } from './averagecomparativescore.entity';
 //#endregion
 
 export const AverageComparativeScoreConfig = {
-  name: "AverageComparativeScore",
+  name: "averageComparativeScore",
   open: true,
   annotations: [],
   fields: {

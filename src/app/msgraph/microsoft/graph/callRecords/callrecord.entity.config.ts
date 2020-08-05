@@ -5,7 +5,7 @@ import { CallRecord } from './callrecord.entity';
 //#endregion
 
 export const CallRecordConfig = {
-  name: "CallRecord",
+  name: "callRecord",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

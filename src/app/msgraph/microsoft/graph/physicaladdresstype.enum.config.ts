@@ -5,6 +5,6 @@ import { PhysicalAddressType } from './physicaladdresstype.enum';
 //#endregion
 
 export const PhysicalAddressTypeConfig = {
-  name: "PhysicalAddressType",
+  name: "physicalAddressType",
   members: PhysicalAddressType
 } as EnumConfig<PhysicalAddressType>;

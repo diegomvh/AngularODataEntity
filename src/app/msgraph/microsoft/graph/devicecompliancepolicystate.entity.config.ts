@@ -5,7 +5,7 @@ import { DeviceCompliancePolicyState } from './devicecompliancepolicystate.entit
 //#endregion
 
 export const DeviceCompliancePolicyStateConfig = {
-  name: "DeviceCompliancePolicyState",
+  name: "deviceCompliancePolicyState",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

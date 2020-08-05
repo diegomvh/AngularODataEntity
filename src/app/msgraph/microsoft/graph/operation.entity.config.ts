@@ -5,7 +5,7 @@ import { Operation } from './operation.entity';
 //#endregion
 
 export const OperationConfig = {
-  name: "Operation",
+  name: "operation",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

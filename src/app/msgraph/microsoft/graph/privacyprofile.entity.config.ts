@@ -5,7 +5,7 @@ import { PrivacyProfile } from './privacyprofile.entity';
 //#endregion
 
 export const PrivacyProfileConfig = {
-  name: "PrivacyProfile",
+  name: "privacyProfile",
   annotations: [],
   fields: {
     contactEmail: {type: 'Edm.String'},

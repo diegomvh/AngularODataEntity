@@ -5,6 +5,6 @@ import { WindowsDeliveryOptimizationMode } from './windowsdeliveryoptimizationmo
 //#endregion
 
 export const WindowsDeliveryOptimizationModeConfig = {
-  name: "WindowsDeliveryOptimizationMode",
+  name: "windowsDeliveryOptimizationMode",
   members: WindowsDeliveryOptimizationMode
 } as EnumConfig<WindowsDeliveryOptimizationMode>;

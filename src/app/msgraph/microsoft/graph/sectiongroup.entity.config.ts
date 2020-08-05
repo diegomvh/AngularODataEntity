@@ -5,7 +5,7 @@ import { SectionGroup } from './sectiongroup.entity';
 //#endregion
 
 export const SectionGroupConfig = {
-  name: "SectionGroup",
+  name: "sectionGroup",
   base: "microsoft.graph.onenoteEntityHierarchyModel",
   annotations: [],
   fields: {

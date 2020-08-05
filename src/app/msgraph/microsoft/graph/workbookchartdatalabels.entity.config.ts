@@ -5,7 +5,7 @@ import { WorkbookChartDataLabels } from './workbookchartdatalabels.entity';
 //#endregion
 
 export const WorkbookChartDataLabelsConfig = {
-  name: "WorkbookChartDataLabels",
+  name: "workbookChartDataLabels",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

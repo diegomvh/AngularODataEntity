@@ -5,7 +5,7 @@ import { ExtensionSchemaProperty } from './extensionschemaproperty.entity';
 //#endregion
 
 export const ExtensionSchemaPropertyConfig = {
-  name: "ExtensionSchemaProperty",
+  name: "extensionSchemaProperty",
   annotations: [],
   fields: {
     name: {type: 'Edm.String'},

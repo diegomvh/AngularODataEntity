@@ -5,6 +5,6 @@ import { SharedPCAccountDeletionPolicyType } from './sharedpcaccountdeletionpoli
 //#endregion
 
 export const SharedPCAccountDeletionPolicyTypeConfig = {
-  name: "SharedPCAccountDeletionPolicyType",
+  name: "sharedPCAccountDeletionPolicyType",
   members: SharedPCAccountDeletionPolicyType
 } as EnumConfig<SharedPCAccountDeletionPolicyType>;

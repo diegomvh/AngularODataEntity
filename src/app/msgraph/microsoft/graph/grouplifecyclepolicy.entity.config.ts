@@ -5,7 +5,7 @@ import { GroupLifecyclePolicy } from './grouplifecyclepolicy.entity';
 //#endregion
 
 export const GroupLifecyclePolicyConfig = {
-  name: "GroupLifecyclePolicy",
+  name: "groupLifecyclePolicy",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { UserInstallStateSummary } from './userinstallstatesummary.entity';
 //#endregion
 
 export const UserInstallStateSummaryConfig = {
-  name: "UserInstallStateSummary",
+  name: "userInstallStateSummary",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

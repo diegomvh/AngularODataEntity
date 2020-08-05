@@ -5,7 +5,7 @@ import { Event } from './event.entity';
 //#endregion
 
 export const EventConfig = {
-  name: "Event",
+  name: "event",
   base: "microsoft.graph.outlookItem",
   open: true,
   annotations: [],

@@ -5,7 +5,7 @@ import { Contract } from './contract.entity';
 //#endregion
 
 export const ContractConfig = {
-  name: "Contract",
+  name: "contract",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

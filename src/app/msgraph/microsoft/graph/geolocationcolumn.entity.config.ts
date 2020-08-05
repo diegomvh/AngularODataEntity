@@ -5,7 +5,7 @@ import { GeolocationColumn } from './geolocationcolumn.entity';
 //#endregion
 
 export const GeolocationColumnConfig = {
-  name: "GeolocationColumn",
+  name: "geolocationColumn",
   annotations: [],
   fields: {
     

@@ -5,7 +5,7 @@ import { TimeConstraint } from './timeconstraint.entity';
 //#endregion
 
 export const TimeConstraintConfig = {
-  name: "TimeConstraint",
+  name: "timeConstraint",
   annotations: [],
   fields: {
     activityDomain: {type: 'graph.activityDomain'},

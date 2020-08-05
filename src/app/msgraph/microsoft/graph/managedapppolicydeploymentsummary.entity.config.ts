@@ -5,7 +5,7 @@ import { ManagedAppPolicyDeploymentSummary } from './managedapppolicydeployments
 //#endregion
 
 export const ManagedAppPolicyDeploymentSummaryConfig = {
-  name: "ManagedAppPolicyDeploymentSummary",
+  name: "managedAppPolicyDeploymentSummary",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

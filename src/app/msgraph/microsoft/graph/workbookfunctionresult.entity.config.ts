@@ -5,7 +5,7 @@ import { WorkbookFunctionResult } from './workbookfunctionresult.entity';
 //#endregion
 
 export const WorkbookFunctionResultConfig = {
-  name: "WorkbookFunctionResult",
+  name: "workbookFunctionResult",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

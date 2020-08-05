@@ -5,7 +5,7 @@ import { Group } from './group.entity';
 //#endregion
 
 export const GroupConfig = {
-  name: "Group",
+  name: "group",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

@@ -5,6 +5,6 @@ import { PlannerPreviewType } from './plannerpreviewtype.enum';
 //#endregion
 
 export const PlannerPreviewTypeConfig = {
-  name: "PlannerPreviewType",
+  name: "plannerPreviewType",
   members: PlannerPreviewType
 } as EnumConfig<PlannerPreviewType>;

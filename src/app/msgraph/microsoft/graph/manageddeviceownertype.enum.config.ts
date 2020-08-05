@@ -5,6 +5,6 @@ import { ManagedDeviceOwnerType } from './manageddeviceownertype.enum';
 //#endregion
 
 export const ManagedDeviceOwnerTypeConfig = {
-  name: "ManagedDeviceOwnerType",
+  name: "managedDeviceOwnerType",
   members: ManagedDeviceOwnerType
 } as EnumConfig<ManagedDeviceOwnerType>;

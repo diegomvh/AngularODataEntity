@@ -5,6 +5,6 @@ import { CallType } from './calltype.enum';
 //#endregion
 
 export const CallTypeConfig = {
-  name: "CallType",
+  name: "callType",
   members: CallType
 } as EnumConfig<CallType>;

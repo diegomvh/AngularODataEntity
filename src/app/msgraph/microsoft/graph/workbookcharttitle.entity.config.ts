@@ -5,7 +5,7 @@ import { WorkbookChartTitle } from './workbookcharttitle.entity';
 //#endregion
 
 export const WorkbookChartTitleConfig = {
-  name: "WorkbookChartTitle",
+  name: "workbookChartTitle",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

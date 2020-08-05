@@ -5,6 +5,6 @@ import { CallDirection } from './calldirection.enum';
 //#endregion
 
 export const CallDirectionConfig = {
-  name: "CallDirection",
+  name: "callDirection",
   members: CallDirection
 } as EnumConfig<CallDirection>;

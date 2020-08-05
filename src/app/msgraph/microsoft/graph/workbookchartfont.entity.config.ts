@@ -5,7 +5,7 @@ import { WorkbookChartFont } from './workbookchartfont.entity';
 //#endregion
 
 export const WorkbookChartFontConfig = {
-  name: "WorkbookChartFont",
+  name: "workbookChartFont",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

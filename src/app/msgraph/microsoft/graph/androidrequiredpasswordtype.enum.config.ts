@@ -5,6 +5,6 @@ import { AndroidRequiredPasswordType } from './androidrequiredpasswordtype.enum'
 //#endregion
 
 export const AndroidRequiredPasswordTypeConfig = {
-  name: "AndroidRequiredPasswordType",
+  name: "androidRequiredPasswordType",
   members: AndroidRequiredPasswordType
 } as EnumConfig<AndroidRequiredPasswordType>;

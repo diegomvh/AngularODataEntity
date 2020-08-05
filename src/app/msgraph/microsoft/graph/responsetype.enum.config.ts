@@ -5,6 +5,6 @@ import { ResponseType } from './responsetype.enum';
 //#endregion
 
 export const ResponseTypeConfig = {
-  name: "ResponseType",
+  name: "responseType",
   members: ResponseType
 } as EnumConfig<ResponseType>;

@@ -5,6 +5,6 @@ import { ConditionalAccessClientApp } from './conditionalaccessclientapp.enum';
 //#endregion
 
 export const ConditionalAccessClientAppConfig = {
-  name: "ConditionalAccessClientApp",
+  name: "conditionalAccessClientApp",
   members: ConditionalAccessClientApp
 } as EnumConfig<ConditionalAccessClientApp>;

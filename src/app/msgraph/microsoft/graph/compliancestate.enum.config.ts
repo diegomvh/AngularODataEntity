@@ -5,6 +5,6 @@ import { ComplianceState } from './compliancestate.enum';
 //#endregion
 
 export const ComplianceStateConfig = {
-  name: "ComplianceState",
+  name: "complianceState",
   members: ComplianceState
 } as EnumConfig<ComplianceState>;

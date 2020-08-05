@@ -5,7 +5,7 @@ import { WorkbookTableSort } from './workbooktablesort.entity';
 //#endregion
 
 export const WorkbookTableSortConfig = {
-  name: "WorkbookTableSort",
+  name: "workbookTableSort",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,6 +5,6 @@ import { ThreatAssessmentContentType } from './threatassessmentcontenttype.enum'
 //#endregion
 
 export const ThreatAssessmentContentTypeConfig = {
-  name: "ThreatAssessmentContentType",
+  name: "threatAssessmentContentType",
   members: ThreatAssessmentContentType
 } as EnumConfig<ThreatAssessmentContentType>;

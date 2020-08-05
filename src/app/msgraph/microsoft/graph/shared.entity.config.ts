@@ -5,7 +5,7 @@ import { Shared } from './shared.entity';
 //#endregion
 
 export const SharedConfig = {
-  name: "Shared",
+  name: "shared",
   annotations: [],
   fields: {
     owner: {type: 'graph.identitySet'},

@@ -5,7 +5,7 @@ import { SalesByCategory } from './sales_by_category.entity';
 //#endregion
 
 export const SalesByCategoryConfig = {
-  name: "SalesByCategory",
+  name: "Sales_by_Category",
   annotations: [],
   fields: {
     CategoryID: {type: 'Edm.Int32', key: true, ref: 'CategoryID', nullable: false},

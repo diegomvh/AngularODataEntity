@@ -5,7 +5,7 @@ import { EducationTerm } from './educationterm.entity';
 //#endregion
 
 export const EducationTermConfig = {
-  name: "EducationTerm",
+  name: "educationTerm",
   annotations: [],
   fields: {
     externalId: {type: 'Edm.String'},

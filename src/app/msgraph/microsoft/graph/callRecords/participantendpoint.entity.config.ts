@@ -5,7 +5,7 @@ import { ParticipantEndpoint } from './participantendpoint.entity';
 //#endregion
 
 export const ParticipantEndpointConfig = {
-  name: "ParticipantEndpoint",
+  name: "participantEndpoint",
   base: "microsoft.graph.callRecords.endpoint",
   annotations: [],
   fields: {

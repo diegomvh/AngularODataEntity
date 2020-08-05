@@ -5,7 +5,7 @@ import { AndroidWorkProfileGeneralDeviceConfiguration } from './androidworkprofi
 //#endregion
 
 export const AndroidWorkProfileGeneralDeviceConfigurationConfig = {
-  name: "AndroidWorkProfileGeneralDeviceConfiguration",
+  name: "androidWorkProfileGeneralDeviceConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

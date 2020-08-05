@@ -5,6 +5,6 @@ import { WorkforceIntegrationEncryptionProtocol } from './workforceintegrationen
 //#endregion
 
 export const WorkforceIntegrationEncryptionProtocolConfig = {
-  name: "WorkforceIntegrationEncryptionProtocol",
+  name: "workforceIntegrationEncryptionProtocol",
   members: WorkforceIntegrationEncryptionProtocol
 } as EnumConfig<WorkforceIntegrationEncryptionProtocol>;

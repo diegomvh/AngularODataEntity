@@ -5,6 +5,6 @@ import { DeviceThreatProtectionLevel } from './devicethreatprotectionlevel.enum'
 //#endregion
 
 export const DeviceThreatProtectionLevelConfig = {
-  name: "DeviceThreatProtectionLevel",
+  name: "deviceThreatProtectionLevel",
   members: DeviceThreatProtectionLevel
 } as EnumConfig<DeviceThreatProtectionLevel>;

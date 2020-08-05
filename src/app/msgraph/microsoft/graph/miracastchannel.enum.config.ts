@@ -5,6 +5,6 @@ import { MiracastChannel } from './miracastchannel.enum';
 //#endregion
 
 export const MiracastChannelConfig = {
-  name: "MiracastChannel",
+  name: "miracastChannel",
   members: MiracastChannel
 } as EnumConfig<MiracastChannel>;

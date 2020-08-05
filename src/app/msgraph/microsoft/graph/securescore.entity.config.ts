@@ -5,7 +5,7 @@ import { SecureScore } from './securescore.entity';
 //#endregion
 
 export const SecureScoreConfig = {
-  name: "SecureScore",
+  name: "secureScore",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

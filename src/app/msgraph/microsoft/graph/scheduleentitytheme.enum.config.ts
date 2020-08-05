@@ -5,6 +5,6 @@ import { ScheduleEntityTheme } from './scheduleentitytheme.enum';
 //#endregion
 
 export const ScheduleEntityThemeConfig = {
-  name: "ScheduleEntityTheme",
+  name: "scheduleEntityTheme",
   members: ScheduleEntityTheme
 } as EnumConfig<ScheduleEntityTheme>;

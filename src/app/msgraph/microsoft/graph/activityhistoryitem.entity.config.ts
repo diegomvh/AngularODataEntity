@@ -5,7 +5,7 @@ import { ActivityHistoryItem } from './activityhistoryitem.entity';
 //#endregion
 
 export const ActivityHistoryItemConfig = {
-  name: "ActivityHistoryItem",
+  name: "activityHistoryItem",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

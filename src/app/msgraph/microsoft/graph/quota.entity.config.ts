@@ -5,7 +5,7 @@ import { Quota } from './quota.entity';
 //#endregion
 
 export const QuotaConfig = {
-  name: "Quota",
+  name: "quota",
   annotations: [],
   fields: {
     deleted: {type: 'Edm.Int64'},

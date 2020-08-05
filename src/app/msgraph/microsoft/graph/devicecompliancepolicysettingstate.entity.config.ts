@@ -5,7 +5,7 @@ import { DeviceCompliancePolicySettingState } from './devicecompliancepolicysett
 //#endregion
 
 export const DeviceCompliancePolicySettingStateConfig = {
-  name: "DeviceCompliancePolicySettingState",
+  name: "deviceCompliancePolicySettingState",
   annotations: [],
   fields: {
     setting: {type: 'Edm.String'},

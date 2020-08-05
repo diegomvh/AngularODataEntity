@@ -5,7 +5,7 @@ import { InternetMessageHeader } from './internetmessageheader.entity';
 //#endregion
 
 export const InternetMessageHeaderConfig = {
-  name: "InternetMessageHeader",
+  name: "internetMessageHeader",
   annotations: [],
   fields: {
     name: {type: 'Edm.String'},

@@ -5,7 +5,7 @@ import { SharingDetail } from './sharingdetail.entity';
 //#endregion
 
 export const SharingDetailConfig = {
-  name: "SharingDetail",
+  name: "sharingDetail",
   annotations: [],
   fields: {
     sharedBy: {type: 'graph.insightIdentity'},

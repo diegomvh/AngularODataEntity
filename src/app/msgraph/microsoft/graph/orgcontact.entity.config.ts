@@ -5,7 +5,7 @@ import { OrgContact } from './orgcontact.entity';
 //#endregion
 
 export const OrgContactConfig = {
-  name: "OrgContact",
+  name: "orgContact",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

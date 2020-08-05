@@ -5,6 +5,6 @@ import { FreeBusyStatus } from './freebusystatus.enum';
 //#endregion
 
 export const FreeBusyStatusConfig = {
-  name: "FreeBusyStatus",
+  name: "freeBusyStatus",
   members: FreeBusyStatus
 } as EnumConfig<FreeBusyStatus>;

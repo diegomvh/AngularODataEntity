@@ -5,6 +5,6 @@ import { CalendarRoleType } from './calendarroletype.enum';
 //#endregion
 
 export const CalendarRoleTypeConfig = {
-  name: "CalendarRoleType",
+  name: "calendarRoleType",
   members: CalendarRoleType
 } as EnumConfig<CalendarRoleType>;

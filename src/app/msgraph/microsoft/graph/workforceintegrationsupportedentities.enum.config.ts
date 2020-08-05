@@ -5,7 +5,7 @@ import { WorkforceIntegrationSupportedEntities } from './workforceintegrationsup
 //#endregion
 
 export const WorkforceIntegrationSupportedEntitiesConfig = {
-  name: "WorkforceIntegrationSupportedEntities",
+  name: "workforceIntegrationSupportedEntities",
   flags: true,
   members: WorkforceIntegrationSupportedEntities
 } as EnumConfig<WorkforceIntegrationSupportedEntities>;

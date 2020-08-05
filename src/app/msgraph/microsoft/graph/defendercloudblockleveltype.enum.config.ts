@@ -5,6 +5,6 @@ import { DefenderCloudBlockLevelType } from './defendercloudblockleveltype.enum'
 //#endregion
 
 export const DefenderCloudBlockLevelTypeConfig = {
-  name: "DefenderCloudBlockLevelType",
+  name: "defenderCloudBlockLevelType",
   members: DefenderCloudBlockLevelType
 } as EnumConfig<DefenderCloudBlockLevelType>;

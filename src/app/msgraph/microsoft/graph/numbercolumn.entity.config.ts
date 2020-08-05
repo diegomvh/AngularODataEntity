@@ -5,7 +5,7 @@ import { NumberColumn } from './numbercolumn.entity';
 //#endregion
 
 export const NumberColumnConfig = {
-  name: "NumberColumn",
+  name: "numberColumn",
   annotations: [],
   fields: {
     decimalPlaces: {type: 'Edm.String'},

@@ -5,7 +5,7 @@ import { ClientUserAgent } from './clientuseragent.entity';
 //#endregion
 
 export const ClientUserAgentConfig = {
-  name: "ClientUserAgent",
+  name: "clientUserAgent",
   base: "microsoft.graph.callRecords.userAgent",
   annotations: [],
   fields: {

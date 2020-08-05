@@ -5,7 +5,7 @@ import { PreAuthorizedApplication } from './preauthorizedapplication.entity';
 //#endregion
 
 export const PreAuthorizedApplicationConfig = {
-  name: "PreAuthorizedApplication",
+  name: "preAuthorizedApplication",
   annotations: [],
   fields: {
     appId: {type: 'Edm.String'},

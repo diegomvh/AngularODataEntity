@@ -5,7 +5,7 @@ import { ActivityBasedTimeoutPolicy } from './activitybasedtimeoutpolicy.entity'
 //#endregion
 
 export const ActivityBasedTimeoutPolicyConfig = {
-  name: "ActivityBasedTimeoutPolicy",
+  name: "activityBasedTimeoutPolicy",
   base: "microsoft.graph.stsPolicy",
   annotations: [],
   fields: {

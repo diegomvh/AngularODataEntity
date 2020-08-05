@@ -5,7 +5,7 @@ import { WorkbookChartGridlines } from './workbookchartgridlines.entity';
 //#endregion
 
 export const WorkbookChartGridlinesConfig = {
-  name: "WorkbookChartGridlines",
+  name: "workbookChartGridlines",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { IosMobileAppIdentifier } from './iosmobileappidentifier.entity';
 //#endregion
 
 export const IosMobileAppIdentifierConfig = {
-  name: "IosMobileAppIdentifier",
+  name: "iosMobileAppIdentifier",
   base: "microsoft.graph.mobileAppIdentifier",
   annotations: [],
   fields: {

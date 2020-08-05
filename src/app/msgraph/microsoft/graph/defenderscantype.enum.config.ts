@@ -5,6 +5,6 @@ import { DefenderScanType } from './defenderscantype.enum';
 //#endregion
 
 export const DefenderScanTypeConfig = {
-  name: "DefenderScanType",
+  name: "defenderScanType",
   members: DefenderScanType
 } as EnumConfig<DefenderScanType>;

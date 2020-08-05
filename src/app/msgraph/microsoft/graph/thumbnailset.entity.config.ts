@@ -5,7 +5,7 @@ import { ThumbnailSet } from './thumbnailset.entity';
 //#endregion
 
 export const ThumbnailSetConfig = {
-  name: "ThumbnailSet",
+  name: "thumbnailSet",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

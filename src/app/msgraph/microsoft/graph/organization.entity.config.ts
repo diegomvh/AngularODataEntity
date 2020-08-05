@@ -5,7 +5,7 @@ import { Organization } from './organization.entity';
 //#endregion
 
 export const OrganizationConfig = {
-  name: "Organization",
+  name: "organization",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

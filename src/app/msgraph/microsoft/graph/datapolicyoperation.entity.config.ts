@@ -5,7 +5,7 @@ import { DataPolicyOperation } from './datapolicyoperation.entity';
 //#endregion
 
 export const DataPolicyOperationConfig = {
-  name: "DataPolicyOperation",
+  name: "dataPolicyOperation",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

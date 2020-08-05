@@ -5,7 +5,7 @@ import { ManagedAppConfiguration } from './managedappconfiguration.entity';
 //#endregion
 
 export const ManagedAppConfigurationConfig = {
-  name: "ManagedAppConfiguration",
+  name: "managedAppConfiguration",
   base: "microsoft.graph.managedAppPolicy",
   annotations: [],
   fields: {

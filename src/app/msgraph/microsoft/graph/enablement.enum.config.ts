@@ -5,6 +5,6 @@ import { Enablement } from './enablement.enum';
 //#endregion
 
 export const EnablementConfig = {
-  name: "Enablement",
+  name: "enablement",
   members: Enablement
 } as EnumConfig<Enablement>;

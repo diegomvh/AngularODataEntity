@@ -5,6 +5,6 @@ import { VppTokenAccountType } from './vpptokenaccounttype.enum';
 //#endregion
 
 export const VppTokenAccountTypeConfig = {
-  name: "VppTokenAccountType",
+  name: "vppTokenAccountType",
   members: VppTokenAccountType
 } as EnumConfig<VppTokenAccountType>;

@@ -5,6 +5,6 @@ import { AlertSeverity } from './alertseverity.enum';
 //#endregion
 
 export const AlertSeverityConfig = {
-  name: "AlertSeverity",
+  name: "alertSeverity",
   members: AlertSeverity
 } as EnumConfig<AlertSeverity>;

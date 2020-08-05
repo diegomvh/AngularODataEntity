@@ -5,7 +5,7 @@ import { SettingSource } from './settingsource.entity';
 //#endregion
 
 export const SettingSourceConfig = {
-  name: "SettingSource",
+  name: "settingSource",
   annotations: [],
   fields: {
     id: {type: 'Edm.String'},

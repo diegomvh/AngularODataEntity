@@ -5,7 +5,7 @@ import { Place } from './place.entity';
 //#endregion
 
 export const PlaceConfig = {
-  name: "Place",
+  name: "place",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

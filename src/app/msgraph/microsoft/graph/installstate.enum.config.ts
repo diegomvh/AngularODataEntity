@@ -5,6 +5,6 @@ import { InstallState } from './installstate.enum';
 //#endregion
 
 export const InstallStateConfig = {
-  name: "InstallState",
+  name: "installState",
   members: InstallState
 } as EnumConfig<InstallState>;

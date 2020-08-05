@@ -5,7 +5,7 @@ import { OnenotePagePreviewLinks } from './onenotepagepreviewlinks.entity';
 //#endregion
 
 export const OnenotePagePreviewLinksConfig = {
-  name: "OnenotePagePreviewLinks",
+  name: "onenotePagePreviewLinks",
   annotations: [],
   fields: {
     previewImageUrl: {type: 'graph.externalLink'}

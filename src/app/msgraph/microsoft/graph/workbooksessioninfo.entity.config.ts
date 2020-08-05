@@ -5,7 +5,7 @@ import { WorkbookSessionInfo } from './workbooksessioninfo.entity';
 //#endregion
 
 export const WorkbookSessionInfoConfig = {
-  name: "WorkbookSessionInfo",
+  name: "workbookSessionInfo",
   annotations: [],
   fields: {
     id: {type: 'Edm.String'},

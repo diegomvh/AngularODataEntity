@@ -5,7 +5,7 @@ import { RemoteAssistancePartner } from './remoteassistancepartner.entity';
 //#endregion
 
 export const RemoteAssistancePartnerConfig = {
-  name: "RemoteAssistancePartner",
+  name: "remoteAssistancePartner",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

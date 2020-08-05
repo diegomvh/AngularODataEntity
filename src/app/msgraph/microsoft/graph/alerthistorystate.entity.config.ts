@@ -5,7 +5,7 @@ import { AlertHistoryState } from './alerthistorystate.entity';
 //#endregion
 
 export const AlertHistoryStateConfig = {
-  name: "AlertHistoryState",
+  name: "alertHistoryState",
   annotations: [],
   fields: {
     appId: {type: 'Edm.String'},

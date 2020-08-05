@@ -5,7 +5,7 @@ import { IosDeviceType } from './iosdevicetype.entity';
 //#endregion
 
 export const IosDeviceTypeConfig = {
-  name: "IosDeviceType",
+  name: "iosDeviceType",
   annotations: [],
   fields: {
     iPad: {type: 'Edm.Boolean', nullable: false},

@@ -5,7 +5,7 @@ import { PlannerUserIds } from './planneruserids.entity';
 //#endregion
 
 export const PlannerUserIdsConfig = {
-  name: "PlannerUserIds",
+  name: "plannerUserIds",
   open: true,
   annotations: [],
   fields: {

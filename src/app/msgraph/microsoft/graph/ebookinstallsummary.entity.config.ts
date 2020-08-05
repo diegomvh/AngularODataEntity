@@ -5,7 +5,7 @@ import { EBookInstallSummary } from './ebookinstallsummary.entity';
 //#endregion
 
 export const EBookInstallSummaryConfig = {
-  name: "EBookInstallSummary",
+  name: "eBookInstallSummary",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { SpecialFolder } from './specialfolder.entity';
 //#endregion
 
 export const SpecialFolderConfig = {
-  name: "SpecialFolder",
+  name: "specialFolder",
   annotations: [],
   fields: {
     name: {type: 'Edm.String'}

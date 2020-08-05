@@ -5,7 +5,7 @@ import { WorkbookRangeReference } from './workbookrangereference.entity';
 //#endregion
 
 export const WorkbookRangeReferenceConfig = {
-  name: "WorkbookRangeReference",
+  name: "workbookRangeReference",
   annotations: [],
   fields: {
     address: {type: 'Edm.String'}

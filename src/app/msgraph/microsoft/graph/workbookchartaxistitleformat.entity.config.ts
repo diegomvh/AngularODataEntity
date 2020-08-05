@@ -5,7 +5,7 @@ import { WorkbookChartAxisTitleFormat } from './workbookchartaxistitleformat.ent
 //#endregion
 
 export const WorkbookChartAxisTitleFormatConfig = {
-  name: "WorkbookChartAxisTitleFormat",
+  name: "workbookChartAxisTitleFormat",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { ApiApplication } from './apiapplication.entity';
 //#endregion
 
 export const ApiApplicationConfig = {
-  name: "ApiApplication",
+  name: "apiApplication",
   annotations: [],
   fields: {
     acceptMappedClaims: {type: 'Edm.Boolean'},

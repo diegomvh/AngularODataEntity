@@ -5,7 +5,7 @@ import { Contact } from './contact.entity';
 //#endregion
 
 export const ContactConfig = {
-  name: "Contact",
+  name: "contact",
   base: "microsoft.graph.outlookItem",
   open: true,
   annotations: [],

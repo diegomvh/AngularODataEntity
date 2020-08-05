@@ -5,6 +5,6 @@ import { VppTokenSyncStatus } from './vpptokensyncstatus.enum';
 //#endregion
 
 export const VppTokenSyncStatusConfig = {
-  name: "VppTokenSyncStatus",
+  name: "vppTokenSyncStatus",
   members: VppTokenSyncStatus
 } as EnumConfig<VppTokenSyncStatus>;

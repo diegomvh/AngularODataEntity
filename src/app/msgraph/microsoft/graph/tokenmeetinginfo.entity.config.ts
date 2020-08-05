@@ -5,7 +5,7 @@ import { TokenMeetingInfo } from './tokenmeetinginfo.entity';
 //#endregion
 
 export const TokenMeetingInfoConfig = {
-  name: "TokenMeetingInfo",
+  name: "tokenMeetingInfo",
   base: "microsoft.graph.meetingInfo",
   annotations: [],
   fields: {

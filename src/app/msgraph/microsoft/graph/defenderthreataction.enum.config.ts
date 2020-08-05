@@ -5,6 +5,6 @@ import { DefenderThreatAction } from './defenderthreataction.enum';
 //#endregion
 
 export const DefenderThreatActionConfig = {
-  name: "DefenderThreatAction",
+  name: "defenderThreatAction",
   members: DefenderThreatAction
 } as EnumConfig<DefenderThreatAction>;

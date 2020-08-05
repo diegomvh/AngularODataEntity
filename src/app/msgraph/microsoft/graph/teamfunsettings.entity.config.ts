@@ -5,7 +5,7 @@ import { TeamFunSettings } from './teamfunsettings.entity';
 //#endregion
 
 export const TeamFunSettingsConfig = {
-  name: "TeamFunSettings",
+  name: "teamFunSettings",
   annotations: [],
   fields: {
     allowGiphy: {type: 'Edm.Boolean'},

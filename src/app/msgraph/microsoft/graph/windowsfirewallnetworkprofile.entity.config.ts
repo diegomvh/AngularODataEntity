@@ -5,7 +5,7 @@ import { WindowsFirewallNetworkProfile } from './windowsfirewallnetworkprofile.e
 //#endregion
 
 export const WindowsFirewallNetworkProfileConfig = {
-  name: "WindowsFirewallNetworkProfile",
+  name: "windowsFirewallNetworkProfile",
   annotations: [],
   fields: {
     firewallEnabled: {type: 'graph.stateManagementSetting', nullable: false},

@@ -5,7 +5,7 @@ import { Process } from './process.entity';
 //#endregion
 
 export const ProcessConfig = {
-  name: "Process",
+  name: "process",
   annotations: [],
   fields: {
     accountName: {type: 'Edm.String'},

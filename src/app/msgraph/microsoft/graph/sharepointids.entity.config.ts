@@ -5,7 +5,7 @@ import { SharepointIds } from './sharepointids.entity';
 //#endregion
 
 export const SharepointIdsConfig = {
-  name: "SharepointIds",
+  name: "sharepointIds",
   annotations: [],
   fields: {
     listId: {type: 'Edm.String'},

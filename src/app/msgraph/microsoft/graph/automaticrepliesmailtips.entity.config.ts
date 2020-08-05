@@ -5,7 +5,7 @@ import { AutomaticRepliesMailTips } from './automaticrepliesmailtips.entity';
 //#endregion
 
 export const AutomaticRepliesMailTipsConfig = {
-  name: "AutomaticRepliesMailTips",
+  name: "automaticRepliesMailTips",
   annotations: [],
   fields: {
     message: {type: 'Edm.String'},

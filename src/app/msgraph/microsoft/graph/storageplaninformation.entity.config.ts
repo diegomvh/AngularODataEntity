@@ -5,7 +5,7 @@ import { StoragePlanInformation } from './storageplaninformation.entity';
 //#endregion
 
 export const StoragePlanInformationConfig = {
-  name: "StoragePlanInformation",
+  name: "storagePlanInformation",
   annotations: [],
   fields: {
     upgradeAvailable: {type: 'Edm.Boolean'}

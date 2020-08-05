@@ -5,6 +5,6 @@ import { MicrosoftStoreForBusinessLicenseType } from './microsoftstoreforbusines
 //#endregion
 
 export const MicrosoftStoreForBusinessLicenseTypeConfig = {
-  name: "MicrosoftStoreForBusinessLicenseType",
+  name: "microsoftStoreForBusinessLicenseType",
   members: MicrosoftStoreForBusinessLicenseType
 } as EnumConfig<MicrosoftStoreForBusinessLicenseType>;

@@ -5,7 +5,7 @@ import { Segment } from './segment.entity';
 //#endregion
 
 export const SegmentConfig = {
-  name: "Segment",
+  name: "segment",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

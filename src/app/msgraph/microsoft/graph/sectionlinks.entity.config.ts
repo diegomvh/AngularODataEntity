@@ -5,7 +5,7 @@ import { SectionLinks } from './sectionlinks.entity';
 //#endregion
 
 export const SectionLinksConfig = {
-  name: "SectionLinks",
+  name: "sectionLinks",
   annotations: [],
   fields: {
     oneNoteClientUrl: {type: 'graph.externalLink'},

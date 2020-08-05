@@ -5,7 +5,7 @@ import { UpdateWindowsDeviceAccountActionParameter } from './updatewindowsdevice
 //#endregion
 
 export const UpdateWindowsDeviceAccountActionParameterConfig = {
-  name: "UpdateWindowsDeviceAccountActionParameter",
+  name: "updateWindowsDeviceAccountActionParameter",
   annotations: [],
   fields: {
     deviceAccount: {type: 'graph.windowsDeviceAccount'},

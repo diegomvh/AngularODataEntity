@@ -5,7 +5,7 @@ import { OpenShiftItem } from './openshiftitem.entity';
 //#endregion
 
 export const OpenShiftItemConfig = {
-  name: "OpenShiftItem",
+  name: "openShiftItem",
   base: "microsoft.graph.shiftItem",
   annotations: [],
   fields: {

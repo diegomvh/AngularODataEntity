@@ -5,6 +5,6 @@ import { ThreatAssessmentRequestSource } from './threatassessmentrequestsource.e
 //#endregion
 
 export const ThreatAssessmentRequestSourceConfig = {
-  name: "ThreatAssessmentRequestSource",
+  name: "threatAssessmentRequestSource",
   members: ThreatAssessmentRequestSource
 } as EnumConfig<ThreatAssessmentRequestSource>;

@@ -5,7 +5,7 @@ import { PendingContentUpdate } from './pendingcontentupdate.entity';
 //#endregion
 
 export const PendingContentUpdateConfig = {
-  name: "PendingContentUpdate",
+  name: "pendingContentUpdate",
   annotations: [],
   fields: {
     queuedDateTime: {type: 'Edm.DateTimeOffset'}

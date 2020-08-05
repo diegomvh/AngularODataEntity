@@ -5,7 +5,7 @@ import { DeviceEnrollmentPlatformRestrictionsConfiguration } from './deviceenrol
 //#endregion
 
 export const DeviceEnrollmentPlatformRestrictionsConfigurationConfig = {
-  name: "DeviceEnrollmentPlatformRestrictionsConfiguration",
+  name: "deviceEnrollmentPlatformRestrictionsConfiguration",
   base: "microsoft.graph.deviceEnrollmentConfiguration",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { OnenoteSection } from './onenotesection.entity';
 //#endregion
 
 export const OnenoteSectionConfig = {
-  name: "OnenoteSection",
+  name: "onenoteSection",
   base: "microsoft.graph.onenoteEntityHierarchyModel",
   annotations: [],
   fields: {

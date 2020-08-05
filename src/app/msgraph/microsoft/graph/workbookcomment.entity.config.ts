@@ -5,7 +5,7 @@ import { WorkbookComment } from './workbookcomment.entity';
 //#endregion
 
 export const WorkbookCommentConfig = {
-  name: "WorkbookComment",
+  name: "workbookComment",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

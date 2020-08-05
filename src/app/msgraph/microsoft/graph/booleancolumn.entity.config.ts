@@ -5,7 +5,7 @@ import { BooleanColumn } from './booleancolumn.entity';
 //#endregion
 
 export const BooleanColumnConfig = {
-  name: "BooleanColumn",
+  name: "booleanColumn",
   annotations: [],
   fields: {
     

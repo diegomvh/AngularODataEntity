@@ -5,7 +5,7 @@ import { OnlineMeeting } from './onlinemeeting.entity';
 //#endregion
 
 export const OnlineMeetingConfig = {
-  name: "OnlineMeeting",
+  name: "onlineMeeting",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

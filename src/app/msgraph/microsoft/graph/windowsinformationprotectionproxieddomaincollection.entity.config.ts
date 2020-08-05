@@ -5,7 +5,7 @@ import { WindowsInformationProtectionProxiedDomainCollection } from './windowsin
 //#endregion
 
 export const WindowsInformationProtectionProxiedDomainCollectionConfig = {
-  name: "WindowsInformationProtectionProxiedDomainCollection",
+  name: "windowsInformationProtectionProxiedDomainCollection",
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String', nullable: false},

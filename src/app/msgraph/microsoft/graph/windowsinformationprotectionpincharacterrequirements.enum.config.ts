@@ -5,6 +5,6 @@ import { WindowsInformationProtectionPinCharacterRequirements } from './windowsi
 //#endregion
 
 export const WindowsInformationProtectionPinCharacterRequirementsConfig = {
-  name: "WindowsInformationProtectionPinCharacterRequirements",
+  name: "windowsInformationProtectionPinCharacterRequirements",
   members: WindowsInformationProtectionPinCharacterRequirements
 } as EnumConfig<WindowsInformationProtectionPinCharacterRequirements>;

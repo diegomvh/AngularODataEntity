@@ -5,7 +5,7 @@ import { LocaleInfo } from './localeinfo.entity';
 //#endregion
 
 export const LocaleInfoConfig = {
-  name: "LocaleInfo",
+  name: "localeInfo",
   annotations: [],
   fields: {
     locale: {type: 'Edm.String'},

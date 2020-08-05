@@ -5,7 +5,7 @@ import { VppLicensingType } from './vpplicensingtype.entity';
 //#endregion
 
 export const VppLicensingTypeConfig = {
-  name: "VppLicensingType",
+  name: "vppLicensingType",
   annotations: [],
   fields: {
     supportsUserLicensing: {type: 'Edm.Boolean', nullable: false},

@@ -5,6 +5,6 @@ import { AndroidWorkProfileDefaultAppPermissionPolicyType } from './androidworkp
 //#endregion
 
 export const AndroidWorkProfileDefaultAppPermissionPolicyTypeConfig = {
-  name: "AndroidWorkProfileDefaultAppPermissionPolicyType",
+  name: "androidWorkProfileDefaultAppPermissionPolicyType",
   members: AndroidWorkProfileDefaultAppPermissionPolicyType
 } as EnumConfig<AndroidWorkProfileDefaultAppPermissionPolicyType>;

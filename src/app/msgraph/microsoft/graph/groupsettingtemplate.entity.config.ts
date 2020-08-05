@@ -5,7 +5,7 @@ import { GroupSettingTemplate } from './groupsettingtemplate.entity';
 //#endregion
 
 export const GroupSettingTemplateConfig = {
-  name: "GroupSettingTemplate",
+  name: "groupSettingTemplate",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

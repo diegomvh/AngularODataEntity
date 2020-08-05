@@ -5,7 +5,7 @@ import { SharingLink } from './sharinglink.entity';
 //#endregion
 
 export const SharingLinkConfig = {
-  name: "SharingLink",
+  name: "sharingLink",
   annotations: [],
   fields: {
     application: {type: 'graph.identity'},

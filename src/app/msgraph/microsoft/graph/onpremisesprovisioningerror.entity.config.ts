@@ -5,7 +5,7 @@ import { OnPremisesProvisioningError } from './onpremisesprovisioningerror.entit
 //#endregion
 
 export const OnPremisesProvisioningErrorConfig = {
-  name: "OnPremisesProvisioningError",
+  name: "onPremisesProvisioningError",
   annotations: [],
   fields: {
     value: {type: 'Edm.String'},

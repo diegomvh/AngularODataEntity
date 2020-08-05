@@ -5,6 +5,6 @@ import { SigninFrequencyType } from './signinfrequencytype.enum';
 //#endregion
 
 export const SigninFrequencyTypeConfig = {
-  name: "SigninFrequencyType",
+  name: "signinFrequencyType",
   members: SigninFrequencyType
 } as EnumConfig<SigninFrequencyType>;

@@ -5,7 +5,7 @@ import { Site } from './site.entity';
 //#endregion
 
 export const SiteConfig = {
-  name: "Site",
+  name: "site",
   base: "microsoft.graph.baseItem",
   annotations: [],
   fields: {

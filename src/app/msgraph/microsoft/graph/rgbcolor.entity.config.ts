@@ -5,7 +5,7 @@ import { RgbColor } from './rgbcolor.entity';
 //#endregion
 
 export const RgbColorConfig = {
-  name: "RgbColor",
+  name: "rgbColor",
   annotations: [],
   fields: {
     r: {type: 'Edm.Byte', nullable: false},

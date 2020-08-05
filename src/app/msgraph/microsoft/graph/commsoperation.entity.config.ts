@@ -5,7 +5,7 @@ import { CommsOperation } from './commsoperation.entity';
 //#endregion
 
 export const CommsOperationConfig = {
-  name: "CommsOperation",
+  name: "commsOperation",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

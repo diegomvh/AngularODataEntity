@@ -5,7 +5,7 @@ import { MailFolder } from './mailfolder.entity';
 //#endregion
 
 export const MailFolderConfig = {
-  name: "MailFolder",
+  name: "mailFolder",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

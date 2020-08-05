@@ -5,6 +5,6 @@ import { WindowsSpotlightEnablementSettings } from './windowsspotlightenablement
 //#endregion
 
 export const WindowsSpotlightEnablementSettingsConfig = {
-  name: "WindowsSpotlightEnablementSettings",
+  name: "windowsSpotlightEnablementSettings",
   members: WindowsSpotlightEnablementSettings
 } as EnumConfig<WindowsSpotlightEnablementSettings>;

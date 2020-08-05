@@ -5,7 +5,7 @@ import { ConditionalAccessSessionControl } from './conditionalaccesssessioncontr
 //#endregion
 
 export const ConditionalAccessSessionControlConfig = {
-  name: "ConditionalAccessSessionControl",
+  name: "conditionalAccessSessionControl",
   annotations: [],
   fields: {
     isEnabled: {type: 'Edm.Boolean'}

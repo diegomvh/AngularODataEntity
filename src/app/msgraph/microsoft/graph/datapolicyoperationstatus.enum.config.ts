@@ -5,6 +5,6 @@ import { DataPolicyOperationStatus } from './datapolicyoperationstatus.enum';
 //#endregion
 
 export const DataPolicyOperationStatusConfig = {
-  name: "DataPolicyOperationStatus",
+  name: "dataPolicyOperationStatus",
   members: DataPolicyOperationStatus
 } as EnumConfig<DataPolicyOperationStatus>;

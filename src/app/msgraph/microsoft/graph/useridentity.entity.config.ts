@@ -5,7 +5,7 @@ import { UserIdentity } from './useridentity.entity';
 //#endregion
 
 export const UserIdentityConfig = {
-  name: "UserIdentity",
+  name: "userIdentity",
   annotations: [],
   fields: {
     id: {type: 'Edm.String'},

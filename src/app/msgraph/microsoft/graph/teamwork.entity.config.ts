@@ -5,7 +5,7 @@ import { Teamwork } from './teamwork.entity';
 //#endregion
 
 export const TeamworkConfig = {
-  name: "Teamwork",
+  name: "teamwork",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

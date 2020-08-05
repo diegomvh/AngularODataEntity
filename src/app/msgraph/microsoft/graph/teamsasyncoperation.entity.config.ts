@@ -5,7 +5,7 @@ import { TeamsAsyncOperation } from './teamsasyncoperation.entity';
 //#endregion
 
 export const TeamsAsyncOperationConfig = {
-  name: "TeamsAsyncOperation",
+  name: "teamsAsyncOperation",
   base: "microsoft.graph.entity",
   open: true,
   annotations: [],

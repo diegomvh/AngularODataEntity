@@ -5,7 +5,7 @@ import { ManagedAppPolicyDeploymentSummaryPerApp } from './managedapppolicydeplo
 //#endregion
 
 export const ManagedAppPolicyDeploymentSummaryPerAppConfig = {
-  name: "ManagedAppPolicyDeploymentSummaryPerApp",
+  name: "managedAppPolicyDeploymentSummaryPerApp",
   annotations: [],
   fields: {
     mobileAppIdentifier: {type: 'graph.mobileAppIdentifier'},

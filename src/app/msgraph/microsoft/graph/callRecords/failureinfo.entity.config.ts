@@ -5,7 +5,7 @@ import { FailureInfo } from './failureinfo.entity';
 //#endregion
 
 export const FailureInfoConfig = {
-  name: "FailureInfo",
+  name: "failureInfo",
   annotations: [],
   fields: {
     stage: {type: 'microsoft.graph.callRecords.failureStage', nullable: false},

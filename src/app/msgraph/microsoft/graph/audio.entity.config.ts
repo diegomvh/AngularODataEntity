@@ -5,7 +5,7 @@ import { Audio } from './audio.entity';
 //#endregion
 
 export const AudioConfig = {
-  name: "Audio",
+  name: "audio",
   annotations: [],
   fields: {
     album: {type: 'Edm.String'},

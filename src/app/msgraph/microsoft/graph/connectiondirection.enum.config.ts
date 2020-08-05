@@ -5,6 +5,6 @@ import { ConnectionDirection } from './connectiondirection.enum';
 //#endregion
 
 export const ConnectionDirectionConfig = {
-  name: "ConnectionDirection",
+  name: "connectionDirection",
   members: ConnectionDirection
 } as EnumConfig<ConnectionDirection>;

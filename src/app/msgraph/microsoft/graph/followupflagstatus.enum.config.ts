@@ -5,6 +5,6 @@ import { FollowupFlagStatus } from './followupflagstatus.enum';
 //#endregion
 
 export const FollowupFlagStatusConfig = {
-  name: "FollowupFlagStatus",
+  name: "followupFlagStatus",
   members: FollowupFlagStatus
 } as EnumConfig<FollowupFlagStatus>;

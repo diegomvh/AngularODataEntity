@@ -5,7 +5,7 @@ import { AuditLogRoot } from './auditlogroot.entity';
 //#endregion
 
 export const AuditLogRootConfig = {
-  name: "AuditLogRoot",
+  name: "auditLogRoot",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

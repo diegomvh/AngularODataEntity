@@ -5,6 +5,6 @@ import { BookingType } from './bookingtype.enum';
 //#endregion
 
 export const BookingTypeConfig = {
-  name: "BookingType",
+  name: "bookingType",
   members: BookingType
 } as EnumConfig<BookingType>;

@@ -5,7 +5,7 @@ import { ConditionalAccessUsers } from './conditionalaccessusers.entity';
 //#endregion
 
 export const ConditionalAccessUsersConfig = {
-  name: "ConditionalAccessUsers",
+  name: "conditionalAccessUsers",
   annotations: [],
   fields: {
     includeUsers: {type: 'Edm.String', nullable: false, collection: true},

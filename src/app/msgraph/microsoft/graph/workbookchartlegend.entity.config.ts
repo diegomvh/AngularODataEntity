@@ -5,7 +5,7 @@ import { WorkbookChartLegend } from './workbookchartlegend.entity';
 //#endregion
 
 export const WorkbookChartLegendConfig = {
-  name: "WorkbookChartLegend",
+  name: "workbookChartLegend",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

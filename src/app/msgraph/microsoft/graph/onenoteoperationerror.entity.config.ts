@@ -5,7 +5,7 @@ import { OnenoteOperationError } from './onenoteoperationerror.entity';
 //#endregion
 
 export const OnenoteOperationErrorConfig = {
-  name: "OnenoteOperationError",
+  name: "onenoteOperationError",
   annotations: [],
   fields: {
     code: {type: 'Edm.String'},

@@ -5,7 +5,7 @@ import { OmaSettingInteger } from './omasettinginteger.entity';
 //#endregion
 
 export const OmaSettingIntegerConfig = {
-  name: "OmaSettingInteger",
+  name: "omaSettingInteger",
   base: "microsoft.graph.omaSetting",
   annotations: [],
   fields: {

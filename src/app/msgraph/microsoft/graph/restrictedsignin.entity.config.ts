@@ -5,7 +5,7 @@ import { RestrictedSignIn } from './restrictedsignin.entity';
 //#endregion
 
 export const RestrictedSignInConfig = {
-  name: "RestrictedSignIn",
+  name: "restrictedSignIn",
   base: "microsoft.graph.signIn",
   annotations: [],
   fields: {

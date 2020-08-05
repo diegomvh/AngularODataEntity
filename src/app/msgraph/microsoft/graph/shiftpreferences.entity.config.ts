@@ -5,7 +5,7 @@ import { ShiftPreferences } from './shiftpreferences.entity';
 //#endregion
 
 export const ShiftPreferencesConfig = {
-  name: "ShiftPreferences",
+  name: "shiftPreferences",
   base: "microsoft.graph.changeTrackedEntity",
   annotations: [],
   fields: {

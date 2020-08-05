@@ -5,7 +5,7 @@ import { WorkbookChartAreaFormat } from './workbookchartareaformat.entity';
 //#endregion
 
 export const WorkbookChartAreaFormatConfig = {
-  name: "WorkbookChartAreaFormat",
+  name: "workbookChartAreaFormat",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

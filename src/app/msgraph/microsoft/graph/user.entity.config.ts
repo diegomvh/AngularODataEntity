@@ -5,7 +5,7 @@ import { User } from './user.entity';
 //#endregion
 
 export const UserConfig = {
-  name: "User",
+  name: "user",
   base: "microsoft.graph.directoryObject",
   open: true,
   annotations: [],

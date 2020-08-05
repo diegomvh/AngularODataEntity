@@ -5,7 +5,7 @@ import { PlannerProgressTaskBoardTaskFormat } from './plannerprogresstaskboardta
 //#endregion
 
 export const PlannerProgressTaskBoardTaskFormatConfig = {
-  name: "PlannerProgressTaskBoardTaskFormat",
+  name: "plannerProgressTaskBoardTaskFormat",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { CommsNotifications } from './commsnotifications.entity';
 //#endregion
 
 export const CommsNotificationsConfig = {
-  name: "CommsNotifications",
+  name: "commsNotifications",
   annotations: [],
   fields: {
     value: {type: 'graph.commsNotification', collection: true}

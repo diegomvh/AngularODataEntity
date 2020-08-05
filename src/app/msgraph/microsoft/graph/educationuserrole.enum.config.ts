@@ -5,6 +5,6 @@ import { EducationUserRole } from './educationuserrole.enum';
 //#endregion
 
 export const EducationUserRoleConfig = {
-  name: "EducationUserRole",
+  name: "educationUserRole",
   members: EducationUserRole
 } as EnumConfig<EducationUserRole>;

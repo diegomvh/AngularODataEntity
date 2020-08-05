@@ -5,7 +5,7 @@ import { DeviceManagementExchangeConnector } from './devicemanagementexchangecon
 //#endregion
 
 export const DeviceManagementExchangeConnectorConfig = {
-  name: "DeviceManagementExchangeConnector",
+  name: "deviceManagementExchangeConnector",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { IdentitySet } from './identityset.entity';
 //#endregion
 
 export const IdentitySetConfig = {
-  name: "IdentitySet",
+  name: "identitySet",
   open: true,
   annotations: [],
   fields: {

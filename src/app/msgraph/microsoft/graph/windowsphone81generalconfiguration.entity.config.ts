@@ -5,7 +5,7 @@ import { WindowsPhone81GeneralConfiguration } from './windowsphone81generalconfi
 //#endregion
 
 export const WindowsPhone81GeneralConfigurationConfig = {
-  name: "WindowsPhone81GeneralConfiguration",
+  name: "windowsPhone81GeneralConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

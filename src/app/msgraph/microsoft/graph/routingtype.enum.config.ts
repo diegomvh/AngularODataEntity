@@ -5,6 +5,6 @@ import { RoutingType } from './routingtype.enum';
 //#endregion
 
 export const RoutingTypeConfig = {
-  name: "RoutingType",
+  name: "routingType",
   members: RoutingType
 } as EnumConfig<RoutingType>;

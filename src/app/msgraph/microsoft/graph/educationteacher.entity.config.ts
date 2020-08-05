@@ -5,7 +5,7 @@ import { EducationTeacher } from './educationteacher.entity';
 //#endregion
 
 export const EducationTeacherConfig = {
-  name: "EducationTeacher",
+  name: "educationTeacher",
   annotations: [],
   fields: {
     teacherNumber: {type: 'Edm.String'},

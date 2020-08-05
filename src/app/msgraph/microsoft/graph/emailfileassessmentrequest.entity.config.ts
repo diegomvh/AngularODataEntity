@@ -5,7 +5,7 @@ import { EmailFileAssessmentRequest } from './emailfileassessmentrequest.entity'
 //#endregion
 
 export const EmailFileAssessmentRequestConfig = {
-  name: "EmailFileAssessmentRequest",
+  name: "emailFileAssessmentRequest",
   base: "microsoft.graph.threatAssessmentRequest",
   annotations: [],
   fields: {

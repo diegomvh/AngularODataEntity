@@ -5,6 +5,6 @@ import { ExchangeIdFormat } from './exchangeidformat.enum';
 //#endregion
 
 export const ExchangeIdFormatConfig = {
-  name: "ExchangeIdFormat",
+  name: "exchangeIdFormat",
   members: ExchangeIdFormat
 } as EnumConfig<ExchangeIdFormat>;

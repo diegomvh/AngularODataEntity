@@ -5,6 +5,6 @@ import { OnenotePatchInsertPosition } from './onenotepatchinsertposition.enum';
 //#endregion
 
 export const OnenotePatchInsertPositionConfig = {
-  name: "OnenotePatchInsertPosition",
+  name: "onenotePatchInsertPosition",
   members: OnenotePatchInsertPosition
 } as EnumConfig<OnenotePatchInsertPosition>;

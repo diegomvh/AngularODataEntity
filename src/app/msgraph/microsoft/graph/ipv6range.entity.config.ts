@@ -5,7 +5,7 @@ import { IPv6Range } from './ipv6range.entity';
 //#endregion
 
 export const IPv6RangeConfig = {
-  name: "IPv6Range",
+  name: "iPv6Range",
   base: "microsoft.graph.ipRange",
   annotations: [],
   fields: {

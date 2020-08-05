@@ -5,7 +5,7 @@ import { UsedInsight } from './usedinsight.entity';
 //#endregion
 
 export const UsedInsightConfig = {
-  name: "UsedInsight",
+  name: "usedInsight",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

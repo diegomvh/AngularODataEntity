@@ -5,7 +5,7 @@ import { ManagedAndroidStoreApp } from './managedandroidstoreapp.entity';
 //#endregion
 
 export const ManagedAndroidStoreAppConfig = {
-  name: "ManagedAndroidStoreApp",
+  name: "managedAndroidStoreApp",
   base: "microsoft.graph.managedApp",
   annotations: [],
   fields: {

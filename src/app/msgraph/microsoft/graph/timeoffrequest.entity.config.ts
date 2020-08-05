@@ -5,7 +5,7 @@ import { TimeOffRequest } from './timeoffrequest.entity';
 //#endregion
 
 export const TimeOffRequestConfig = {
-  name: "TimeOffRequest",
+  name: "timeOffRequest",
   base: "microsoft.graph.scheduleChangeRequest",
   annotations: [],
   fields: {

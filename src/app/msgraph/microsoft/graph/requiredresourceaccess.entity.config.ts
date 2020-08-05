@@ -5,7 +5,7 @@ import { RequiredResourceAccess } from './requiredresourceaccess.entity';
 //#endregion
 
 export const RequiredResourceAccessConfig = {
-  name: "RequiredResourceAccess",
+  name: "requiredResourceAccess",
   annotations: [],
   fields: {
     resourceAppId: {type: 'Edm.String', nullable: false},

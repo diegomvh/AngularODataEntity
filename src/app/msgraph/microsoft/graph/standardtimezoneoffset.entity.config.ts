@@ -5,7 +5,7 @@ import { StandardTimeZoneOffset } from './standardtimezoneoffset.entity';
 //#endregion
 
 export const StandardTimeZoneOffsetConfig = {
-  name: "StandardTimeZoneOffset",
+  name: "standardTimeZoneOffset",
   annotations: [],
   fields: {
     time: {type: 'Edm.TimeOfDay'},

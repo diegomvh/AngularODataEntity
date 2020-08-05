@@ -5,7 +5,7 @@ import { Channel } from './channel.entity';
 //#endregion
 
 export const ChannelConfig = {
-  name: "Channel",
+  name: "channel",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

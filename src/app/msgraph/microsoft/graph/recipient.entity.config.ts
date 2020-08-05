@@ -5,7 +5,7 @@ import { Recipient } from './recipient.entity';
 //#endregion
 
 export const RecipientConfig = {
-  name: "Recipient",
+  name: "recipient",
   annotations: [],
   fields: {
     emailAddress: {type: 'graph.emailAddress'}

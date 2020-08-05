@@ -5,7 +5,7 @@ import { ManagedDeviceOverview } from './manageddeviceoverview.entity';
 //#endregion
 
 export const ManagedDeviceOverviewConfig = {
-  name: "ManagedDeviceOverview",
+  name: "managedDeviceOverview",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

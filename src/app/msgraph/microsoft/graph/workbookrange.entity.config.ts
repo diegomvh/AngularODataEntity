@@ -5,7 +5,7 @@ import { WorkbookRange } from './workbookrange.entity';
 //#endregion
 
 export const WorkbookRangeConfig = {
-  name: "WorkbookRange",
+  name: "workbookRange",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

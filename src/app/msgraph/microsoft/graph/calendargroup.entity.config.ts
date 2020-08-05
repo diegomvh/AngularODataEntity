@@ -5,7 +5,7 @@ import { CalendarGroup } from './calendargroup.entity';
 //#endregion
 
 export const CalendarGroupConfig = {
-  name: "CalendarGroup",
+  name: "calendarGroup",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

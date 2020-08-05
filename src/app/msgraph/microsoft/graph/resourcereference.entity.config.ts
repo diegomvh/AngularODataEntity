@@ -5,7 +5,7 @@ import { ResourceReference } from './resourcereference.entity';
 //#endregion
 
 export const ResourceReferenceConfig = {
-  name: "ResourceReference",
+  name: "resourceReference",
   annotations: [],
   fields: {
     webUrl: {type: 'Edm.String'},

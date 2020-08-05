@@ -5,7 +5,7 @@ import { ChatMessagePolicyViolationVerdictDetailsTypes } from './chatmessagepoli
 //#endregion
 
 export const ChatMessagePolicyViolationVerdictDetailsTypesConfig = {
-  name: "ChatMessagePolicyViolationVerdictDetailsTypes",
+  name: "chatMessagePolicyViolationVerdictDetailsTypes",
   flags: true,
   members: ChatMessagePolicyViolationVerdictDetailsTypes
 } as EnumConfig<ChatMessagePolicyViolationVerdictDetailsTypes>;

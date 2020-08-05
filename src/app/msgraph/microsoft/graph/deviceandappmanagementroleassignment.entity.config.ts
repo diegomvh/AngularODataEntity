@@ -5,7 +5,7 @@ import { DeviceAndAppManagementRoleAssignment } from './deviceandappmanagementro
 //#endregion
 
 export const DeviceAndAppManagementRoleAssignmentConfig = {
-  name: "DeviceAndAppManagementRoleAssignment",
+  name: "deviceAndAppManagementRoleAssignment",
   base: "microsoft.graph.roleAssignment",
   annotations: [],
   fields: {

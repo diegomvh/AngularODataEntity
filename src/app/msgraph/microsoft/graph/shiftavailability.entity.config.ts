@@ -5,7 +5,7 @@ import { ShiftAvailability } from './shiftavailability.entity';
 //#endregion
 
 export const ShiftAvailabilityConfig = {
-  name: "ShiftAvailability",
+  name: "shiftAvailability",
   annotations: [],
   fields: {
     recurrence: {type: 'graph.patternedRecurrence'},

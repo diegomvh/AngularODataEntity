@@ -5,7 +5,7 @@ import { WorkbookWorksheetProtection } from './workbookworksheetprotection.entit
 //#endregion
 
 export const WorkbookWorksheetProtectionConfig = {
-  name: "WorkbookWorksheetProtection",
+  name: "workbookWorksheetProtection",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { OAuth2PermissionGrant } from './oauth2permissiongrant.entity';
 //#endregion
 
 export const OAuth2PermissionGrantConfig = {
-  name: "OAuth2PermissionGrant",
+  name: "oAuth2PermissionGrant",
   base: "microsoft.graph.entity",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { AndroidGeneralDeviceConfiguration } from './androidgeneraldeviceconfigu
 //#endregion
 
 export const AndroidGeneralDeviceConfigurationConfig = {
-  name: "AndroidGeneralDeviceConfiguration",
+  name: "androidGeneralDeviceConfiguration",
   base: "microsoft.graph.deviceConfiguration",
   annotations: [],
   fields: {

@@ -5,7 +5,7 @@ import { TeamGuestSettings } from './teamguestsettings.entity';
 //#endregion
 
 export const TeamGuestSettingsConfig = {
-  name: "TeamGuestSettings",
+  name: "teamGuestSettings",
   annotations: [],
   fields: {
     allowCreateUpdateChannels: {type: 'Edm.Boolean'},

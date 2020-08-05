@@ -5,6 +5,6 @@ import { SafeSearchFilterType } from './safesearchfiltertype.enum';
 //#endregion
 
 export const SafeSearchFilterTypeConfig = {
-  name: "SafeSearchFilterType",
+  name: "safeSearchFilterType",
   members: SafeSearchFilterType
 } as EnumConfig<SafeSearchFilterType>;

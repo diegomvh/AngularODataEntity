@@ -5,7 +5,7 @@ import { AssignedPlan } from './assignedplan.entity';
 //#endregion
 
 export const AssignedPlanConfig = {
-  name: "AssignedPlan",
+  name: "assignedPlan",
   annotations: [],
   fields: {
     assignedDateTime: {type: 'Edm.DateTimeOffset'},
