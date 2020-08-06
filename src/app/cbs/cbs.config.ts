@@ -9,7 +9,7 @@ export const CBSConfig = {
   name: 'CBS',
   serviceRootUrl: 'https://www.cbs.nl/odata/v1/',
   version: '4.0',
-  creation: new Date('2020-08-05T17:01:48.4955103-03:00'),
+  creation: new Date('2020-08-06T17:11:26.4832719-03:00'),
   schemas: [
     ModelsSchema,
     DefaultSchema

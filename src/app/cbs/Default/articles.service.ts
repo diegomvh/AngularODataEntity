@@ -5,11 +5,12 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
+  Duration,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
@@ -26,7 +27,7 @@ import { Article } from '../CBS/Website/ODataApi/Models/article.entity';
 //#endregion
 
 @Injectable()
-export class ArticlesService extends ODataService<Article> {
+export class ArticlesService extends ODataEntityService<Article> {
   constructor(protected client: ODataClient) {
     super(client, 'Articles', 'CBS.Website.ODataApi.Models.Article');
   }

@@ -5,11 +5,11 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
+  Duration,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,

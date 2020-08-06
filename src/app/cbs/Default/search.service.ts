@@ -5,11 +5,12 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
+  Duration,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
@@ -24,7 +25,7 @@ import { SearchResultItem } from '../CBS/Website/ODataApi/Models/searchresultite
 //#endregion
 
 @Injectable()
-export class SearchService extends ODataService<SearchResultItem> {
+export class SearchService extends ODataEntityService<SearchResultItem> {
   constructor(protected client: ODataClient) {
     super(client, 'Search', 'CBS.Website.ODataApi.Models.SearchResultItem');
   }
