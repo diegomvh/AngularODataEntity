@@ -4,6 +4,7 @@ import { PeopleService, Airport, Person, PersonGender, Photo } from './trippin';
 import { switchMap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin/index';
 import { ProductsService } from './north3';
+import { MeService } from './msgraph';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,13 @@ export class AppComponent {
     private factory: ODataServiceFactory,
     private api: DefaultContainerService,
     private people: PeopleService,
+    private me: MeService,
     private products: ProductsService
   ) {
-    this.products.entities().get({withCount: true, config: "North2"}).subscribe(console.log);
-    this.products.entities().get({withCount: true, config: "North3"}).subscribe(console.log);
+    console.log(odata);
+    //this.products.entities().get({withCount: true, config: "North2"}).subscribe(console.log);
+    //this.products.entities().get({withCount: true, config: "North3"}).subscribe(console.log);
+    this.me.entities().all().subscribe(console.log);
   }
 
   trippin() {
