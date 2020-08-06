@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -24,7 +24,7 @@ import { Advertisement } from './advertisement.entity';
 //#endregion
 
 @Injectable()
-export class AdvertisementsService extends ODataService<Advertisement> {
+export class AdvertisementsService extends ODataEntityService<Advertisement> {
   constructor(protected client: ODataClient) {
     super(client, 'Advertisements', 'ODataDemo.Advertisement');
   }

@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -30,7 +30,7 @@ import { DriveItem } from './driveitem.entity';
 //#endregion
 
 @Injectable()
-export class DriveService extends ODataService<Drive> {
+export class DriveService extends ODataSingletonService<Drive> {
   constructor(protected client: ODataClient) {
     super(client, 'drive', 'microsoft.graph.drive');
   }

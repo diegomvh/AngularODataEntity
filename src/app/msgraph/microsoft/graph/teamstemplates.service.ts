@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -24,7 +24,7 @@ import { TeamsTemplate } from './teamstemplate.entity';
 //#endregion
 
 @Injectable()
-export class TeamsTemplatesService extends ODataService<TeamsTemplate> {
+export class TeamsTemplatesService extends ODataEntityService<TeamsTemplate> {
   constructor(protected client: ODataClient) {
     super(client, 'teamsTemplates', 'microsoft.graph.teamsTemplate');
   }

@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -25,7 +25,7 @@ import { GroupSettingTemplate } from './groupsettingtemplate.entity';
 //#endregion
 
 @Injectable()
-export class GroupSettingTemplatesService extends ODataService<GroupSettingTemplate> {
+export class GroupSettingTemplatesService extends ODataEntityService<GroupSettingTemplate> {
   constructor(protected client: ODataClient) {
     super(client, 'groupSettingTemplates', 'microsoft.graph.groupSettingTemplate');
   }

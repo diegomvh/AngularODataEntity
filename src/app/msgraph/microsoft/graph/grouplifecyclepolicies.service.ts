@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -24,7 +24,7 @@ import { GroupLifecyclePolicy } from './grouplifecyclepolicy.entity';
 //#endregion
 
 @Injectable()
-export class GroupLifecyclePoliciesService extends ODataService<GroupLifecyclePolicy> {
+export class GroupLifecyclePoliciesService extends ODataEntityService<GroupLifecyclePolicy> {
   constructor(protected client: ODataClient) {
     super(client, 'groupLifecyclePolicies', 'microsoft.graph.groupLifecyclePolicy');
   }

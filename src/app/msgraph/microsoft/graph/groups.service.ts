@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -31,7 +31,7 @@ import { DriveItem } from './driveitem.entity';
 //#endregion
 
 @Injectable()
-export class GroupsService extends ODataService<Group> {
+export class GroupsService extends ODataEntityService<Group> {
   constructor(protected client: ODataClient) {
     super(client, 'groups', 'microsoft.graph.group');
   }

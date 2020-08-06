@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -27,7 +27,7 @@ import { PlannerBucket } from './plannerbucket.entity';
 //#endregion
 
 @Injectable()
-export class PlannerService extends ODataService<Planner> {
+export class PlannerService extends ODataSingletonService<Planner> {
   constructor(protected client: ODataClient) {
     super(client, 'planner', 'microsoft.graph.planner');
   }

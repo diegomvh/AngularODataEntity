@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -24,7 +24,7 @@ import { ReportRoot } from './reportroot.entity';
 //#endregion
 
 @Injectable()
-export class ReportsService extends ODataService<ReportRoot> {
+export class ReportsService extends ODataSingletonService<ReportRoot> {
   constructor(protected client: ODataClient) {
     super(client, 'reports', 'microsoft.graph.reportRoot');
   }

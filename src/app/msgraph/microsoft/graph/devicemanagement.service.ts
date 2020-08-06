@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -55,7 +55,7 @@ import { WindowsInformationProtectionNetworkLearningSummary } from './windowsinf
 //#endregion
 
 @Injectable()
-export class DeviceManagementService extends ODataService<DeviceManagement> {
+export class DeviceManagementService extends ODataSingletonService<DeviceManagement> {
   constructor(protected client: ODataClient) {
     super(client, 'deviceManagement', 'microsoft.graph.deviceManagement');
   }

@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -24,7 +24,7 @@ import { DirectoryRoleTemplate } from './directoryroletemplate.entity';
 //#endregion
 
 @Injectable()
-export class DirectoryRoleTemplatesService extends ODataService<DirectoryRoleTemplate> {
+export class DirectoryRoleTemplatesService extends ODataEntityService<DirectoryRoleTemplate> {
   constructor(protected client: ODataClient) {
     super(client, 'directoryRoleTemplates', 'microsoft.graph.directoryRoleTemplate');
   }

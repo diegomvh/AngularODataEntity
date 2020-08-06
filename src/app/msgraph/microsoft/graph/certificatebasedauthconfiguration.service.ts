@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -25,7 +25,7 @@ import { CertificateBasedAuthConfiguration } from './certificatebasedauthconfigu
 //#endregion
 
 @Injectable()
-export class CertificateBasedAuthConfigurationService extends ODataService<CertificateBasedAuthConfiguration> {
+export class CertificateBasedAuthConfigurationService extends ODataEntityService<CertificateBasedAuthConfiguration> {
   constructor(protected client: ODataClient) {
     super(client, 'certificateBasedAuthConfiguration', 'microsoft.graph.certificateBasedAuthConfiguration');
   }

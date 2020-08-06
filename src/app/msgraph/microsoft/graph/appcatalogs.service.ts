@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -25,7 +25,7 @@ import { TeamsApp } from './teamsapp.entity';
 //#endregion
 
 @Injectable()
-export class AppCatalogsService extends ODataService<AppCatalogs> {
+export class AppCatalogsService extends ODataSingletonService<AppCatalogs> {
   constructor(protected client: ODataClient) {
     super(client, 'appCatalogs', 'microsoft.graph.appCatalogs');
   }

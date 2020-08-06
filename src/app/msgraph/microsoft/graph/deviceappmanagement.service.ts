@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -38,7 +38,7 @@ import { ManagedAppStatus } from './managedappstatus.entity';
 //#endregion
 
 @Injectable()
-export class DeviceAppManagementService extends ODataService<DeviceAppManagement> {
+export class DeviceAppManagementService extends ODataSingletonService<DeviceAppManagement> {
   constructor(protected client: ODataClient) {
     super(client, 'deviceAppManagement', 'microsoft.graph.deviceAppManagement');
   }

@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -24,7 +24,7 @@ import { Photo } from './photo.entity';
 //#endregion
 
 @Injectable()
-export class PhotosService extends ODataService<Photo> {
+export class PhotosService extends ODataEntityService<Photo> {
   constructor(protected client: ODataClient) {
     super(client, 'Photos', 'Microsoft.OData.SampleService.Models.TripPin.Photo');
   }

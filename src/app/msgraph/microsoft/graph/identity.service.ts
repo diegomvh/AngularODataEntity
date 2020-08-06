@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -25,7 +25,7 @@ import { ConditionalAccessRoot } from './conditionalaccessroot.entity';
 //#endregion
 
 @Injectable()
-export class IdentityService extends ODataService<IdentityContainer> {
+export class IdentityService extends ODataSingletonService<IdentityContainer> {
   constructor(protected client: ODataClient) {
     super(client, 'identity', 'microsoft.graph.identityContainer');
   }

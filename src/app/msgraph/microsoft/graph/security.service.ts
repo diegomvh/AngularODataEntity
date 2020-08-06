@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -27,7 +27,7 @@ import { SecureScore } from './securescore.entity';
 //#endregion
 
 @Injectable()
-export class SecurityService extends ODataService<Security> {
+export class SecurityService extends ODataSingletonService<Security> {
   constructor(protected client: ODataClient) {
     super(client, 'Security', 'microsoft.graph.security');
   }

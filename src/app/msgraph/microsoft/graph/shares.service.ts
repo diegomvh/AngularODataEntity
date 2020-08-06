@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -25,7 +25,7 @@ import { SharedDriveItem } from './shareddriveitem.entity';
 //#endregion
 
 @Injectable()
-export class SharesService extends ODataService<SharedDriveItem> {
+export class SharesService extends ODataEntityService<SharedDriveItem> {
   constructor(protected client: ODataClient) {
     super(client, 'shares', 'microsoft.graph.sharedDriveItem');
   }

@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -49,7 +49,7 @@ import { ItemActivityStat } from './itemactivitystat.entity';
 //#endregion
 
 @Injectable()
-export class WorkbooksService extends ODataService<DriveItem> {
+export class WorkbooksService extends ODataEntityService<DriveItem> {
   constructor(protected client: ODataClient) {
     super(client, 'workbooks', 'microsoft.graph.driveItem');
   }

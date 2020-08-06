@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -28,7 +28,7 @@ import { Trip } from './trip.entity';
 //#endregion
 
 @Injectable()
-export class MeService extends ODataService<Person> {
+export class MeService extends ODataSingletonService<Person> {
   constructor(protected client: ODataClient) {
     super(client, 'Me', 'Microsoft.OData.SampleService.Models.TripPin.Person');
   }

@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -25,7 +25,7 @@ import { WorkforceIntegration } from './workforceintegration.entity';
 //#endregion
 
 @Injectable()
-export class TeamworkService extends ODataService<Teamwork> {
+export class TeamworkService extends ODataSingletonService<Teamwork> {
   constructor(protected client: ODataClient) {
     super(client, 'teamwork', 'microsoft.graph.teamwork');
   }

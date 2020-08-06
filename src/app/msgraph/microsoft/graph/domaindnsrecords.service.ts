@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -24,7 +24,7 @@ import { DomainDnsRecord } from './domaindnsrecord.entity';
 //#endregion
 
 @Injectable()
-export class DomainDnsRecordsService extends ODataService<DomainDnsRecord> {
+export class DomainDnsRecordsService extends ODataEntityService<DomainDnsRecord> {
   constructor(protected client: ODataClient) {
     super(client, 'domainDnsRecords', 'microsoft.graph.domainDnsRecord');
   }

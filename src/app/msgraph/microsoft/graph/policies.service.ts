@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -31,7 +31,7 @@ import { ConditionalAccessPolicy } from './conditionalaccesspolicy.entity';
 //#endregion
 
 @Injectable()
-export class PoliciesService extends ODataService<PolicyRoot> {
+export class PoliciesService extends ODataSingletonService<PolicyRoot> {
   constructor(protected client: ODataClient) {
     super(client, 'policies', 'microsoft.graph.policyRoot');
   }

@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -27,7 +27,7 @@ import { CallRecord } from './callRecords/callrecord.entity';
 //#endregion
 
 @Injectable()
-export class CommunicationsService extends ODataService<CloudCommunications> {
+export class CommunicationsService extends ODataSingletonService<CloudCommunications> {
   constructor(protected client: ODataClient) {
     super(client, 'communications', 'microsoft.graph.cloudCommunications');
   }

@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -26,7 +26,7 @@ import { SubscribedSku } from './subscribedsku.entity';
 //#endregion
 
 @Injectable()
-export class SubscribedSkusService extends ODataService<SubscribedSku> {
+export class SubscribedSkusService extends ODataEntityService<SubscribedSku> {
   constructor(protected client: ODataClient) {
     super(client, 'subscribedSkus', 'microsoft.graph.subscribedSku');
   }

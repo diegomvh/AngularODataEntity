@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { 
   ODataClient,
   ODataService, 
-  ODataEntity, 
+  ODataSingletonEntity, 
   ODataEntities, 
   ODataProperty, 
   EntityKey,
@@ -25,7 +25,7 @@ import { Directory } from './directory.entity';
 //#endregion
 
 @Injectable()
-export class DirectoryService extends ODataService<Directory> {
+export class DirectoryService extends ODataSingletonService<Directory> {
   constructor(protected client: ODataClient) {
     super(client, 'directory', 'microsoft.graph.directory');
   }

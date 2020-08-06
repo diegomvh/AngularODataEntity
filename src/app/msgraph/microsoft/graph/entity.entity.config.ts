@@ -1,4 +1,4 @@
-﻿import { EntityConfig as ODataEntityConfig } from 'angular-odata';
+﻿import { EntityConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
@@ -10,4 +10,4 @@ export const EntityConfig = {
   fields: {
     id: {type: 'Edm.String', key: true, ref: 'id', nullable: false}
   }
-} as ODataEntityConfig<Entity>;
+} as EntityConfig<Entity>;

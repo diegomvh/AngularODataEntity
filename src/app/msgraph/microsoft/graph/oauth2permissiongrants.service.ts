@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -24,7 +24,7 @@ import { OAuth2PermissionGrant } from './oauth2permissiongrant.entity';
 //#endregion
 
 @Injectable()
-export class Oauth2PermissionGrantsService extends ODataService<OAuth2PermissionGrant> {
+export class Oauth2PermissionGrantsService extends ODataEntityService<OAuth2PermissionGrant> {
   constructor(protected client: ODataClient) {
     super(client, 'oauth2PermissionGrants', 'microsoft.graph.oAuth2PermissionGrant');
   }

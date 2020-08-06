@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -25,7 +25,7 @@ import { SchemaExtension } from './schemaextension.entity';
 //#endregion
 
 @Injectable()
-export class SchemaExtensionsService extends ODataService<SchemaExtension> {
+export class SchemaExtensionsService extends ODataEntityService<SchemaExtension> {
   constructor(protected client: ODataClient) {
     super(client, 'schemaExtensions', 'microsoft.graph.schemaExtension');
   }
