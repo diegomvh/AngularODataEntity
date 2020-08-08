@@ -20,8 +20,8 @@ export class AppComponent {
     private me: MeService,
     private products: ProductsService
   ) {
-    //this.nort2();
-    //this.nort3();
+    this.nort2();
+    this.nort3();
     this.trippin();
   }
 
@@ -35,7 +35,7 @@ export class AppComponent {
 
   trippin() {
     this.api.resetDataSource().call(null).subscribe(() => {
-      //this.queries();
+      this.queries();
       this.mutate();
     });
   }
