@@ -20,15 +20,22 @@ export class AppComponent {
     private me: MeService,
     private products: ProductsService
   ) {
-    console.log(odata);
-    //this.products.entities().get({withCount: true, config: "North2"}).subscribe(console.log);
-    //this.products.entities().get({withCount: true, config: "North3"}).subscribe(console.log);
-    this.me.entities().all().subscribe(console.log);
+    //this.nort2();
+    //this.nort3();
+    this.trippin();
+  }
+
+  nort2() {
+    this.products.entities().get({withCount: true, config: "North2"}).subscribe(console.log);
+  }
+
+  nort3() {
+    this.products.entities().get({withCount: true, config: "North3"}).subscribe(console.log);
   }
 
   trippin() {
     this.api.resetDataSource().call(null).subscribe(() => {
-      this.queries();
+      //this.queries();
       this.mutate();
     });
   }
@@ -42,8 +49,8 @@ export class AppComponent {
 
   entities() {
     // Use OData Service Factory
-    let airportsService = this.factory.create<Airport>("Airports", 'Microsoft.OData.SampleService.Models.TripPin.Airport');
-    let peopleService = this.factory.create<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
+    let airportsService = this.factory.entity<Airport>("Airports", 'Microsoft.OData.SampleService.Models.TripPin.Airport');
+    let peopleService = this.factory.entity<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
 
     let airports = airportsService.entities();
 
@@ -103,7 +110,7 @@ export class AppComponent {
 
   navigation() {
     // Create service without Type for Person entity
-    let peopleService = this.factory.create<Person>("People");
+    let peopleService = this.factory.entity<Person>("People");
     let person = peopleService.entity("scottketchum");
     person.get({config: 'TripPin'}).subscribe(({entity, meta}) => console.log(meta.property('Emails')));
 
@@ -114,7 +121,7 @@ export class AppComponent {
 
   property() {
     // Create Service with Type
-    let peopleService = this.factory.create<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
+    let peopleService = this.factory.entity<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
     let person = peopleService.entity("scottketchum");
     person.property<string[]>("Emails").fetch().subscribe(console.log)
     person.property<Person[]>("Friends").fetch().subscribe(console.log)
@@ -150,7 +157,7 @@ export class AppComponent {
 
   createPerson() {
     // Use Person Service
-    this.people.entities().add({
+    this.people.create({
       Emails: ['some@email.com'], 
       UserName: 'diegomvh', 
       Gender: PersonGender.Male, 
@@ -158,9 +165,14 @@ export class AppComponent {
       LastName: 'van Haaster'
     }).pipe(
       switchMap((person) => {
-        return this.people.entity(person).assign({UserName: person.UserName, Gender: PersonGender.Female});
+        // etag
+        console.log(this.people.config().options.helper.etag(person))
+        return this.people.assign(person, {UserName: person.UserName, Gender: PersonGender.Female});
       })
-    ).toPromise();
+    ).subscribe((person) => {
+      //New etag
+      console.log(this.people.config().options.helper.etag(person))
+    });
   }
 
   batch() {

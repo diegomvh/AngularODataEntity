@@ -7,6 +7,7 @@ import { ODataModule } from 'angular-odata';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
+import { TabViewModule } from 'primeng/tabview';
 import { TripPinConfig, TripPinModule } from './trippin';
 import { NorthwindConfig, NorthwindModule } from './northwind';
 import { North2Config, North2Module } from './north2';
@@ -15,12 +16,15 @@ import { MsGraphConfig, MsGraphModule } from './msgraph';
 import { CBSConfig, CBSModule } from './cbs';
 import { PeopleComponent, AirlinesComponent, AirportsComponent, PersonComponent } from './components/trippin';
 import { ProductsComponent, CategoriesComponent } from './components/northwind';
+import { ArticlesComponent } from './components/cbs';
 import { OrdersComponent } from './components/northwind/orders.component';
 import { EmployeesComponent } from './components/northwind/employees.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    //CBS
+    ArticlesComponent,
     //TripPin
     PeopleComponent,
     AirlinesComponent,
@@ -38,6 +42,7 @@ import { EmployeesComponent } from './components/northwind/employees.component';
     InputTextModule,
     TableModule,
     DialogModule,
+    TabViewModule,
     ODataModule.forRoot(
       // TripPin
       Object.assign(TripPinConfig, {

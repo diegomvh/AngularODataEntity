@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -25,7 +25,7 @@ import { Product } from '../../../NorthwindModel/product.entity';
 //#endregion
 
 @Injectable()
-export class CategoriesService extends ODataService<Category> {
+export class CategoriesService extends ODataEntityService<Category> {
   constructor(protected client: ODataClient) {
     super(client, 'Categories', 'NorthwindModel.Category');
   }

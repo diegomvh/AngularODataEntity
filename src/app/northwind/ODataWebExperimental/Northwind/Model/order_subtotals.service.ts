@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataService, 
+  ODataEntityService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -24,7 +24,7 @@ import { OrderSubtotal } from '../../../NorthwindModel/order_subtotal.entity';
 //#endregion
 
 @Injectable()
-export class OrderSubtotalsService extends ODataService<OrderSubtotal> {
+export class OrderSubtotalsService extends ODataEntityService<OrderSubtotal> {
   constructor(protected client: ODataClient) {
     super(client, 'Order_Subtotals', 'NorthwindModel.Order_Subtotal');
   }
