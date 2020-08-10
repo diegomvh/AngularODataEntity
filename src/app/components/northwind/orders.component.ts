@@ -45,8 +45,7 @@ export class OrdersComponent implements OnInit {
   }
 
   ngOnInit() {
-    let config = this.resource.config();
-    this.cols = config.fields()
+    this.cols = this.resource.config.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
     this.loading = true;

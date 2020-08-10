@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Territory } from './territory.entity';
+import { TerritoryModel } from './territory.model';
+import { TerritoryCollection } from './territory.collection';
 //#endregion
 
 export const TerritoryConfig = {
   name: "Territory",
+  model: TerritoryModel,
+  collection: TerritoryCollection,
   annotations: [],
   fields: {
     TerritoryID: {type: 'Edm.String', key: true, ref: 'TerritoryID', nullable: false, maxLength: 20},

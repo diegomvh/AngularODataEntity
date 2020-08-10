@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { SummaryOfSalesByYear } from './summary_of_sales_by_year.entity';
+import { SummaryOfSalesByYearModel } from './summary_of_sales_by_year.model';
+import { SummaryOfSalesByYearCollection } from './summary_of_sales_by_year.collection';
 //#endregion
 
 export const SummaryOfSalesByYearConfig = {
   name: "Summary_of_Sales_by_Year",
+  model: SummaryOfSalesByYearModel,
+  collection: SummaryOfSalesByYearCollection,
   annotations: [],
   fields: {
     ShippedDate: {type: 'Edm.DateTimeOffset'},

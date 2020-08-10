@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { CurrentProductList } from '../../../NorthwindModel/current_product_list.entity';
+import { CurrentProductListModel } from '../../../NorthwindModel/current_product_list.model';
+import { CurrentProductListCollection } from '../../../NorthwindModel/current_product_list.collection';
 //#endregion
 
 @Injectable()
@@ -29,10 +31,11 @@ export class CurrentProductListsService extends ODataEntityService<CurrentProduc
     super(client, 'Current_Product_Lists', 'NorthwindModel.Current_Product_List');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  currentProductListModel(): CurrentProductListModel<CurrentProductList> {
+    return super.model() as CurrentProductListModel<CurrentProductList>;
+  }
+  
+  currentProductListCollection(): CurrentProductListCollection<CurrentProductList, CurrentProductListModel<CurrentProductList>> {
+    return super.collection() as CurrentProductListCollection<CurrentProductList, CurrentProductListModel<CurrentProductList>>;
+  }
 }

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient } from 'angular-odata';
 import { PeopleService, Airport, Person, PersonGender, Photo } from './trippin';
+import { OrdersService } from './northwind';
 import { switchMap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin/index';
 import { ProductsService } from './north3';
-import { MeService } from './msgraph';
 
 @Component({
   selector: 'app-root',
@@ -17,14 +17,16 @@ export class AppComponent {
     private factory: ODataServiceFactory,
     private api: DefaultContainerService,
     private people: PeopleService,
-    private me: MeService,
-    private products: ProductsService
+    private products: ProductsService,
+    private orders: OrdersService 
   ) {
-    this.nort2();
-    this.nort3();
-    this.trippin();
+    //this.nort2();
+    //this.nort3();
+    //this.trippin();
+    this.northwind();
   }
 
+  //#region APIs
   nort2() {
     this.products.entities().get({withCount: true, config: "North2"}).subscribe(console.log);
   }
@@ -39,6 +41,11 @@ export class AppComponent {
       this.mutate();
     });
   }
+
+  northwind() {
+    this.models();
+  }
+  //#endregion
 
   queries() {
     this.entities();
@@ -156,6 +163,7 @@ export class AppComponent {
   }
 
   createPerson() {
+    const odata = this.people.config.options.helper;
     // Use Person Service
     this.people.create({
       Emails: ['some@email.com'], 
@@ -166,16 +174,26 @@ export class AppComponent {
     }).pipe(
       switchMap((person) => {
         // etag
-        console.log(this.people.config().options.helper.etag(person))
+        console.log(odata.etag(person))
         return this.people.assign(person, {UserName: person.UserName, Gender: PersonGender.Female});
       })
     ).subscribe((person) => {
       //New etag
-      console.log(this.people.config().options.helper.etag(person))
+      console.log(odata.etag(person))
     });
   }
 
   batch() {
     let batch = this.odata.batch();
+  }
+
+  models() {
+    const orders = this.orders.orderCollection();
+    orders.fetch().subscribe(orders => {
+      const order = orders.models[1];
+      console.log(order);
+      order.ShipPostalCode = "1234";
+      order.save().toPromise();
+    });
   }
 }

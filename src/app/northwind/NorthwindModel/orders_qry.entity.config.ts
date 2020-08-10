@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { OrdersQry } from './orders_qry.entity';
+import { OrdersQryModel } from './orders_qry.model';
+import { OrdersQryCollection } from './orders_qry.collection';
 //#endregion
 
 export const OrdersQryConfig = {
   name: "Orders_Qry",
+  model: OrdersQryModel,
+  collection: OrdersQryCollection,
   annotations: [],
   fields: {
     OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},

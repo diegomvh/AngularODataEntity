@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Supplier } from './supplier.entity';
+import { SupplierModel } from './supplier.model';
+import { SupplierCollection } from './supplier.collection';
 //#endregion
 
 export const SupplierConfig = {
   name: "Supplier",
+  model: SupplierModel,
+  collection: SupplierCollection,
   annotations: [],
   fields: {
     SupplierID: {type: 'Edm.Int32', key: true, ref: 'SupplierID', nullable: false},

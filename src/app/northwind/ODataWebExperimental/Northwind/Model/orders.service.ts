@@ -25,6 +25,16 @@ import { Employee } from '../../../NorthwindModel/employee.entity';
 import { OrderDetail } from '../../../NorthwindModel/order_detail.entity';
 import { Order } from '../../../NorthwindModel/order.entity';
 import { Shipper } from '../../../NorthwindModel/shipper.entity';
+import { CustomerModel } from '../../../NorthwindModel/customer.model';
+import { EmployeeModel } from '../../../NorthwindModel/employee.model';
+import { OrderDetailModel } from '../../../NorthwindModel/order_detail.model';
+import { OrderModel } from '../../../NorthwindModel/order.model';
+import { ShipperModel } from '../../../NorthwindModel/shipper.model';
+import { CustomerCollection } from '../../../NorthwindModel/customer.collection';
+import { EmployeeCollection } from '../../../NorthwindModel/employee.collection';
+import { OrderDetailCollection } from '../../../NorthwindModel/order_detail.collection';
+import { OrderCollection } from '../../../NorthwindModel/order.collection';
+import { ShipperCollection } from '../../../NorthwindModel/shipper.collection';
 //#endregion
 
 @Injectable()
@@ -33,22 +43,11 @@ export class OrdersService extends ODataEntityService<Order> {
     super(client, 'Orders', 'NorthwindModel.Order');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  public customer(entity: EntityKey<Order>): ODataNavigationPropertyResource<Customer> {
-    return this.entity(entity).navigationProperty<Customer>('Customer');
+  orderModel(): OrderModel<Order> {
+    return super.model() as OrderModel<Order>;
   }
-  public employee(entity: EntityKey<Order>): ODataNavigationPropertyResource<Employee> {
-    return this.entity(entity).navigationProperty<Employee>('Employee');
+  
+  orderCollection(): OrderCollection<Order, OrderModel<Order>> {
+    return super.collection() as OrderCollection<Order, OrderModel<Order>>;
   }
-  public order_Details(entity: EntityKey<Order>): ODataNavigationPropertyResource<OrderDetail> {
-    return this.entity(entity).navigationProperty<OrderDetail>('Order_Details');
-  }
-  public shipper(entity: EntityKey<Order>): ODataNavigationPropertyResource<Shipper> {
-    return this.entity(entity).navigationProperty<Shipper>('Shipper');
-  }
-  //#endregion
 }

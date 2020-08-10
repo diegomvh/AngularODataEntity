@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { AlphabeticalListOfProduct } from './alphabetical_list_of_product.entity';
+import { AlphabeticalListOfProductModel } from './alphabetical_list_of_product.model';
+import { AlphabeticalListOfProductCollection } from './alphabetical_list_of_product.collection';
 //#endregion
 
 export const AlphabeticalListOfProductConfig = {
   name: "Alphabetical_list_of_product",
+  model: AlphabeticalListOfProductModel,
+  collection: AlphabeticalListOfProductCollection,
   annotations: [],
   fields: {
     ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},

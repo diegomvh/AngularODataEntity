@@ -22,6 +22,10 @@ import {
 //#region ODataApi Imports
 import { Region } from '../../../NorthwindModel/region.entity';
 import { Territory } from '../../../NorthwindModel/territory.entity';
+import { RegionModel } from '../../../NorthwindModel/region.model';
+import { TerritoryModel } from '../../../NorthwindModel/territory.model';
+import { RegionCollection } from '../../../NorthwindModel/region.collection';
+import { TerritoryCollection } from '../../../NorthwindModel/territory.collection';
 //#endregion
 
 @Injectable()
@@ -30,13 +34,11 @@ export class RegionsService extends ODataEntityService<Region> {
     super(client, 'Regions', 'NorthwindModel.Region');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  public territories(entity: EntityKey<Region>): ODataNavigationPropertyResource<Territory> {
-    return this.entity(entity).navigationProperty<Territory>('Territories');
+  regionModel(): RegionModel<Region> {
+    return super.model() as RegionModel<Region>;
   }
-  //#endregion
+  
+  regionCollection(): RegionCollection<Region, RegionModel<Region>> {
+    return super.collection() as RegionCollection<Region, RegionModel<Region>>;
+  }
 }

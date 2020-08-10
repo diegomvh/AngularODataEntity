@@ -3,6 +3,12 @@
 //#region ODataApi Imports
 import { Order } from './order.entity';
 import { Territory } from './territory.entity';
+import { EmployeeModel } from './employee.model';
+import { OrderModel } from './order.model';
+import { TerritoryModel } from './territory.model';
+import { EmployeeCollection } from './employee.collection';
+import { OrderCollection } from './order.collection';
+import { TerritoryCollection } from './territory.collection';
 //#endregion
 
 export interface Employee {

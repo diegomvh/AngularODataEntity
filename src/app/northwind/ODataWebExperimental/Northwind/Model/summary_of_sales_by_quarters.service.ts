@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { SummaryOfSalesByQuarter } from '../../../NorthwindModel/summary_of_sales_by_quarter.entity';
+import { SummaryOfSalesByQuarterModel } from '../../../NorthwindModel/summary_of_sales_by_quarter.model';
+import { SummaryOfSalesByQuarterCollection } from '../../../NorthwindModel/summary_of_sales_by_quarter.collection';
 //#endregion
 
 @Injectable()
@@ -29,10 +31,11 @@ export class SummaryOfSalesByQuartersService extends ODataEntityService<SummaryO
     super(client, 'Summary_of_Sales_by_Quarters', 'NorthwindModel.Summary_of_Sales_by_Quarter');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  summaryOfSalesByQuarterModel(): SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter> {
+    return super.model() as SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>;
+  }
+  
+  summaryOfSalesByQuarterCollection(): SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>> {
+    return super.collection() as SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>>;
+  }
 }

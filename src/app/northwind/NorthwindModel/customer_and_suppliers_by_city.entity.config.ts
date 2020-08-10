@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { CustomerAndSuppliersByCity } from './customer_and_suppliers_by_city.entity';
+import { CustomerAndSuppliersByCityModel } from './customer_and_suppliers_by_city.model';
+import { CustomerAndSuppliersByCityCollection } from './customer_and_suppliers_by_city.collection';
 //#endregion
 
 export const CustomerAndSuppliersByCityConfig = {
   name: "Customer_and_Suppliers_by_City",
+  model: CustomerAndSuppliersByCityModel,
+  collection: CustomerAndSuppliersByCityCollection,
   annotations: [],
   fields: {
     City: {type: 'Edm.String', maxLength: 15},

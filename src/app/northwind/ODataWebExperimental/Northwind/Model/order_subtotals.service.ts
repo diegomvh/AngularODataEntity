@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { OrderSubtotal } from '../../../NorthwindModel/order_subtotal.entity';
+import { OrderSubtotalModel } from '../../../NorthwindModel/order_subtotal.model';
+import { OrderSubtotalCollection } from '../../../NorthwindModel/order_subtotal.collection';
 //#endregion
 
 @Injectable()
@@ -29,10 +31,11 @@ export class OrderSubtotalsService extends ODataEntityService<OrderSubtotal> {
     super(client, 'Order_Subtotals', 'NorthwindModel.Order_Subtotal');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  orderSubtotalModel(): OrderSubtotalModel<OrderSubtotal> {
+    return super.model() as OrderSubtotalModel<OrderSubtotal>;
+  }
+  
+  orderSubtotalCollection(): OrderSubtotalCollection<OrderSubtotal, OrderSubtotalModel<OrderSubtotal>> {
+    return super.collection() as OrderSubtotalCollection<OrderSubtotal, OrderSubtotalModel<OrderSubtotal>>;
+  }
 }

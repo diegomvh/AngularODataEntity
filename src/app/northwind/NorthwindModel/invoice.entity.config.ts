@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Invoice } from './invoice.entity';
+import { InvoiceModel } from './invoice.model';
+import { InvoiceCollection } from './invoice.collection';
 //#endregion
 
 export const InvoiceConfig = {
   name: "Invoice",
+  model: InvoiceModel,
+  collection: InvoiceCollection,
   annotations: [],
   fields: {
     ShipName: {type: 'Edm.String', maxLength: 40},

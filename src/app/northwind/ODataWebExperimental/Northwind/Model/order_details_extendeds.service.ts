@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { OrderDetailsExtended } from '../../../NorthwindModel/order_details_extended.entity';
+import { OrderDetailsExtendedModel } from '../../../NorthwindModel/order_details_extended.model';
+import { OrderDetailsExtendedCollection } from '../../../NorthwindModel/order_details_extended.collection';
 //#endregion
 
 @Injectable()
@@ -29,10 +31,11 @@ export class OrderDetailsExtendedsService extends ODataEntityService<OrderDetail
     super(client, 'Order_Details_Extendeds', 'NorthwindModel.Order_Details_Extended');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  orderDetailsExtendedModel(): OrderDetailsExtendedModel<OrderDetailsExtended> {
+    return super.model() as OrderDetailsExtendedModel<OrderDetailsExtended>;
+  }
+  
+  orderDetailsExtendedCollection(): OrderDetailsExtendedCollection<OrderDetailsExtended, OrderDetailsExtendedModel<OrderDetailsExtended>> {
+    return super.collection() as OrderDetailsExtendedCollection<OrderDetailsExtended, OrderDetailsExtendedModel<OrderDetailsExtended>>;
+  }
 }

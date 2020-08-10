@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { Order } from './order.entity';
+import { OrderModel } from './order.model';
+import { OrderCollection } from './order.collection';
 //#endregion
 
 export interface Shipper {

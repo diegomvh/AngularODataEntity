@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { CategorySalesFor1997 } from '../../../NorthwindModel/category_sales_for_1997.entity';
+import { CategorySalesFor1997Model } from '../../../NorthwindModel/category_sales_for_1997.model';
+import { CategorySalesFor1997Collection } from '../../../NorthwindModel/category_sales_for_1997.collection';
 //#endregion
 
 @Injectable()
@@ -29,10 +31,11 @@ export class CategorySalesFor1997Service extends ODataEntityService<CategorySale
     super(client, 'Category_Sales_for_1997', 'NorthwindModel.Category_Sales_for_1997');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  categorySalesFor1997Model(): CategorySalesFor1997Model<CategorySalesFor1997> {
+    return super.model() as CategorySalesFor1997Model<CategorySalesFor1997>;
+  }
+  
+  categorySalesFor1997Collection(): CategorySalesFor1997Collection<CategorySalesFor1997, CategorySalesFor1997Model<CategorySalesFor1997>> {
+    return super.collection() as CategorySalesFor1997Collection<CategorySalesFor1997, CategorySalesFor1997Model<CategorySalesFor1997>>;
+  }
 }
