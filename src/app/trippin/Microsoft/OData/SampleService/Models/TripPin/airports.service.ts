@@ -22,6 +22,10 @@ import {
 //#region ODataApi Imports
 import { AirportLocation } from './airportlocation.entity';
 import { Airport } from './airport.entity';
+import { AirportLocationModel } from './airportlocation.model';
+import { AirportModel } from './airport.model';
+import { AirportLocationCollection } from './airportlocation.collection';
+import { AirportCollection } from './airport.collection';
 //#endregion
 
 @Injectable()
@@ -30,14 +34,11 @@ export class AirportsService extends ODataEntityService<Airport> {
     super(client, 'Airports', 'Microsoft.OData.SampleService.Models.TripPin.Airport');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  public getNearestAirport(): ODataFunctionResource<{lat: number, lon: number}, Airport> {
-    const resource = this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport');
-    return resource;
+  airportModel(): AirportModel<Airport> {
+    return super.model() as AirportModel<Airport>;
   }
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  
+  airportCollection(): AirportCollection<Airport, AirportModel<Airport>> {
+    return super.collection() as AirportCollection<Airport, AirportModel<Airport>>;
+  }
 }

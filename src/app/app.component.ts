@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient } from 'angular-odata';
 import { PeopleService, Airport, Person, PersonGender, Photo } from './trippin';
 import { OrdersService } from './northwind';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, switchMapTo } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin/index';
 import { ProductsService } from './north3';
 
@@ -22,8 +22,8 @@ export class AppComponent {
   ) {
     //this.nort2();
     //this.nort3();
-    //this.trippin();
-    this.northwind();
+    this.trippin();
+    //this.northwind();
   }
 
   //#region APIs
@@ -37,13 +37,14 @@ export class AppComponent {
 
   trippin() {
     this.api.resetDataSource().call(null).subscribe(() => {
-      this.queries();
-      this.mutate();
+      //this.queries();
+      //this.mutate();
+      this.trippinModels();
     });
   }
 
   northwind() {
-    this.models();
+    this.northwindModels();
   }
   //#endregion
 
@@ -187,13 +188,21 @@ export class AppComponent {
     let batch = this.odata.batch();
   }
 
-  models() {
+  trippinModels() {
+    const people = this.people.personCollection();
+    people.fetch().pipe(switchMap(people => {
+      const person = people.models[1];
+      person.Gender = PersonGender.Female;
+      return person.save();
+    })).subscribe(console.log);
+  }
+
+  northwindModels() {
     const orders = this.orders.orderCollection();
-    orders.fetch().subscribe(orders => {
+    orders.fetch().pipe(switchMap(orders => {
       const order = orders.models[1];
-      console.log(order);
-      order.ShipPostalCode = "1234";
-      order.save().toPromise();
-    });
+      order.ShipPostalCode = "12345";
+      return order.save();
+    })).subscribe(console.log);
   }
 }

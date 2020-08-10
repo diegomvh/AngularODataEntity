@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { Airline } from './airline.entity';
+import { AirlineModel } from './airline.model';
+import { AirlineCollection } from './airline.collection';
 //#endregion
 
 @Injectable()
@@ -29,10 +31,11 @@ export class AirlinesService extends ODataEntityService<Airline> {
     super(client, 'Airlines', 'Microsoft.OData.SampleService.Models.TripPin.Airline');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  airlineModel(): AirlineModel<Airline> {
+    return super.model() as AirlineModel<Airline>;
+  }
+  
+  airlineCollection(): AirlineCollection<Airline, AirlineModel<Airline>> {
+    return super.collection() as AirlineCollection<Airline, AirlineModel<Airline>>;
+  }
 }

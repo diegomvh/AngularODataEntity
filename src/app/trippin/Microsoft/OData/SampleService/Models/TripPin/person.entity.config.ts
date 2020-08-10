@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { Person } from './person.entity';
+import { PersonModel } from './person.model';
+import { PersonCollection } from './person.collection';
 //#endregion
 
 export const PersonConfig = {
   name: "Person",
   open: true,
+  model: PersonModel,
+  collection: PersonCollection,
   annotations: [],
   fields: {
     UserName: {type: 'Edm.String', key: true, ref: 'UserName', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},

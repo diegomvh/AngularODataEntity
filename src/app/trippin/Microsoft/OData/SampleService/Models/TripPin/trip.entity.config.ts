@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Trip } from './trip.entity';
+import { TripModel } from './trip.model';
+import { TripCollection } from './trip.collection';
 //#endregion
 
 export const TripConfig = {
   name: "Trip",
+  model: TripModel,
+  collection: TripCollection,
   annotations: [],
   fields: {
     TripId: {type: 'Edm.Int32', key: true, ref: 'TripId', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},

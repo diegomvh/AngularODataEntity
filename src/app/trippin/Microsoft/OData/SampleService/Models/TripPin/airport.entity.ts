@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { AirportLocation } from './airportlocation.entity';
+import { AirportLocationModel } from './airportlocation.model';
+import { AirportLocationCollection } from './airportlocation.collection';
 //#endregion
 
 export interface Airport {

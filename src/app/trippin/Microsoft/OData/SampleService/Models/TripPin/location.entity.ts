@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { City } from './city.entity';
+import { CityModel } from './city.model';
+import { CityCollection } from './city.collection';
 //#endregion
 
 export interface Location {

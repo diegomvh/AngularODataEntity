@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { Photo } from './photo.entity';
+import { PhotoModel } from './photo.model';
+import { PhotoCollection } from './photo.collection';
 //#endregion
 
 @Injectable()
@@ -29,10 +31,11 @@ export class PhotosService extends ODataEntityService<Photo> {
     super(client, 'Photos', 'Microsoft.OData.SampleService.Models.TripPin.Photo');
   }
 
-  //#region ODataApi Actions
-  //#endregion
-  //#region ODataApi Functions
-  //#endregion
-  //#region ODataApi Navigations
-  //#endregion
+  photoModel(): PhotoModel<Photo> {
+    return super.model() as PhotoModel<Photo>;
+  }
+  
+  photoCollection(): PhotoCollection<Photo, PhotoModel<Photo>> {
+    return super.collection() as PhotoCollection<Photo, PhotoModel<Photo>>;
+  }
 }
