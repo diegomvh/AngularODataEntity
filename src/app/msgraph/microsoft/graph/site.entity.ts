@@ -30,7 +30,7 @@ import { PublicErrorCollection } from './publicerror.collection';
 import { SiteCollectionCollection } from './sitecollection.collection';
 import { BaseItemCollection } from './baseitem.collection';
 import { DriveCollection } from './drive.collection';
-import { SiteCollection as PracticalBurnell } from './site.collection';
+import { SiteCollection as EloquentSaha } from './site.collection';
 import { OnenoteCollection } from './onenote.collection';
 import { ListCollection } from './list.collection';
 import { ItemAnalyticsCollection } from './itemanalytics.collection';

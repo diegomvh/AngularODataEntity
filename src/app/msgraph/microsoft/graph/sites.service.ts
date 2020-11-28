@@ -36,7 +36,7 @@ import { SharepointIdsCollection } from './sharepointids.collection';
 import { RootCollection } from './root.collection';
 import { PublicErrorCollection } from './publicerror.collection';
 import { SiteCollectionCollection } from './sitecollection.collection';
-import { SiteCollection as FriendlyMatsumoto } from './site.collection';
+import { SiteCollection as EcstaticLovelace } from './site.collection';
 import { ItemActivityStatCollection } from './itemactivitystat.collection';
 //#endregion
 

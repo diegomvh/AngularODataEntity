@@ -7,14 +7,14 @@ import { map } from 'rxjs/operators';
 import { ChangeNotification } from './changenotification.complex';
 import { ChangeNotificationCollection } from './changenotificationcollection.complex';
 import { ChangeNotificationModel } from './changenotification.model';
-import { ChangeNotificationCollection as VigilantRoentgen } from './changenotification.collection';
+import { ChangeNotificationCollection as MusingNewton } from './changenotification.collection';
 import { ChangeNotificationCollectionCollection } from './changenotificationcollection.collection';
 //#endregion
 
 export class ChangeNotificationCollectionModel<E extends ChangeNotificationCollection> extends ODataModel<E> {
   //#region ODataApi Properties
   validationTokens?: string[];
-  value: VigilantRoentgen<ChangeNotification, ChangeNotificationModel<ChangeNotification>>;
+  value: MusingNewton<ChangeNotification, ChangeNotificationModel<ChangeNotification>>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

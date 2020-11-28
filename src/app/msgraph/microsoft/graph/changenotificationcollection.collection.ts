@@ -8,7 +8,7 @@ import { ChangeNotification } from './changenotification.complex';
 import { ChangeNotificationCollection } from './changenotificationcollection.complex';
 import { ChangeNotificationModel } from './changenotification.model';
 import { ChangeNotificationCollectionModel } from './changenotificationcollection.model';
-import { ChangeNotificationCollection as AdoringSutherland } from './changenotification.collection';
+import { ChangeNotificationCollection as ReverentHellman } from './changenotification.collection';
 //#endregion
 
 export class ChangeNotificationCollectionCollection<E extends ChangeNotificationCollection, M extends ChangeNotificationCollectionModel<E>> extends ODataCollection<E, M> {

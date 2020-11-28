@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odata';
+import { ODataEntitySetResource } from 'angular-odata';
 import { Product, ProductsService } from 'src/app/northwind';
 
 @Component({
   selector: 'northwind-products',
-  template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadPeopleLazy($event)" [paginator]="true" 
+  template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadPeopleLazy($event)" [paginator]="true"
     [rows]="size" [totalRecords]="total" [loading]="loading">
     <ng-template pTemplate="header" let-columns>
         <tr>
@@ -40,12 +40,12 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private products: ProductsService
-  ) { 
+  ) {
     this.resource = this.products.entities().top(this.size);
   }
 
   ngOnInit() {
-    this.cols = this.resource.config.fields()
+    this.cols = this.resource.schema.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
     this.loading = true;
@@ -64,7 +64,7 @@ export class ProductsComponent implements OnInit {
   }
 
   filter(value: string, field: string) {
-    field = `tolower(${field})`; 
+    field = `tolower(${field})`;
     if (value) {
       let filter = {[field]: {contains: value.toLowerCase()}};
       this.resource.query.filter().assign(filter);

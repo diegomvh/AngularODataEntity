@@ -6,7 +6,7 @@ import { config } from 'rxjs';
 
 @Component({
   selector: 'trip-people',
-  template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadPeopleLazy($event)" [paginator]="true" 
+  template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadPeopleLazy($event)" [paginator]="true"
     [rows]="size" [totalRecords]="total" [loading]="loading">
     <ng-template pTemplate="header" let-columns>
         <tr>
@@ -49,14 +49,14 @@ export class PeopleComponent implements OnInit {
   constructor(
     private client: ODataClient,
     private people: PeopleService
-  ) { 
+  ) {
     this.resource = this.people.entities();
     // Try toJSON, fromJSON
     this.resource = this.client.fromJSON<ODataEntitySetResource<Person>>(this.resource.toJSON());
   }
 
   ngOnInit() {
-    this.cols = this.resource.config.fields()
+    this.cols = this.resource.schema.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
     this.loading = true;
@@ -75,7 +75,7 @@ export class PeopleComponent implements OnInit {
   }
 
   filter(value: string, field: string) {
-    field = `tolower(${field})`; 
+    field = `tolower(${field})`;
     if (value) {
       let filter = {[field]: {contains: value.toLowerCase()}};
       this.resource.query.filter().assign(filter);

@@ -35,7 +35,7 @@ import { PublicErrorCollection } from './publicerror.collection';
 import { SiteCollectionCollection } from './sitecollection.collection';
 import { BaseItemCollection } from './baseitem.collection';
 import { DriveCollection } from './drive.collection';
-import { SiteCollection as LaughingRamanujan } from './site.collection';
+import { SiteCollection as CoolTharp } from './site.collection';
 import { OnenoteCollection } from './onenote.collection';
 import { ListCollection } from './list.collection';
 import { ItemAnalyticsCollection } from './itemanalytics.collection';
@@ -58,7 +58,7 @@ export class SiteModel<E extends Site> extends BaseItemModel<E> {
   drives?: DriveCollection<Drive, DriveModel<Drive>>;
   items?: BaseItemCollection<BaseItem, BaseItemModel<BaseItem>>;
   lists?: ListCollection<List, ListModel<List>>;
-  sites?: LaughingRamanujan<Site, SiteModel<Site>>;
+  sites?: CoolTharp<Site, SiteModel<Site>>;
   onenote?: OnenoteModel<Onenote>;
   //#endregion
   //#region ODataApi Actions

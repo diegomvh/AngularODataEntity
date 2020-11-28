@@ -4,7 +4,7 @@ import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odat
 
 @Component({
   selector: 'cbs-articles',
-  template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadArticlesLazy($event)" [paginator]="true" 
+  template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadArticlesLazy($event)" [paginator]="true"
     [rows]="size" [totalRecords]="total" [loading]="loading">
     <ng-template pTemplate="header" let-columns>
         <tr>
@@ -42,14 +42,14 @@ export class ArticlesComponent implements OnInit {
   constructor(
     private client: ODataClient,
     private articles: ArticlesService
-  ) { 
+  ) {
     this.resource = this.articles.entities();
     // Try toJSON, fromJSON
     this.resource = this.client.fromJSON<ODataEntitySetResource<Article>>(this.resource.toJSON());
   }
 
   ngOnInit() {
-    this.cols = this.resource.config.fields()
+    this.cols = this.resource.schema.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
     this.loading = true;
@@ -68,7 +68,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   filter(value: string, field: string) {
-    field = `tolower(${field})`; 
+    field = `tolower(${field})`;
     if (value) {
       let filter = {[field]: {contains: value.toLowerCase()}};
       this.resource.query.filter().assign(filter);

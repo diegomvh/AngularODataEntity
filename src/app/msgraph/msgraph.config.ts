@@ -9,7 +9,7 @@ export const MsGraphConfig = {
   name: 'MsGraph',
   serviceRootUrl: 'https://graph.microsoft.com/v1.0/',
   version: '4.0',
-  creation: new Date('2020-11-28T20:12:47.4301003-03:00'),
+  creation: new Date('2020-11-28T20:37:59.9558366-03:00'),
   schemas: [
     GraphSchema,
     CallRecordsSchema

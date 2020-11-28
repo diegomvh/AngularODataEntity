@@ -4,7 +4,7 @@ import { ODataEntitySetResource, ODataClient, Alias } from 'angular-odata';
 
 @Component({
   selector: 'trip-airlines',
-  template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadPeopleLazy($event)" [paginator]="true" 
+  template: `<p-table #table [columns]="cols" [value]="rows" [lazy]="true" (onLazyLoad)="loadPeopleLazy($event)" [paginator]="true"
     [rows]="size" [totalRecords]="total" [loading]="loading">
     <ng-template pTemplate="header" let-columns>
         <tr>
@@ -42,7 +42,7 @@ export class AirlinesComponent implements OnInit {
   constructor(
     private client: ODataClient,
     private airlines: AirlinesService
-  ) { 
+  ) {
     this.resource = this.airlines.entities();
     // Try toJSON, fromJSON
     this.resource = this.client.fromJSON<ODataEntitySetResource<Airline>>(this.resource.toJSON());
@@ -50,7 +50,7 @@ export class AirlinesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cols = this.resource.config.fields()
+    this.cols = this.resource.schema.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
     this.loading = true;
@@ -69,7 +69,7 @@ export class AirlinesComponent implements OnInit {
   }
 
   filter(value: string, field: string) {
-    field = `tolower(${field})`; 
+    field = `tolower(${field})`;
     if (value) {
       this.alias.value = value.toLowerCase();
       let filter = {[field]: {contains: this.alias}};
