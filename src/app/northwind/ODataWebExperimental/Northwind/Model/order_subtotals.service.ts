@@ -33,12 +33,12 @@ export class OrderSubtotalsService extends ODataEntityService<OrderSubtotal> {
 
   //#region ODataApi Model
   orderSubtotalModel(): OrderSubtotalModel<OrderSubtotal> {
-    return super.model() as OrderSubtotalModel<OrderSubtotal>;
+    return this.entity().asModel() as OrderSubtotalModel<OrderSubtotal>;
   }
   //#endregion
   //#region ODataApi Collection
   orderSubtotalCollection(): OrderSubtotalCollection<OrderSubtotal, OrderSubtotalModel<OrderSubtotal>> {
-    return super.collection() as OrderSubtotalCollection<OrderSubtotal, OrderSubtotalModel<OrderSubtotal>>;
+    return this.entities().asCollection() as OrderSubtotalCollection<OrderSubtotal, OrderSubtotalModel<OrderSubtotal>>;
   }
   //#endregion
   //#region ODataApi Actions

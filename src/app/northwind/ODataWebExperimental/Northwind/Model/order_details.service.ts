@@ -39,12 +39,12 @@ export class OrderDetailsService extends ODataEntityService<OrderDetail> {
 
   //#region ODataApi Model
   orderDetailModel(): OrderDetailModel<OrderDetail> {
-    return super.model() as OrderDetailModel<OrderDetail>;
+    return this.entity().asModel() as OrderDetailModel<OrderDetail>;
   }
   //#endregion
   //#region ODataApi Collection
   orderDetailCollection(): OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>> {
-    return super.collection() as OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
+    return this.entities().asCollection() as OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
   }
   //#endregion
   //#region ODataApi Actions

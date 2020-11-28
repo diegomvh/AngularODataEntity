@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { CustomerAndSuppliersByCity } from './customer_and_suppliers_by_city.entity';
@@ -17,4 +17,4 @@ export const CustomerAndSuppliersByCityConfig = {
     ContactName: {type: 'Edm.String', maxLength: 30},
     Relationship: {type: 'Edm.String', key: true, ref: 'Relationship', nullable: false, maxLength: 9}
   }
-} as EntityConfig<CustomerAndSuppliersByCity>;
+} as StructuredTypeConfig<CustomerAndSuppliersByCity>;

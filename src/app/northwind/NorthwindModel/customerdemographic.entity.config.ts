@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { CustomerDemographic } from './customerdemographic.entity';
@@ -16,4 +16,4 @@ export const CustomerDemographicConfig = {
     CustomerDesc: {type: 'Edm.String'},
     Customers: {type: 'NorthwindModel.Customer', collection: true, navigation: true}
   }
-} as EntityConfig<CustomerDemographic>;
+} as StructuredTypeConfig<CustomerDemographic>;

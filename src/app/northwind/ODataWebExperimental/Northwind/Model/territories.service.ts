@@ -39,12 +39,12 @@ export class TerritoriesService extends ODataEntityService<Territory> {
 
   //#region ODataApi Model
   territoryModel(): TerritoryModel<Territory> {
-    return super.model() as TerritoryModel<Territory>;
+    return this.entity().asModel() as TerritoryModel<Territory>;
   }
   //#endregion
   //#region ODataApi Collection
   territoryCollection(): TerritoryCollection<Territory, TerritoryModel<Territory>> {
-    return super.collection() as TerritoryCollection<Territory, TerritoryModel<Territory>>;
+    return this.entities().asCollection() as TerritoryCollection<Territory, TerritoryModel<Territory>>;
   }
   //#endregion
   //#region ODataApi Actions

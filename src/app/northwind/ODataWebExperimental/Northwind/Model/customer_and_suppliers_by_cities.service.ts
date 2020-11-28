@@ -33,12 +33,12 @@ export class CustomerAndSuppliersByCitiesService extends ODataEntityService<Cust
 
   //#region ODataApi Model
   customerAndSuppliersByCityModel(): CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity> {
-    return super.model() as CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>;
+    return this.entity().asModel() as CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>;
   }
   //#endregion
   //#region ODataApi Collection
   customerAndSuppliersByCityCollection(): CustomerAndSuppliersByCityCollection<CustomerAndSuppliersByCity, CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>> {
-    return super.collection() as CustomerAndSuppliersByCityCollection<CustomerAndSuppliersByCity, CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>>;
+    return this.entities().asCollection() as CustomerAndSuppliersByCityCollection<CustomerAndSuppliersByCity, CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>>;
   }
   //#endregion
   //#region ODataApi Actions

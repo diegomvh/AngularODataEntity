@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { SalesTotalsByAmount } from './sales_totals_by_amount.entity';
@@ -17,4 +17,4 @@ export const SalesTotalsByAmountConfig = {
     CompanyName: {type: 'Edm.String', key: true, ref: 'CompanyName', nullable: false, maxLength: 40},
     ShippedDate: {type: 'Edm.DateTimeOffset'}
   }
-} as EntityConfig<SalesTotalsByAmount>;
+} as StructuredTypeConfig<SalesTotalsByAmount>;

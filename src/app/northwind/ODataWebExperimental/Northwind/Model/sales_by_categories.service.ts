@@ -33,12 +33,12 @@ export class SalesByCategoriesService extends ODataEntityService<SalesByCategory
 
   //#region ODataApi Model
   salesByCategoryModel(): SalesByCategoryModel<SalesByCategory> {
-    return super.model() as SalesByCategoryModel<SalesByCategory>;
+    return this.entity().asModel() as SalesByCategoryModel<SalesByCategory>;
   }
   //#endregion
   //#region ODataApi Collection
   salesByCategoryCollection(): SalesByCategoryCollection<SalesByCategory, SalesByCategoryModel<SalesByCategory>> {
-    return super.collection() as SalesByCategoryCollection<SalesByCategory, SalesByCategoryModel<SalesByCategory>>;
+    return this.entities().asCollection() as SalesByCategoryCollection<SalesByCategory, SalesByCategoryModel<SalesByCategory>>;
   }
   //#endregion
   //#region ODataApi Actions

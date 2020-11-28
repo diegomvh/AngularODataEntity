@@ -39,12 +39,12 @@ export class CustomersService extends ODataEntityService<Customer> {
 
   //#region ODataApi Model
   customerModel(): CustomerModel<Customer> {
-    return super.model() as CustomerModel<Customer>;
+    return this.entity().asModel() as CustomerModel<Customer>;
   }
   //#endregion
   //#region ODataApi Collection
   customerCollection(): CustomerCollection<Customer, CustomerModel<Customer>> {
-    return super.collection() as CustomerCollection<Customer, CustomerModel<Customer>>;
+    return this.entities().asCollection() as CustomerCollection<Customer, CustomerModel<Customer>>;
   }
   //#endregion
   //#region ODataApi Actions

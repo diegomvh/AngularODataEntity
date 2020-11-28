@@ -33,12 +33,12 @@ export class CurrentProductListsService extends ODataEntityService<CurrentProduc
 
   //#region ODataApi Model
   currentProductListModel(): CurrentProductListModel<CurrentProductList> {
-    return super.model() as CurrentProductListModel<CurrentProductList>;
+    return this.entity().asModel() as CurrentProductListModel<CurrentProductList>;
   }
   //#endregion
   //#region ODataApi Collection
   currentProductListCollection(): CurrentProductListCollection<CurrentProductList, CurrentProductListModel<CurrentProductList>> {
-    return super.collection() as CurrentProductListCollection<CurrentProductList, CurrentProductListModel<CurrentProductList>>;
+    return this.entities().asCollection() as CurrentProductListCollection<CurrentProductList, CurrentProductListModel<CurrentProductList>>;
   }
   //#endregion
   //#region ODataApi Actions

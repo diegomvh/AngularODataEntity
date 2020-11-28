@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Region } from './region.entity';
@@ -16,4 +16,4 @@ export const RegionConfig = {
     RegionDescription: {type: 'Edm.String', nullable: false, maxLength: 50},
     Territories: {type: 'NorthwindModel.Territory', collection: true, navigation: true}
   }
-} as EntityConfig<Region>;
+} as StructuredTypeConfig<Region>;

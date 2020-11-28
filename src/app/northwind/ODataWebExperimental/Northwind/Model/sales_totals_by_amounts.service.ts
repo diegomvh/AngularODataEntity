@@ -33,12 +33,12 @@ export class SalesTotalsByAmountsService extends ODataEntityService<SalesTotalsB
 
   //#region ODataApi Model
   salesTotalsByAmountModel(): SalesTotalsByAmountModel<SalesTotalsByAmount> {
-    return super.model() as SalesTotalsByAmountModel<SalesTotalsByAmount>;
+    return this.entity().asModel() as SalesTotalsByAmountModel<SalesTotalsByAmount>;
   }
   //#endregion
   //#region ODataApi Collection
   salesTotalsByAmountCollection(): SalesTotalsByAmountCollection<SalesTotalsByAmount, SalesTotalsByAmountModel<SalesTotalsByAmount>> {
-    return super.collection() as SalesTotalsByAmountCollection<SalesTotalsByAmount, SalesTotalsByAmountModel<SalesTotalsByAmount>>;
+    return this.entities().asCollection() as SalesTotalsByAmountCollection<SalesTotalsByAmount, SalesTotalsByAmountModel<SalesTotalsByAmount>>;
   }
   //#endregion
   //#region ODataApi Actions

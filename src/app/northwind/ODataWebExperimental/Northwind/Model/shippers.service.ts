@@ -36,12 +36,12 @@ export class ShippersService extends ODataEntityService<Shipper> {
 
   //#region ODataApi Model
   shipperModel(): ShipperModel<Shipper> {
-    return super.model() as ShipperModel<Shipper>;
+    return this.entity().asModel() as ShipperModel<Shipper>;
   }
   //#endregion
   //#region ODataApi Collection
   shipperCollection(): ShipperCollection<Shipper, ShipperModel<Shipper>> {
-    return super.collection() as ShipperCollection<Shipper, ShipperModel<Shipper>>;
+    return this.entities().asCollection() as ShipperCollection<Shipper, ShipperModel<Shipper>>;
   }
   //#endregion
   //#region ODataApi Actions

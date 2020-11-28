@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Invoice } from './invoice.entity';
@@ -39,4 +39,4 @@ export const InvoiceConfig = {
     ExtendedPrice: {type: 'Edm.Decimal', precition: 19, scale: 4},
     Freight: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
-} as EntityConfig<Invoice>;
+} as StructuredTypeConfig<Invoice>;

@@ -33,12 +33,12 @@ export class OrdersQriesService extends ODataEntityService<OrdersQry> {
 
   //#region ODataApi Model
   ordersQryModel(): OrdersQryModel<OrdersQry> {
-    return super.model() as OrdersQryModel<OrdersQry>;
+    return this.entity().asModel() as OrdersQryModel<OrdersQry>;
   }
   //#endregion
   //#region ODataApi Collection
   ordersQryCollection(): OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>> {
-    return super.collection() as OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>>;
+    return this.entities().asCollection() as OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>>;
   }
   //#endregion
   //#region ODataApi Actions

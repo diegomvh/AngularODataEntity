@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { ProductSalesFor1997 } from './product_sales_for_1997.entity';
@@ -16,4 +16,4 @@ export const ProductSalesFor1997Config = {
     ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
     ProductSales: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
-} as EntityConfig<ProductSalesFor1997>;
+} as StructuredTypeConfig<ProductSalesFor1997>;

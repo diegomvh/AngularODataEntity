@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { OrdersQry } from './orders_qry.entity';
@@ -33,4 +33,4 @@ export const OrdersQryConfig = {
     PostalCode: {type: 'Edm.String', maxLength: 10},
     Country: {type: 'Edm.String', maxLength: 15}
   }
-} as EntityConfig<OrdersQry>;
+} as StructuredTypeConfig<OrdersQry>;

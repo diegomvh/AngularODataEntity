@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Category } from './category.entity';
@@ -18,4 +18,4 @@ export const CategoryConfig = {
     Picture: {type: 'Edm.Binary'},
     Products: {type: 'NorthwindModel.Product', collection: true, navigation: true}
   }
-} as EntityConfig<Category>;
+} as StructuredTypeConfig<Category>;

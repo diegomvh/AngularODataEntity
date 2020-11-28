@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { ProductsByCategory } from './products_by_category.entity';
@@ -18,4 +18,4 @@ export const ProductsByCategoryConfig = {
     UnitsInStock: {type: 'Edm.Int16'},
     Discontinued: {type: 'Edm.Boolean', key: true, ref: 'Discontinued', nullable: false}
   }
-} as EntityConfig<ProductsByCategory>;
+} as StructuredTypeConfig<ProductsByCategory>;

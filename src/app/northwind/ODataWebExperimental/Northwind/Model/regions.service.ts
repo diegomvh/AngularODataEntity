@@ -36,12 +36,12 @@ export class RegionsService extends ODataEntityService<Region> {
 
   //#region ODataApi Model
   regionModel(): RegionModel<Region> {
-    return super.model() as RegionModel<Region>;
+    return this.entity().asModel() as RegionModel<Region>;
   }
   //#endregion
   //#region ODataApi Collection
   regionCollection(): RegionCollection<Region, RegionModel<Region>> {
-    return super.collection() as RegionCollection<Region, RegionModel<Region>>;
+    return this.entities().asCollection() as RegionCollection<Region, RegionModel<Region>>;
   }
   //#endregion
   //#region ODataApi Actions

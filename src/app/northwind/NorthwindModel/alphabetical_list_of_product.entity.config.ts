@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { AlphabeticalListOfProduct } from './alphabetical_list_of_product.entity';
@@ -24,4 +24,4 @@ export const AlphabeticalListOfProductConfig = {
     Discontinued: {type: 'Edm.Boolean', key: true, ref: 'Discontinued', nullable: false},
     CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15}
   }
-} as EntityConfig<AlphabeticalListOfProduct>;
+} as StructuredTypeConfig<AlphabeticalListOfProduct>;

@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { SummaryOfSalesByYear } from './summary_of_sales_by_year.entity';
@@ -16,4 +16,4 @@ export const SummaryOfSalesByYearConfig = {
     OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
     Subtotal: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
-} as EntityConfig<SummaryOfSalesByYear>;
+} as StructuredTypeConfig<SummaryOfSalesByYear>;

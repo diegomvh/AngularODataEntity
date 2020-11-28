@@ -33,12 +33,12 @@ export class ProductsAboveAveragePricesService extends ODataEntityService<Produc
 
   //#region ODataApi Model
   productsAboveAveragePriceModel(): ProductsAboveAveragePriceModel<ProductsAboveAveragePrice> {
-    return super.model() as ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>;
+    return this.entity().asModel() as ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>;
   }
   //#endregion
   //#region ODataApi Collection
   productsAboveAveragePriceCollection(): ProductsAboveAveragePriceCollection<ProductsAboveAveragePrice, ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>> {
-    return super.collection() as ProductsAboveAveragePriceCollection<ProductsAboveAveragePrice, ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>>;
+    return this.entities().asCollection() as ProductsAboveAveragePriceCollection<ProductsAboveAveragePrice, ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>>;
   }
   //#endregion
   //#region ODataApi Actions

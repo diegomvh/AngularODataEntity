@@ -39,12 +39,12 @@ export class EmployeesService extends ODataEntityService<Employee> {
 
   //#region ODataApi Model
   employeeModel(): EmployeeModel<Employee> {
-    return super.model() as EmployeeModel<Employee>;
+    return this.entity().asModel() as EmployeeModel<Employee>;
   }
   //#endregion
   //#region ODataApi Collection
   employeeCollection(): EmployeeCollection<Employee, EmployeeModel<Employee>> {
-    return super.collection() as EmployeeCollection<Employee, EmployeeModel<Employee>>;
+    return this.entities().asCollection() as EmployeeCollection<Employee, EmployeeModel<Employee>>;
   }
   //#endregion
   //#region ODataApi Actions

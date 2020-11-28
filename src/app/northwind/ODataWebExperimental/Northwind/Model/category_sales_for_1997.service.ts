@@ -33,12 +33,12 @@ export class CategorySalesFor1997Service extends ODataEntityService<CategorySale
 
   //#region ODataApi Model
   categorySalesFor1997Model(): CategorySalesFor1997Model<CategorySalesFor1997> {
-    return super.model() as CategorySalesFor1997Model<CategorySalesFor1997>;
+    return this.entity().asModel() as CategorySalesFor1997Model<CategorySalesFor1997>;
   }
   //#endregion
   //#region ODataApi Collection
   categorySalesFor1997Collection(): CategorySalesFor1997Collection<CategorySalesFor1997, CategorySalesFor1997Model<CategorySalesFor1997>> {
-    return super.collection() as CategorySalesFor1997Collection<CategorySalesFor1997, CategorySalesFor1997Model<CategorySalesFor1997>>;
+    return this.entities().asCollection() as CategorySalesFor1997Collection<CategorySalesFor1997, CategorySalesFor1997Model<CategorySalesFor1997>>;
   }
   //#endregion
   //#region ODataApi Actions

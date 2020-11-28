@@ -36,12 +36,12 @@ export class CustomerDemographicsService extends ODataEntityService<CustomerDemo
 
   //#region ODataApi Model
   customerDemographicModel(): CustomerDemographicModel<CustomerDemographic> {
-    return super.model() as CustomerDemographicModel<CustomerDemographic>;
+    return this.entity().asModel() as CustomerDemographicModel<CustomerDemographic>;
   }
   //#endregion
   //#region ODataApi Collection
   customerDemographicCollection(): CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>> {
-    return super.collection() as CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
+    return this.entities().asCollection() as CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
   }
   //#endregion
   //#region ODataApi Actions

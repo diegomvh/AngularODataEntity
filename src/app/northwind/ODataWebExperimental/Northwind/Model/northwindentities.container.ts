@@ -1,4 +1,4 @@
-﻿import { ContainerConfig } from 'angular-odata';
+﻿import { EntityContainerConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { CategoriesServiceConfig } from './categories.service.config';
@@ -60,4 +60,4 @@ export const NorthwindEntitiesContainer = {
     SummaryOfSalesByQuartersServiceConfig,
     SummaryOfSalesByYearsServiceConfig
   ]
-} as ContainerConfig;
+} as EntityContainerConfig;

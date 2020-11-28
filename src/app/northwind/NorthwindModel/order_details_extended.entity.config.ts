@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { OrderDetailsExtended } from './order_details_extended.entity';
@@ -20,4 +20,4 @@ export const OrderDetailsExtendedConfig = {
     Discount: {type: 'Edm.Single', key: true, ref: 'Discount', nullable: false},
     ExtendedPrice: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
-} as EntityConfig<OrderDetailsExtended>;
+} as StructuredTypeConfig<OrderDetailsExtended>;

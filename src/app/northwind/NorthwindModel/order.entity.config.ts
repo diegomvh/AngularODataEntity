@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Order } from './order.entity';
@@ -31,4 +31,4 @@ export const OrderConfig = {
     Order_Details: {type: 'NorthwindModel.Order_Detail', collection: true, navigation: true},
     Shipper: {type: 'NorthwindModel.Shipper', navigation: true, field: 'ShipVia', ref: 'ShipperID'}
   }
-} as EntityConfig<Order>;
+} as StructuredTypeConfig<Order>;

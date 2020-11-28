@@ -33,12 +33,12 @@ export class InvoicesService extends ODataEntityService<Invoice> {
 
   //#region ODataApi Model
   invoiceModel(): InvoiceModel<Invoice> {
-    return super.model() as InvoiceModel<Invoice>;
+    return this.entity().asModel() as InvoiceModel<Invoice>;
   }
   //#endregion
   //#region ODataApi Collection
   invoiceCollection(): InvoiceCollection<Invoice, InvoiceModel<Invoice>> {
-    return super.collection() as InvoiceCollection<Invoice, InvoiceModel<Invoice>>;
+    return this.entities().asCollection() as InvoiceCollection<Invoice, InvoiceModel<Invoice>>;
   }
   //#endregion
   //#region ODataApi Actions
