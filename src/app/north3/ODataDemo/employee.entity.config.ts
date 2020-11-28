@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Employee } from './employee.entity';
@@ -17,4 +17,4 @@ export const EmployeeConfig = {
     HireDate: {type: 'Edm.DateTime', nullable: false},
     Salary: {type: 'Edm.Single', nullable: false}
   }
-} as EntityConfig<Employee>;
+} as StructuredTypeConfig<Employee>;

@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Supplier } from './supplier.entity';
@@ -19,4 +19,4 @@ export const SupplierConfig = {
     Concurrency: {type: 'Edm.Int32', nullable: false},
     Products: {type: 'ODataDemo.Product', collection: true, navigation: true}
   }
-} as EntityConfig<Supplier>;
+} as StructuredTypeConfig<Supplier>;

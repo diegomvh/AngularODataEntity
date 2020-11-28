@@ -33,12 +33,12 @@ export class AdvertisementsService extends ODataEntityService<Advertisement> {
 
   //#region ODataApi Model
   advertisementModel(): AdvertisementModel<Advertisement> {
-    return super.model() as AdvertisementModel<Advertisement>;
+    return this.entity().asModel() as AdvertisementModel<Advertisement>;
   }
   //#endregion
   //#region ODataApi Collection
   advertisementCollection(): AdvertisementCollection<Advertisement, AdvertisementModel<Advertisement>> {
-    return super.collection() as AdvertisementCollection<Advertisement, AdvertisementModel<Advertisement>>;
+    return this.entities().asCollection() as AdvertisementCollection<Advertisement, AdvertisementModel<Advertisement>>;
   }
   //#endregion
   //#region ODataApi Actions

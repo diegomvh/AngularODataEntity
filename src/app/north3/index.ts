@@ -1,5 +1,5 @@
 ﻿//#region ODataApi Imports
-export * from './ODataDemo/address.entity';
+export * from './ODataDemo/address.complex';
 export * from './ODataDemo/product.entity';
 export * from './ODataDemo/featuredproduct.entity';
 export * from './ODataDemo/productdetail.entity';
@@ -32,7 +32,7 @@ export * from './ODataDemo/customer.collection';
 export * from './ODataDemo/employee.collection';
 export * from './ODataDemo/persondetail.collection';
 export * from './ODataDemo/advertisement.collection';
-export * from './ODataDemo/address.entity.config';
+export * from './ODataDemo/address.complex.config';
 export * from './ODataDemo/product.entity.config';
 export * from './ODataDemo/featuredproduct.entity.config';
 export * from './ODataDemo/productdetail.entity.config';

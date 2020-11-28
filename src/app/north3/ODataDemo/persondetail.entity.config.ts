@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { PersonDetail } from './persondetail.entity';
@@ -20,4 +20,4 @@ export const PersonDetailConfig = {
     Photo: {type: 'Edm.Stream', nullable: false},
     Person: {type: 'ODataDemo.Person', navigation: true}
   }
-} as EntityConfig<PersonDetail>;
+} as StructuredTypeConfig<PersonDetail>;

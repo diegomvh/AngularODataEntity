@@ -1,7 +1,7 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Address } from './address.entity';
+import { Address } from './address.complex';
 import { AddressModel } from './address.model';
 import { AddressCollection } from './address.collection';
 //#endregion
@@ -18,4 +18,4 @@ export const AddressConfig = {
     ZipCode: {type: 'Edm.String'},
     Country: {type: 'Edm.String'}
   }
-} as EntityConfig<Address>;
+} as StructuredTypeConfig<Address>;

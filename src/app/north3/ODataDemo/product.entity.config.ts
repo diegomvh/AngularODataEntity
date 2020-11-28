@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Product } from './product.entity';
@@ -23,4 +23,4 @@ export const ProductConfig = {
     Supplier: {type: 'ODataDemo.Supplier', navigation: true},
     ProductDetail: {type: 'ODataDemo.ProductDetail', navigation: true}
   }
-} as EntityConfig<Product>;
+} as StructuredTypeConfig<Product>;

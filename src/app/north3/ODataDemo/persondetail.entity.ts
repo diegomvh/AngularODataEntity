@@ -1,7 +1,7 @@
 ﻿import { Duration } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Address } from './address.entity';
+import { Address } from './address.complex';
 import { Person } from './person.entity';
 import { AddressModel } from './address.model';
 import { PersonModel } from './person.model';

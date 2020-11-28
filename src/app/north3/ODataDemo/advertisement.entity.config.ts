@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Advertisement } from './advertisement.entity';
@@ -17,4 +17,4 @@ export const AdvertisementConfig = {
     AirDate: {type: 'Edm.DateTime', nullable: false},
     FeaturedProduct: {type: 'ODataDemo.FeaturedProduct', navigation: true}
   }
-} as EntityConfig<Advertisement>;
+} as StructuredTypeConfig<Advertisement>;

@@ -33,12 +33,12 @@ export class PersonsService extends ODataEntityService<Person> {
 
   //#region ODataApi Model
   personModel(): PersonModel<Person> {
-    return super.model() as PersonModel<Person>;
+    return this.entity().asModel() as PersonModel<Person>;
   }
   //#endregion
   //#region ODataApi Collection
   personCollection(): PersonCollection<Person, PersonModel<Person>> {
-    return super.collection() as PersonCollection<Person, PersonModel<Person>>;
+    return this.entities().asCollection() as PersonCollection<Person, PersonModel<Person>>;
   }
   //#endregion
   //#region ODataApi Actions

@@ -20,7 +20,7 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Address } from './address.entity';
+import { Address } from './address.complex';
 import { PersonDetail } from './persondetail.entity';
 import { AddressModel } from './address.model';
 import { PersonDetailModel } from './persondetail.model';
@@ -36,12 +36,12 @@ export class PersonDetailsService extends ODataEntityService<PersonDetail> {
 
   //#region ODataApi Model
   personDetailModel(): PersonDetailModel<PersonDetail> {
-    return super.model() as PersonDetailModel<PersonDetail>;
+    return this.entity().asModel() as PersonDetailModel<PersonDetail>;
   }
   //#endregion
   //#region ODataApi Collection
   personDetailCollection(): PersonDetailCollection<PersonDetail, PersonDetailModel<PersonDetail>> {
-    return super.collection() as PersonDetailCollection<PersonDetail, PersonDetailModel<PersonDetail>>;
+    return this.entities().asCollection() as PersonDetailCollection<PersonDetail, PersonDetailModel<PersonDetail>>;
   }
   //#endregion
   //#region ODataApi Actions
