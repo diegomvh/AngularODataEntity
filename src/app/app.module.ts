@@ -8,7 +8,6 @@ import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
 import { TabViewModule } from 'primeng/tabview';
-import { SiuConfig, SiuModule } from './siu';
 import { TripPinConfig, TripPinModule } from './trippin';
 import { NorthwindConfig, NorthwindModule } from './northwind';
 import { North2Config, North2Module } from './north2';
@@ -45,42 +44,44 @@ import { EmployeesComponent } from './components/northwind/employees.component';
     DialogModule,
     TabViewModule,
     ODataModule.forRoot(
-      // Siu
-      Object.assign(SiuConfig, {
-        metadata: 'full',
-        stringAsEnum: true
-      }), 
       // TripPin
       Object.assign(TripPinConfig, {
         serviceRootUrl: 'http://localhost:4200/trippin/',
-        metadata: 'full',
-        stringAsEnum: true
-      }), 
+        options: {
+          metadata: 'full',
+          stringAsEnum: true
+        }
+      }),
       // North version 2
       Object.assign(North2Config, {
         serviceRootUrl: 'http://localhost:4200/north2/',
-        metadata: 'full',
-        withCredentials: true,
-        params: {"$format": "json"}
+        options: {
+          metadata: 'full',
+          withCredentials: true,
+          params: {"$format": "json"}
+        }
       }),
       // North version 3
       Object.assign(North3Config, {
         serviceRootUrl: 'http://localhost:4200/north3/',
-        metadata: 'full',
-        withCredentials: true,
-        params: {"$format": "json"}
+        options: {
+          metadata: 'full',
+          withCredentials: true,
+          params: {"$format": "json"}
+        }
       }),
       // Northwind version 4
       Object.assign(NorthwindConfig, {
-        ieee754Compatible: true
+        options: {
+          ieee754Compatible: true
+        }
       }),
       Object.assign(MsGraphConfig),
       Object.assign(CBSConfig)
     ),
     TripPinModule,
     NorthwindModule,
-    SiuModule, 
-    North2Module, 
+    North2Module,
     North3Module,
     MsGraphModule,
     CBSModule
