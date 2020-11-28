@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { GeoDetailCategory } from './geodetailcategory.entity';
@@ -18,4 +18,4 @@ export const GeoDetailCategoryConfig = {
     Municipality: {type: 'Edm.String'},
     DetailRegionCode: {type: 'Edm.String'}
   }
-} as EntityConfig<GeoDetailCategory>;
+} as StructuredTypeConfig<GeoDetailCategory>;

@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { GeoDimension } from './geodimension.entity';
@@ -15,4 +15,4 @@ export const GeoDimensionConfig = {
   fields: {
     MapYear: {type: 'Edm.Int32'}
   }
-} as EntityConfig<GeoDimension>;
+} as StructuredTypeConfig<GeoDimension>;

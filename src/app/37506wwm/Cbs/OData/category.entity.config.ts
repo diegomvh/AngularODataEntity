@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Category } from './category.entity';
@@ -17,4 +17,4 @@ export const CategoryConfig = {
     Description: {type: 'Edm.String'},
     CategoryGroupID: {type: 'Edm.Int32'}
   }
-} as EntityConfig<Category>;
+} as StructuredTypeConfig<Category>;

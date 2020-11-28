@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Topic } from './topic.entity';
@@ -18,4 +18,4 @@ export const TopicConfig = {
     Decimals: {type: 'Edm.Byte'},
     Default: {type: 'Edm.String'}
   }
-} as EntityConfig<Topic>;
+} as StructuredTypeConfig<Topic>;

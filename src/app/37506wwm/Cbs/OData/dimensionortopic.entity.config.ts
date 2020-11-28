@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { DimensionOrTopic } from './dimensionortopic.entity';
@@ -20,4 +20,4 @@ export const DimensionOrTopicConfig = {
     Title: {type: 'Edm.String'},
     Description: {type: 'Edm.String'}
   }
-} as EntityConfig<DimensionOrTopic>;
+} as StructuredTypeConfig<DimensionOrTopic>;

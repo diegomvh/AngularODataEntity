@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Dimension } from './dimension.entity';
@@ -15,4 +15,4 @@ export const DimensionConfig = {
   fields: {
     
   }
-} as EntityConfig<Dimension>;
+} as StructuredTypeConfig<Dimension>;

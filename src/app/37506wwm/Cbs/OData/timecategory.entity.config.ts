@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { TimeCategory } from './timecategory.entity';
@@ -17,4 +17,4 @@ export const TimeCategoryConfig = {
     Description: {type: 'Edm.String'},
     Status: {type: 'Edm.String'}
   }
-} as EntityConfig<TimeCategory>;
+} as StructuredTypeConfig<TimeCategory>;

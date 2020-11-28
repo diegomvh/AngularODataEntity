@@ -8,7 +8,7 @@ export const 37506wwmConfig = {
   name: '37506wwm',
   serviceRootUrl: 'https://opendata.cbs.nl/ODataApi/OData/37506wwm/',
   version: '3.0',
-  creation: new Date('2020-09-10T09:04:25.9462355-03:00'),
+  creation: new Date('2020-11-28T09:25:58.2083682-03:00'),
   schemas: [
     ODataSchema
   ],

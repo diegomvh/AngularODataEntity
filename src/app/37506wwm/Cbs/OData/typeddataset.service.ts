@@ -33,12 +33,12 @@ export class TypedDataSetService extends ODataEntityService<TData> {
 
   //#region ODataApi Model
   tDataModel(): TDataModel<TData> {
-    return super.model() as TDataModel<TData>;
+    return this.entity().asModel() as TDataModel<TData>;
   }
   //#endregion
   //#region ODataApi Collection
   tDataCollection(): TDataCollection<TData, TDataModel<TData>> {
-    return super.collection() as TDataCollection<TData, TDataModel<TData>>;
+    return this.entities().asCollection() as TDataCollection<TData, TDataModel<TData>>;
   }
   //#endregion
   //#region ODataApi Actions

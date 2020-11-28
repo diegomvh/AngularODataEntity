@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { TableInfo } from './tableinfo.entity';
@@ -34,4 +34,4 @@ export const TableInfoConfig = {
     MetaDataModified: {type: 'Edm.DateTime'},
     SearchPriority: {type: 'Edm.String'}
   }
-} as EntityConfig<TableInfo>;
+} as StructuredTypeConfig<TableInfo>;

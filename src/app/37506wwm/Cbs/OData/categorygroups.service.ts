@@ -33,12 +33,12 @@ export class CategoryGroupsService extends ODataEntityService<CategoryGroup> {
 
   //#region ODataApi Model
   categoryGroupModel(): CategoryGroupModel<CategoryGroup> {
-    return super.model() as CategoryGroupModel<CategoryGroup>;
+    return this.entity().asModel() as CategoryGroupModel<CategoryGroup>;
   }
   //#endregion
   //#region ODataApi Collection
   categoryGroupCollection(): CategoryGroupCollection<CategoryGroup, CategoryGroupModel<CategoryGroup>> {
-    return super.collection() as CategoryGroupCollection<CategoryGroup, CategoryGroupModel<CategoryGroup>>;
+    return this.entities().asCollection() as CategoryGroupCollection<CategoryGroup, CategoryGroupModel<CategoryGroup>>;
   }
   //#endregion
   //#region ODataApi Actions

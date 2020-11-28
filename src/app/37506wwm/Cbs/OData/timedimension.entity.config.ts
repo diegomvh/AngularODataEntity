@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { TimeDimension } from './timedimension.entity';
@@ -16,4 +16,4 @@ export const TimeDimensionConfig = {
   fields: {
     ReleasePolicy: {type: 'Edm.Boolean'}
   }
-} as EntityConfig<TimeDimension>;
+} as StructuredTypeConfig<TimeDimension>;

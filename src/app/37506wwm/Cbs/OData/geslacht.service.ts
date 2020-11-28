@@ -33,12 +33,12 @@ export class GeslachtService extends ODataEntityService<Category> {
 
   //#region ODataApi Model
   categoryModel(): CategoryModel<Category> {
-    return super.model() as CategoryModel<Category>;
+    return this.entity().asModel() as CategoryModel<Category>;
   }
   //#endregion
   //#region ODataApi Collection
   categoryCollection(): CategoryCollection<Category, CategoryModel<Category>> {
-    return super.collection() as CategoryCollection<Category, CategoryModel<Category>>;
+    return this.entities().asCollection() as CategoryCollection<Category, CategoryModel<Category>>;
   }
   //#endregion
   //#region ODataApi Actions

@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { TopicGroup } from './topicgroup.entity';
@@ -15,4 +15,4 @@ export const TopicGroupConfig = {
   fields: {
     
   }
-} as EntityConfig<TopicGroup>;
+} as StructuredTypeConfig<TopicGroup>;

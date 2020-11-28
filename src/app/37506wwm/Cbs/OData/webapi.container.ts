@@ -1,4 +1,4 @@
-﻿import { ContainerConfig } from 'angular-odata';
+﻿import { EntityContainerConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { TableInfosServiceConfig } from './tableinfos.service.config';
@@ -24,4 +24,4 @@ export const WebAPIContainer = {
     LeeftijdServiceConfig,
     PeriodenServiceConfig
   ]
-} as ContainerConfig;
+} as EntityContainerConfig;

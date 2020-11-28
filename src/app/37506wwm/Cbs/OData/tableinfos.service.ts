@@ -33,12 +33,12 @@ export class TableInfosService extends ODataEntityService<TableInfo> {
 
   //#region ODataApi Model
   tableInfoModel(): TableInfoModel<TableInfo> {
-    return super.model() as TableInfoModel<TableInfo>;
+    return this.entity().asModel() as TableInfoModel<TableInfo>;
   }
   //#endregion
   //#region ODataApi Collection
   tableInfoCollection(): TableInfoCollection<TableInfo, TableInfoModel<TableInfo>> {
-    return super.collection() as TableInfoCollection<TableInfo, TableInfoModel<TableInfo>>;
+    return this.entities().asCollection() as TableInfoCollection<TableInfo, TableInfoModel<TableInfo>>;
   }
   //#endregion
   //#region ODataApi Actions

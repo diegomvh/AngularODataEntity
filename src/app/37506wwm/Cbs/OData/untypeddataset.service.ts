@@ -33,12 +33,12 @@ export class UntypedDataSetService extends ODataEntityService<UData> {
 
   //#region ODataApi Model
   uDataModel(): UDataModel<UData> {
-    return super.model() as UDataModel<UData>;
+    return this.entity().asModel() as UDataModel<UData>;
   }
   //#endregion
   //#region ODataApi Collection
   uDataCollection(): UDataCollection<UData, UDataModel<UData>> {
-    return super.collection() as UDataCollection<UData, UDataModel<UData>>;
+    return this.entities().asCollection() as UDataCollection<UData, UDataModel<UData>>;
   }
   //#endregion
   //#region ODataApi Actions

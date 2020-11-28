@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { TData } from './tdata.entity';
@@ -34,4 +34,4 @@ export const TDataConfig = {
     NoordBrabantPV_16: {type: 'Edm.Int32'},
     LimburgPV_17: {type: 'Edm.Int32'}
   }
-} as EntityConfig<TData>;
+} as StructuredTypeConfig<TData>;
