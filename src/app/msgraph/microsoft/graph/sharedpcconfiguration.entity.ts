@@ -4,6 +4,10 @@
 import { DeviceConfiguration } from './deviceconfiguration.entity';
 import { SharedPCAllowedAccountType } from './sharedpcallowedaccounttype.enum';
 import { SharedPCAccountManagerPolicy } from './sharedpcaccountmanagerpolicy.entity';
+import { SharedPCAccountManagerPolicyModel } from './sharedpcaccountmanagerpolicy.model';
+import { DeviceConfigurationModel } from './deviceconfiguration.model';
+import { SharedPCAccountManagerPolicyCollection } from './sharedpcaccountmanagerpolicy.collection';
+import { DeviceConfigurationCollection } from './deviceconfiguration.collection';
 //#endregion
 
 export interface SharedPCConfiguration extends DeviceConfiguration {

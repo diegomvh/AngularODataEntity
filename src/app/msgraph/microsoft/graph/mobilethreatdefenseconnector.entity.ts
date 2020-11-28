@@ -3,17 +3,19 @@
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
 import { MobileThreatPartnerTenantState } from './mobilethreatpartnertenantstate.enum';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface MobileThreatDefenseConnector extends Entity {
   //#region ODataApi Properties
+  androidDeviceBlockedOnMissingPartnerData: boolean;
+  androidEnabled: boolean;
+  iosDeviceBlockedOnMissingPartnerData: boolean;
+  iosEnabled: boolean;
   lastHeartbeatDateTime: Date;
   partnerState: MobileThreatPartnerTenantState;
-  androidEnabled: boolean;
-  iosEnabled: boolean;
-  androidDeviceBlockedOnMissingPartnerData: boolean;
-  iosDeviceBlockedOnMissingPartnerData: boolean;
-  partnerUnsupportedOsVersionBlocked: boolean;
   partnerUnresponsivenessThresholdInDays: number;
+  partnerUnsupportedOsVersionBlocked: boolean;
   //#endregion
 }

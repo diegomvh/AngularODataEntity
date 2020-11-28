@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { ItemReference } from './itemreference.entity';
+import { ItemReferenceModel } from './itemreference.model';
+import { ItemReferenceCollection } from './itemreference.collection';
 //#endregion
 
 export const ItemReferenceConfig = {
   name: "itemReference",
+  model: ItemReferenceModel,
+  collection: ItemReferenceCollection,
   annotations: [],
   fields: {
     driveId: {type: 'Edm.String'},

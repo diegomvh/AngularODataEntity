@@ -20,10 +20,18 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { EducationRoot } from './educationroot.entity';
 import { EducationClass } from './educationclass.entity';
-import { EducationSchool } from './educationschool.entity';
 import { EducationUser } from './educationuser.entity';
+import { EducationSchool } from './educationschool.entity';
+import { EducationRoot } from './educationroot.entity';
+import { EducationClassModel } from './educationclass.model';
+import { EducationUserModel } from './educationuser.model';
+import { EducationSchoolModel } from './educationschool.model';
+import { EducationRootModel } from './educationroot.model';
+import { EducationClassCollection } from './educationclass.collection';
+import { EducationUserCollection } from './educationuser.collection';
+import { EducationSchoolCollection } from './educationschool.collection';
+import { EducationRootCollection } from './educationroot.collection';
 //#endregion
 
 @Injectable()

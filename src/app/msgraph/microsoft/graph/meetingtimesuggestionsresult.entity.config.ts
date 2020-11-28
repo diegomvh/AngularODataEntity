@@ -2,13 +2,17 @@
 
 //#region ODataApi Imports
 import { MeetingTimeSuggestionsResult } from './meetingtimesuggestionsresult.entity';
+import { MeetingTimeSuggestionsResultModel } from './meetingtimesuggestionsresult.model';
+import { MeetingTimeSuggestionsResultCollection } from './meetingtimesuggestionsresult.collection';
 //#endregion
 
 export const MeetingTimeSuggestionsResultConfig = {
   name: "meetingTimeSuggestionsResult",
+  model: MeetingTimeSuggestionsResultModel,
+  collection: MeetingTimeSuggestionsResultCollection,
   annotations: [],
   fields: {
-    meetingTimeSuggestions: {type: 'graph.meetingTimeSuggestion', collection: true},
-    emptySuggestionsReason: {type: 'Edm.String'}
+    emptySuggestionsReason: {type: 'Edm.String'},
+    meetingTimeSuggestions: {type: 'graph.meetingTimeSuggestion', collection: true}
   }
 } as EntityConfig<MeetingTimeSuggestionsResult>;

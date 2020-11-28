@@ -4,13 +4,19 @@
 import { MobileApp } from './mobileapp.entity';
 import { IosDeviceType } from './iosdevicetype.entity';
 import { IosMinimumOperatingSystem } from './iosminimumoperatingsystem.entity';
+import { IosDeviceTypeModel } from './iosdevicetype.model';
+import { IosMinimumOperatingSystemModel } from './iosminimumoperatingsystem.model';
+import { MobileAppModel } from './mobileapp.model';
+import { IosDeviceTypeCollection } from './iosdevicetype.collection';
+import { IosMinimumOperatingSystemCollection } from './iosminimumoperatingsystem.collection';
+import { MobileAppCollection } from './mobileapp.collection';
 //#endregion
 
 export interface IosStoreApp extends MobileApp {
   //#region ODataApi Properties
-  bundleId?: string;
-  appStoreUrl?: string;
   applicableDeviceType: IosDeviceType;
+  appStoreUrl?: string;
+  bundleId?: string;
   minimumSupportedOperatingSystem?: IosMinimumOperatingSystem;
   //#endregion
 }

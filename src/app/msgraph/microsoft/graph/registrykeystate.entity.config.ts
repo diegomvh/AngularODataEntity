@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { RegistryKeyState } from './registrykeystate.entity';
+import { RegistryKeyStateModel } from './registrykeystate.model';
+import { RegistryKeyStateCollection } from './registrykeystate.collection';
 //#endregion
 
 export const RegistryKeyStateConfig = {
   name: "registryKeyState",
+  model: RegistryKeyStateModel,
+  collection: RegistryKeyStateCollection,
   annotations: [],
   fields: {
     hive: {type: 'graph.registryHive'},

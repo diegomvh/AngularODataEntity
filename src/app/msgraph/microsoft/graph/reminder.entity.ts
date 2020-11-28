@@ -3,16 +3,20 @@
 //#region ODataApi Imports
 import { DateTimeTimeZone } from './datetimetimezone.entity';
 import { Location } from './location.entity';
+import { DateTimeTimeZoneModel } from './datetimetimezone.model';
+import { LocationModel } from './location.model';
+import { DateTimeTimeZoneCollection } from './datetimetimezone.collection';
+import { LocationCollection } from './location.collection';
 //#endregion
 
 export interface Reminder {
   //#region ODataApi Properties
-  eventId?: string;
-  eventStartTime?: DateTimeTimeZone;
-  eventEndTime?: DateTimeTimeZone;
   changeKey?: string;
-  eventSubject?: string;
+  eventEndTime?: DateTimeTimeZone;
+  eventId?: string;
   eventLocation?: Location;
+  eventStartTime?: DateTimeTimeZone;
+  eventSubject?: string;
   eventWebLink?: string;
   reminderFireTime?: DateTimeTimeZone;
   //#endregion

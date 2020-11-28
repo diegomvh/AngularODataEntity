@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { DeviceAndAppManagementAssignmentTarget } from './deviceandappmanagementassignmenttarget.entity';
+import { DeviceAndAppManagementAssignmentTargetModel } from './deviceandappmanagementassignmenttarget.model';
+import { DeviceAndAppManagementAssignmentTargetCollection } from './deviceandappmanagementassignmenttarget.collection';
 //#endregion
 
 export interface AllDevicesAssignmentTarget extends DeviceAndAppManagementAssignmentTarget {

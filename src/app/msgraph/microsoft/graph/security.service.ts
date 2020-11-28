@@ -20,10 +20,18 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Security } from './security.entity';
 import { Alert } from './alert.entity';
-import { SecureScoreControlProfile } from './securescorecontrolprofile.entity';
 import { SecureScore } from './securescore.entity';
+import { SecureScoreControlProfile } from './securescorecontrolprofile.entity';
+import { Security } from './security.entity';
+import { AlertModel } from './alert.model';
+import { SecureScoreModel } from './securescore.model';
+import { SecureScoreControlProfileModel } from './securescorecontrolprofile.model';
+import { SecurityModel } from './security.model';
+import { AlertCollection } from './alert.collection';
+import { SecureScoreCollection } from './securescore.collection';
+import { SecureScoreControlProfileCollection } from './securescorecontrolprofile.collection';
+import { SecurityCollection } from './security.collection';
 //#endregion
 
 @Injectable()

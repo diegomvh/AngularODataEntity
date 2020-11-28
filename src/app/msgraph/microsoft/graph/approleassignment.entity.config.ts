@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { AppRoleAssignment } from './approleassignment.entity';
+import { AppRoleAssignmentModel } from './approleassignment.model';
+import { AppRoleAssignmentCollection } from './approleassignment.collection';
 //#endregion
 
 export const AppRoleAssignmentConfig = {
   name: "appRoleAssignment",
   base: "microsoft.graph.directoryObject",
+  model: AppRoleAssignmentModel,
+  collection: AppRoleAssignmentCollection,
   annotations: [],
   fields: {
     appRoleId: {type: 'Edm.Guid', nullable: false},

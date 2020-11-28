@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { UserSecurityState } from './usersecuritystate.entity';
+import { UserSecurityStateModel } from './usersecuritystate.model';
+import { UserSecurityStateCollection } from './usersecuritystate.collection';
 //#endregion
 
 export const UserSecurityStateConfig = {
   name: "userSecurityState",
+  model: UserSecurityStateModel,
+  collection: UserSecurityStateCollection,
   annotations: [],
   fields: {
     aadUserId: {type: 'Edm.String'},

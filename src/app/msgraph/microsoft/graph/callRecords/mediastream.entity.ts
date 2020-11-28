@@ -6,30 +6,30 @@ import { MediaStreamDirection } from './mediastreamdirection.enum';
 
 export interface MediaStream {
   //#region ODataApi Properties
-  streamId?: string;
-  startDateTime?: Date;
-  endDateTime?: Date;
-  streamDirection: MediaStreamDirection;
   averageAudioDegradation?: number;
+  averageAudioNetworkJitter?: Duration;
+  averageBandwidthEstimate?: number;
   averageJitter?: Duration;
-  maxJitter?: Duration;
   averagePacketLossRate?: number;
-  maxPacketLossRate?: number;
   averageRatioOfConcealedSamples?: number;
-  maxRatioOfConcealedSamples?: number;
+  averageReceivedFrameRate?: number;
   averageRoundTripTime?: Duration;
+  averageVideoFrameLossPercentage?: number;
+  averageVideoFrameRate?: number;
+  averageVideoPacketLossRate?: number;
+  endDateTime?: Date;
+  lowFrameRateRatio?: number;
+  lowVideoProcessingCapabilityRatio?: number;
+  maxAudioNetworkJitter?: Duration;
+  maxJitter?: Duration;
+  maxPacketLossRate?: number;
+  maxRatioOfConcealedSamples?: number;
   maxRoundTripTime?: Duration;
   packetUtilization?: number;
-  averageBandwidthEstimate?: number;
-  wasMediaBypassed?: boolean;
   postForwardErrorCorrectionPacketLossRate?: number;
-  averageVideoFrameLossPercentage?: number;
-  averageReceivedFrameRate?: number;
-  lowFrameRateRatio?: number;
-  averageVideoPacketLossRate?: number;
-  averageVideoFrameRate?: number;
-  lowVideoProcessingCapabilityRatio?: number;
-  averageAudioNetworkJitter?: Duration;
-  maxAudioNetworkJitter?: Duration;
+  startDateTime?: Date;
+  streamDirection: MediaStreamDirection;
+  streamId?: string;
+  wasMediaBypassed?: boolean;
   //#endregion
 }

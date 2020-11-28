@@ -31,11 +31,20 @@ export class CustomerAndSuppliersByCitiesService extends ODataEntityService<Cust
     super(client, 'Customer_and_Suppliers_by_Cities', 'NorthwindModel.Customer_and_Suppliers_by_City');
   }
 
+  //#region ODataApi Model
   customerAndSuppliersByCityModel(): CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity> {
     return super.model() as CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   customerAndSuppliersByCityCollection(): CustomerAndSuppliersByCityCollection<CustomerAndSuppliersByCity, CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>> {
     return super.collection() as CustomerAndSuppliersByCityCollection<CustomerAndSuppliersByCity, CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

@@ -5,7 +5,7 @@
 
 export interface ConditionalAccessLocations {
   //#region ODataApi Properties
-  includeLocations: string[];
   excludeLocations: string[];
+  includeLocations: string[];
   //#endregion
 }

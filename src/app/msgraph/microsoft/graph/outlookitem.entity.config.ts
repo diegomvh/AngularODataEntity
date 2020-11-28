@@ -2,16 +2,20 @@
 
 //#region ODataApi Imports
 import { OutlookItem } from './outlookitem.entity';
+import { OutlookItemModel } from './outlookitem.model';
+import { OutlookItemCollection } from './outlookitem.collection';
 //#endregion
 
 export const OutlookItemConfig = {
   name: "outlookItem",
   base: "microsoft.graph.entity",
+  model: OutlookItemModel,
+  collection: OutlookItemCollection,
   annotations: [],
   fields: {
-    createdDateTime: {type: 'Edm.DateTimeOffset'},
-    lastModifiedDateTime: {type: 'Edm.DateTimeOffset'},
+    categories: {type: 'Edm.String', collection: true},
     changeKey: {type: 'Edm.String'},
-    categories: {type: 'Edm.String', collection: true}
+    createdDateTime: {type: 'Edm.DateTimeOffset'},
+    lastModifiedDateTime: {type: 'Edm.DateTimeOffset'}
   }
 } as EntityConfig<OutlookItem>;

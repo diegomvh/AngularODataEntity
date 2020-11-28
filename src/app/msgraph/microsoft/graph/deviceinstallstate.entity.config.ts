@@ -2,20 +2,24 @@
 
 //#region ODataApi Imports
 import { DeviceInstallState } from './deviceinstallstate.entity';
+import { DeviceInstallStateModel } from './deviceinstallstate.model';
+import { DeviceInstallStateCollection } from './deviceinstallstate.collection';
 //#endregion
 
 export const DeviceInstallStateConfig = {
   name: "deviceInstallState",
   base: "microsoft.graph.entity",
+  model: DeviceInstallStateModel,
+  collection: DeviceInstallStateCollection,
   annotations: [],
   fields: {
-    deviceName: {type: 'Edm.String'},
     deviceId: {type: 'Edm.String'},
-    lastSyncDateTime: {type: 'Edm.DateTimeOffset', nullable: false},
-    installState: {type: 'graph.installState', nullable: false},
+    deviceName: {type: 'Edm.String'},
     errorCode: {type: 'Edm.String'},
-    osVersion: {type: 'Edm.String'},
+    installState: {type: 'graph.installState', nullable: false},
+    lastSyncDateTime: {type: 'Edm.DateTimeOffset', nullable: false},
     osDescription: {type: 'Edm.String'},
+    osVersion: {type: 'Edm.String'},
     userName: {type: 'Edm.String'}
   }
 } as EntityConfig<DeviceInstallState>;

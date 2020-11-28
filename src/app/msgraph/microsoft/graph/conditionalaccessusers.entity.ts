@@ -5,11 +5,11 @@
 
 export interface ConditionalAccessUsers {
   //#region ODataApi Properties
-  includeUsers: string[];
+  excludeGroups: string[];
+  excludeRoles: string[];
   excludeUsers: string[];
   includeGroups: string[];
-  excludeGroups: string[];
   includeRoles: string[];
-  excludeRoles: string[];
+  includeUsers: string[];
   //#endregion
 }

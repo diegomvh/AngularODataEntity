@@ -2,16 +2,20 @@
 
 //#region ODataApi Imports
 import { ManagedAndroidLobApp } from './managedandroidlobapp.entity';
+import { ManagedAndroidLobAppModel } from './managedandroidlobapp.model';
+import { ManagedAndroidLobAppCollection } from './managedandroidlobapp.collection';
 //#endregion
 
 export const ManagedAndroidLobAppConfig = {
   name: "managedAndroidLobApp",
   base: "microsoft.graph.managedMobileLobApp",
+  model: ManagedAndroidLobAppModel,
+  collection: ManagedAndroidLobAppCollection,
   annotations: [],
   fields: {
-    packageId: {type: 'Edm.String'},
     minimumSupportedOperatingSystem: {type: 'graph.androidMinimumOperatingSystem'},
-    versionName: {type: 'Edm.String'},
-    versionCode: {type: 'Edm.String'}
+    packageId: {type: 'Edm.String'},
+    versionCode: {type: 'Edm.String'},
+    versionName: {type: 'Edm.String'}
   }
 } as EntityConfig<ManagedAndroidLobApp>;

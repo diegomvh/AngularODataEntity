@@ -12,6 +12,28 @@ import { ItemReference } from './itemreference.entity';
 import { Shared } from './shared.entity';
 import { SpecialFolder } from './specialfolder.entity';
 import { Video } from './video.entity';
+import { IdentitySetModel } from './identityset.model';
+import { SharepointIdsModel } from './sharepointids.model';
+import { FileModel } from './file.model';
+import { FileSystemInfoModel } from './filesysteminfo.model';
+import { FolderModel } from './folder.model';
+import { ImageModel } from './image.model';
+import { PackageModel } from './package.model';
+import { ItemReferenceModel } from './itemreference.model';
+import { SharedModel } from './shared.model';
+import { SpecialFolderModel } from './specialfolder.model';
+import { VideoModel } from './video.model';
+import { IdentitySetCollection } from './identityset.collection';
+import { SharepointIdsCollection } from './sharepointids.collection';
+import { FileCollection } from './file.collection';
+import { FileSystemInfoCollection } from './filesysteminfo.collection';
+import { FolderCollection } from './folder.collection';
+import { ImageCollection } from './image.collection';
+import { PackageCollection } from './package.collection';
+import { ItemReferenceCollection } from './itemreference.collection';
+import { SharedCollection } from './shared.collection';
+import { SpecialFolderCollection } from './specialfolder.collection';
+import { VideoCollection } from './video.collection';
 //#endregion
 
 export interface RemoteItem {
@@ -21,8 +43,8 @@ export interface RemoteItem {
   file?: File;
   fileSystemInfo?: FileSystemInfo;
   folder?: Folder;
-  image?: Image;
   id?: string;
+  image?: Image;
   lastModifiedBy?: IdentitySet;
   lastModifiedDateTime?: Date;
   name?: string;

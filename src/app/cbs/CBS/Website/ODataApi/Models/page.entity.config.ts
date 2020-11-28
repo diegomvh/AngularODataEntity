@@ -1,11 +1,15 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Page } from './page.entity';
+import { PageModel } from './page.model';
+import { PageCollection } from './page.collection';
 //#endregion
 
 export const PageConfig = {
   name: "Page",
+  model: PageModel,
+  collection: PageCollection,
   annotations: [],
   fields: {
     UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
@@ -40,4 +44,4 @@ export const PageConfig = {
     Created: {type: 'Edm.DateTimeOffset', nullable: false},
     Permalink: {type: 'Edm.String'}
   }
-} as EntityConfig<Page>;
+} as StructuredTypeConfig<Page>;

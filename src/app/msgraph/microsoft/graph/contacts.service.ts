@@ -21,10 +21,20 @@ import {
 
 //#region ODataApi Imports
 import { OnPremisesProvisioningError } from './onpremisesprovisioningerror.entity';
-import { PhysicalOfficeAddress } from './physicalofficeaddress.entity';
 import { Phone } from './phone.entity';
+import { PhysicalOfficeAddress } from './physicalofficeaddress.entity';
 import { DirectoryObject } from './directoryobject.entity';
 import { OrgContact } from './orgcontact.entity';
+import { OnPremisesProvisioningErrorModel } from './onpremisesprovisioningerror.model';
+import { PhoneModel } from './phone.model';
+import { PhysicalOfficeAddressModel } from './physicalofficeaddress.model';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { OrgContactModel } from './orgcontact.model';
+import { OnPremisesProvisioningErrorCollection } from './onpremisesprovisioningerror.collection';
+import { PhoneCollection } from './phone.collection';
+import { PhysicalOfficeAddressCollection } from './physicalofficeaddress.collection';
+import { DirectoryObjectCollection } from './directoryobject.collection';
+import { OrgContactCollection } from './orgcontact.collection';
 //#endregion
 
 @Injectable()
@@ -33,6 +43,16 @@ export class ContactsService extends ODataEntityService<OrgContact> {
     super(client, 'contacts', 'microsoft.graph.orgContact');
   }
 
+  //#region ODataApi Model
+  orgContactModel(): OrgContactModel<OrgContact> {
+    return super.model() as OrgContactModel<OrgContact>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  orgContactCollection(): OrgContactCollection<OrgContact, OrgContactModel<OrgContact>> {
+    return super.collection() as OrgContactCollection<OrgContact, OrgContactModel<OrgContact>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

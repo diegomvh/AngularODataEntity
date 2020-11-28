@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { MediaContentRatingJapan } from './mediacontentratingjapan.entity';
+import { MediaContentRatingJapanModel } from './mediacontentratingjapan.model';
+import { MediaContentRatingJapanCollection } from './mediacontentratingjapan.collection';
 //#endregion
 
 export const MediaContentRatingJapanConfig = {
   name: "mediaContentRatingJapan",
+  model: MediaContentRatingJapanModel,
+  collection: MediaContentRatingJapanCollection,
   annotations: [],
   fields: {
     movieRating: {type: 'graph.ratingJapanMoviesType', nullable: false},

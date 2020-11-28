@@ -6,11 +6,11 @@
 export interface FileEncryptionInfo {
   //#region ODataApi Properties
   encryptionKey?: ArrayBuffer;
+  fileDigest?: ArrayBuffer;
+  fileDigestAlgorithm?: string;
   initializationVector?: ArrayBuffer;
   mac?: ArrayBuffer;
   macKey?: ArrayBuffer;
   profileIdentifier?: string;
-  fileDigest?: ArrayBuffer;
-  fileDigestAlgorithm?: string;
   //#endregion
 }

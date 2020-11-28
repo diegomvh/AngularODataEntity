@@ -6,17 +6,17 @@ import { StateManagementSetting } from './statemanagementsetting.enum';
 
 export interface WindowsFirewallNetworkProfile {
   //#region ODataApi Properties
-  firewallEnabled: StateManagementSetting;
-  stealthModeBlocked: boolean;
-  incomingTrafficBlocked: boolean;
-  unicastResponsesToMulticastBroadcastsBlocked: boolean;
-  inboundNotificationsBlocked: boolean;
   authorizedApplicationRulesFromGroupPolicyMerged: boolean;
-  globalPortRulesFromGroupPolicyMerged: boolean;
   connectionSecurityRulesFromGroupPolicyMerged: boolean;
-  outboundConnectionsBlocked: boolean;
+  firewallEnabled: StateManagementSetting;
+  globalPortRulesFromGroupPolicyMerged: boolean;
   inboundConnectionsBlocked: boolean;
-  securedPacketExemptionAllowed: boolean;
+  inboundNotificationsBlocked: boolean;
+  incomingTrafficBlocked: boolean;
+  outboundConnectionsBlocked: boolean;
   policyRulesFromGroupPolicyMerged: boolean;
+  securedPacketExemptionAllowed: boolean;
+  stealthModeBlocked: boolean;
+  unicastResponsesToMulticastBroadcastsBlocked: boolean;
   //#endregion
 }

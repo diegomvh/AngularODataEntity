@@ -2,14 +2,18 @@
 
 //#region ODataApi Imports
 import { FileAssessmentRequest } from './fileassessmentrequest.entity';
+import { FileAssessmentRequestModel } from './fileassessmentrequest.model';
+import { FileAssessmentRequestCollection } from './fileassessmentrequest.collection';
 //#endregion
 
 export const FileAssessmentRequestConfig = {
   name: "fileAssessmentRequest",
   base: "microsoft.graph.threatAssessmentRequest",
+  model: FileAssessmentRequestModel,
+  collection: FileAssessmentRequestCollection,
   annotations: [],
   fields: {
-    fileName: {type: 'Edm.String', nullable: false},
-    contentData: {type: 'Edm.String', nullable: false}
+    contentData: {type: 'Edm.String', nullable: false},
+    fileName: {type: 'Edm.String', nullable: false}
   }
 } as EntityConfig<FileAssessmentRequest>;

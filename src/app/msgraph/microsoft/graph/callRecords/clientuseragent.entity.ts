@@ -4,6 +4,8 @@
 import { UserAgent } from './useragent.entity';
 import { ClientPlatform } from './clientplatform.enum';
 import { ProductFamily } from './productfamily.enum';
+import { UserAgentModel } from './useragent.model';
+import { UserAgentCollection } from './useragent.collection';
 //#endregion
 
 export interface ClientUserAgent extends UserAgent {

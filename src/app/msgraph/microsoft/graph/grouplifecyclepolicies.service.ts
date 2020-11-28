@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { GroupLifecyclePolicy } from './grouplifecyclepolicy.entity';
+import { GroupLifecyclePolicyModel } from './grouplifecyclepolicy.model';
+import { GroupLifecyclePolicyCollection } from './grouplifecyclepolicy.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class GroupLifecyclePoliciesService extends ODataEntityService<GroupLifec
     super(client, 'groupLifecyclePolicies', 'microsoft.graph.groupLifecyclePolicy');
   }
 
+  //#region ODataApi Model
+  groupLifecyclePolicyModel(): GroupLifecyclePolicyModel<GroupLifecyclePolicy> {
+    return super.model() as GroupLifecyclePolicyModel<GroupLifecyclePolicy>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  groupLifecyclePolicyCollection(): GroupLifecyclePolicyCollection<GroupLifecyclePolicy, GroupLifecyclePolicyModel<GroupLifecyclePolicy>> {
+    return super.collection() as GroupLifecyclePolicyCollection<GroupLifecyclePolicy, GroupLifecyclePolicyModel<GroupLifecyclePolicy>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   public addGroup(entity: EntityKey<GroupLifecyclePolicy>): ODataActionResource<{groupId: string}, boolean> {
     const resource = this.entity(entity).action<{groupId: string}, boolean>('microsoft.graph.addGroup');

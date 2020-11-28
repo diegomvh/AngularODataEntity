@@ -2,13 +2,15 @@
 
 //#region ODataApi Imports
 import { ScheduleChangeRequest } from './schedulechangerequest.entity';
+import { ScheduleChangeRequestModel } from './schedulechangerequest.model';
+import { ScheduleChangeRequestCollection } from './schedulechangerequest.collection';
 //#endregion
 
 export interface OfferShiftRequest extends ScheduleChangeRequest {
   //#region ODataApi Properties
-  recipientActionMessage?: string;
   recipientActionDateTime?: Date;
-  senderShiftId?: string;
+  recipientActionMessage?: string;
   recipientUserId?: string;
+  senderShiftId?: string;
   //#endregion
 }

@@ -3,12 +3,16 @@
 //#region ODataApi Imports
 import { ManagedApp } from './managedapp.entity';
 import { AndroidMinimumOperatingSystem } from './androidminimumoperatingsystem.entity';
+import { AndroidMinimumOperatingSystemModel } from './androidminimumoperatingsystem.model';
+import { ManagedAppModel } from './managedapp.model';
+import { AndroidMinimumOperatingSystemCollection } from './androidminimumoperatingsystem.collection';
+import { ManagedAppCollection } from './managedapp.collection';
 //#endregion
 
 export interface ManagedAndroidStoreApp extends ManagedApp {
   //#region ODataApi Properties
-  packageId?: string;
   appStoreUrl: string;
   minimumSupportedOperatingSystem: AndroidMinimumOperatingSystem;
+  packageId?: string;
   //#endregion
 }

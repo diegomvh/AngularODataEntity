@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { AlertHistoryState } from './alerthistorystate.entity';
+import { AlertHistoryStateModel } from './alerthistorystate.model';
+import { AlertHistoryStateCollection } from './alerthistorystate.collection';
 //#endregion
 
 export const AlertHistoryStateConfig = {
   name: "alertHistoryState",
+  model: AlertHistoryStateModel,
+  collection: AlertHistoryStateCollection,
   annotations: [],
   fields: {
     appId: {type: 'Edm.String'},

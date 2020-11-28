@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { WorkbookOperation } from './workbookoperation.entity';
+import { WorkbookOperationModel } from './workbookoperation.model';
+import { WorkbookOperationCollection } from './workbookoperation.collection';
 //#endregion
 
 export const WorkbookOperationConfig = {
   name: "workbookOperation",
   base: "microsoft.graph.entity",
+  model: WorkbookOperationModel,
+  collection: WorkbookOperationCollection,
   annotations: [],
   fields: {
-    status: {type: 'graph.workbookOperationStatus', nullable: false},
+    error: {type: 'graph.workbookOperationError'},
     resourceLocation: {type: 'Edm.String'},
-    error: {type: 'graph.workbookOperationError'}
+    status: {type: 'graph.workbookOperationStatus', nullable: false}
   }
 } as EntityConfig<WorkbookOperation>;

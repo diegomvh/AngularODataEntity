@@ -5,8 +5,8 @@
 
 export interface TeamsTabConfiguration {
   //#region ODataApi Properties
-  entityId?: string;
   contentUrl?: string;
+  entityId?: string;
   removeUrl?: string;
   websiteUrl?: string;
   //#endregion

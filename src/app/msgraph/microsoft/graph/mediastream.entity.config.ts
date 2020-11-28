@@ -2,16 +2,20 @@
 
 //#region ODataApi Imports
 import { MediaStream } from './mediastream.entity';
+import { MediaStreamModel } from './mediastream.model';
+import { MediaStreamCollection } from './mediastream.collection';
 //#endregion
 
 export const MediaStreamConfig = {
   name: "mediaStream",
+  model: MediaStreamModel,
+  collection: MediaStreamCollection,
   annotations: [],
   fields: {
-    mediaType: {type: 'graph.modality', nullable: false},
-    label: {type: 'Edm.String'},
-    sourceId: {type: 'Edm.String', nullable: false},
     direction: {type: 'graph.mediaDirection', nullable: false},
-    serverMuted: {type: 'Edm.Boolean', nullable: false}
+    label: {type: 'Edm.String'},
+    mediaType: {type: 'graph.modality', nullable: false},
+    serverMuted: {type: 'Edm.Boolean', nullable: false},
+    sourceId: {type: 'Edm.String', nullable: false}
   }
 } as EntityConfig<MediaStream>;

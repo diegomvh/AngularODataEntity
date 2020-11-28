@@ -34,11 +34,23 @@ export class RegionsService extends ODataEntityService<Region> {
     super(client, 'Regions', 'NorthwindModel.Region');
   }
 
+  //#region ODataApi Model
   regionModel(): RegionModel<Region> {
     return super.model() as RegionModel<Region>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   regionCollection(): RegionCollection<Region, RegionModel<Region>> {
     return super.collection() as RegionCollection<Region, RegionModel<Region>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public territories(entity: EntityKey<Region>): ODataNavigationPropertyResource<Territory> {
+    return this.entity(entity).navigationProperty<Territory>('Territories');
+  }
+  //#endregion
 }

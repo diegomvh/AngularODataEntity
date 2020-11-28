@@ -5,7 +5,7 @@
 
 export interface UserAgent {
   //#region ODataApi Properties
-  headerValue?: string;
   applicationVersion?: string;
+  headerValue?: string;
   //#endregion
 }

@@ -2,18 +2,22 @@
 
 //#region ODataApi Imports
 import { WorkforceIntegration } from './workforceintegration.entity';
+import { WorkforceIntegrationModel } from './workforceintegration.model';
+import { WorkforceIntegrationCollection } from './workforceintegration.collection';
 //#endregion
 
 export const WorkforceIntegrationConfig = {
   name: "workforceIntegration",
   base: "microsoft.graph.changeTrackedEntity",
+  model: WorkforceIntegrationModel,
+  collection: WorkforceIntegrationCollection,
   annotations: [],
   fields: {
-    displayName: {type: 'Edm.String'},
     apiVersion: {type: 'Edm.Int32'},
+    displayName: {type: 'Edm.String'},
     encryption: {type: 'graph.workforceIntegrationEncryption'},
     isActive: {type: 'Edm.Boolean'},
-    url: {type: 'Edm.String'},
-    supportedEntities: {type: 'graph.workforceIntegrationSupportedEntities'}
+    supportedEntities: {type: 'graph.workforceIntegrationSupportedEntities'},
+    url: {type: 'Edm.String'}
   }
 } as EntityConfig<WorkforceIntegration>;

@@ -5,7 +5,7 @@
 
 export interface AssignedLabel {
   //#region ODataApi Properties
-  labelId?: string;
   displayName?: string;
+  labelId?: string;
   //#endregion
 }

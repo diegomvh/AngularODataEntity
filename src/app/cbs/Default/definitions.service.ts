@@ -21,8 +21,12 @@ import {
 
 //#region ODataApi Imports
 import { DefinitionType } from '../CBS/Website/ODataApi/Models/definitiontype.enum';
-import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.entity';
+import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.complex';
 import { Definition } from '../CBS/Website/ODataApi/Models/definition.entity';
+import { LinkListModel } from '../CBS/Website/ODataApi/Models/linklist.model';
+import { DefinitionModel } from '../CBS/Website/ODataApi/Models/definition.model';
+import { LinkListCollection } from '../CBS/Website/ODataApi/Models/linklist.collection';
+import { DefinitionCollection } from '../CBS/Website/ODataApi/Models/definition.collection';
 //#endregion
 
 @Injectable()
@@ -31,6 +35,16 @@ export class DefinitionsService extends ODataEntityService<Definition> {
     super(client, 'Definitions', 'CBS.Website.ODataApi.Models.Definition');
   }
 
+  //#region ODataApi Model
+  definitionModel(): DefinitionModel<Definition> {
+    return this.entity().asModel() as DefinitionModel<Definition>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  definitionCollection(): DefinitionCollection<Definition, DefinitionModel<Definition>> {
+    return this.entities().asCollection() as DefinitionCollection<Definition, DefinitionModel<Definition>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

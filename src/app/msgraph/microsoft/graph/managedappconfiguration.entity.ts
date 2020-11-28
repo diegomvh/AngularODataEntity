@@ -3,6 +3,10 @@
 //#region ODataApi Imports
 import { ManagedAppPolicy } from './managedapppolicy.entity';
 import { KeyValuePair } from './keyvaluepair.entity';
+import { KeyValuePairModel } from './keyvaluepair.model';
+import { ManagedAppPolicyModel } from './managedapppolicy.model';
+import { KeyValuePairCollection } from './keyvaluepair.collection';
+import { ManagedAppPolicyCollection } from './managedapppolicy.collection';
 //#endregion
 
 export interface ManagedAppConfiguration extends ManagedAppPolicy {

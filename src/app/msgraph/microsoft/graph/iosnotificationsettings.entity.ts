@@ -6,14 +6,14 @@ import { IosNotificationAlertType } from './iosnotificationalerttype.enum';
 
 export interface IosNotificationSettings {
   //#region ODataApi Properties
-  bundleID: string;
+  alertType: IosNotificationAlertType;
   appName?: string;
-  publisher?: string;
+  badgesEnabled?: boolean;
+  bundleID: string;
   enabled?: boolean;
+  publisher?: string;
   showInNotificationCenter?: boolean;
   showOnLockScreen?: boolean;
-  alertType: IosNotificationAlertType;
-  badgesEnabled?: boolean;
   soundsEnabled?: boolean;
   //#endregion
 }

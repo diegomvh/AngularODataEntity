@@ -5,7 +5,7 @@
 
 export interface VppLicensingType {
   //#region ODataApi Properties
-  supportsUserLicensing: boolean;
   supportsDeviceLicensing: boolean;
+  supportsUserLicensing: boolean;
   //#endregion
 }

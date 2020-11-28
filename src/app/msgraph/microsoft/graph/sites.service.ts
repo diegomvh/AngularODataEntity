@@ -20,12 +20,24 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { PublicError } from './publicerror.entity';
-import { Root } from './root.entity';
 import { SharepointIds } from './sharepointids.entity';
+import { Root } from './root.entity';
+import { PublicError } from './publicerror.entity';
 import { SiteCollection } from './sitecollection.entity';
 import { Site } from './site.entity';
 import { ItemActivityStat } from './itemactivitystat.entity';
+import { SharepointIdsModel } from './sharepointids.model';
+import { RootModel } from './root.model';
+import { PublicErrorModel } from './publicerror.model';
+import { SiteCollectionModel } from './sitecollection.model';
+import { SiteModel } from './site.model';
+import { ItemActivityStatModel } from './itemactivitystat.model';
+import { SharepointIdsCollection } from './sharepointids.collection';
+import { RootCollection } from './root.collection';
+import { PublicErrorCollection } from './publicerror.collection';
+import { SiteCollectionCollection } from './sitecollection.collection';
+import { SiteCollection } from './site.collection';
+import { ItemActivityStatCollection } from './itemactivitystat.collection';
 //#endregion
 
 @Injectable()
@@ -34,6 +46,16 @@ export class SitesService extends ODataEntityService<Site> {
     super(client, 'sites', 'microsoft.graph.site');
   }
 
+  //#region ODataApi Model
+  siteModel(): SiteModel<Site> {
+    return super.model() as SiteModel<Site>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  siteCollection(): SiteCollection<Site, SiteModel<Site>> {
+    return super.collection() as SiteCollection<Site, SiteModel<Site>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   public add(): ODataActionResource<{value: Site[]}, Site> {
     const resource = this.entities().action<{value: Site[]}, Site>('microsoft.graph.add');

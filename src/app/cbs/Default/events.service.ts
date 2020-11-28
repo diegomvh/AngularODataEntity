@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { CalendarEvent } from '../CBS/Website/ODataApi/Models/calendarevent.entity';
+import { CalendarEventModel } from '../CBS/Website/ODataApi/Models/calendarevent.model';
+import { CalendarEventCollection } from '../CBS/Website/ODataApi/Models/calendarevent.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class EventsService extends ODataEntityService<CalendarEvent> {
     super(client, 'Events', 'CBS.Website.ODataApi.Models.CalendarEvent');
   }
 
+  //#region ODataApi Model
+  calendarEventModel(): CalendarEventModel<CalendarEvent> {
+    return this.entity().asModel() as CalendarEventModel<CalendarEvent>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  calendarEventCollection(): CalendarEventCollection<CalendarEvent, CalendarEventModel<CalendarEvent>> {
+    return this.entities().asCollection() as CalendarEventCollection<CalendarEvent, CalendarEventModel<CalendarEvent>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

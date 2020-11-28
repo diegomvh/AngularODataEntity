@@ -2,16 +2,20 @@
 
 //#region ODataApi Imports
 import { ParticipantInfo } from './participantinfo.entity';
+import { ParticipantInfoModel } from './participantinfo.model';
+import { ParticipantInfoCollection } from './participantinfo.collection';
 //#endregion
 
 export const ParticipantInfoConfig = {
   name: "participantInfo",
+  model: ParticipantInfoModel,
+  collection: ParticipantInfoCollection,
   annotations: [],
   fields: {
-    identity: {type: 'graph.identitySet', nullable: false},
+    countryCode: {type: 'Edm.String'},
     endpointType: {type: 'graph.endpointType'},
-    region: {type: 'Edm.String'},
+    identity: {type: 'graph.identitySet', nullable: false},
     languageId: {type: 'Edm.String'},
-    countryCode: {type: 'Edm.String'}
+    region: {type: 'Edm.String'}
   }
 } as EntityConfig<ParticipantInfo>;

@@ -1,4 +1,4 @@
-﻿import { ODataModel, HttpOptions, Duration } from 'angular-odata';
+﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,18 +8,23 @@ import { PersonGender } from './persongender.enum';
 import { Location } from './location.entity';
 import { Photo } from './photo.entity';
 import { Person } from './person.entity';
+import { Airline } from './airline.entity';
+import { Airport } from './airport.entity';
+import { Flight } from './flight.entity';
 import { Trip } from './trip.entity';
 import { LocationModel } from './location.model';
 import { PhotoModel } from './photo.model';
+import { AirlineModel } from './airline.model';
+import { AirportModel } from './airport.model';
+import { FlightModel } from './flight.model';
 import { TripModel } from './trip.model';
 import { LocationCollection } from './location.collection';
 import { PhotoCollection } from './photo.collection';
 import { PersonCollection } from './person.collection';
+import { AirlineCollection } from './airline.collection';
+import { AirportCollection } from './airport.collection';
+import { FlightCollection } from './flight.collection';
 import { TripCollection } from './trip.collection';
-import { AirlineModel } from './airline.model';
-import { Airline } from './airline.entity';
-import { AirportModel } from './airport.model';
-import { Airport } from './airport.entity';
 //#endregion
 
 export class PersonModel<E extends Person> extends ODataModel<E> {
@@ -40,8 +45,17 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public setPhoto(model: PhotoModel<Photo> | null) {
-    this.setNavigationProperty<Photo, PhotoModel<Photo>>(this._config.field('Photo'), model);
+  public airline() {
+    return this._navigationProperty<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline').asModel() as ODataModel<Airline>;
+  }
+  public from() {
+    return this._navigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From').asModel() as ODataModel<Airport>;
+  }
+  public to() {
+    return this._navigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To').asModel() as ODataModel<Airport>;
+  }
+  public photos() {
+    return this._navigationProperty<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos').asCollection() as ODataCollection<Photo, ODataModel<Photo>>;
   }
   //#endregion
 }

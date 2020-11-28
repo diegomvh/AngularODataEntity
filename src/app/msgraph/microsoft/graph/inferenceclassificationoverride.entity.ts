@@ -4,6 +4,10 @@
 import { Entity } from './entity.entity';
 import { InferenceClassificationType } from './inferenceclassificationtype.enum';
 import { EmailAddress } from './emailaddress.entity';
+import { EmailAddressModel } from './emailaddress.model';
+import { EntityModel } from './entity.model';
+import { EmailAddressCollection } from './emailaddress.collection';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface InferenceClassificationOverride extends Entity {

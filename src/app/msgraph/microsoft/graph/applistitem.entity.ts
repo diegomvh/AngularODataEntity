@@ -5,9 +5,9 @@
 
 export interface AppListItem {
   //#region ODataApi Properties
+  appId?: string;
+  appStoreUrl?: string;
   name: string;
   publisher?: string;
-  appStoreUrl?: string;
-  appId?: string;
   //#endregion
 }

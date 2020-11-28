@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { StandardTimeZoneOffset } from './standardtimezoneoffset.entity';
+import { StandardTimeZoneOffsetModel } from './standardtimezoneoffset.model';
+import { StandardTimeZoneOffsetCollection } from './standardtimezoneoffset.collection';
 //#endregion
 
 export interface DaylightTimeZoneOffset extends StandardTimeZoneOffset {

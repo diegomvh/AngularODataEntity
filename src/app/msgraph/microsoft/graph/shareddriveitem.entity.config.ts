@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { SharedDriveItem } from './shareddriveitem.entity';
+import { SharedDriveItemModel } from './shareddriveitem.model';
+import { SharedDriveItemCollection } from './shareddriveitem.collection';
 //#endregion
 
 export const SharedDriveItemConfig = {
   name: "sharedDriveItem",
   base: "microsoft.graph.baseItem",
+  model: SharedDriveItemModel,
+  collection: SharedDriveItemCollection,
   annotations: [],
   fields: {
     owner: {type: 'graph.identitySet'},

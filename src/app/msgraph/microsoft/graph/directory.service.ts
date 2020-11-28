@@ -22,6 +22,10 @@ import {
 //#region ODataApi Imports
 import { DirectoryObject } from './directoryobject.entity';
 import { Directory } from './directory.entity';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { DirectoryModel } from './directory.model';
+import { DirectoryObjectCollection } from './directoryobject.collection';
+import { DirectoryCollection } from './directory.collection';
 //#endregion
 
 @Injectable()

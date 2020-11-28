@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { ThreatAssessmentResult } from './threatassessmentresult.entity';
+import { ThreatAssessmentResultModel } from './threatassessmentresult.model';
+import { ThreatAssessmentResultCollection } from './threatassessmentresult.collection';
 //#endregion
 
 export const ThreatAssessmentResultConfig = {
   name: "threatAssessmentResult",
   base: "microsoft.graph.entity",
+  model: ThreatAssessmentResultModel,
+  collection: ThreatAssessmentResultCollection,
   annotations: [],
   fields: {
     createdDateTime: {type: 'Edm.DateTimeOffset'},
-    resultType: {type: 'graph.threatAssessmentResultType'},
-    message: {type: 'Edm.String'}
+    message: {type: 'Edm.String'},
+    resultType: {type: 'graph.threatAssessmentResultType'}
   }
 } as EntityConfig<ThreatAssessmentResult>;

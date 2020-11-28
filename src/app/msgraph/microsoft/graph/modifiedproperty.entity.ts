@@ -6,7 +6,7 @@
 export interface ModifiedProperty {
   //#region ODataApi Properties
   displayName?: string;
-  oldValue?: string;
   newValue?: string;
+  oldValue?: string;
   //#endregion
 }

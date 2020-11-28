@@ -2,14 +2,16 @@
 
 //#region ODataApi Imports
 import { IdentitySet } from './identityset.entity';
+import { IdentitySetModel } from './identityset.model';
+import { IdentitySetCollection } from './identityset.collection';
 //#endregion
 
 export interface PlannerChecklistItem {
   //#region ODataApi Properties
   isChecked?: boolean;
-  title?: string;
-  orderHint?: string;
   lastModifiedBy?: IdentitySet;
   lastModifiedDateTime?: Date;
+  orderHint?: string;
+  title?: string;
   //#endregion
 }

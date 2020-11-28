@@ -6,10 +6,10 @@ import { DayOfWeek } from './dayofweek.enum';
 
 export interface StandardTimeZoneOffset {
   //#region ODataApi Properties
-  time?: Date;
   dayOccurrence?: number;
   dayOfWeek?: DayOfWeek;
   month?: number;
+  time?: Date;
   year?: number;
   //#endregion
 }

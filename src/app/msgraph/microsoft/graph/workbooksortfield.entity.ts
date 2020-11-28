@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { WorkbookIcon } from './workbookicon.entity';
+import { WorkbookIconModel } from './workbookicon.model';
+import { WorkbookIconCollection } from './workbookicon.collection';
 //#endregion
 
 export interface WorkbookSortField {

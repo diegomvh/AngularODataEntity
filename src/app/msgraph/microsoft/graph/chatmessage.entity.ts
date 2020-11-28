@@ -2,8 +2,8 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
-import { ChatMessageType } from './chatmessagetype.enum';
 import { ChatMessageImportance } from './chatmessageimportance.enum';
+import { ChatMessageType } from './chatmessagetype.enum';
 import { IdentitySet } from './identityset.entity';
 import { ItemBody } from './itembody.entity';
 import { ChatMessageAttachment } from './chatmessageattachment.entity';
@@ -11,28 +11,46 @@ import { ChatMessageMention } from './chatmessagemention.entity';
 import { ChatMessagePolicyViolation } from './chatmessagepolicyviolation.entity';
 import { ChatMessageReaction } from './chatmessagereaction.entity';
 import { ChatMessageHostedContent } from './chatmessagehostedcontent.entity';
+import { IdentitySetModel } from './identityset.model';
+import { ItemBodyModel } from './itembody.model';
+import { ChatMessageAttachmentModel } from './chatmessageattachment.model';
+import { ChatMessageMentionModel } from './chatmessagemention.model';
+import { ChatMessagePolicyViolationModel } from './chatmessagepolicyviolation.model';
+import { ChatMessageReactionModel } from './chatmessagereaction.model';
+import { EntityModel } from './entity.model';
+import { ChatMessageModel } from './chatmessage.model';
+import { ChatMessageHostedContentModel } from './chatmessagehostedcontent.model';
+import { IdentitySetCollection } from './identityset.collection';
+import { ItemBodyCollection } from './itembody.collection';
+import { ChatMessageAttachmentCollection } from './chatmessageattachment.collection';
+import { ChatMessageMentionCollection } from './chatmessagemention.collection';
+import { ChatMessagePolicyViolationCollection } from './chatmessagepolicyviolation.collection';
+import { ChatMessageReactionCollection } from './chatmessagereaction.collection';
+import { EntityCollection } from './entity.collection';
+import { ChatMessageCollection } from './chatmessage.collection';
+import { ChatMessageHostedContentCollection } from './chatmessagehostedcontent.collection';
 //#endregion
 
 export interface ChatMessage extends Entity {
   //#region ODataApi Properties
-  replyToId?: string;
-  from?: IdentitySet;
-  etag?: string;
-  messageType: ChatMessageType;
-  createdDateTime?: Date;
-  lastModifiedDateTime?: Date;
-  deletedDateTime?: Date;
-  subject?: string;
-  body: ItemBody;
-  summary?: string;
   attachments?: ChatMessageAttachment[];
-  mentions?: ChatMessageMention[];
+  body: ItemBody;
+  createdDateTime?: Date;
+  deletedDateTime?: Date;
+  etag?: string;
+  from?: IdentitySet;
   importance: ChatMessageImportance;
+  lastModifiedDateTime?: Date;
+  locale: string;
+  mentions?: ChatMessageMention[];
+  messageType: ChatMessageType;
   policyViolation?: ChatMessagePolicyViolation;
   reactions?: ChatMessageReaction[];
-  locale: string;
+  replyToId?: string;
+  subject?: string;
+  summary?: string;
   webUrl?: string;
-  replies?: ChatMessage[];
   hostedContents?: ChatMessageHostedContent[];
+  replies?: ChatMessage[];
   //#endregion
 }

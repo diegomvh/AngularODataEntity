@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { ShiftItem } from './shiftitem.entity';
+import { ShiftItemModel } from './shiftitem.model';
+import { ShiftItemCollection } from './shiftitem.collection';
 //#endregion
 
 export interface OpenShiftItem extends ShiftItem {

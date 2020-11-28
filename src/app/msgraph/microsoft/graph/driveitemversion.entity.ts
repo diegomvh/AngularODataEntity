@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { BaseItemVersion } from './baseitemversion.entity';
+import { BaseItemVersionModel } from './baseitemversion.model';
+import { BaseItemVersionCollection } from './baseitemversion.collection';
 //#endregion
 
 export interface DriveItemVersion extends BaseItemVersion {

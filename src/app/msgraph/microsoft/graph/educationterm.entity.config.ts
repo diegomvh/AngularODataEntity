@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { EducationTerm } from './educationterm.entity';
+import { EducationTermModel } from './educationterm.model';
+import { EducationTermCollection } from './educationterm.collection';
 //#endregion
 
 export const EducationTermConfig = {
   name: "educationTerm",
+  model: EducationTermModel,
+  collection: EducationTermCollection,
   annotations: [],
   fields: {
-    externalId: {type: 'Edm.String'},
-    startDate: {type: 'Edm.Date'},
+    displayName: {type: 'Edm.String'},
     endDate: {type: 'Edm.Date'},
-    displayName: {type: 'Edm.String'}
+    externalId: {type: 'Edm.String'},
+    startDate: {type: 'Edm.Date'}
   }
 } as EntityConfig<EducationTerm>;

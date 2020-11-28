@@ -3,6 +3,10 @@
 //#region ODataApi Imports
 import { IosHomeScreenItem } from './ioshomescreenitem.entity';
 import { IosHomeScreenFolderPage } from './ioshomescreenfolderpage.entity';
+import { IosHomeScreenItemModel } from './ioshomescreenitem.model';
+import { IosHomeScreenFolderPageModel } from './ioshomescreenfolderpage.model';
+import { IosHomeScreenItemCollection } from './ioshomescreenitem.collection';
+import { IosHomeScreenFolderPageCollection } from './ioshomescreenfolderpage.collection';
 //#endregion
 
 export interface IosHomeScreenFolder extends IosHomeScreenItem {

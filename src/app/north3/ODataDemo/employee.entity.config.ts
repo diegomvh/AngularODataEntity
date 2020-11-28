@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { Employee } from './employee.entity';
+import { EmployeeModel } from './employee.model';
+import { EmployeeCollection } from './employee.collection';
 //#endregion
 
 export const EmployeeConfig = {
   name: "Employee",
   base: "ODataDemo.Person",
+  model: EmployeeModel,
+  collection: EmployeeCollection,
   annotations: [],
   fields: {
     EmployeeID: {type: 'Edm.Int64', nullable: false},

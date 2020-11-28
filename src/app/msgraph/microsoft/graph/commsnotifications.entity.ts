@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { CommsNotification } from './commsnotification.entity';
+import { CommsNotificationModel } from './commsnotification.model';
+import { CommsNotificationCollection } from './commsnotification.collection';
 //#endregion
 
 export interface CommsNotifications {

@@ -5,7 +5,7 @@
 
 export interface LocaleInfo {
   //#region ODataApi Properties
-  locale?: string;
   displayName?: string;
+  locale?: string;
   //#endregion
 }

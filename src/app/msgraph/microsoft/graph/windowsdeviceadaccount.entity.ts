@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { WindowsDeviceAccount } from './windowsdeviceaccount.entity';
+import { WindowsDeviceAccountModel } from './windowsdeviceaccount.model';
+import { WindowsDeviceAccountCollection } from './windowsdeviceaccount.collection';
 //#endregion
 
 export interface WindowsDeviceADAccount extends WindowsDeviceAccount {

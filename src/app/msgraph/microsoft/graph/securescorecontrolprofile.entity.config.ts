@@ -2,12 +2,16 @@
 
 //#region ODataApi Imports
 import { SecureScoreControlProfile } from './securescorecontrolprofile.entity';
+import { SecureScoreControlProfileModel } from './securescorecontrolprofile.model';
+import { SecureScoreControlProfileCollection } from './securescorecontrolprofile.collection';
 //#endregion
 
 export const SecureScoreControlProfileConfig = {
   name: "secureScoreControlProfile",
   base: "microsoft.graph.entity",
   open: true,
+  model: SecureScoreControlProfileModel,
+  collection: SecureScoreControlProfileCollection,
   annotations: [],
   fields: {
     actionType: {type: 'Edm.String'},

@@ -2,28 +2,32 @@
 
 //#region ODataApi Imports
 import { Calendar } from './calendar.entity';
+import { CalendarModel } from './calendar.model';
+import { CalendarCollection } from './calendar.collection';
 //#endregion
 
 export const CalendarConfig = {
   name: "calendar",
   base: "microsoft.graph.entity",
+  model: CalendarModel,
+  collection: CalendarCollection,
   annotations: [],
   fields: {
-    name: {type: 'Edm.String'},
-    color: {type: 'graph.calendarColor'},
-    changeKey: {type: 'Edm.String'},
+    allowedOnlineMeetingProviders: {type: 'graph.onlineMeetingProviderType', collection: true},
+    canEdit: {type: 'Edm.Boolean'},
     canShare: {type: 'Edm.Boolean'},
     canViewPrivateItems: {type: 'Edm.Boolean'},
-    canEdit: {type: 'Edm.Boolean'},
-    owner: {type: 'graph.emailAddress'},
-    allowedOnlineMeetingProviders: {type: 'graph.onlineMeetingProviderType', collection: true},
+    changeKey: {type: 'Edm.String'},
+    color: {type: 'graph.calendarColor'},
     defaultOnlineMeetingProvider: {type: 'graph.onlineMeetingProviderType'},
-    isTallyingResponses: {type: 'Edm.Boolean'},
     isRemovable: {type: 'Edm.Boolean'},
-    singleValueExtendedProperties: {type: 'graph.singleValueLegacyExtendedProperty', collection: true, navigation: true},
-    multiValueExtendedProperties: {type: 'graph.multiValueLegacyExtendedProperty', collection: true, navigation: true},
+    isTallyingResponses: {type: 'Edm.Boolean'},
+    name: {type: 'Edm.String'},
+    owner: {type: 'graph.emailAddress'},
     calendarPermissions: {type: 'graph.calendarPermission', collection: true, navigation: true},
+    calendarView: {type: 'graph.event', collection: true, navigation: true},
     events: {type: 'graph.event', collection: true, navigation: true},
-    calendarView: {type: 'graph.event', collection: true, navigation: true}
+    multiValueExtendedProperties: {type: 'graph.multiValueLegacyExtendedProperty', collection: true, navigation: true},
+    singleValueExtendedProperties: {type: 'graph.singleValueLegacyExtendedProperty', collection: true, navigation: true}
   }
 } as EntityConfig<Calendar>;

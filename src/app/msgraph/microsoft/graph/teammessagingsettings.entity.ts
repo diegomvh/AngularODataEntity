@@ -5,10 +5,10 @@
 
 export interface TeamMessagingSettings {
   //#region ODataApi Properties
-  allowUserEditMessages?: boolean;
-  allowUserDeleteMessages?: boolean;
+  allowChannelMentions?: boolean;
   allowOwnerDeleteMessages?: boolean;
   allowTeamMentions?: boolean;
-  allowChannelMentions?: boolean;
+  allowUserDeleteMessages?: boolean;
+  allowUserEditMessages?: boolean;
   //#endregion
 }

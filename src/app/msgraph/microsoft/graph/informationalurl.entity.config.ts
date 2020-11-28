@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { InformationalUrl } from './informationalurl.entity';
+import { InformationalUrlModel } from './informationalurl.model';
+import { InformationalUrlCollection } from './informationalurl.collection';
 //#endregion
 
 export const InformationalUrlConfig = {
   name: "informationalUrl",
+  model: InformationalUrlModel,
+  collection: InformationalUrlCollection,
   annotations: [],
   fields: {
     logoUrl: {type: 'Edm.String'},

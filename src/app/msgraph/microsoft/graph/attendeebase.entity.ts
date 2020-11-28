@@ -3,6 +3,8 @@
 //#region ODataApi Imports
 import { Recipient } from './recipient.entity';
 import { AttendeeType } from './attendeetype.enum';
+import { RecipientModel } from './recipient.model';
+import { RecipientCollection } from './recipient.collection';
 //#endregion
 
 export interface AttendeeBase extends Recipient {

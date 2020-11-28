@@ -30,6 +30,26 @@ import { SamlSingleSignOnSettings } from './samlsinglesignonsettings.entity';
 import { DirectoryObject } from './directoryobject.entity';
 import { OAuth2PermissionGrant } from './oauth2permissiongrant.entity';
 import { ServicePrincipal } from './serviceprincipal.entity';
+import { AddInModel } from './addin.model';
+import { PermissionScopeModel } from './permissionscope.model';
+import { AppRoleModel } from './approle.model';
+import { InformationalUrlModel } from './informationalurl.model';
+import { KeyCredentialModel } from './keycredential.model';
+import { PasswordCredentialModel } from './passwordcredential.model';
+import { SamlSingleSignOnSettingsModel } from './samlsinglesignonsettings.model';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { OAuth2PermissionGrantModel } from './oauth2permissiongrant.model';
+import { ServicePrincipalModel } from './serviceprincipal.model';
+import { AddInCollection } from './addin.collection';
+import { PermissionScopeCollection } from './permissionscope.collection';
+import { AppRoleCollection } from './approle.collection';
+import { InformationalUrlCollection } from './informationalurl.collection';
+import { KeyCredentialCollection } from './keycredential.collection';
+import { PasswordCredentialCollection } from './passwordcredential.collection';
+import { SamlSingleSignOnSettingsCollection } from './samlsinglesignonsettings.collection';
+import { DirectoryObjectCollection } from './directoryobject.collection';
+import { OAuth2PermissionGrantCollection } from './oauth2permissiongrant.collection';
+import { ServicePrincipalCollection } from './serviceprincipal.collection';
 //#endregion
 
 @Injectable()
@@ -38,6 +58,16 @@ export class ServicePrincipalsService extends ODataEntityService<ServicePrincipa
     super(client, 'servicePrincipals', 'microsoft.graph.servicePrincipal');
   }
 
+  //#region ODataApi Model
+  servicePrincipalModel(): ServicePrincipalModel<ServicePrincipal> {
+    return super.model() as ServicePrincipalModel<ServicePrincipal>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  servicePrincipalCollection(): ServicePrincipalCollection<ServicePrincipal, ServicePrincipalModel<ServicePrincipal>> {
+    return super.collection() as ServicePrincipalCollection<ServicePrincipal, ServicePrincipalModel<ServicePrincipal>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   public addKey(entity: EntityKey<ServicePrincipal>): ODataActionResource<{keyCredential: KeyCredential, passwordCredential: PasswordCredential, proof: string}, KeyCredential> {
     const resource = this.entity(entity).action<{keyCredential: KeyCredential, passwordCredential: PasswordCredential, proof: string}, KeyCredential>('microsoft.graph.addKey');

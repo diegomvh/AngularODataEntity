@@ -5,8 +5,8 @@
 
 export interface ChatMessagePolicyViolationPolicyTip {
   //#region ODataApi Properties
-  generalText?: string;
   complianceUrl?: string;
+  generalText?: string;
   matchedConditionDescriptions?: string[];
   //#endregion
 }

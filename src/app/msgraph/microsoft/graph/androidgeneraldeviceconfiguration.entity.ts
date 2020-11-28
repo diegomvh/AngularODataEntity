@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { DeviceConfiguration } from './deviceconfiguration.entity';
-import { AppListType } from './applisttype.enum';
 import { AndroidRequiredPasswordType } from './androidrequiredpasswordtype.enum';
+import { AppListType } from './applisttype.enum';
 import { WebBrowserCookieSettings } from './webbrowsercookiesettings.enum';
 import { AppListItem } from './applistitem.entity';
+import { AppListItemModel } from './applistitem.model';
+import { DeviceConfigurationModel } from './deviceconfiguration.model';
+import { AppListItemCollection } from './applistitem.collection';
+import { DeviceConfigurationCollection } from './deviceconfiguration.collection';
 //#endregion
 
 export interface AndroidGeneralDeviceConfiguration extends DeviceConfiguration {
@@ -13,21 +17,26 @@ export interface AndroidGeneralDeviceConfiguration extends DeviceConfiguration {
   appsBlockClipboardSharing: boolean;
   appsBlockCopyPaste: boolean;
   appsBlockYouTube: boolean;
+  appsHideList?: AppListItem[];
+  appsInstallAllowList?: AppListItem[];
+  appsLaunchBlockList?: AppListItem[];
   bluetoothBlocked: boolean;
   cameraBlocked: boolean;
   cellularBlockDataRoaming: boolean;
   cellularBlockMessaging: boolean;
   cellularBlockVoiceRoaming: boolean;
   cellularBlockWiFiTethering: boolean;
-  compliantAppsList?: AppListItem[];
   compliantAppListType: AppListType;
+  compliantAppsList?: AppListItem[];
+  deviceSharingAllowed: boolean;
   diagnosticDataBlockSubmission: boolean;
-  locationServicesBlocked: boolean;
+  factoryResetBlocked: boolean;
   googleAccountBlockAutoSync: boolean;
   googlePlayStoreBlocked: boolean;
+  kioskModeApps?: AppListItem[];
   kioskModeBlockSleepButton: boolean;
   kioskModeBlockVolumeButtons: boolean;
-  kioskModeApps?: AppListItem[];
+  locationServicesBlocked: boolean;
   nfcBlocked: boolean;
   passwordBlockFingerprintUnlock: boolean;
   passwordBlockTrustAgents: boolean;
@@ -35,28 +44,23 @@ export interface AndroidGeneralDeviceConfiguration extends DeviceConfiguration {
   passwordMinimumLength?: number;
   passwordMinutesOfInactivityBeforeScreenTimeout?: number;
   passwordPreviousPasswordBlockCount?: number;
-  passwordSignInFailureCountBeforeFactoryReset?: number;
-  passwordRequiredType: AndroidRequiredPasswordType;
   passwordRequired: boolean;
+  passwordRequiredType: AndroidRequiredPasswordType;
+  passwordSignInFailureCountBeforeFactoryReset?: number;
   powerOffBlocked: boolean;
-  factoryResetBlocked: boolean;
   screenCaptureBlocked: boolean;
-  deviceSharingAllowed: boolean;
+  securityRequireVerifyApps: boolean;
   storageBlockGoogleBackup: boolean;
   storageBlockRemovableStorage: boolean;
   storageRequireDeviceEncryption: boolean;
   storageRequireRemovableStorageEncryption: boolean;
   voiceAssistantBlocked: boolean;
   voiceDialingBlocked: boolean;
-  webBrowserBlockPopups: boolean;
   webBrowserBlockAutofill: boolean;
-  webBrowserBlockJavaScript: boolean;
   webBrowserBlocked: boolean;
+  webBrowserBlockJavaScript: boolean;
+  webBrowserBlockPopups: boolean;
   webBrowserCookieSettings: WebBrowserCookieSettings;
   wiFiBlocked: boolean;
-  appsInstallAllowList?: AppListItem[];
-  appsLaunchBlockList?: AppListItem[];
-  appsHideList?: AppListItem[];
-  securityRequireVerifyApps: boolean;
   //#endregion
 }

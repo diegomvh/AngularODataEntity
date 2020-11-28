@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { Advertisement } from './advertisement.entity';
+import { AdvertisementModel } from './advertisement.model';
+import { AdvertisementCollection } from './advertisement.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class AdvertisementsService extends ODataEntityService<Advertisement> {
     super(client, 'Advertisements', 'ODataDemo.Advertisement');
   }
 
+  //#region ODataApi Model
+  advertisementModel(): AdvertisementModel<Advertisement> {
+    return super.model() as AdvertisementModel<Advertisement>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  advertisementCollection(): AdvertisementCollection<Advertisement, AdvertisementModel<Advertisement>> {
+    return super.collection() as AdvertisementCollection<Advertisement, AdvertisementModel<Advertisement>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

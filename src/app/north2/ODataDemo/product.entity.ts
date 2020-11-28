@@ -3,6 +3,10 @@
 //#region ODataApi Imports
 import { Category } from './category.entity';
 import { Supplier } from './supplier.entity';
+import { CategoryModel } from './category.model';
+import { SupplierModel } from './supplier.model';
+import { CategoryCollection } from './category.collection';
+import { SupplierCollection } from './supplier.collection';
 //#endregion
 
 export interface Product {

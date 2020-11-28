@@ -3,23 +3,27 @@
 //#region ODataApi Imports
 import { MimeContent } from './mimecontent.entity';
 import { RgbColor } from './rgbcolor.entity';
+import { MimeContentModel } from './mimecontent.model';
+import { RgbColorModel } from './rgbcolor.model';
+import { MimeContentCollection } from './mimecontent.collection';
+import { RgbColorCollection } from './rgbcolor.collection';
 //#endregion
 
 export interface IntuneBrand {
   //#region ODataApi Properties
-  displayName?: string;
-  themeColor?: RgbColor;
-  showLogo: boolean;
-  lightBackgroundLogo?: MimeContent;
-  darkBackgroundLogo?: MimeContent;
-  showNameNextToLogo: boolean;
-  showDisplayNameNextToLogo: boolean;
-  contactITName?: string;
-  contactITPhoneNumber?: string;
   contactITEmailAddress?: string;
+  contactITName?: string;
   contactITNotes?: string;
-  onlineSupportSiteUrl?: string;
+  contactITPhoneNumber?: string;
+  darkBackgroundLogo?: MimeContent;
+  displayName?: string;
+  lightBackgroundLogo?: MimeContent;
   onlineSupportSiteName?: string;
+  onlineSupportSiteUrl?: string;
   privacyUrl?: string;
+  showDisplayNameNextToLogo: boolean;
+  showLogo: boolean;
+  showNameNextToLogo: boolean;
+  themeColor?: RgbColor;
   //#endregion
 }

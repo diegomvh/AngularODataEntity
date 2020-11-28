@@ -2,18 +2,20 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface SettingStateDeviceSummary extends Entity {
   //#region ODataApi Properties
-  settingName?: string;
-  instancePath?: string;
-  unknownDeviceCount: number;
-  notApplicableDeviceCount: number;
   compliantDeviceCount: number;
-  remediatedDeviceCount: number;
-  nonCompliantDeviceCount: number;
-  errorDeviceCount: number;
   conflictDeviceCount: number;
+  errorDeviceCount: number;
+  instancePath?: string;
+  nonCompliantDeviceCount: number;
+  notApplicableDeviceCount: number;
+  remediatedDeviceCount: number;
+  settingName?: string;
+  unknownDeviceCount: number;
   //#endregion
 }

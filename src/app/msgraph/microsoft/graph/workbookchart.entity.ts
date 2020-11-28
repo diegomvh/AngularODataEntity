@@ -9,6 +9,22 @@ import { WorkbookChartAreaFormat } from './workbookchartareaformat.entity';
 import { WorkbookChartLegend } from './workbookchartlegend.entity';
 import { WorkbookChartSeries } from './workbookchartseries.entity';
 import { WorkbookChartTitle } from './workbookcharttitle.entity';
+import { EntityModel } from './entity.model';
+import { WorkbookWorksheetModel } from './workbookworksheet.model';
+import { WorkbookChartAxesModel } from './workbookchartaxes.model';
+import { WorkbookChartDataLabelsModel } from './workbookchartdatalabels.model';
+import { WorkbookChartAreaFormatModel } from './workbookchartareaformat.model';
+import { WorkbookChartLegendModel } from './workbookchartlegend.model';
+import { WorkbookChartSeriesModel } from './workbookchartseries.model';
+import { WorkbookChartTitleModel } from './workbookcharttitle.model';
+import { EntityCollection } from './entity.collection';
+import { WorkbookWorksheetCollection } from './workbookworksheet.collection';
+import { WorkbookChartAxesCollection } from './workbookchartaxes.collection';
+import { WorkbookChartDataLabelsCollection } from './workbookchartdatalabels.collection';
+import { WorkbookChartAreaFormatCollection } from './workbookchartareaformat.collection';
+import { WorkbookChartLegendCollection } from './workbookchartlegend.collection';
+import { WorkbookChartSeriesCollection } from './workbookchartseries.collection';
+import { WorkbookChartTitleCollection } from './workbookcharttitle.collection';
 //#endregion
 
 export interface WorkbookChart extends Entity {

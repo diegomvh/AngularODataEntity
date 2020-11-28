@@ -3,17 +3,19 @@
 //#region ODataApi Imports
 import { ChangeType } from './changetype.enum';
 import { ResourceData } from './resourcedata.entity';
+import { ResourceDataModel } from './resourcedata.model';
+import { ResourceDataCollection } from './resourcedata.collection';
 //#endregion
 
 export interface ChangeNotification {
   //#region ODataApi Properties
-  id?: string;
-  subscriptionId: string;
-  subscriptionExpirationDateTime: Date;
-  clientState?: string;
   changeType: ChangeType;
+  clientState?: string;
+  id?: string;
   resource: string;
-  tenantId: string;
   resourceData?: ResourceData;
+  subscriptionExpirationDateTime: Date;
+  subscriptionId: string;
+  tenantId: string;
   //#endregion
 }

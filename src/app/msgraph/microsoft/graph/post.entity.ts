@@ -5,25 +5,41 @@ import { OutlookItem } from './outlookitem.entity';
 import { Recipient } from './recipient.entity';
 import { ItemBody } from './itembody.entity';
 import { Extension } from './extension.entity';
-import { SingleValueLegacyExtendedProperty } from './singlevaluelegacyextendedproperty.entity';
-import { MultiValueLegacyExtendedProperty } from './multivaluelegacyextendedproperty.entity';
 import { Attachment } from './attachment.entity';
+import { MultiValueLegacyExtendedProperty } from './multivaluelegacyextendedproperty.entity';
+import { SingleValueLegacyExtendedProperty } from './singlevaluelegacyextendedproperty.entity';
+import { RecipientModel } from './recipient.model';
+import { ItemBodyModel } from './itembody.model';
+import { OutlookItemModel } from './outlookitem.model';
+import { ExtensionModel } from './extension.model';
+import { AttachmentModel } from './attachment.model';
+import { MultiValueLegacyExtendedPropertyModel } from './multivaluelegacyextendedproperty.model';
+import { SingleValueLegacyExtendedPropertyModel } from './singlevaluelegacyextendedproperty.model';
+import { PostModel } from './post.model';
+import { RecipientCollection } from './recipient.collection';
+import { ItemBodyCollection } from './itembody.collection';
+import { OutlookItemCollection } from './outlookitem.collection';
+import { ExtensionCollection } from './extension.collection';
+import { AttachmentCollection } from './attachment.collection';
+import { MultiValueLegacyExtendedPropertyCollection } from './multivaluelegacyextendedproperty.collection';
+import { SingleValueLegacyExtendedPropertyCollection } from './singlevaluelegacyextendedproperty.collection';
+import { PostCollection } from './post.collection';
 //#endregion
 
 export interface Post extends OutlookItem {
   //#region ODataApi Properties
   body?: ItemBody;
-  receivedDateTime: Date;
-  hasAttachments: boolean;
-  from: Recipient;
-  sender?: Recipient;
-  conversationThreadId?: string;
-  newParticipants: Recipient[];
   conversationId?: string;
-  inReplyTo?: Post;
-  singleValueExtendedProperties?: SingleValueLegacyExtendedProperty[];
-  multiValueExtendedProperties?: MultiValueLegacyExtendedProperty[];
-  extensions?: Extension[];
+  conversationThreadId?: string;
+  from: Recipient;
+  hasAttachments: boolean;
+  newParticipants: Recipient[];
+  receivedDateTime: Date;
+  sender?: Recipient;
   attachments?: Attachment[];
+  extensions?: Extension[];
+  inReplyTo?: Post;
+  multiValueExtendedProperties?: MultiValueLegacyExtendedProperty[];
+  singleValueExtendedProperties?: SingleValueLegacyExtendedProperty[];
   //#endregion
 }

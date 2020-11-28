@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { DirectoryObject } from './directoryobject.entity';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { DirectoryObjectCollection } from './directoryobject.collection';
 //#endregion
 
 export interface Endpoint extends DirectoryObject {
@@ -9,7 +11,7 @@ export interface Endpoint extends DirectoryObject {
   capability: string;
   providerId?: string;
   providerName?: string;
-  uri: string;
   providerResourceId?: string;
+  uri: string;
   //#endregion
 }

@@ -5,10 +5,11 @@
 
 export interface TeamMemberSettings {
   //#region ODataApi Properties
-  allowCreateUpdateChannels?: boolean;
-  allowDeleteChannels?: boolean;
   allowAddRemoveApps?: boolean;
-  allowCreateUpdateRemoveTabs?: boolean;
+  allowCreatePrivateChannels?: boolean;
+  allowCreateUpdateChannels?: boolean;
   allowCreateUpdateRemoveConnectors?: boolean;
+  allowCreateUpdateRemoveTabs?: boolean;
+  allowDeleteChannels?: boolean;
   //#endregion
 }

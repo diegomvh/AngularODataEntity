@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Video } from './video.entity';
+import { VideoModel } from './video.model';
+import { VideoCollection } from './video.collection';
 //#endregion
 
 export const VideoConfig = {
   name: "video",
+  model: VideoModel,
+  collection: VideoCollection,
   annotations: [],
   fields: {
     audioBitsPerSample: {type: 'Edm.Int32'},

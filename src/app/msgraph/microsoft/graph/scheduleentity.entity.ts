@@ -6,8 +6,8 @@ import { ScheduleEntityTheme } from './scheduleentitytheme.enum';
 
 export interface ScheduleEntity {
   //#region ODataApi Properties
-  startDateTime?: Date;
   endDateTime?: Date;
+  startDateTime?: Date;
   theme: ScheduleEntityTheme;
   //#endregion
 }

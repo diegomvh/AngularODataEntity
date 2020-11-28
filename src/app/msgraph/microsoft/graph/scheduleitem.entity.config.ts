@@ -2,17 +2,21 @@
 
 //#region ODataApi Imports
 import { ScheduleItem } from './scheduleitem.entity';
+import { ScheduleItemModel } from './scheduleitem.model';
+import { ScheduleItemCollection } from './scheduleitem.collection';
 //#endregion
 
 export const ScheduleItemConfig = {
   name: "scheduleItem",
+  model: ScheduleItemModel,
+  collection: ScheduleItemCollection,
   annotations: [],
   fields: {
-    start: {type: 'graph.dateTimeTimeZone'},
     end: {type: 'graph.dateTimeTimeZone'},
     isPrivate: {type: 'Edm.Boolean'},
+    location: {type: 'Edm.String'},
+    start: {type: 'graph.dateTimeTimeZone'},
     status: {type: 'graph.freeBusyStatus'},
-    subject: {type: 'Edm.String'},
-    location: {type: 'Edm.String'}
+    subject: {type: 'Edm.String'}
   }
 } as EntityConfig<ScheduleItem>;

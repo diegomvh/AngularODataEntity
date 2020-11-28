@@ -6,6 +6,7 @@ export enum SecurityNetworkProtocol {
   //#region ODataApi Members
   ip = 0,
   icmp = 1,
+  unknown = -1,
   igmp = 2,
   ggp = 3,
   ipv4 = 4,
@@ -27,6 +28,5 @@ export enum SecurityNetworkProtocol {
   spx = 1256,
   spxII = 1257,
   unknownFutureValue = 32767,
-  unknown = -1,
   //#endregion
 }

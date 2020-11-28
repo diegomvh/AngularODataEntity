@@ -2,12 +2,14 @@
 
 //#region ODataApi Imports
 import { AppListItem } from './applistitem.entity';
+import { AppListItemModel } from './applistitem.model';
+import { AppListItemCollection } from './applistitem.collection';
 //#endregion
 
 export interface IosNetworkUsageRule {
   //#region ODataApi Properties
-  managedApps?: AppListItem[];
-  cellularDataBlockWhenRoaming: boolean;
   cellularDataBlocked: boolean;
+  cellularDataBlockWhenRoaming: boolean;
+  managedApps?: AppListItem[];
   //#endregion
 }

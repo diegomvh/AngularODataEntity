@@ -3,6 +3,8 @@
 //#region ODataApi Imports
 import { ConditionalAccessSessionControl } from './conditionalaccesssessioncontrol.entity';
 import { CloudAppSecuritySessionControlType } from './cloudappsecuritysessioncontroltype.enum';
+import { ConditionalAccessSessionControlModel } from './conditionalaccesssessioncontrol.model';
+import { ConditionalAccessSessionControlCollection } from './conditionalaccesssessioncontrol.collection';
 //#endregion
 
 export interface CloudAppSecuritySessionControl extends ConditionalAccessSessionControl {

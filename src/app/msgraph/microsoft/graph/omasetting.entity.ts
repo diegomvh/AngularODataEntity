@@ -5,8 +5,8 @@
 
 export interface OmaSetting {
   //#region ODataApi Properties
-  displayName: string;
   description?: string;
+  displayName: string;
   omaUri: string;
   //#endregion
 }

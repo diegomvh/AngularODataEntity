@@ -2,25 +2,29 @@
 
 //#region ODataApi Imports
 import { EducationClass } from './educationclass.entity';
+import { EducationClassModel } from './educationclass.model';
+import { EducationClassCollection } from './educationclass.collection';
 //#endregion
 
 export const EducationClassConfig = {
   name: "educationClass",
   base: "microsoft.graph.entity",
+  model: EducationClassModel,
+  collection: EducationClassCollection,
   annotations: [],
   fields: {
-    displayName: {type: 'Edm.String', nullable: false},
-    mailNickname: {type: 'Edm.String', nullable: false},
-    description: {type: 'Edm.String'},
-    createdBy: {type: 'graph.identitySet'},
     classCode: {type: 'Edm.String'},
-    externalName: {type: 'Edm.String'},
+    createdBy: {type: 'graph.identitySet'},
+    description: {type: 'Edm.String'},
+    displayName: {type: 'Edm.String', nullable: false},
     externalId: {type: 'Edm.String'},
+    externalName: {type: 'Edm.String'},
     externalSource: {type: 'graph.educationExternalSource'},
+    mailNickname: {type: 'Edm.String', nullable: false},
     term: {type: 'graph.educationTerm'},
-    schools: {type: 'graph.educationSchool', collection: true, navigation: true},
+    group: {type: 'graph.group', navigation: true},
     members: {type: 'graph.educationUser', collection: true, navigation: true},
-    teachers: {type: 'graph.educationUser', collection: true, navigation: true},
-    group: {type: 'graph.group', navigation: true}
+    schools: {type: 'graph.educationSchool', collection: true, navigation: true},
+    teachers: {type: 'graph.educationUser', collection: true, navigation: true}
   }
 } as EntityConfig<EducationClass>;

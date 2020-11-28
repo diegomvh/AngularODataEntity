@@ -2,24 +2,26 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface SoftwareUpdateStatusSummary extends Entity {
   //#region ODataApi Properties
-  displayName?: string;
   compliantDeviceCount: number;
-  nonCompliantDeviceCount: number;
-  remediatedDeviceCount: number;
-  errorDeviceCount: number;
-  unknownDeviceCount: number;
-  conflictDeviceCount: number;
-  notApplicableDeviceCount: number;
   compliantUserCount: number;
-  nonCompliantUserCount: number;
-  remediatedUserCount: number;
-  errorUserCount: number;
-  unknownUserCount: number;
+  conflictDeviceCount: number;
   conflictUserCount: number;
+  displayName?: string;
+  errorDeviceCount: number;
+  errorUserCount: number;
+  nonCompliantDeviceCount: number;
+  nonCompliantUserCount: number;
+  notApplicableDeviceCount: number;
   notApplicableUserCount: number;
+  remediatedDeviceCount: number;
+  remediatedUserCount: number;
+  unknownDeviceCount: number;
+  unknownUserCount: number;
   //#endregion
 }

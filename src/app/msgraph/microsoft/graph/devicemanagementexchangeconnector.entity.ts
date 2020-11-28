@@ -4,18 +4,20 @@
 import { Entity } from './entity.entity';
 import { DeviceManagementExchangeConnectorStatus } from './devicemanagementexchangeconnectorstatus.enum';
 import { DeviceManagementExchangeConnectorType } from './devicemanagementexchangeconnectortype.enum';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface DeviceManagementExchangeConnector extends Entity {
   //#region ODataApi Properties
+  connectorServerName?: string;
+  exchangeAlias?: string;
+  exchangeConnectorType: DeviceManagementExchangeConnectorType;
+  exchangeOrganization?: string;
   lastSyncDateTime: Date;
-  status: DeviceManagementExchangeConnectorStatus;
   primarySmtpAddress?: string;
   serverName?: string;
-  connectorServerName?: string;
-  exchangeConnectorType: DeviceManagementExchangeConnectorType;
+  status: DeviceManagementExchangeConnectorStatus;
   version?: string;
-  exchangeAlias?: string;
-  exchangeOrganization?: string;
   //#endregion
 }

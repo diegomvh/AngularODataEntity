@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { AndroidMinimumOperatingSystem } from './androidminimumoperatingsystem.entity';
+import { AndroidMinimumOperatingSystemModel } from './androidminimumoperatingsystem.model';
+import { AndroidMinimumOperatingSystemCollection } from './androidminimumoperatingsystem.collection';
 //#endregion
 
 export const AndroidMinimumOperatingSystemConfig = {
   name: "androidMinimumOperatingSystem",
+  model: AndroidMinimumOperatingSystemModel,
+  collection: AndroidMinimumOperatingSystemCollection,
   annotations: [],
   fields: {
     v4_0: {type: 'Edm.Boolean', nullable: false},

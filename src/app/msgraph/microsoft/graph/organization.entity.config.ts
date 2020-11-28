@@ -2,12 +2,16 @@
 
 //#region ODataApi Imports
 import { Organization } from './organization.entity';
+import { OrganizationModel } from './organization.model';
+import { OrganizationCollection } from './organization.collection';
 //#endregion
 
 export const OrganizationConfig = {
   name: "organization",
   base: "microsoft.graph.directoryObject",
   open: true,
+  model: OrganizationModel,
+  collection: OrganizationCollection,
   annotations: [],
   fields: {
     assignedPlans: {type: 'graph.assignedPlan', nullable: false, collection: true},
@@ -29,6 +33,7 @@ export const OrganizationConfig = {
     state: {type: 'Edm.String'},
     street: {type: 'Edm.String'},
     technicalNotificationMails: {type: 'Edm.String', nullable: false, collection: true},
+    tenantType: {type: 'Edm.String'},
     verifiedDomains: {type: 'graph.verifiedDomain', nullable: false, collection: true},
     mobileDeviceManagementAuthority: {type: 'graph.mdmAuthority', nullable: false},
     certificateBasedAuthConfiguration: {type: 'graph.certificateBasedAuthConfiguration', collection: true, navigation: true},

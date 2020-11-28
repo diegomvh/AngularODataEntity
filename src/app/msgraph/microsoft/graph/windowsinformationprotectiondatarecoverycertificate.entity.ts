@@ -5,9 +5,9 @@
 
 export interface WindowsInformationProtectionDataRecoveryCertificate {
   //#region ODataApi Properties
-  subjectName?: string;
+  certificate?: ArrayBuffer;
   description?: string;
   expirationDateTime: Date;
-  certificate?: ArrayBuffer;
+  subjectName?: string;
   //#endregion
 }

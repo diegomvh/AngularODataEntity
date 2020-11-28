@@ -2,9 +2,11 @@
 
 //#region ODataApi Imports
 import { DeviceConfiguration } from './deviceconfiguration.entity';
-import { AndroidWorkProfileRequiredPasswordType } from './androidworkprofilerequiredpasswordtype.enum';
 import { AndroidWorkProfileCrossProfileDataSharingType } from './androidworkprofilecrossprofiledatasharingtype.enum';
 import { AndroidWorkProfileDefaultAppPermissionPolicyType } from './androidworkprofiledefaultapppermissionpolicytype.enum';
+import { AndroidWorkProfileRequiredPasswordType } from './androidworkprofilerequiredpasswordtype.enum';
+import { DeviceConfigurationModel } from './deviceconfiguration.model';
+import { DeviceConfigurationCollection } from './deviceconfiguration.collection';
 //#endregion
 
 export interface AndroidWorkProfileGeneralDeviceConfiguration extends DeviceConfiguration {
@@ -15,33 +17,33 @@ export interface AndroidWorkProfileGeneralDeviceConfiguration extends DeviceConf
   passwordMinimumLength?: number;
   passwordMinutesOfInactivityBeforeScreenTimeout?: number;
   passwordPreviousPasswordBlockCount?: number;
-  passwordSignInFailureCountBeforeFactoryReset?: number;
   passwordRequiredType: AndroidWorkProfileRequiredPasswordType;
-  workProfileDataSharingType: AndroidWorkProfileCrossProfileDataSharingType;
-  workProfileBlockNotificationsWhileDeviceLocked: boolean;
+  passwordSignInFailureCountBeforeFactoryReset?: number;
+  securityRequireVerifyApps: boolean;
   workProfileBlockAddingAccounts: boolean;
-  workProfileBluetoothEnableContactSharing: boolean;
-  workProfileBlockScreenCapture: boolean;
-  workProfileBlockCrossProfileCallerId: boolean;
   workProfileBlockCamera: boolean;
+  workProfileBlockCrossProfileCallerId: boolean;
   workProfileBlockCrossProfileContactsSearch: boolean;
   workProfileBlockCrossProfileCopyPaste: boolean;
+  workProfileBlockNotificationsWhileDeviceLocked: boolean;
+  workProfileBlockScreenCapture: boolean;
+  workProfileBluetoothEnableContactSharing: boolean;
+  workProfileDataSharingType: AndroidWorkProfileCrossProfileDataSharingType;
   workProfileDefaultAppPermissionPolicy: AndroidWorkProfileDefaultAppPermissionPolicyType;
   workProfilePasswordBlockFingerprintUnlock: boolean;
   workProfilePasswordBlockTrustAgents: boolean;
   workProfilePasswordExpirationDays?: number;
   workProfilePasswordMinimumLength?: number;
-  workProfilePasswordMinNumericCharacters?: number;
-  workProfilePasswordMinNonLetterCharacters?: number;
   workProfilePasswordMinLetterCharacters?: number;
   workProfilePasswordMinLowerCaseCharacters?: number;
-  workProfilePasswordMinUpperCaseCharacters?: number;
+  workProfilePasswordMinNonLetterCharacters?: number;
+  workProfilePasswordMinNumericCharacters?: number;
   workProfilePasswordMinSymbolCharacters?: number;
+  workProfilePasswordMinUpperCaseCharacters?: number;
   workProfilePasswordMinutesOfInactivityBeforeScreenTimeout?: number;
   workProfilePasswordPreviousPasswordBlockCount?: number;
-  workProfilePasswordSignInFailureCountBeforeFactoryReset?: number;
   workProfilePasswordRequiredType: AndroidWorkProfileRequiredPasswordType;
+  workProfilePasswordSignInFailureCountBeforeFactoryReset?: number;
   workProfileRequirePassword: boolean;
-  securityRequireVerifyApps: boolean;
   //#endregion
 }

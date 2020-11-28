@@ -3,6 +3,8 @@
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
 import { ApplicationType } from './applicationtype.enum';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface WindowsInformationProtectionAppLearningSummary extends Entity {

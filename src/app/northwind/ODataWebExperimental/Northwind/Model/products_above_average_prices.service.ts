@@ -31,11 +31,20 @@ export class ProductsAboveAveragePricesService extends ODataEntityService<Produc
     super(client, 'Products_Above_Average_Prices', 'NorthwindModel.Products_Above_Average_Price');
   }
 
+  //#region ODataApi Model
   productsAboveAveragePriceModel(): ProductsAboveAveragePriceModel<ProductsAboveAveragePrice> {
     return super.model() as ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   productsAboveAveragePriceCollection(): ProductsAboveAveragePriceCollection<ProductsAboveAveragePrice, ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>> {
     return super.collection() as ProductsAboveAveragePriceCollection<ProductsAboveAveragePrice, ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

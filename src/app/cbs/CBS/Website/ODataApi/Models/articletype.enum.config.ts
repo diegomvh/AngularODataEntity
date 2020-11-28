@@ -1,4 +1,4 @@
-﻿import { EnumConfig } from 'angular-odata';
+﻿import { EnumTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { ArticleType } from './articletype.enum';
@@ -7,4 +7,4 @@ import { ArticleType } from './articletype.enum';
 export const ArticleTypeConfig = {
   name: "ArticleType",
   members: ArticleType
-} as EnumConfig<ArticleType>;
+} as EnumTypeConfig<ArticleType>;

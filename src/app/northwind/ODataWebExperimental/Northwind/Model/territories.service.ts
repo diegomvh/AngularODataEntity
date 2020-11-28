@@ -37,11 +37,26 @@ export class TerritoriesService extends ODataEntityService<Territory> {
     super(client, 'Territories', 'NorthwindModel.Territory');
   }
 
+  //#region ODataApi Model
   territoryModel(): TerritoryModel<Territory> {
     return super.model() as TerritoryModel<Territory>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   territoryCollection(): TerritoryCollection<Territory, TerritoryModel<Territory>> {
     return super.collection() as TerritoryCollection<Territory, TerritoryModel<Territory>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public employees(entity: EntityKey<Territory>): ODataNavigationPropertyResource<Employee> {
+    return this.entity(entity).navigationProperty<Employee>('Employees');
+  }
+  public region(entity: EntityKey<Territory>): ODataNavigationPropertyResource<Region> {
+    return this.entity(entity).navigationProperty<Region>('Region');
+  }
+  //#endregion
 }

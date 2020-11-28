@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { ContentType } from './contenttype.entity';
+import { ContentTypeModel } from './contenttype.model';
+import { ContentTypeCollection } from './contenttype.collection';
 //#endregion
 
 export const ContentTypeConfig = {
   name: "contentType",
   base: "microsoft.graph.entity",
+  model: ContentTypeModel,
+  collection: ContentTypeCollection,
   annotations: [],
   fields: {
     description: {type: 'Edm.String'},

@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { WorkbookChartLegend } from './workbookchartlegend.entity';
+import { WorkbookChartLegendModel } from './workbookchartlegend.model';
+import { WorkbookChartLegendCollection } from './workbookchartlegend.collection';
 //#endregion
 
 export const WorkbookChartLegendConfig = {
   name: "workbookChartLegend",
   base: "microsoft.graph.entity",
+  model: WorkbookChartLegendModel,
+  collection: WorkbookChartLegendCollection,
   annotations: [],
   fields: {
     overlay: {type: 'Edm.Boolean'},

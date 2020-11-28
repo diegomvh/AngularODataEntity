@@ -5,15 +5,21 @@ import { EventMessage } from './eventmessage.entity';
 import { MeetingRequestType } from './meetingrequesttype.enum';
 import { DateTimeTimeZone } from './datetimetimezone.entity';
 import { Location } from './location.entity';
+import { DateTimeTimeZoneModel } from './datetimetimezone.model';
+import { LocationModel } from './location.model';
+import { EventMessageModel } from './eventmessage.model';
+import { DateTimeTimeZoneCollection } from './datetimetimezone.collection';
+import { LocationCollection } from './location.collection';
+import { EventMessageCollection } from './eventmessage.collection';
 //#endregion
 
 export interface EventMessageRequest extends EventMessage {
   //#region ODataApi Properties
-  previousLocation?: Location;
-  previousStartDateTime?: DateTimeTimeZone;
-  previousEndDateTime?: DateTimeTimeZone;
-  responseRequested?: boolean;
   allowNewTimeProposals?: boolean;
   meetingRequestType?: MeetingRequestType;
+  previousEndDateTime?: DateTimeTimeZone;
+  previousLocation?: Location;
+  previousStartDateTime?: DateTimeTimeZone;
+  responseRequested?: boolean;
   //#endregion
 }

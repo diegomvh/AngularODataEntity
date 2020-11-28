@@ -1,0 +1,110 @@
+﻿import { ODataModel, ODataCollection, HttpOptions } from 'angular-odata';
+import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+//#region ODataApi Imports
+import { BaseItemCollection } from './baseitem.collection';
+import { GeoCoordinates } from './geocoordinates.entity';
+import { SharepointIds } from './sharepointids.entity';
+import { Audio } from './audio.entity';
+import { Deleted } from './deleted.entity';
+import { File } from './file.entity';
+import { FileSystemInfo } from './filesysteminfo.entity';
+import { Folder } from './folder.entity';
+import { Image } from './image.entity';
+import { Package } from './package.entity';
+import { PendingOperations } from './pendingoperations.entity';
+import { Photo } from './photo.entity';
+import { PublicationFacet } from './publicationfacet.entity';
+import { RemoteItem } from './remoteitem.entity';
+import { ItemReference } from './itemreference.entity';
+import { Shared } from './shared.entity';
+import { SpecialFolder } from './specialfolder.entity';
+import { Video } from './video.entity';
+import { Root } from './root.entity';
+import { SearchResult } from './searchresult.entity';
+import { UploadSession } from './uploadsession.entity';
+import { DriveItemUploadableProperties } from './driveitemuploadableproperties.entity';
+import { DriveRecipient } from './driverecipient.entity';
+import { ItemPreviewInfo } from './itempreviewinfo.entity';
+import { DriveItem } from './driveitem.entity';
+import { Workbook } from './workbook.entity';
+import { ItemAnalytics } from './itemanalytics.entity';
+import { ListItem } from './listitem.entity';
+import { Permission } from './permission.entity';
+import { Subscription } from './subscription.entity';
+import { ThumbnailSet } from './thumbnailset.entity';
+import { DriveItemVersion } from './driveitemversion.entity';
+import { ItemActivityStat } from './itemactivitystat.entity';
+import { GeoCoordinatesModel } from './geocoordinates.model';
+import { SharepointIdsModel } from './sharepointids.model';
+import { AudioModel } from './audio.model';
+import { DeletedModel } from './deleted.model';
+import { FileModel } from './file.model';
+import { FileSystemInfoModel } from './filesysteminfo.model';
+import { FolderModel } from './folder.model';
+import { ImageModel } from './image.model';
+import { PackageModel } from './package.model';
+import { PendingOperationsModel } from './pendingoperations.model';
+import { PhotoModel } from './photo.model';
+import { PublicationFacetModel } from './publicationfacet.model';
+import { RemoteItemModel } from './remoteitem.model';
+import { ItemReferenceModel } from './itemreference.model';
+import { SharedModel } from './shared.model';
+import { SpecialFolderModel } from './specialfolder.model';
+import { VideoModel } from './video.model';
+import { RootModel } from './root.model';
+import { SearchResultModel } from './searchresult.model';
+import { UploadSessionModel } from './uploadsession.model';
+import { DriveItemUploadablePropertiesModel } from './driveitemuploadableproperties.model';
+import { DriveRecipientModel } from './driverecipient.model';
+import { ItemPreviewInfoModel } from './itempreviewinfo.model';
+import { DriveItemModel } from './driveitem.model';
+import { WorkbookModel } from './workbook.model';
+import { ItemAnalyticsModel } from './itemanalytics.model';
+import { ListItemModel } from './listitem.model';
+import { PermissionModel } from './permission.model';
+import { SubscriptionModel } from './subscription.model';
+import { ThumbnailSetModel } from './thumbnailset.model';
+import { DriveItemVersionModel } from './driveitemversion.model';
+import { ItemActivityStatModel } from './itemactivitystat.model';
+import { GeoCoordinatesCollection } from './geocoordinates.collection';
+import { SharepointIdsCollection } from './sharepointids.collection';
+import { AudioCollection } from './audio.collection';
+import { DeletedCollection } from './deleted.collection';
+import { FileCollection } from './file.collection';
+import { FileSystemInfoCollection } from './filesysteminfo.collection';
+import { FolderCollection } from './folder.collection';
+import { ImageCollection } from './image.collection';
+import { PackageCollection } from './package.collection';
+import { PendingOperationsCollection } from './pendingoperations.collection';
+import { PhotoCollection } from './photo.collection';
+import { PublicationFacetCollection } from './publicationfacet.collection';
+import { RemoteItemCollection } from './remoteitem.collection';
+import { ItemReferenceCollection } from './itemreference.collection';
+import { SharedCollection } from './shared.collection';
+import { SpecialFolderCollection } from './specialfolder.collection';
+import { VideoCollection } from './video.collection';
+import { RootCollection } from './root.collection';
+import { SearchResultCollection } from './searchresult.collection';
+import { UploadSessionCollection } from './uploadsession.collection';
+import { DriveItemUploadablePropertiesCollection } from './driveitemuploadableproperties.collection';
+import { DriveRecipientCollection } from './driverecipient.collection';
+import { ItemPreviewInfoCollection } from './itempreviewinfo.collection';
+import { WorkbookCollection } from './workbook.collection';
+import { ItemAnalyticsCollection } from './itemanalytics.collection';
+import { ListItemCollection } from './listitem.collection';
+import { PermissionCollection } from './permission.collection';
+import { SubscriptionCollection } from './subscription.collection';
+import { ThumbnailSetCollection } from './thumbnailset.collection';
+import { DriveItemVersionCollection } from './driveitemversion.collection';
+import { ItemActivityStatCollection } from './itemactivitystat.collection';
+//#endregion
+
+export class DriveItemCollection<E extends DriveItem, M extends DriveItemModel<E>> extends BaseItemCollection<E, M> {
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+}

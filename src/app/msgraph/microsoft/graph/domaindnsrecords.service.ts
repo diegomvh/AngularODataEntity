@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { DomainDnsRecord } from './domaindnsrecord.entity';
+import { DomainDnsRecordModel } from './domaindnsrecord.model';
+import { DomainDnsRecordCollection } from './domaindnsrecord.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class DomainDnsRecordsService extends ODataEntityService<DomainDnsRecord>
     super(client, 'domainDnsRecords', 'microsoft.graph.domainDnsRecord');
   }
 
+  //#region ODataApi Model
+  domainDnsRecordModel(): DomainDnsRecordModel<DomainDnsRecord> {
+    return super.model() as DomainDnsRecordModel<DomainDnsRecord>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  domainDnsRecordCollection(): DomainDnsRecordCollection<DomainDnsRecord, DomainDnsRecordModel<DomainDnsRecord>> {
+    return super.collection() as DomainDnsRecordCollection<DomainDnsRecord, DomainDnsRecordModel<DomainDnsRecord>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

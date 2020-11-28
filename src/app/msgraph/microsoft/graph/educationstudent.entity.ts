@@ -6,11 +6,11 @@ import { EducationGender } from './educationgender.enum';
 
 export interface EducationStudent {
   //#region ODataApi Properties
-  graduationYear?: string;
-  grade?: string;
   birthDate?: Date;
-  gender?: EducationGender;
-  studentNumber?: string;
   externalId?: string;
+  gender?: EducationGender;
+  grade?: string;
+  graduationYear?: string;
+  studentNumber?: string;
   //#endregion
 }

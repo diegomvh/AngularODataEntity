@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { FileHash } from './filehash.entity';
+import { FileHashModel } from './filehash.model';
+import { FileHashCollection } from './filehash.collection';
 //#endregion
 
 export interface FileSecurityState {

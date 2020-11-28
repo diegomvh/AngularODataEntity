@@ -7,9 +7,9 @@ import { AttachmentType } from './attachmenttype.enum';
 export interface AttachmentItem {
   //#region ODataApi Properties
   attachmentType?: AttachmentType;
-  name?: string;
-  size?: number;
   contentType?: string;
   isInline?: boolean;
+  name?: string;
+  size?: number;
   //#endregion
 }

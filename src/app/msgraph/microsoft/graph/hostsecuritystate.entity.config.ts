@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { HostSecurityState } from './hostsecuritystate.entity';
+import { HostSecurityStateModel } from './hostsecuritystate.model';
+import { HostSecurityStateCollection } from './hostsecuritystate.collection';
 //#endregion
 
 export const HostSecurityStateConfig = {
   name: "hostSecurityState",
+  model: HostSecurityStateModel,
+  collection: HostSecurityStateCollection,
   annotations: [],
   fields: {
     fqdn: {type: 'Edm.String'},

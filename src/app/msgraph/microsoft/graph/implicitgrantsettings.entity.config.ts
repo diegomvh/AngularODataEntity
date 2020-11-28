@@ -2,13 +2,17 @@
 
 //#region ODataApi Imports
 import { ImplicitGrantSettings } from './implicitgrantsettings.entity';
+import { ImplicitGrantSettingsModel } from './implicitgrantsettings.model';
+import { ImplicitGrantSettingsCollection } from './implicitgrantsettings.collection';
 //#endregion
 
 export const ImplicitGrantSettingsConfig = {
   name: "implicitGrantSettings",
+  model: ImplicitGrantSettingsModel,
+  collection: ImplicitGrantSettingsCollection,
   annotations: [],
   fields: {
-    enableIdTokenIssuance: {type: 'Edm.Boolean'},
-    enableAccessTokenIssuance: {type: 'Edm.Boolean'}
+    enableAccessTokenIssuance: {type: 'Edm.Boolean'},
+    enableIdTokenIssuance: {type: 'Edm.Boolean'}
   }
 } as EntityConfig<ImplicitGrantSettings>;

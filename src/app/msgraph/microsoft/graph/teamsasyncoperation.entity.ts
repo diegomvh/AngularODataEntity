@@ -2,20 +2,24 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
-import { TeamsAsyncOperationType } from './teamsasyncoperationtype.enum';
 import { TeamsAsyncOperationStatus } from './teamsasyncoperationstatus.enum';
+import { TeamsAsyncOperationType } from './teamsasyncoperationtype.enum';
 import { OperationError } from './operationerror.entity';
+import { OperationErrorModel } from './operationerror.model';
+import { EntityModel } from './entity.model';
+import { OperationErrorCollection } from './operationerror.collection';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface TeamsAsyncOperation extends Entity {
   //#region ODataApi Properties
-  operationType: TeamsAsyncOperationType;
-  createdDateTime: Date;
-  status: TeamsAsyncOperationStatus;
-  lastActionDateTime: Date;
   attemptsCount: number;
+  createdDateTime: Date;
+  error?: OperationError;
+  lastActionDateTime: Date;
+  operationType: TeamsAsyncOperationType;
+  status: TeamsAsyncOperationStatus;
   targetResourceId?: string;
   targetResourceLocation?: string;
-  error?: OperationError;
   //#endregion
 }

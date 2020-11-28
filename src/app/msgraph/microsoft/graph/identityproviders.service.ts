@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { IdentityProvider } from './identityprovider.entity';
+import { IdentityProviderModel } from './identityprovider.model';
+import { IdentityProviderCollection } from './identityprovider.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class IdentityProvidersService extends ODataEntityService<IdentityProvide
     super(client, 'identityProviders', 'microsoft.graph.identityProvider');
   }
 
+  //#region ODataApi Model
+  identityProviderModel(): IdentityProviderModel<IdentityProvider> {
+    return super.model() as IdentityProviderModel<IdentityProvider>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  identityProviderCollection(): IdentityProviderCollection<IdentityProvider, IdentityProviderModel<IdentityProvider>> {
+    return super.collection() as IdentityProviderCollection<IdentityProvider, IdentityProviderModel<IdentityProvider>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

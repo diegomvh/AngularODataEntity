@@ -2,12 +2,16 @@
 
 //#region ODataApi Imports
 import { ThumbnailSet } from './thumbnailset.entity';
+import { ThumbnailSetModel } from './thumbnailset.model';
+import { ThumbnailSetCollection } from './thumbnailset.collection';
 //#endregion
 
 export const ThumbnailSetConfig = {
   name: "thumbnailSet",
   base: "microsoft.graph.entity",
   open: true,
+  model: ThumbnailSetModel,
+  collection: ThumbnailSetCollection,
   annotations: [],
   fields: {
     large: {type: 'graph.thumbnail'},

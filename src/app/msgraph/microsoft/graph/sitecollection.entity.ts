@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { Root } from './root.entity';
+import { RootModel } from './root.model';
+import { RootCollection } from './root.collection';
 //#endregion
 
 export interface SiteCollection {

@@ -5,7 +5,7 @@
 
 export interface TimeRange {
   //#region ODataApi Properties
-  startTime?: Date;
   endTime?: Date;
+  startTime?: Date;
   //#endregion
 }

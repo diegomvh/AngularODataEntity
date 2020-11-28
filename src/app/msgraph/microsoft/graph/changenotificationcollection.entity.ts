@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { ChangeNotification } from './changenotification.entity';
+import { ChangeNotificationModel } from './changenotification.model';
+import { ChangeNotificationCollection } from './changenotification.collection';
 //#endregion
 
 export interface ChangeNotificationCollection {

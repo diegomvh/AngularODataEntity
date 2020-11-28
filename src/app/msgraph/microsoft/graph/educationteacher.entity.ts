@@ -5,7 +5,7 @@
 
 export interface EducationTeacher {
   //#region ODataApi Properties
-  teacherNumber?: string;
   externalId?: string;
+  teacherNumber?: string;
   //#endregion
 }

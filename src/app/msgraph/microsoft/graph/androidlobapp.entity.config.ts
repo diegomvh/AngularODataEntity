@@ -2,16 +2,20 @@
 
 //#region ODataApi Imports
 import { AndroidLobApp } from './androidlobapp.entity';
+import { AndroidLobAppModel } from './androidlobapp.model';
+import { AndroidLobAppCollection } from './androidlobapp.collection';
 //#endregion
 
 export const AndroidLobAppConfig = {
   name: "androidLobApp",
   base: "microsoft.graph.mobileLobApp",
+  model: AndroidLobAppModel,
+  collection: AndroidLobAppCollection,
   annotations: [],
   fields: {
-    packageId: {type: 'Edm.String'},
     minimumSupportedOperatingSystem: {type: 'graph.androidMinimumOperatingSystem'},
-    versionName: {type: 'Edm.String'},
-    versionCode: {type: 'Edm.String'}
+    packageId: {type: 'Edm.String'},
+    versionCode: {type: 'Edm.String'},
+    versionName: {type: 'Edm.String'}
   }
 } as EntityConfig<AndroidLobApp>;

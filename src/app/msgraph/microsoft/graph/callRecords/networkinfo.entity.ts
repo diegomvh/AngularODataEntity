@@ -8,29 +8,29 @@ import { WifiRadioType } from './wifiradiotype.enum';
 
 export interface NetworkInfo {
   //#region ODataApi Properties
-  ipAddress?: string;
-  subnet?: string;
-  linkSpeed?: number;
+  bandwidthLowEventRatio?: number;
+  basicServiceSetIdentifier?: string;
   connectionType: NetworkConnectionType;
+  delayEventRatio?: number;
+  dnsSuffix?: string;
+  ipAddress?: string;
+  linkSpeed?: number;
+  macAddress?: string;
   port?: number;
+  receivedQualityEventRatio?: number;
   reflexiveIPAddress?: string;
   relayIPAddress?: string;
   relayPort?: number;
-  macAddress?: string;
+  sentQualityEventRatio?: number;
+  subnet?: string;
+  wifiBand: WifiBand;
+  wifiBatteryCharge?: number;
+  wifiChannel?: number;
   wifiMicrosoftDriver?: string;
   wifiMicrosoftDriverVersion?: string;
-  wifiVendorDriver?: string;
-  wifiVendorDriverVersion?: string;
-  wifiChannel?: number;
-  wifiBand: WifiBand;
-  basicServiceSetIdentifier?: string;
   wifiRadioType: WifiRadioType;
   wifiSignalStrength?: number;
-  wifiBatteryCharge?: number;
-  dnsSuffix?: string;
-  sentQualityEventRatio?: number;
-  receivedQualityEventRatio?: number;
-  delayEventRatio?: number;
-  bandwidthLowEventRatio?: number;
+  wifiVendorDriver?: string;
+  wifiVendorDriverVersion?: string;
   //#endregion
 }

@@ -2,28 +2,30 @@
 
 //#region ODataApi Imports
 import { DeviceCompliancePolicy } from './devicecompliancepolicy.entity';
-import { RequiredPasswordType } from './requiredpasswordtype.enum';
 import { DeviceThreatProtectionLevel } from './devicethreatprotectionlevel.enum';
+import { RequiredPasswordType } from './requiredpasswordtype.enum';
+import { DeviceCompliancePolicyModel } from './devicecompliancepolicy.model';
+import { DeviceCompliancePolicyCollection } from './devicecompliancepolicy.collection';
 //#endregion
 
 export interface MacOSCompliancePolicy extends DeviceCompliancePolicy {
   //#region ODataApi Properties
-  passwordRequired: boolean;
+  deviceThreatProtectionEnabled: boolean;
+  deviceThreatProtectionRequiredSecurityLevel: DeviceThreatProtectionLevel;
+  firewallBlockAllIncoming: boolean;
+  firewallEnabled: boolean;
+  firewallEnableStealthMode: boolean;
+  osMaximumVersion?: string;
+  osMinimumVersion?: string;
   passwordBlockSimple: boolean;
   passwordExpirationDays?: number;
+  passwordMinimumCharacterSetCount?: number;
   passwordMinimumLength?: number;
   passwordMinutesOfInactivityBeforeLock?: number;
   passwordPreviousPasswordBlockCount?: number;
-  passwordMinimumCharacterSetCount?: number;
+  passwordRequired: boolean;
   passwordRequiredType: RequiredPasswordType;
-  osMinimumVersion?: string;
-  osMaximumVersion?: string;
-  systemIntegrityProtectionEnabled: boolean;
-  deviceThreatProtectionEnabled: boolean;
-  deviceThreatProtectionRequiredSecurityLevel: DeviceThreatProtectionLevel;
   storageRequireEncryption: boolean;
-  firewallEnabled: boolean;
-  firewallBlockAllIncoming: boolean;
-  firewallEnableStealthMode: boolean;
+  systemIntegrityProtectionEnabled: boolean;
   //#endregion
 }

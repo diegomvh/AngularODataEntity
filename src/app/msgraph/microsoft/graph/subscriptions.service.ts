@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { Subscription } from './subscription.entity';
+import { SubscriptionModel } from './subscription.model';
+import { SubscriptionCollection } from './subscription.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class SubscriptionsService extends ODataEntityService<Subscription> {
     super(client, 'subscriptions', 'microsoft.graph.subscription');
   }
 
+  //#region ODataApi Model
+  subscriptionModel(): SubscriptionModel<Subscription> {
+    return super.model() as SubscriptionModel<Subscription>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  subscriptionCollection(): SubscriptionCollection<Subscription, SubscriptionModel<Subscription>> {
+    return super.collection() as SubscriptionCollection<Subscription, SubscriptionModel<Subscription>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

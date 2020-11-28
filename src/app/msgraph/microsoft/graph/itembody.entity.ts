@@ -6,7 +6,7 @@ import { BodyType } from './bodytype.enum';
 
 export interface ItemBody {
   //#region ODataApi Properties
-  contentType?: BodyType;
   content?: string;
+  contentType?: BodyType;
   //#endregion
 }

@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { TextColumn } from './textcolumn.entity';
+import { TextColumnModel } from './textcolumn.model';
+import { TextColumnCollection } from './textcolumn.collection';
 //#endregion
 
 export const TextColumnConfig = {
   name: "textColumn",
+  model: TextColumnModel,
+  collection: TextColumnCollection,
   annotations: [],
   fields: {
     allowMultipleLines: {type: 'Edm.Boolean'},

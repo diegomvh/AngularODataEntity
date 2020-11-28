@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { Domain } from './domain.entity';
+import { DomainModel } from './domain.model';
+import { DomainCollection } from './domain.collection';
 //#endregion
 
 export const DomainConfig = {
   name: "domain",
   base: "microsoft.graph.entity",
+  model: DomainModel,
+  collection: DomainCollection,
   annotations: [],
   fields: {
     authenticationType: {type: 'Edm.String', nullable: false},
@@ -20,10 +24,10 @@ export const DomainConfig = {
     model: {type: 'Edm.String'},
     passwordNotificationWindowInDays: {type: 'Edm.Int32'},
     passwordValidityPeriodInDays: {type: 'Edm.Int32'},
-    supportedServices: {type: 'Edm.String', nullable: false, collection: true},
     state: {type: 'graph.domainState'},
+    supportedServices: {type: 'Edm.String', nullable: false, collection: true},
+    domainNameReferences: {type: 'graph.directoryObject', collection: true, navigation: true},
     serviceConfigurationRecords: {type: 'graph.domainDnsRecord', collection: true, navigation: true},
-    verificationDnsRecords: {type: 'graph.domainDnsRecord', collection: true, navigation: true},
-    domainNameReferences: {type: 'graph.directoryObject', collection: true, navigation: true}
+    verificationDnsRecords: {type: 'graph.domainDnsRecord', collection: true, navigation: true}
   }
 } as EntityConfig<Domain>;

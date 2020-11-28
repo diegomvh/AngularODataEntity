@@ -2,19 +2,21 @@
 
 //#region ODataApi Imports
 import { ChangeTrackedEntity } from './changetrackedentity.entity';
-import { ScheduleChangeState } from './schedulechangestate.enum';
 import { ScheduleChangeRequestActor } from './schedulechangerequestactor.enum';
+import { ScheduleChangeState } from './schedulechangestate.enum';
+import { ChangeTrackedEntityModel } from './changetrackedentity.model';
+import { ChangeTrackedEntityCollection } from './changetrackedentity.collection';
 //#endregion
 
 export interface ScheduleChangeRequest extends ChangeTrackedEntity {
   //#region ODataApi Properties
   assignedTo?: ScheduleChangeRequestActor;
-  state?: ScheduleChangeState;
-  senderMessage?: string;
-  senderDateTime?: Date;
-  managerActionMessage?: string;
   managerActionDateTime?: Date;
-  senderUserId?: string;
+  managerActionMessage?: string;
   managerUserId?: string;
+  senderDateTime?: Date;
+  senderMessage?: string;
+  senderUserId?: string;
+  state?: ScheduleChangeState;
   //#endregion
 }

@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { WorkbookTableSort } from './workbooktablesort.entity';
+import { WorkbookTableSortModel } from './workbooktablesort.model';
+import { WorkbookTableSortCollection } from './workbooktablesort.collection';
 //#endregion
 
 export const WorkbookTableSortConfig = {
   name: "workbookTableSort",
   base: "microsoft.graph.entity",
+  model: WorkbookTableSortModel,
+  collection: WorkbookTableSortCollection,
   annotations: [],
   fields: {
     fields: {type: 'graph.workbookSortField', collection: true},

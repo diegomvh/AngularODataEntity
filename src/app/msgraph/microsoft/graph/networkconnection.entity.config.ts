@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { NetworkConnection } from './networkconnection.entity';
+import { NetworkConnectionModel } from './networkconnection.model';
+import { NetworkConnectionCollection } from './networkconnection.collection';
 //#endregion
 
 export const NetworkConnectionConfig = {
   name: "networkConnection",
+  model: NetworkConnectionModel,
+  collection: NetworkConnectionCollection,
   annotations: [],
   fields: {
     applicationName: {type: 'Edm.String'},

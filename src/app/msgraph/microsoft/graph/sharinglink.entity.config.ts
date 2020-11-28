@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { SharingLink } from './sharinglink.entity';
+import { SharingLinkModel } from './sharinglink.model';
+import { SharingLinkCollection } from './sharinglink.collection';
 //#endregion
 
 export const SharingLinkConfig = {
   name: "sharingLink",
+  model: SharingLinkModel,
+  collection: SharingLinkCollection,
   annotations: [],
   fields: {
     application: {type: 'graph.identity'},

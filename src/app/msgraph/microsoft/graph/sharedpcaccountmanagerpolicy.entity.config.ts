@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { SharedPCAccountManagerPolicy } from './sharedpcaccountmanagerpolicy.entity';
+import { SharedPCAccountManagerPolicyModel } from './sharedpcaccountmanagerpolicy.model';
+import { SharedPCAccountManagerPolicyCollection } from './sharedpcaccountmanagerpolicy.collection';
 //#endregion
 
 export const SharedPCAccountManagerPolicyConfig = {
   name: "sharedPCAccountManagerPolicy",
+  model: SharedPCAccountManagerPolicyModel,
+  collection: SharedPCAccountManagerPolicyCollection,
   annotations: [],
   fields: {
     accountDeletionPolicy: {type: 'graph.sharedPCAccountDeletionPolicyType', nullable: false},

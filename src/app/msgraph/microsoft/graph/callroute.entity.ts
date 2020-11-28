@@ -3,12 +3,14 @@
 //#region ODataApi Imports
 import { RoutingType } from './routingtype.enum';
 import { IdentitySet } from './identityset.entity';
+import { IdentitySetModel } from './identityset.model';
+import { IdentitySetCollection } from './identityset.collection';
 //#endregion
 
 export interface CallRoute {
   //#region ODataApi Properties
-  routingType: RoutingType;
-  original: IdentitySet;
   final: IdentitySet;
+  original: IdentitySet;
+  routingType: RoutingType;
   //#endregion
 }

@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { WorkbookTable } from './workbooktable.entity';
+import { WorkbookTableModel } from './workbooktable.model';
+import { WorkbookTableCollection } from './workbooktable.collection';
 //#endregion
 
 export const WorkbookTableConfig = {
   name: "workbookTable",
   base: "microsoft.graph.entity",
+  model: WorkbookTableModel,
+  collection: WorkbookTableCollection,
   annotations: [],
   fields: {
     highlightFirstColumn: {type: 'Edm.Boolean', nullable: false},

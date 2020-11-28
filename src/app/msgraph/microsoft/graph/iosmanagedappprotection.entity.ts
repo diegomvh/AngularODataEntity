@@ -5,15 +5,21 @@ import { TargetedManagedAppProtection } from './targetedmanagedappprotection.ent
 import { ManagedAppDataEncryptionType } from './managedappdataencryptiontype.enum';
 import { ManagedMobileApp } from './managedmobileapp.entity';
 import { ManagedAppPolicyDeploymentSummary } from './managedapppolicydeploymentsummary.entity';
+import { TargetedManagedAppProtectionModel } from './targetedmanagedappprotection.model';
+import { ManagedMobileAppModel } from './managedmobileapp.model';
+import { ManagedAppPolicyDeploymentSummaryModel } from './managedapppolicydeploymentsummary.model';
+import { TargetedManagedAppProtectionCollection } from './targetedmanagedappprotection.collection';
+import { ManagedMobileAppCollection } from './managedmobileapp.collection';
+import { ManagedAppPolicyDeploymentSummaryCollection } from './managedapppolicydeploymentsummary.collection';
 //#endregion
 
 export interface IosManagedAppProtection extends TargetedManagedAppProtection {
   //#region ODataApi Properties
   appDataEncryptionType: ManagedAppDataEncryptionType;
-  minimumRequiredSdkVersion?: string;
+  customBrowserProtocol?: string;
   deployedAppCount: number;
   faceIdBlocked: boolean;
-  customBrowserProtocol?: string;
+  minimumRequiredSdkVersion?: string;
   apps?: ManagedMobileApp[];
   deploymentSummary?: ManagedAppPolicyDeploymentSummary;
   //#endregion

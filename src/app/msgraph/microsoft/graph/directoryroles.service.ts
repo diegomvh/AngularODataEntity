@@ -22,6 +22,10 @@ import {
 //#region ODataApi Imports
 import { DirectoryObject } from './directoryobject.entity';
 import { DirectoryRole } from './directoryrole.entity';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { DirectoryRoleModel } from './directoryrole.model';
+import { DirectoryObjectCollection } from './directoryobject.collection';
+import { DirectoryRoleCollection } from './directoryrole.collection';
 //#endregion
 
 @Injectable()
@@ -30,6 +34,16 @@ export class DirectoryRolesService extends ODataEntityService<DirectoryRole> {
     super(client, 'directoryRoles', 'microsoft.graph.directoryRole');
   }
 
+  //#region ODataApi Model
+  directoryRoleModel(): DirectoryRoleModel<DirectoryRole> {
+    return super.model() as DirectoryRoleModel<DirectoryRole>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  directoryRoleCollection(): DirectoryRoleCollection<DirectoryRole, DirectoryRoleModel<DirectoryRole>> {
+    return super.collection() as DirectoryRoleCollection<DirectoryRole, DirectoryRoleModel<DirectoryRole>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

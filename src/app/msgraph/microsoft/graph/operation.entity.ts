@@ -3,12 +3,14 @@
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
 import { OperationStatus } from './operationstatus.enum';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface Operation extends Entity {
   //#region ODataApi Properties
-  status?: OperationStatus;
   createdDateTime?: Date;
   lastActionDateTime?: Date;
+  status?: OperationStatus;
   //#endregion
 }

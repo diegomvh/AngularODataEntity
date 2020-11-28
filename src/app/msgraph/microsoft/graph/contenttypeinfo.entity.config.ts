@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { ContentTypeInfo } from './contenttypeinfo.entity';
+import { ContentTypeInfoModel } from './contenttypeinfo.model';
+import { ContentTypeInfoCollection } from './contenttypeinfo.collection';
 //#endregion
 
 export const ContentTypeInfoConfig = {
   name: "contentTypeInfo",
+  model: ContentTypeInfoModel,
+  collection: ContentTypeInfoCollection,
   annotations: [],
   fields: {
     id: {type: 'Edm.String'},

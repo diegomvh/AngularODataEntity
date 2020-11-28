@@ -5,9 +5,9 @@
 
 export interface OnPremisesProvisioningError {
   //#region ODataApi Properties
-  value?: string;
   category?: string;
-  propertyCausingError?: string;
   occurredDateTime?: Date;
+  propertyCausingError?: string;
+  value?: string;
   //#endregion
 }

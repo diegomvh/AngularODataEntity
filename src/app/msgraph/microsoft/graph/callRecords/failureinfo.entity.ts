@@ -6,7 +6,7 @@ import { FailureStage } from './failurestage.enum';
 
 export interface FailureInfo {
   //#region ODataApi Properties
-  stage: FailureStage;
   reason?: string;
+  stage: FailureStage;
   //#endregion
 }

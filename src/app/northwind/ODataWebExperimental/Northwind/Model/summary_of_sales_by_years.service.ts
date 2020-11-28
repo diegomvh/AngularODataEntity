@@ -31,11 +31,20 @@ export class SummaryOfSalesByYearsService extends ODataEntityService<SummaryOfSa
     super(client, 'Summary_of_Sales_by_Years', 'NorthwindModel.Summary_of_Sales_by_Year');
   }
 
+  //#region ODataApi Model
   summaryOfSalesByYearModel(): SummaryOfSalesByYearModel<SummaryOfSalesByYear> {
     return super.model() as SummaryOfSalesByYearModel<SummaryOfSalesByYear>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   summaryOfSalesByYearCollection(): SummaryOfSalesByYearCollection<SummaryOfSalesByYear, SummaryOfSalesByYearModel<SummaryOfSalesByYear>> {
     return super.collection() as SummaryOfSalesByYearCollection<SummaryOfSalesByYear, SummaryOfSalesByYearModel<SummaryOfSalesByYear>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

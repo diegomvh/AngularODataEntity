@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { Drive } from './drive.entity';
+import { DriveModel } from './drive.model';
+import { DriveCollection } from './drive.collection';
 //#endregion
 
 export const DriveConfig = {
   name: "drive",
   base: "microsoft.graph.baseItem",
+  model: DriveModel,
+  collection: DriveCollection,
   annotations: [],
   fields: {
     driveType: {type: 'Edm.String'},

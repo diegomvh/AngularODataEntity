@@ -2,13 +2,17 @@
 
 //#region ODataApi Imports
 import { ItemBody } from './itembody.entity';
+import { ItemBodyModel } from './itembody.model';
+import { ItemBodyCollection } from './itembody.collection';
 //#endregion
 
 export const ItemBodyConfig = {
   name: "itemBody",
+  model: ItemBodyModel,
+  collection: ItemBodyCollection,
   annotations: [],
   fields: {
-    contentType: {type: 'graph.bodyType'},
-    content: {type: 'Edm.String'}
+    content: {type: 'Edm.String'},
+    contentType: {type: 'graph.bodyType'}
   }
 } as EntityConfig<ItemBody>;

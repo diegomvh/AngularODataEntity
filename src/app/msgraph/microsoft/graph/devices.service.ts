@@ -23,6 +23,12 @@ import {
 import { AlternativeSecurityId } from './alternativesecurityid.entity';
 import { DirectoryObject } from './directoryobject.entity';
 import { Device } from './device.entity';
+import { AlternativeSecurityIdModel } from './alternativesecurityid.model';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { DeviceModel } from './device.model';
+import { AlternativeSecurityIdCollection } from './alternativesecurityid.collection';
+import { DirectoryObjectCollection } from './directoryobject.collection';
+import { DeviceCollection } from './device.collection';
 //#endregion
 
 @Injectable()
@@ -31,6 +37,16 @@ export class DevicesService extends ODataEntityService<Device> {
     super(client, 'devices', 'microsoft.graph.device');
   }
 
+  //#region ODataApi Model
+  deviceModel(): DeviceModel<Device> {
+    return super.model() as DeviceModel<Device>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  deviceCollection(): DeviceCollection<Device, DeviceModel<Device>> {
+    return super.collection() as DeviceCollection<Device, DeviceModel<Device>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

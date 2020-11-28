@@ -2,11 +2,13 @@
 
 //#region ODataApi Imports
 import { IosHomeScreenApp } from './ioshomescreenapp.entity';
+import { IosHomeScreenAppModel } from './ioshomescreenapp.model';
+import { IosHomeScreenAppCollection } from './ioshomescreenapp.collection';
 //#endregion
 
 export interface IosHomeScreenFolderPage {
   //#region ODataApi Properties
-  displayName?: string;
   apps: IosHomeScreenApp[];
+  displayName?: string;
   //#endregion
 }

@@ -6,8 +6,8 @@
 export interface AudioConferencing {
   //#region ODataApi Properties
   conferenceId?: string;
-  tollNumber?: string;
-  tollFreeNumber?: string;
   dialinUrl?: string;
+  tollFreeNumber?: string;
+  tollNumber?: string;
   //#endregion
 }

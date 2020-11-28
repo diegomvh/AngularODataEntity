@@ -2,14 +2,16 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface LocalizedNotificationMessage extends Entity {
   //#region ODataApi Properties
+  isDefault: boolean;
   lastModifiedDateTime: Date;
   locale: string;
-  subject: string;
   messageTemplate: string;
-  isDefault: boolean;
+  subject: string;
   //#endregion
 }

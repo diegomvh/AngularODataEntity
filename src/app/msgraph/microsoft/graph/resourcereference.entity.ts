@@ -5,8 +5,8 @@
 
 export interface ResourceReference {
   //#region ODataApi Properties
-  webUrl?: string;
   id?: string;
   type?: string;
+  webUrl?: string;
   //#endregion
 }

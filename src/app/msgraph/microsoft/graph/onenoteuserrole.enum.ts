@@ -6,7 +6,7 @@ export enum OnenoteUserRole {
   //#region ODataApi Members
   Owner = 0,
   Contributor = 1,
-  Reader = 2,
   None = -1,
+  Reader = 2,
   //#endregion
 }

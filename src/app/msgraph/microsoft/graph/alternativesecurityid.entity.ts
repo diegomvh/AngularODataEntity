@@ -5,8 +5,8 @@
 
 export interface AlternativeSecurityId {
   //#region ODataApi Properties
-  type?: number;
   identityProvider?: string;
   key?: ArrayBuffer;
+  type?: number;
   //#endregion
 }

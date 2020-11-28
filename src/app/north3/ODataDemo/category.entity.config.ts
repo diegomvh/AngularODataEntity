@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { Category } from './category.entity';
+import { CategoryModel } from './category.model';
+import { CategoryCollection } from './category.collection';
 //#endregion
 
 export const CategoryConfig = {
   name: "Category",
   open: true,
+  model: CategoryModel,
+  collection: CategoryCollection,
   annotations: [],
   fields: {
     ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},

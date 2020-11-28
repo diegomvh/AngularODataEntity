@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Product } from './product.entity';
+import { ProductModel } from './product.model';
+import { ProductCollection } from './product.collection';
 //#endregion
 
 export const ProductConfig = {
   name: "Product",
+  model: ProductModel,
+  collection: ProductCollection,
   annotations: [],
   fields: {
     ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},

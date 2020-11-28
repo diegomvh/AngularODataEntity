@@ -7,21 +7,21 @@ import { UsersService } from './microsoft/graph/users.service';
 import { IdentityProvidersService } from './microsoft/graph/identityproviders.service';
 import { ApplicationsService } from './microsoft/graph/applications.service';
 import { CertificateBasedAuthConfigurationService } from './microsoft/graph/certificatebasedauthconfiguration.service';
-import { DirectoryObjectsService } from './microsoft/graph/directoryobjects.service';
 import { ContactsService } from './microsoft/graph/contacts.service';
+import { ContractsService } from './microsoft/graph/contracts.service';
 import { DevicesService } from './microsoft/graph/devices.service';
-import { DomainsService } from './microsoft/graph/domains.service';
-import { DomainDnsRecordsService } from './microsoft/graph/domaindnsrecords.service';
-import { GroupsService } from './microsoft/graph/groups.service';
+import { DirectoryObjectsService } from './microsoft/graph/directoryobjects.service';
 import { DirectoryRolesService } from './microsoft/graph/directoryroles.service';
 import { DirectoryRoleTemplatesService } from './microsoft/graph/directoryroletemplates.service';
-import { OrganizationService } from './microsoft/graph/organization.service';
+import { DomainDnsRecordsService } from './microsoft/graph/domaindnsrecords.service';
+import { DomainsService } from './microsoft/graph/domains.service';
+import { GroupsService } from './microsoft/graph/groups.service';
 import { GroupSettingsService } from './microsoft/graph/groupsettings.service';
 import { GroupSettingTemplatesService } from './microsoft/graph/groupsettingtemplates.service';
-import { SubscribedSkusService } from './microsoft/graph/subscribedskus.service';
-import { ContractsService } from './microsoft/graph/contracts.service';
-import { ServicePrincipalsService } from './microsoft/graph/serviceprincipals.service';
 import { Oauth2PermissionGrantsService } from './microsoft/graph/oauth2permissiongrants.service';
+import { OrganizationService } from './microsoft/graph/organization.service';
+import { ServicePrincipalsService } from './microsoft/graph/serviceprincipals.service';
+import { SubscribedSkusService } from './microsoft/graph/subscribedskus.service';
 import { WorkbooksService } from './microsoft/graph/workbooks.service';
 import { PlacesService } from './microsoft/graph/places.service';
 import { DrivesService } from './microsoft/graph/drives.service';
@@ -35,9 +35,9 @@ import { TeamsService } from './microsoft/graph/teams.service';
 import { TeamsTemplatesService } from './microsoft/graph/teamstemplates.service';
 import { AuditLogsService } from './microsoft/graph/auditlogs.service';
 import { IdentityService } from './microsoft/graph/identity.service';
-import { PoliciesService } from './microsoft/graph/policies.service';
-import { MeService } from './microsoft/graph/me.service';
 import { DirectoryService } from './microsoft/graph/directory.service';
+import { MeService } from './microsoft/graph/me.service';
+import { PoliciesService } from './microsoft/graph/policies.service';
 import { EducationService } from './microsoft/graph/education.service';
 import { DriveService } from './microsoft/graph/drive.service';
 import { CommunicationsService } from './microsoft/graph/communications.service';
@@ -46,8 +46,8 @@ import { DeviceManagementService } from './microsoft/graph/devicemanagement.serv
 import { ReportsService } from './microsoft/graph/reports.service';
 import { PlannerService } from './microsoft/graph/planner.service';
 import { SecurityService } from './microsoft/graph/security.service';
-import { TeamworkService } from './microsoft/graph/teamwork.service';
 import { AppCatalogsService } from './microsoft/graph/appcatalogs.service';
+import { TeamworkService } from './microsoft/graph/teamwork.service';
 import { InformationProtectionService } from './microsoft/graph/informationprotection.service';
 //#endregion
 
@@ -59,21 +59,21 @@ import { InformationProtectionService } from './microsoft/graph/informationprote
     IdentityProvidersService,
     ApplicationsService,
     CertificateBasedAuthConfigurationService,
-    DirectoryObjectsService,
     ContactsService,
+    ContractsService,
     DevicesService,
-    DomainsService,
-    DomainDnsRecordsService,
-    GroupsService,
+    DirectoryObjectsService,
     DirectoryRolesService,
     DirectoryRoleTemplatesService,
-    OrganizationService,
+    DomainDnsRecordsService,
+    DomainsService,
+    GroupsService,
     GroupSettingsService,
     GroupSettingTemplatesService,
-    SubscribedSkusService,
-    ContractsService,
-    ServicePrincipalsService,
     Oauth2PermissionGrantsService,
+    OrganizationService,
+    ServicePrincipalsService,
+    SubscribedSkusService,
     WorkbooksService,
     PlacesService,
     DrivesService,
@@ -87,9 +87,9 @@ import { InformationProtectionService } from './microsoft/graph/informationprote
     TeamsTemplatesService,
     AuditLogsService,
     IdentityService,
-    PoliciesService,
-    MeService,
     DirectoryService,
+    MeService,
+    PoliciesService,
     EducationService,
     DriveService,
     CommunicationsService,
@@ -98,8 +98,8 @@ import { InformationProtectionService } from './microsoft/graph/informationprote
     ReportsService,
     PlannerService,
     SecurityService,
-    TeamworkService,
     AppCatalogsService,
+    TeamworkService,
     InformationProtectionService
   ]
 })

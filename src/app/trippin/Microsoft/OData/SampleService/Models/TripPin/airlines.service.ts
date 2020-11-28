@@ -31,11 +31,20 @@ export class AirlinesService extends ODataEntityService<Airline> {
     super(client, 'Airlines', 'Microsoft.OData.SampleService.Models.TripPin.Airline');
   }
 
+  //#region ODataApi Model
   airlineModel(): AirlineModel<Airline> {
-    return super.model() as AirlineModel<Airline>;
+    return this.entity().asModel() as AirlineModel<Airline>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   airlineCollection(): AirlineCollection<Airline, AirlineModel<Airline>> {
-    return super.collection() as AirlineCollection<Airline, AirlineModel<Airline>>;
+    return this.entities().asCollection() as AirlineCollection<Airline, AirlineModel<Airline>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

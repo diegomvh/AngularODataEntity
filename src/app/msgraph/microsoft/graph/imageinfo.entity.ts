@@ -5,9 +5,9 @@
 
 export interface ImageInfo {
   //#region ODataApi Properties
-  iconUrl?: string;
-  alternativeText?: string;
-  alternateText?: string;
   addImageQuery?: boolean;
+  alternateText?: string;
+  alternativeText?: string;
+  iconUrl?: string;
   //#endregion
 }

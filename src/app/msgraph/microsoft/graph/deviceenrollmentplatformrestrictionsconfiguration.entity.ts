@@ -3,14 +3,18 @@
 //#region ODataApi Imports
 import { DeviceEnrollmentConfiguration } from './deviceenrollmentconfiguration.entity';
 import { DeviceEnrollmentPlatformRestriction } from './deviceenrollmentplatformrestriction.entity';
+import { DeviceEnrollmentPlatformRestrictionModel } from './deviceenrollmentplatformrestriction.model';
+import { DeviceEnrollmentConfigurationModel } from './deviceenrollmentconfiguration.model';
+import { DeviceEnrollmentPlatformRestrictionCollection } from './deviceenrollmentplatformrestriction.collection';
+import { DeviceEnrollmentConfigurationCollection } from './deviceenrollmentconfiguration.collection';
 //#endregion
 
 export interface DeviceEnrollmentPlatformRestrictionsConfiguration extends DeviceEnrollmentConfiguration {
   //#region ODataApi Properties
-  iosRestriction?: DeviceEnrollmentPlatformRestriction;
-  windowsRestriction?: DeviceEnrollmentPlatformRestriction;
-  windowsMobileRestriction?: DeviceEnrollmentPlatformRestriction;
   androidRestriction?: DeviceEnrollmentPlatformRestriction;
+  iosRestriction?: DeviceEnrollmentPlatformRestriction;
   macOSRestriction?: DeviceEnrollmentPlatformRestriction;
+  windowsMobileRestriction?: DeviceEnrollmentPlatformRestriction;
+  windowsRestriction?: DeviceEnrollmentPlatformRestriction;
   //#endregion
 }

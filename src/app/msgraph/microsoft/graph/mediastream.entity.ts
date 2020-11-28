@@ -7,10 +7,10 @@ import { Modality } from './modality.enum';
 
 export interface MediaStream {
   //#region ODataApi Properties
-  mediaType: Modality;
-  label?: string;
-  sourceId: string;
   direction: MediaDirection;
+  label?: string;
+  mediaType: Modality;
   serverMuted: boolean;
+  sourceId: string;
   //#endregion
 }

@@ -5,8 +5,8 @@
 
 export interface UserIdentity {
   //#region ODataApi Properties
-  id?: string;
   displayName?: string;
+  id?: string;
   ipAddress?: string;
   userPrincipalName?: string;
   //#endregion

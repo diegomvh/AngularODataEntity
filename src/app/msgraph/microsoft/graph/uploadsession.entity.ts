@@ -5,8 +5,8 @@
 
 export interface UploadSession {
   //#region ODataApi Properties
-  uploadUrl?: string;
   expirationDateTime?: Date;
   nextExpectedRanges?: string[];
+  uploadUrl?: string;
   //#endregion
 }

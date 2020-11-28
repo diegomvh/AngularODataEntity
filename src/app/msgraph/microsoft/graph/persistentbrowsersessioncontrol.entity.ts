@@ -3,6 +3,8 @@
 //#region ODataApi Imports
 import { ConditionalAccessSessionControl } from './conditionalaccesssessioncontrol.entity';
 import { PersistentBrowserSessionMode } from './persistentbrowsersessionmode.enum';
+import { ConditionalAccessSessionControlModel } from './conditionalaccesssessioncontrol.model';
+import { ConditionalAccessSessionControlCollection } from './conditionalaccesssessioncontrol.collection';
 //#endregion
 
 export interface PersistentBrowserSessionControl extends ConditionalAccessSessionControl {

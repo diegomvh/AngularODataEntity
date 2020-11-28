@@ -20,10 +20,18 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { PlannerTask } from './plannertask.entity';
-import { PlannerPlan } from './plannerplan.entity';
 import { Planner } from './planner.entity';
 import { PlannerBucket } from './plannerbucket.entity';
+import { PlannerPlan } from './plannerplan.entity';
+import { PlannerTask } from './plannertask.entity';
+import { PlannerModel } from './planner.model';
+import { PlannerBucketModel } from './plannerbucket.model';
+import { PlannerPlanModel } from './plannerplan.model';
+import { PlannerTaskModel } from './plannertask.model';
+import { PlannerCollection } from './planner.collection';
+import { PlannerBucketCollection } from './plannerbucket.collection';
+import { PlannerPlanCollection } from './plannerplan.collection';
+import { PlannerTaskCollection } from './plannertask.collection';
 //#endregion
 
 @Injectable()

@@ -3,12 +3,16 @@
 //#region ODataApi Imports
 import { ChangeTrackedEntity } from './changetrackedentity.entity';
 import { TimeOffItem } from './timeoffitem.entity';
+import { TimeOffItemModel } from './timeoffitem.model';
+import { ChangeTrackedEntityModel } from './changetrackedentity.model';
+import { TimeOffItemCollection } from './timeoffitem.collection';
+import { ChangeTrackedEntityCollection } from './changetrackedentity.collection';
 //#endregion
 
 export interface TimeOff extends ChangeTrackedEntity {
   //#region ODataApi Properties
-  sharedTimeOff?: TimeOffItem;
   draftTimeOff?: TimeOffItem;
+  sharedTimeOff?: TimeOffItem;
   userId?: string;
   //#endregion
 }

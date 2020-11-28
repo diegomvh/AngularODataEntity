@@ -2,12 +2,16 @@
 
 //#region ODataApi Imports
 import { DirectoryRole } from './directoryrole.entity';
+import { DirectoryRoleModel } from './directoryrole.model';
+import { DirectoryRoleCollection } from './directoryrole.collection';
 //#endregion
 
 export const DirectoryRoleConfig = {
   name: "directoryRole",
   base: "microsoft.graph.directoryObject",
   open: true,
+  model: DirectoryRoleModel,
+  collection: DirectoryRoleCollection,
   annotations: [],
   fields: {
     description: {type: 'Edm.String'},

@@ -6,24 +6,32 @@ import { MobileAppPublishingState } from './mobileapppublishingstate.enum';
 import { MimeContent } from './mimecontent.entity';
 import { MobileAppCategory } from './mobileappcategory.entity';
 import { MobileAppAssignment } from './mobileappassignment.entity';
+import { MimeContentModel } from './mimecontent.model';
+import { EntityModel } from './entity.model';
+import { MobileAppCategoryModel } from './mobileappcategory.model';
+import { MobileAppAssignmentModel } from './mobileappassignment.model';
+import { MimeContentCollection } from './mimecontent.collection';
+import { EntityCollection } from './entity.collection';
+import { MobileAppCategoryCollection } from './mobileappcategory.collection';
+import { MobileAppAssignmentCollection } from './mobileappassignment.collection';
 //#endregion
 
 export interface MobileApp extends Entity {
   //#region ODataApi Properties
-  displayName?: string;
-  description?: string;
-  publisher?: string;
-  largeIcon?: MimeContent;
   createdDateTime: Date;
-  lastModifiedDateTime: Date;
-  isFeatured: boolean;
-  privacyInformationUrl?: string;
-  informationUrl?: string;
-  owner?: string;
+  description?: string;
   developer?: string;
+  displayName?: string;
+  informationUrl?: string;
+  isFeatured: boolean;
+  largeIcon?: MimeContent;
+  lastModifiedDateTime: Date;
   notes?: string;
+  owner?: string;
+  privacyInformationUrl?: string;
+  publisher?: string;
   publishingState: MobileAppPublishingState;
-  categories?: MobileAppCategory[];
   assignments?: MobileAppAssignment[];
+  categories?: MobileAppCategory[];
   //#endregion
 }

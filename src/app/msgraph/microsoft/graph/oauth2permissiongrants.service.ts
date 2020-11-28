@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { OAuth2PermissionGrant } from './oauth2permissiongrant.entity';
+import { OAuth2PermissionGrantModel } from './oauth2permissiongrant.model';
+import { OAuth2PermissionGrantCollection } from './oauth2permissiongrant.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class Oauth2PermissionGrantsService extends ODataEntityService<OAuth2Perm
     super(client, 'oauth2PermissionGrants', 'microsoft.graph.oAuth2PermissionGrant');
   }
 
+  //#region ODataApi Model
+  oAuth2PermissionGrantModel(): OAuth2PermissionGrantModel<OAuth2PermissionGrant> {
+    return super.model() as OAuth2PermissionGrantModel<OAuth2PermissionGrant>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  oAuth2PermissionGrantCollection(): OAuth2PermissionGrantCollection<OAuth2PermissionGrant, OAuth2PermissionGrantModel<OAuth2PermissionGrant>> {
+    return super.collection() as OAuth2PermissionGrantCollection<OAuth2PermissionGrant, OAuth2PermissionGrantModel<OAuth2PermissionGrant>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

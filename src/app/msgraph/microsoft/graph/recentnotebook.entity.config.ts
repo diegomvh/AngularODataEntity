@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { RecentNotebook } from './recentnotebook.entity';
+import { RecentNotebookModel } from './recentnotebook.model';
+import { RecentNotebookCollection } from './recentnotebook.collection';
 //#endregion
 
 export const RecentNotebookConfig = {
   name: "recentNotebook",
+  model: RecentNotebookModel,
+  collection: RecentNotebookCollection,
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String'},

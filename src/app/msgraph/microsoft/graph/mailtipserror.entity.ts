@@ -5,7 +5,7 @@
 
 export interface MailTipsError {
   //#region ODataApi Properties
-  message?: string;
   code?: string;
+  message?: string;
   //#endregion
 }

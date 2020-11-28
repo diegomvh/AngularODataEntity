@@ -3,22 +3,24 @@
 //#region ODataApi Imports
 import { Place } from './place.entity';
 import { BookingType } from './bookingtype.enum';
+import { PlaceModel } from './place.model';
+import { PlaceCollection } from './place.collection';
 //#endregion
 
 export interface Room extends Place {
   //#region ODataApi Properties
-  emailAddress?: string;
-  nickname: string;
-  building?: string;
-  floorNumber?: number;
-  label?: string;
-  capacity?: number;
-  bookingType?: BookingType;
   audioDeviceName?: string;
-  videoDeviceName?: string;
+  bookingType?: BookingType;
+  building?: string;
+  capacity?: number;
   displayDeviceName?: string;
-  isWheelChairAccessible?: boolean;
-  tags?: string[];
+  emailAddress?: string;
   floorLabel?: string;
+  floorNumber?: number;
+  isWheelChairAccessible?: boolean;
+  label?: string;
+  nickname: string;
+  tags?: string[];
+  videoDeviceName?: string;
   //#endregion
 }

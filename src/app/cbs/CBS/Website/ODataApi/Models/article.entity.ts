@@ -2,8 +2,12 @@
 
 //#region ODataApi Imports
 import { ArticleType } from './articletype.enum';
-import { ErrataList } from './erratalist.entity';
-import { LinkList } from './linklist.entity';
+import { ErrataList } from './erratalist.complex';
+import { LinkList } from './linklist.complex';
+import { ErrataListModel } from './erratalist.model';
+import { LinkListModel } from './linklist.model';
+import { ErrataListCollection } from './erratalist.collection';
+import { LinkListCollection } from './linklist.collection';
 //#endregion
 
 export interface Article {

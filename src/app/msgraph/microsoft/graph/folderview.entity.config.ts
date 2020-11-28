@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { FolderView } from './folderview.entity';
+import { FolderViewModel } from './folderview.model';
+import { FolderViewCollection } from './folderview.collection';
 //#endregion
 
 export const FolderViewConfig = {
   name: "folderView",
+  model: FolderViewModel,
+  collection: FolderViewCollection,
   annotations: [],
   fields: {
     sortBy: {type: 'Edm.String'},

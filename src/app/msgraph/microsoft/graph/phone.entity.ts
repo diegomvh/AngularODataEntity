@@ -6,9 +6,9 @@ import { PhoneType } from './phonetype.enum';
 
 export interface Phone {
   //#region ODataApi Properties
-  type?: PhoneType;
+  language?: string;
   number?: string;
   region?: string;
-  language?: string;
+  type?: PhoneType;
   //#endregion
 }

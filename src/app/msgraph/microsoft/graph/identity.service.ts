@@ -22,6 +22,10 @@ import {
 //#region ODataApi Imports
 import { IdentityContainer } from './identitycontainer.entity';
 import { ConditionalAccessRoot } from './conditionalaccessroot.entity';
+import { IdentityContainerModel } from './identitycontainer.model';
+import { ConditionalAccessRootModel } from './conditionalaccessroot.model';
+import { IdentityContainerCollection } from './identitycontainer.collection';
+import { ConditionalAccessRootCollection } from './conditionalaccessroot.collection';
 //#endregion
 
 @Injectable()

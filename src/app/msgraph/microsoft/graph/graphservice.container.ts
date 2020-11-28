@@ -6,21 +6,21 @@ import { UsersServiceConfig } from './users.service.config';
 import { IdentityProvidersServiceConfig } from './identityproviders.service.config';
 import { ApplicationsServiceConfig } from './applications.service.config';
 import { CertificateBasedAuthConfigurationServiceConfig } from './certificatebasedauthconfiguration.service.config';
-import { DirectoryObjectsServiceConfig } from './directoryobjects.service.config';
 import { ContactsServiceConfig } from './contacts.service.config';
+import { ContractsServiceConfig } from './contracts.service.config';
 import { DevicesServiceConfig } from './devices.service.config';
-import { DomainsServiceConfig } from './domains.service.config';
-import { DomainDnsRecordsServiceConfig } from './domaindnsrecords.service.config';
-import { GroupsServiceConfig } from './groups.service.config';
+import { DirectoryObjectsServiceConfig } from './directoryobjects.service.config';
 import { DirectoryRolesServiceConfig } from './directoryroles.service.config';
 import { DirectoryRoleTemplatesServiceConfig } from './directoryroletemplates.service.config';
-import { OrganizationServiceConfig } from './organization.service.config';
+import { DomainDnsRecordsServiceConfig } from './domaindnsrecords.service.config';
+import { DomainsServiceConfig } from './domains.service.config';
+import { GroupsServiceConfig } from './groups.service.config';
 import { GroupSettingsServiceConfig } from './groupsettings.service.config';
 import { GroupSettingTemplatesServiceConfig } from './groupsettingtemplates.service.config';
-import { SubscribedSkusServiceConfig } from './subscribedskus.service.config';
-import { ContractsServiceConfig } from './contracts.service.config';
-import { ServicePrincipalsServiceConfig } from './serviceprincipals.service.config';
 import { Oauth2PermissionGrantsServiceConfig } from './oauth2permissiongrants.service.config';
+import { OrganizationServiceConfig } from './organization.service.config';
+import { ServicePrincipalsServiceConfig } from './serviceprincipals.service.config';
+import { SubscribedSkusServiceConfig } from './subscribedskus.service.config';
 import { WorkbooksServiceConfig } from './workbooks.service.config';
 import { PlacesServiceConfig } from './places.service.config';
 import { DrivesServiceConfig } from './drives.service.config';
@@ -34,9 +34,9 @@ import { TeamsServiceConfig } from './teams.service.config';
 import { TeamsTemplatesServiceConfig } from './teamstemplates.service.config';
 import { AuditLogsServiceConfig } from './auditlogs.service.config';
 import { IdentityServiceConfig } from './identity.service.config';
-import { PoliciesServiceConfig } from './policies.service.config';
-import { MeServiceConfig } from './me.service.config';
 import { DirectoryServiceConfig } from './directory.service.config';
+import { MeServiceConfig } from './me.service.config';
+import { PoliciesServiceConfig } from './policies.service.config';
 import { EducationServiceConfig } from './education.service.config';
 import { DriveServiceConfig } from './drive.service.config';
 import { CommunicationsServiceConfig } from './communications.service.config';
@@ -45,8 +45,8 @@ import { DeviceManagementServiceConfig } from './devicemanagement.service.config
 import { ReportsServiceConfig } from './reports.service.config';
 import { PlannerServiceConfig } from './planner.service.config';
 import { SecurityServiceConfig } from './security.service.config';
-import { TeamworkServiceConfig } from './teamwork.service.config';
 import { AppCatalogsServiceConfig } from './appcatalogs.service.config';
+import { TeamworkServiceConfig } from './teamwork.service.config';
 import { InformationProtectionServiceConfig } from './informationprotection.service.config';
 //#endregion
 
@@ -59,21 +59,21 @@ export const GraphServiceContainer = {
     IdentityProvidersServiceConfig,
     ApplicationsServiceConfig,
     CertificateBasedAuthConfigurationServiceConfig,
-    DirectoryObjectsServiceConfig,
     ContactsServiceConfig,
+    ContractsServiceConfig,
     DevicesServiceConfig,
-    DomainsServiceConfig,
-    DomainDnsRecordsServiceConfig,
-    GroupsServiceConfig,
+    DirectoryObjectsServiceConfig,
     DirectoryRolesServiceConfig,
     DirectoryRoleTemplatesServiceConfig,
-    OrganizationServiceConfig,
+    DomainDnsRecordsServiceConfig,
+    DomainsServiceConfig,
+    GroupsServiceConfig,
     GroupSettingsServiceConfig,
     GroupSettingTemplatesServiceConfig,
-    SubscribedSkusServiceConfig,
-    ContractsServiceConfig,
-    ServicePrincipalsServiceConfig,
     Oauth2PermissionGrantsServiceConfig,
+    OrganizationServiceConfig,
+    ServicePrincipalsServiceConfig,
+    SubscribedSkusServiceConfig,
     WorkbooksServiceConfig,
     PlacesServiceConfig,
     DrivesServiceConfig,
@@ -87,9 +87,9 @@ export const GraphServiceContainer = {
     TeamsTemplatesServiceConfig,
     AuditLogsServiceConfig,
     IdentityServiceConfig,
-    PoliciesServiceConfig,
-    MeServiceConfig,
     DirectoryServiceConfig,
+    MeServiceConfig,
+    PoliciesServiceConfig,
     EducationServiceConfig,
     DriveServiceConfig,
     CommunicationsServiceConfig,
@@ -98,8 +98,8 @@ export const GraphServiceContainer = {
     ReportsServiceConfig,
     PlannerServiceConfig,
     SecurityServiceConfig,
-    TeamworkServiceConfig,
     AppCatalogsServiceConfig,
+    TeamworkServiceConfig,
     InformationProtectionServiceConfig
   ]
 } as ContainerConfig;

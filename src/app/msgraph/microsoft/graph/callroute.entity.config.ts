@@ -2,14 +2,18 @@
 
 //#region ODataApi Imports
 import { CallRoute } from './callroute.entity';
+import { CallRouteModel } from './callroute.model';
+import { CallRouteCollection } from './callroute.collection';
 //#endregion
 
 export const CallRouteConfig = {
   name: "callRoute",
+  model: CallRouteModel,
+  collection: CallRouteCollection,
   annotations: [],
   fields: {
-    routingType: {type: 'graph.routingType', nullable: false},
+    final: {type: 'graph.identitySet', nullable: false},
     original: {type: 'graph.identitySet', nullable: false},
-    final: {type: 'graph.identitySet', nullable: false}
+    routingType: {type: 'graph.routingType', nullable: false}
   }
 } as EntityConfig<CallRoute>;

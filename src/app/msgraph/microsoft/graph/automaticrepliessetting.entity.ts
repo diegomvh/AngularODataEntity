@@ -4,15 +4,17 @@
 import { AutomaticRepliesStatus } from './automaticrepliesstatus.enum';
 import { ExternalAudienceScope } from './externalaudiencescope.enum';
 import { DateTimeTimeZone } from './datetimetimezone.entity';
+import { DateTimeTimeZoneModel } from './datetimetimezone.model';
+import { DateTimeTimeZoneCollection } from './datetimetimezone.collection';
 //#endregion
 
 export interface AutomaticRepliesSetting {
   //#region ODataApi Properties
-  status?: AutomaticRepliesStatus;
   externalAudience?: ExternalAudienceScope;
-  scheduledStartDateTime?: DateTimeTimeZone;
-  scheduledEndDateTime?: DateTimeTimeZone;
-  internalReplyMessage?: string;
   externalReplyMessage?: string;
+  internalReplyMessage?: string;
+  scheduledEndDateTime?: DateTimeTimeZone;
+  scheduledStartDateTime?: DateTimeTimeZone;
+  status?: AutomaticRepliesStatus;
   //#endregion
 }

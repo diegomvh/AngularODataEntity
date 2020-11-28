@@ -3,13 +3,15 @@
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
 import { DeviceComplianceActionType } from './devicecomplianceactiontype.enum';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface DeviceComplianceActionItem extends Entity {
   //#region ODataApi Properties
-  gracePeriodHours: number;
   actionType: DeviceComplianceActionType;
-  notificationTemplateId?: string;
+  gracePeriodHours: number;
   notificationMessageCCList?: string[];
+  notificationTemplateId?: string;
   //#endregion
 }

@@ -2,7 +2,9 @@
 
 //#region ODataApi Imports
 import { PageType } from './pagetype.enum';
-import { LinkList } from './linklist.entity';
+import { LinkList } from './linklist.complex';
+import { LinkListModel } from './linklist.model';
+import { LinkListCollection } from './linklist.collection';
 //#endregion
 
 export interface Page {

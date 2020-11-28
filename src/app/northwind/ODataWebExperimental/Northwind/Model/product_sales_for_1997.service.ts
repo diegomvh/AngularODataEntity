@@ -31,11 +31,20 @@ export class ProductSalesFor1997Service extends ODataEntityService<ProductSalesF
     super(client, 'Product_Sales_for_1997', 'NorthwindModel.Product_Sales_for_1997');
   }
 
+  //#region ODataApi Model
   productSalesFor1997Model(): ProductSalesFor1997Model<ProductSalesFor1997> {
     return super.model() as ProductSalesFor1997Model<ProductSalesFor1997>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   productSalesFor1997Collection(): ProductSalesFor1997Collection<ProductSalesFor1997, ProductSalesFor1997Model<ProductSalesFor1997>> {
     return super.collection() as ProductSalesFor1997Collection<ProductSalesFor1997, ProductSalesFor1997Model<ProductSalesFor1997>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

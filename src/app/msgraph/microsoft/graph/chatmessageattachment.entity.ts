@@ -5,10 +5,10 @@
 
 export interface ChatMessageAttachment {
   //#region ODataApi Properties
-  id?: string;
+  content?: string;
   contentType?: string;
   contentUrl?: string;
-  content?: string;
+  id?: string;
   name?: string;
   thumbnailUrl?: string;
   //#endregion

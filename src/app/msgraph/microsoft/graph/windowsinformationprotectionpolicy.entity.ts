@@ -3,21 +3,23 @@
 //#region ODataApi Imports
 import { WindowsInformationProtection } from './windowsinformationprotection.entity';
 import { WindowsInformationProtectionPinCharacterRequirements } from './windowsinformationprotectionpincharacterrequirements.enum';
+import { WindowsInformationProtectionModel } from './windowsinformationprotection.model';
+import { WindowsInformationProtectionCollection } from './windowsinformationprotection.collection';
 //#endregion
 
 export interface WindowsInformationProtectionPolicy extends WindowsInformationProtection {
   //#region ODataApi Properties
-  revokeOnMdmHandoffDisabled: boolean;
+  daysWithoutContactBeforeUnenroll: number;
   mdmEnrollmentUrl?: string;
-  windowsHelloForBusinessBlocked: boolean;
-  pinMinimumLength: number;
-  pinUppercaseLetters: WindowsInformationProtectionPinCharacterRequirements;
-  pinLowercaseLetters: WindowsInformationProtectionPinCharacterRequirements;
-  pinSpecialCharacters: WindowsInformationProtectionPinCharacterRequirements;
-  pinExpirationDays: number;
+  minutesOfInactivityBeforeDeviceLock: number;
   numberOfPastPinsRemembered: number;
   passwordMaximumAttemptCount: number;
-  minutesOfInactivityBeforeDeviceLock: number;
-  daysWithoutContactBeforeUnenroll: number;
+  pinExpirationDays: number;
+  pinLowercaseLetters: WindowsInformationProtectionPinCharacterRequirements;
+  pinMinimumLength: number;
+  pinSpecialCharacters: WindowsInformationProtectionPinCharacterRequirements;
+  pinUppercaseLetters: WindowsInformationProtectionPinCharacterRequirements;
+  revokeOnMdmHandoffDisabled: boolean;
+  windowsHelloForBusinessBlocked: boolean;
   //#endregion
 }

@@ -2,13 +2,17 @@
 
 //#region ODataApi Imports
 import { RequiredResourceAccess } from './requiredresourceaccess.entity';
+import { RequiredResourceAccessModel } from './requiredresourceaccess.model';
+import { RequiredResourceAccessCollection } from './requiredresourceaccess.collection';
 //#endregion
 
 export const RequiredResourceAccessConfig = {
   name: "requiredResourceAccess",
+  model: RequiredResourceAccessModel,
+  collection: RequiredResourceAccessCollection,
   annotations: [],
   fields: {
-    resourceAppId: {type: 'Edm.String', nullable: false},
-    resourceAccess: {type: 'graph.resourceAccess', nullable: false, collection: true}
+    resourceAccess: {type: 'graph.resourceAccess', nullable: false, collection: true},
+    resourceAppId: {type: 'Edm.String', nullable: false}
   }
 } as EntityConfig<RequiredResourceAccess>;

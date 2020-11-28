@@ -2,12 +2,12 @@
 
 //#region ODataApi Imports
 import { Point } from 'geojson';
-import { Location } from './location.entity';
+import { Location, Location as TripPinLocation } from './location.entity';
 import { LocationModel } from './location.model';
 import { LocationCollection } from './location.collection';
 //#endregion
 
-export interface AirportLocation extends Location {
+export interface AirportLocation extends TripPinLocation {
   //#region ODataApi Properties
   Loc: Point;
   //#endregion

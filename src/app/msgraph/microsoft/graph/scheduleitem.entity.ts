@@ -3,15 +3,17 @@
 //#region ODataApi Imports
 import { FreeBusyStatus } from './freebusystatus.enum';
 import { DateTimeTimeZone } from './datetimetimezone.entity';
+import { DateTimeTimeZoneModel } from './datetimetimezone.model';
+import { DateTimeTimeZoneCollection } from './datetimetimezone.collection';
 //#endregion
 
 export interface ScheduleItem {
   //#region ODataApi Properties
-  start?: DateTimeTimeZone;
   end?: DateTimeTimeZone;
   isPrivate?: boolean;
+  location?: string;
+  start?: DateTimeTimeZone;
   status?: FreeBusyStatus;
   subject?: string;
-  location?: string;
   //#endregion
 }

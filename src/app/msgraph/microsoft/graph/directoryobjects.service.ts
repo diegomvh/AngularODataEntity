@@ -22,6 +22,10 @@ import {
 //#region ODataApi Imports
 import { DirectoryObject } from './directoryobject.entity';
 import { ExtensionProperty } from './extensionproperty.entity';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { ExtensionPropertyModel } from './extensionproperty.model';
+import { DirectoryObjectCollection } from './directoryobject.collection';
+import { ExtensionPropertyCollection } from './extensionproperty.collection';
 //#endregion
 
 @Injectable()
@@ -30,19 +34,17 @@ export class DirectoryObjectsService extends ODataEntityService<DirectoryObject>
     super(client, 'directoryObjects', 'microsoft.graph.directoryObject');
   }
 
+  //#region ODataApi Model
+  directoryObjectModel(): DirectoryObjectModel<DirectoryObject> {
+    return super.model() as DirectoryObjectModel<DirectoryObject>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  directoryObjectCollection(): DirectoryObjectCollection<DirectoryObject, DirectoryObjectModel<DirectoryObject>> {
+    return super.collection() as DirectoryObjectCollection<DirectoryObject, DirectoryObjectModel<DirectoryObject>>;
+  }
+  //#endregion
   //#region ODataApi Actions
-  public getByIds(): ODataActionResource<{ids: string[], types: string[]}, DirectoryObject> {
-    const resource = this.entities().action<{ids: string[], types: string[]}, DirectoryObject>('microsoft.graph.getByIds');
-    return resource;
-  }
-  public getAvailableExtensionProperties(): ODataActionResource<{isSyncedFromOnPremises: boolean}, ExtensionProperty> {
-    const resource = this.entities().action<{isSyncedFromOnPremises: boolean}, ExtensionProperty>('microsoft.graph.getAvailableExtensionProperties');
-    return resource;
-  }
-  public validateProperties(): ODataActionResource<{entityType: string, displayName: string, mailNickname: string, onBehalfOfUserId: string}, any> {
-    const resource = this.entities().action<{entityType: string, displayName: string, mailNickname: string, onBehalfOfUserId: string}, any>('microsoft.graph.validateProperties');
-    return resource;
-  }
   public checkMemberGroups(entity: EntityKey<DirectoryObject>): ODataActionResource<{groupIds: string[]}, string> {
     const resource = this.entity(entity).action<{groupIds: string[]}, string>('microsoft.graph.checkMemberGroups');
     return resource;
@@ -61,6 +63,18 @@ export class DirectoryObjectsService extends ODataEntityService<DirectoryObject>
   }
   public restore(entity: EntityKey<DirectoryObject>): ODataActionResource<null, DirectoryObject> {
     const resource = this.entity(entity).action<null, DirectoryObject>('microsoft.graph.restore');
+    return resource;
+  }
+  public getAvailableExtensionProperties(): ODataActionResource<{isSyncedFromOnPremises: boolean}, ExtensionProperty> {
+    const resource = this.entities().action<{isSyncedFromOnPremises: boolean}, ExtensionProperty>('microsoft.graph.getAvailableExtensionProperties');
+    return resource;
+  }
+  public getByIds(): ODataActionResource<{ids: string[], types: string[]}, DirectoryObject> {
+    const resource = this.entities().action<{ids: string[], types: string[]}, DirectoryObject>('microsoft.graph.getByIds');
+    return resource;
+  }
+  public validateProperties(): ODataActionResource<{entityType: string, displayName: string, mailNickname: string, onBehalfOfUserId: string}, any> {
+    const resource = this.entities().action<{entityType: string, displayName: string, mailNickname: string, onBehalfOfUserId: string}, any>('microsoft.graph.validateProperties');
     return resource;
   }
   //#endregion

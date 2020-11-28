@@ -1,11 +1,15 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { SearchResultItem } from './searchresultitem.entity';
+import { SearchResultItemModel } from './searchresultitem.model';
+import { SearchResultItemCollection } from './searchresultitem.collection';
 //#endregion
 
 export const SearchResultItemConfig = {
   name: "SearchResultItem",
+  model: SearchResultItemModel,
+  collection: SearchResultItemCollection,
   annotations: [],
   fields: {
     UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
@@ -28,4 +32,4 @@ export const SearchResultItemConfig = {
     ItemNameLowerCase: {type: 'Edm.String'},
     SortOrder: {type: 'Edm.Int32', nullable: false}
   }
-} as EntityConfig<SearchResultItem>;
+} as StructuredTypeConfig<SearchResultItem>;

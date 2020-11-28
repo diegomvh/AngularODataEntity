@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { WorkbookChartDataLabels } from './workbookchartdatalabels.entity';
+import { WorkbookChartDataLabelsModel } from './workbookchartdatalabels.model';
+import { WorkbookChartDataLabelsCollection } from './workbookchartdatalabels.collection';
 //#endregion
 
 export const WorkbookChartDataLabelsConfig = {
   name: "workbookChartDataLabels",
   base: "microsoft.graph.entity",
+  model: WorkbookChartDataLabelsModel,
+  collection: WorkbookChartDataLabelsCollection,
   annotations: [],
   fields: {
     position: {type: 'Edm.String'},

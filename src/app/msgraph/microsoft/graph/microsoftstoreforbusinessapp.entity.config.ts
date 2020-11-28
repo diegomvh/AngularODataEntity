@@ -2,17 +2,21 @@
 
 //#region ODataApi Imports
 import { MicrosoftStoreForBusinessApp } from './microsoftstoreforbusinessapp.entity';
+import { MicrosoftStoreForBusinessAppModel } from './microsoftstoreforbusinessapp.model';
+import { MicrosoftStoreForBusinessAppCollection } from './microsoftstoreforbusinessapp.collection';
 //#endregion
 
 export const MicrosoftStoreForBusinessAppConfig = {
   name: "microsoftStoreForBusinessApp",
   base: "microsoft.graph.mobileApp",
+  model: MicrosoftStoreForBusinessAppModel,
+  collection: MicrosoftStoreForBusinessAppCollection,
   annotations: [],
   fields: {
-    usedLicenseCount: {type: 'Edm.Int32', nullable: false},
-    totalLicenseCount: {type: 'Edm.Int32', nullable: false},
-    productKey: {type: 'Edm.String'},
     licenseType: {type: 'graph.microsoftStoreForBusinessLicenseType', nullable: false},
-    packageIdentityName: {type: 'Edm.String'}
+    packageIdentityName: {type: 'Edm.String'},
+    productKey: {type: 'Edm.String'},
+    totalLicenseCount: {type: 'Edm.Int32', nullable: false},
+    usedLicenseCount: {type: 'Edm.Int32', nullable: false}
   }
 } as EntityConfig<MicrosoftStoreForBusinessApp>;

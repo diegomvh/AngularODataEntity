@@ -2,17 +2,21 @@
 
 //#region ODataApi Imports
 import { ManagedAppPolicyDeploymentSummary } from './managedapppolicydeploymentsummary.entity';
+import { ManagedAppPolicyDeploymentSummaryModel } from './managedapppolicydeploymentsummary.model';
+import { ManagedAppPolicyDeploymentSummaryCollection } from './managedapppolicydeploymentsummary.collection';
 //#endregion
 
 export const ManagedAppPolicyDeploymentSummaryConfig = {
   name: "managedAppPolicyDeploymentSummary",
   base: "microsoft.graph.entity",
+  model: ManagedAppPolicyDeploymentSummaryModel,
+  collection: ManagedAppPolicyDeploymentSummaryCollection,
   annotations: [],
   fields: {
-    displayName: {type: 'Edm.String'},
     configurationDeployedUserCount: {type: 'Edm.Int32', nullable: false},
-    lastRefreshTime: {type: 'Edm.DateTimeOffset', nullable: false},
     configurationDeploymentSummaryPerApp: {type: 'graph.managedAppPolicyDeploymentSummaryPerApp', collection: true},
+    displayName: {type: 'Edm.String'},
+    lastRefreshTime: {type: 'Edm.DateTimeOffset', nullable: false},
     version: {type: 'Edm.String'}
   }
 } as EntityConfig<ManagedAppPolicyDeploymentSummary>;

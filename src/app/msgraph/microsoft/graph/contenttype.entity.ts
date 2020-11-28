@@ -5,6 +5,14 @@ import { Entity } from './entity.entity';
 import { ItemReference } from './itemreference.entity';
 import { ContentTypeOrder } from './contenttypeorder.entity';
 import { ColumnLink } from './columnlink.entity';
+import { ItemReferenceModel } from './itemreference.model';
+import { ContentTypeOrderModel } from './contenttypeorder.model';
+import { EntityModel } from './entity.model';
+import { ColumnLinkModel } from './columnlink.model';
+import { ItemReferenceCollection } from './itemreference.collection';
+import { ContentTypeOrderCollection } from './contenttypeorder.collection';
+import { EntityCollection } from './entity.collection';
+import { ColumnLinkCollection } from './columnlink.collection';
 //#endregion
 
 export interface ContentType extends Entity {

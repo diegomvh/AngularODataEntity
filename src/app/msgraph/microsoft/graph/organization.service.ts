@@ -27,6 +27,18 @@ import { PrivacyProfile } from './privacyprofile.entity';
 import { VerifiedDomain } from './verifieddomain.entity';
 import { CertificateBasedAuthConfiguration } from './certificatebasedauthconfiguration.entity';
 import { Organization } from './organization.entity';
+import { AssignedPlanModel } from './assignedplan.model';
+import { ProvisionedPlanModel } from './provisionedplan.model';
+import { PrivacyProfileModel } from './privacyprofile.model';
+import { VerifiedDomainModel } from './verifieddomain.model';
+import { CertificateBasedAuthConfigurationModel } from './certificatebasedauthconfiguration.model';
+import { OrganizationModel } from './organization.model';
+import { AssignedPlanCollection } from './assignedplan.collection';
+import { ProvisionedPlanCollection } from './provisionedplan.collection';
+import { PrivacyProfileCollection } from './privacyprofile.collection';
+import { VerifiedDomainCollection } from './verifieddomain.collection';
+import { CertificateBasedAuthConfigurationCollection } from './certificatebasedauthconfiguration.collection';
+import { OrganizationCollection } from './organization.collection';
 //#endregion
 
 @Injectable()
@@ -35,6 +47,16 @@ export class OrganizationService extends ODataEntityService<Organization> {
     super(client, 'organization', 'microsoft.graph.organization');
   }
 
+  //#region ODataApi Model
+  organizationModel(): OrganizationModel<Organization> {
+    return super.model() as OrganizationModel<Organization>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  organizationCollection(): OrganizationCollection<Organization, OrganizationModel<Organization>> {
+    return super.collection() as OrganizationCollection<Organization, OrganizationModel<Organization>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   public setMobileDeviceManagementAuthority(entity: EntityKey<Organization>): ODataActionResource<null, number> {
     const resource = this.entity(entity).action<null, number>('microsoft.graph.setMobileDeviceManagementAuthority');

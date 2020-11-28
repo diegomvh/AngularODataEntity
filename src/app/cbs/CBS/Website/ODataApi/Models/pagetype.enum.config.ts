@@ -1,4 +1,4 @@
-﻿import { EnumConfig } from 'angular-odata';
+﻿import { EnumTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { PageType } from './pagetype.enum';
@@ -7,4 +7,4 @@ import { PageType } from './pagetype.enum';
 export const PageTypeConfig = {
   name: "PageType",
   members: PageType
-} as EnumConfig<PageType>;
+} as EnumTypeConfig<PageType>;

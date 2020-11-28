@@ -1,11 +1,15 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Vacancy } from './vacancy.entity';
+import { VacancyModel } from './vacancy.model';
+import { VacancyCollection } from './vacancy.collection';
 //#endregion
 
 export const VacancyConfig = {
   name: "Vacancy",
+  model: VacancyModel,
+  collection: VacancyCollection,
   annotations: [],
   fields: {
     UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
@@ -41,4 +45,4 @@ export const VacancyConfig = {
     Created: {type: 'Edm.DateTimeOffset', nullable: false},
     Permalink: {type: 'Edm.String'}
   }
-} as EntityConfig<Vacancy>;
+} as StructuredTypeConfig<Vacancy>;

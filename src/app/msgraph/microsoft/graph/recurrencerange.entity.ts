@@ -6,10 +6,10 @@ import { RecurrenceRangeType } from './recurrencerangetype.enum';
 
 export interface RecurrenceRange {
   //#region ODataApi Properties
-  type?: RecurrenceRangeType;
-  startDate?: Date;
   endDate?: Date;
-  recurrenceTimeZone?: string;
   numberOfOccurrences: number;
+  recurrenceTimeZone?: string;
+  startDate?: Date;
+  type?: RecurrenceRangeType;
   //#endregion
 }

@@ -5,8 +5,8 @@
 
 export interface ManagedAppDiagnosticStatus {
   //#region ODataApi Properties
-  validationName?: string;
-  state?: string;
   mitigationInstruction?: string;
+  state?: string;
+  validationName?: string;
   //#endregion
 }

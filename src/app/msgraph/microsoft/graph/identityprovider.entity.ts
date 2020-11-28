@@ -2,13 +2,15 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface IdentityProvider extends Entity {
   //#region ODataApi Properties
-  type?: string;
-  name?: string;
   clientId?: string;
   clientSecret?: string;
+  name?: string;
+  type?: string;
   //#endregion
 }

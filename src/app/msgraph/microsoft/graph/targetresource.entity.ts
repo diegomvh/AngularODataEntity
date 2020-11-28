@@ -3,15 +3,17 @@
 //#region ODataApi Imports
 import { GroupType } from './grouptype.enum';
 import { ModifiedProperty } from './modifiedproperty.entity';
+import { ModifiedPropertyModel } from './modifiedproperty.model';
+import { ModifiedPropertyCollection } from './modifiedproperty.collection';
 //#endregion
 
 export interface TargetResource {
   //#region ODataApi Properties
-  id?: string;
   displayName?: string;
+  groupType?: GroupType;
+  id?: string;
+  modifiedProperties?: ModifiedProperty[];
   type?: string;
   userPrincipalName?: string;
-  groupType?: GroupType;
-  modifiedProperties?: ModifiedProperty[];
   //#endregion
 }

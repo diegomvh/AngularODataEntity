@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { KeyValue } from './keyvalue.entity';
+import { KeyValueModel } from './keyvalue.model';
+import { KeyValueCollection } from './keyvalue.collection';
 //#endregion
 
 export const KeyValueConfig = {
   name: "keyValue",
+  model: KeyValueModel,
+  collection: KeyValueCollection,
   annotations: [],
   fields: {
     key: {type: 'Edm.String'},

@@ -5,13 +5,13 @@
 
 export interface DeviceGeoLocation {
   //#region ODataApi Properties
-  lastCollectedDateTime: Date;
-  longitude: number;
-  latitude: number;
   altitude: number;
-  horizontalAccuracy: number;
-  verticalAccuracy: number;
   heading: number;
+  horizontalAccuracy: number;
+  lastCollectedDateTime: Date;
+  latitude: number;
+  longitude: number;
   speed: number;
+  verticalAccuracy: number;
   //#endregion
 }

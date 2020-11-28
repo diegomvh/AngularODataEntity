@@ -5,6 +5,10 @@ import { DeviceConfiguration } from './deviceconfiguration.entity';
 import { AppListType } from './applisttype.enum';
 import { RequiredPasswordType } from './requiredpasswordtype.enum';
 import { AppListItem } from './applistitem.entity';
+import { AppListItemModel } from './applistitem.model';
+import { DeviceConfigurationModel } from './deviceconfiguration.model';
+import { AppListItemCollection } from './applistitem.collection';
+import { DeviceConfigurationCollection } from './deviceconfiguration.collection';
 //#endregion
 
 export interface WindowsPhone81GeneralConfiguration extends DeviceConfiguration {
@@ -14,8 +18,8 @@ export interface WindowsPhone81GeneralConfiguration extends DeviceConfiguration 
   bluetoothBlocked: boolean;
   cameraBlocked: boolean;
   cellularBlockWifiTethering: boolean;
-  compliantAppsList?: AppListItem[];
   compliantAppListType: AppListType;
+  compliantAppsList?: AppListItem[];
   diagnosticDataBlockSubmission: boolean;
   emailBlockAddingAccounts: boolean;
   locationServicesBlocked: boolean;
@@ -23,19 +27,19 @@ export interface WindowsPhone81GeneralConfiguration extends DeviceConfiguration 
   nfcBlocked: boolean;
   passwordBlockSimple: boolean;
   passwordExpirationDays?: number;
+  passwordMinimumCharacterSetCount?: number;
   passwordMinimumLength?: number;
   passwordMinutesOfInactivityBeforeScreenTimeout?: number;
-  passwordMinimumCharacterSetCount?: number;
   passwordPreviousPasswordBlockCount?: number;
-  passwordSignInFailureCountBeforeFactoryReset?: number;
-  passwordRequiredType: RequiredPasswordType;
   passwordRequired: boolean;
+  passwordRequiredType: RequiredPasswordType;
+  passwordSignInFailureCountBeforeFactoryReset?: number;
   screenCaptureBlocked: boolean;
   storageBlockRemovableStorage: boolean;
   storageRequireEncryption: boolean;
   webBrowserBlocked: boolean;
-  wifiBlocked: boolean;
   wifiBlockAutomaticConnectHotspots: boolean;
+  wifiBlocked: boolean;
   wifiBlockHotspotReporting: boolean;
   windowsStoreBlocked: boolean;
   //#endregion

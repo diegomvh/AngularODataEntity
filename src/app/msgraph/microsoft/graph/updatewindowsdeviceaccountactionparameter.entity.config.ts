@@ -2,17 +2,21 @@
 
 //#region ODataApi Imports
 import { UpdateWindowsDeviceAccountActionParameter } from './updatewindowsdeviceaccountactionparameter.entity';
+import { UpdateWindowsDeviceAccountActionParameterModel } from './updatewindowsdeviceaccountactionparameter.model';
+import { UpdateWindowsDeviceAccountActionParameterCollection } from './updatewindowsdeviceaccountactionparameter.collection';
 //#endregion
 
 export const UpdateWindowsDeviceAccountActionParameterConfig = {
   name: "updateWindowsDeviceAccountActionParameter",
+  model: UpdateWindowsDeviceAccountActionParameterModel,
+  collection: UpdateWindowsDeviceAccountActionParameterCollection,
   annotations: [],
   fields: {
-    deviceAccount: {type: 'graph.windowsDeviceAccount'},
-    passwordRotationEnabled: {type: 'Edm.Boolean'},
     calendarSyncEnabled: {type: 'Edm.Boolean'},
+    deviceAccount: {type: 'graph.windowsDeviceAccount'},
     deviceAccountEmail: {type: 'Edm.String'},
     exchangeServer: {type: 'Edm.String'},
+    passwordRotationEnabled: {type: 'Edm.Boolean'},
     sessionInitiationProtocalAddress: {type: 'Edm.String'}
   }
 } as EntityConfig<UpdateWindowsDeviceAccountActionParameter>;

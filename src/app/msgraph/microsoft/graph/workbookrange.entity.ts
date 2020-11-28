@@ -6,6 +6,16 @@ import { Json } from './json.entity';
 import { WorkbookWorksheet } from './workbookworksheet.entity';
 import { WorkbookRangeFormat } from './workbookrangeformat.entity';
 import { WorkbookRangeSort } from './workbookrangesort.entity';
+import { JsonModel } from './json.model';
+import { EntityModel } from './entity.model';
+import { WorkbookWorksheetModel } from './workbookworksheet.model';
+import { WorkbookRangeFormatModel } from './workbookrangeformat.model';
+import { WorkbookRangeSortModel } from './workbookrangesort.model';
+import { JsonCollection } from './json.collection';
+import { EntityCollection } from './entity.collection';
+import { WorkbookWorksheetCollection } from './workbookworksheet.collection';
+import { WorkbookRangeFormatCollection } from './workbookrangeformat.collection';
+import { WorkbookRangeSortCollection } from './workbookrangesort.collection';
 //#endregion
 
 export interface WorkbookRange extends Entity {
@@ -25,8 +35,8 @@ export interface WorkbookRange extends Entity {
   rowHidden?: boolean;
   rowIndex: number;
   text?: Json;
-  valueTypes?: Json;
   values?: Json;
+  valueTypes?: Json;
   format?: WorkbookRangeFormat;
   sort?: WorkbookRangeSort;
   worksheet?: WorkbookWorksheet;

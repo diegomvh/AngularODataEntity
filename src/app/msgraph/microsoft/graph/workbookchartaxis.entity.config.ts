@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { WorkbookChartAxis } from './workbookchartaxis.entity';
+import { WorkbookChartAxisModel } from './workbookchartaxis.model';
+import { WorkbookChartAxisCollection } from './workbookchartaxis.collection';
 //#endregion
 
 export const WorkbookChartAxisConfig = {
   name: "workbookChartAxis",
   base: "microsoft.graph.entity",
+  model: WorkbookChartAxisModel,
+  collection: WorkbookChartAxisCollection,
   annotations: [],
   fields: {
     majorUnit: {type: 'graph.Json'},

@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Process } from './process.entity';
+import { ProcessModel } from './process.model';
+import { ProcessCollection } from './process.collection';
 //#endregion
 
 export const ProcessConfig = {
   name: "process",
+  model: ProcessModel,
+  collection: ProcessCollection,
   annotations: [],
   fields: {
     accountName: {type: 'Edm.String'},

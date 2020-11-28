@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { SharepointIds } from './sharepointids.entity';
+import { SharepointIdsModel } from './sharepointids.model';
+import { SharepointIdsCollection } from './sharepointids.collection';
 //#endregion
 
 export interface ItemReference {

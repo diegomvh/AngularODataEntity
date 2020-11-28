@@ -3,21 +3,23 @@
 //#region ODataApi Imports
 import { ComplianceStatus } from './compliancestatus.enum';
 import { SettingSource } from './settingsource.entity';
+import { SettingSourceModel } from './settingsource.model';
+import { SettingSourceCollection } from './settingsource.collection';
 //#endregion
 
 export interface DeviceCompliancePolicySettingState {
   //#region ODataApi Properties
-  setting?: string;
-  settingName?: string;
-  instanceDisplayName?: string;
-  state: ComplianceStatus;
+  currentValue?: string;
   errorCode: number;
   errorDescription?: string;
+  instanceDisplayName?: string;
+  setting?: string;
+  settingName?: string;
+  sources?: SettingSource[];
+  state: ComplianceStatus;
+  userEmail?: string;
   userId?: string;
   userName?: string;
-  userEmail?: string;
   userPrincipalName?: string;
-  sources?: SettingSource[];
-  currentValue?: string;
   //#endregion
 }

@@ -2,13 +2,15 @@
 
 //#region ODataApi Imports
 import { ImplicitGrantSettings } from './implicitgrantsettings.entity';
+import { ImplicitGrantSettingsModel } from './implicitgrantsettings.model';
+import { ImplicitGrantSettingsCollection } from './implicitgrantsettings.collection';
 //#endregion
 
 export interface WebApplication {
   //#region ODataApi Properties
   homePageUrl?: string;
-  redirectUris: string[];
-  logoutUrl?: string;
   implicitGrantSettings?: ImplicitGrantSettings;
+  logoutUrl?: string;
+  redirectUris: string[];
   //#endregion
 }

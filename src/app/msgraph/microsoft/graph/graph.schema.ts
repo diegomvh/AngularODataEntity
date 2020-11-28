@@ -1,82 +1,106 @@
 ﻿import { SchemaConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { RiskLevelConfig } from './risklevel.enum.config';
 import { AppliedConditionalAccessPolicyResultConfig } from './appliedconditionalaccesspolicyresult.enum.config';
 import { ConditionalAccessStatusConfig } from './conditionalaccessstatus.enum.config';
 import { GroupTypeConfig } from './grouptype.enum.config';
 import { OperationResultConfig } from './operationresult.enum.config';
-import { RiskStateConfig } from './riskstate.enum.config';
 import { RiskDetailConfig } from './riskdetail.enum.config';
 import { RiskEventTypeConfig } from './riskeventtype.enum.config';
+import { RiskLevelConfig } from './risklevel.enum.config';
+import { RiskStateConfig } from './riskstate.enum.config';
 import { PhoneTypeConfig } from './phonetype.enum.config';
-import { EducationUserRoleConfig } from './educationuserrole.enum.config';
 import { EducationExternalSourceConfig } from './educationexternalsource.enum.config';
 import { EducationGenderConfig } from './educationgender.enum.config';
+import { EducationUserRoleConfig } from './educationuserrole.enum.config';
 import { WorkbookOperationStatusConfig } from './workbookoperationstatus.enum.config';
-import { AttendeeTypeConfig } from './attendeetype.enum.config';
 import { ActivityDomainConfig } from './activitydomain.enum.config';
+import { AttendeeTypeConfig } from './attendeetype.enum.config';
 import { FreeBusyStatusConfig } from './freebusystatus.enum.config';
 import { LocationTypeConfig } from './locationtype.enum.config';
-import { PhysicalAddressTypeConfig } from './physicaladdresstype.enum.config';
 import { LocationUniqueIdTypeConfig } from './locationuniqueidtype.enum.config';
+import { PhysicalAddressTypeConfig } from './physicaladdresstype.enum.config';
 import { BookingTypeConfig } from './bookingtype.enum.config';
-import { DayOfWeekConfig } from './dayofweek.enum.config';
+import { AttachmentTypeConfig } from './attachmenttype.enum.config';
 import { AutomaticRepliesStatusConfig } from './automaticrepliesstatus.enum.config';
-import { ExternalAudienceScopeConfig } from './externalaudiencescope.enum.config';
-import { DelegateMeetingMessageDeliveryOptionsConfig } from './delegatemeetingmessagedeliveryoptions.enum.config';
-import { MailTipsTypeConfig } from './mailtipstype.enum.config';
-import { RecipientScopeTypeConfig } from './recipientscopetype.enum.config';
-import { ExchangeIdFormatConfig } from './exchangeidformat.enum.config';
-import { TimeZoneStandardConfig } from './timezonestandard.enum.config';
 import { BodyTypeConfig } from './bodytype.enum.config';
-import { ImportanceConfig } from './importance.enum.config';
-import { InferenceClassificationTypeConfig } from './inferenceclassificationtype.enum.config';
-import { FollowupFlagStatusConfig } from './followupflagstatus.enum.config';
+import { CalendarColorConfig } from './calendarcolor.enum.config';
+import { CalendarRoleTypeConfig } from './calendarroletype.enum.config';
+import { CalendarSharingActionConfig } from './calendarsharingaction.enum.config';
 import { CalendarSharingActionImportanceConfig } from './calendarsharingactionimportance.enum.config';
 import { CalendarSharingActionTypeConfig } from './calendarsharingactiontype.enum.config';
-import { CalendarSharingActionConfig } from './calendarsharingaction.enum.config';
-import { MeetingMessageTypeConfig } from './meetingmessagetype.enum.config';
-import { EventTypeConfig } from './eventtype.enum.config';
-import { RecurrencePatternTypeConfig } from './recurrencepatterntype.enum.config';
-import { WeekIndexConfig } from './weekindex.enum.config';
-import { RecurrenceRangeTypeConfig } from './recurrencerangetype.enum.config';
-import { MeetingRequestTypeConfig } from './meetingrequesttype.enum.config';
-import { ResponseTypeConfig } from './responsetype.enum.config';
-import { CalendarColorConfig } from './calendarcolor.enum.config';
-import { OnlineMeetingProviderTypeConfig } from './onlinemeetingprovidertype.enum.config';
-import { CalendarRoleTypeConfig } from './calendarroletype.enum.config';
-import { SensitivityConfig } from './sensitivity.enum.config';
-import { SelectionLikelihoodInfoConfig } from './selectionlikelihoodinfo.enum.config';
-import { WebsiteTypeConfig } from './websitetype.enum.config';
 import { CategoryColorConfig } from './categorycolor.enum.config';
-import { AttachmentTypeConfig } from './attachmenttype.enum.config';
+import { DayOfWeekConfig } from './dayofweek.enum.config';
+import { DelegateMeetingMessageDeliveryOptionsConfig } from './delegatemeetingmessagedeliveryoptions.enum.config';
+import { EventTypeConfig } from './eventtype.enum.config';
+import { ExchangeIdFormatConfig } from './exchangeidformat.enum.config';
+import { ExternalAudienceScopeConfig } from './externalaudiencescope.enum.config';
+import { FollowupFlagStatusConfig } from './followupflagstatus.enum.config';
+import { ImportanceConfig } from './importance.enum.config';
+import { InferenceClassificationTypeConfig } from './inferenceclassificationtype.enum.config';
+import { MailTipsTypeConfig } from './mailtipstype.enum.config';
+import { MeetingMessageTypeConfig } from './meetingmessagetype.enum.config';
+import { MeetingRequestTypeConfig } from './meetingrequesttype.enum.config';
 import { MessageActionFlagConfig } from './messageactionflag.enum.config';
-import { ConditionalAccessPolicyStateConfig } from './conditionalaccesspolicystate.enum.config';
-import { ConditionalAccessClientAppConfig } from './conditionalaccessclientapp.enum.config';
-import { ConditionalAccessGrantControlConfig } from './conditionalaccessgrantcontrol.enum.config';
+import { OnlineMeetingProviderTypeConfig } from './onlinemeetingprovidertype.enum.config';
+import { RecipientScopeTypeConfig } from './recipientscopetype.enum.config';
+import { RecurrencePatternTypeConfig } from './recurrencepatterntype.enum.config';
+import { RecurrenceRangeTypeConfig } from './recurrencerangetype.enum.config';
+import { ResponseTypeConfig } from './responsetype.enum.config';
+import { SelectionLikelihoodInfoConfig } from './selectionlikelihoodinfo.enum.config';
+import { SensitivityConfig } from './sensitivity.enum.config';
+import { TimeZoneStandardConfig } from './timezonestandard.enum.config';
+import { WebsiteTypeConfig } from './websitetype.enum.config';
+import { WeekIndexConfig } from './weekindex.enum.config';
 import { CloudAppSecuritySessionControlTypeConfig } from './cloudappsecuritysessioncontroltype.enum.config';
-import { SigninFrequencyTypeConfig } from './signinfrequencytype.enum.config';
-import { PersistentBrowserSessionModeConfig } from './persistentbrowsersessionmode.enum.config';
+import { ConditionalAccessClientAppConfig } from './conditionalaccessclientapp.enum.config';
 import { ConditionalAccessDevicePlatformConfig } from './conditionalaccessdeviceplatform.enum.config';
-import { InstallIntentConfig } from './installintent.enum.config';
-import { MobileAppPublishingStateConfig } from './mobileapppublishingstate.enum.config';
-import { WindowsArchitectureConfig } from './windowsarchitecture.enum.config';
-import { ManagedAppAvailabilityConfig } from './managedappavailability.enum.config';
-import { MobileAppContentFileUploadStateConfig } from './mobileappcontentfileuploadstate.enum.config';
-import { WindowsDeviceTypeConfig } from './windowsdevicetype.enum.config';
-import { VppTokenAccountTypeConfig } from './vpptokenaccounttype.enum.config';
-import { MicrosoftStoreForBusinessLicenseTypeConfig } from './microsoftstoreforbusinesslicensetype.enum.config';
+import { ConditionalAccessGrantControlConfig } from './conditionalaccessgrantcontrol.enum.config';
+import { ConditionalAccessPolicyStateConfig } from './conditionalaccesspolicystate.enum.config';
+import { PersistentBrowserSessionModeConfig } from './persistentbrowsersessionmode.enum.config';
+import { SigninFrequencyTypeConfig } from './signinfrequencytype.enum.config';
 import { ComplianceStatusConfig } from './compliancestatus.enum.config';
+import { InstallIntentConfig } from './installintent.enum.config';
+import { ManagedAppAvailabilityConfig } from './managedappavailability.enum.config';
 import { MdmAppConfigKeyTypeConfig } from './mdmappconfigkeytype.enum.config';
+import { MicrosoftStoreForBusinessLicenseTypeConfig } from './microsoftstoreforbusinesslicensetype.enum.config';
+import { MobileAppContentFileUploadStateConfig } from './mobileappcontentfileuploadstate.enum.config';
+import { MobileAppPublishingStateConfig } from './mobileapppublishingstate.enum.config';
+import { VppTokenAccountTypeConfig } from './vpptokenaccounttype.enum.config';
+import { WindowsArchitectureConfig } from './windowsarchitecture.enum.config';
+import { WindowsDeviceTypeConfig } from './windowsdevicetype.enum.config';
 import { InstallStateConfig } from './installstate.enum.config';
-import { Windows10EditionTypeConfig } from './windows10editiontype.enum.config';
-import { AppListTypeConfig } from './applisttype.enum.config';
 import { AndroidRequiredPasswordTypeConfig } from './androidrequiredpasswordtype.enum.config';
-import { WebBrowserCookieSettingsConfig } from './webbrowsercookiesettings.enum.config';
-import { AndroidWorkProfileRequiredPasswordTypeConfig } from './androidworkprofilerequiredpasswordtype.enum.config';
 import { AndroidWorkProfileCrossProfileDataSharingTypeConfig } from './androidworkprofilecrossprofiledatasharingtype.enum.config';
 import { AndroidWorkProfileDefaultAppPermissionPolicyTypeConfig } from './androidworkprofiledefaultapppermissionpolicytype.enum.config';
+import { AndroidWorkProfileRequiredPasswordTypeConfig } from './androidworkprofilerequiredpasswordtype.enum.config';
+import { ApplicationGuardBlockClipboardSharingTypeConfig } from './applicationguardblockclipboardsharingtype.enum.config';
+import { ApplicationGuardBlockFileTransferTypeConfig } from './applicationguardblockfiletransfertype.enum.config';
+import { AppListTypeConfig } from './applisttype.enum.config';
+import { AppLockerApplicationControlTypeConfig } from './applockerapplicationcontroltype.enum.config';
+import { AutomaticUpdateModeConfig } from './automaticupdatemode.enum.config';
+import { BitLockerEncryptionMethodConfig } from './bitlockerencryptionmethod.enum.config';
+import { DefenderCloudBlockLevelTypeConfig } from './defendercloudblockleveltype.enum.config';
+import { DefenderMonitorFileActivityConfig } from './defendermonitorfileactivity.enum.config';
+import { DefenderPromptForSampleSubmissionConfig } from './defenderpromptforsamplesubmission.enum.config';
+import { DefenderScanTypeConfig } from './defenderscantype.enum.config';
+import { DefenderThreatActionConfig } from './defenderthreataction.enum.config';
+import { DeviceComplianceActionTypeConfig } from './devicecomplianceactiontype.enum.config';
+import { DeviceThreatProtectionLevelConfig } from './devicethreatprotectionlevel.enum.config';
+import { DiagnosticDataSubmissionModeConfig } from './diagnosticdatasubmissionmode.enum.config';
+import { EdgeCookiePolicyConfig } from './edgecookiepolicy.enum.config';
+import { EdgeSearchEngineTypeConfig } from './edgesearchenginetype.enum.config';
+import { EditionUpgradeLicenseTypeConfig } from './editionupgradelicensetype.enum.config';
+import { FirewallCertificateRevocationListCheckMethodTypeConfig } from './firewallcertificaterevocationlistcheckmethodtype.enum.config';
+import { FirewallPacketQueueingMethodTypeConfig } from './firewallpacketqueueingmethodtype.enum.config';
+import { FirewallPreSharedKeyEncodingMethodTypeConfig } from './firewallpresharedkeyencodingmethodtype.enum.config';
+import { InternetSiteSecurityLevelConfig } from './internetsitesecuritylevel.enum.config';
+import { IosNotificationAlertTypeConfig } from './iosnotificationalerttype.enum.config';
+import { IosUpdatesInstallStatusConfig } from './iosupdatesinstallstatus.enum.config';
+import { MiracastChannelConfig } from './miracastchannel.enum.config';
+import { PolicyPlatformTypeConfig } from './policyplatformtype.enum.config';
+import { PrereleaseFeaturesConfig } from './prereleasefeatures.enum.config';
+import { RatingAppsTypeConfig } from './ratingappstype.enum.config';
 import { RatingAustraliaMoviesTypeConfig } from './ratingaustraliamoviestype.enum.config';
 import { RatingAustraliaTelevisionTypeConfig } from './ratingaustraliatelevisiontype.enum.config';
 import { RatingCanadaMoviesTypeConfig } from './ratingcanadamoviestype.enum.config';
@@ -95,89 +119,65 @@ import { RatingUnitedKingdomMoviesTypeConfig } from './ratingunitedkingdommovies
 import { RatingUnitedKingdomTelevisionTypeConfig } from './ratingunitedkingdomtelevisiontype.enum.config';
 import { RatingUnitedStatesMoviesTypeConfig } from './ratingunitedstatesmoviestype.enum.config';
 import { RatingUnitedStatesTelevisionTypeConfig } from './ratingunitedstatestelevisiontype.enum.config';
-import { RatingAppsTypeConfig } from './ratingappstype.enum.config';
 import { RequiredPasswordTypeConfig } from './requiredpasswordtype.enum.config';
-import { IosNotificationAlertTypeConfig } from './iosnotificationalerttype.enum.config';
-import { StateManagementSettingConfig } from './statemanagementsetting.enum.config';
-import { FirewallPreSharedKeyEncodingMethodTypeConfig } from './firewallpresharedkeyencodingmethodtype.enum.config';
-import { FirewallCertificateRevocationListCheckMethodTypeConfig } from './firewallcertificaterevocationlistcheckmethodtype.enum.config';
-import { FirewallPacketQueueingMethodTypeConfig } from './firewallpacketqueueingmethodtype.enum.config';
-import { AppLockerApplicationControlTypeConfig } from './applockerapplicationcontroltype.enum.config';
-import { ApplicationGuardBlockFileTransferTypeConfig } from './applicationguardblockfiletransfertype.enum.config';
-import { ApplicationGuardBlockClipboardSharingTypeConfig } from './applicationguardblockclipboardsharingtype.enum.config';
-import { BitLockerEncryptionMethodConfig } from './bitlockerencryptionmethod.enum.config';
-import { DefenderCloudBlockLevelTypeConfig } from './defendercloudblockleveltype.enum.config';
-import { DefenderScanTypeConfig } from './defenderscantype.enum.config';
-import { WeeklyScheduleConfig } from './weeklyschedule.enum.config';
-import { DefenderThreatActionConfig } from './defenderthreataction.enum.config';
-import { DiagnosticDataSubmissionModeConfig } from './diagnosticdatasubmissionmode.enum.config';
-import { EdgeCookiePolicyConfig } from './edgecookiepolicy.enum.config';
-import { VisibilitySettingConfig } from './visibilitysetting.enum.config';
-import { DefenderMonitorFileActivityConfig } from './defendermonitorfileactivity.enum.config';
-import { DefenderPromptForSampleSubmissionConfig } from './defenderpromptforsamplesubmission.enum.config';
-import { WindowsStartMenuAppListVisibilityTypeConfig } from './windowsstartmenuapplistvisibilitytype.enum.config';
-import { WindowsStartMenuModeTypeConfig } from './windowsstartmenumodetype.enum.config';
-import { WindowsSpotlightEnablementSettingsConfig } from './windowsspotlightenablementsettings.enum.config';
-import { AutomaticUpdateModeConfig } from './automaticupdatemode.enum.config';
 import { SafeSearchFilterTypeConfig } from './safesearchfiltertype.enum.config';
-import { EdgeSearchEngineTypeConfig } from './edgesearchenginetype.enum.config';
-import { PrereleaseFeaturesConfig } from './prereleasefeatures.enum.config';
-import { EditionUpgradeLicenseTypeConfig } from './editionupgradelicensetype.enum.config';
-import { WindowsDeliveryOptimizationModeConfig } from './windowsdeliveryoptimizationmode.enum.config';
 import { SharedPCAccountDeletionPolicyTypeConfig } from './sharedpcaccountdeletionpolicytype.enum.config';
 import { SharedPCAllowedAccountTypeConfig } from './sharedpcallowedaccounttype.enum.config';
-import { WindowsUpdateTypeConfig } from './windowsupdatetype.enum.config';
-import { InternetSiteSecurityLevelConfig } from './internetsitesecuritylevel.enum.config';
 import { SiteSecurityLevelConfig } from './sitesecuritylevel.enum.config';
-import { WindowsUserAccountControlSettingsConfig } from './windowsuseraccountcontrolsettings.enum.config';
-import { MiracastChannelConfig } from './miracastchannel.enum.config';
+import { StateManagementSettingConfig } from './statemanagementsetting.enum.config';
+import { VisibilitySettingConfig } from './visibilitysetting.enum.config';
+import { WebBrowserCookieSettingsConfig } from './webbrowsercookiesettings.enum.config';
+import { WeeklyScheduleConfig } from './weeklyschedule.enum.config';
 import { WelcomeScreenMeetingInformationConfig } from './welcomescreenmeetinginformation.enum.config';
-import { DeviceComplianceActionTypeConfig } from './devicecomplianceactiontype.enum.config';
-import { DeviceThreatProtectionLevelConfig } from './devicethreatprotectionlevel.enum.config';
-import { PolicyPlatformTypeConfig } from './policyplatformtype.enum.config';
-import { IosUpdatesInstallStatusConfig } from './iosupdatesinstallstatus.enum.config';
+import { Windows10EditionTypeConfig } from './windows10editiontype.enum.config';
+import { WindowsDeliveryOptimizationModeConfig } from './windowsdeliveryoptimizationmode.enum.config';
+import { WindowsSpotlightEnablementSettingsConfig } from './windowsspotlightenablementsettings.enum.config';
+import { WindowsStartMenuAppListVisibilityTypeConfig } from './windowsstartmenuapplistvisibilitytype.enum.config';
+import { WindowsStartMenuModeTypeConfig } from './windowsstartmenumodetype.enum.config';
+import { WindowsUpdateTypeConfig } from './windowsupdatetype.enum.config';
+import { WindowsUserAccountControlSettingsConfig } from './windowsuseraccountcontrolsettings.enum.config';
+import { DeviceManagementExchangeConnectorStatusConfig } from './devicemanagementexchangeconnectorstatus.enum.config';
 import { DeviceManagementExchangeConnectorSyncTypeConfig } from './devicemanagementexchangeconnectorsynctype.enum.config';
-import { MdmAuthorityConfig } from './mdmauthority.enum.config';
-import { WindowsHelloForBusinessPinUsageConfig } from './windowshelloforbusinesspinusage.enum.config';
+import { DeviceManagementExchangeConnectorTypeConfig } from './devicemanagementexchangeconnectortype.enum.config';
+import { DeviceManagementPartnerAppTypeConfig } from './devicemanagementpartnerapptype.enum.config';
+import { DeviceManagementPartnerTenantStateConfig } from './devicemanagementpartnertenantstate.enum.config';
 import { EnablementConfig } from './enablement.enum.config';
+import { MdmAuthorityConfig } from './mdmauthority.enum.config';
+import { MobileThreatPartnerTenantStateConfig } from './mobilethreatpartnertenantstate.enum.config';
 import { VppTokenStateConfig } from './vpptokenstate.enum.config';
 import { VppTokenSyncStatusConfig } from './vpptokensyncstatus.enum.config';
-import { DeviceManagementExchangeConnectorStatusConfig } from './devicemanagementexchangeconnectorstatus.enum.config';
-import { DeviceManagementExchangeConnectorTypeConfig } from './devicemanagementexchangeconnectortype.enum.config';
-import { MobileThreatPartnerTenantStateConfig } from './mobilethreatpartnertenantstate.enum.config';
-import { DeviceManagementPartnerTenantStateConfig } from './devicemanagementpartnertenantstate.enum.config';
-import { DeviceManagementPartnerAppTypeConfig } from './devicemanagementpartnerapptype.enum.config';
+import { WindowsHelloForBusinessPinUsageConfig } from './windowshelloforbusinesspinusage.enum.config';
 import { ActionStateConfig } from './actionstate.enum.config';
-import { ManagedDeviceOwnerTypeConfig } from './manageddeviceownertype.enum.config';
 import { ComplianceStateConfig } from './compliancestate.enum.config';
-import { ManagementAgentTypeConfig } from './managementagenttype.enum.config';
 import { DeviceEnrollmentTypeConfig } from './deviceenrollmenttype.enum.config';
-import { DeviceRegistrationStateConfig } from './deviceregistrationstate.enum.config';
 import { DeviceManagementExchangeAccessStateConfig } from './devicemanagementexchangeaccessstate.enum.config';
 import { DeviceManagementExchangeAccessStateReasonConfig } from './devicemanagementexchangeaccessstatereason.enum.config';
-import { ManagedDevicePartnerReportedHealthStateConfig } from './manageddevicepartnerreportedhealthstate.enum.config';
 import { DeviceManagementSubscriptionStateConfig } from './devicemanagementsubscriptionstate.enum.config';
+import { DeviceRegistrationStateConfig } from './deviceregistrationstate.enum.config';
+import { ManagedDeviceOwnerTypeConfig } from './manageddeviceownertype.enum.config';
+import { ManagedDevicePartnerReportedHealthStateConfig } from './manageddevicepartnerreportedhealthstate.enum.config';
+import { ManagementAgentTypeConfig } from './managementagenttype.enum.config';
+import { ManagedAppClipboardSharingLevelConfig } from './managedappclipboardsharinglevel.enum.config';
+import { ManagedAppDataEncryptionTypeConfig } from './managedappdataencryptiontype.enum.config';
 import { ManagedAppDataStorageLocationConfig } from './managedappdatastoragelocation.enum.config';
 import { ManagedAppDataTransferLevelConfig } from './managedappdatatransferlevel.enum.config';
-import { ManagedAppClipboardSharingLevelConfig } from './managedappclipboardsharinglevel.enum.config';
+import { ManagedAppFlaggedReasonConfig } from './managedappflaggedreason.enum.config';
 import { ManagedAppPinCharacterSetConfig } from './managedapppincharacterset.enum.config';
 import { ManagedBrowserTypeConfig } from './managedbrowsertype.enum.config';
-import { ManagedAppDataEncryptionTypeConfig } from './managedappdataencryptiontype.enum.config';
 import { WindowsInformationProtectionEnforcementLevelConfig } from './windowsinformationprotectionenforcementlevel.enum.config';
 import { WindowsInformationProtectionPinCharacterRequirementsConfig } from './windowsinformationprotectionpincharacterrequirements.enum.config';
-import { ManagedAppFlaggedReasonConfig } from './managedappflaggedreason.enum.config';
 import { NotificationTemplateBrandingOptionsConfig } from './notificationtemplatebrandingoptions.enum.config';
 import { RemoteAssistanceOnboardingStatusConfig } from './remoteassistanceonboardingstatus.enum.config';
 import { DeviceEnrollmentFailureReasonConfig } from './deviceenrollmentfailurereason.enum.config';
 import { ApplicationTypeConfig } from './applicationtype.enum.config';
 import { PlannerPreviewTypeConfig } from './plannerpreviewtype.enum.config';
-import { OperationStatusConfig } from './operationstatus.enum.config';
-import { OnenotePatchInsertPositionConfig } from './onenotepatchinsertposition.enum.config';
 import { OnenotePatchActionTypeConfig } from './onenotepatchactiontype.enum.config';
+import { OnenotePatchInsertPositionConfig } from './onenotepatchinsertposition.enum.config';
 import { OnenoteSourceServiceConfig } from './onenotesourceservice.enum.config';
 import { OnenoteUserRoleConfig } from './onenoteuserrole.enum.config';
-import { DataPolicyOperationStatusConfig } from './datapolicyoperationstatus.enum.config';
+import { OperationStatusConfig } from './operationstatus.enum.config';
 import { StatusConfig } from './status.enum.config';
+import { DataPolicyOperationStatusConfig } from './datapolicyoperationstatus.enum.config';
 import { AlertFeedbackConfig } from './alertfeedback.enum.config';
 import { AlertSeverityConfig } from './alertseverity.enum.config';
 import { AlertStatusConfig } from './alertstatus.enum.config';
@@ -195,6 +195,7 @@ import { SecurityResourceTypeConfig } from './securityresourcetype.enum.config';
 import { UserAccountSecurityTypeConfig } from './useraccountsecuritytype.enum.config';
 import { CallDirectionConfig } from './calldirection.enum.config';
 import { CallStateConfig } from './callstate.enum.config';
+import { CallTranscriptionStateConfig } from './calltranscriptionstate.enum.config';
 import { ChangeTypeConfig } from './changetype.enum.config';
 import { EndpointTypeConfig } from './endpointtype.enum.config';
 import { MediaDirectionConfig } from './mediadirection.enum.config';
@@ -205,45 +206,46 @@ import { RejectReasonConfig } from './rejectreason.enum.config';
 import { RoutingTypeConfig } from './routingtype.enum.config';
 import { ScreenSharingRoleConfig } from './screensharingrole.enum.config';
 import { ToneConfig } from './tone.enum.config';
-import { TeamVisibilityTypeConfig } from './teamvisibilitytype.enum.config';
-import { ClonableTeamPartsConfig } from './clonableteamparts.enum.config';
-import { TeamSpecializationConfig } from './teamspecialization.enum.config';
-import { GiphyRatingTypeConfig } from './giphyratingtype.enum.config';
-import { ChatMessageTypeConfig } from './chatmessagetype.enum.config';
+import { ChannelMembershipTypeConfig } from './channelmembershiptype.enum.config';
 import { ChatMessageImportanceConfig } from './chatmessageimportance.enum.config';
 import { ChatMessagePolicyViolationDlpActionTypesConfig } from './chatmessagepolicyviolationdlpactiontypes.enum.config';
 import { ChatMessagePolicyViolationUserActionTypesConfig } from './chatmessagepolicyviolationuseractiontypes.enum.config';
 import { ChatMessagePolicyViolationVerdictDetailsTypesConfig } from './chatmessagepolicyviolationverdictdetailstypes.enum.config';
+import { ChatMessageTypeConfig } from './chatmessagetype.enum.config';
+import { ClonableTeamPartsConfig } from './clonableteamparts.enum.config';
+import { GiphyRatingTypeConfig } from './giphyratingtype.enum.config';
 import { TeamsAppDistributionMethodConfig } from './teamsappdistributionmethod.enum.config';
-import { TeamsAsyncOperationTypeConfig } from './teamsasyncoperationtype.enum.config';
 import { TeamsAsyncOperationStatusConfig } from './teamsasyncoperationstatus.enum.config';
+import { TeamsAsyncOperationTypeConfig } from './teamsasyncoperationtype.enum.config';
+import { TeamSpecializationConfig } from './teamspecialization.enum.config';
+import { TeamVisibilityTypeConfig } from './teamvisibilitytype.enum.config';
+import { ScheduleChangeRequestActorConfig } from './schedulechangerequestactor.enum.config';
+import { ScheduleChangeStateConfig } from './schedulechangestate.enum.config';
 import { ScheduleEntityThemeConfig } from './scheduleentitytheme.enum.config';
 import { TimeOffReasonIconTypeConfig } from './timeoffreasonicontype.enum.config';
-import { ScheduleChangeStateConfig } from './schedulechangestate.enum.config';
-import { ScheduleChangeRequestActorConfig } from './schedulechangerequestactor.enum.config';
 import { WorkforceIntegrationEncryptionProtocolConfig } from './workforceintegrationencryptionprotocol.enum.config';
 import { WorkforceIntegrationSupportedEntitiesConfig } from './workforceintegrationsupportedentities.enum.config';
+import { MailDestinationRoutingReasonConfig } from './maildestinationroutingreason.enum.config';
 import { ThreatAssessmentContentTypeConfig } from './threatassessmentcontenttype.enum.config';
-import { ThreatExpectedAssessmentConfig } from './threatexpectedassessment.enum.config';
-import { ThreatCategoryConfig } from './threatcategory.enum.config';
-import { ThreatAssessmentStatusConfig } from './threatassessmentstatus.enum.config';
 import { ThreatAssessmentRequestSourceConfig } from './threatassessmentrequestsource.enum.config';
 import { ThreatAssessmentResultTypeConfig } from './threatassessmentresulttype.enum.config';
-import { MailDestinationRoutingReasonConfig } from './maildestinationroutingreason.enum.config';
+import { ThreatAssessmentStatusConfig } from './threatassessmentstatus.enum.config';
+import { ThreatCategoryConfig } from './threatcategory.enum.config';
+import { ThreatExpectedAssessmentConfig } from './threatexpectedassessment.enum.config';
+import { AppIdentityConfig } from './appidentity.entity.config';
+import { AppliedConditionalAccessPolicyConfig } from './appliedconditionalaccesspolicy.entity.config';
 import { AuditActivityInitiatorConfig } from './auditactivityinitiator.entity.config';
 import { UserIdentityConfig } from './useridentity.entity.config';
-import { AppIdentityConfig } from './appidentity.entity.config';
-import { TargetResourceConfig } from './targetresource.entity.config';
-import { ModifiedPropertyConfig } from './modifiedproperty.entity.config';
-import { KeyValueConfig } from './keyvalue.entity.config';
-import { SignInStatusConfig } from './signinstatus.entity.config';
 import { DeviceDetailConfig } from './devicedetail.entity.config';
-import { SignInLocationConfig } from './signinlocation.entity.config';
 import { GeoCoordinatesConfig } from './geocoordinates.entity.config';
-import { AppliedConditionalAccessPolicyConfig } from './appliedconditionalaccesspolicy.entity.config';
+import { KeyValueConfig } from './keyvalue.entity.config';
+import { ModifiedPropertyConfig } from './modifiedproperty.entity.config';
+import { SignInLocationConfig } from './signinlocation.entity.config';
+import { SignInStatusConfig } from './signinstatus.entity.config';
+import { TargetResourceConfig } from './targetresource.entity.config';
+import { EmailAddressConfig } from './emailaddress.entity.config';
 import { InvitedUserMessageInfoConfig } from './invitedusermessageinfo.entity.config';
 import { RecipientConfig } from './recipient.entity.config';
-import { EmailAddressConfig } from './emailaddress.entity.config';
 import { AssignedLicenseConfig } from './assignedlicense.entity.config';
 import { AssignedPlanConfig } from './assignedplan.entity.config';
 import { ObjectIdentityConfig } from './objectidentity.entity.config';
@@ -259,52 +261,55 @@ import { LocaleInfoConfig } from './localeinfo.entity.config';
 import { WorkingHoursConfig } from './workinghours.entity.config';
 import { TimeZoneBaseConfig } from './timezonebase.entity.config';
 import { AddInConfig } from './addin.entity.config';
+import { AlternativeSecurityIdConfig } from './alternativesecurityid.entity.config';
 import { ApiApplicationConfig } from './apiapplication.entity.config';
-import { PreAuthorizedApplicationConfig } from './preauthorizedapplication.entity.config';
 import { PermissionScopeConfig } from './permissionscope.entity.config';
+import { PreAuthorizedApplicationConfig } from './preauthorizedapplication.entity.config';
 import { AppRoleConfig } from './approle.entity.config';
-import { PublicClientApplicationConfig } from './publicclientapplication.entity.config';
+import { AssignedLabelConfig } from './assignedlabel.entity.config';
+import { CertificateAuthorityConfig } from './certificateauthority.entity.config';
+import { ComplexExtensionValueConfig } from './complexextensionvalue.entity.config';
+import { DomainStateConfig } from './domainstate.entity.config';
+import { ImplicitGrantSettingsConfig } from './implicitgrantsettings.entity.config';
 import { InformationalUrlConfig } from './informationalurl.entity.config';
 import { KeyCredentialConfig } from './keycredential.entity.config';
-import { OptionalClaimsConfig } from './optionalclaims.entity.config';
+import { LicenseProcessingStateConfig } from './licenseprocessingstate.entity.config';
+import { LicenseUnitsDetailConfig } from './licenseunitsdetail.entity.config';
 import { OptionalClaimConfig } from './optionalclaim.entity.config';
+import { OptionalClaimsConfig } from './optionalclaims.entity.config';
 import { ParentalControlSettingsConfig } from './parentalcontrolsettings.entity.config';
 import { PasswordCredentialConfig } from './passwordcredential.entity.config';
+import { PhoneConfig } from './phone.entity.config';
+import { PhysicalOfficeAddressConfig } from './physicalofficeaddress.entity.config';
+import { PrivacyProfileConfig } from './privacyprofile.entity.config';
+import { PublicClientApplicationConfig } from './publicclientapplication.entity.config';
 import { RequiredResourceAccessConfig } from './requiredresourceaccess.entity.config';
 import { ResourceAccessConfig } from './resourceaccess.entity.config';
-import { WebApplicationConfig } from './webapplication.entity.config';
-import { ImplicitGrantSettingsConfig } from './implicitgrantsettings.entity.config';
-import { CertificateAuthorityConfig } from './certificateauthority.entity.config';
-import { PhysicalOfficeAddressConfig } from './physicalofficeaddress.entity.config';
-import { PhoneConfig } from './phone.entity.config';
-import { AlternativeSecurityIdConfig } from './alternativesecurityid.entity.config';
-import { DomainStateConfig } from './domainstate.entity.config';
-import { ServicePlanInfoConfig } from './serviceplaninfo.entity.config';
-import { AssignedLabelConfig } from './assignedlabel.entity.config';
-import { LicenseProcessingStateConfig } from './licenseprocessingstate.entity.config';
 import { SamlSingleSignOnSettingsConfig } from './samlsinglesignonsettings.entity.config';
-import { LicenseUnitsDetailConfig } from './licenseunitsdetail.entity.config';
-import { PrivacyProfileConfig } from './privacyprofile.entity.config';
-import { VerifiedDomainConfig } from './verifieddomain.entity.config';
-import { SettingValueConfig } from './settingvalue.entity.config';
+import { ServicePlanInfoConfig } from './serviceplaninfo.entity.config';
 import { SettingTemplateValueConfig } from './settingtemplatevalue.entity.config';
-import { ComplexExtensionValueConfig } from './complexextensionvalue.entity.config';
-import { PhysicalAddressConfig } from './physicaladdress.entity.config';
-import { IdentityConfig } from './identity.entity.config';
-import { IdentitySetConfig } from './identityset.entity.config';
+import { SettingValueConfig } from './settingvalue.entity.config';
+import { VerifiedDomainConfig } from './verifieddomain.entity.config';
+import { WebApplicationConfig } from './webapplication.entity.config';
 import { EducationStudentConfig } from './educationstudent.entity.config';
 import { EducationTeacherConfig } from './educationteacher.entity.config';
 import { EducationTermConfig } from './educationterm.entity.config';
-import { PublicErrorConfig } from './publicerror.entity.config';
-import { PublicErrorDetailConfig } from './publicerrordetail.entity.config';
-import { PublicInnerErrorConfig } from './publicinnererror.entity.config';
-import { RootConfig } from './root.entity.config';
-import { SharepointIdsConfig } from './sharepointids.entity.config';
-import { SiteCollectionConfig } from './sitecollection.entity.config';
-import { ListInfoConfig } from './listinfo.entity.config';
-import { SystemFacetConfig } from './systemfacet.entity.config';
+import { IdentityConfig } from './identity.entity.config';
+import { IdentitySetConfig } from './identityset.entity.config';
+import { PhysicalAddressConfig } from './physicaladdress.entity.config';
+import { JsonConfig } from './json.entity.config';
+import { WorkbookFilterCriteriaConfig } from './workbookfiltercriteria.entity.config';
+import { WorkbookIconConfig } from './workbookicon.entity.config';
+import { WorkbookFilterDatetimeConfig } from './workbookfilterdatetime.entity.config';
+import { WorkbookOperationErrorConfig } from './workbookoperationerror.entity.config';
+import { WorkbookRangeReferenceConfig } from './workbookrangereference.entity.config';
+import { WorkbookSessionInfoConfig } from './workbooksessioninfo.entity.config';
+import { WorkbookSortFieldConfig } from './workbooksortfield.entity.config';
+import { WorkbookWorksheetProtectionOptionsConfig } from './workbookworksheetprotectionoptions.entity.config';
 import { QuotaConfig } from './quota.entity.config';
 import { StoragePlanInformationConfig } from './storageplaninformation.entity.config';
+import { SharepointIdsConfig } from './sharepointids.entity.config';
+import { SystemFacetConfig } from './systemfacet.entity.config';
 import { AudioConfig } from './audio.entity.config';
 import { DeletedConfig } from './deleted.entity.config';
 import { FileConfig } from './file.entity.config';
@@ -323,126 +328,129 @@ import { ItemReferenceConfig } from './itemreference.entity.config';
 import { SharedConfig } from './shared.entity.config';
 import { SpecialFolderConfig } from './specialfolder.entity.config';
 import { VideoConfig } from './video.entity.config';
+import { RootConfig } from './root.entity.config';
 import { SearchResultConfig } from './searchresult.entity.config';
-import { WorkbookSessionInfoConfig } from './workbooksessioninfo.entity.config';
-import { JsonConfig } from './json.entity.config';
-import { WorkbookOperationErrorConfig } from './workbookoperationerror.entity.config';
-import { WorkbookFilterCriteriaConfig } from './workbookfiltercriteria.entity.config';
-import { WorkbookIconConfig } from './workbookicon.entity.config';
-import { WorkbookSortFieldConfig } from './workbooksortfield.entity.config';
-import { WorkbookWorksheetProtectionOptionsConfig } from './workbookworksheetprotectionoptions.entity.config';
-import { WorkbookFilterDatetimeConfig } from './workbookfilterdatetime.entity.config';
-import { WorkbookRangeReferenceConfig } from './workbookrangereference.entity.config';
+import { ListInfoConfig } from './listinfo.entity.config';
+import { PublicErrorConfig } from './publicerror.entity.config';
+import { PublicErrorDetailConfig } from './publicerrordetail.entity.config';
+import { PublicInnerErrorConfig } from './publicinnererror.entity.config';
+import { SiteCollectionConfig } from './sitecollection.entity.config';
+import { AttendeeAvailabilityConfig } from './attendeeavailability.entity.config';
 import { AttendeeBaseConfig } from './attendeebase.entity.config';
-import { LocationConstraintConfig } from './locationconstraint.entity.config';
 import { LocationConfig } from './location.entity.config';
 import { OutlookGeoCoordinatesConfig } from './outlookgeocoordinates.entity.config';
+import { LocationConstraintConfig } from './locationconstraint.entity.config';
 import { LocationConstraintItemConfig } from './locationconstraintitem.entity.config';
-import { MeetingTimeSuggestionsResultConfig } from './meetingtimesuggestionsresult.entity.config';
 import { MeetingTimeSuggestionConfig } from './meetingtimesuggestion.entity.config';
-import { AttendeeAvailabilityConfig } from './attendeeavailability.entity.config';
 import { TimeSlotConfig } from './timeslot.entity.config';
+import { MeetingTimeSuggestionsResultConfig } from './meetingtimesuggestionsresult.entity.config';
 import { TimeConstraintConfig } from './timeconstraint.entity.config';
+import { AttachmentItemConfig } from './attachmentitem.entity.config';
+import { AttendeeConfig } from './attendee.entity.config';
+import { ResponseStatusConfig } from './responsestatus.entity.config';
+import { AutomaticRepliesMailTipsConfig } from './automaticrepliesmailtips.entity.config';
+import { CalendarSharingMessageActionConfig } from './calendarsharingmessageaction.entity.config';
+import { ConvertIdResultConfig } from './convertidresult.entity.config';
+import { GenericErrorConfig } from './genericerror.entity.config';
 import { CustomTimeZoneConfig } from './customtimezone.entity.config';
 import { StandardTimeZoneOffsetConfig } from './standardtimezoneoffset.entity.config';
 import { DaylightTimeZoneOffsetConfig } from './daylighttimezoneoffset.entity.config';
-import { ReminderConfig } from './reminder.entity.config';
-import { MailTipsConfig } from './mailtips.entity.config';
-import { AutomaticRepliesMailTipsConfig } from './automaticrepliesmailtips.entity.config';
-import { MailTipsErrorConfig } from './mailtipserror.entity.config';
-import { ConvertIdResultConfig } from './convertidresult.entity.config';
-import { GenericErrorConfig } from './genericerror.entity.config';
-import { TimeZoneInformationConfig } from './timezoneinformation.entity.config';
+import { FollowupFlagConfig } from './followupflag.entity.config';
+import { FreeBusyErrorConfig } from './freebusyerror.entity.config';
 import { InternetMessageHeaderConfig } from './internetmessageheader.entity.config';
 import { ItemBodyConfig } from './itembody.entity.config';
-import { FollowupFlagConfig } from './followupflag.entity.config';
-import { CalendarSharingMessageActionConfig } from './calendarsharingmessageaction.entity.config';
+import { MailTipsConfig } from './mailtips.entity.config';
+import { MailTipsErrorConfig } from './mailtipserror.entity.config';
+import { MessageRuleActionsConfig } from './messageruleactions.entity.config';
+import { MessageRulePredicatesConfig } from './messagerulepredicates.entity.config';
+import { SizeRangeConfig } from './sizerange.entity.config';
+import { OnlineMeetingInfoConfig } from './onlinemeetinginfo.entity.config';
 import { PatternedRecurrenceConfig } from './patternedrecurrence.entity.config';
 import { RecurrencePatternConfig } from './recurrencepattern.entity.config';
 import { RecurrenceRangeConfig } from './recurrencerange.entity.config';
+import { PersonTypeConfig } from './persontype.entity.config';
+import { ReminderConfig } from './reminder.entity.config';
 import { ScheduleInformationConfig } from './scheduleinformation.entity.config';
 import { ScheduleItemConfig } from './scheduleitem.entity.config';
-import { FreeBusyErrorConfig } from './freebusyerror.entity.config';
-import { ResponseStatusConfig } from './responsestatus.entity.config';
-import { AttendeeConfig } from './attendee.entity.config';
-import { OnlineMeetingInfoConfig } from './onlinemeetinginfo.entity.config';
 import { ScoredEmailAddressConfig } from './scoredemailaddress.entity.config';
-import { WebsiteConfig } from './website.entity.config';
-import { PersonTypeConfig } from './persontype.entity.config';
-import { AttachmentItemConfig } from './attachmentitem.entity.config';
+import { TimeZoneInformationConfig } from './timezoneinformation.entity.config';
 import { UploadSessionConfig } from './uploadsession.entity.config';
-import { MessageRulePredicatesConfig } from './messagerulepredicates.entity.config';
-import { SizeRangeConfig } from './sizerange.entity.config';
-import { MessageRuleActionsConfig } from './messageruleactions.entity.config';
+import { WebsiteConfig } from './website.entity.config';
+import { AccessActionConfig } from './accessaction.entity.config';
 import { BooleanColumnConfig } from './booleancolumn.entity.config';
 import { CalculatedColumnConfig } from './calculatedcolumn.entity.config';
 import { ChoiceColumnConfig } from './choicecolumn.entity.config';
+import { ContentTypeInfoConfig } from './contenttypeinfo.entity.config';
+import { ContentTypeOrderConfig } from './contenttypeorder.entity.config';
 import { CurrencyColumnConfig } from './currencycolumn.entity.config';
 import { DateTimeColumnConfig } from './datetimecolumn.entity.config';
 import { DefaultColumnValueConfig } from './defaultcolumnvalue.entity.config';
+import { DriveItemUploadablePropertiesConfig } from './driveitemuploadableproperties.entity.config';
+import { DriveRecipientConfig } from './driverecipient.entity.config';
 import { GeolocationColumnConfig } from './geolocationcolumn.entity.config';
+import { IncompleteDataConfig } from './incompletedata.entity.config';
+import { ItemActionStatConfig } from './itemactionstat.entity.config';
+import { ItemPreviewInfoConfig } from './itempreviewinfo.entity.config';
 import { LookupColumnConfig } from './lookupcolumn.entity.config';
 import { NumberColumnConfig } from './numbercolumn.entity.config';
 import { PersonOrGroupColumnConfig } from './personorgroupcolumn.entity.config';
-import { TextColumnConfig } from './textcolumn.entity.config';
-import { ContentTypeOrderConfig } from './contenttypeorder.entity.config';
-import { AccessActionConfig } from './accessaction.entity.config';
-import { ItemActionStatConfig } from './itemactionstat.entity.config';
-import { IncompleteDataConfig } from './incompletedata.entity.config';
-import { ContentTypeInfoConfig } from './contenttypeinfo.entity.config';
 import { SharingInvitationConfig } from './sharinginvitation.entity.config';
 import { SharingLinkConfig } from './sharinglink.entity.config';
+import { TextColumnConfig } from './textcolumn.entity.config';
 import { ThumbnailConfig } from './thumbnail.entity.config';
-import { DriveItemUploadablePropertiesConfig } from './driveitemuploadableproperties.entity.config';
-import { DriveRecipientConfig } from './driverecipient.entity.config';
-import { ItemPreviewInfoConfig } from './itempreviewinfo.entity.config';
 import { ExtensionSchemaPropertyConfig } from './extensionschemaproperty.entity.config';
 import { ConditionalAccessSessionControlConfig } from './conditionalaccesssessioncontrol.entity.config';
 import { ApplicationEnforcedRestrictionsSessionControlConfig } from './applicationenforcedrestrictionssessioncontrol.entity.config';
 import { CloudAppSecuritySessionControlConfig } from './cloudappsecuritysessioncontrol.entity.config';
-import { SignInFrequencySessionControlConfig } from './signinfrequencysessioncontrol.entity.config';
-import { PersistentBrowserSessionControlConfig } from './persistentbrowsersessioncontrol.entity.config';
+import { ConditionalAccessApplicationsConfig } from './conditionalaccessapplications.entity.config';
+import { ConditionalAccessConditionSetConfig } from './conditionalaccessconditionset.entity.config';
+import { ConditionalAccessLocationsConfig } from './conditionalaccesslocations.entity.config';
+import { ConditionalAccessPlatformsConfig } from './conditionalaccessplatforms.entity.config';
+import { ConditionalAccessUsersConfig } from './conditionalaccessusers.entity.config';
+import { ConditionalAccessGrantControlsConfig } from './conditionalaccessgrantcontrols.entity.config';
 import { ConditionalAccessSessionControlsConfig } from './conditionalaccesssessioncontrols.entity.config';
+import { PersistentBrowserSessionControlConfig } from './persistentbrowsersessioncontrol.entity.config';
+import { SignInFrequencySessionControlConfig } from './signinfrequencysessioncontrol.entity.config';
 import { IpRangeConfig } from './iprange.entity.config';
 import { IPv4CidrRangeConfig } from './ipv4cidrrange.entity.config';
 import { IPv6CidrRangeConfig } from './ipv6cidrrange.entity.config';
-import { ConditionalAccessApplicationsConfig } from './conditionalaccessapplications.entity.config';
-import { ConditionalAccessUsersConfig } from './conditionalaccessusers.entity.config';
-import { ConditionalAccessPlatformsConfig } from './conditionalaccessplatforms.entity.config';
-import { ConditionalAccessLocationsConfig } from './conditionalaccesslocations.entity.config';
-import { ConditionalAccessConditionSetConfig } from './conditionalaccessconditionset.entity.config';
-import { ConditionalAccessGrantControlsConfig } from './conditionalaccessgrantcontrols.entity.config';
 import { DeviceAndAppManagementAssignmentTargetConfig } from './deviceandappmanagementassignmenttarget.entity.config';
-import { MobileAppAssignmentSettingsConfig } from './mobileappassignmentsettings.entity.config';
-import { MimeContentConfig } from './mimecontent.entity.config';
-import { FileEncryptionInfoConfig } from './fileencryptioninfo.entity.config';
+import { AllDevicesAssignmentTargetConfig } from './alldevicesassignmenttarget.entity.config';
 import { AllLicensedUsersAssignmentTargetConfig } from './alllicensedusersassignmenttarget.entity.config';
+import { AndroidMinimumOperatingSystemConfig } from './androidminimumoperatingsystem.entity.config';
+import { AppConfigurationSettingItemConfig } from './appconfigurationsettingitem.entity.config';
 import { GroupAssignmentTargetConfig } from './groupassignmenttarget.entity.config';
 import { ExclusionGroupAssignmentTargetConfig } from './exclusiongroupassignmenttarget.entity.config';
-import { AllDevicesAssignmentTargetConfig } from './alldevicesassignmenttarget.entity.config';
+import { FileEncryptionInfoConfig } from './fileencryptioninfo.entity.config';
+import { IosDeviceTypeConfig } from './iosdevicetype.entity.config';
+import { MobileAppAssignmentSettingsConfig } from './mobileappassignmentsettings.entity.config';
 import { IosLobAppAssignmentSettingsConfig } from './ioslobappassignmentsettings.entity.config';
+import { IosMinimumOperatingSystemConfig } from './iosminimumoperatingsystem.entity.config';
 import { IosStoreAppAssignmentSettingsConfig } from './iosstoreappassignmentsettings.entity.config';
 import { IosVppAppAssignmentSettingsConfig } from './iosvppappassignmentsettings.entity.config';
 import { MicrosoftStoreForBusinessAppAssignmentSettingsConfig } from './microsoftstoreforbusinessappassignmentsettings.entity.config';
-import { AndroidMinimumOperatingSystemConfig } from './androidminimumoperatingsystem.entity.config';
-import { IosDeviceTypeConfig } from './iosdevicetype.entity.config';
-import { IosMinimumOperatingSystemConfig } from './iosminimumoperatingsystem.entity.config';
-import { WindowsMinimumOperatingSystemConfig } from './windowsminimumoperatingsystem.entity.config';
+import { MimeContentConfig } from './mimecontent.entity.config';
 import { VppLicensingTypeConfig } from './vpplicensingtype.entity.config';
-import { AppConfigurationSettingItemConfig } from './appconfigurationsettingitem.entity.config';
+import { WindowsMinimumOperatingSystemConfig } from './windowsminimumoperatingsystem.entity.config';
 import { DeviceManagementSettingsConfig } from './devicemanagementsettings.entity.config';
 import { IntuneBrandConfig } from './intunebrand.entity.config';
 import { RgbColorConfig } from './rgbcolor.entity.config';
-import { ReportConfig } from './report.entity.config';
 import { AppListItemConfig } from './applistitem.entity.config';
-import { OmaSettingConfig } from './omasetting.entity.config';
-import { OmaSettingIntegerConfig } from './omasettinginteger.entity.config';
-import { OmaSettingFloatingPointConfig } from './omasettingfloatingpoint.entity.config';
-import { OmaSettingStringConfig } from './omasettingstring.entity.config';
-import { OmaSettingDateTimeConfig } from './omasettingdatetime.entity.config';
-import { OmaSettingStringXmlConfig } from './omasettingstringxml.entity.config';
-import { OmaSettingBooleanConfig } from './omasettingboolean.entity.config';
-import { OmaSettingBase64Config } from './omasettingbase64.entity.config';
+import { BitLockerRemovableDrivePolicyConfig } from './bitlockerremovabledrivepolicy.entity.config';
+import { DefenderDetectedMalwareActionsConfig } from './defenderdetectedmalwareactions.entity.config';
+import { DeviceCompliancePolicySettingStateConfig } from './devicecompliancepolicysettingstate.entity.config';
+import { SettingSourceConfig } from './settingsource.entity.config';
+import { DeviceConfigurationSettingStateConfig } from './deviceconfigurationsettingstate.entity.config';
+import { EdgeSearchEngineBaseConfig } from './edgesearchenginebase.entity.config';
+import { EdgeSearchEngineConfig } from './edgesearchengine.entity.config';
+import { EdgeSearchEngineCustomConfig } from './edgesearchenginecustom.entity.config';
+import { IosHomeScreenItemConfig } from './ioshomescreenitem.entity.config';
+import { IosHomeScreenAppConfig } from './ioshomescreenapp.entity.config';
+import { IosHomeScreenFolderConfig } from './ioshomescreenfolder.entity.config';
+import { IosHomeScreenFolderPageConfig } from './ioshomescreenfolderpage.entity.config';
+import { IosHomeScreenPageConfig } from './ioshomescreenpage.entity.config';
+import { IosNetworkUsageRuleConfig } from './iosnetworkusagerule.entity.config';
+import { IosNotificationSettingsConfig } from './iosnotificationsettings.entity.config';
 import { MediaContentRatingAustraliaConfig } from './mediacontentratingaustralia.entity.config';
 import { MediaContentRatingCanadaConfig } from './mediacontentratingcanada.entity.config';
 import { MediaContentRatingFranceConfig } from './mediacontentratingfrance.entity.config';
@@ -452,186 +460,181 @@ import { MediaContentRatingJapanConfig } from './mediacontentratingjapan.entity.
 import { MediaContentRatingNewZealandConfig } from './mediacontentratingnewzealand.entity.config';
 import { MediaContentRatingUnitedKingdomConfig } from './mediacontentratingunitedkingdom.entity.config';
 import { MediaContentRatingUnitedStatesConfig } from './mediacontentratingunitedstates.entity.config';
-import { IosNetworkUsageRuleConfig } from './iosnetworkusagerule.entity.config';
-import { IosHomeScreenItemConfig } from './ioshomescreenitem.entity.config';
-import { IosHomeScreenPageConfig } from './ioshomescreenpage.entity.config';
-import { IosNotificationSettingsConfig } from './iosnotificationsettings.entity.config';
-import { IosHomeScreenFolderConfig } from './ioshomescreenfolder.entity.config';
-import { IosHomeScreenFolderPageConfig } from './ioshomescreenfolderpage.entity.config';
-import { IosHomeScreenAppConfig } from './ioshomescreenapp.entity.config';
-import { WindowsFirewallNetworkProfileConfig } from './windowsfirewallnetworkprofile.entity.config';
-import { BitLockerRemovableDrivePolicyConfig } from './bitlockerremovabledrivepolicy.entity.config';
-import { DefenderDetectedMalwareActionsConfig } from './defenderdetectedmalwareactions.entity.config';
-import { Windows10NetworkProxyServerConfig } from './windows10networkproxyserver.entity.config';
-import { EdgeSearchEngineBaseConfig } from './edgesearchenginebase.entity.config';
-import { EdgeSearchEngineCustomConfig } from './edgesearchenginecustom.entity.config';
-import { EdgeSearchEngineConfig } from './edgesearchengine.entity.config';
+import { OmaSettingConfig } from './omasetting.entity.config';
+import { OmaSettingBase64Config } from './omasettingbase64.entity.config';
+import { OmaSettingBooleanConfig } from './omasettingboolean.entity.config';
+import { OmaSettingDateTimeConfig } from './omasettingdatetime.entity.config';
+import { OmaSettingFloatingPointConfig } from './omasettingfloatingpoint.entity.config';
+import { OmaSettingIntegerConfig } from './omasettinginteger.entity.config';
+import { OmaSettingStringConfig } from './omasettingstring.entity.config';
+import { OmaSettingStringXmlConfig } from './omasettingstringxml.entity.config';
+import { ReportConfig } from './report.entity.config';
 import { SharedPCAccountManagerPolicyConfig } from './sharedpcaccountmanagerpolicy.entity.config';
+import { Windows10NetworkProxyServerConfig } from './windows10networkproxyserver.entity.config';
+import { WindowsFirewallNetworkProfileConfig } from './windowsfirewallnetworkprofile.entity.config';
 import { WindowsUpdateInstallScheduleTypeConfig } from './windowsupdateinstallscheduletype.entity.config';
-import { WindowsUpdateScheduledInstallConfig } from './windowsupdatescheduledinstall.entity.config';
 import { WindowsUpdateActiveHoursInstallConfig } from './windowsupdateactivehoursinstall.entity.config';
-import { DeviceActionResultConfig } from './deviceactionresult.entity.config';
+import { WindowsUpdateScheduledInstallConfig } from './windowsupdatescheduledinstall.entity.config';
 import { ConfigurationManagerClientEnabledFeaturesConfig } from './configurationmanagerclientenabledfeatures.entity.config';
+import { DeviceActionResultConfig } from './deviceactionresult.entity.config';
 import { DeviceHealthAttestationStateConfig } from './devicehealthattestationstate.entity.config';
-import { DeviceConfigurationSettingStateConfig } from './deviceconfigurationsettingstate.entity.config';
-import { SettingSourceConfig } from './settingsource.entity.config';
-import { DeviceCompliancePolicySettingStateConfig } from './devicecompliancepolicysettingstate.entity.config';
-import { DeviceEnrollmentPlatformRestrictionConfig } from './deviceenrollmentplatformrestriction.entity.config';
 import { ComplianceManagementPartnerAssignmentConfig } from './compliancemanagementpartnerassignment.entity.config';
-import { UpdateWindowsDeviceAccountActionParameterConfig } from './updatewindowsdeviceaccountactionparameter.entity.config';
-import { WindowsDeviceAccountConfig } from './windowsdeviceaccount.entity.config';
-import { WindowsDefenderScanActionResultConfig } from './windowsdefenderscanactionresult.entity.config';
-import { DeviceGeoLocationConfig } from './devicegeolocation.entity.config';
+import { DeviceEnrollmentPlatformRestrictionConfig } from './deviceenrollmentplatformrestriction.entity.config';
 import { DeleteUserFromSharedAppleDeviceActionResultConfig } from './deleteuserfromsharedappledeviceactionresult.entity.config';
+import { DeviceExchangeAccessStateSummaryConfig } from './deviceexchangeaccessstatesummary.entity.config';
+import { DeviceGeoLocationConfig } from './devicegeolocation.entity.config';
+import { DeviceOperatingSystemSummaryConfig } from './deviceoperatingsystemsummary.entity.config';
 import { LocateDeviceActionResultConfig } from './locatedeviceactionresult.entity.config';
 import { RemoteLockActionResultConfig } from './remotelockactionresult.entity.config';
 import { ResetPasscodeActionResultConfig } from './resetpasscodeactionresult.entity.config';
-import { DeviceOperatingSystemSummaryConfig } from './deviceoperatingsystemsummary.entity.config';
-import { DeviceExchangeAccessStateSummaryConfig } from './deviceexchangeaccessstatesummary.entity.config';
+import { UpdateWindowsDeviceAccountActionParameterConfig } from './updatewindowsdeviceaccountactionparameter.entity.config';
+import { WindowsDeviceAccountConfig } from './windowsdeviceaccount.entity.config';
+import { WindowsDefenderScanActionResultConfig } from './windowsdefenderscanactionresult.entity.config';
 import { WindowsDeviceADAccountConfig } from './windowsdeviceadaccount.entity.config';
 import { WindowsDeviceAzureADAccountConfig } from './windowsdeviceazureadaccount.entity.config';
 import { MobileAppIdentifierConfig } from './mobileappidentifier.entity.config';
-import { ManagedAppDiagnosticStatusConfig } from './managedappdiagnosticstatus.entity.config';
-import { KeyValuePairConfig } from './keyvaluepair.entity.config';
-import { WindowsInformationProtectionResourceCollectionConfig } from './windowsinformationprotectionresourcecollection.entity.config';
-import { WindowsInformationProtectionDataRecoveryCertificateConfig } from './windowsinformationprotectiondatarecoverycertificate.entity.config';
-import { WindowsInformationProtectionAppConfig } from './windowsinformationprotectionapp.entity.config';
-import { WindowsInformationProtectionProxiedDomainCollectionConfig } from './windowsinformationprotectionproxieddomaincollection.entity.config';
-import { ProxiedDomainConfig } from './proxieddomain.entity.config';
-import { WindowsInformationProtectionIPRangeCollectionConfig } from './windowsinformationprotectioniprangecollection.entity.config';
 import { AndroidMobileAppIdentifierConfig } from './androidmobileappidentifier.entity.config';
 import { IosMobileAppIdentifierConfig } from './iosmobileappidentifier.entity.config';
-import { ManagedAppPolicyDeploymentSummaryPerAppConfig } from './managedapppolicydeploymentsummaryperapp.entity.config';
-import { WindowsInformationProtectionStoreAppConfig } from './windowsinformationprotectionstoreapp.entity.config';
-import { WindowsInformationProtectionDesktopAppConfig } from './windowsinformationprotectiondesktopapp.entity.config';
-import { IPv6RangeConfig } from './ipv6range.entity.config';
 import { IPv4RangeConfig } from './ipv4range.entity.config';
-import { RolePermissionConfig } from './rolepermission.entity.config';
+import { IPv6RangeConfig } from './ipv6range.entity.config';
+import { KeyValuePairConfig } from './keyvaluepair.entity.config';
+import { ManagedAppDiagnosticStatusConfig } from './managedappdiagnosticstatus.entity.config';
+import { ManagedAppPolicyDeploymentSummaryPerAppConfig } from './managedapppolicydeploymentsummaryperapp.entity.config';
+import { ProxiedDomainConfig } from './proxieddomain.entity.config';
+import { WindowsInformationProtectionAppConfig } from './windowsinformationprotectionapp.entity.config';
+import { WindowsInformationProtectionDataRecoveryCertificateConfig } from './windowsinformationprotectiondatarecoverycertificate.entity.config';
+import { WindowsInformationProtectionDesktopAppConfig } from './windowsinformationprotectiondesktopapp.entity.config';
+import { WindowsInformationProtectionIPRangeCollectionConfig } from './windowsinformationprotectioniprangecollection.entity.config';
+import { WindowsInformationProtectionProxiedDomainCollectionConfig } from './windowsinformationprotectionproxieddomaincollection.entity.config';
+import { WindowsInformationProtectionResourceCollectionConfig } from './windowsinformationprotectionresourcecollection.entity.config';
+import { WindowsInformationProtectionStoreAppConfig } from './windowsinformationprotectionstoreapp.entity.config';
 import { ResourceActionConfig } from './resourceaction.entity.config';
+import { RolePermissionConfig } from './rolepermission.entity.config';
 import { PlannerAppliedCategoriesConfig } from './plannerappliedcategories.entity.config';
-import { PlannerAssignmentsConfig } from './plannerassignments.entity.config';
-import { PlannerExternalReferenceConfig } from './plannerexternalreference.entity.config';
-import { PlannerChecklistItemConfig } from './plannerchecklistitem.entity.config';
 import { PlannerAssignmentConfig } from './plannerassignment.entity.config';
-import { PlannerExternalReferencesConfig } from './plannerexternalreferences.entity.config';
+import { PlannerAssignmentsConfig } from './plannerassignments.entity.config';
+import { PlannerCategoryDescriptionsConfig } from './plannercategorydescriptions.entity.config';
+import { PlannerChecklistItemConfig } from './plannerchecklistitem.entity.config';
 import { PlannerChecklistItemsConfig } from './plannerchecklistitems.entity.config';
+import { PlannerExternalReferenceConfig } from './plannerexternalreference.entity.config';
+import { PlannerExternalReferencesConfig } from './plannerexternalreferences.entity.config';
 import { PlannerOrderHintsByAssigneeConfig } from './plannerorderhintsbyassignee.entity.config';
 import { PlannerUserIdsConfig } from './planneruserids.entity.config';
-import { PlannerCategoryDescriptionsConfig } from './plannercategorydescriptions.entity.config';
-import { ResourceVisualizationConfig } from './resourcevisualization.entity.config';
-import { ResourceReferenceConfig } from './resourcereference.entity.config';
-import { SharingDetailConfig } from './sharingdetail.entity.config';
 import { InsightIdentityConfig } from './insightidentity.entity.config';
+import { ResourceReferenceConfig } from './resourcereference.entity.config';
+import { ResourceVisualizationConfig } from './resourcevisualization.entity.config';
+import { SharingDetailConfig } from './sharingdetail.entity.config';
 import { UsageDetailsConfig } from './usagedetails.entity.config';
+import { CopyNotebookModelConfig } from './copynotebookmodel.entity.config';
 import { NotebookLinksConfig } from './notebooklinks.entity.config';
 import { ExternalLinkConfig } from './externallink.entity.config';
-import { SectionLinksConfig } from './sectionlinks.entity.config';
-import { PageLinksConfig } from './pagelinks.entity.config';
-import { OnenoteOperationErrorConfig } from './onenoteoperationerror.entity.config';
 import { DiagnosticConfig } from './diagnostic.entity.config';
-import { OnenotePatchContentCommandConfig } from './onenotepatchcontentcommand.entity.config';
+import { OnenoteOperationErrorConfig } from './onenoteoperationerror.entity.config';
 import { OnenotePagePreviewConfig } from './onenotepagepreview.entity.config';
 import { OnenotePagePreviewLinksConfig } from './onenotepagepreviewlinks.entity.config';
+import { OnenotePatchContentCommandConfig } from './onenotepatchcontentcommand.entity.config';
+import { PageLinksConfig } from './pagelinks.entity.config';
 import { RecentNotebookConfig } from './recentnotebook.entity.config';
 import { RecentNotebookLinksConfig } from './recentnotebooklinks.entity.config';
-import { CopyNotebookModelConfig } from './copynotebookmodel.entity.config';
+import { SectionLinksConfig } from './sectionlinks.entity.config';
 import { ImageInfoConfig } from './imageinfo.entity.config';
 import { VisualInfoConfig } from './visualinfo.entity.config';
-import { CloudAppSecurityStateConfig } from './cloudappsecuritystate.entity.config';
-import { FileSecurityStateConfig } from './filesecuritystate.entity.config';
-import { FileHashConfig } from './filehash.entity.config';
 import { AlertHistoryStateConfig } from './alerthistorystate.entity.config';
+import { AlertTriggerConfig } from './alerttrigger.entity.config';
+import { AverageComparativeScoreConfig } from './averagecomparativescore.entity.config';
+import { CertificationControlConfig } from './certificationcontrol.entity.config';
+import { CloudAppSecurityStateConfig } from './cloudappsecuritystate.entity.config';
+import { ComplianceInformationConfig } from './complianceinformation.entity.config';
+import { ControlScoreConfig } from './controlscore.entity.config';
+import { FileHashConfig } from './filehash.entity.config';
+import { FileSecurityStateConfig } from './filesecuritystate.entity.config';
 import { HostSecurityStateConfig } from './hostsecuritystate.entity.config';
 import { MalwareStateConfig } from './malwarestate.entity.config';
 import { NetworkConnectionConfig } from './networkconnection.entity.config';
 import { ProcessConfig } from './process.entity.config';
 import { RegistryKeyStateConfig } from './registrykeystate.entity.config';
-import { SecurityResourceConfig } from './securityresource.entity.config';
-import { AlertTriggerConfig } from './alerttrigger.entity.config';
-import { UserSecurityStateConfig } from './usersecuritystate.entity.config';
-import { SecurityVendorInformationConfig } from './securityvendorinformation.entity.config';
-import { VulnerabilityStateConfig } from './vulnerabilitystate.entity.config';
-import { AverageComparativeScoreConfig } from './averagecomparativescore.entity.config';
-import { ControlScoreConfig } from './controlscore.entity.config';
-import { ComplianceInformationConfig } from './complianceinformation.entity.config';
-import { CertificationControlConfig } from './certificationcontrol.entity.config';
 import { SecureScoreControlStateUpdateConfig } from './securescorecontrolstateupdate.entity.config';
-import { CallMediaStateConfig } from './callmediastate.entity.config';
-import { ResultInfoConfig } from './resultinfo.entity.config';
-import { CallRouteConfig } from './callroute.entity.config';
-import { ParticipantInfoConfig } from './participantinfo.entity.config';
-import { InvitationParticipantInfoConfig } from './invitationparticipantinfo.entity.config';
+import { SecurityResourceConfig } from './securityresource.entity.config';
+import { SecurityVendorInformationConfig } from './securityvendorinformation.entity.config';
+import { UserSecurityStateConfig } from './usersecuritystate.entity.config';
+import { VulnerabilityStateConfig } from './vulnerabilitystate.entity.config';
 import { MediaConfigConfig } from './mediaconfig.entity.config';
-import { ChatInfoConfig } from './chatinfo.entity.config';
-import { CallOptionsConfig } from './calloptions.entity.config';
-import { MeetingInfoConfig } from './meetinginfo.entity.config';
-import { ToneInfoConfig } from './toneinfo.entity.config';
-import { IncomingContextConfig } from './incomingcontext.entity.config';
-import { MeetingParticipantsConfig } from './meetingparticipants.entity.config';
-import { MeetingParticipantInfoConfig } from './meetingparticipantinfo.entity.config';
+import { AppHostedMediaConfigConfig } from './apphostedmediaconfig.entity.config';
 import { AudioConferencingConfig } from './audioconferencing.entity.config';
-import { RecordingInfoConfig } from './recordinginfo.entity.config';
-import { MediaStreamConfig } from './mediastream.entity.config';
-import { OutgoingCallOptionsConfig } from './outgoingcalloptions.entity.config';
+import { CallMediaStateConfig } from './callmediastate.entity.config';
+import { CallOptionsConfig } from './calloptions.entity.config';
+import { CallRouteConfig } from './callroute.entity.config';
+import { CallTranscriptionInfoConfig } from './calltranscriptioninfo.entity.config';
+import { ChatInfoConfig } from './chatinfo.entity.config';
 import { CommsNotificationConfig } from './commsnotification.entity.config';
 import { CommsNotificationsConfig } from './commsnotifications.entity.config';
-import { AppHostedMediaConfigConfig } from './apphostedmediaconfig.entity.config';
-import { ServiceHostedMediaConfigConfig } from './servicehostedmediaconfig.entity.config';
+import { IncomingContextConfig } from './incomingcontext.entity.config';
+import { InvitationParticipantInfoConfig } from './invitationparticipantinfo.entity.config';
 import { MediaInfoConfig } from './mediainfo.entity.config';
-import { OrganizerMeetingInfoConfig } from './organizermeetinginfo.entity.config';
-import { TokenMeetingInfoConfig } from './tokenmeetinginfo.entity.config';
 import { PromptConfig } from './prompt.entity.config';
 import { MediaPromptConfig } from './mediaprompt.entity.config';
+import { MediaStreamConfig } from './mediastream.entity.config';
+import { MeetingInfoConfig } from './meetinginfo.entity.config';
+import { MeetingParticipantInfoConfig } from './meetingparticipantinfo.entity.config';
+import { MeetingParticipantsConfig } from './meetingparticipants.entity.config';
+import { OrganizerMeetingInfoConfig } from './organizermeetinginfo.entity.config';
+import { OutgoingCallOptionsConfig } from './outgoingcalloptions.entity.config';
+import { ParticipantInfoConfig } from './participantinfo.entity.config';
+import { RecordingInfoConfig } from './recordinginfo.entity.config';
+import { ResultInfoConfig } from './resultinfo.entity.config';
+import { ServiceHostedMediaConfigConfig } from './servicehostedmediaconfig.entity.config';
 import { TeleconferenceDeviceMediaQualityConfig } from './teleconferencedevicemediaquality.entity.config';
 import { TeleconferenceDeviceAudioQualityConfig } from './teleconferencedeviceaudioquality.entity.config';
+import { TeleconferenceDeviceQualityConfig } from './teleconferencedevicequality.entity.config';
 import { TeleconferenceDeviceVideoQualityConfig } from './teleconferencedevicevideoquality.entity.config';
 import { TeleconferenceDeviceScreenSharingQualityConfig } from './teleconferencedevicescreensharingquality.entity.config';
-import { TeleconferenceDeviceQualityConfig } from './teleconferencedevicequality.entity.config';
+import { TokenMeetingInfoConfig } from './tokenmeetinginfo.entity.config';
+import { ToneInfoConfig } from './toneinfo.entity.config';
 import { ChangeNotificationConfig } from './changenotification.entity.config';
 import { ResourceDataConfig } from './resourcedata.entity.config';
 import { ChangeNotificationCollectionConfig } from './changenotificationcollection.entity.config';
-import { TeamClassSettingsConfig } from './teamclasssettings.entity.config';
 import { ChatMessageAttachmentConfig } from './chatmessageattachment.entity.config';
 import { ChatMessageMentionConfig } from './chatmessagemention.entity.config';
-import { TeamsTabConfigurationConfig } from './teamstabconfiguration.entity.config';
-import { TeamMemberSettingsConfig } from './teammembersettings.entity.config';
-import { TeamGuestSettingsConfig } from './teamguestsettings.entity.config';
-import { TeamMessagingSettingsConfig } from './teammessagingsettings.entity.config';
-import { TeamFunSettingsConfig } from './teamfunsettings.entity.config';
 import { ChatMessagePolicyViolationConfig } from './chatmessagepolicyviolation.entity.config';
 import { ChatMessagePolicyViolationPolicyTipConfig } from './chatmessagepolicyviolationpolicytip.entity.config';
 import { ChatMessageReactionConfig } from './chatmessagereaction.entity.config';
 import { OperationErrorConfig } from './operationerror.entity.config';
-import { WorkforceIntegrationEncryptionConfig } from './workforceintegrationencryption.entity.config';
+import { TeamClassSettingsConfig } from './teamclasssettings.entity.config';
+import { TeamFunSettingsConfig } from './teamfunsettings.entity.config';
+import { TeamGuestSettingsConfig } from './teamguestsettings.entity.config';
+import { TeamMemberSettingsConfig } from './teammembersettings.entity.config';
+import { TeamMessagingSettingsConfig } from './teammessagingsettings.entity.config';
+import { TeamsTabConfigurationConfig } from './teamstabconfiguration.entity.config';
 import { ScheduleEntityConfig } from './scheduleentity.entity.config';
-import { ShiftActivityConfig } from './shiftactivity.entity.config';
 import { ShiftItemConfig } from './shiftitem.entity.config';
+import { ShiftActivityConfig } from './shiftactivity.entity.config';
 import { OpenShiftItemConfig } from './openshiftitem.entity.config';
-import { TimeOffItemConfig } from './timeoffitem.entity.config';
 import { ShiftAvailabilityConfig } from './shiftavailability.entity.config';
 import { TimeRangeConfig } from './timerange.entity.config';
+import { TimeOffItemConfig } from './timeoffitem.entity.config';
+import { WorkforceIntegrationEncryptionConfig } from './workforceintegrationencryption.entity.config';
 import { EntityConfig } from './entity.entity.config';
+import { AuditLogRootConfig } from './auditlogroot.entity.config';
 import { DirectoryAuditConfig } from './directoryaudit.entity.config';
 import { SignInConfig } from './signin.entity.config';
 import { RestrictedSignInConfig } from './restrictedsignin.entity.config';
-import { AuditLogRootConfig } from './auditlogroot.entity.config';
 import { InvitationConfig } from './invitation.entity.config';
 import { DirectoryObjectConfig } from './directoryobject.entity.config';
 import { UserConfig } from './user.entity.config';
 import { AppRoleAssignmentConfig } from './approleassignment.entity.config';
-import { OAuth2PermissionGrantConfig } from './oauth2permissiongrant.entity.config';
 import { LicenseDetailsConfig } from './licensedetails.entity.config';
-import { OutlookUserConfig } from './outlookuser.entity.config';
-import { OutlookItemConfig } from './outlookitem.entity.config';
-import { MessageConfig } from './message.entity.config';
-import { MailFolderConfig } from './mailfolder.entity.config';
+import { OAuth2PermissionGrantConfig } from './oauth2permissiongrant.entity.config';
 import { CalendarConfig } from './calendar.entity.config';
 import { CalendarGroupConfig } from './calendargroup.entity.config';
+import { OutlookItemConfig } from './outlookitem.entity.config';
 import { EventConfig } from './event.entity.config';
-import { PersonConfig } from './person.entity.config';
-import { ContactConfig } from './contact.entity.config';
 import { ContactFolderConfig } from './contactfolder.entity.config';
+import { ContactConfig } from './contact.entity.config';
 import { InferenceClassificationConfig } from './inferenceclassification.entity.config';
+import { MailFolderConfig } from './mailfolder.entity.config';
+import { MessageConfig } from './message.entity.config';
+import { OutlookUserConfig } from './outlookuser.entity.config';
+import { PersonConfig } from './person.entity.config';
 import { ProfilePhotoConfig } from './profilephoto.entity.config';
 import { BaseItemConfig } from './baseitem.entity.config';
 import { DriveConfig } from './drive.entity.config';
@@ -650,18 +653,20 @@ import { TeamConfig } from './team.entity.config';
 import { IdentityContainerConfig } from './identitycontainer.entity.config';
 import { ConditionalAccessRootConfig } from './conditionalaccessroot.entity.config';
 import { IdentityProviderConfig } from './identityprovider.entity.config';
+import { PolicyBaseConfig } from './policybase.entity.config';
+import { StsPolicyConfig } from './stspolicy.entity.config';
+import { ActivityBasedTimeoutPolicyConfig } from './activitybasedtimeoutpolicy.entity.config';
 import { AdministrativeUnitConfig } from './administrativeunit.entity.config';
 import { ApplicationConfig } from './application.entity.config';
 import { ExtensionPropertyConfig } from './extensionproperty.entity.config';
-import { PolicyBaseConfig } from './policybase.entity.config';
-import { StsPolicyConfig } from './stspolicy.entity.config';
 import { HomeRealmDiscoveryPolicyConfig } from './homerealmdiscoverypolicy.entity.config';
-import { TokenLifetimePolicyConfig } from './tokenlifetimepolicy.entity.config';
 import { TokenIssuancePolicyConfig } from './tokenissuancepolicy.entity.config';
-import { DirectoryConfig } from './directory.entity.config';
+import { TokenLifetimePolicyConfig } from './tokenlifetimepolicy.entity.config';
 import { CertificateBasedAuthConfigurationConfig } from './certificatebasedauthconfiguration.entity.config';
-import { OrgContactConfig } from './orgcontact.entity.config';
+import { ClaimsMappingPolicyConfig } from './claimsmappingpolicy.entity.config';
+import { ContractConfig } from './contract.entity.config';
 import { DeviceConfig } from './device.entity.config';
+import { DirectoryConfig } from './directory.entity.config';
 import { DirectoryObjectPartnerReferenceConfig } from './directoryobjectpartnerreference.entity.config';
 import { DirectoryRoleConfig } from './directoryrole.entity.config';
 import { DirectoryRoleTemplateConfig } from './directoryroletemplate.entity.config';
@@ -679,40 +684,38 @@ import { ConversationConfig } from './conversation.entity.config';
 import { ConversationThreadConfig } from './conversationthread.entity.config';
 import { GroupLifecyclePolicyConfig } from './grouplifecyclepolicy.entity.config';
 import { PlannerGroupConfig } from './plannergroup.entity.config';
+import { GroupSettingTemplateConfig } from './groupsettingtemplate.entity.config';
+import { OrganizationConfig } from './organization.entity.config';
+import { OrgContactConfig } from './orgcontact.entity.config';
 import { PolicyRootConfig } from './policyroot.entity.config';
-import { ActivityBasedTimeoutPolicyConfig } from './activitybasedtimeoutpolicy.entity.config';
-import { ClaimsMappingPolicyConfig } from './claimsmappingpolicy.entity.config';
-import { IdentitySecurityDefaultsEnforcementPolicyConfig } from './identitysecuritydefaultsenforcementpolicy.entity.config';
 import { ConditionalAccessPolicyConfig } from './conditionalaccesspolicy.entity.config';
-import { ContractConfig } from './contract.entity.config';
+import { IdentitySecurityDefaultsEnforcementPolicyConfig } from './identitysecuritydefaultsenforcementpolicy.entity.config';
 import { ServicePrincipalConfig } from './serviceprincipal.entity.config';
 import { SubscribedSkuConfig } from './subscribedsku.entity.config';
-import { OrganizationConfig } from './organization.entity.config';
-import { GroupSettingTemplateConfig } from './groupsettingtemplate.entity.config';
-import { EducationRootConfig } from './educationroot.entity.config';
 import { EducationClassConfig } from './educationclass.entity.config';
+import { EducationUserConfig } from './educationuser.entity.config';
 import { EducationOrganizationConfig } from './educationorganization.entity.config';
 import { EducationSchoolConfig } from './educationschool.entity.config';
-import { EducationUserConfig } from './educationuser.entity.config';
-import { ItemAnalyticsConfig } from './itemanalytics.entity.config';
-import { ColumnDefinitionConfig } from './columndefinition.entity.config';
-import { ContentTypeConfig } from './contenttype.entity.config';
-import { ListConfig } from './list.entity.config';
-import { ListItemConfig } from './listitem.entity.config';
-import { SubscriptionConfig } from './subscription.entity.config';
+import { EducationRootConfig } from './educationroot.entity.config';
 import { DriveItemConfig } from './driveitem.entity.config';
+import { ListConfig } from './list.entity.config';
 import { WorkbookConfig } from './workbook.entity.config';
+import { ItemAnalyticsConfig } from './itemanalytics.entity.config';
+import { ListItemConfig } from './listitem.entity.config';
 import { PermissionConfig } from './permission.entity.config';
+import { SubscriptionConfig } from './subscription.entity.config';
 import { ThumbnailSetConfig } from './thumbnailset.entity.config';
 import { BaseItemVersionConfig } from './baseitemversion.entity.config';
 import { DriveItemVersionConfig } from './driveitemversion.entity.config';
+import { ColumnDefinitionConfig } from './columndefinition.entity.config';
+import { ContentTypeConfig } from './contenttype.entity.config';
 import { WorkbookApplicationConfig } from './workbookapplication.entity.config';
-import { WorkbookNamedItemConfig } from './workbooknameditem.entity.config';
-import { WorkbookTableConfig } from './workbooktable.entity.config';
-import { WorkbookWorksheetConfig } from './workbookworksheet.entity.config';
 import { WorkbookCommentConfig } from './workbookcomment.entity.config';
 import { WorkbookFunctionsConfig } from './workbookfunctions.entity.config';
+import { WorkbookNamedItemConfig } from './workbooknameditem.entity.config';
 import { WorkbookOperationConfig } from './workbookoperation.entity.config';
+import { WorkbookTableConfig } from './workbooktable.entity.config';
+import { WorkbookWorksheetConfig } from './workbookworksheet.entity.config';
 import { WorkbookChartConfig } from './workbookchart.entity.config';
 import { WorkbookChartAxesConfig } from './workbookchartaxes.entity.config';
 import { WorkbookChartDataLabelsConfig } from './workbookchartdatalabels.entity.config';
@@ -754,23 +757,23 @@ import { WorkbookWorksheetProtectionConfig } from './workbookworksheetprotection
 import { PlaceConfig } from './place.entity.config';
 import { RoomConfig } from './room.entity.config';
 import { RoomListConfig } from './roomlist.entity.config';
-import { OutlookCategoryConfig } from './outlookcategory.entity.config';
-import { SingleValueLegacyExtendedPropertyConfig } from './singlevaluelegacyextendedproperty.entity.config';
-import { MultiValueLegacyExtendedPropertyConfig } from './multivaluelegacyextendedproperty.entity.config';
 import { AttachmentConfig } from './attachment.entity.config';
+import { CalendarPermissionConfig } from './calendarpermission.entity.config';
+import { MultiValueLegacyExtendedPropertyConfig } from './multivaluelegacyextendedproperty.entity.config';
+import { SingleValueLegacyExtendedPropertyConfig } from './singlevaluelegacyextendedproperty.entity.config';
 import { CalendarSharingMessageConfig } from './calendarsharingmessage.entity.config';
+import { PostConfig } from './post.entity.config';
 import { EventMessageConfig } from './eventmessage.entity.config';
 import { EventMessageRequestConfig } from './eventmessagerequest.entity.config';
 import { EventMessageResponseConfig } from './eventmessageresponse.entity.config';
+import { FileAttachmentConfig } from './fileattachment.entity.config';
+import { InferenceClassificationOverrideConfig } from './inferenceclassificationoverride.entity.config';
+import { ItemAttachmentConfig } from './itemattachment.entity.config';
 import { MessageRuleConfig } from './messagerule.entity.config';
 import { MailSearchFolderConfig } from './mailsearchfolder.entity.config';
-import { CalendarPermissionConfig } from './calendarpermission.entity.config';
-import { InferenceClassificationOverrideConfig } from './inferenceclassificationoverride.entity.config';
-import { PostConfig } from './post.entity.config';
-import { FileAttachmentConfig } from './fileattachment.entity.config';
-import { ItemAttachmentConfig } from './itemattachment.entity.config';
-import { ReferenceAttachmentConfig } from './referenceattachment.entity.config';
 import { OpenTypeExtensionConfig } from './opentypeextension.entity.config';
+import { OutlookCategoryConfig } from './outlookcategory.entity.config';
+import { ReferenceAttachmentConfig } from './referenceattachment.entity.config';
 import { ColumnLinkConfig } from './columnlink.entity.config';
 import { FieldValueSetConfig } from './fieldvalueset.entity.config';
 import { ItemActivityConfig } from './itemactivity.entity.config';
@@ -783,184 +786,185 @@ import { CallConfig } from './call.entity.config';
 import { NamedLocationConfig } from './namedlocation.entity.config';
 import { CountryNamedLocationConfig } from './countrynamedlocation.entity.config';
 import { IpNamedLocationConfig } from './ipnamedlocation.entity.config';
+import { MobileAppConfig } from './mobileapp.entity.config';
+import { MobileLobAppConfig } from './mobilelobapp.entity.config';
+import { AndroidLobAppConfig } from './androidlobapp.entity.config';
+import { AndroidStoreAppConfig } from './androidstoreapp.entity.config';
 import { DeviceAppManagementConfig } from './deviceappmanagement.entity.config';
 import { ManagedEBookConfig } from './managedebook.entity.config';
-import { MobileAppConfig } from './mobileapp.entity.config';
 import { MobileAppCategoryConfig } from './mobileappcategory.entity.config';
 import { ManagedDeviceMobileAppConfigurationConfig } from './manageddevicemobileappconfiguration.entity.config';
 import { VppTokenConfig } from './vpptoken.entity.config';
 import { ManagedAppPolicyConfig } from './managedapppolicy.entity.config';
 import { ManagedAppProtectionConfig } from './managedappprotection.entity.config';
 import { TargetedManagedAppProtectionConfig } from './targetedmanagedappprotection.entity.config';
-import { IosManagedAppProtectionConfig } from './iosmanagedappprotection.entity.config';
 import { AndroidManagedAppProtectionConfig } from './androidmanagedappprotection.entity.config';
 import { DefaultManagedAppProtectionConfig } from './defaultmanagedappprotection.entity.config';
-import { ManagedAppConfigurationConfig } from './managedappconfiguration.entity.config';
-import { TargetedManagedAppConfigurationConfig } from './targetedmanagedappconfiguration.entity.config';
+import { IosManagedAppProtectionConfig } from './iosmanagedappprotection.entity.config';
+import { ManagedAppStatusConfig } from './managedappstatus.entity.config';
 import { WindowsInformationProtectionConfig } from './windowsinformationprotection.entity.config';
 import { MdmWindowsInformationProtectionPolicyConfig } from './mdmwindowsinformationprotectionpolicy.entity.config';
+import { ManagedAppConfigurationConfig } from './managedappconfiguration.entity.config';
+import { TargetedManagedAppConfigurationConfig } from './targetedmanagedappconfiguration.entity.config';
 import { WindowsInformationProtectionPolicyConfig } from './windowsinformationprotectionpolicy.entity.config';
-import { ManagedAppStatusConfig } from './managedappstatus.entity.config';
-import { MobileAppAssignmentConfig } from './mobileappassignment.entity.config';
-import { MobileAppContentFileConfig } from './mobileappcontentfile.entity.config';
-import { ManagedDeviceMobileAppConfigurationAssignmentConfig } from './manageddevicemobileappconfigurationassignment.entity.config';
-import { ManagedDeviceMobileAppConfigurationDeviceStatusConfig } from './manageddevicemobileappconfigurationdevicestatus.entity.config';
-import { ManagedDeviceMobileAppConfigurationUserStatusConfig } from './manageddevicemobileappconfigurationuserstatus.entity.config';
-import { ManagedDeviceMobileAppConfigurationDeviceSummaryConfig } from './manageddevicemobileappconfigurationdevicesummary.entity.config';
-import { ManagedDeviceMobileAppConfigurationUserSummaryConfig } from './manageddevicemobileappconfigurationusersummary.entity.config';
+import { IosLobAppConfig } from './ioslobapp.entity.config';
+import { IosMobileAppConfigurationConfig } from './iosmobileappconfiguration.entity.config';
+import { IosStoreAppConfig } from './iosstoreapp.entity.config';
+import { IosVppAppConfig } from './iosvppapp.entity.config';
 import { MacOSOfficeSuiteAppConfig } from './macosofficesuiteapp.entity.config';
 import { ManagedAppConfig } from './managedapp.entity.config';
-import { ManagedAndroidStoreAppConfig } from './managedandroidstoreapp.entity.config';
-import { ManagedIOSStoreAppConfig } from './managediosstoreapp.entity.config';
 import { ManagedMobileLobAppConfig } from './managedmobilelobapp.entity.config';
-import { MobileAppContentConfig } from './mobileappcontent.entity.config';
 import { ManagedAndroidLobAppConfig } from './managedandroidlobapp.entity.config';
+import { ManagedAndroidStoreAppConfig } from './managedandroidstoreapp.entity.config';
+import { ManagedDeviceMobileAppConfigurationAssignmentConfig } from './manageddevicemobileappconfigurationassignment.entity.config';
+import { ManagedDeviceMobileAppConfigurationDeviceStatusConfig } from './manageddevicemobileappconfigurationdevicestatus.entity.config';
+import { ManagedDeviceMobileAppConfigurationDeviceSummaryConfig } from './manageddevicemobileappconfigurationdevicesummary.entity.config';
+import { ManagedDeviceMobileAppConfigurationUserStatusConfig } from './manageddevicemobileappconfigurationuserstatus.entity.config';
+import { ManagedDeviceMobileAppConfigurationUserSummaryConfig } from './manageddevicemobileappconfigurationusersummary.entity.config';
 import { ManagedIOSLobAppConfig } from './managedioslobapp.entity.config';
-import { MobileLobAppConfig } from './mobilelobapp.entity.config';
+import { ManagedIOSStoreAppConfig } from './managediosstoreapp.entity.config';
+import { MobileAppContentConfig } from './mobileappcontent.entity.config';
+import { MicrosoftStoreForBusinessAppConfig } from './microsoftstoreforbusinessapp.entity.config';
+import { MobileAppAssignmentConfig } from './mobileappassignment.entity.config';
+import { MobileAppContentFileConfig } from './mobileappcontentfile.entity.config';
+import { WebAppConfig } from './webapp.entity.config';
 import { WindowsMobileMSIConfig } from './windowsmobilemsi.entity.config';
 import { WindowsUniversalAppXConfig } from './windowsuniversalappx.entity.config';
-import { AndroidLobAppConfig } from './androidlobapp.entity.config';
-import { IosLobAppConfig } from './ioslobapp.entity.config';
-import { MicrosoftStoreForBusinessAppConfig } from './microsoftstoreforbusinessapp.entity.config';
-import { WebAppConfig } from './webapp.entity.config';
-import { AndroidStoreAppConfig } from './androidstoreapp.entity.config';
-import { IosVppAppConfig } from './iosvppapp.entity.config';
-import { IosStoreAppConfig } from './iosstoreapp.entity.config';
-import { IosMobileAppConfigurationConfig } from './iosmobileappconfiguration.entity.config';
-import { ManagedEBookAssignmentConfig } from './managedebookassignment.entity.config';
-import { EBookInstallSummaryConfig } from './ebookinstallsummary.entity.config';
 import { DeviceInstallStateConfig } from './deviceinstallstate.entity.config';
-import { UserInstallStateSummaryConfig } from './userinstallstatesummary.entity.config';
-import { IosVppEBookAssignmentConfig } from './iosvppebookassignment.entity.config';
+import { EBookInstallSummaryConfig } from './ebookinstallsummary.entity.config';
 import { IosVppEBookConfig } from './iosvppebook.entity.config';
+import { ManagedEBookAssignmentConfig } from './managedebookassignment.entity.config';
+import { IosVppEBookAssignmentConfig } from './iosvppebookassignment.entity.config';
+import { UserInstallStateSummaryConfig } from './userinstallstatesummary.entity.config';
 import { DeviceManagementConfig } from './devicemanagement.entity.config';
 import { TermsAndConditionsConfig } from './termsandconditions.entity.config';
-import { DeviceConfigurationConfig } from './deviceconfiguration.entity.config';
 import { DeviceCompliancePolicyConfig } from './devicecompliancepolicy.entity.config';
-import { SoftwareUpdateStatusSummaryConfig } from './softwareupdatestatussummary.entity.config';
 import { DeviceCompliancePolicyDeviceStateSummaryConfig } from './devicecompliancepolicydevicestatesummary.entity.config';
 import { DeviceCompliancePolicySettingStateSummaryConfig } from './devicecompliancepolicysettingstatesummary.entity.config';
 import { DeviceConfigurationDeviceStateSummaryConfig } from './deviceconfigurationdevicestatesummary.entity.config';
+import { DeviceConfigurationConfig } from './deviceconfiguration.entity.config';
 import { IosUpdateDeviceStatusConfig } from './iosupdatedevicestatus.entity.config';
-import { DeviceCategoryConfig } from './devicecategory.entity.config';
-import { DeviceManagementExchangeConnectorConfig } from './devicemanagementexchangeconnector.entity.config';
-import { DeviceEnrollmentConfigurationConfig } from './deviceenrollmentconfiguration.entity.config';
-import { OnPremisesConditionalAccessSettingsConfig } from './onpremisesconditionalaccesssettings.entity.config';
-import { MobileThreatDefenseConnectorConfig } from './mobilethreatdefenseconnector.entity.config';
-import { DeviceManagementPartnerConfig } from './devicemanagementpartner.entity.config';
+import { SoftwareUpdateStatusSummaryConfig } from './softwareupdatestatussummary.entity.config';
 import { ComplianceManagementPartnerConfig } from './compliancemanagementpartner.entity.config';
+import { OnPremisesConditionalAccessSettingsConfig } from './onpremisesconditionalaccesssettings.entity.config';
+import { DeviceCategoryConfig } from './devicecategory.entity.config';
+import { DeviceEnrollmentConfigurationConfig } from './deviceenrollmentconfiguration.entity.config';
+import { DeviceManagementPartnerConfig } from './devicemanagementpartner.entity.config';
+import { DeviceManagementExchangeConnectorConfig } from './devicemanagementexchangeconnector.entity.config';
+import { MobileThreatDefenseConnectorConfig } from './mobilethreatdefenseconnector.entity.config';
 import { ApplePushNotificationCertificateConfig } from './applepushnotificationcertificate.entity.config';
-import { ManagedDeviceOverviewConfig } from './manageddeviceoverview.entity.config';
 import { DetectedAppConfig } from './detectedapp.entity.config';
+import { ManagedDeviceOverviewConfig } from './manageddeviceoverview.entity.config';
 import { NotificationMessageTemplateConfig } from './notificationmessagetemplate.entity.config';
-import { RoleDefinitionConfig } from './roledefinition.entity.config';
+import { ResourceOperationConfig } from './resourceoperation.entity.config';
 import { RoleAssignmentConfig } from './roleassignment.entity.config';
 import { DeviceAndAppManagementRoleAssignmentConfig } from './deviceandappmanagementroleassignment.entity.config';
-import { ResourceOperationConfig } from './resourceoperation.entity.config';
+import { RoleDefinitionConfig } from './roledefinition.entity.config';
 import { RemoteAssistancePartnerConfig } from './remoteassistancepartner.entity.config';
 import { TelecomExpenseManagementPartnerConfig } from './telecomexpensemanagementpartner.entity.config';
 import { WindowsInformationProtectionAppLearningSummaryConfig } from './windowsinformationprotectionapplearningsummary.entity.config';
 import { WindowsInformationProtectionNetworkLearningSummaryConfig } from './windowsinformationprotectionnetworklearningsummary.entity.config';
-import { TermsAndConditionsAssignmentConfig } from './termsandconditionsassignment.entity.config';
 import { TermsAndConditionsAcceptanceStatusConfig } from './termsandconditionsacceptancestatus.entity.config';
-import { ReportRootConfig } from './reportroot.entity.config';
-import { DeviceConfigurationAssignmentConfig } from './deviceconfigurationassignment.entity.config';
-import { DeviceConfigurationDeviceStatusConfig } from './deviceconfigurationdevicestatus.entity.config';
-import { DeviceConfigurationUserStatusConfig } from './deviceconfigurationuserstatus.entity.config';
-import { DeviceConfigurationDeviceOverviewConfig } from './deviceconfigurationdeviceoverview.entity.config';
-import { DeviceConfigurationUserOverviewConfig } from './deviceconfigurationuseroverview.entity.config';
-import { SettingStateDeviceSummaryConfig } from './settingstatedevicesummary.entity.config';
-import { DeviceCompliancePolicyAssignmentConfig } from './devicecompliancepolicyassignment.entity.config';
-import { DeviceComplianceScheduledActionForRuleConfig } from './devicecompliancescheduledactionforrule.entity.config';
-import { DeviceComplianceDeviceStatusConfig } from './devicecompliancedevicestatus.entity.config';
-import { DeviceComplianceUserStatusConfig } from './devicecomplianceuserstatus.entity.config';
-import { DeviceComplianceDeviceOverviewConfig } from './devicecompliancedeviceoverview.entity.config';
-import { DeviceComplianceUserOverviewConfig } from './devicecomplianceuseroverview.entity.config';
-import { DeviceComplianceActionItemConfig } from './devicecomplianceactionitem.entity.config';
+import { TermsAndConditionsAssignmentConfig } from './termsandconditionsassignment.entity.config';
+import { AndroidCompliancePolicyConfig } from './androidcompliancepolicy.entity.config';
 import { AndroidCustomConfigurationConfig } from './androidcustomconfiguration.entity.config';
 import { AndroidGeneralDeviceConfigurationConfig } from './androidgeneraldeviceconfiguration.entity.config';
+import { AndroidWorkProfileCompliancePolicyConfig } from './androidworkprofilecompliancepolicy.entity.config';
 import { AndroidWorkProfileCustomConfigurationConfig } from './androidworkprofilecustomconfiguration.entity.config';
 import { AndroidWorkProfileGeneralDeviceConfigurationConfig } from './androidworkprofilegeneraldeviceconfiguration.entity.config';
+import { AppleDeviceFeaturesConfigurationBaseConfig } from './appledevicefeaturesconfigurationbase.entity.config';
+import { DeviceComplianceActionItemConfig } from './devicecomplianceactionitem.entity.config';
+import { DeviceComplianceDeviceOverviewConfig } from './devicecompliancedeviceoverview.entity.config';
+import { DeviceComplianceDeviceStatusConfig } from './devicecompliancedevicestatus.entity.config';
+import { DeviceCompliancePolicyAssignmentConfig } from './devicecompliancepolicyassignment.entity.config';
+import { SettingStateDeviceSummaryConfig } from './settingstatedevicesummary.entity.config';
+import { DeviceComplianceScheduledActionForRuleConfig } from './devicecompliancescheduledactionforrule.entity.config';
+import { DeviceComplianceUserStatusConfig } from './devicecomplianceuserstatus.entity.config';
+import { DeviceComplianceUserOverviewConfig } from './devicecomplianceuseroverview.entity.config';
+import { DeviceComplianceSettingStateConfig } from './devicecompliancesettingstate.entity.config';
+import { DeviceCompliancePolicyStateConfig } from './devicecompliancepolicystate.entity.config';
+import { DeviceConfigurationAssignmentConfig } from './deviceconfigurationassignment.entity.config';
+import { DeviceConfigurationDeviceStatusConfig } from './deviceconfigurationdevicestatus.entity.config';
+import { DeviceConfigurationDeviceOverviewConfig } from './deviceconfigurationdeviceoverview.entity.config';
+import { DeviceConfigurationUserStatusConfig } from './deviceconfigurationuserstatus.entity.config';
+import { DeviceConfigurationUserOverviewConfig } from './deviceconfigurationuseroverview.entity.config';
+import { DeviceConfigurationStateConfig } from './deviceconfigurationstate.entity.config';
+import { EditionUpgradeConfigurationConfig } from './editionupgradeconfiguration.entity.config';
 import { IosCertificateProfileConfig } from './ioscertificateprofile.entity.config';
+import { IosCompliancePolicyConfig } from './ioscompliancepolicy.entity.config';
 import { IosCustomConfigurationConfig } from './ioscustomconfiguration.entity.config';
+import { IosDeviceFeaturesConfigurationConfig } from './iosdevicefeaturesconfiguration.entity.config';
 import { IosGeneralDeviceConfigurationConfig } from './iosgeneraldeviceconfiguration.entity.config';
 import { IosUpdateConfigurationConfig } from './iosupdateconfiguration.entity.config';
-import { MacOSCustomConfigurationConfig } from './macoscustomconfiguration.entity.config';
-import { MacOSGeneralDeviceConfigurationConfig } from './macosgeneraldeviceconfiguration.entity.config';
-import { AppleDeviceFeaturesConfigurationBaseConfig } from './appledevicefeaturesconfigurationbase.entity.config';
-import { MacOSDeviceFeaturesConfigurationConfig } from './macosdevicefeaturesconfiguration.entity.config';
-import { IosDeviceFeaturesConfigurationConfig } from './iosdevicefeaturesconfiguration.entity.config';
-import { Windows10EndpointProtectionConfigurationConfig } from './windows10endpointprotectionconfiguration.entity.config';
-import { Windows10GeneralConfigurationConfig } from './windows10generalconfiguration.entity.config';
-import { WindowsDefenderAdvancedThreatProtectionConfigurationConfig } from './windowsdefenderadvancedthreatprotectionconfiguration.entity.config';
-import { EditionUpgradeConfigurationConfig } from './editionupgradeconfiguration.entity.config';
-import { Windows10CustomConfigurationConfig } from './windows10customconfiguration.entity.config';
-import { Windows10EnterpriseModernAppManagementConfigurationConfig } from './windows10enterprisemodernappmanagementconfiguration.entity.config';
-import { SharedPCConfigurationConfig } from './sharedpcconfiguration.entity.config';
-import { Windows10SecureAssessmentConfigurationConfig } from './windows10secureassessmentconfiguration.entity.config';
-import { WindowsPhone81CustomConfigurationConfig } from './windowsphone81customconfiguration.entity.config';
-import { WindowsUpdateForBusinessConfigurationConfig } from './windowsupdateforbusinessconfiguration.entity.config';
-import { Windows81GeneralConfigurationConfig } from './windows81generalconfiguration.entity.config';
-import { WindowsPhone81GeneralConfigurationConfig } from './windowsphone81generalconfiguration.entity.config';
-import { Windows10TeamGeneralConfigurationConfig } from './windows10teamgeneralconfiguration.entity.config';
-import { AndroidCompliancePolicyConfig } from './androidcompliancepolicy.entity.config';
-import { AndroidWorkProfileCompliancePolicyConfig } from './androidworkprofilecompliancepolicy.entity.config';
-import { IosCompliancePolicyConfig } from './ioscompliancepolicy.entity.config';
 import { MacOSCompliancePolicyConfig } from './macoscompliancepolicy.entity.config';
+import { MacOSCustomConfigurationConfig } from './macoscustomconfiguration.entity.config';
+import { MacOSDeviceFeaturesConfigurationConfig } from './macosdevicefeaturesconfiguration.entity.config';
+import { MacOSGeneralDeviceConfigurationConfig } from './macosgeneraldeviceconfiguration.entity.config';
+import { ReportRootConfig } from './reportroot.entity.config';
+import { SharedPCConfigurationConfig } from './sharedpcconfiguration.entity.config';
 import { Windows10CompliancePolicyConfig } from './windows10compliancepolicy.entity.config';
+import { Windows10CustomConfigurationConfig } from './windows10customconfiguration.entity.config';
+import { Windows10EndpointProtectionConfigurationConfig } from './windows10endpointprotectionconfiguration.entity.config';
+import { Windows10EnterpriseModernAppManagementConfigurationConfig } from './windows10enterprisemodernappmanagementconfiguration.entity.config';
+import { Windows10GeneralConfigurationConfig } from './windows10generalconfiguration.entity.config';
 import { Windows10MobileCompliancePolicyConfig } from './windows10mobilecompliancepolicy.entity.config';
+import { Windows10SecureAssessmentConfigurationConfig } from './windows10secureassessmentconfiguration.entity.config';
+import { Windows10TeamGeneralConfigurationConfig } from './windows10teamgeneralconfiguration.entity.config';
 import { Windows81CompliancePolicyConfig } from './windows81compliancepolicy.entity.config';
+import { Windows81GeneralConfigurationConfig } from './windows81generalconfiguration.entity.config';
+import { WindowsDefenderAdvancedThreatProtectionConfigurationConfig } from './windowsdefenderadvancedthreatprotectionconfiguration.entity.config';
 import { WindowsPhone81CompliancePolicyConfig } from './windowsphone81compliancepolicy.entity.config';
-import { DeviceComplianceSettingStateConfig } from './devicecompliancesettingstate.entity.config';
-import { DeviceConfigurationStateConfig } from './deviceconfigurationstate.entity.config';
-import { DeviceCompliancePolicyStateConfig } from './devicecompliancepolicystate.entity.config';
+import { WindowsPhone81CustomConfigurationConfig } from './windowsphone81customconfiguration.entity.config';
+import { WindowsPhone81GeneralConfigurationConfig } from './windowsphone81generalconfiguration.entity.config';
+import { WindowsUpdateForBusinessConfigurationConfig } from './windowsupdateforbusinessconfiguration.entity.config';
 import { EnrollmentConfigurationAssignmentConfig } from './enrollmentconfigurationassignment.entity.config';
 import { DeviceEnrollmentLimitConfigurationConfig } from './deviceenrollmentlimitconfiguration.entity.config';
 import { DeviceEnrollmentPlatformRestrictionsConfigurationConfig } from './deviceenrollmentplatformrestrictionsconfiguration.entity.config';
 import { DeviceEnrollmentWindowsHelloForBusinessConfigurationConfig } from './deviceenrollmentwindowshelloforbusinessconfiguration.entity.config';
 import { ManagedMobileAppConfig } from './managedmobileapp.entity.config';
-import { TargetedManagedAppPolicyAssignmentConfig } from './targetedmanagedapppolicyassignment.entity.config';
-import { ManagedAppOperationConfig } from './managedappoperation.entity.config';
 import { ManagedAppPolicyDeploymentSummaryConfig } from './managedapppolicydeploymentsummary.entity.config';
-import { WindowsInformationProtectionAppLockerFileConfig } from './windowsinformationprotectionapplockerfile.entity.config';
-import { IosManagedAppRegistrationConfig } from './iosmanagedappregistration.entity.config';
 import { AndroidManagedAppRegistrationConfig } from './androidmanagedappregistration.entity.config';
+import { IosManagedAppRegistrationConfig } from './iosmanagedappregistration.entity.config';
+import { ManagedAppOperationConfig } from './managedappoperation.entity.config';
 import { ManagedAppStatusRawConfig } from './managedappstatusraw.entity.config';
+import { TargetedManagedAppPolicyAssignmentConfig } from './targetedmanagedapppolicyassignment.entity.config';
+import { WindowsInformationProtectionAppLockerFileConfig } from './windowsinformationprotectionapplockerfile.entity.config';
 import { LocalizedNotificationMessageConfig } from './localizednotificationmessage.entity.config';
 import { DeviceAndAppManagementRoleDefinitionConfig } from './deviceandappmanagementroledefinition.entity.config';
 import { EnrollmentTroubleshootingEventConfig } from './enrollmenttroubleshootingevent.entity.config';
-import { PlannerTaskConfig } from './plannertask.entity.config';
-import { PlannerPlanConfig } from './plannerplan.entity.config';
 import { PlannerConfig } from './planner.entity.config';
 import { PlannerBucketConfig } from './plannerbucket.entity.config';
-import { PlannerTaskDetailsConfig } from './plannertaskdetails.entity.config';
+import { PlannerPlanConfig } from './plannerplan.entity.config';
+import { PlannerTaskConfig } from './plannertask.entity.config';
 import { PlannerAssignedToTaskBoardTaskFormatConfig } from './plannerassignedtotaskboardtaskformat.entity.config';
-import { PlannerProgressTaskBoardTaskFormatConfig } from './plannerprogresstaskboardtaskformat.entity.config';
 import { PlannerBucketTaskBoardTaskFormatConfig } from './plannerbuckettaskboardtaskformat.entity.config';
 import { PlannerPlanDetailsConfig } from './plannerplandetails.entity.config';
+import { PlannerProgressTaskBoardTaskFormatConfig } from './plannerprogresstaskboardtaskformat.entity.config';
+import { PlannerTaskDetailsConfig } from './plannertaskdetails.entity.config';
+import { SharedInsightConfig } from './sharedinsight.entity.config';
+import { TrendingConfig } from './trending.entity.config';
+import { UsedInsightConfig } from './usedinsight.entity.config';
 import { ChangeTrackedEntityConfig } from './changetrackedentity.entity.config';
 import { ShiftPreferencesConfig } from './shiftpreferences.entity.config';
-import { TrendingConfig } from './trending.entity.config';
-import { SharedInsightConfig } from './sharedinsight.entity.config';
-import { UsedInsightConfig } from './usedinsight.entity.config';
 import { OnenoteEntityBaseModelConfig } from './onenoteentitybasemodel.entity.config';
 import { OnenoteEntitySchemaObjectModelConfig } from './onenoteentityschemaobjectmodel.entity.config';
 import { OnenoteEntityHierarchyModelConfig } from './onenoteentityhierarchymodel.entity.config';
 import { NotebookConfig } from './notebook.entity.config';
-import { OnenoteSectionConfig } from './onenotesection.entity.config';
 import { SectionGroupConfig } from './sectiongroup.entity.config';
-import { OnenotePageConfig } from './onenotepage.entity.config';
-import { OnenoteResourceConfig } from './onenoteresource.entity.config';
+import { OnenoteSectionConfig } from './onenotesection.entity.config';
 import { OperationConfig } from './operation.entity.config';
 import { OnenoteOperationConfig } from './onenoteoperation.entity.config';
-import { DataPolicyOperationConfig } from './datapolicyoperation.entity.config';
+import { OnenotePageConfig } from './onenotepage.entity.config';
+import { OnenoteResourceConfig } from './onenoteresource.entity.config';
 import { ActivityHistoryItemConfig } from './activityhistoryitem.entity.config';
-import { SecurityConfig } from './security.entity.config';
+import { DataPolicyOperationConfig } from './datapolicyoperation.entity.config';
 import { AlertConfig } from './alert.entity.config';
-import { SecureScoreControlProfileConfig } from './securescorecontrolprofile.entity.config';
 import { SecureScoreConfig } from './securescore.entity.config';
-import { ParticipantConfig } from './participant.entity.config';
+import { SecureScoreControlProfileConfig } from './securescorecontrolprofile.entity.config';
+import { SecurityConfig } from './security.entity.config';
 import { CommsOperationConfig } from './commsoperation.entity.config';
+import { ParticipantConfig } from './participant.entity.config';
+import { CancelMediaProcessingOperationConfig } from './cancelmediaprocessingoperation.entity.config';
 import { InviteParticipantsOperationConfig } from './inviteparticipantsoperation.entity.config';
 import { MuteParticipantOperationConfig } from './muteparticipantoperation.entity.config';
 import { PlayPromptOperationConfig } from './playpromptoperation.entity.config';
@@ -968,120 +972,144 @@ import { RecordOperationConfig } from './recordoperation.entity.config';
 import { SubscribeToToneOperationConfig } from './subscribetotoneoperation.entity.config';
 import { UnmuteParticipantOperationConfig } from './unmuteparticipantoperation.entity.config';
 import { UpdateRecordingStatusOperationConfig } from './updaterecordingstatusoperation.entity.config';
-import { TeamworkConfig } from './teamwork.entity.config';
-import { WorkforceIntegrationConfig } from './workforceintegration.entity.config';
-import { ScheduleConfig } from './schedule.entity.config';
-import { TeamsTemplateConfig } from './teamstemplate.entity.config';
 import { ConversationMemberConfig } from './conversationmember.entity.config';
-import { ChannelConfig } from './channel.entity.config';
-import { TeamsAppInstallationConfig } from './teamsappinstallation.entity.config';
-import { TeamsAsyncOperationConfig } from './teamsasyncoperation.entity.config';
-import { ChatMessageConfig } from './chatmessage.entity.config';
-import { ChatMessageHostedContentConfig } from './chatmessagehostedcontent.entity.config';
+import { AadUserConversationMemberConfig } from './aaduserconversationmember.entity.config';
 import { AppCatalogsConfig } from './appcatalogs.entity.config';
 import { TeamsAppConfig } from './teamsapp.entity.config';
-import { TeamsAppDefinitionConfig } from './teamsappdefinition.entity.config';
+import { ChannelConfig } from './channel.entity.config';
+import { ChatMessageConfig } from './chatmessage.entity.config';
 import { TeamsTabConfig } from './teamstab.entity.config';
-import { AadUserConversationMemberConfig } from './aaduserconversationmember.entity.config';
-import { ShiftConfig } from './shift.entity.config';
-import { OpenShiftConfig } from './openshift.entity.config';
-import { TimeOffConfig } from './timeoff.entity.config';
-import { TimeOffReasonConfig } from './timeoffreason.entity.config';
-import { SchedulingGroupConfig } from './schedulinggroup.entity.config';
+import { ChatMessageHostedContentConfig } from './chatmessagehostedcontent.entity.config';
+import { ScheduleConfig } from './schedule.entity.config';
+import { TeamsAppInstallationConfig } from './teamsappinstallation.entity.config';
+import { TeamsAsyncOperationConfig } from './teamsasyncoperation.entity.config';
+import { TeamsTemplateConfig } from './teamstemplate.entity.config';
+import { TeamsAppDefinitionConfig } from './teamsappdefinition.entity.config';
+import { TeamworkConfig } from './teamwork.entity.config';
+import { WorkforceIntegrationConfig } from './workforceintegration.entity.config';
 import { ScheduleChangeRequestConfig } from './schedulechangerequest.entity.config';
 import { OfferShiftRequestConfig } from './offershiftrequest.entity.config';
-import { SwapShiftsChangeRequestConfig } from './swapshiftschangerequest.entity.config';
+import { OpenShiftConfig } from './openshift.entity.config';
 import { OpenShiftChangeRequestConfig } from './openshiftchangerequest.entity.config';
+import { SchedulingGroupConfig } from './schedulinggroup.entity.config';
+import { ShiftConfig } from './shift.entity.config';
+import { SwapShiftsChangeRequestConfig } from './swapshiftschangerequest.entity.config';
+import { TimeOffReasonConfig } from './timeoffreason.entity.config';
 import { TimeOffRequestConfig } from './timeoffrequest.entity.config';
-import { InformationProtectionConfig } from './informationprotection.entity.config';
+import { TimeOffConfig } from './timeoff.entity.config';
 import { ThreatAssessmentRequestConfig } from './threatassessmentrequest.entity.config';
+import { EmailFileAssessmentRequestConfig } from './emailfileassessmentrequest.entity.config';
+import { FileAssessmentRequestConfig } from './fileassessmentrequest.entity.config';
+import { InformationProtectionConfig } from './informationprotection.entity.config';
+import { MailAssessmentRequestConfig } from './mailassessmentrequest.entity.config';
 import { ThreatAssessmentResultConfig } from './threatassessmentresult.entity.config';
 import { UrlAssessmentRequestConfig } from './urlassessmentrequest.entity.config';
-import { FileAssessmentRequestConfig } from './fileassessmentrequest.entity.config';
-import { EmailFileAssessmentRequestConfig } from './emailfileassessmentrequest.entity.config';
-import { MailAssessmentRequestConfig } from './mailassessmentrequest.entity.config';
 import { GraphServiceContainer } from './graphservice.container';
 //#endregion
 
 export const GraphSchema = {
   namespace: "microsoft.graph",
   alias: "graph",
-  enums: [RiskLevelConfig,
-    AppliedConditionalAccessPolicyResultConfig,
+  enums: [AppliedConditionalAccessPolicyResultConfig,
     ConditionalAccessStatusConfig,
     GroupTypeConfig,
     OperationResultConfig,
-    RiskStateConfig,
     RiskDetailConfig,
     RiskEventTypeConfig,
+    RiskLevelConfig,
+    RiskStateConfig,
     PhoneTypeConfig,
-    EducationUserRoleConfig,
     EducationExternalSourceConfig,
     EducationGenderConfig,
+    EducationUserRoleConfig,
     WorkbookOperationStatusConfig,
-    AttendeeTypeConfig,
     ActivityDomainConfig,
+    AttendeeTypeConfig,
     FreeBusyStatusConfig,
     LocationTypeConfig,
-    PhysicalAddressTypeConfig,
     LocationUniqueIdTypeConfig,
+    PhysicalAddressTypeConfig,
     BookingTypeConfig,
-    DayOfWeekConfig,
+    AttachmentTypeConfig,
     AutomaticRepliesStatusConfig,
-    ExternalAudienceScopeConfig,
-    DelegateMeetingMessageDeliveryOptionsConfig,
-    MailTipsTypeConfig,
-    RecipientScopeTypeConfig,
-    ExchangeIdFormatConfig,
-    TimeZoneStandardConfig,
     BodyTypeConfig,
-    ImportanceConfig,
-    InferenceClassificationTypeConfig,
-    FollowupFlagStatusConfig,
+    CalendarColorConfig,
+    CalendarRoleTypeConfig,
+    CalendarSharingActionConfig,
     CalendarSharingActionImportanceConfig,
     CalendarSharingActionTypeConfig,
-    CalendarSharingActionConfig,
-    MeetingMessageTypeConfig,
-    EventTypeConfig,
-    RecurrencePatternTypeConfig,
-    WeekIndexConfig,
-    RecurrenceRangeTypeConfig,
-    MeetingRequestTypeConfig,
-    ResponseTypeConfig,
-    CalendarColorConfig,
-    OnlineMeetingProviderTypeConfig,
-    CalendarRoleTypeConfig,
-    SensitivityConfig,
-    SelectionLikelihoodInfoConfig,
-    WebsiteTypeConfig,
     CategoryColorConfig,
-    AttachmentTypeConfig,
+    DayOfWeekConfig,
+    DelegateMeetingMessageDeliveryOptionsConfig,
+    EventTypeConfig,
+    ExchangeIdFormatConfig,
+    ExternalAudienceScopeConfig,
+    FollowupFlagStatusConfig,
+    ImportanceConfig,
+    InferenceClassificationTypeConfig,
+    MailTipsTypeConfig,
+    MeetingMessageTypeConfig,
+    MeetingRequestTypeConfig,
     MessageActionFlagConfig,
-    ConditionalAccessPolicyStateConfig,
-    ConditionalAccessClientAppConfig,
-    ConditionalAccessGrantControlConfig,
+    OnlineMeetingProviderTypeConfig,
+    RecipientScopeTypeConfig,
+    RecurrencePatternTypeConfig,
+    RecurrenceRangeTypeConfig,
+    ResponseTypeConfig,
+    SelectionLikelihoodInfoConfig,
+    SensitivityConfig,
+    TimeZoneStandardConfig,
+    WebsiteTypeConfig,
+    WeekIndexConfig,
     CloudAppSecuritySessionControlTypeConfig,
-    SigninFrequencyTypeConfig,
-    PersistentBrowserSessionModeConfig,
+    ConditionalAccessClientAppConfig,
     ConditionalAccessDevicePlatformConfig,
-    InstallIntentConfig,
-    MobileAppPublishingStateConfig,
-    WindowsArchitectureConfig,
-    ManagedAppAvailabilityConfig,
-    MobileAppContentFileUploadStateConfig,
-    WindowsDeviceTypeConfig,
-    VppTokenAccountTypeConfig,
-    MicrosoftStoreForBusinessLicenseTypeConfig,
+    ConditionalAccessGrantControlConfig,
+    ConditionalAccessPolicyStateConfig,
+    PersistentBrowserSessionModeConfig,
+    SigninFrequencyTypeConfig,
     ComplianceStatusConfig,
+    InstallIntentConfig,
+    ManagedAppAvailabilityConfig,
     MdmAppConfigKeyTypeConfig,
+    MicrosoftStoreForBusinessLicenseTypeConfig,
+    MobileAppContentFileUploadStateConfig,
+    MobileAppPublishingStateConfig,
+    VppTokenAccountTypeConfig,
+    WindowsArchitectureConfig,
+    WindowsDeviceTypeConfig,
     InstallStateConfig,
-    Windows10EditionTypeConfig,
-    AppListTypeConfig,
     AndroidRequiredPasswordTypeConfig,
-    WebBrowserCookieSettingsConfig,
-    AndroidWorkProfileRequiredPasswordTypeConfig,
     AndroidWorkProfileCrossProfileDataSharingTypeConfig,
     AndroidWorkProfileDefaultAppPermissionPolicyTypeConfig,
+    AndroidWorkProfileRequiredPasswordTypeConfig,
+    ApplicationGuardBlockClipboardSharingTypeConfig,
+    ApplicationGuardBlockFileTransferTypeConfig,
+    AppListTypeConfig,
+    AppLockerApplicationControlTypeConfig,
+    AutomaticUpdateModeConfig,
+    BitLockerEncryptionMethodConfig,
+    DefenderCloudBlockLevelTypeConfig,
+    DefenderMonitorFileActivityConfig,
+    DefenderPromptForSampleSubmissionConfig,
+    DefenderScanTypeConfig,
+    DefenderThreatActionConfig,
+    DeviceComplianceActionTypeConfig,
+    DeviceThreatProtectionLevelConfig,
+    DiagnosticDataSubmissionModeConfig,
+    EdgeCookiePolicyConfig,
+    EdgeSearchEngineTypeConfig,
+    EditionUpgradeLicenseTypeConfig,
+    FirewallCertificateRevocationListCheckMethodTypeConfig,
+    FirewallPacketQueueingMethodTypeConfig,
+    FirewallPreSharedKeyEncodingMethodTypeConfig,
+    InternetSiteSecurityLevelConfig,
+    IosNotificationAlertTypeConfig,
+    IosUpdatesInstallStatusConfig,
+    MiracastChannelConfig,
+    PolicyPlatformTypeConfig,
+    PrereleaseFeaturesConfig,
+    RatingAppsTypeConfig,
     RatingAustraliaMoviesTypeConfig,
     RatingAustraliaTelevisionTypeConfig,
     RatingCanadaMoviesTypeConfig,
@@ -1100,89 +1128,65 @@ export const GraphSchema = {
     RatingUnitedKingdomTelevisionTypeConfig,
     RatingUnitedStatesMoviesTypeConfig,
     RatingUnitedStatesTelevisionTypeConfig,
-    RatingAppsTypeConfig,
     RequiredPasswordTypeConfig,
-    IosNotificationAlertTypeConfig,
-    StateManagementSettingConfig,
-    FirewallPreSharedKeyEncodingMethodTypeConfig,
-    FirewallCertificateRevocationListCheckMethodTypeConfig,
-    FirewallPacketQueueingMethodTypeConfig,
-    AppLockerApplicationControlTypeConfig,
-    ApplicationGuardBlockFileTransferTypeConfig,
-    ApplicationGuardBlockClipboardSharingTypeConfig,
-    BitLockerEncryptionMethodConfig,
-    DefenderCloudBlockLevelTypeConfig,
-    DefenderScanTypeConfig,
-    WeeklyScheduleConfig,
-    DefenderThreatActionConfig,
-    DiagnosticDataSubmissionModeConfig,
-    EdgeCookiePolicyConfig,
-    VisibilitySettingConfig,
-    DefenderMonitorFileActivityConfig,
-    DefenderPromptForSampleSubmissionConfig,
-    WindowsStartMenuAppListVisibilityTypeConfig,
-    WindowsStartMenuModeTypeConfig,
-    WindowsSpotlightEnablementSettingsConfig,
-    AutomaticUpdateModeConfig,
     SafeSearchFilterTypeConfig,
-    EdgeSearchEngineTypeConfig,
-    PrereleaseFeaturesConfig,
-    EditionUpgradeLicenseTypeConfig,
-    WindowsDeliveryOptimizationModeConfig,
     SharedPCAccountDeletionPolicyTypeConfig,
     SharedPCAllowedAccountTypeConfig,
-    WindowsUpdateTypeConfig,
-    InternetSiteSecurityLevelConfig,
     SiteSecurityLevelConfig,
-    WindowsUserAccountControlSettingsConfig,
-    MiracastChannelConfig,
+    StateManagementSettingConfig,
+    VisibilitySettingConfig,
+    WebBrowserCookieSettingsConfig,
+    WeeklyScheduleConfig,
     WelcomeScreenMeetingInformationConfig,
-    DeviceComplianceActionTypeConfig,
-    DeviceThreatProtectionLevelConfig,
-    PolicyPlatformTypeConfig,
-    IosUpdatesInstallStatusConfig,
+    Windows10EditionTypeConfig,
+    WindowsDeliveryOptimizationModeConfig,
+    WindowsSpotlightEnablementSettingsConfig,
+    WindowsStartMenuAppListVisibilityTypeConfig,
+    WindowsStartMenuModeTypeConfig,
+    WindowsUpdateTypeConfig,
+    WindowsUserAccountControlSettingsConfig,
+    DeviceManagementExchangeConnectorStatusConfig,
     DeviceManagementExchangeConnectorSyncTypeConfig,
-    MdmAuthorityConfig,
-    WindowsHelloForBusinessPinUsageConfig,
+    DeviceManagementExchangeConnectorTypeConfig,
+    DeviceManagementPartnerAppTypeConfig,
+    DeviceManagementPartnerTenantStateConfig,
     EnablementConfig,
+    MdmAuthorityConfig,
+    MobileThreatPartnerTenantStateConfig,
     VppTokenStateConfig,
     VppTokenSyncStatusConfig,
-    DeviceManagementExchangeConnectorStatusConfig,
-    DeviceManagementExchangeConnectorTypeConfig,
-    MobileThreatPartnerTenantStateConfig,
-    DeviceManagementPartnerTenantStateConfig,
-    DeviceManagementPartnerAppTypeConfig,
+    WindowsHelloForBusinessPinUsageConfig,
     ActionStateConfig,
-    ManagedDeviceOwnerTypeConfig,
     ComplianceStateConfig,
-    ManagementAgentTypeConfig,
     DeviceEnrollmentTypeConfig,
-    DeviceRegistrationStateConfig,
     DeviceManagementExchangeAccessStateConfig,
     DeviceManagementExchangeAccessStateReasonConfig,
-    ManagedDevicePartnerReportedHealthStateConfig,
     DeviceManagementSubscriptionStateConfig,
+    DeviceRegistrationStateConfig,
+    ManagedDeviceOwnerTypeConfig,
+    ManagedDevicePartnerReportedHealthStateConfig,
+    ManagementAgentTypeConfig,
+    ManagedAppClipboardSharingLevelConfig,
+    ManagedAppDataEncryptionTypeConfig,
     ManagedAppDataStorageLocationConfig,
     ManagedAppDataTransferLevelConfig,
-    ManagedAppClipboardSharingLevelConfig,
+    ManagedAppFlaggedReasonConfig,
     ManagedAppPinCharacterSetConfig,
     ManagedBrowserTypeConfig,
-    ManagedAppDataEncryptionTypeConfig,
     WindowsInformationProtectionEnforcementLevelConfig,
     WindowsInformationProtectionPinCharacterRequirementsConfig,
-    ManagedAppFlaggedReasonConfig,
     NotificationTemplateBrandingOptionsConfig,
     RemoteAssistanceOnboardingStatusConfig,
     DeviceEnrollmentFailureReasonConfig,
     ApplicationTypeConfig,
     PlannerPreviewTypeConfig,
-    OperationStatusConfig,
-    OnenotePatchInsertPositionConfig,
     OnenotePatchActionTypeConfig,
+    OnenotePatchInsertPositionConfig,
     OnenoteSourceServiceConfig,
     OnenoteUserRoleConfig,
-    DataPolicyOperationStatusConfig,
+    OperationStatusConfig,
     StatusConfig,
+    DataPolicyOperationStatusConfig,
     AlertFeedbackConfig,
     AlertSeverityConfig,
     AlertStatusConfig,
@@ -1200,6 +1204,7 @@ export const GraphSchema = {
     UserAccountSecurityTypeConfig,
     CallDirectionConfig,
     CallStateConfig,
+    CallTranscriptionStateConfig,
     ChangeTypeConfig,
     EndpointTypeConfig,
     MediaDirectionConfig,
@@ -1210,45 +1215,46 @@ export const GraphSchema = {
     RoutingTypeConfig,
     ScreenSharingRoleConfig,
     ToneConfig,
-    TeamVisibilityTypeConfig,
-    ClonableTeamPartsConfig,
-    TeamSpecializationConfig,
-    GiphyRatingTypeConfig,
-    ChatMessageTypeConfig,
+    ChannelMembershipTypeConfig,
     ChatMessageImportanceConfig,
     ChatMessagePolicyViolationDlpActionTypesConfig,
     ChatMessagePolicyViolationUserActionTypesConfig,
     ChatMessagePolicyViolationVerdictDetailsTypesConfig,
+    ChatMessageTypeConfig,
+    ClonableTeamPartsConfig,
+    GiphyRatingTypeConfig,
     TeamsAppDistributionMethodConfig,
-    TeamsAsyncOperationTypeConfig,
     TeamsAsyncOperationStatusConfig,
+    TeamsAsyncOperationTypeConfig,
+    TeamSpecializationConfig,
+    TeamVisibilityTypeConfig,
+    ScheduleChangeRequestActorConfig,
+    ScheduleChangeStateConfig,
     ScheduleEntityThemeConfig,
     TimeOffReasonIconTypeConfig,
-    ScheduleChangeStateConfig,
-    ScheduleChangeRequestActorConfig,
     WorkforceIntegrationEncryptionProtocolConfig,
     WorkforceIntegrationSupportedEntitiesConfig,
+    MailDestinationRoutingReasonConfig,
     ThreatAssessmentContentTypeConfig,
-    ThreatExpectedAssessmentConfig,
-    ThreatCategoryConfig,
-    ThreatAssessmentStatusConfig,
     ThreatAssessmentRequestSourceConfig,
     ThreatAssessmentResultTypeConfig,
-    MailDestinationRoutingReasonConfig],
-  entities: [AuditActivityInitiatorConfig,
-    UserIdentityConfig,
-    AppIdentityConfig,
-    TargetResourceConfig,
-    ModifiedPropertyConfig,
-    KeyValueConfig,
-    SignInStatusConfig,
-    DeviceDetailConfig,
-    SignInLocationConfig,
-    GeoCoordinatesConfig,
+    ThreatAssessmentStatusConfig,
+    ThreatCategoryConfig,
+    ThreatExpectedAssessmentConfig],
+  entities: [AppIdentityConfig,
     AppliedConditionalAccessPolicyConfig,
+    AuditActivityInitiatorConfig,
+    UserIdentityConfig,
+    DeviceDetailConfig,
+    GeoCoordinatesConfig,
+    KeyValueConfig,
+    ModifiedPropertyConfig,
+    SignInLocationConfig,
+    SignInStatusConfig,
+    TargetResourceConfig,
+    EmailAddressConfig,
     InvitedUserMessageInfoConfig,
     RecipientConfig,
-    EmailAddressConfig,
     AssignedLicenseConfig,
     AssignedPlanConfig,
     ObjectIdentityConfig,
@@ -1264,52 +1270,55 @@ export const GraphSchema = {
     WorkingHoursConfig,
     TimeZoneBaseConfig,
     AddInConfig,
+    AlternativeSecurityIdConfig,
     ApiApplicationConfig,
-    PreAuthorizedApplicationConfig,
     PermissionScopeConfig,
+    PreAuthorizedApplicationConfig,
     AppRoleConfig,
-    PublicClientApplicationConfig,
+    AssignedLabelConfig,
+    CertificateAuthorityConfig,
+    ComplexExtensionValueConfig,
+    DomainStateConfig,
+    ImplicitGrantSettingsConfig,
     InformationalUrlConfig,
     KeyCredentialConfig,
-    OptionalClaimsConfig,
+    LicenseProcessingStateConfig,
+    LicenseUnitsDetailConfig,
     OptionalClaimConfig,
+    OptionalClaimsConfig,
     ParentalControlSettingsConfig,
     PasswordCredentialConfig,
+    PhoneConfig,
+    PhysicalOfficeAddressConfig,
+    PrivacyProfileConfig,
+    PublicClientApplicationConfig,
     RequiredResourceAccessConfig,
     ResourceAccessConfig,
-    WebApplicationConfig,
-    ImplicitGrantSettingsConfig,
-    CertificateAuthorityConfig,
-    PhysicalOfficeAddressConfig,
-    PhoneConfig,
-    AlternativeSecurityIdConfig,
-    DomainStateConfig,
-    ServicePlanInfoConfig,
-    AssignedLabelConfig,
-    LicenseProcessingStateConfig,
     SamlSingleSignOnSettingsConfig,
-    LicenseUnitsDetailConfig,
-    PrivacyProfileConfig,
-    VerifiedDomainConfig,
-    SettingValueConfig,
+    ServicePlanInfoConfig,
     SettingTemplateValueConfig,
-    ComplexExtensionValueConfig,
-    PhysicalAddressConfig,
-    IdentityConfig,
-    IdentitySetConfig,
+    SettingValueConfig,
+    VerifiedDomainConfig,
+    WebApplicationConfig,
     EducationStudentConfig,
     EducationTeacherConfig,
     EducationTermConfig,
-    PublicErrorConfig,
-    PublicErrorDetailConfig,
-    PublicInnerErrorConfig,
-    RootConfig,
-    SharepointIdsConfig,
-    SiteCollectionConfig,
-    ListInfoConfig,
-    SystemFacetConfig,
+    IdentityConfig,
+    IdentitySetConfig,
+    PhysicalAddressConfig,
+    JsonConfig,
+    WorkbookFilterCriteriaConfig,
+    WorkbookIconConfig,
+    WorkbookFilterDatetimeConfig,
+    WorkbookOperationErrorConfig,
+    WorkbookRangeReferenceConfig,
+    WorkbookSessionInfoConfig,
+    WorkbookSortFieldConfig,
+    WorkbookWorksheetProtectionOptionsConfig,
     QuotaConfig,
     StoragePlanInformationConfig,
+    SharepointIdsConfig,
+    SystemFacetConfig,
     AudioConfig,
     DeletedConfig,
     FileConfig,
@@ -1328,126 +1337,129 @@ export const GraphSchema = {
     SharedConfig,
     SpecialFolderConfig,
     VideoConfig,
+    RootConfig,
     SearchResultConfig,
-    WorkbookSessionInfoConfig,
-    JsonConfig,
-    WorkbookOperationErrorConfig,
-    WorkbookFilterCriteriaConfig,
-    WorkbookIconConfig,
-    WorkbookSortFieldConfig,
-    WorkbookWorksheetProtectionOptionsConfig,
-    WorkbookFilterDatetimeConfig,
-    WorkbookRangeReferenceConfig,
+    ListInfoConfig,
+    PublicErrorConfig,
+    PublicErrorDetailConfig,
+    PublicInnerErrorConfig,
+    SiteCollectionConfig,
+    AttendeeAvailabilityConfig,
     AttendeeBaseConfig,
-    LocationConstraintConfig,
     LocationConfig,
     OutlookGeoCoordinatesConfig,
+    LocationConstraintConfig,
     LocationConstraintItemConfig,
-    MeetingTimeSuggestionsResultConfig,
     MeetingTimeSuggestionConfig,
-    AttendeeAvailabilityConfig,
     TimeSlotConfig,
+    MeetingTimeSuggestionsResultConfig,
     TimeConstraintConfig,
+    AttachmentItemConfig,
+    AttendeeConfig,
+    ResponseStatusConfig,
+    AutomaticRepliesMailTipsConfig,
+    CalendarSharingMessageActionConfig,
+    ConvertIdResultConfig,
+    GenericErrorConfig,
     CustomTimeZoneConfig,
     StandardTimeZoneOffsetConfig,
     DaylightTimeZoneOffsetConfig,
-    ReminderConfig,
-    MailTipsConfig,
-    AutomaticRepliesMailTipsConfig,
-    MailTipsErrorConfig,
-    ConvertIdResultConfig,
-    GenericErrorConfig,
-    TimeZoneInformationConfig,
+    FollowupFlagConfig,
+    FreeBusyErrorConfig,
     InternetMessageHeaderConfig,
     ItemBodyConfig,
-    FollowupFlagConfig,
-    CalendarSharingMessageActionConfig,
+    MailTipsConfig,
+    MailTipsErrorConfig,
+    MessageRuleActionsConfig,
+    MessageRulePredicatesConfig,
+    SizeRangeConfig,
+    OnlineMeetingInfoConfig,
     PatternedRecurrenceConfig,
     RecurrencePatternConfig,
     RecurrenceRangeConfig,
+    PersonTypeConfig,
+    ReminderConfig,
     ScheduleInformationConfig,
     ScheduleItemConfig,
-    FreeBusyErrorConfig,
-    ResponseStatusConfig,
-    AttendeeConfig,
-    OnlineMeetingInfoConfig,
     ScoredEmailAddressConfig,
-    WebsiteConfig,
-    PersonTypeConfig,
-    AttachmentItemConfig,
+    TimeZoneInformationConfig,
     UploadSessionConfig,
-    MessageRulePredicatesConfig,
-    SizeRangeConfig,
-    MessageRuleActionsConfig,
+    WebsiteConfig,
+    AccessActionConfig,
     BooleanColumnConfig,
     CalculatedColumnConfig,
     ChoiceColumnConfig,
+    ContentTypeInfoConfig,
+    ContentTypeOrderConfig,
     CurrencyColumnConfig,
     DateTimeColumnConfig,
     DefaultColumnValueConfig,
+    DriveItemUploadablePropertiesConfig,
+    DriveRecipientConfig,
     GeolocationColumnConfig,
+    IncompleteDataConfig,
+    ItemActionStatConfig,
+    ItemPreviewInfoConfig,
     LookupColumnConfig,
     NumberColumnConfig,
     PersonOrGroupColumnConfig,
-    TextColumnConfig,
-    ContentTypeOrderConfig,
-    AccessActionConfig,
-    ItemActionStatConfig,
-    IncompleteDataConfig,
-    ContentTypeInfoConfig,
     SharingInvitationConfig,
     SharingLinkConfig,
+    TextColumnConfig,
     ThumbnailConfig,
-    DriveItemUploadablePropertiesConfig,
-    DriveRecipientConfig,
-    ItemPreviewInfoConfig,
     ExtensionSchemaPropertyConfig,
     ConditionalAccessSessionControlConfig,
     ApplicationEnforcedRestrictionsSessionControlConfig,
     CloudAppSecuritySessionControlConfig,
-    SignInFrequencySessionControlConfig,
-    PersistentBrowserSessionControlConfig,
+    ConditionalAccessApplicationsConfig,
+    ConditionalAccessConditionSetConfig,
+    ConditionalAccessLocationsConfig,
+    ConditionalAccessPlatformsConfig,
+    ConditionalAccessUsersConfig,
+    ConditionalAccessGrantControlsConfig,
     ConditionalAccessSessionControlsConfig,
+    PersistentBrowserSessionControlConfig,
+    SignInFrequencySessionControlConfig,
     IpRangeConfig,
     IPv4CidrRangeConfig,
     IPv6CidrRangeConfig,
-    ConditionalAccessApplicationsConfig,
-    ConditionalAccessUsersConfig,
-    ConditionalAccessPlatformsConfig,
-    ConditionalAccessLocationsConfig,
-    ConditionalAccessConditionSetConfig,
-    ConditionalAccessGrantControlsConfig,
     DeviceAndAppManagementAssignmentTargetConfig,
-    MobileAppAssignmentSettingsConfig,
-    MimeContentConfig,
-    FileEncryptionInfoConfig,
+    AllDevicesAssignmentTargetConfig,
     AllLicensedUsersAssignmentTargetConfig,
+    AndroidMinimumOperatingSystemConfig,
+    AppConfigurationSettingItemConfig,
     GroupAssignmentTargetConfig,
     ExclusionGroupAssignmentTargetConfig,
-    AllDevicesAssignmentTargetConfig,
+    FileEncryptionInfoConfig,
+    IosDeviceTypeConfig,
+    MobileAppAssignmentSettingsConfig,
     IosLobAppAssignmentSettingsConfig,
+    IosMinimumOperatingSystemConfig,
     IosStoreAppAssignmentSettingsConfig,
     IosVppAppAssignmentSettingsConfig,
     MicrosoftStoreForBusinessAppAssignmentSettingsConfig,
-    AndroidMinimumOperatingSystemConfig,
-    IosDeviceTypeConfig,
-    IosMinimumOperatingSystemConfig,
-    WindowsMinimumOperatingSystemConfig,
+    MimeContentConfig,
     VppLicensingTypeConfig,
-    AppConfigurationSettingItemConfig,
+    WindowsMinimumOperatingSystemConfig,
     DeviceManagementSettingsConfig,
     IntuneBrandConfig,
     RgbColorConfig,
-    ReportConfig,
     AppListItemConfig,
-    OmaSettingConfig,
-    OmaSettingIntegerConfig,
-    OmaSettingFloatingPointConfig,
-    OmaSettingStringConfig,
-    OmaSettingDateTimeConfig,
-    OmaSettingStringXmlConfig,
-    OmaSettingBooleanConfig,
-    OmaSettingBase64Config,
+    BitLockerRemovableDrivePolicyConfig,
+    DefenderDetectedMalwareActionsConfig,
+    DeviceCompliancePolicySettingStateConfig,
+    SettingSourceConfig,
+    DeviceConfigurationSettingStateConfig,
+    EdgeSearchEngineBaseConfig,
+    EdgeSearchEngineConfig,
+    EdgeSearchEngineCustomConfig,
+    IosHomeScreenItemConfig,
+    IosHomeScreenAppConfig,
+    IosHomeScreenFolderConfig,
+    IosHomeScreenFolderPageConfig,
+    IosHomeScreenPageConfig,
+    IosNetworkUsageRuleConfig,
+    IosNotificationSettingsConfig,
     MediaContentRatingAustraliaConfig,
     MediaContentRatingCanadaConfig,
     MediaContentRatingFranceConfig,
@@ -1457,186 +1469,181 @@ export const GraphSchema = {
     MediaContentRatingNewZealandConfig,
     MediaContentRatingUnitedKingdomConfig,
     MediaContentRatingUnitedStatesConfig,
-    IosNetworkUsageRuleConfig,
-    IosHomeScreenItemConfig,
-    IosHomeScreenPageConfig,
-    IosNotificationSettingsConfig,
-    IosHomeScreenFolderConfig,
-    IosHomeScreenFolderPageConfig,
-    IosHomeScreenAppConfig,
-    WindowsFirewallNetworkProfileConfig,
-    BitLockerRemovableDrivePolicyConfig,
-    DefenderDetectedMalwareActionsConfig,
-    Windows10NetworkProxyServerConfig,
-    EdgeSearchEngineBaseConfig,
-    EdgeSearchEngineCustomConfig,
-    EdgeSearchEngineConfig,
+    OmaSettingConfig,
+    OmaSettingBase64Config,
+    OmaSettingBooleanConfig,
+    OmaSettingDateTimeConfig,
+    OmaSettingFloatingPointConfig,
+    OmaSettingIntegerConfig,
+    OmaSettingStringConfig,
+    OmaSettingStringXmlConfig,
+    ReportConfig,
     SharedPCAccountManagerPolicyConfig,
+    Windows10NetworkProxyServerConfig,
+    WindowsFirewallNetworkProfileConfig,
     WindowsUpdateInstallScheduleTypeConfig,
-    WindowsUpdateScheduledInstallConfig,
     WindowsUpdateActiveHoursInstallConfig,
-    DeviceActionResultConfig,
+    WindowsUpdateScheduledInstallConfig,
     ConfigurationManagerClientEnabledFeaturesConfig,
+    DeviceActionResultConfig,
     DeviceHealthAttestationStateConfig,
-    DeviceConfigurationSettingStateConfig,
-    SettingSourceConfig,
-    DeviceCompliancePolicySettingStateConfig,
-    DeviceEnrollmentPlatformRestrictionConfig,
     ComplianceManagementPartnerAssignmentConfig,
-    UpdateWindowsDeviceAccountActionParameterConfig,
-    WindowsDeviceAccountConfig,
-    WindowsDefenderScanActionResultConfig,
-    DeviceGeoLocationConfig,
+    DeviceEnrollmentPlatformRestrictionConfig,
     DeleteUserFromSharedAppleDeviceActionResultConfig,
+    DeviceExchangeAccessStateSummaryConfig,
+    DeviceGeoLocationConfig,
+    DeviceOperatingSystemSummaryConfig,
     LocateDeviceActionResultConfig,
     RemoteLockActionResultConfig,
     ResetPasscodeActionResultConfig,
-    DeviceOperatingSystemSummaryConfig,
-    DeviceExchangeAccessStateSummaryConfig,
+    UpdateWindowsDeviceAccountActionParameterConfig,
+    WindowsDeviceAccountConfig,
+    WindowsDefenderScanActionResultConfig,
     WindowsDeviceADAccountConfig,
     WindowsDeviceAzureADAccountConfig,
     MobileAppIdentifierConfig,
-    ManagedAppDiagnosticStatusConfig,
-    KeyValuePairConfig,
-    WindowsInformationProtectionResourceCollectionConfig,
-    WindowsInformationProtectionDataRecoveryCertificateConfig,
-    WindowsInformationProtectionAppConfig,
-    WindowsInformationProtectionProxiedDomainCollectionConfig,
-    ProxiedDomainConfig,
-    WindowsInformationProtectionIPRangeCollectionConfig,
     AndroidMobileAppIdentifierConfig,
     IosMobileAppIdentifierConfig,
-    ManagedAppPolicyDeploymentSummaryPerAppConfig,
-    WindowsInformationProtectionStoreAppConfig,
-    WindowsInformationProtectionDesktopAppConfig,
-    IPv6RangeConfig,
     IPv4RangeConfig,
-    RolePermissionConfig,
+    IPv6RangeConfig,
+    KeyValuePairConfig,
+    ManagedAppDiagnosticStatusConfig,
+    ManagedAppPolicyDeploymentSummaryPerAppConfig,
+    ProxiedDomainConfig,
+    WindowsInformationProtectionAppConfig,
+    WindowsInformationProtectionDataRecoveryCertificateConfig,
+    WindowsInformationProtectionDesktopAppConfig,
+    WindowsInformationProtectionIPRangeCollectionConfig,
+    WindowsInformationProtectionProxiedDomainCollectionConfig,
+    WindowsInformationProtectionResourceCollectionConfig,
+    WindowsInformationProtectionStoreAppConfig,
     ResourceActionConfig,
+    RolePermissionConfig,
     PlannerAppliedCategoriesConfig,
-    PlannerAssignmentsConfig,
-    PlannerExternalReferenceConfig,
-    PlannerChecklistItemConfig,
     PlannerAssignmentConfig,
-    PlannerExternalReferencesConfig,
+    PlannerAssignmentsConfig,
+    PlannerCategoryDescriptionsConfig,
+    PlannerChecklistItemConfig,
     PlannerChecklistItemsConfig,
+    PlannerExternalReferenceConfig,
+    PlannerExternalReferencesConfig,
     PlannerOrderHintsByAssigneeConfig,
     PlannerUserIdsConfig,
-    PlannerCategoryDescriptionsConfig,
-    ResourceVisualizationConfig,
-    ResourceReferenceConfig,
-    SharingDetailConfig,
     InsightIdentityConfig,
+    ResourceReferenceConfig,
+    ResourceVisualizationConfig,
+    SharingDetailConfig,
     UsageDetailsConfig,
+    CopyNotebookModelConfig,
     NotebookLinksConfig,
     ExternalLinkConfig,
-    SectionLinksConfig,
-    PageLinksConfig,
-    OnenoteOperationErrorConfig,
     DiagnosticConfig,
-    OnenotePatchContentCommandConfig,
+    OnenoteOperationErrorConfig,
     OnenotePagePreviewConfig,
     OnenotePagePreviewLinksConfig,
+    OnenotePatchContentCommandConfig,
+    PageLinksConfig,
     RecentNotebookConfig,
     RecentNotebookLinksConfig,
-    CopyNotebookModelConfig,
+    SectionLinksConfig,
     ImageInfoConfig,
     VisualInfoConfig,
-    CloudAppSecurityStateConfig,
-    FileSecurityStateConfig,
-    FileHashConfig,
     AlertHistoryStateConfig,
+    AlertTriggerConfig,
+    AverageComparativeScoreConfig,
+    CertificationControlConfig,
+    CloudAppSecurityStateConfig,
+    ComplianceInformationConfig,
+    ControlScoreConfig,
+    FileHashConfig,
+    FileSecurityStateConfig,
     HostSecurityStateConfig,
     MalwareStateConfig,
     NetworkConnectionConfig,
     ProcessConfig,
     RegistryKeyStateConfig,
-    SecurityResourceConfig,
-    AlertTriggerConfig,
-    UserSecurityStateConfig,
-    SecurityVendorInformationConfig,
-    VulnerabilityStateConfig,
-    AverageComparativeScoreConfig,
-    ControlScoreConfig,
-    ComplianceInformationConfig,
-    CertificationControlConfig,
     SecureScoreControlStateUpdateConfig,
-    CallMediaStateConfig,
-    ResultInfoConfig,
-    CallRouteConfig,
-    ParticipantInfoConfig,
-    InvitationParticipantInfoConfig,
+    SecurityResourceConfig,
+    SecurityVendorInformationConfig,
+    UserSecurityStateConfig,
+    VulnerabilityStateConfig,
     MediaConfigConfig,
-    ChatInfoConfig,
-    CallOptionsConfig,
-    MeetingInfoConfig,
-    ToneInfoConfig,
-    IncomingContextConfig,
-    MeetingParticipantsConfig,
-    MeetingParticipantInfoConfig,
+    AppHostedMediaConfigConfig,
     AudioConferencingConfig,
-    RecordingInfoConfig,
-    MediaStreamConfig,
-    OutgoingCallOptionsConfig,
+    CallMediaStateConfig,
+    CallOptionsConfig,
+    CallRouteConfig,
+    CallTranscriptionInfoConfig,
+    ChatInfoConfig,
     CommsNotificationConfig,
     CommsNotificationsConfig,
-    AppHostedMediaConfigConfig,
-    ServiceHostedMediaConfigConfig,
+    IncomingContextConfig,
+    InvitationParticipantInfoConfig,
     MediaInfoConfig,
-    OrganizerMeetingInfoConfig,
-    TokenMeetingInfoConfig,
     PromptConfig,
     MediaPromptConfig,
+    MediaStreamConfig,
+    MeetingInfoConfig,
+    MeetingParticipantInfoConfig,
+    MeetingParticipantsConfig,
+    OrganizerMeetingInfoConfig,
+    OutgoingCallOptionsConfig,
+    ParticipantInfoConfig,
+    RecordingInfoConfig,
+    ResultInfoConfig,
+    ServiceHostedMediaConfigConfig,
     TeleconferenceDeviceMediaQualityConfig,
     TeleconferenceDeviceAudioQualityConfig,
+    TeleconferenceDeviceQualityConfig,
     TeleconferenceDeviceVideoQualityConfig,
     TeleconferenceDeviceScreenSharingQualityConfig,
-    TeleconferenceDeviceQualityConfig,
+    TokenMeetingInfoConfig,
+    ToneInfoConfig,
     ChangeNotificationConfig,
     ResourceDataConfig,
     ChangeNotificationCollectionConfig,
-    TeamClassSettingsConfig,
     ChatMessageAttachmentConfig,
     ChatMessageMentionConfig,
-    TeamsTabConfigurationConfig,
-    TeamMemberSettingsConfig,
-    TeamGuestSettingsConfig,
-    TeamMessagingSettingsConfig,
-    TeamFunSettingsConfig,
     ChatMessagePolicyViolationConfig,
     ChatMessagePolicyViolationPolicyTipConfig,
     ChatMessageReactionConfig,
     OperationErrorConfig,
-    WorkforceIntegrationEncryptionConfig,
+    TeamClassSettingsConfig,
+    TeamFunSettingsConfig,
+    TeamGuestSettingsConfig,
+    TeamMemberSettingsConfig,
+    TeamMessagingSettingsConfig,
+    TeamsTabConfigurationConfig,
     ScheduleEntityConfig,
-    ShiftActivityConfig,
     ShiftItemConfig,
+    ShiftActivityConfig,
     OpenShiftItemConfig,
-    TimeOffItemConfig,
     ShiftAvailabilityConfig,
     TimeRangeConfig,
+    TimeOffItemConfig,
+    WorkforceIntegrationEncryptionConfig,
     EntityConfig,
+    AuditLogRootConfig,
     DirectoryAuditConfig,
     SignInConfig,
     RestrictedSignInConfig,
-    AuditLogRootConfig,
     InvitationConfig,
     DirectoryObjectConfig,
     UserConfig,
     AppRoleAssignmentConfig,
-    OAuth2PermissionGrantConfig,
     LicenseDetailsConfig,
-    OutlookUserConfig,
-    OutlookItemConfig,
-    MessageConfig,
-    MailFolderConfig,
+    OAuth2PermissionGrantConfig,
     CalendarConfig,
     CalendarGroupConfig,
+    OutlookItemConfig,
     EventConfig,
-    PersonConfig,
-    ContactConfig,
     ContactFolderConfig,
+    ContactConfig,
     InferenceClassificationConfig,
+    MailFolderConfig,
+    MessageConfig,
+    OutlookUserConfig,
+    PersonConfig,
     ProfilePhotoConfig,
     BaseItemConfig,
     DriveConfig,
@@ -1655,18 +1662,20 @@ export const GraphSchema = {
     IdentityContainerConfig,
     ConditionalAccessRootConfig,
     IdentityProviderConfig,
+    PolicyBaseConfig,
+    StsPolicyConfig,
+    ActivityBasedTimeoutPolicyConfig,
     AdministrativeUnitConfig,
     ApplicationConfig,
     ExtensionPropertyConfig,
-    PolicyBaseConfig,
-    StsPolicyConfig,
     HomeRealmDiscoveryPolicyConfig,
-    TokenLifetimePolicyConfig,
     TokenIssuancePolicyConfig,
-    DirectoryConfig,
+    TokenLifetimePolicyConfig,
     CertificateBasedAuthConfigurationConfig,
-    OrgContactConfig,
+    ClaimsMappingPolicyConfig,
+    ContractConfig,
     DeviceConfig,
+    DirectoryConfig,
     DirectoryObjectPartnerReferenceConfig,
     DirectoryRoleConfig,
     DirectoryRoleTemplateConfig,
@@ -1684,40 +1693,38 @@ export const GraphSchema = {
     ConversationThreadConfig,
     GroupLifecyclePolicyConfig,
     PlannerGroupConfig,
+    GroupSettingTemplateConfig,
+    OrganizationConfig,
+    OrgContactConfig,
     PolicyRootConfig,
-    ActivityBasedTimeoutPolicyConfig,
-    ClaimsMappingPolicyConfig,
-    IdentitySecurityDefaultsEnforcementPolicyConfig,
     ConditionalAccessPolicyConfig,
-    ContractConfig,
+    IdentitySecurityDefaultsEnforcementPolicyConfig,
     ServicePrincipalConfig,
     SubscribedSkuConfig,
-    OrganizationConfig,
-    GroupSettingTemplateConfig,
-    EducationRootConfig,
     EducationClassConfig,
+    EducationUserConfig,
     EducationOrganizationConfig,
     EducationSchoolConfig,
-    EducationUserConfig,
-    ItemAnalyticsConfig,
-    ColumnDefinitionConfig,
-    ContentTypeConfig,
-    ListConfig,
-    ListItemConfig,
-    SubscriptionConfig,
+    EducationRootConfig,
     DriveItemConfig,
+    ListConfig,
     WorkbookConfig,
+    ItemAnalyticsConfig,
+    ListItemConfig,
     PermissionConfig,
+    SubscriptionConfig,
     ThumbnailSetConfig,
     BaseItemVersionConfig,
     DriveItemVersionConfig,
+    ColumnDefinitionConfig,
+    ContentTypeConfig,
     WorkbookApplicationConfig,
-    WorkbookNamedItemConfig,
-    WorkbookTableConfig,
-    WorkbookWorksheetConfig,
     WorkbookCommentConfig,
     WorkbookFunctionsConfig,
+    WorkbookNamedItemConfig,
     WorkbookOperationConfig,
+    WorkbookTableConfig,
+    WorkbookWorksheetConfig,
     WorkbookChartConfig,
     WorkbookChartAxesConfig,
     WorkbookChartDataLabelsConfig,
@@ -1759,23 +1766,23 @@ export const GraphSchema = {
     PlaceConfig,
     RoomConfig,
     RoomListConfig,
-    OutlookCategoryConfig,
-    SingleValueLegacyExtendedPropertyConfig,
-    MultiValueLegacyExtendedPropertyConfig,
     AttachmentConfig,
+    CalendarPermissionConfig,
+    MultiValueLegacyExtendedPropertyConfig,
+    SingleValueLegacyExtendedPropertyConfig,
     CalendarSharingMessageConfig,
+    PostConfig,
     EventMessageConfig,
     EventMessageRequestConfig,
     EventMessageResponseConfig,
+    FileAttachmentConfig,
+    InferenceClassificationOverrideConfig,
+    ItemAttachmentConfig,
     MessageRuleConfig,
     MailSearchFolderConfig,
-    CalendarPermissionConfig,
-    InferenceClassificationOverrideConfig,
-    PostConfig,
-    FileAttachmentConfig,
-    ItemAttachmentConfig,
-    ReferenceAttachmentConfig,
     OpenTypeExtensionConfig,
+    OutlookCategoryConfig,
+    ReferenceAttachmentConfig,
     ColumnLinkConfig,
     FieldValueSetConfig,
     ItemActivityConfig,
@@ -1788,184 +1795,185 @@ export const GraphSchema = {
     NamedLocationConfig,
     CountryNamedLocationConfig,
     IpNamedLocationConfig,
+    MobileAppConfig,
+    MobileLobAppConfig,
+    AndroidLobAppConfig,
+    AndroidStoreAppConfig,
     DeviceAppManagementConfig,
     ManagedEBookConfig,
-    MobileAppConfig,
     MobileAppCategoryConfig,
     ManagedDeviceMobileAppConfigurationConfig,
     VppTokenConfig,
     ManagedAppPolicyConfig,
     ManagedAppProtectionConfig,
     TargetedManagedAppProtectionConfig,
-    IosManagedAppProtectionConfig,
     AndroidManagedAppProtectionConfig,
     DefaultManagedAppProtectionConfig,
-    ManagedAppConfigurationConfig,
-    TargetedManagedAppConfigurationConfig,
+    IosManagedAppProtectionConfig,
+    ManagedAppStatusConfig,
     WindowsInformationProtectionConfig,
     MdmWindowsInformationProtectionPolicyConfig,
+    ManagedAppConfigurationConfig,
+    TargetedManagedAppConfigurationConfig,
     WindowsInformationProtectionPolicyConfig,
-    ManagedAppStatusConfig,
-    MobileAppAssignmentConfig,
-    MobileAppContentFileConfig,
-    ManagedDeviceMobileAppConfigurationAssignmentConfig,
-    ManagedDeviceMobileAppConfigurationDeviceStatusConfig,
-    ManagedDeviceMobileAppConfigurationUserStatusConfig,
-    ManagedDeviceMobileAppConfigurationDeviceSummaryConfig,
-    ManagedDeviceMobileAppConfigurationUserSummaryConfig,
+    IosLobAppConfig,
+    IosMobileAppConfigurationConfig,
+    IosStoreAppConfig,
+    IosVppAppConfig,
     MacOSOfficeSuiteAppConfig,
     ManagedAppConfig,
-    ManagedAndroidStoreAppConfig,
-    ManagedIOSStoreAppConfig,
     ManagedMobileLobAppConfig,
-    MobileAppContentConfig,
     ManagedAndroidLobAppConfig,
+    ManagedAndroidStoreAppConfig,
+    ManagedDeviceMobileAppConfigurationAssignmentConfig,
+    ManagedDeviceMobileAppConfigurationDeviceStatusConfig,
+    ManagedDeviceMobileAppConfigurationDeviceSummaryConfig,
+    ManagedDeviceMobileAppConfigurationUserStatusConfig,
+    ManagedDeviceMobileAppConfigurationUserSummaryConfig,
     ManagedIOSLobAppConfig,
-    MobileLobAppConfig,
+    ManagedIOSStoreAppConfig,
+    MobileAppContentConfig,
+    MicrosoftStoreForBusinessAppConfig,
+    MobileAppAssignmentConfig,
+    MobileAppContentFileConfig,
+    WebAppConfig,
     WindowsMobileMSIConfig,
     WindowsUniversalAppXConfig,
-    AndroidLobAppConfig,
-    IosLobAppConfig,
-    MicrosoftStoreForBusinessAppConfig,
-    WebAppConfig,
-    AndroidStoreAppConfig,
-    IosVppAppConfig,
-    IosStoreAppConfig,
-    IosMobileAppConfigurationConfig,
-    ManagedEBookAssignmentConfig,
-    EBookInstallSummaryConfig,
     DeviceInstallStateConfig,
-    UserInstallStateSummaryConfig,
-    IosVppEBookAssignmentConfig,
+    EBookInstallSummaryConfig,
     IosVppEBookConfig,
+    ManagedEBookAssignmentConfig,
+    IosVppEBookAssignmentConfig,
+    UserInstallStateSummaryConfig,
     DeviceManagementConfig,
     TermsAndConditionsConfig,
-    DeviceConfigurationConfig,
     DeviceCompliancePolicyConfig,
-    SoftwareUpdateStatusSummaryConfig,
     DeviceCompliancePolicyDeviceStateSummaryConfig,
     DeviceCompliancePolicySettingStateSummaryConfig,
     DeviceConfigurationDeviceStateSummaryConfig,
+    DeviceConfigurationConfig,
     IosUpdateDeviceStatusConfig,
-    DeviceCategoryConfig,
-    DeviceManagementExchangeConnectorConfig,
-    DeviceEnrollmentConfigurationConfig,
-    OnPremisesConditionalAccessSettingsConfig,
-    MobileThreatDefenseConnectorConfig,
-    DeviceManagementPartnerConfig,
+    SoftwareUpdateStatusSummaryConfig,
     ComplianceManagementPartnerConfig,
+    OnPremisesConditionalAccessSettingsConfig,
+    DeviceCategoryConfig,
+    DeviceEnrollmentConfigurationConfig,
+    DeviceManagementPartnerConfig,
+    DeviceManagementExchangeConnectorConfig,
+    MobileThreatDefenseConnectorConfig,
     ApplePushNotificationCertificateConfig,
-    ManagedDeviceOverviewConfig,
     DetectedAppConfig,
+    ManagedDeviceOverviewConfig,
     NotificationMessageTemplateConfig,
-    RoleDefinitionConfig,
+    ResourceOperationConfig,
     RoleAssignmentConfig,
     DeviceAndAppManagementRoleAssignmentConfig,
-    ResourceOperationConfig,
+    RoleDefinitionConfig,
     RemoteAssistancePartnerConfig,
     TelecomExpenseManagementPartnerConfig,
     WindowsInformationProtectionAppLearningSummaryConfig,
     WindowsInformationProtectionNetworkLearningSummaryConfig,
-    TermsAndConditionsAssignmentConfig,
     TermsAndConditionsAcceptanceStatusConfig,
-    ReportRootConfig,
-    DeviceConfigurationAssignmentConfig,
-    DeviceConfigurationDeviceStatusConfig,
-    DeviceConfigurationUserStatusConfig,
-    DeviceConfigurationDeviceOverviewConfig,
-    DeviceConfigurationUserOverviewConfig,
-    SettingStateDeviceSummaryConfig,
-    DeviceCompliancePolicyAssignmentConfig,
-    DeviceComplianceScheduledActionForRuleConfig,
-    DeviceComplianceDeviceStatusConfig,
-    DeviceComplianceUserStatusConfig,
-    DeviceComplianceDeviceOverviewConfig,
-    DeviceComplianceUserOverviewConfig,
-    DeviceComplianceActionItemConfig,
+    TermsAndConditionsAssignmentConfig,
+    AndroidCompliancePolicyConfig,
     AndroidCustomConfigurationConfig,
     AndroidGeneralDeviceConfigurationConfig,
+    AndroidWorkProfileCompliancePolicyConfig,
     AndroidWorkProfileCustomConfigurationConfig,
     AndroidWorkProfileGeneralDeviceConfigurationConfig,
+    AppleDeviceFeaturesConfigurationBaseConfig,
+    DeviceComplianceActionItemConfig,
+    DeviceComplianceDeviceOverviewConfig,
+    DeviceComplianceDeviceStatusConfig,
+    DeviceCompliancePolicyAssignmentConfig,
+    SettingStateDeviceSummaryConfig,
+    DeviceComplianceScheduledActionForRuleConfig,
+    DeviceComplianceUserStatusConfig,
+    DeviceComplianceUserOverviewConfig,
+    DeviceComplianceSettingStateConfig,
+    DeviceCompliancePolicyStateConfig,
+    DeviceConfigurationAssignmentConfig,
+    DeviceConfigurationDeviceStatusConfig,
+    DeviceConfigurationDeviceOverviewConfig,
+    DeviceConfigurationUserStatusConfig,
+    DeviceConfigurationUserOverviewConfig,
+    DeviceConfigurationStateConfig,
+    EditionUpgradeConfigurationConfig,
     IosCertificateProfileConfig,
+    IosCompliancePolicyConfig,
     IosCustomConfigurationConfig,
+    IosDeviceFeaturesConfigurationConfig,
     IosGeneralDeviceConfigurationConfig,
     IosUpdateConfigurationConfig,
-    MacOSCustomConfigurationConfig,
-    MacOSGeneralDeviceConfigurationConfig,
-    AppleDeviceFeaturesConfigurationBaseConfig,
-    MacOSDeviceFeaturesConfigurationConfig,
-    IosDeviceFeaturesConfigurationConfig,
-    Windows10EndpointProtectionConfigurationConfig,
-    Windows10GeneralConfigurationConfig,
-    WindowsDefenderAdvancedThreatProtectionConfigurationConfig,
-    EditionUpgradeConfigurationConfig,
-    Windows10CustomConfigurationConfig,
-    Windows10EnterpriseModernAppManagementConfigurationConfig,
-    SharedPCConfigurationConfig,
-    Windows10SecureAssessmentConfigurationConfig,
-    WindowsPhone81CustomConfigurationConfig,
-    WindowsUpdateForBusinessConfigurationConfig,
-    Windows81GeneralConfigurationConfig,
-    WindowsPhone81GeneralConfigurationConfig,
-    Windows10TeamGeneralConfigurationConfig,
-    AndroidCompliancePolicyConfig,
-    AndroidWorkProfileCompliancePolicyConfig,
-    IosCompliancePolicyConfig,
     MacOSCompliancePolicyConfig,
+    MacOSCustomConfigurationConfig,
+    MacOSDeviceFeaturesConfigurationConfig,
+    MacOSGeneralDeviceConfigurationConfig,
+    ReportRootConfig,
+    SharedPCConfigurationConfig,
     Windows10CompliancePolicyConfig,
+    Windows10CustomConfigurationConfig,
+    Windows10EndpointProtectionConfigurationConfig,
+    Windows10EnterpriseModernAppManagementConfigurationConfig,
+    Windows10GeneralConfigurationConfig,
     Windows10MobileCompliancePolicyConfig,
+    Windows10SecureAssessmentConfigurationConfig,
+    Windows10TeamGeneralConfigurationConfig,
     Windows81CompliancePolicyConfig,
+    Windows81GeneralConfigurationConfig,
+    WindowsDefenderAdvancedThreatProtectionConfigurationConfig,
     WindowsPhone81CompliancePolicyConfig,
-    DeviceComplianceSettingStateConfig,
-    DeviceConfigurationStateConfig,
-    DeviceCompliancePolicyStateConfig,
+    WindowsPhone81CustomConfigurationConfig,
+    WindowsPhone81GeneralConfigurationConfig,
+    WindowsUpdateForBusinessConfigurationConfig,
     EnrollmentConfigurationAssignmentConfig,
     DeviceEnrollmentLimitConfigurationConfig,
     DeviceEnrollmentPlatformRestrictionsConfigurationConfig,
     DeviceEnrollmentWindowsHelloForBusinessConfigurationConfig,
     ManagedMobileAppConfig,
-    TargetedManagedAppPolicyAssignmentConfig,
-    ManagedAppOperationConfig,
     ManagedAppPolicyDeploymentSummaryConfig,
-    WindowsInformationProtectionAppLockerFileConfig,
-    IosManagedAppRegistrationConfig,
     AndroidManagedAppRegistrationConfig,
+    IosManagedAppRegistrationConfig,
+    ManagedAppOperationConfig,
     ManagedAppStatusRawConfig,
+    TargetedManagedAppPolicyAssignmentConfig,
+    WindowsInformationProtectionAppLockerFileConfig,
     LocalizedNotificationMessageConfig,
     DeviceAndAppManagementRoleDefinitionConfig,
     EnrollmentTroubleshootingEventConfig,
-    PlannerTaskConfig,
-    PlannerPlanConfig,
     PlannerConfig,
     PlannerBucketConfig,
-    PlannerTaskDetailsConfig,
+    PlannerPlanConfig,
+    PlannerTaskConfig,
     PlannerAssignedToTaskBoardTaskFormatConfig,
-    PlannerProgressTaskBoardTaskFormatConfig,
     PlannerBucketTaskBoardTaskFormatConfig,
     PlannerPlanDetailsConfig,
+    PlannerProgressTaskBoardTaskFormatConfig,
+    PlannerTaskDetailsConfig,
+    SharedInsightConfig,
+    TrendingConfig,
+    UsedInsightConfig,
     ChangeTrackedEntityConfig,
     ShiftPreferencesConfig,
-    TrendingConfig,
-    SharedInsightConfig,
-    UsedInsightConfig,
     OnenoteEntityBaseModelConfig,
     OnenoteEntitySchemaObjectModelConfig,
     OnenoteEntityHierarchyModelConfig,
     NotebookConfig,
-    OnenoteSectionConfig,
     SectionGroupConfig,
-    OnenotePageConfig,
-    OnenoteResourceConfig,
+    OnenoteSectionConfig,
     OperationConfig,
     OnenoteOperationConfig,
-    DataPolicyOperationConfig,
+    OnenotePageConfig,
+    OnenoteResourceConfig,
     ActivityHistoryItemConfig,
-    SecurityConfig,
+    DataPolicyOperationConfig,
     AlertConfig,
-    SecureScoreControlProfileConfig,
     SecureScoreConfig,
-    ParticipantConfig,
+    SecureScoreControlProfileConfig,
+    SecurityConfig,
     CommsOperationConfig,
+    ParticipantConfig,
+    CancelMediaProcessingOperationConfig,
     InviteParticipantsOperationConfig,
     MuteParticipantOperationConfig,
     PlayPromptOperationConfig,
@@ -1973,79 +1981,39 @@ export const GraphSchema = {
     SubscribeToToneOperationConfig,
     UnmuteParticipantOperationConfig,
     UpdateRecordingStatusOperationConfig,
-    TeamworkConfig,
-    WorkforceIntegrationConfig,
-    ScheduleConfig,
-    TeamsTemplateConfig,
     ConversationMemberConfig,
-    ChannelConfig,
-    TeamsAppInstallationConfig,
-    TeamsAsyncOperationConfig,
-    ChatMessageConfig,
-    ChatMessageHostedContentConfig,
+    AadUserConversationMemberConfig,
     AppCatalogsConfig,
     TeamsAppConfig,
-    TeamsAppDefinitionConfig,
+    ChannelConfig,
+    ChatMessageConfig,
     TeamsTabConfig,
-    AadUserConversationMemberConfig,
-    ShiftConfig,
-    OpenShiftConfig,
-    TimeOffConfig,
-    TimeOffReasonConfig,
-    SchedulingGroupConfig,
+    ChatMessageHostedContentConfig,
+    ScheduleConfig,
+    TeamsAppInstallationConfig,
+    TeamsAsyncOperationConfig,
+    TeamsTemplateConfig,
+    TeamsAppDefinitionConfig,
+    TeamworkConfig,
+    WorkforceIntegrationConfig,
     ScheduleChangeRequestConfig,
     OfferShiftRequestConfig,
-    SwapShiftsChangeRequestConfig,
+    OpenShiftConfig,
     OpenShiftChangeRequestConfig,
+    SchedulingGroupConfig,
+    ShiftConfig,
+    SwapShiftsChangeRequestConfig,
+    TimeOffReasonConfig,
     TimeOffRequestConfig,
-    InformationProtectionConfig,
+    TimeOffConfig,
     ThreatAssessmentRequestConfig,
-    ThreatAssessmentResultConfig,
-    UrlAssessmentRequestConfig,
-    FileAssessmentRequestConfig,
     EmailFileAssessmentRequestConfig,
-    MailAssessmentRequestConfig],
+    FileAssessmentRequestConfig,
+    InformationProtectionConfig,
+    MailAssessmentRequestConfig,
+    ThreatAssessmentResultConfig,
+    UrlAssessmentRequestConfig],
   callables: [{
-    name: 'delta',
-    bound: true,
-    composable: false,
-    return: "graph.application"
-  }, {
-    name: 'delta',
-    bound: true,
-    composable: false,
-    return: "graph.user"
-  }, {
-    name: 'delta',
-    bound: true,
-    composable: false,
-    return: "graph.group"
-  }, {
-    name: 'delta',
-    bound: true,
-    composable: false,
-    return: "graph.administrativeUnit"
-  }, {
-    name: 'delta',
-    bound: true,
-    composable: false,
-    return: "graph.orgContact"
-  }, {
-    name: 'delta',
-    bound: true,
-    composable: false,
-    return: "graph.servicePrincipal"
-  }, {
-    name: 'delta',
-    bound: true,
-    composable: false,
-    return: "graph.directoryRole"
-  }, {
-    name: 'delta',
-    bound: true,
-    composable: false,
-    return: "graph.oAuth2PermissionGrant"
-  }, {
     name: 'reminderView',
     bound: true,
     composable: false,
@@ -2062,35 +2030,51 @@ export const GraphSchema = {
     composable: false,
     return: "graph.managedAppPolicy"
   }, {
-    name: 'sessionInfoResource',
+    name: 'delta',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbook'}, key: {type: 'Edm.String', nullable: false} },
-    return: "graph.workbookSessionInfo"
+    return: "graph.administrativeUnit"
   }, {
-    name: 'image',
+    name: 'delta',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChart'} },
-    return: "Edm.String"
+    return: "graph.application"
   }, {
-    name: 'image',
+    name: 'delta',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChart'}, width: {type: 'Edm.Int32', nullable: false} },
-    return: "Edm.String"
+    return: "graph.directoryRole"
   }, {
-    name: 'image',
+    name: 'delta',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChart'}, width: {type: 'Edm.Int32', nullable: false}, height: {type: 'Edm.Int32', nullable: false} },
-    return: "Edm.String"
+    return: "graph.group"
   }, {
-    name: 'image',
+    name: 'delta',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChart'}, width: {type: 'Edm.Int32', nullable: false}, height: {type: 'Edm.Int32', nullable: false}, fittingMode: {type: 'Edm.String', nullable: false} },
-    return: "Edm.String"
+    return: "graph.oAuth2PermissionGrant"
+  }, {
+    name: 'delta',
+    bound: true,
+    composable: false,
+    return: "graph.orgContact"
+  }, {
+    name: 'delta',
+    bound: true,
+    composable: false,
+    return: "graph.servicePrincipal"
+  }, {
+    name: 'delta',
+    bound: true,
+    composable: false,
+    return: "graph.user"
+  }, {
+    name: 'count',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookChart', collection: true} },
+    return: "Edm.Int32"
   }, {
     name: 'item',
     bound: true,
@@ -2107,38 +2091,38 @@ export const GraphSchema = {
     name: 'count',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChart', collection: true} },
+    parameters: { bindparameter: {type: 'graph.workbookTable', collection: true} },
     return: "Edm.Int32"
   }, {
     name: 'itemAt',
     bound: true,
     composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookChartPoint', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
-    return: "graph.workbookChartPoint"
+    parameters: { bindparameter: {type: 'graph.workbookTable', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
+    return: "graph.workbookTable"
   }, {
     name: 'count',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChartPoint', collection: true} },
+    parameters: { bindparameter: {type: 'graph.workbookTableColumn', collection: true} },
     return: "Edm.Int32"
   }, {
     name: 'itemAt',
     bound: true,
     composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookChartSeries', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
-    return: "graph.workbookChartSeries"
+    parameters: { bindparameter: {type: 'graph.workbookTableColumn', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
+    return: "graph.workbookTableColumn"
   }, {
     name: 'count',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChartSeries', collection: true} },
+    parameters: { bindparameter: {type: 'graph.workbookTableRow', collection: true} },
     return: "Edm.Int32"
   }, {
-    name: 'range',
+    name: 'itemAt',
     bound: true,
     composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookNamedItem'} },
-    return: "graph.workbookRange"
+    parameters: { bindparameter: {type: 'graph.workbookTableRow', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
+    return: "graph.workbookTableRow"
   }, {
     name: 'boundingRect',
     bound: true,
@@ -2278,30 +2262,6 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookRange'} },
     return: "graph.workbookRangeView"
   }, {
-    name: 'itemAt',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookRangeBorder', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
-    return: "graph.workbookRangeBorder"
-  }, {
-    name: 'count',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookRangeBorder', collection: true} },
-    return: "Edm.Int32"
-  }, {
-    name: 'range',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookRangeView'} },
-    return: "graph.workbookRange"
-  }, {
-    name: 'itemAt',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookRangeView', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
-    return: "graph.workbookRangeView"
-  }, {
     name: 'dataBodyRange',
     bound: true,
     composable: true,
@@ -2326,71 +2286,35 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookTable'} },
     return: "graph.workbookRange"
   }, {
-    name: 'itemAt',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookTable', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
-    return: "graph.workbookTable"
-  }, {
-    name: 'count',
+    name: 'sessionInfoResource',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookTable', collection: true} },
-    return: "Edm.Int32"
+    parameters: { bindparameter: {type: 'graph.workbook'}, key: {type: 'Edm.String', nullable: false} },
+    return: "graph.workbookSessionInfo"
   }, {
-    name: 'dataBodyRange',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookTableColumn'} },
-    return: "graph.workbookRange"
-  }, {
-    name: 'headerRowRange',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookTableColumn'} },
-    return: "graph.workbookRange"
-  }, {
-    name: 'range',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookTableColumn'} },
-    return: "graph.workbookRange"
-  }, {
-    name: 'totalRowRange',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookTableColumn'} },
-    return: "graph.workbookRange"
-  }, {
-    name: 'itemAt',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookTableColumn', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
-    return: "graph.workbookTableColumn"
-  }, {
-    name: 'count',
+    name: 'image',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookTableColumn', collection: true} },
-    return: "Edm.Int32"
+    parameters: { bindparameter: {type: 'graph.workbookChart'} },
+    return: "Edm.String"
   }, {
-    name: 'range',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookTableRow'} },
-    return: "graph.workbookRange"
-  }, {
-    name: 'itemAt',
-    bound: true,
-    composable: true,
-    parameters: { bindparameter: {type: 'graph.workbookTableRow', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
-    return: "graph.workbookTableRow"
-  }, {
-    name: 'count',
+    name: 'image',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookTableRow', collection: true} },
-    return: "Edm.Int32"
+    parameters: { bindparameter: {type: 'graph.workbookChart'}, width: {type: 'Edm.Int32', nullable: false} },
+    return: "Edm.String"
+  }, {
+    name: 'image',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookChart'}, width: {type: 'Edm.Int32', nullable: false}, height: {type: 'Edm.Int32', nullable: false} },
+    return: "Edm.String"
+  }, {
+    name: 'image',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookChart'}, width: {type: 'Edm.Int32', nullable: false}, height: {type: 'Edm.Int32', nullable: false}, fittingMode: {type: 'Edm.String', nullable: false} },
+    return: "Edm.String"
   }, {
     name: 'cell',
     bound: true,
@@ -2422,17 +2346,95 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookWorksheet'}, valuesOnly: {type: 'Edm.Boolean', nullable: false} },
     return: "graph.workbookRange"
   }, {
-    name: 'delta',
+    name: 'count',
     bound: true,
     composable: false,
-    parameters: { bindingparameter: {type: 'graph.mailFolder', collection: true, nullable: false} },
-    return: "graph.mailFolder"
+    parameters: { bindparameter: {type: 'graph.workbookChartPoint', collection: true} },
+    return: "Edm.Int32"
   }, {
-    name: 'delta',
+    name: 'itemAt',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookChartPoint', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
+    return: "graph.workbookChartPoint"
+  }, {
+    name: 'count',
     bound: true,
     composable: false,
-    parameters: { bindingparameter: {type: 'graph.event', collection: true, nullable: false} },
-    return: "graph.event"
+    parameters: { bindparameter: {type: 'graph.workbookChartSeries', collection: true} },
+    return: "Edm.Int32"
+  }, {
+    name: 'itemAt',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookChartSeries', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
+    return: "graph.workbookChartSeries"
+  }, {
+    name: 'count',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookRangeBorder', collection: true} },
+    return: "Edm.Int32"
+  }, {
+    name: 'itemAt',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookRangeBorder', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
+    return: "graph.workbookRangeBorder"
+  }, {
+    name: 'dataBodyRange',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookTableColumn'} },
+    return: "graph.workbookRange"
+  }, {
+    name: 'headerRowRange',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookTableColumn'} },
+    return: "graph.workbookRange"
+  }, {
+    name: 'range',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookTableColumn'} },
+    return: "graph.workbookRange"
+  }, {
+    name: 'totalRowRange',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookTableColumn'} },
+    return: "graph.workbookRange"
+  }, {
+    name: 'itemAt',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookRangeView', collection: true}, index: {type: 'Edm.Int32', nullable: false} },
+    return: "graph.workbookRangeView"
+  }, {
+    name: 'range',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookNamedItem'} },
+    return: "graph.workbookRange"
+  }, {
+    name: 'range',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookRangeView'} },
+    return: "graph.workbookRange"
+  }, {
+    name: 'range',
+    bound: true,
+    composable: true,
+    parameters: { bindparameter: {type: 'graph.workbookTableRow'} },
+    return: "graph.workbookRange"
+  }, {
+    name: 'allowedCalendarSharingRoles',
+    bound: true,
+    composable: false,
+    parameters: { bindingparameter: {type: 'graph.calendar'}, User: {type: 'Edm.String', nullable: false} },
+    return: "graph.calendarRoleType"
   }, {
     name: 'delta',
     bound: true,
@@ -2445,6 +2447,24 @@ export const GraphSchema = {
     composable: false,
     parameters: { bindingparameter: {type: 'graph.contactFolder', collection: true, nullable: false} },
     return: "graph.contactFolder"
+  }, {
+    name: 'delta',
+    bound: true,
+    composable: false,
+    parameters: { bindingparameter: {type: 'graph.event', collection: true, nullable: false} },
+    return: "graph.event"
+  }, {
+    name: 'delta',
+    bound: true,
+    composable: false,
+    parameters: { bindingparameter: {type: 'graph.mailFolder', collection: true, nullable: false} },
+    return: "graph.mailFolder"
+  }, {
+    name: 'delta',
+    bound: true,
+    composable: false,
+    parameters: { bindingparameter: {type: 'graph.message', collection: true, nullable: false} },
+    return: "graph.message"
   }, {
     name: 'supportedLanguages',
     bound: true,
@@ -2467,24 +2487,12 @@ export const GraphSchema = {
     name: 'delta',
     bound: true,
     composable: false,
-    parameters: { bindingparameter: {type: 'graph.message', collection: true, nullable: false} },
-    return: "graph.message"
-  }, {
-    name: 'allowedCalendarSharingRoles',
-    bound: true,
-    composable: false,
-    parameters: { bindingparameter: {type: 'graph.calendar'}, User: {type: 'Edm.String', nullable: false} },
-    return: "graph.calendarRoleType"
-  }, {
-    name: 'delta',
-    bound: true,
-    composable: false,
-    parameters: { token: {type: 'Edm.String'} },
     return: "graph.driveItem"
   }, {
     name: 'delta',
     bound: true,
     composable: false,
+    parameters: { token: {type: 'Edm.String'} },
     return: "graph.driveItem"
   }, {
     name: 'getActivitiesByInterval',
@@ -2548,12 +2556,12 @@ export const GraphSchema = {
     composable: false,
     return: "graph.driveItem"
   }, {
-    name: 'deviceConfigurationUserActivity',
+    name: 'deviceConfigurationDeviceActivity',
     bound: true,
     composable: true,
     return: "graph.report"
   }, {
-    name: 'deviceConfigurationDeviceActivity',
+    name: 'deviceConfigurationUserActivity',
     bound: true,
     composable: true,
     return: "graph.report"
@@ -2580,93 +2588,6 @@ export const GraphSchema = {
     parameters: { period: {type: 'Edm.String'} },
     return: "graph.report"
   }, {
-    name: 'getOffice365ActivationsUserDetail',
-    bound: true,
-    composable: true,
-    return: "graph.report"
-  }, {
-    name: 'getOffice365ActivationCounts',
-    bound: true,
-    composable: true,
-    return: "graph.report"
-  }, {
-    name: 'getOffice365ActivationsUserCounts',
-    bound: true,
-    composable: true,
-    return: "graph.report"
-  }, {
-    name: 'getOffice365ActiveUserDetail',
-    bound: true,
-    composable: true,
-    parameters: { date: {type: 'Edm.Date', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getOffice365ActiveUserDetail',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getOffice365ServicesUserCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getOffice365ActiveUserCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getOffice365GroupsActivityDetail',
-    bound: true,
-    composable: true,
-    parameters: { date: {type: 'Edm.Date', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getOffice365GroupsActivityDetail',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getOffice365GroupsActivityCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getOffice365GroupsActivityGroupCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getOffice365GroupsActivityStorage',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getOffice365GroupsActivityFileCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getEmailActivityUserDetail',
-    bound: true,
-    composable: true,
-    parameters: { date: {type: 'Edm.Date', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getEmailActivityUserDetail',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
     name: 'getEmailActivityCounts',
     bound: true,
     composable: true,
@@ -2679,13 +2600,13 @@ export const GraphSchema = {
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getEmailAppUsageUserDetail',
+    name: 'getEmailActivityUserDetail',
     bound: true,
     composable: true,
     parameters: { date: {type: 'Edm.Date', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getEmailAppUsageUserDetail',
+    name: 'getEmailActivityUserDetail',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
@@ -2698,6 +2619,18 @@ export const GraphSchema = {
     return: "graph.report"
   }, {
     name: 'getEmailAppUsageUserCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getEmailAppUsageUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { date: {type: 'Edm.Date', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getEmailAppUsageUserDetail',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
@@ -2733,19 +2666,76 @@ export const GraphSchema = {
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getOneDriveActivityUserDetail',
+    name: 'getOffice365ActivationCounts',
     bound: true,
     composable: true,
-    parameters: { date: {type: 'Edm.Date', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getOneDriveActivityUserDetail',
+    name: 'getOffice365ActivationsUserCounts',
+    bound: true,
+    composable: true,
+    return: "graph.report"
+  }, {
+    name: 'getOffice365ActivationsUserDetail',
+    bound: true,
+    composable: true,
+    return: "graph.report"
+  }, {
+    name: 'getOffice365ActiveUserCounts',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getOneDriveActivityUserCounts',
+    name: 'getOffice365ActiveUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { date: {type: 'Edm.Date', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOffice365ActiveUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOffice365GroupsActivityCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOffice365GroupsActivityDetail',
+    bound: true,
+    composable: true,
+    parameters: { date: {type: 'Edm.Date', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOffice365GroupsActivityDetail',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOffice365GroupsActivityFileCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOffice365GroupsActivityGroupCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOffice365GroupsActivityStorage',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOffice365ServicesUserCounts',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
@@ -2757,6 +2747,30 @@ export const GraphSchema = {
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
+    name: 'getOneDriveActivityUserCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOneDriveActivityUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { date: {type: 'Edm.Date', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOneDriveActivityUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getOneDriveUsageAccountCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
     name: 'getOneDriveUsageAccountDetail',
     bound: true,
     composable: true,
@@ -2764,12 +2778,6 @@ export const GraphSchema = {
     return: "graph.report"
   }, {
     name: 'getOneDriveUsageAccountDetail',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getOneDriveUsageAccountCounts',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
@@ -2787,19 +2795,13 @@ export const GraphSchema = {
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getSharePointActivityUserDetail',
-    bound: true,
-    composable: true,
-    parameters: { date: {type: 'Edm.Date', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSharePointActivityUserDetail',
+    name: 'getSharePointActivityFileCounts',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getSharePointActivityFileCounts',
+    name: 'getSharePointActivityPages',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
@@ -2811,7 +2813,13 @@ export const GraphSchema = {
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getSharePointActivityPages',
+    name: 'getSharePointActivityUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { date: {type: 'Edm.Date', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getSharePointActivityUserDetail',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
@@ -2835,6 +2843,12 @@ export const GraphSchema = {
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
+    name: 'getSharePointSiteUsagePages',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
     name: 'getSharePointSiteUsageSiteCounts',
     bound: true,
     composable: true,
@@ -2842,24 +2856,6 @@ export const GraphSchema = {
     return: "graph.report"
   }, {
     name: 'getSharePointSiteUsageStorage',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSharePointSiteUsagePages',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessActivityUserDetail',
-    bound: true,
-    composable: true,
-    parameters: { date: {type: 'Edm.Date', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessActivityUserDetail',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
@@ -2877,67 +2873,13 @@ export const GraphSchema = {
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getSkypeForBusinessPeerToPeerActivityCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessPeerToPeerActivityUserCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessPeerToPeerActivityMinuteCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessOrganizerActivityCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessOrganizerActivityUserCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessOrganizerActivityMinuteCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessParticipantActivityCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessParticipantActivityUserCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessParticipantActivityMinuteCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getSkypeForBusinessDeviceUsageUserDetail',
+    name: 'getSkypeForBusinessActivityUserDetail',
     bound: true,
     composable: true,
     parameters: { date: {type: 'Edm.Date', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getSkypeForBusinessDeviceUsageUserDetail',
+    name: 'getSkypeForBusinessActivityUserDetail',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
@@ -2955,16 +2897,118 @@ export const GraphSchema = {
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getYammerActivityUserDetail',
+    name: 'getSkypeForBusinessDeviceUsageUserDetail',
     bound: true,
     composable: true,
     parameters: { date: {type: 'Edm.Date', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getYammerActivityUserDetail',
+    name: 'getSkypeForBusinessDeviceUsageUserDetail',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getSkypeForBusinessOrganizerActivityCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getSkypeForBusinessOrganizerActivityMinuteCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getSkypeForBusinessOrganizerActivityUserCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getSkypeForBusinessParticipantActivityCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getSkypeForBusinessParticipantActivityMinuteCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getSkypeForBusinessParticipantActivityUserCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getSkypeForBusinessPeerToPeerActivityCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getSkypeForBusinessPeerToPeerActivityMinuteCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getSkypeForBusinessPeerToPeerActivityUserCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getTeamsDeviceUsageDistributionUserCounts',
+    bound: true,
+    composable: true,
+    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getTeamsDeviceUsageUserCounts',
+    bound: true,
+    composable: true,
+    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getTeamsDeviceUsageUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { reportRoot: {type: 'graph.reportRoot'}, date: {type: 'Edm.Date', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getTeamsDeviceUsageUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getTeamsUserActivityCounts',
+    bound: true,
+    composable: true,
+    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getTeamsUserActivityUserCounts',
+    bound: true,
+    composable: true,
+    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getTeamsUserActivityUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { reportRoot: {type: 'graph.reportRoot'}, date: {type: 'Edm.Date', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getTeamsUserActivityUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
     name: 'getYammerActivityCounts',
@@ -2979,13 +3023,13 @@ export const GraphSchema = {
     parameters: { period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getYammerDeviceUsageUserDetail',
+    name: 'getYammerActivityUserDetail',
     bound: true,
     composable: true,
     parameters: { date: {type: 'Edm.Date', nullable: false} },
     return: "graph.report"
   }, {
-    name: 'getYammerDeviceUsageUserDetail',
+    name: 'getYammerActivityUserDetail',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
@@ -2998,6 +3042,24 @@ export const GraphSchema = {
     return: "graph.report"
   }, {
     name: 'getYammerDeviceUsageUserCounts',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getYammerDeviceUsageUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { date: {type: 'Edm.Date', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getYammerDeviceUsageUserDetail',
+    bound: true,
+    composable: true,
+    parameters: { period: {type: 'Edm.String', nullable: false} },
+    return: "graph.report"
+  }, {
+    name: 'getYammerGroupsActivityCounts',
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
@@ -3019,60 +3081,6 @@ export const GraphSchema = {
     bound: true,
     composable: true,
     parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getYammerGroupsActivityCounts',
-    bound: true,
-    composable: true,
-    parameters: { period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getTeamsUserActivityUserDetail',
-    bound: true,
-    composable: true,
-    parameters: { reportRoot: {type: 'graph.reportRoot'}, date: {type: 'Edm.Date', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getTeamsUserActivityUserDetail',
-    bound: true,
-    composable: true,
-    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getTeamsUserActivityCounts',
-    bound: true,
-    composable: true,
-    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getTeamsUserActivityUserCounts',
-    bound: true,
-    composable: true,
-    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getTeamsDeviceUsageUserDetail',
-    bound: true,
-    composable: true,
-    parameters: { reportRoot: {type: 'graph.reportRoot'}, date: {type: 'Edm.Date', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getTeamsDeviceUsageUserDetail',
-    bound: true,
-    composable: true,
-    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getTeamsDeviceUsageUserCounts',
-    bound: true,
-    composable: true,
-    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
-    return: "graph.report"
-  }, {
-    name: 'getTeamsDeviceUsageDistributionUserCounts',
-    bound: true,
-    composable: true,
-    parameters: { reportRoot: {type: 'graph.reportRoot'}, period: {type: 'Edm.String', nullable: false} },
     return: "graph.report"
   }, {
     name: 'verifyWindowsEnrollmentAutoDiscovery',
@@ -3115,69 +3123,142 @@ export const GraphSchema = {
     parameters: { activities: {type: 'graph.userActivity', collection: true} },
     return: "graph.userActivity"
   }, {
-    name: 'getByIds',
-    path: "bindingParameter",
+    name: 'addKey',
     bound: true,
     composable: false,
-    parameters: { ids: {type: 'Edm.String', collection: true, nullable: false}, types: {type: 'Edm.String', collection: true} },
-    return: "graph.directoryObject"
+    parameters: { keyCredential: {type: 'graph.keyCredential', nullable: false}, passwordCredential: {type: 'graph.passwordCredential'}, proof: {type: 'Edm.String', nullable: false} },
+    return: "graph.keyCredential"
   }, {
-    name: 'getAvailableExtensionProperties',
-    path: "bindingParameter",
+    name: 'addPassword',
     bound: true,
     composable: false,
-    parameters: { isSyncedFromOnPremises: {type: 'Edm.Boolean'} },
-    return: "graph.extensionProperty"
+    parameters: { passwordCredential: {type: 'graph.passwordCredential'} },
+    return: "graph.passwordCredential"
+  }, {
+    name: 'removeKey',
+    bound: true,
+    composable: false,
+    parameters: { keyId: {type: 'Edm.Guid', nullable: false}, proof: {type: 'Edm.String', nullable: false} },
+  }, {
+    name: 'removePassword',
+    bound: true,
+    composable: false,
+    parameters: { keyId: {type: 'Edm.Guid', nullable: false} },
+  }, {
+    name: 'addKey',
+    bound: true,
+    composable: false,
+    parameters: { keyCredential: {type: 'graph.keyCredential', nullable: false}, passwordCredential: {type: 'graph.passwordCredential'}, proof: {type: 'Edm.String', nullable: false} },
+    return: "graph.keyCredential"
+  }, {
+    name: 'addPassword',
+    bound: true,
+    composable: false,
+    parameters: { passwordCredential: {type: 'graph.passwordCredential'} },
+    return: "graph.passwordCredential"
+  }, {
+    name: 'removeKey',
+    bound: true,
+    composable: false,
+    parameters: { keyId: {type: 'Edm.Guid', nullable: false}, proof: {type: 'Edm.String', nullable: false} },
+  }, {
+    name: 'removePassword',
+    bound: true,
+    composable: false,
+    parameters: { keyId: {type: 'Edm.Guid', nullable: false} },
+  }, {
+    name: 'assignLicense',
+    bound: true,
+    composable: false,
+    parameters: { addLicenses: {type: 'graph.assignedLicense', collection: true, nullable: false}, removeLicenses: {type: 'Edm.Guid', collection: true, nullable: false} },
+    return: "graph.group"
   }, {
     name: 'validateProperties',
-    path: "bindingParameter",
     bound: true,
     composable: false,
-    parameters: { entityType: {type: 'Edm.String'}, displayName: {type: 'Edm.String'}, mailNickname: {type: 'Edm.String'}, onBehalfOfUserId: {type: 'Edm.Guid'} },
+    parameters: { displayName: {type: 'Edm.String'}, mailNickname: {type: 'Edm.String'}, onBehalfOfUserId: {type: 'Edm.Guid'} },
   }, {
-    name: 'addKey',
+    name: 'addFavorite',
     bound: true,
     composable: false,
-    parameters: { keyCredential: {type: 'graph.keyCredential', nullable: false}, passwordCredential: {type: 'graph.passwordCredential'}, proof: {type: 'Edm.String', nullable: false} },
-    return: "graph.keyCredential"
   }, {
-    name: 'addPassword',
+    name: 'removeFavorite',
     bound: true,
     composable: false,
-    parameters: { passwordCredential: {type: 'graph.passwordCredential'} },
-    return: "graph.passwordCredential"
   }, {
-    name: 'removeKey',
+    name: 'resetUnseenCount',
     bound: true,
     composable: false,
-    parameters: { keyId: {type: 'Edm.Guid', nullable: false}, proof: {type: 'Edm.String', nullable: false} },
   }, {
-    name: 'removePassword',
+    name: 'subscribeByMail',
     bound: true,
     composable: false,
-    parameters: { keyId: {type: 'Edm.Guid', nullable: false} },
   }, {
-    name: 'addKey',
+    name: 'unsubscribeByMail',
     bound: true,
     composable: false,
-    parameters: { keyCredential: {type: 'graph.keyCredential', nullable: false}, passwordCredential: {type: 'graph.passwordCredential'}, proof: {type: 'Edm.String', nullable: false} },
-    return: "graph.keyCredential"
   }, {
-    name: 'addPassword',
+    name: 'renew',
     bound: true,
     composable: false,
-    parameters: { passwordCredential: {type: 'graph.passwordCredential'} },
-    return: "graph.passwordCredential"
   }, {
-    name: 'removeKey',
+    name: 'assignLicense',
     bound: true,
     composable: false,
-    parameters: { keyId: {type: 'Edm.Guid', nullable: false}, proof: {type: 'Edm.String', nullable: false} },
+    parameters: { addLicenses: {type: 'graph.assignedLicense', collection: true, nullable: false}, removeLicenses: {type: 'Edm.Guid', collection: true, nullable: false} },
+    return: "graph.user"
   }, {
-    name: 'removePassword',
+    name: 'changePassword',
     bound: true,
     composable: false,
-    parameters: { keyId: {type: 'Edm.Guid', nullable: false} },
+    parameters: { currentPassword: {type: 'Edm.String'}, newPassword: {type: 'Edm.String'} },
+  }, {
+    name: 'reprocessLicenseAssignment',
+    bound: true,
+    composable: false,
+    return: "graph.user"
+  }, {
+    name: 'revokeSignInSessions',
+    bound: true,
+    composable: false,
+    return: "Edm.Boolean"
+  }, {
+    name: 'findMeetingTimes',
+    bound: true,
+    composable: false,
+    parameters: { attendees: {type: 'graph.attendeeBase', collection: true}, locationConstraint: {type: 'graph.locationConstraint'}, timeConstraint: {type: 'graph.timeConstraint'}, meetingDuration: {type: 'Edm.Duration'}, maxCandidates: {type: 'Edm.Int32'}, isOrganizerOptional: {type: 'Edm.Boolean'}, returnSuggestionReasons: {type: 'Edm.Boolean'}, minimumAttendeePercentage: {type: 'Edm.Double'} },
+    return: "graph.meetingTimeSuggestionsResult"
+  }, {
+    name: 'getMailTips',
+    bound: true,
+    composable: false,
+    parameters: { EmailAddresses: {type: 'Edm.String', collection: true, nullable: false}, MailTipsOptions: {type: 'graph.mailTipsType'} },
+    return: "graph.mailTips"
+  }, {
+    name: 'sendMail',
+    bound: true,
+    composable: false,
+    parameters: { Message: {type: 'graph.message', nullable: false}, SaveToSentItems: {type: 'Edm.Boolean'} },
+  }, {
+    name: 'translateExchangeIds',
+    bound: true,
+    composable: false,
+    parameters: { InputIds: {type: 'Edm.String', collection: true, nullable: false}, TargetIdType: {type: 'graph.exchangeIdFormat', nullable: false}, SourceIdType: {type: 'graph.exchangeIdFormat', nullable: false} },
+    return: "graph.convertIdResult"
+  }, {
+    name: 'removeAllDevicesFromManagement',
+    bound: true,
+    composable: false,
+  }, {
+    name: 'wipeManagedAppRegistrationsByDeviceTag',
+    bound: true,
+    composable: false,
+    parameters: { deviceTag: {type: 'Edm.String'} },
+  }, {
+    name: 'exportPersonalData',
+    bound: true,
+    composable: false,
+    parameters: { storageLocation: {type: 'Edm.String'} },
   }, {
     name: 'checkMemberGroups',
     bound: true,
@@ -3219,210 +3300,25 @@ export const GraphSchema = {
     composable: false,
     return: "graph.domain"
   }, {
-    name: 'assignLicense',
+    name: 'getAvailableExtensionProperties',
+    path: "bindingParameter",
     bound: true,
     composable: false,
-    parameters: { addLicenses: {type: 'graph.assignedLicense', collection: true, nullable: false}, removeLicenses: {type: 'Edm.Guid', collection: true, nullable: false} },
-    return: "graph.user"
+    parameters: { isSyncedFromOnPremises: {type: 'Edm.Boolean'} },
+    return: "graph.extensionProperty"
   }, {
-    name: 'changePassword',
+    name: 'getByIds',
+    path: "bindingParameter",
     bound: true,
     composable: false,
-    parameters: { currentPassword: {type: 'Edm.String'}, newPassword: {type: 'Edm.String'} },
-  }, {
-    name: 'revokeSignInSessions',
-    bound: true,
-    composable: false,
-    return: "Edm.Boolean"
-  }, {
-    name: 'reprocessLicenseAssignment',
-    bound: true,
-    composable: false,
-    return: "graph.user"
-  }, {
-    name: 'findMeetingTimes',
-    bound: true,
-    composable: false,
-    parameters: { attendees: {type: 'graph.attendeeBase', collection: true}, locationConstraint: {type: 'graph.locationConstraint'}, timeConstraint: {type: 'graph.timeConstraint'}, meetingDuration: {type: 'Edm.Duration'}, maxCandidates: {type: 'Edm.Int32'}, isOrganizerOptional: {type: 'Edm.Boolean'}, returnSuggestionReasons: {type: 'Edm.Boolean'}, minimumAttendeePercentage: {type: 'Edm.Double'} },
-    return: "graph.meetingTimeSuggestionsResult"
-  }, {
-    name: 'sendMail',
-    bound: true,
-    composable: false,
-    parameters: { Message: {type: 'graph.message', nullable: false}, SaveToSentItems: {type: 'Edm.Boolean'} },
-  }, {
-    name: 'getMailTips',
-    bound: true,
-    composable: false,
-    parameters: { EmailAddresses: {type: 'Edm.String', collection: true, nullable: false}, MailTipsOptions: {type: 'graph.mailTipsType'} },
-    return: "graph.mailTips"
-  }, {
-    name: 'translateExchangeIds',
-    bound: true,
-    composable: false,
-    parameters: { InputIds: {type: 'Edm.String', collection: true, nullable: false}, TargetIdType: {type: 'graph.exchangeIdFormat', nullable: false}, SourceIdType: {type: 'graph.exchangeIdFormat', nullable: false} },
-    return: "graph.convertIdResult"
-  }, {
-    name: 'removeAllDevicesFromManagement',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'wipeManagedAppRegistrationsByDeviceTag',
-    bound: true,
-    composable: false,
-    parameters: { deviceTag: {type: 'Edm.String'} },
-  }, {
-    name: 'exportPersonalData',
-    bound: true,
-    composable: false,
-    parameters: { storageLocation: {type: 'Edm.String'} },
-  }, {
-    name: 'assignLicense',
-    bound: true,
-    composable: false,
-    parameters: { addLicenses: {type: 'graph.assignedLicense', collection: true, nullable: false}, removeLicenses: {type: 'Edm.Guid', collection: true, nullable: false} },
-    return: "graph.group"
+    parameters: { ids: {type: 'Edm.String', collection: true, nullable: false}, types: {type: 'Edm.String', collection: true} },
+    return: "graph.directoryObject"
   }, {
     name: 'validateProperties',
+    path: "bindingParameter",
     bound: true,
     composable: false,
-    parameters: { displayName: {type: 'Edm.String'}, mailNickname: {type: 'Edm.String'}, onBehalfOfUserId: {type: 'Edm.Guid'} },
-  }, {
-    name: 'subscribeByMail',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'unsubscribeByMail',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'addFavorite',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'removeFavorite',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'resetUnseenCount',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'renew',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'createSession',
-    bound: true,
-    composable: false,
-    parameters: { this: {type: 'graph.workbook'}, persistChanges: {type: 'Edm.Boolean', nullable: false} },
-    return: "graph.workbookSessionInfo"
-  }, {
-    name: 'closeSession',
-    bound: true,
-    composable: false,
-    parameters: { this: {type: 'graph.workbook'} },
-  }, {
-    name: 'refreshSession',
-    bound: true,
-    composable: false,
-    parameters: { this: {type: 'graph.workbook'} },
-  }, {
-    name: 'calculate',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookApplication'}, calculationType: {type: 'Edm.String', nullable: false} },
-  }, {
-    name: 'setData',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChart'}, sourceData: {type: 'graph.Json'}, seriesBy: {type: 'Edm.String', nullable: false} },
-  }, {
-    name: 'setPosition',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChart'}, startCell: {type: 'graph.Json'}, endCell: {type: 'graph.Json'} },
-  }, {
-    name: 'add',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChart', collection: true}, type: {type: 'Edm.String', nullable: false}, sourceData: {type: 'graph.Json'}, seriesBy: {type: 'Edm.String', nullable: false} },
-    return: "graph.workbookChart"
-  }, {
-    name: 'clear',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChartFill'} },
-  }, {
-    name: 'setSolidColor',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChartFill'}, color: {type: 'Edm.String'} },
-  }, {
-    name: 'clear',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookChartLineFormat'} },
-  }, {
-    name: 'apply',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, criteria: {type: 'graph.workbookFilterCriteria'} },
-  }, {
-    name: 'applyBottomItemsFilter',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, count: {type: 'Edm.Int32', nullable: false} },
-  }, {
-    name: 'applyBottomPercentFilter',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, percent: {type: 'Edm.Int32', nullable: false} },
-  }, {
-    name: 'applyCellColorFilter',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, color: {type: 'Edm.String'} },
-  }, {
-    name: 'applyCustomFilter',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, criteria1: {type: 'Edm.String'}, criteria2: {type: 'Edm.String'}, oper: {type: 'Edm.String', nullable: false} },
-  }, {
-    name: 'applyDynamicFilter',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, criteria: {type: 'Edm.String', nullable: false} },
-  }, {
-    name: 'applyFontColorFilter',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, color: {type: 'Edm.String'} },
-  }, {
-    name: 'applyIconFilter',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, icon: {type: 'graph.workbookIcon'} },
-  }, {
-    name: 'applyTopItemsFilter',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, count: {type: 'Edm.Int32', nullable: false} },
-  }, {
-    name: 'applyTopPercentFilter',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, percent: {type: 'Edm.Int32', nullable: false} },
-  }, {
-    name: 'applyValuesFilter',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'}, values: {type: 'graph.Json'} },
-  }, {
-    name: 'clear',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFilter'} },
+    parameters: { entityType: {type: 'Edm.String'}, displayName: {type: 'Edm.String'}, mailNickname: {type: 'Edm.String'}, onBehalfOfUserId: {type: 'Edm.Guid'} },
   }, {
     name: 'abs',
     bound: true,
@@ -3898,78 +3794,6 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, rate: {type: 'graph.Json'}, nper: {type: 'graph.Json'}, pv: {type: 'graph.Json'}, startPeriod: {type: 'graph.Json'}, endPeriod: {type: 'graph.Json'}, type: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'daverage',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dcount',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dcountA',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dget',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dmax',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dmin',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dproduct',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dstDev',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dstDevP',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dsum',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dvar',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'dvarP',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
     name: 'date',
     bound: true,
     composable: false,
@@ -3980,6 +3804,12 @@ export const GraphSchema = {
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, dateText: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'daverage',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'day',
@@ -4010,6 +3840,18 @@ export const GraphSchema = {
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, text: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'dcount',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'dcountA',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'ddb',
@@ -4060,10 +3902,28 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
+    name: 'dget',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
     name: 'disc',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, settlement: {type: 'graph.Json'}, maturity: {type: 'graph.Json'}, pr: {type: 'graph.Json'}, redemption: {type: 'graph.Json'}, basis: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'dmax',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'dmin',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'dollar',
@@ -4084,10 +3944,46 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, decimalDollar: {type: 'graph.Json'}, fraction: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
+    name: 'dproduct',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'dstDev',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'dstDevP',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'dsum',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
     name: 'duration',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, settlement: {type: 'graph.Json'}, maturity: {type: 'graph.Json'}, coupon: {type: 'graph.Json'}, yld: {type: 'graph.Json'}, frequency: {type: 'graph.Json'}, basis: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'dvar',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'dvarP',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, database: {type: 'graph.Json'}, field: {type: 'graph.Json'}, criteria: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'ecma_Ceiling',
@@ -4120,6 +4016,12 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, lowerLimit: {type: 'graph.Json'}, upperLimit: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
+    name: 'erf_Precise',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, X: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
     name: 'erfC',
     bound: true,
     composable: false,
@@ -4127,12 +4029,6 @@ export const GraphSchema = {
     return: "graph.workbookFunctionResult"
   }, {
     name: 'erfC_Precise',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, X: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'erf_Precise',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, X: {type: 'graph.Json'} },
@@ -4166,12 +4062,6 @@ export const GraphSchema = {
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, x: {type: 'graph.Json'}, lambda: {type: 'graph.Json'}, cumulative: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'fvschedule',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, principal: {type: 'graph.Json'}, schedule: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'f_Dist',
@@ -4264,19 +4154,13 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, rate: {type: 'graph.Json'}, nper: {type: 'graph.Json'}, pmt: {type: 'graph.Json'}, pv: {type: 'graph.Json'}, type: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
+    name: 'fvschedule',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, principal: {type: 'graph.Json'}, schedule: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
     name: 'gamma',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, x: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'gammaLn',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, x: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'gammaLn_Precise',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, x: {type: 'graph.Json'} },
@@ -4294,6 +4178,18 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, probability: {type: 'graph.Json'}, alpha: {type: 'graph.Json'}, beta: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
+    name: 'gammaLn',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, x: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'gammaLn_Precise',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, x: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
     name: 'gauss',
     bound: true,
     composable: false,
@@ -4306,22 +4202,16 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'geStep',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'}, step: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
     name: 'geoMean',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'hlookup',
+    name: 'geStep',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, lookupValue: {type: 'graph.Json'}, tableArray: {type: 'graph.Json'}, rowIndexNum: {type: 'graph.Json'}, rangeLookup: {type: 'graph.Json'} },
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'}, step: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'harMean',
@@ -4348,16 +4238,16 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'}, places: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
+    name: 'hlookup',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, lookupValue: {type: 'graph.Json'}, tableArray: {type: 'graph.Json'}, rowIndexNum: {type: 'graph.Json'}, rangeLookup: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
     name: 'hour',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, serialNumber: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'hypGeom_Dist',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, sampleS: {type: 'graph.Json'}, numberSample: {type: 'graph.Json'}, populationS: {type: 'graph.Json'}, numberPop: {type: 'graph.Json'}, cumulative: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'hyperlink',
@@ -4366,10 +4256,10 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, linkLocation: {type: 'graph.Json'}, friendlyName: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'iso_Ceiling',
+    name: 'hypGeom_Dist',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'}, significance: {type: 'graph.Json'} },
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, sampleS: {type: 'graph.Json'}, numberSample: {type: 'graph.Json'}, populationS: {type: 'graph.Json'}, numberPop: {type: 'graph.Json'}, cumulative: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'if',
@@ -4379,6 +4269,12 @@ export const GraphSchema = {
     return: "graph.workbookFunctionResult"
   }, {
     name: 'imAbs',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, inumber: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'imaginary',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, inumber: {type: 'graph.Json'} },
@@ -4522,12 +4418,6 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, inumber: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'imaginary',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, inumber: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
     name: 'int',
     bound: true,
     composable: false,
@@ -4600,16 +4490,16 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, value: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
+    name: 'iso_Ceiling',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'}, significance: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
     name: 'isOdd',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'isText',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, value: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'isoWeekNum',
@@ -4625,6 +4515,12 @@ export const GraphSchema = {
     return: "graph.workbookFunctionResult"
   }, {
     name: 'isref',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, value: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'isText',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, value: {type: 'graph.Json'} },
@@ -4714,24 +4610,6 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, text: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'mduration',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, settlement: {type: 'graph.Json'}, maturity: {type: 'graph.Json'}, coupon: {type: 'graph.Json'}, yld: {type: 'graph.Json'}, frequency: {type: 'graph.Json'}, basis: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'mirr',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'}, financeRate: {type: 'graph.Json'}, reinvestRate: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'mround',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'}, multiple: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
     name: 'match',
     bound: true,
     composable: false,
@@ -4748,6 +4626,12 @@ export const GraphSchema = {
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'mduration',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, settlement: {type: 'graph.Json'}, maturity: {type: 'graph.Json'}, coupon: {type: 'graph.Json'}, yld: {type: 'graph.Json'}, frequency: {type: 'graph.Json'}, basis: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'median',
@@ -4786,6 +4670,12 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, serialNumber: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
+    name: 'mirr',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'}, financeRate: {type: 'graph.Json'}, reinvestRate: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
     name: 'mod',
     bound: true,
     composable: false,
@@ -4798,6 +4688,12 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, serialNumber: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
+    name: 'mround',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'}, multiple: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
     name: 'multiNomial',
     bound: true,
     composable: false,
@@ -4808,12 +4704,6 @@ export const GraphSchema = {
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, value: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'nper',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, rate: {type: 'graph.Json'}, pmt: {type: 'graph.Json'}, pv: {type: 'graph.Json'}, fv: {type: 'graph.Json'}, type: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'na',
@@ -4880,6 +4770,12 @@ export const GraphSchema = {
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'nper',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, rate: {type: 'graph.Json'}, pmt: {type: 'graph.Json'}, pv: {type: 'graph.Json'}, fv: {type: 'graph.Json'}, type: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'npv',
@@ -4954,18 +4850,6 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, rate: {type: 'graph.Json'}, pv: {type: 'graph.Json'}, fv: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'percentRank_Exc',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, array: {type: 'graph.Json'}, x: {type: 'graph.Json'}, significance: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'percentRank_Inc',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, array: {type: 'graph.Json'}, x: {type: 'graph.Json'}, significance: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
     name: 'percentile_Exc',
     bound: true,
     composable: false,
@@ -4976,6 +4860,18 @@ export const GraphSchema = {
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, array: {type: 'graph.Json'}, k: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'percentRank_Exc',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, array: {type: 'graph.Json'}, x: {type: 'graph.Json'}, significance: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'percentRank_Inc',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, array: {type: 'graph.Json'}, x: {type: 'graph.Json'}, significance: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'permut',
@@ -5278,16 +5174,10 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'stDevA',
+    name: 'standardize',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'stDevPA',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, x: {type: 'graph.Json'}, mean: {type: 'graph.Json'}, standardDev: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'stDev_P',
@@ -5302,10 +5192,16 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'standardize',
+    name: 'stDevA',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, x: {type: 'graph.Json'}, mean: {type: 'graph.Json'}, standardDev: {type: 'graph.Json'} },
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'stDevPA',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'substitute',
@@ -5356,24 +5252,6 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, value: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'tbillEq',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, settlement: {type: 'graph.Json'}, maturity: {type: 'graph.Json'}, discount: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'tbillPrice',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, settlement: {type: 'graph.Json'}, maturity: {type: 'graph.Json'}, discount: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'tbillYield',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, settlement: {type: 'graph.Json'}, maturity: {type: 'graph.Json'}, pr: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
     name: 't_Dist',
     bound: true,
     composable: false,
@@ -5414,6 +5292,24 @@ export const GraphSchema = {
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'tbillEq',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, settlement: {type: 'graph.Json'}, maturity: {type: 'graph.Json'}, discount: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'tbillPrice',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, settlement: {type: 'graph.Json'}, maturity: {type: 'graph.Json'}, discount: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'tbillYield',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, settlement: {type: 'graph.Json'}, maturity: {type: 'graph.Json'}, pr: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'text',
@@ -5470,12 +5366,6 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, value: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'usdollar',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'}, decimals: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
     name: 'unichar',
     bound: true,
     composable: false,
@@ -5494,28 +5384,16 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, text: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'vlookup',
+    name: 'usdollar',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, lookupValue: {type: 'graph.Json'}, tableArray: {type: 'graph.Json'}, colIndexNum: {type: 'graph.Json'}, rangeLookup: {type: 'graph.Json'} },
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, number: {type: 'graph.Json'}, decimals: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'value',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, text: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'varA',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
-    return: "graph.workbookFunctionResult"
-  }, {
-    name: 'varPA',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
     name: 'var_P',
@@ -5530,19 +5408,37 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
+    name: 'varA',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'varPA',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, values: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
     name: 'vdb',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, cost: {type: 'graph.Json'}, salvage: {type: 'graph.Json'}, life: {type: 'graph.Json'}, startPeriod: {type: 'graph.Json'}, endPeriod: {type: 'graph.Json'}, factor: {type: 'graph.Json'}, noSwitch: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'weekNum',
+    name: 'vlookup',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFunctions'}, lookupValue: {type: 'graph.Json'}, tableArray: {type: 'graph.Json'}, colIndexNum: {type: 'graph.Json'}, rangeLookup: {type: 'graph.Json'} },
+    return: "graph.workbookFunctionResult"
+  }, {
+    name: 'weekday',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, serialNumber: {type: 'graph.Json'}, returnType: {type: 'graph.Json'} },
     return: "graph.workbookFunctionResult"
   }, {
-    name: 'weekday',
+    name: 'weekNum',
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookFunctions'}, serialNumber: {type: 'graph.Json'}, returnType: {type: 'graph.Json'} },
@@ -5623,6 +5519,12 @@ export const GraphSchema = {
     name: 'add',
     bound: true,
     composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookChart', collection: true}, type: {type: 'Edm.String', nullable: false}, sourceData: {type: 'graph.Json'}, seriesBy: {type: 'Edm.String', nullable: false} },
+    return: "graph.workbookChart"
+  }, {
+    name: 'add',
+    bound: true,
+    composable: false,
     parameters: { bindparameter: {type: 'graph.workbookNamedItem', collection: true}, name: {type: 'Edm.String'}, reference: {type: 'graph.Json'}, comment: {type: 'Edm.String'} },
     return: "graph.workbookNamedItem"
   }, {
@@ -5632,15 +5534,139 @@ export const GraphSchema = {
     parameters: { bindparameter: {type: 'graph.workbookNamedItem', collection: true}, name: {type: 'Edm.String'}, formula: {type: 'Edm.String'}, comment: {type: 'Edm.String'} },
     return: "graph.workbookNamedItem"
   }, {
-    name: 'refresh',
+    name: 'add',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookPivotTable'} },
+    parameters: { bindparameter: {type: 'graph.workbookTable', collection: true}, address: {type: 'Edm.String'}, hasHeaders: {type: 'Edm.Boolean', nullable: false} },
+    return: "graph.workbookTable"
   }, {
-    name: 'refreshAll',
+    name: 'add',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookPivotTable', collection: true} },
+    parameters: { bindparameter: {type: 'graph.workbookTableColumn', collection: true}, index: {type: 'Edm.Int32'}, values: {type: 'graph.Json'}, name: {type: 'Edm.String'} },
+    return: "graph.workbookTableColumn"
+  }, {
+    name: 'add',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookTableRow', collection: true}, index: {type: 'Edm.Int32'}, values: {type: 'graph.Json'} },
+    return: "graph.workbookTableRow"
+  }, {
+    name: 'add',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookWorksheet', collection: true}, name: {type: 'Edm.String'} },
+    return: "graph.workbookWorksheet"
+  }, {
+    name: 'apply',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, criteria: {type: 'graph.workbookFilterCriteria'} },
+  }, {
+    name: 'applyBottomItemsFilter',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, count: {type: 'Edm.Int32', nullable: false} },
+  }, {
+    name: 'applyBottomPercentFilter',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, percent: {type: 'Edm.Int32', nullable: false} },
+  }, {
+    name: 'applyCellColorFilter',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, color: {type: 'Edm.String'} },
+  }, {
+    name: 'applyCustomFilter',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, criteria1: {type: 'Edm.String'}, criteria2: {type: 'Edm.String'}, oper: {type: 'Edm.String', nullable: false} },
+  }, {
+    name: 'applyDynamicFilter',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, criteria: {type: 'Edm.String', nullable: false} },
+  }, {
+    name: 'applyFontColorFilter',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, color: {type: 'Edm.String'} },
+  }, {
+    name: 'applyIconFilter',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, icon: {type: 'graph.workbookIcon'} },
+  }, {
+    name: 'applyTopItemsFilter',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, count: {type: 'Edm.Int32', nullable: false} },
+  }, {
+    name: 'applyTopPercentFilter',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, percent: {type: 'Edm.Int32', nullable: false} },
+  }, {
+    name: 'applyValuesFilter',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'}, values: {type: 'graph.Json'} },
+  }, {
+    name: 'clear',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookFilter'} },
+  }, {
+    name: 'apply',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookRangeSort'}, fields: {type: 'graph.workbookSortField', collection: true}, matchCase: {type: 'Edm.Boolean', nullable: false}, hasHeaders: {type: 'Edm.Boolean', nullable: false}, orientation: {type: 'Edm.String', nullable: false}, method: {type: 'Edm.String', nullable: false} },
+  }, {
+    name: 'apply',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookTableSort'}, fields: {type: 'graph.workbookSortField', collection: true}, matchCase: {type: 'Edm.Boolean', nullable: false}, method: {type: 'Edm.String', nullable: false} },
+  }, {
+    name: 'clear',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookTableSort'} },
+  }, {
+    name: 'reapply',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookTableSort'} },
+  }, {
+    name: 'autofitColumns',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookRangeFormat'} },
+  }, {
+    name: 'autofitRows',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookRangeFormat'} },
+  }, {
+    name: 'calculate',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookApplication'}, calculationType: {type: 'Edm.String', nullable: false} },
+  }, {
+    name: 'clear',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookChartFill'} },
+  }, {
+    name: 'setSolidColor',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookChartFill'}, color: {type: 'Edm.String'} },
+  }, {
+    name: 'clear',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookChartLineFormat'} },
   }, {
     name: 'clear',
     bound: true,
@@ -5673,21 +5699,6 @@ export const GraphSchema = {
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookRangeFill'} },
   }, {
-    name: 'autofitColumns',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookRangeFormat'} },
-  }, {
-    name: 'autofitRows',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookRangeFormat'} },
-  }, {
-    name: 'apply',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookRangeSort'}, fields: {type: 'graph.workbookSortField', collection: true}, matchCase: {type: 'Edm.Boolean', nullable: false}, hasHeaders: {type: 'Edm.Boolean', nullable: false}, orientation: {type: 'Edm.String', nullable: false}, method: {type: 'Edm.String', nullable: false} },
-  }, {
     name: 'clearFilters',
     bound: true,
     composable: false,
@@ -5704,44 +5715,21 @@ export const GraphSchema = {
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookTable'} },
   }, {
-    name: 'add',
+    name: 'closeSession',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookTable', collection: true}, address: {type: 'Edm.String'}, hasHeaders: {type: 'Edm.Boolean', nullable: false} },
-    return: "graph.workbookTable"
+    parameters: { this: {type: 'graph.workbook'} },
   }, {
-    name: 'add',
+    name: 'createSession',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookTableColumn', collection: true}, index: {type: 'Edm.Int32'}, values: {type: 'graph.Json'}, name: {type: 'Edm.String'} },
-    return: "graph.workbookTableColumn"
+    parameters: { this: {type: 'graph.workbook'}, persistChanges: {type: 'Edm.Boolean', nullable: false} },
+    return: "graph.workbookSessionInfo"
   }, {
-    name: 'add',
+    name: 'refreshSession',
     bound: true,
     composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookTableRow', collection: true}, index: {type: 'Edm.Int32'}, values: {type: 'graph.Json'} },
-    return: "graph.workbookTableRow"
-  }, {
-    name: 'apply',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookTableSort'}, fields: {type: 'graph.workbookSortField', collection: true}, matchCase: {type: 'Edm.Boolean', nullable: false}, method: {type: 'Edm.String', nullable: false} },
-  }, {
-    name: 'clear',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookTableSort'} },
-  }, {
-    name: 'reapply',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookTableSort'} },
-  }, {
-    name: 'add',
-    bound: true,
-    composable: false,
-    parameters: { bindparameter: {type: 'graph.workbookWorksheet', collection: true}, name: {type: 'Edm.String'} },
-    return: "graph.workbookWorksheet"
+    parameters: { this: {type: 'graph.workbook'} },
   }, {
     name: 'protect',
     bound: true,
@@ -5752,6 +5740,83 @@ export const GraphSchema = {
     bound: true,
     composable: false,
     parameters: { bindparameter: {type: 'graph.workbookWorksheetProtection'} },
+  }, {
+    name: 'refresh',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookPivotTable'} },
+  }, {
+    name: 'refreshAll',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookPivotTable', collection: true} },
+  }, {
+    name: 'setData',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookChart'}, sourceData: {type: 'graph.Json'}, seriesBy: {type: 'Edm.String', nullable: false} },
+  }, {
+    name: 'setPosition',
+    bound: true,
+    composable: false,
+    parameters: { bindparameter: {type: 'graph.workbookChart'}, startCell: {type: 'graph.Json'}, endCell: {type: 'graph.Json'} },
+  }, {
+    name: 'accept',
+    bound: true,
+    composable: false,
+    return: "graph.calendar"
+  }, {
+    name: 'accept',
+    bound: true,
+    composable: false,
+    parameters: { SendResponse: {type: 'Edm.Boolean'}, Comment: {type: 'Edm.String'} },
+  }, {
+    name: 'decline',
+    bound: true,
+    composable: false,
+    parameters: { ProposedNewTime: {type: 'graph.timeSlot'}, SendResponse: {type: 'Edm.Boolean'}, Comment: {type: 'Edm.String'} },
+  }, {
+    name: 'dismissReminder',
+    bound: true,
+    composable: false,
+  }, {
+    name: 'snoozeReminder',
+    bound: true,
+    composable: false,
+    parameters: { NewReminderTime: {type: 'graph.dateTimeTimeZone', nullable: false} },
+  }, {
+    name: 'tentativelyAccept',
+    bound: true,
+    composable: false,
+    parameters: { ProposedNewTime: {type: 'graph.timeSlot'}, SendResponse: {type: 'Edm.Boolean'}, Comment: {type: 'Edm.String'} },
+  }, {
+    name: 'copy',
+    path: "bindingParameter",
+    bound: true,
+    composable: false,
+    parameters: { DestinationId: {type: 'Edm.String', nullable: false} },
+    return: "graph.mailFolder"
+  }, {
+    name: 'move',
+    path: "bindingParameter",
+    bound: true,
+    composable: false,
+    parameters: { DestinationId: {type: 'Edm.String', nullable: false} },
+    return: "graph.mailFolder"
+  }, {
+    name: 'copy',
+    path: "bindingParameter",
+    bound: true,
+    composable: false,
+    parameters: { DestinationId: {type: 'Edm.String', nullable: false} },
+    return: "graph.message"
+  }, {
+    name: 'createForward',
+    path: "bindingParameter",
+    bound: true,
+    composable: false,
+    parameters: { ToRecipients: {type: 'graph.recipient', collection: true}, Message: {type: 'graph.message'}, Comment: {type: 'Edm.String'} },
+    return: "graph.message"
   }, {
     name: 'createReply',
     path: "bindingParameter",
@@ -5767,23 +5832,10 @@ export const GraphSchema = {
     parameters: { Message: {type: 'graph.message'}, Comment: {type: 'Edm.String'} },
     return: "graph.message"
   }, {
-    name: 'createForward',
-    path: "bindingParameter",
+    name: 'forward',
     bound: true,
     composable: false,
     parameters: { ToRecipients: {type: 'graph.recipient', collection: true}, Message: {type: 'graph.message'}, Comment: {type: 'Edm.String'} },
-    return: "graph.message"
-  }, {
-    name: 'send',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'copy',
-    path: "bindingParameter",
-    bound: true,
-    composable: false,
-    parameters: { DestinationId: {type: 'Edm.String', nullable: false} },
-    return: "graph.message"
   }, {
     name: 'move',
     path: "bindingParameter",
@@ -5802,64 +5854,9 @@ export const GraphSchema = {
     composable: false,
     parameters: { Message: {type: 'graph.message'}, Comment: {type: 'Edm.String'} },
   }, {
-    name: 'forward',
+    name: 'send',
     bound: true,
     composable: false,
-    parameters: { ToRecipients: {type: 'graph.recipient', collection: true}, Message: {type: 'graph.message'}, Comment: {type: 'Edm.String'} },
-  }, {
-    name: 'accept',
-    bound: true,
-    composable: false,
-    return: "graph.calendar"
-  }, {
-    name: 'copy',
-    path: "bindingParameter",
-    bound: true,
-    composable: false,
-    parameters: { DestinationId: {type: 'Edm.String', nullable: false} },
-    return: "graph.mailFolder"
-  }, {
-    name: 'move',
-    path: "bindingParameter",
-    bound: true,
-    composable: false,
-    parameters: { DestinationId: {type: 'Edm.String', nullable: false} },
-    return: "graph.mailFolder"
-  }, {
-    name: 'getSchedule',
-    bound: true,
-    composable: false,
-    parameters: { Schedules: {type: 'Edm.String', collection: true}, EndTime: {type: 'graph.dateTimeTimeZone'}, StartTime: {type: 'graph.dateTimeTimeZone'}, AvailabilityViewInterval: {type: 'Edm.Int32'} },
-    return: "graph.scheduleInformation"
-  }, {
-    name: 'dismissReminder',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'snoozeReminder',
-    bound: true,
-    composable: false,
-    parameters: { NewReminderTime: {type: 'graph.dateTimeTimeZone', nullable: false} },
-  }, {
-    name: 'accept',
-    bound: true,
-    composable: false,
-    parameters: { SendResponse: {type: 'Edm.Boolean'}, Comment: {type: 'Edm.String'} },
-  }, {
-    name: 'decline',
-    bound: true,
-    composable: false,
-    parameters: { ProposedNewTime: {type: 'graph.timeSlot'}, SendResponse: {type: 'Edm.Boolean'}, Comment: {type: 'Edm.String'} },
-  }, {
-    name: 'tentativelyAccept',
-    bound: true,
-    composable: false,
-    parameters: { ProposedNewTime: {type: 'graph.timeSlot'}, SendResponse: {type: 'Edm.Boolean'}, Comment: {type: 'Edm.String'} },
-  }, {
-    name: 'reply',
-    bound: true,
-    composable: false,
-    parameters: { Post: {type: 'graph.post', nullable: false} },
   }, {
     name: 'createUploadSession',
     bound: true,
@@ -5867,15 +5864,38 @@ export const GraphSchema = {
     parameters: { AttachmentItem: {type: 'graph.attachmentItem', nullable: false} },
     return: "graph.uploadSession"
   }, {
+    name: 'forward',
+    bound: true,
+    composable: false,
+    parameters: { Comment: {type: 'Edm.String'}, ToRecipients: {type: 'graph.recipient', collection: true, nullable: false} },
+  }, {
     name: 'reply',
     bound: true,
     composable: false,
     parameters: { Post: {type: 'graph.post', nullable: false} },
   }, {
-    name: 'forward',
+    name: 'getSchedule',
     bound: true,
     composable: false,
-    parameters: { Comment: {type: 'Edm.String'}, ToRecipients: {type: 'graph.recipient', collection: true, nullable: false} },
+    parameters: { Schedules: {type: 'Edm.String', collection: true}, EndTime: {type: 'graph.dateTimeTimeZone'}, StartTime: {type: 'graph.dateTimeTimeZone'}, AvailabilityViewInterval: {type: 'Edm.Int32'} },
+    return: "graph.scheduleInformation"
+  }, {
+    name: 'reply',
+    bound: true,
+    composable: false,
+    parameters: { Post: {type: 'graph.post', nullable: false} },
+  }, {
+    name: 'add',
+    bound: true,
+    composable: false,
+    parameters: { value: {type: 'graph.site', collection: true} },
+    return: "graph.site"
+  }, {
+    name: 'remove',
+    bound: true,
+    composable: false,
+    parameters: { value: {type: 'graph.site', collection: true} },
+    return: "graph.site"
   }, {
     name: 'checkin',
     bound: true,
@@ -5909,10 +5929,6 @@ export const GraphSchema = {
     composable: false,
     return: "graph.driveItem"
   }, {
-    name: 'unfollow',
-    bound: true,
-    composable: false,
-  }, {
     name: 'invite',
     bound: true,
     composable: false,
@@ -5930,6 +5946,10 @@ export const GraphSchema = {
     composable: false,
     parameters: { parentReference: {type: 'graph.itemReference'}, name: {type: 'Edm.String'} },
     return: "graph.driveItem"
+  }, {
+    name: 'unfollow',
+    bound: true,
+    composable: false,
   }, {
     name: 'validatePermission',
     bound: true,
@@ -5950,18 +5970,6 @@ export const GraphSchema = {
     bound: true,
     composable: false,
   }, {
-    name: 'add',
-    bound: true,
-    composable: false,
-    parameters: { value: {type: 'graph.site', collection: true} },
-    return: "graph.site"
-  }, {
-    name: 'remove',
-    bound: true,
-    composable: false,
-    parameters: { value: {type: 'graph.site', collection: true} },
-    return: "graph.site"
-  }, {
     name: 'addGroup',
     bound: true,
     composable: false,
@@ -5973,6 +5981,11 @@ export const GraphSchema = {
     composable: false,
     parameters: { groupId: {type: 'Edm.String', nullable: false} },
     return: "Edm.Boolean"
+  }, {
+    name: 'assign',
+    bound: true,
+    composable: false,
+    parameters: { assignments: {type: 'graph.managedDeviceMobileAppConfigurationAssignment', collection: true} },
   }, {
     name: 'assign',
     bound: true,
@@ -5991,18 +6004,7 @@ export const GraphSchema = {
     name: 'assign',
     bound: true,
     composable: false,
-    parameters: { assignments: {type: 'graph.managedDeviceMobileAppConfigurationAssignment', collection: true} },
-  }, {
-    name: 'assign',
-    bound: true,
-    composable: false,
     parameters: { managedEBookAssignments: {type: 'graph.managedEBookAssignment', collection: true} },
-  }, {
-    name: 'assign',
-    bound: true,
-    composable: false,
-    parameters: { assignments: {type: 'graph.deviceConfigurationAssignment', collection: true} },
-    return: "graph.deviceConfigurationAssignment"
   }, {
     name: 'assign',
     bound: true,
@@ -6015,45 +6017,72 @@ export const GraphSchema = {
     composable: false,
     parameters: { deviceComplianceScheduledActionForRules: {type: 'graph.deviceComplianceScheduledActionForRule', collection: true} },
   }, {
-    name: 'setMobileDeviceManagementAuthority',
+    name: 'assign',
     bound: true,
     composable: false,
-    return: "Edm.Int32"
-  }, {
-    name: 'syncMicrosoftStoreForBusinessApps',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'syncLicenses',
-    bound: true,
-    composable: false,
-    return: "graph.vppToken"
-  }, {
-    name: 'sync',
-    bound: true,
-    composable: false,
-    parameters: { syncType: {type: 'graph.deviceManagementExchangeConnectorSyncType', nullable: false} },
-  }, {
-    name: 'setPriority',
-    bound: true,
-    composable: false,
-    parameters: { priority: {type: 'Edm.Int32', nullable: false} },
+    parameters: { assignments: {type: 'graph.deviceConfigurationAssignment', collection: true} },
+    return: "graph.deviceConfigurationAssignment"
   }, {
     name: 'assign',
     bound: true,
     composable: false,
     parameters: { enrollmentConfigurationAssignments: {type: 'graph.enrollmentConfigurationAssignment', collection: true} },
   }, {
-    name: 'retire',
+    name: 'setPriority',
+    bound: true,
+    composable: false,
+    parameters: { priority: {type: 'Edm.Int32', nullable: false} },
+  }, {
+    name: 'setMobileDeviceManagementAuthority',
+    bound: true,
+    composable: false,
+    return: "Edm.Int32"
+  }, {
+    name: 'sync',
+    bound: true,
+    composable: false,
+    parameters: { syncType: {type: 'graph.deviceManagementExchangeConnectorSyncType', nullable: false} },
+  }, {
+    name: 'syncLicenses',
+    bound: true,
+    composable: false,
+    return: "graph.vppToken"
+  }, {
+    name: 'syncMicrosoftStoreForBusinessApps',
     bound: true,
     composable: false,
   }, {
-    name: 'wipe',
+    name: 'bypassActivationLock',
     bound: true,
     composable: false,
-    parameters: { keepEnrollmentData: {type: 'Edm.Boolean'}, keepUserData: {type: 'Edm.Boolean'}, macOsUnlockCode: {type: 'Edm.String'} },
   }, {
-    name: 'resetPasscode',
+    name: 'cleanWindowsDevice',
+    bound: true,
+    composable: false,
+    parameters: { keepUserData: {type: 'Edm.Boolean', nullable: false} },
+  }, {
+    name: 'deleteUserFromSharedAppleDevice',
+    bound: true,
+    composable: false,
+    parameters: { userPrincipalName: {type: 'Edm.String'} },
+  }, {
+    name: 'disableLostMode',
+    bound: true,
+    composable: false,
+  }, {
+    name: 'locateDevice',
+    bound: true,
+    composable: false,
+  }, {
+    name: 'logoutSharedAppleDeviceActiveUser',
+    bound: true,
+    composable: false,
+  }, {
+    name: 'rebootNow',
+    bound: true,
+    composable: false,
+  }, {
+    name: 'recoverPasscode',
     bound: true,
     composable: false,
   }, {
@@ -6065,19 +6094,11 @@ export const GraphSchema = {
     bound: true,
     composable: false,
   }, {
-    name: 'disableLostMode',
+    name: 'resetPasscode',
     bound: true,
     composable: false,
   }, {
-    name: 'locateDevice',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'bypassActivationLock',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'rebootNow',
+    name: 'retire',
     bound: true,
     composable: false,
   }, {
@@ -6085,27 +6106,14 @@ export const GraphSchema = {
     bound: true,
     composable: false,
   }, {
-    name: 'recoverPasscode',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'cleanWindowsDevice',
-    bound: true,
-    composable: false,
-    parameters: { keepUserData: {type: 'Edm.Boolean', nullable: false} },
-  }, {
-    name: 'logoutSharedAppleDeviceActiveUser',
-    bound: true,
-    composable: false,
-  }, {
-    name: 'deleteUserFromSharedAppleDevice',
-    bound: true,
-    composable: false,
-    parameters: { userPrincipalName: {type: 'Edm.String'} },
-  }, {
     name: 'syncDevice',
     bound: true,
     composable: false,
+  }, {
+    name: 'updateWindowsDeviceAccount',
+    bound: true,
+    composable: false,
+    parameters: { updateWindowsDeviceAccountActionParameter: {type: 'graph.updateWindowsDeviceAccountActionParameter'} },
   }, {
     name: 'windowsDefenderScan',
     bound: true,
@@ -6116,15 +6124,10 @@ export const GraphSchema = {
     bound: true,
     composable: false,
   }, {
-    name: 'updateWindowsDeviceAccount',
+    name: 'wipe',
     bound: true,
     composable: false,
-    parameters: { updateWindowsDeviceAccountActionParameter: {type: 'graph.updateWindowsDeviceAccountActionParameter'} },
-  }, {
-    name: 'assign',
-    bound: true,
-    composable: false,
-    parameters: { assignments: {type: 'graph.targetedManagedAppPolicyAssignment', collection: true} },
+    parameters: { keepEnrollmentData: {type: 'Edm.Boolean'}, keepUserData: {type: 'Edm.Boolean'}, macOsUnlockCode: {type: 'Edm.String'} },
   }, {
     name: 'assign',
     bound: true,
@@ -6135,6 +6138,11 @@ export const GraphSchema = {
     bound: true,
     composable: false,
     parameters: { apps: {type: 'graph.managedMobileApp', collection: true} },
+  }, {
+    name: 'assign',
+    bound: true,
+    composable: false,
+    parameters: { assignments: {type: 'graph.targetedManagedAppPolicyAssignment', collection: true} },
   }, {
     name: 'assign',
     bound: true,
@@ -6163,17 +6171,6 @@ export const GraphSchema = {
     bound: true,
     composable: false,
   }, {
-    name: 'onenotePatchContent',
-    bound: true,
-    composable: false,
-    parameters: { commands: {type: 'graph.onenotePatchContentCommand', collection: true} },
-  }, {
-    name: 'copyToSection',
-    bound: true,
-    composable: false,
-    parameters: { id: {type: 'Edm.String'}, groupId: {type: 'Edm.String'}, siteCollectionId: {type: 'Edm.String'}, siteId: {type: 'Edm.String'} },
-    return: "graph.onenoteOperation"
-  }, {
     name: 'copyNotebook',
     bound: true,
     composable: false,
@@ -6192,21 +6189,33 @@ export const GraphSchema = {
     parameters: { id: {type: 'Edm.String'}, groupId: {type: 'Edm.String'}, renameAs: {type: 'Edm.String'}, siteCollectionId: {type: 'Edm.String'}, siteId: {type: 'Edm.String'} },
     return: "graph.onenoteOperation"
   }, {
+    name: 'copyToSection',
+    bound: true,
+    composable: false,
+    parameters: { id: {type: 'Edm.String'}, groupId: {type: 'Edm.String'}, siteCollectionId: {type: 'Edm.String'}, siteId: {type: 'Edm.String'} },
+    return: "graph.onenoteOperation"
+  }, {
+    name: 'onenotePatchContent',
+    bound: true,
+    composable: false,
+    parameters: { commands: {type: 'graph.onenotePatchContentCommand', collection: true} },
+  }, {
     name: 'getNotebookFromWebUrl',
     bound: true,
     composable: false,
     parameters: { webUrl: {type: 'Edm.String'} },
     return: "graph.CopyNotebookModel"
   }, {
-    name: 'logTeleconferenceDeviceQuality',
-    bound: true,
-    composable: false,
-    parameters: { quality: {type: 'graph.teleconferenceDeviceQuality', nullable: false} },
-  }, {
     name: 'answer',
     bound: true,
     composable: false,
     parameters: { callbackUri: {type: 'Edm.String', nullable: false}, mediaConfig: {type: 'graph.mediaConfig', nullable: false}, acceptedModalities: {type: 'graph.modality', collection: true} },
+  }, {
+    name: 'cancelMediaProcessing',
+    bound: true,
+    composable: false,
+    parameters: { clientContext: {type: 'Edm.String'} },
+    return: "graph.cancelMediaProcessingOperation"
   }, {
     name: 'changeScreenSharingRole',
     bound: true,
@@ -6280,27 +6289,32 @@ export const GraphSchema = {
     parameters: { participants: {type: 'graph.invitationParticipantInfo', collection: true, nullable: false}, clientContext: {type: 'Edm.String'} },
     return: "graph.inviteParticipantsOperation"
   }, {
+    name: 'logTeleconferenceDeviceQuality',
+    bound: true,
+    composable: false,
+    parameters: { quality: {type: 'graph.teleconferenceDeviceQuality', nullable: false} },
+  }, {
     name: 'mute',
     bound: true,
     composable: false,
     parameters: { clientContext: {type: 'Edm.String'} },
     return: "graph.muteParticipantOperation"
   }, {
-    name: 'upgrade',
+    name: 'archive',
     bound: true,
     composable: false,
+    parameters: { shouldSetSpoSiteReadOnlyForMembers: {type: 'Edm.Boolean'} },
   }, {
     name: 'clone',
     bound: true,
     composable: false,
     parameters: { displayName: {type: 'Edm.String'}, description: {type: 'Edm.String'}, mailNickname: {type: 'Edm.String'}, classification: {type: 'Edm.String'}, visibility: {type: 'graph.teamVisibilityType', nullable: false}, partsToClone: {type: 'graph.clonableTeamParts', nullable: false} },
   }, {
-    name: 'archive',
+    name: 'unarchive',
     bound: true,
     composable: false,
-    parameters: { shouldSetSpoSiteReadOnlyForMembers: {type: 'Edm.Boolean'} },
   }, {
-    name: 'unarchive',
+    name: 'upgrade',
     bound: true,
     composable: false,
   }, {

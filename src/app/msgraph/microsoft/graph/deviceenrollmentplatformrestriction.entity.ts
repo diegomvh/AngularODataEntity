@@ -5,9 +5,9 @@
 
 export interface DeviceEnrollmentPlatformRestriction {
   //#region ODataApi Properties
-  platformBlocked: boolean;
-  personalDeviceEnrollmentBlocked: boolean;
-  osMinimumVersion?: string;
   osMaximumVersion?: string;
+  osMinimumVersion?: string;
+  personalDeviceEnrollmentBlocked: boolean;
+  platformBlocked: boolean;
   //#endregion
 }

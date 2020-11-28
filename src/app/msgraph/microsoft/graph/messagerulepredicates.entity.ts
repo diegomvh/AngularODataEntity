@@ -2,32 +2,25 @@
 
 //#region ODataApi Imports
 import { Importance } from './importance.enum';
-import { Sensitivity } from './sensitivity.enum';
 import { MessageActionFlag } from './messageactionflag.enum';
+import { Sensitivity } from './sensitivity.enum';
 import { Recipient } from './recipient.entity';
 import { SizeRange } from './sizerange.entity';
+import { RecipientModel } from './recipient.model';
+import { SizeRangeModel } from './sizerange.model';
+import { RecipientCollection } from './recipient.collection';
+import { SizeRangeCollection } from './sizerange.collection';
 //#endregion
 
 export interface MessageRulePredicates {
   //#region ODataApi Properties
-  categories?: string[];
-  subjectContains?: string[];
   bodyContains?: string[];
   bodyOrSubjectContains?: string[];
-  senderContains?: string[];
-  recipientContains?: string[];
-  headerContains?: string[];
-  messageActionFlag?: MessageActionFlag;
-  importance?: Importance;
-  sensitivity?: Sensitivity;
+  categories?: string[];
   fromAddresses?: Recipient[];
-  sentToAddresses?: Recipient[];
-  sentToMe?: boolean;
-  sentOnlyToMe?: boolean;
-  sentCcMe?: boolean;
-  sentToOrCcMe?: boolean;
-  notSentToMe?: boolean;
   hasAttachments?: boolean;
+  headerContains?: string[];
+  importance?: Importance;
   isApprovalRequest?: boolean;
   isAutomaticForward?: boolean;
   isAutomaticReply?: boolean;
@@ -39,6 +32,17 @@ export interface MessageRulePredicates {
   isReadReceipt?: boolean;
   isSigned?: boolean;
   isVoicemail?: boolean;
+  messageActionFlag?: MessageActionFlag;
+  notSentToMe?: boolean;
+  recipientContains?: string[];
+  senderContains?: string[];
+  sensitivity?: Sensitivity;
+  sentCcMe?: boolean;
+  sentOnlyToMe?: boolean;
+  sentToAddresses?: Recipient[];
+  sentToMe?: boolean;
+  sentToOrCcMe?: boolean;
+  subjectContains?: string[];
   withinSizeRange?: SizeRange;
   //#endregion
 }

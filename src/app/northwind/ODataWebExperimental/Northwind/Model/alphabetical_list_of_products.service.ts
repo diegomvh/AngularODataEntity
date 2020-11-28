@@ -31,11 +31,20 @@ export class AlphabeticalListOfProductsService extends ODataEntityService<Alphab
     super(client, 'Alphabetical_list_of_products', 'NorthwindModel.Alphabetical_list_of_product');
   }
 
+  //#region ODataApi Model
   alphabeticalListOfProductModel(): AlphabeticalListOfProductModel<AlphabeticalListOfProduct> {
     return super.model() as AlphabeticalListOfProductModel<AlphabeticalListOfProduct>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   alphabeticalListOfProductCollection(): AlphabeticalListOfProductCollection<AlphabeticalListOfProduct, AlphabeticalListOfProductModel<AlphabeticalListOfProduct>> {
     return super.collection() as AlphabeticalListOfProductCollection<AlphabeticalListOfProduct, AlphabeticalListOfProductModel<AlphabeticalListOfProduct>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

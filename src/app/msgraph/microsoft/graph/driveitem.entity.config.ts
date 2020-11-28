@@ -2,12 +2,16 @@
 
 //#region ODataApi Imports
 import { DriveItem } from './driveitem.entity';
+import { DriveItemModel } from './driveitem.model';
+import { DriveItemCollection } from './driveitem.collection';
 //#endregion
 
 export const DriveItemConfig = {
   name: "driveItem",
   base: "microsoft.graph.baseItem",
   open: true,
+  model: DriveItemModel,
+  collection: DriveItemCollection,
   annotations: [],
   fields: {
     audio: {type: 'graph.audio'},

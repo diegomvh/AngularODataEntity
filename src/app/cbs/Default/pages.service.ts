@@ -21,8 +21,12 @@ import {
 
 //#region ODataApi Imports
 import { PageType } from '../CBS/Website/ODataApi/Models/pagetype.enum';
-import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.entity';
+import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.complex';
 import { Page } from '../CBS/Website/ODataApi/Models/page.entity';
+import { LinkListModel } from '../CBS/Website/ODataApi/Models/linklist.model';
+import { PageModel } from '../CBS/Website/ODataApi/Models/page.model';
+import { LinkListCollection } from '../CBS/Website/ODataApi/Models/linklist.collection';
+import { PageCollection } from '../CBS/Website/ODataApi/Models/page.collection';
 //#endregion
 
 @Injectable()
@@ -31,6 +35,16 @@ export class PagesService extends ODataEntityService<Page> {
     super(client, 'Pages', 'CBS.Website.ODataApi.Models.Page');
   }
 
+  //#region ODataApi Model
+  pageModel(): PageModel<Page> {
+    return this.entity().asModel() as PageModel<Page>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  pageCollection(): PageCollection<Page, PageModel<Page>> {
+    return this.entities().asCollection() as PageCollection<Page, PageModel<Page>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

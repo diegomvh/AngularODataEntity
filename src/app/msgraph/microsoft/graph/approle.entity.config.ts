@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { AppRole } from './approle.entity';
+import { AppRoleModel } from './approle.model';
+import { AppRoleCollection } from './approle.collection';
 //#endregion
 
 export const AppRoleConfig = {
   name: "appRole",
+  model: AppRoleModel,
+  collection: AppRoleCollection,
   annotations: [],
   fields: {
     allowedMemberTypes: {type: 'Edm.String', nullable: false, collection: true},

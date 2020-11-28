@@ -2,16 +2,20 @@
 
 //#region ODataApi Imports
 import { Shift } from './shift.entity';
+import { ShiftModel } from './shift.model';
+import { ShiftCollection } from './shift.collection';
 //#endregion
 
 export const ShiftConfig = {
   name: "shift",
   base: "microsoft.graph.changeTrackedEntity",
+  model: ShiftModel,
+  collection: ShiftCollection,
   annotations: [],
   fields: {
-    sharedShift: {type: 'graph.shiftItem'},
     draftShift: {type: 'graph.shiftItem'},
-    userId: {type: 'Edm.String'},
-    schedulingGroupId: {type: 'Edm.String'}
+    schedulingGroupId: {type: 'Edm.String'},
+    sharedShift: {type: 'graph.shiftItem'},
+    userId: {type: 'Edm.String'}
   }
 } as EntityConfig<Shift>;

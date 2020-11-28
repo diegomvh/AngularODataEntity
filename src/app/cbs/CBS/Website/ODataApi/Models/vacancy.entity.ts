@@ -1,7 +1,9 @@
 ﻿import { Duration } from 'angular-odata';
 
 //#region ODataApi Imports
-import { LinkList } from './linklist.entity';
+import { LinkList } from './linklist.complex';
+import { LinkListModel } from './linklist.model';
+import { LinkListCollection } from './linklist.collection';
 //#endregion
 
 export interface Vacancy {

@@ -4,6 +4,12 @@
 import { Entity } from './entity.entity';
 import { WorkbookChartFill } from './workbookchartfill.entity';
 import { WorkbookChartFont } from './workbookchartfont.entity';
+import { EntityModel } from './entity.model';
+import { WorkbookChartFillModel } from './workbookchartfill.model';
+import { WorkbookChartFontModel } from './workbookchartfont.model';
+import { EntityCollection } from './entity.collection';
+import { WorkbookChartFillCollection } from './workbookchartfill.collection';
+import { WorkbookChartFontCollection } from './workbookchartfont.collection';
 //#endregion
 
 export interface WorkbookChartLegendFormat extends Entity {

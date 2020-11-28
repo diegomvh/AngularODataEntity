@@ -31,11 +31,20 @@ export class OrdersQriesService extends ODataEntityService<OrdersQry> {
     super(client, 'Orders_Qries', 'NorthwindModel.Orders_Qry');
   }
 
+  //#region ODataApi Model
   ordersQryModel(): OrdersQryModel<OrdersQry> {
     return super.model() as OrdersQryModel<OrdersQry>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   ordersQryCollection(): OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>> {
     return super.collection() as OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

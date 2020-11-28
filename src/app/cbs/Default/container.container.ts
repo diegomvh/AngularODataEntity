@@ -1,4 +1,4 @@
-﻿import { ContainerConfig } from 'angular-odata';
+﻿import { EntityContainerConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { ArticlesServiceConfig } from './articles.service.config';
@@ -24,4 +24,4 @@ export const ContainerContainer = {
     SearchServiceConfig,
     VacanciesServiceConfig
   ]
-} as ContainerConfig;
+} as EntityContainerConfig;

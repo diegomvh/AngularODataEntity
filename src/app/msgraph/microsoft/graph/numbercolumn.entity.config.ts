@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { NumberColumn } from './numbercolumn.entity';
+import { NumberColumnModel } from './numbercolumn.model';
+import { NumberColumnCollection } from './numbercolumn.collection';
 //#endregion
 
 export const NumberColumnConfig = {
   name: "numberColumn",
+  model: NumberColumnModel,
+  collection: NumberColumnCollection,
   annotations: [],
   fields: {
     decimalPlaces: {type: 'Edm.String'},

@@ -5,6 +5,7 @@ import { OrdersService } from './northwind';
 import { switchMap, switchMapTo } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin/index';
 import { ProductsService } from './north3';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -164,7 +165,7 @@ export class AppComponent {
   }
 
   createPerson() {
-    const odata = this.people.config.options.helper;
+    const odata = this.people.apiConfig.options.helper;
     // Use Person Service
     this.people.create({
       Emails: ['some@email.com'], 
@@ -191,10 +192,14 @@ export class AppComponent {
   trippinModels() {
     const people = this.people.personCollection();
     people.fetch().pipe(switchMap(people => {
-      const person = people.models[1];
+      const person = people.models[2];
       person.Gender = PersonGender.Female;
       return person.save();
-    })).subscribe(console.log);
+    }),
+    switchMap(person => {
+      return person.airline().fetch();
+    })
+    ).subscribe(console.log);
   }
 
   northwindModels() {

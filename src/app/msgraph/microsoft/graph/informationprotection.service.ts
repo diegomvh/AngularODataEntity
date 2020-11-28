@@ -20,8 +20,12 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { InformationProtection } from './informationprotection.entity';
 import { ThreatAssessmentRequest } from './threatassessmentrequest.entity';
+import { InformationProtection } from './informationprotection.entity';
+import { ThreatAssessmentRequestModel } from './threatassessmentrequest.model';
+import { InformationProtectionModel } from './informationprotection.model';
+import { ThreatAssessmentRequestCollection } from './threatassessmentrequest.collection';
+import { InformationProtectionCollection } from './informationprotection.collection';
 //#endregion
 
 @Injectable()

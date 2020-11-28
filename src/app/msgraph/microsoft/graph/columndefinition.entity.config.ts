@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { ColumnDefinition } from './columndefinition.entity';
+import { ColumnDefinitionModel } from './columndefinition.model';
+import { ColumnDefinitionCollection } from './columndefinition.collection';
 //#endregion
 
 export const ColumnDefinitionConfig = {
   name: "columnDefinition",
   base: "microsoft.graph.entity",
+  model: ColumnDefinitionModel,
+  collection: ColumnDefinitionCollection,
   annotations: [],
   fields: {
     boolean: {type: 'graph.booleanColumn'},

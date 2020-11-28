@@ -3,8 +3,16 @@
 //#region ODataApi Imports
 import { DirectoryObject } from './directoryobject.entity';
 import { OnPremisesProvisioningError } from './onpremisesprovisioningerror.entity';
-import { PhysicalOfficeAddress } from './physicalofficeaddress.entity';
 import { Phone } from './phone.entity';
+import { PhysicalOfficeAddress } from './physicalofficeaddress.entity';
+import { OnPremisesProvisioningErrorModel } from './onpremisesprovisioningerror.model';
+import { PhoneModel } from './phone.model';
+import { PhysicalOfficeAddressModel } from './physicalofficeaddress.model';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { OnPremisesProvisioningErrorCollection } from './onpremisesprovisioningerror.collection';
+import { PhoneCollection } from './phone.collection';
+import { PhysicalOfficeAddressCollection } from './physicalofficeaddress.collection';
+import { DirectoryObjectCollection } from './directoryobject.collection';
 //#endregion
 
 export interface OrgContact extends DirectoryObject {
@@ -17,14 +25,14 @@ export interface OrgContact extends DirectoryObject {
   jobTitle?: string;
   mail?: string;
   mailNickname?: string;
-  onPremisesSyncEnabled?: boolean;
   onPremisesLastSyncDateTime?: Date;
   onPremisesProvisioningErrors?: OnPremisesProvisioningError[];
+  onPremisesSyncEnabled?: boolean;
   phones?: Phone[];
   proxyAddresses: string[];
   surname?: string;
-  manager?: DirectoryObject;
   directReports?: DirectoryObject[];
+  manager?: DirectoryObject;
   memberOf?: DirectoryObject[];
   transitiveMemberOf?: DirectoryObject[];
   //#endregion

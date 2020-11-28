@@ -5,26 +5,26 @@
 
 export interface DeviceInfo {
   //#region ODataApi Properties
-  captureDeviceName?: string;
   captureDeviceDriver?: string;
-  renderDeviceName?: string;
-  renderDeviceDriver?: string;
-  sentSignalLevel?: number;
-  receivedSignalLevel?: number;
-  sentNoiseLevel?: number;
-  receivedNoiseLevel?: number;
-  initialSignalLevelRootMeanSquare?: number;
-  cpuInsufficentEventRatio?: number;
-  renderNotFunctioningEventRatio?: number;
+  captureDeviceName?: string;
   captureNotFunctioningEventRatio?: number;
-  deviceGlitchEventRatio?: number;
-  lowSpeechToNoiseEventRatio?: number;
-  lowSpeechLevelEventRatio?: number;
+  cpuInsufficentEventRatio?: number;
   deviceClippingEventRatio?: number;
+  deviceGlitchEventRatio?: number;
   howlingEventCount?: number;
-  renderZeroVolumeEventRatio?: number;
-  renderMuteEventRatio?: number;
+  initialSignalLevelRootMeanSquare?: number;
+  lowSpeechLevelEventRatio?: number;
+  lowSpeechToNoiseEventRatio?: number;
   micGlitchRate?: number;
+  receivedNoiseLevel?: number;
+  receivedSignalLevel?: number;
+  renderDeviceDriver?: string;
+  renderDeviceName?: string;
+  renderMuteEventRatio?: number;
+  renderNotFunctioningEventRatio?: number;
+  renderZeroVolumeEventRatio?: number;
+  sentNoiseLevel?: number;
+  sentSignalLevel?: number;
   speakerGlitchRate?: number;
   //#endregion
 }

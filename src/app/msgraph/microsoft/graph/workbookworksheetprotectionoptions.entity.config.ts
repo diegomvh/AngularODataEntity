@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { WorkbookWorksheetProtectionOptions } from './workbookworksheetprotectionoptions.entity';
+import { WorkbookWorksheetProtectionOptionsModel } from './workbookworksheetprotectionoptions.model';
+import { WorkbookWorksheetProtectionOptionsCollection } from './workbookworksheetprotectionoptions.collection';
 //#endregion
 
 export const WorkbookWorksheetProtectionOptionsConfig = {
   name: "workbookWorksheetProtectionOptions",
+  model: WorkbookWorksheetProtectionOptionsModel,
+  collection: WorkbookWorksheetProtectionOptionsCollection,
   annotations: [],
   fields: {
     allowAutoFilter: {type: 'Edm.Boolean', nullable: false},

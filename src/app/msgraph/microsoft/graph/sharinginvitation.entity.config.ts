@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { SharingInvitation } from './sharinginvitation.entity';
+import { SharingInvitationModel } from './sharinginvitation.model';
+import { SharingInvitationCollection } from './sharinginvitation.collection';
 //#endregion
 
 export const SharingInvitationConfig = {
   name: "sharingInvitation",
+  model: SharingInvitationModel,
+  collection: SharingInvitationCollection,
   annotations: [],
   fields: {
     email: {type: 'Edm.String'},

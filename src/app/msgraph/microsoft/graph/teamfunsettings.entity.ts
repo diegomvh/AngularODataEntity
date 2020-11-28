@@ -6,9 +6,9 @@ import { GiphyRatingType } from './giphyratingtype.enum';
 
 export interface TeamFunSettings {
   //#region ODataApi Properties
-  allowGiphy?: boolean;
-  giphyContentRating?: GiphyRatingType;
-  allowStickersAndMemes?: boolean;
   allowCustomMemes?: boolean;
+  allowGiphy?: boolean;
+  allowStickersAndMemes?: boolean;
+  giphyContentRating?: GiphyRatingType;
   //#endregion
 }

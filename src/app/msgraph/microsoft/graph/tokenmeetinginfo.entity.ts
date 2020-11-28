@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { MeetingInfo } from './meetinginfo.entity';
+import { MeetingInfoModel } from './meetinginfo.model';
+import { MeetingInfoCollection } from './meetinginfo.collection';
 //#endregion
 
 export interface TokenMeetingInfo extends MeetingInfo {

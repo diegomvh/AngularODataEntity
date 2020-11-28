@@ -5,10 +5,10 @@
 
 export interface WindowsInformationProtectionApp {
   //#region ODataApi Properties
-  displayName: string;
-  description?: string;
-  publisherName?: string;
-  productName?: string;
   denied: boolean;
+  description?: string;
+  displayName: string;
+  productName?: string;
+  publisherName?: string;
   //#endregion
 }

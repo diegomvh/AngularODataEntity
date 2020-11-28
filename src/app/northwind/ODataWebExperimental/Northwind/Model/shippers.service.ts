@@ -34,11 +34,23 @@ export class ShippersService extends ODataEntityService<Shipper> {
     super(client, 'Shippers', 'NorthwindModel.Shipper');
   }
 
+  //#region ODataApi Model
   shipperModel(): ShipperModel<Shipper> {
     return super.model() as ShipperModel<Shipper>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   shipperCollection(): ShipperCollection<Shipper, ShipperModel<Shipper>> {
     return super.collection() as ShipperCollection<Shipper, ShipperModel<Shipper>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public orders(entity: EntityKey<Shipper>): ODataNavigationPropertyResource<Order> {
+    return this.entity(entity).navigationProperty<Order>('Orders');
+  }
+  //#endregion
 }

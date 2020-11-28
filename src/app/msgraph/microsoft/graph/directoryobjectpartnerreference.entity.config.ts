@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { DirectoryObjectPartnerReference } from './directoryobjectpartnerreference.entity';
+import { DirectoryObjectPartnerReferenceModel } from './directoryobjectpartnerreference.model';
+import { DirectoryObjectPartnerReferenceCollection } from './directoryobjectpartnerreference.collection';
 //#endregion
 
 export const DirectoryObjectPartnerReferenceConfig = {
   name: "directoryObjectPartnerReference",
   base: "microsoft.graph.directoryObject",
+  model: DirectoryObjectPartnerReferenceModel,
+  collection: DirectoryObjectPartnerReferenceCollection,
   annotations: [],
   fields: {
     description: {type: 'Edm.String'},

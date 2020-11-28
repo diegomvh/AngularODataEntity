@@ -6,19 +6,25 @@ import { CallType } from './calltype.enum';
 import { Modality } from './modality.enum';
 import { IdentitySet } from '../identityset.entity';
 import { Session } from './session.entity';
+import { IdentitySetModel } from '../identityset.model';
+import { EntityModel } from '../entity.model';
+import { SessionModel } from './session.model';
+import { IdentitySetCollection } from '../identityset.collection';
+import { EntityCollection } from '../entity.collection';
+import { SessionCollection } from './session.collection';
 //#endregion
 
 export interface CallRecord extends Entity {
   //#region ODataApi Properties
-  version: number;
-  type: CallType;
-  modalities: Modality;
-  lastModifiedDateTime: Date;
-  startDateTime: Date;
   endDateTime: Date;
+  joinWebUrl?: string;
+  lastModifiedDateTime: Date;
+  modalities: Modality;
   organizer?: IdentitySet;
   participants?: IdentitySet[];
-  joinWebUrl?: string;
+  startDateTime: Date;
+  type: CallType;
+  version: number;
   sessions?: Session[];
   //#endregion
 }

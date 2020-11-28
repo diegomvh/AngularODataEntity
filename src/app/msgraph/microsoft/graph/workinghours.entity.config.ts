@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { WorkingHours } from './workinghours.entity';
+import { WorkingHoursModel } from './workinghours.model';
+import { WorkingHoursCollection } from './workinghours.collection';
 //#endregion
 
 export const WorkingHoursConfig = {
   name: "workingHours",
+  model: WorkingHoursModel,
+  collection: WorkingHoursCollection,
   annotations: [],
   fields: {
     daysOfWeek: {type: 'graph.dayOfWeek', collection: true},
-    startTime: {type: 'Edm.TimeOfDay'},
     endTime: {type: 'Edm.TimeOfDay'},
+    startTime: {type: 'Edm.TimeOfDay'},
     timeZone: {type: 'graph.timeZoneBase'}
   }
 } as EntityConfig<WorkingHours>;

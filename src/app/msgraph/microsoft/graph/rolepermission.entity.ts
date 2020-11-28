@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { ResourceAction } from './resourceaction.entity';
+import { ResourceActionModel } from './resourceaction.model';
+import { ResourceActionCollection } from './resourceaction.collection';
 //#endregion
 
 export interface RolePermission {

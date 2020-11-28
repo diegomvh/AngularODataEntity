@@ -2,15 +2,17 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface EBookInstallSummary extends Entity {
   //#region ODataApi Properties
-  installedDeviceCount: number;
   failedDeviceCount: number;
-  notInstalledDeviceCount: number;
-  installedUserCount: number;
   failedUserCount: number;
+  installedDeviceCount: number;
+  installedUserCount: number;
+  notInstalledDeviceCount: number;
   notInstalledUserCount: number;
   //#endregion
 }

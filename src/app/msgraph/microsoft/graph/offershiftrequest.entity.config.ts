@@ -2,16 +2,20 @@
 
 //#region ODataApi Imports
 import { OfferShiftRequest } from './offershiftrequest.entity';
+import { OfferShiftRequestModel } from './offershiftrequest.model';
+import { OfferShiftRequestCollection } from './offershiftrequest.collection';
 //#endregion
 
 export const OfferShiftRequestConfig = {
   name: "offerShiftRequest",
   base: "microsoft.graph.scheduleChangeRequest",
+  model: OfferShiftRequestModel,
+  collection: OfferShiftRequestCollection,
   annotations: [],
   fields: {
-    recipientActionMessage: {type: 'Edm.String'},
     recipientActionDateTime: {type: 'Edm.DateTimeOffset'},
-    senderShiftId: {type: 'Edm.String'},
-    recipientUserId: {type: 'Edm.String'}
+    recipientActionMessage: {type: 'Edm.String'},
+    recipientUserId: {type: 'Edm.String'},
+    senderShiftId: {type: 'Edm.String'}
   }
 } as EntityConfig<OfferShiftRequest>;

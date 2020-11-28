@@ -4,20 +4,22 @@
 import { Entity } from './entity.entity';
 import { ComplianceStatus } from './compliancestatus.enum';
 import { IosUpdatesInstallStatus } from './iosupdatesinstallstatus.enum';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface IosUpdateDeviceStatus extends Entity {
   //#region ODataApi Properties
-  installStatus: IosUpdatesInstallStatus;
-  osVersion?: string;
-  deviceId?: string;
-  userId?: string;
-  deviceDisplayName?: string;
-  userName?: string;
-  deviceModel?: string;
   complianceGracePeriodExpirationDateTime: Date;
-  status: ComplianceStatus;
+  deviceDisplayName?: string;
+  deviceId?: string;
+  deviceModel?: string;
+  installStatus: IosUpdatesInstallStatus;
   lastReportedDateTime: Date;
+  osVersion?: string;
+  status: ComplianceStatus;
+  userId?: string;
+  userName?: string;
   userPrincipalName?: string;
   //#endregion
 }

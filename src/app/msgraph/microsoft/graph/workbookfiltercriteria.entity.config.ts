@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { WorkbookFilterCriteria } from './workbookfiltercriteria.entity';
+import { WorkbookFilterCriteriaModel } from './workbookfiltercriteria.model';
+import { WorkbookFilterCriteriaCollection } from './workbookfiltercriteria.collection';
 //#endregion
 
 export const WorkbookFilterCriteriaConfig = {
   name: "workbookFilterCriteria",
+  model: WorkbookFilterCriteriaModel,
+  collection: WorkbookFilterCriteriaCollection,
   annotations: [],
   fields: {
     color: {type: 'Edm.String'},

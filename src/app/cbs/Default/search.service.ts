@@ -22,6 +22,8 @@ import {
 //#region ODataApi Imports
 import { ArticleType } from '../CBS/Website/ODataApi/Models/articletype.enum';
 import { SearchResultItem } from '../CBS/Website/ODataApi/Models/searchresultitem.entity';
+import { SearchResultItemModel } from '../CBS/Website/ODataApi/Models/searchresultitem.model';
+import { SearchResultItemCollection } from '../CBS/Website/ODataApi/Models/searchresultitem.collection';
 //#endregion
 
 @Injectable()
@@ -30,6 +32,16 @@ export class SearchService extends ODataEntityService<SearchResultItem> {
     super(client, 'Search', 'CBS.Website.ODataApi.Models.SearchResultItem');
   }
 
+  //#region ODataApi Model
+  searchResultItemModel(): SearchResultItemModel<SearchResultItem> {
+    return this.entity().asModel() as SearchResultItemModel<SearchResultItem>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  searchResultItemCollection(): SearchResultItemCollection<SearchResultItem, SearchResultItemModel<SearchResultItem>> {
+    return this.entities().asCollection() as SearchResultItemCollection<SearchResultItem, SearchResultItemModel<SearchResultItem>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

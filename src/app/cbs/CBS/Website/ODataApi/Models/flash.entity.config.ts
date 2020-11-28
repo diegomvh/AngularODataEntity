@@ -1,11 +1,15 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Flash } from './flash.entity';
+import { FlashModel } from './flash.model';
+import { FlashCollection } from './flash.collection';
 //#endregion
 
 export const FlashConfig = {
   name: "Flash",
+  model: FlashModel,
+  collection: FlashCollection,
   annotations: [],
   fields: {
     UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
@@ -22,4 +26,4 @@ export const FlashConfig = {
     Updated: {type: 'Edm.DateTimeOffset', nullable: false},
     Created: {type: 'Edm.DateTimeOffset', nullable: false}
   }
-} as EntityConfig<Flash>;
+} as StructuredTypeConfig<Flash>;

@@ -4,6 +4,8 @@
 import { DeviceConfiguration } from './deviceconfiguration.entity';
 import { MiracastChannel } from './miracastchannel.enum';
 import { WelcomeScreenMeetingInformation } from './welcomescreenmeetinginformation.enum';
+import { DeviceConfigurationModel } from './deviceconfiguration.model';
+import { DeviceConfigurationCollection } from './deviceconfiguration.collection';
 //#endregion
 
 export interface Windows10TeamGeneralConfiguration extends DeviceConfiguration {
@@ -15,8 +17,8 @@ export interface Windows10TeamGeneralConfiguration extends DeviceConfiguration {
   maintenanceWindowBlocked: boolean;
   maintenanceWindowDurationInHours?: number;
   maintenanceWindowStartTime?: Date;
-  miracastChannel: MiracastChannel;
   miracastBlocked: boolean;
+  miracastChannel: MiracastChannel;
   miracastRequirePin: boolean;
   settingsBlockMyMeetingsAndFiles: boolean;
   settingsBlockSessionResume: boolean;
@@ -25,8 +27,8 @@ export interface Windows10TeamGeneralConfiguration extends DeviceConfiguration {
   settingsScreenTimeoutInMinutes?: number;
   settingsSessionTimeoutInMinutes?: number;
   settingsSleepTimeoutInMinutes?: number;
-  welcomeScreenBlockAutomaticWakeUp: boolean;
   welcomeScreenBackgroundImageUrl?: string;
+  welcomeScreenBlockAutomaticWakeUp: boolean;
   welcomeScreenMeetingInformation: WelcomeScreenMeetingInformation;
   //#endregion
 }

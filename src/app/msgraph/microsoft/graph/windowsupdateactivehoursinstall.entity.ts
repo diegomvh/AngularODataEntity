@@ -2,11 +2,13 @@
 
 //#region ODataApi Imports
 import { WindowsUpdateInstallScheduleType } from './windowsupdateinstallscheduletype.entity';
+import { WindowsUpdateInstallScheduleTypeModel } from './windowsupdateinstallscheduletype.model';
+import { WindowsUpdateInstallScheduleTypeCollection } from './windowsupdateinstallscheduletype.collection';
 //#endregion
 
 export interface WindowsUpdateActiveHoursInstall extends WindowsUpdateInstallScheduleType {
   //#region ODataApi Properties
-  activeHoursStart: Date;
   activeHoursEnd: Date;
+  activeHoursStart: Date;
   //#endregion
 }

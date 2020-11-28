@@ -5,37 +5,37 @@
 
 export interface DeviceHealthAttestationState {
   //#region ODataApi Properties
-  lastUpdateDateTime?: string;
-  contentNamespaceUrl?: string;
-  deviceHealthAttestationStatus?: string;
-  contentVersion?: string;
-  issuedDateTime: Date;
   attestationIdentityKey?: string;
+  bitLockerStatus?: string;
+  bootAppSecurityVersion?: string;
+  bootDebugging?: string;
+  bootManagerSecurityVersion?: string;
+  bootManagerVersion?: string;
+  bootRevisionListInfo?: string;
+  codeIntegrity?: string;
+  codeIntegrityCheckVersion?: string;
+  codeIntegrityPolicy?: string;
+  contentNamespaceUrl?: string;
+  contentVersion?: string;
+  dataExcutionPolicy?: string;
+  deviceHealthAttestationStatus?: string;
+  earlyLaunchAntiMalwareDriverProtection?: string;
+  healthAttestationSupportedStatus?: string;
+  healthStatusMismatchInfo?: string;
+  issuedDateTime: Date;
+  lastUpdateDateTime?: string;
+  operatingSystemKernelDebugging?: string;
+  operatingSystemRevListInfo?: string;
+  pcr0?: string;
+  pcrHashAlgorithm?: string;
   resetCount: number;
   restartCount: number;
-  dataExcutionPolicy?: string;
-  bitLockerStatus?: string;
-  bootManagerVersion?: string;
-  codeIntegrityCheckVersion?: string;
-  secureBoot?: string;
-  bootDebugging?: string;
-  operatingSystemKernelDebugging?: string;
-  codeIntegrity?: string;
-  testSigning?: string;
   safeMode?: string;
-  windowsPE?: string;
-  earlyLaunchAntiMalwareDriverProtection?: string;
-  virtualSecureMode?: string;
-  pcrHashAlgorithm?: string;
-  bootAppSecurityVersion?: string;
-  bootManagerSecurityVersion?: string;
-  tpmVersion?: string;
-  pcr0?: string;
+  secureBoot?: string;
   secureBootConfigurationPolicyFingerPrint?: string;
-  codeIntegrityPolicy?: string;
-  bootRevisionListInfo?: string;
-  operatingSystemRevListInfo?: string;
-  healthStatusMismatchInfo?: string;
-  healthAttestationSupportedStatus?: string;
+  testSigning?: string;
+  tpmVersion?: string;
+  virtualSecureMode?: string;
+  windowsPE?: string;
   //#endregion
 }

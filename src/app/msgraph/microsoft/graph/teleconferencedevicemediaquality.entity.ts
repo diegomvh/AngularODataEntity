@@ -5,26 +5,26 @@
 
 export interface TeleconferenceDeviceMediaQuality {
   //#region ODataApi Properties
+  averageInboundJitter?: Duration;
+  averageInboundPacketLossRateInPercentage?: number;
+  averageInboundRoundTripDelay?: Duration;
+  averageOutboundJitter?: Duration;
+  averageOutboundPacketLossRateInPercentage?: number;
+  averageOutboundRoundTripDelay?: Duration;
   channelIndex: number;
-  mediaDuration?: Duration;
-  networkLinkSpeedInBytes?: number;
+  inboundPackets?: number;
   localIPAddress?: string;
   localPort?: number;
+  maximumInboundJitter?: Duration;
+  maximumInboundPacketLossRateInPercentage?: number;
+  maximumInboundRoundTripDelay?: Duration;
+  maximumOutboundJitter?: Duration;
+  maximumOutboundPacketLossRateInPercentage?: number;
+  maximumOutboundRoundTripDelay?: Duration;
+  mediaDuration?: Duration;
+  networkLinkSpeedInBytes?: number;
+  outboundPackets?: number;
   remoteIPAddress?: string;
   remotePort?: number;
-  inboundPackets?: number;
-  outboundPackets?: number;
-  averageInboundPacketLossRateInPercentage?: number;
-  averageOutboundPacketLossRateInPercentage?: number;
-  maximumInboundPacketLossRateInPercentage?: number;
-  maximumOutboundPacketLossRateInPercentage?: number;
-  averageInboundRoundTripDelay?: Duration;
-  averageOutboundRoundTripDelay?: Duration;
-  maximumInboundRoundTripDelay?: Duration;
-  maximumOutboundRoundTripDelay?: Duration;
-  averageInboundJitter?: Duration;
-  averageOutboundJitter?: Duration;
-  maximumInboundJitter?: Duration;
-  maximumOutboundJitter?: Duration;
   //#endregion
 }

@@ -34,11 +34,23 @@ export class CustomerDemographicsService extends ODataEntityService<CustomerDemo
     super(client, 'CustomerDemographics', 'NorthwindModel.CustomerDemographic');
   }
 
+  //#region ODataApi Model
   customerDemographicModel(): CustomerDemographicModel<CustomerDemographic> {
     return super.model() as CustomerDemographicModel<CustomerDemographic>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   customerDemographicCollection(): CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>> {
     return super.collection() as CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public customers(entity: EntityKey<CustomerDemographic>): ODataNavigationPropertyResource<Customer> {
+    return this.entity(entity).navigationProperty<Customer>('Customers');
+  }
+  //#endregion
 }

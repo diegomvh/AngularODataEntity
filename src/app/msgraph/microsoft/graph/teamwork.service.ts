@@ -22,6 +22,10 @@ import {
 //#region ODataApi Imports
 import { Teamwork } from './teamwork.entity';
 import { WorkforceIntegration } from './workforceintegration.entity';
+import { TeamworkModel } from './teamwork.model';
+import { WorkforceIntegrationModel } from './workforceintegration.model';
+import { TeamworkCollection } from './teamwork.collection';
+import { WorkforceIntegrationCollection } from './workforceintegration.collection';
 //#endregion
 
 @Injectable()

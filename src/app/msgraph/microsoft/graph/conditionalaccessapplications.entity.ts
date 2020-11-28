@@ -5,8 +5,8 @@
 
 export interface ConditionalAccessApplications {
   //#region ODataApi Properties
-  includeApplications: string[];
   excludeApplications: string[];
+  includeApplications: string[];
   includeUserActions: string[];
   //#endregion
 }

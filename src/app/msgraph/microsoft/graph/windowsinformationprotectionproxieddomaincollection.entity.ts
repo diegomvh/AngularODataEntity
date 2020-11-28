@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { ProxiedDomain } from './proxieddomain.entity';
+import { ProxiedDomainModel } from './proxieddomain.model';
+import { ProxiedDomainCollection } from './proxieddomain.collection';
 //#endregion
 
 export interface WindowsInformationProtectionProxiedDomainCollection {

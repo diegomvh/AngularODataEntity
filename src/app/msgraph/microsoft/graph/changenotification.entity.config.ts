@@ -2,19 +2,23 @@
 
 //#region ODataApi Imports
 import { ChangeNotification } from './changenotification.entity';
+import { ChangeNotificationModel } from './changenotification.model';
+import { ChangeNotificationCollection } from './changenotification.collection';
 //#endregion
 
 export const ChangeNotificationConfig = {
   name: "changeNotification",
+  model: ChangeNotificationModel,
+  collection: ChangeNotificationCollection,
   annotations: [],
   fields: {
-    id: {type: 'Edm.String'},
-    subscriptionId: {type: 'Edm.Guid', nullable: false},
-    subscriptionExpirationDateTime: {type: 'Edm.DateTimeOffset', nullable: false},
-    clientState: {type: 'Edm.String'},
     changeType: {type: 'graph.changeType', nullable: false},
+    clientState: {type: 'Edm.String'},
+    id: {type: 'Edm.String'},
     resource: {type: 'Edm.String', nullable: false},
-    tenantId: {type: 'Edm.Guid', nullable: false},
-    resourceData: {type: 'graph.resourceData'}
+    resourceData: {type: 'graph.resourceData'},
+    subscriptionExpirationDateTime: {type: 'Edm.DateTimeOffset', nullable: false},
+    subscriptionId: {type: 'Edm.Guid', nullable: false},
+    tenantId: {type: 'Edm.Guid', nullable: false}
   }
 } as EntityConfig<ChangeNotification>;

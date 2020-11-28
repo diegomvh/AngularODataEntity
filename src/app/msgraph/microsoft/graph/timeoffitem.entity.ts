@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { ScheduleEntity } from './scheduleentity.entity';
+import { ScheduleEntityModel } from './scheduleentity.model';
+import { ScheduleEntityCollection } from './scheduleentity.collection';
 //#endregion
 
 export interface TimeOffItem extends ScheduleEntity {

@@ -22,6 +22,8 @@ import {
 //#region ODataApi Imports
 import { DataPolicyOperationStatus } from './datapolicyoperationstatus.enum';
 import { DataPolicyOperation } from './datapolicyoperation.entity';
+import { DataPolicyOperationModel } from './datapolicyoperation.model';
+import { DataPolicyOperationCollection } from './datapolicyoperation.collection';
 //#endregion
 
 @Injectable()
@@ -30,6 +32,16 @@ export class DataPolicyOperationsService extends ODataEntityService<DataPolicyOp
     super(client, 'dataPolicyOperations', 'microsoft.graph.dataPolicyOperation');
   }
 
+  //#region ODataApi Model
+  dataPolicyOperationModel(): DataPolicyOperationModel<DataPolicyOperation> {
+    return super.model() as DataPolicyOperationModel<DataPolicyOperation>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  dataPolicyOperationCollection(): DataPolicyOperationCollection<DataPolicyOperation, DataPolicyOperationModel<DataPolicyOperation>> {
+    return super.collection() as DataPolicyOperationCollection<DataPolicyOperation, DataPolicyOperationModel<DataPolicyOperation>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

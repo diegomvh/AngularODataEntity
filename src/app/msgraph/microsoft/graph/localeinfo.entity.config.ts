@@ -2,13 +2,17 @@
 
 //#region ODataApi Imports
 import { LocaleInfo } from './localeinfo.entity';
+import { LocaleInfoModel } from './localeinfo.model';
+import { LocaleInfoCollection } from './localeinfo.collection';
 //#endregion
 
 export const LocaleInfoConfig = {
   name: "localeInfo",
+  model: LocaleInfoModel,
+  collection: LocaleInfoCollection,
   annotations: [],
   fields: {
-    locale: {type: 'Edm.String'},
-    displayName: {type: 'Edm.String'}
+    displayName: {type: 'Edm.String'},
+    locale: {type: 'Edm.String'}
   }
 } as EntityConfig<LocaleInfo>;

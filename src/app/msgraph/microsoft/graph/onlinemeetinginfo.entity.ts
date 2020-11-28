@@ -2,15 +2,17 @@
 
 //#region ODataApi Imports
 import { Phone } from './phone.entity';
+import { PhoneModel } from './phone.model';
+import { PhoneCollection } from './phone.collection';
 //#endregion
 
 export interface OnlineMeetingInfo {
   //#region ODataApi Properties
-  joinUrl?: string;
   conferenceId?: string;
-  tollNumber?: string;
-  tollFreeNumbers?: string[];
-  quickDial?: string;
+  joinUrl?: string;
   phones?: Phone[];
+  quickDial?: string;
+  tollFreeNumbers?: string[];
+  tollNumber?: string;
   //#endregion
 }

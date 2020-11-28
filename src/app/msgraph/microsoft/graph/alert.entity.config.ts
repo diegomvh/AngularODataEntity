@@ -2,12 +2,16 @@
 
 //#region ODataApi Imports
 import { Alert } from './alert.entity';
+import { AlertModel } from './alert.model';
+import { AlertCollection } from './alert.collection';
 //#endregion
 
 export const AlertConfig = {
   name: "alert",
   base: "microsoft.graph.entity",
   open: true,
+  model: AlertModel,
+  collection: AlertCollection,
   annotations: [],
   fields: {
     activityGroupName: {type: 'Edm.String'},

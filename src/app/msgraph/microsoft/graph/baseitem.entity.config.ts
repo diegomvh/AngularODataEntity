@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { BaseItem } from './baseitem.entity';
+import { BaseItemModel } from './baseitem.model';
+import { BaseItemCollection } from './baseitem.collection';
 //#endregion
 
 export const BaseItemConfig = {
   name: "baseItem",
   base: "microsoft.graph.entity",
+  model: BaseItemModel,
+  collection: BaseItemCollection,
   annotations: [],
   fields: {
     createdBy: {type: 'graph.identitySet'},

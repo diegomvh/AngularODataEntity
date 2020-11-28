@@ -6,11 +6,11 @@ import { ScheduleEntityTheme } from './scheduleentitytheme.enum';
 
 export interface ShiftActivity {
   //#region ODataApi Properties
-  isPaid?: boolean;
-  startDateTime?: Date;
-  endDateTime?: Date;
   code?: string;
   displayName?: string;
+  endDateTime?: Date;
+  isPaid?: boolean;
+  startDateTime?: Date;
   theme: ScheduleEntityTheme;
   //#endregion
 }

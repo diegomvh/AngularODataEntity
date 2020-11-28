@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Hashes } from './hashes.entity';
+import { HashesModel } from './hashes.model';
+import { HashesCollection } from './hashes.collection';
 //#endregion
 
 export const HashesConfig = {
   name: "hashes",
+  model: HashesModel,
+  collection: HashesCollection,
   annotations: [],
   fields: {
     crc32Hash: {type: 'Edm.String'},

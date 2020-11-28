@@ -2,13 +2,15 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface OnPremisesConditionalAccessSettings extends Entity {
   //#region ODataApi Properties
   enabled: boolean;
-  includedGroups: string[];
   excludedGroups: string[];
+  includedGroups: string[];
   overrideDefaultRule: boolean;
   //#endregion
 }

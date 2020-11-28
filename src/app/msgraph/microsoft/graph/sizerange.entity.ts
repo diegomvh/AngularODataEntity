@@ -5,7 +5,7 @@
 
 export interface SizeRange {
   //#region ODataApi Properties
-  minimumSize?: number;
   maximumSize?: number;
+  minimumSize?: number;
   //#endregion
 }

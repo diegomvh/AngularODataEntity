@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { PlannerCategoryDescriptions } from './plannercategorydescriptions.entity';
+import { PlannerCategoryDescriptionsModel } from './plannercategorydescriptions.model';
+import { PlannerCategoryDescriptionsCollection } from './plannercategorydescriptions.collection';
 //#endregion
 
 export const PlannerCategoryDescriptionsConfig = {
   name: "plannerCategoryDescriptions",
+  model: PlannerCategoryDescriptionsModel,
+  collection: PlannerCategoryDescriptionsCollection,
   annotations: [],
   fields: {
     category1: {type: 'Edm.String'},

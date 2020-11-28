@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { WorkbookRangeFormat } from './workbookrangeformat.entity';
+import { WorkbookRangeFormatModel } from './workbookrangeformat.model';
+import { WorkbookRangeFormatCollection } from './workbookrangeformat.collection';
 //#endregion
 
 export const WorkbookRangeFormatConfig = {
   name: "workbookRangeFormat",
   base: "microsoft.graph.entity",
+  model: WorkbookRangeFormatModel,
+  collection: WorkbookRangeFormatCollection,
   annotations: [],
   fields: {
     columnWidth: {type: 'Edm.Double'},

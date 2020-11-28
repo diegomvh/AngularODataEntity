@@ -3,6 +3,12 @@
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
 import { Json } from './json.entity';
+import { JsonModel } from './json.model';
+import { EntityModel } from './entity.model';
+import { WorkbookRangeViewModel } from './workbookrangeview.model';
+import { JsonCollection } from './json.collection';
+import { EntityCollection } from './entity.collection';
+import { WorkbookRangeViewCollection } from './workbookrangeview.collection';
 //#endregion
 
 export interface WorkbookRangeView extends Entity {
@@ -16,8 +22,8 @@ export interface WorkbookRangeView extends Entity {
   numberFormat?: Json;
   rowCount: number;
   text?: Json;
-  valueTypes?: Json;
   values?: Json;
+  valueTypes?: Json;
   rows?: WorkbookRangeView[];
   //#endregion
 }

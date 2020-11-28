@@ -31,11 +31,20 @@ export class OrderSubtotalsService extends ODataEntityService<OrderSubtotal> {
     super(client, 'Order_Subtotals', 'NorthwindModel.Order_Subtotal');
   }
 
+  //#region ODataApi Model
   orderSubtotalModel(): OrderSubtotalModel<OrderSubtotal> {
     return super.model() as OrderSubtotalModel<OrderSubtotal>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   orderSubtotalCollection(): OrderSubtotalCollection<OrderSubtotal, OrderSubtotalModel<OrderSubtotal>> {
     return super.collection() as OrderSubtotalCollection<OrderSubtotal, OrderSubtotalModel<OrderSubtotal>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

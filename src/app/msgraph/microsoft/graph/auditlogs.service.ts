@@ -20,10 +20,18 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
+import { AuditLogRoot } from './auditlogroot.entity';
 import { DirectoryAudit } from './directoryaudit.entity';
 import { SignIn } from './signin.entity';
 import { RestrictedSignIn } from './restrictedsignin.entity';
-import { AuditLogRoot } from './auditlogroot.entity';
+import { AuditLogRootModel } from './auditlogroot.model';
+import { DirectoryAuditModel } from './directoryaudit.model';
+import { SignInModel } from './signin.model';
+import { RestrictedSignInModel } from './restrictedsignin.model';
+import { AuditLogRootCollection } from './auditlogroot.collection';
+import { DirectoryAuditCollection } from './directoryaudit.collection';
+import { SignInCollection } from './signin.collection';
+import { RestrictedSignInCollection } from './restrictedsignin.collection';
 //#endregion
 
 @Injectable()

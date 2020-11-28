@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { WindowsInformationProtectionDataRecoveryCertificate } from './windowsinformationprotectiondatarecoverycertificate.entity';
+import { WindowsInformationProtectionDataRecoveryCertificateModel } from './windowsinformationprotectiondatarecoverycertificate.model';
+import { WindowsInformationProtectionDataRecoveryCertificateCollection } from './windowsinformationprotectiondatarecoverycertificate.collection';
 //#endregion
 
 export const WindowsInformationProtectionDataRecoveryCertificateConfig = {
   name: "windowsInformationProtectionDataRecoveryCertificate",
+  model: WindowsInformationProtectionDataRecoveryCertificateModel,
+  collection: WindowsInformationProtectionDataRecoveryCertificateCollection,
   annotations: [],
   fields: {
-    subjectName: {type: 'Edm.String'},
+    certificate: {type: 'Edm.Binary'},
     description: {type: 'Edm.String'},
     expirationDateTime: {type: 'Edm.DateTimeOffset', nullable: false},
-    certificate: {type: 'Edm.Binary'}
+    subjectName: {type: 'Edm.String'}
   }
 } as EntityConfig<WindowsInformationProtectionDataRecoveryCertificate>;

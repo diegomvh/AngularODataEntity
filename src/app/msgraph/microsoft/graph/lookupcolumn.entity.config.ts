@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { LookupColumn } from './lookupcolumn.entity';
+import { LookupColumnModel } from './lookupcolumn.model';
+import { LookupColumnCollection } from './lookupcolumn.collection';
 //#endregion
 
 export const LookupColumnConfig = {
   name: "lookupColumn",
+  model: LookupColumnModel,
+  collection: LookupColumnCollection,
   annotations: [],
   fields: {
     allowMultipleValues: {type: 'Edm.Boolean'},

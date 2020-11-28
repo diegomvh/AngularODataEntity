@@ -5,13 +5,13 @@
 
 export interface ResourceVisualization {
   //#region ODataApi Properties
-  title?: string;
-  type?: string;
+  containerDisplayName?: string;
+  containerType?: string;
+  containerWebUrl?: string;
   mediaType?: string;
   previewImageUrl?: string;
   previewText?: string;
-  containerWebUrl?: string;
-  containerDisplayName?: string;
-  containerType?: string;
+  title?: string;
+  type?: string;
   //#endregion
 }

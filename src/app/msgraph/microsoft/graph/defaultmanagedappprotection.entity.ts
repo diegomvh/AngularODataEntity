@@ -6,20 +6,28 @@ import { ManagedAppDataEncryptionType } from './managedappdataencryptiontype.enu
 import { KeyValuePair } from './keyvaluepair.entity';
 import { ManagedMobileApp } from './managedmobileapp.entity';
 import { ManagedAppPolicyDeploymentSummary } from './managedapppolicydeploymentsummary.entity';
+import { KeyValuePairModel } from './keyvaluepair.model';
+import { ManagedAppProtectionModel } from './managedappprotection.model';
+import { ManagedMobileAppModel } from './managedmobileapp.model';
+import { ManagedAppPolicyDeploymentSummaryModel } from './managedapppolicydeploymentsummary.model';
+import { KeyValuePairCollection } from './keyvaluepair.collection';
+import { ManagedAppProtectionCollection } from './managedappprotection.collection';
+import { ManagedMobileAppCollection } from './managedmobileapp.collection';
+import { ManagedAppPolicyDeploymentSummaryCollection } from './managedapppolicydeploymentsummary.collection';
 //#endregion
 
 export interface DefaultManagedAppProtection extends ManagedAppProtection {
   //#region ODataApi Properties
   appDataEncryptionType: ManagedAppDataEncryptionType;
-  screenCaptureBlocked: boolean;
-  encryptAppData: boolean;
-  disableAppEncryptionIfDeviceEncryptionIsEnabled: boolean;
-  minimumRequiredSdkVersion?: string;
   customSettings: KeyValuePair[];
   deployedAppCount: number;
-  minimumRequiredPatchVersion?: string;
-  minimumWarningPatchVersion?: string;
+  disableAppEncryptionIfDeviceEncryptionIsEnabled: boolean;
+  encryptAppData: boolean;
   faceIdBlocked: boolean;
+  minimumRequiredPatchVersion?: string;
+  minimumRequiredSdkVersion?: string;
+  minimumWarningPatchVersion?: string;
+  screenCaptureBlocked: boolean;
   apps?: ManagedMobileApp[];
   deploymentSummary?: ManagedAppPolicyDeploymentSummary;
   //#endregion

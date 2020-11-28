@@ -23,6 +23,12 @@ import {
 import { InvitedUserMessageInfo } from './invitedusermessageinfo.entity';
 import { Invitation } from './invitation.entity';
 import { User } from './user.entity';
+import { InvitedUserMessageInfoModel } from './invitedusermessageinfo.model';
+import { InvitationModel } from './invitation.model';
+import { UserModel } from './user.model';
+import { InvitedUserMessageInfoCollection } from './invitedusermessageinfo.collection';
+import { InvitationCollection } from './invitation.collection';
+import { UserCollection } from './user.collection';
 //#endregion
 
 @Injectable()
@@ -31,6 +37,16 @@ export class InvitationsService extends ODataEntityService<Invitation> {
     super(client, 'invitations', 'microsoft.graph.invitation');
   }
 
+  //#region ODataApi Model
+  invitationModel(): InvitationModel<Invitation> {
+    return super.model() as InvitationModel<Invitation>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  invitationCollection(): InvitationCollection<Invitation, InvitationModel<Invitation>> {
+    return super.collection() as InvitationCollection<Invitation, InvitationModel<Invitation>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

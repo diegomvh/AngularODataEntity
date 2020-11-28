@@ -31,11 +31,20 @@ export class SummaryOfSalesByQuartersService extends ODataEntityService<SummaryO
     super(client, 'Summary_of_Sales_by_Quarters', 'NorthwindModel.Summary_of_Sales_by_Quarter');
   }
 
+  //#region ODataApi Model
   summaryOfSalesByQuarterModel(): SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter> {
     return super.model() as SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   summaryOfSalesByQuarterCollection(): SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>> {
     return super.collection() as SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

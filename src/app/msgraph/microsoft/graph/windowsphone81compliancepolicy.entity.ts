@@ -3,20 +3,22 @@
 //#region ODataApi Imports
 import { DeviceCompliancePolicy } from './devicecompliancepolicy.entity';
 import { RequiredPasswordType } from './requiredpasswordtype.enum';
+import { DeviceCompliancePolicyModel } from './devicecompliancepolicy.model';
+import { DeviceCompliancePolicyCollection } from './devicecompliancepolicy.collection';
 //#endregion
 
 export interface WindowsPhone81CompliancePolicy extends DeviceCompliancePolicy {
   //#region ODataApi Properties
+  osMaximumVersion?: string;
+  osMinimumVersion?: string;
   passwordBlockSimple: boolean;
   passwordExpirationDays?: number;
+  passwordMinimumCharacterSetCount?: number;
   passwordMinimumLength?: number;
   passwordMinutesOfInactivityBeforeLock?: number;
-  passwordMinimumCharacterSetCount?: number;
-  passwordRequiredType: RequiredPasswordType;
   passwordPreviousPasswordBlockCount?: number;
   passwordRequired: boolean;
-  osMinimumVersion?: string;
-  osMaximumVersion?: string;
+  passwordRequiredType: RequiredPasswordType;
   storageRequireEncryption: boolean;
   //#endregion
 }

@@ -2,14 +2,18 @@
 
 //#region ODataApi Imports
 import { AlternativeSecurityId } from './alternativesecurityid.entity';
+import { AlternativeSecurityIdModel } from './alternativesecurityid.model';
+import { AlternativeSecurityIdCollection } from './alternativesecurityid.collection';
 //#endregion
 
 export const AlternativeSecurityIdConfig = {
   name: "alternativeSecurityId",
+  model: AlternativeSecurityIdModel,
+  collection: AlternativeSecurityIdCollection,
   annotations: [],
   fields: {
-    type: {type: 'Edm.Int32'},
     identityProvider: {type: 'Edm.String'},
-    key: {type: 'Edm.Binary'}
+    key: {type: 'Edm.Binary'},
+    type: {type: 'Edm.Int32'}
   }
 } as EntityConfig<AlternativeSecurityId>;

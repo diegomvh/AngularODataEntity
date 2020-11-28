@@ -31,11 +31,20 @@ export class InvoicesService extends ODataEntityService<Invoice> {
     super(client, 'Invoices', 'NorthwindModel.Invoice');
   }
 
+  //#region ODataApi Model
   invoiceModel(): InvoiceModel<Invoice> {
     return super.model() as InvoiceModel<Invoice>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   invoiceCollection(): InvoiceCollection<Invoice, InvoiceModel<Invoice>> {
     return super.collection() as InvoiceCollection<Invoice, InvoiceModel<Invoice>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

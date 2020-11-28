@@ -2,16 +2,20 @@
 
 //#region ODataApi Imports
 import { OnenoteOperation } from './onenoteoperation.entity';
+import { OnenoteOperationModel } from './onenoteoperation.model';
+import { OnenoteOperationCollection } from './onenoteoperation.collection';
 //#endregion
 
 export const OnenoteOperationConfig = {
   name: "onenoteOperation",
   base: "microsoft.graph.operation",
+  model: OnenoteOperationModel,
+  collection: OnenoteOperationCollection,
   annotations: [],
   fields: {
-    resourceLocation: {type: 'Edm.String'},
-    resourceId: {type: 'Edm.String'},
     error: {type: 'graph.onenoteOperationError'},
-    percentComplete: {type: 'Edm.String'}
+    percentComplete: {type: 'Edm.String'},
+    resourceId: {type: 'Edm.String'},
+    resourceLocation: {type: 'Edm.String'}
   }
 } as EntityConfig<OnenoteOperation>;

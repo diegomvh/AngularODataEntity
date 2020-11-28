@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { SharedPCConfiguration } from './sharedpcconfiguration.entity';
+import { SharedPCConfigurationModel } from './sharedpcconfiguration.model';
+import { SharedPCConfigurationCollection } from './sharedpcconfiguration.collection';
 //#endregion
 
 export const SharedPCConfigurationConfig = {
   name: "sharedPCConfiguration",
   base: "microsoft.graph.deviceConfiguration",
+  model: SharedPCConfigurationModel,
+  collection: SharedPCConfigurationCollection,
   annotations: [],
   fields: {
     accountManagerPolicy: {type: 'graph.sharedPCAccountManagerPolicy'},

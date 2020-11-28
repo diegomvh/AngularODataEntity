@@ -5,19 +5,25 @@ import { MobileApp } from './mobileapp.entity';
 import { VppTokenAccountType } from './vpptokenaccounttype.enum';
 import { IosDeviceType } from './iosdevicetype.entity';
 import { VppLicensingType } from './vpplicensingtype.entity';
+import { IosDeviceTypeModel } from './iosdevicetype.model';
+import { VppLicensingTypeModel } from './vpplicensingtype.model';
+import { MobileAppModel } from './mobileapp.model';
+import { IosDeviceTypeCollection } from './iosdevicetype.collection';
+import { VppLicensingTypeCollection } from './vpplicensingtype.collection';
+import { MobileAppCollection } from './mobileapp.collection';
 //#endregion
 
 export interface IosVppApp extends MobileApp {
   //#region ODataApi Properties
-  usedLicenseCount: number;
-  totalLicenseCount: number;
-  releaseDateTime?: Date;
-  appStoreUrl?: string;
-  licensingType?: VppLicensingType;
   applicableDeviceType?: IosDeviceType;
-  vppTokenOrganizationName?: string;
+  appStoreUrl?: string;
+  bundleId?: string;
+  licensingType?: VppLicensingType;
+  releaseDateTime?: Date;
+  totalLicenseCount: number;
+  usedLicenseCount: number;
   vppTokenAccountType: VppTokenAccountType;
   vppTokenAppleId?: string;
-  bundleId?: string;
+  vppTokenOrganizationName?: string;
   //#endregion
 }

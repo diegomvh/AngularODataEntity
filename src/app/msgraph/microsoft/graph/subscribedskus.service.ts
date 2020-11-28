@@ -20,9 +20,15 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { ServicePlanInfo } from './serviceplaninfo.entity';
 import { LicenseUnitsDetail } from './licenseunitsdetail.entity';
+import { ServicePlanInfo } from './serviceplaninfo.entity';
 import { SubscribedSku } from './subscribedsku.entity';
+import { LicenseUnitsDetailModel } from './licenseunitsdetail.model';
+import { ServicePlanInfoModel } from './serviceplaninfo.model';
+import { SubscribedSkuModel } from './subscribedsku.model';
+import { LicenseUnitsDetailCollection } from './licenseunitsdetail.collection';
+import { ServicePlanInfoCollection } from './serviceplaninfo.collection';
+import { SubscribedSkuCollection } from './subscribedsku.collection';
 //#endregion
 
 @Injectable()
@@ -31,6 +37,16 @@ export class SubscribedSkusService extends ODataEntityService<SubscribedSku> {
     super(client, 'subscribedSkus', 'microsoft.graph.subscribedSku');
   }
 
+  //#region ODataApi Model
+  subscribedSkuModel(): SubscribedSkuModel<SubscribedSku> {
+    return super.model() as SubscribedSkuModel<SubscribedSku>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  subscribedSkuCollection(): SubscribedSkuCollection<SubscribedSku, SubscribedSkuModel<SubscribedSku>> {
+    return super.collection() as SubscribedSkuCollection<SubscribedSku, SubscribedSkuModel<SubscribedSku>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

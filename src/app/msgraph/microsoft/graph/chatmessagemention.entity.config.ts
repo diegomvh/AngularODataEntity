@@ -2,14 +2,18 @@
 
 //#region ODataApi Imports
 import { ChatMessageMention } from './chatmessagemention.entity';
+import { ChatMessageMentionModel } from './chatmessagemention.model';
+import { ChatMessageMentionCollection } from './chatmessagemention.collection';
 //#endregion
 
 export const ChatMessageMentionConfig = {
   name: "chatMessageMention",
+  model: ChatMessageMentionModel,
+  collection: ChatMessageMentionCollection,
   annotations: [],
   fields: {
     id: {type: 'Edm.Int32'},
-    mentionText: {type: 'Edm.String'},
-    mentioned: {type: 'graph.identitySet'}
+    mentioned: {type: 'graph.identitySet'},
+    mentionText: {type: 'Edm.String'}
   }
 } as EntityConfig<ChatMessageMention>;

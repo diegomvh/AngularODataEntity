@@ -23,6 +23,12 @@ import {
 import { DomainState } from './domainstate.entity';
 import { DirectoryObject } from './directoryobject.entity';
 import { Domain } from './domain.entity';
+import { DomainStateModel } from './domainstate.model';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { DomainModel } from './domain.model';
+import { DomainStateCollection } from './domainstate.collection';
+import { DirectoryObjectCollection } from './directoryobject.collection';
+import { DomainCollection } from './domain.collection';
 //#endregion
 
 @Injectable()
@@ -31,6 +37,16 @@ export class DomainsService extends ODataEntityService<Domain> {
     super(client, 'domains', 'microsoft.graph.domain');
   }
 
+  //#region ODataApi Model
+  domainModel(): DomainModel<Domain> {
+    return super.model() as DomainModel<Domain>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  domainCollection(): DomainCollection<Domain, DomainModel<Domain>> {
+    return super.collection() as DomainCollection<Domain, DomainModel<Domain>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   public forceDelete(entity: EntityKey<Domain>): ODataActionResource<{disableUserAccounts: boolean}, any> {
     const resource = this.entity(entity).action<{disableUserAccounts: boolean}, any>('microsoft.graph.forceDelete');

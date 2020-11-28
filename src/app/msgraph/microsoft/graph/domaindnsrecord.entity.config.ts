@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { DomainDnsRecord } from './domaindnsrecord.entity';
+import { DomainDnsRecordModel } from './domaindnsrecord.model';
+import { DomainDnsRecordCollection } from './domaindnsrecord.collection';
 //#endregion
 
 export const DomainDnsRecordConfig = {
   name: "domainDnsRecord",
   base: "microsoft.graph.entity",
+  model: DomainDnsRecordModel,
+  collection: DomainDnsRecordCollection,
   annotations: [],
   fields: {
     isOptional: {type: 'Edm.Boolean', nullable: false},

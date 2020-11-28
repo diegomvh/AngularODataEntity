@@ -2,23 +2,27 @@
 
 //#region ODataApi Imports
 import { IosUpdateDeviceStatus } from './iosupdatedevicestatus.entity';
+import { IosUpdateDeviceStatusModel } from './iosupdatedevicestatus.model';
+import { IosUpdateDeviceStatusCollection } from './iosupdatedevicestatus.collection';
 //#endregion
 
 export const IosUpdateDeviceStatusConfig = {
   name: "iosUpdateDeviceStatus",
   base: "microsoft.graph.entity",
+  model: IosUpdateDeviceStatusModel,
+  collection: IosUpdateDeviceStatusCollection,
   annotations: [],
   fields: {
-    installStatus: {type: 'graph.iosUpdatesInstallStatus', nullable: false},
-    osVersion: {type: 'Edm.String'},
-    deviceId: {type: 'Edm.String'},
-    userId: {type: 'Edm.String'},
-    deviceDisplayName: {type: 'Edm.String'},
-    userName: {type: 'Edm.String'},
-    deviceModel: {type: 'Edm.String'},
     complianceGracePeriodExpirationDateTime: {type: 'Edm.DateTimeOffset', nullable: false},
-    status: {type: 'graph.complianceStatus', nullable: false},
+    deviceDisplayName: {type: 'Edm.String'},
+    deviceId: {type: 'Edm.String'},
+    deviceModel: {type: 'Edm.String'},
+    installStatus: {type: 'graph.iosUpdatesInstallStatus', nullable: false},
     lastReportedDateTime: {type: 'Edm.DateTimeOffset', nullable: false},
+    osVersion: {type: 'Edm.String'},
+    status: {type: 'graph.complianceStatus', nullable: false},
+    userId: {type: 'Edm.String'},
+    userName: {type: 'Edm.String'},
     userPrincipalName: {type: 'Edm.String'}
   }
 } as EntityConfig<IosUpdateDeviceStatus>;

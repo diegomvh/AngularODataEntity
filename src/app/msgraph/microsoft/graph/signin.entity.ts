@@ -2,41 +2,51 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
-import { RiskLevel } from './risklevel.enum';
 import { ConditionalAccessStatus } from './conditionalaccessstatus.enum';
-import { RiskState } from './riskstate.enum';
 import { RiskDetail } from './riskdetail.enum';
 import { RiskEventType } from './riskeventtype.enum';
-import { SignInStatus } from './signinstatus.entity';
+import { RiskLevel } from './risklevel.enum';
+import { RiskState } from './riskstate.enum';
+import { AppliedConditionalAccessPolicy } from './appliedconditionalaccesspolicy.entity';
 import { DeviceDetail } from './devicedetail.entity';
 import { SignInLocation } from './signinlocation.entity';
-import { AppliedConditionalAccessPolicy } from './appliedconditionalaccesspolicy.entity';
+import { SignInStatus } from './signinstatus.entity';
+import { AppliedConditionalAccessPolicyModel } from './appliedconditionalaccesspolicy.model';
+import { DeviceDetailModel } from './devicedetail.model';
+import { SignInLocationModel } from './signinlocation.model';
+import { SignInStatusModel } from './signinstatus.model';
+import { EntityModel } from './entity.model';
+import { AppliedConditionalAccessPolicyCollection } from './appliedconditionalaccesspolicy.collection';
+import { DeviceDetailCollection } from './devicedetail.collection';
+import { SignInLocationCollection } from './signinlocation.collection';
+import { SignInStatusCollection } from './signinstatus.collection';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface SignIn extends Entity {
   //#region ODataApi Properties
-  createdDateTime: Date;
-  userDisplayName?: string;
-  userPrincipalName?: string;
-  userId: string;
-  appId?: string;
   appDisplayName?: string;
-  ipAddress?: string;
-  status?: SignInStatus;
-  clientAppUsed?: string;
-  deviceDetail?: DeviceDetail;
-  location?: SignInLocation;
-  correlationId?: string;
-  conditionalAccessStatus?: ConditionalAccessStatus;
+  appId?: string;
   appliedConditionalAccessPolicies?: AppliedConditionalAccessPolicy[];
+  clientAppUsed?: string;
+  conditionalAccessStatus?: ConditionalAccessStatus;
+  correlationId?: string;
+  createdDateTime: Date;
+  deviceDetail?: DeviceDetail;
+  ipAddress?: string;
   isInteractive?: boolean;
+  location?: SignInLocation;
+  resourceDisplayName?: string;
+  resourceId?: string;
   riskDetail?: RiskDetail;
+  riskEventTypes?: RiskEventType;
+  riskEventTypes_v2?: string[];
   riskLevelAggregated?: RiskLevel;
   riskLevelDuringSignIn?: RiskLevel;
   riskState?: RiskState;
-  riskEventTypes?: RiskEventType;
-  riskEventTypes_v2?: string[];
-  resourceDisplayName?: string;
-  resourceId?: string;
+  status?: SignInStatus;
+  userDisplayName?: string;
+  userId: string;
+  userPrincipalName?: string;
   //#endregion
 }

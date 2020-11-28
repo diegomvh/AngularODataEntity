@@ -3,6 +3,10 @@
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
 import { MobileAppIdentifier } from './mobileappidentifier.entity';
+import { MobileAppIdentifierModel } from './mobileappidentifier.model';
+import { EntityModel } from './entity.model';
+import { MobileAppIdentifierCollection } from './mobileappidentifier.collection';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface ManagedMobileApp extends Entity {

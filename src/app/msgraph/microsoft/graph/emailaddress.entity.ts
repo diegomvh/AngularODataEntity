@@ -5,7 +5,7 @@
 
 export interface EmailAddress {
   //#region ODataApi Properties
-  name?: string;
   address?: string;
+  name?: string;
   //#endregion
 }

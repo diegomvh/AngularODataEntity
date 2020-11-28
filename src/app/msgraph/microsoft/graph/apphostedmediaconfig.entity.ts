@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { MediaConfig } from './mediaconfig.entity';
+import { MediaConfigModel } from './mediaconfig.model';
+import { MediaConfigCollection } from './mediaconfig.collection';
 //#endregion
 
 export interface AppHostedMediaConfig extends MediaConfig {

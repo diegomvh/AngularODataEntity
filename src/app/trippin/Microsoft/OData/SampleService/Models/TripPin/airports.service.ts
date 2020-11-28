@@ -34,11 +34,24 @@ export class AirportsService extends ODataEntityService<Airport> {
     super(client, 'Airports', 'Microsoft.OData.SampleService.Models.TripPin.Airport');
   }
 
+  //#region ODataApi Model
   airportModel(): AirportModel<Airport> {
-    return super.model() as AirportModel<Airport>;
+    return this.entity().asModel() as AirportModel<Airport>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   airportCollection(): AirportCollection<Airport, AirportModel<Airport>> {
-    return super.collection() as AirportCollection<Airport, AirportModel<Airport>>;
+    return this.entities().asCollection() as AirportCollection<Airport, AirportModel<Airport>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  public getNearestAirport(): ODataFunctionResource<{lat: number, lon: number}, Airport> {
+    const resource = this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport');
+    return resource;
+  }
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { DirectoryRoleTemplate } from './directoryroletemplate.entity';
+import { DirectoryRoleTemplateModel } from './directoryroletemplate.model';
+import { DirectoryRoleTemplateCollection } from './directoryroletemplate.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class DirectoryRoleTemplatesService extends ODataEntityService<DirectoryR
     super(client, 'directoryRoleTemplates', 'microsoft.graph.directoryRoleTemplate');
   }
 
+  //#region ODataApi Model
+  directoryRoleTemplateModel(): DirectoryRoleTemplateModel<DirectoryRoleTemplate> {
+    return super.model() as DirectoryRoleTemplateModel<DirectoryRoleTemplate>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  directoryRoleTemplateCollection(): DirectoryRoleTemplateCollection<DirectoryRoleTemplate, DirectoryRoleTemplateModel<DirectoryRoleTemplate>> {
+    return super.collection() as DirectoryRoleTemplateCollection<DirectoryRoleTemplate, DirectoryRoleTemplateModel<DirectoryRoleTemplate>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { WorkbookWorksheet } from './workbookworksheet.entity';
+import { WorkbookWorksheetModel } from './workbookworksheet.model';
+import { WorkbookWorksheetCollection } from './workbookworksheet.collection';
 //#endregion
 
 export const WorkbookWorksheetConfig = {
   name: "workbookWorksheet",
   base: "microsoft.graph.entity",
+  model: WorkbookWorksheetModel,
+  collection: WorkbookWorksheetCollection,
   annotations: [],
   fields: {
     name: {type: 'Edm.String'},

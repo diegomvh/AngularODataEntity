@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { RemoteItem } from './remoteitem.entity';
+import { RemoteItemModel } from './remoteitem.model';
+import { RemoteItemCollection } from './remoteitem.collection';
 //#endregion
 
 export const RemoteItemConfig = {
   name: "remoteItem",
+  model: RemoteItemModel,
+  collection: RemoteItemCollection,
   annotations: [],
   fields: {
     createdBy: {type: 'graph.identitySet'},
@@ -13,8 +17,8 @@ export const RemoteItemConfig = {
     file: {type: 'graph.file'},
     fileSystemInfo: {type: 'graph.fileSystemInfo'},
     folder: {type: 'graph.folder'},
-    image: {type: 'graph.image'},
     id: {type: 'Edm.String'},
+    image: {type: 'graph.image'},
     lastModifiedBy: {type: 'graph.identitySet'},
     lastModifiedDateTime: {type: 'Edm.DateTimeOffset'},
     name: {type: 'Edm.String'},

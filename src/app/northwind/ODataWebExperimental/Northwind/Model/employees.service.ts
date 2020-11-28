@@ -37,11 +37,32 @@ export class EmployeesService extends ODataEntityService<Employee> {
     super(client, 'Employees', 'NorthwindModel.Employee');
   }
 
+  //#region ODataApi Model
   employeeModel(): EmployeeModel<Employee> {
     return super.model() as EmployeeModel<Employee>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   employeeCollection(): EmployeeCollection<Employee, EmployeeModel<Employee>> {
     return super.collection() as EmployeeCollection<Employee, EmployeeModel<Employee>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public employees1(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Employee> {
+    return this.entity(entity).navigationProperty<Employee>('Employees1');
+  }
+  public employee1(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Employee> {
+    return this.entity(entity).navigationProperty<Employee>('Employee1');
+  }
+  public orders(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Order> {
+    return this.entity(entity).navigationProperty<Order>('Orders');
+  }
+  public territories(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Territory> {
+    return this.entity(entity).navigationProperty<Territory>('Territories');
+  }
+  //#endregion
 }

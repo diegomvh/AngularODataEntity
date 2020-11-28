@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { ManagedMobileLobApp } from './managedmobilelobapp.entity';
+import { ManagedMobileLobAppModel } from './managedmobilelobapp.model';
+import { ManagedMobileLobAppCollection } from './managedmobilelobapp.collection';
 //#endregion
 
 export const ManagedMobileLobAppConfig = {
   name: "managedMobileLobApp",
   base: "microsoft.graph.managedApp",
+  model: ManagedMobileLobAppModel,
+  collection: ManagedMobileLobAppCollection,
   annotations: [],
   fields: {
     committedContentVersion: {type: 'Edm.String'},

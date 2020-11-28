@@ -6,10 +6,10 @@ import { AppliedConditionalAccessPolicyResult } from './appliedconditionalaccess
 
 export interface AppliedConditionalAccessPolicy {
   //#region ODataApi Properties
-  id?: string;
   displayName?: string;
   enforcedGrantControls?: string[];
   enforcedSessionControls?: string[];
+  id?: string;
   result?: AppliedConditionalAccessPolicyResult;
   //#endregion
 }

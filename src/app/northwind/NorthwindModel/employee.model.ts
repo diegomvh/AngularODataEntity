@@ -1,4 +1,4 @@
-﻿import { ODataModel, HttpOptions, Duration } from 'angular-odata';
+﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -44,8 +44,5 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public setEmployee1(model: EmployeeModel<Employee> | null) {
-    this.setNavigationProperty<Employee, EmployeeModel<Employee>>(this._config.field('Employee1'), model);
-  }
   //#endregion
 }

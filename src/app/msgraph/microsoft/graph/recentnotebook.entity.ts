@@ -3,6 +3,8 @@
 //#region ODataApi Imports
 import { OnenoteSourceService } from './onenotesourceservice.enum';
 import { RecentNotebookLinks } from './recentnotebooklinks.entity';
+import { RecentNotebookLinksModel } from './recentnotebooklinks.model';
+import { RecentNotebookLinksCollection } from './recentnotebooklinks.collection';
 //#endregion
 
 export interface RecentNotebook {

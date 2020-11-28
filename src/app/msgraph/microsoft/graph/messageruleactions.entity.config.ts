@@ -2,22 +2,26 @@
 
 //#region ODataApi Imports
 import { MessageRuleActions } from './messageruleactions.entity';
+import { MessageRuleActionsModel } from './messageruleactions.model';
+import { MessageRuleActionsCollection } from './messageruleactions.collection';
 //#endregion
 
 export const MessageRuleActionsConfig = {
   name: "messageRuleActions",
+  model: MessageRuleActionsModel,
+  collection: MessageRuleActionsCollection,
   annotations: [],
   fields: {
-    moveToFolder: {type: 'Edm.String'},
+    assignCategories: {type: 'Edm.String', collection: true},
     copyToFolder: {type: 'Edm.String'},
     delete: {type: 'Edm.Boolean'},
-    permanentDelete: {type: 'Edm.Boolean'},
+    forwardAsAttachmentTo: {type: 'graph.recipient', collection: true},
+    forwardTo: {type: 'graph.recipient', collection: true},
     markAsRead: {type: 'Edm.Boolean'},
     markImportance: {type: 'graph.importance'},
-    forwardTo: {type: 'graph.recipient', collection: true},
-    forwardAsAttachmentTo: {type: 'graph.recipient', collection: true},
+    moveToFolder: {type: 'Edm.String'},
+    permanentDelete: {type: 'Edm.Boolean'},
     redirectTo: {type: 'graph.recipient', collection: true},
-    assignCategories: {type: 'Edm.String', collection: true},
     stopProcessingRules: {type: 'Edm.Boolean'}
   }
 } as EntityConfig<MessageRuleActions>;

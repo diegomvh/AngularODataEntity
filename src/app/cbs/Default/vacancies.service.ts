@@ -20,8 +20,12 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.entity';
+import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.complex';
 import { Vacancy } from '../CBS/Website/ODataApi/Models/vacancy.entity';
+import { LinkListModel } from '../CBS/Website/ODataApi/Models/linklist.model';
+import { VacancyModel } from '../CBS/Website/ODataApi/Models/vacancy.model';
+import { LinkListCollection } from '../CBS/Website/ODataApi/Models/linklist.collection';
+import { VacancyCollection } from '../CBS/Website/ODataApi/Models/vacancy.collection';
 //#endregion
 
 @Injectable()
@@ -30,6 +34,16 @@ export class VacanciesService extends ODataEntityService<Vacancy> {
     super(client, 'Vacancies', 'CBS.Website.ODataApi.Models.Vacancy');
   }
 
+  //#region ODataApi Model
+  vacancyModel(): VacancyModel<Vacancy> {
+    return this.entity().asModel() as VacancyModel<Vacancy>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  vacancyCollection(): VacancyCollection<Vacancy, VacancyModel<Vacancy>> {
+    return this.entities().asCollection() as VacancyCollection<Vacancy, VacancyModel<Vacancy>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

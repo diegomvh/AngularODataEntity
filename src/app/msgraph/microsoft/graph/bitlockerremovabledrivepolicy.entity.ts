@@ -6,8 +6,8 @@ import { BitLockerEncryptionMethod } from './bitlockerencryptionmethod.enum';
 
 export interface BitLockerRemovableDrivePolicy {
   //#region ODataApi Properties
+  blockCrossOrganizationWriteAccess: boolean;
   encryptionMethod?: BitLockerEncryptionMethod;
   requireEncryptionForWriteAccess: boolean;
-  blockCrossOrganizationWriteAccess: boolean;
   //#endregion
 }

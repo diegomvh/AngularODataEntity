@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { SecureScoreControlStateUpdate } from './securescorecontrolstateupdate.entity';
+import { SecureScoreControlStateUpdateModel } from './securescorecontrolstateupdate.model';
+import { SecureScoreControlStateUpdateCollection } from './securescorecontrolstateupdate.collection';
 //#endregion
 
 export const SecureScoreControlStateUpdateConfig = {
   name: "secureScoreControlStateUpdate",
+  model: SecureScoreControlStateUpdateModel,
+  collection: SecureScoreControlStateUpdateCollection,
   annotations: [],
   fields: {
     assignedTo: {type: 'Edm.String'},

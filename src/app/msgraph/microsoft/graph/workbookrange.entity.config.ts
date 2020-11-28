@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { WorkbookRange } from './workbookrange.entity';
+import { WorkbookRangeModel } from './workbookrange.model';
+import { WorkbookRangeCollection } from './workbookrange.collection';
 //#endregion
 
 export const WorkbookRangeConfig = {
   name: "workbookRange",
   base: "microsoft.graph.entity",
+  model: WorkbookRangeModel,
+  collection: WorkbookRangeCollection,
   annotations: [],
   fields: {
     address: {type: 'Edm.String'},
@@ -24,8 +28,8 @@ export const WorkbookRangeConfig = {
     rowHidden: {type: 'Edm.Boolean'},
     rowIndex: {type: 'Edm.Int32', nullable: false},
     text: {type: 'graph.Json'},
-    valueTypes: {type: 'graph.Json'},
     values: {type: 'graph.Json'},
+    valueTypes: {type: 'graph.Json'},
     format: {type: 'graph.workbookRangeFormat', navigation: true},
     sort: {type: 'graph.workbookRangeSort', navigation: true},
     worksheet: {type: 'graph.workbookWorksheet', navigation: true}

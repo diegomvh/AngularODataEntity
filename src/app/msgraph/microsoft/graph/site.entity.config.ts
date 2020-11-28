@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { Site } from './site.entity';
+import { SiteModel } from './site.model';
+import { SiteCollection } from './site.collection';
 //#endregion
 
 export const SiteConfig = {
   name: "site",
   base: "microsoft.graph.baseItem",
+  model: SiteModel,
+  collection: SiteCollection,
   annotations: [],
   fields: {
-    error: {type: 'graph.publicError'},
     displayName: {type: 'Edm.String'},
+    error: {type: 'graph.publicError'},
     root: {type: 'graph.root'},
     sharepointIds: {type: 'graph.sharepointIds'},
     siteCollection: {type: 'graph.siteCollection'},

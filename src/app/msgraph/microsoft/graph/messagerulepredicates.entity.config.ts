@@ -2,30 +2,23 @@
 
 //#region ODataApi Imports
 import { MessageRulePredicates } from './messagerulepredicates.entity';
+import { MessageRulePredicatesModel } from './messagerulepredicates.model';
+import { MessageRulePredicatesCollection } from './messagerulepredicates.collection';
 //#endregion
 
 export const MessageRulePredicatesConfig = {
   name: "messageRulePredicates",
+  model: MessageRulePredicatesModel,
+  collection: MessageRulePredicatesCollection,
   annotations: [],
   fields: {
-    categories: {type: 'Edm.String', collection: true},
-    subjectContains: {type: 'Edm.String', collection: true},
     bodyContains: {type: 'Edm.String', collection: true},
     bodyOrSubjectContains: {type: 'Edm.String', collection: true},
-    senderContains: {type: 'Edm.String', collection: true},
-    recipientContains: {type: 'Edm.String', collection: true},
-    headerContains: {type: 'Edm.String', collection: true},
-    messageActionFlag: {type: 'graph.messageActionFlag'},
-    importance: {type: 'graph.importance'},
-    sensitivity: {type: 'graph.sensitivity'},
+    categories: {type: 'Edm.String', collection: true},
     fromAddresses: {type: 'graph.recipient', collection: true},
-    sentToAddresses: {type: 'graph.recipient', collection: true},
-    sentToMe: {type: 'Edm.Boolean'},
-    sentOnlyToMe: {type: 'Edm.Boolean'},
-    sentCcMe: {type: 'Edm.Boolean'},
-    sentToOrCcMe: {type: 'Edm.Boolean'},
-    notSentToMe: {type: 'Edm.Boolean'},
     hasAttachments: {type: 'Edm.Boolean'},
+    headerContains: {type: 'Edm.String', collection: true},
+    importance: {type: 'graph.importance'},
     isApprovalRequest: {type: 'Edm.Boolean'},
     isAutomaticForward: {type: 'Edm.Boolean'},
     isAutomaticReply: {type: 'Edm.Boolean'},
@@ -37,6 +30,17 @@ export const MessageRulePredicatesConfig = {
     isReadReceipt: {type: 'Edm.Boolean'},
     isSigned: {type: 'Edm.Boolean'},
     isVoicemail: {type: 'Edm.Boolean'},
+    messageActionFlag: {type: 'graph.messageActionFlag'},
+    notSentToMe: {type: 'Edm.Boolean'},
+    recipientContains: {type: 'Edm.String', collection: true},
+    senderContains: {type: 'Edm.String', collection: true},
+    sensitivity: {type: 'graph.sensitivity'},
+    sentCcMe: {type: 'Edm.Boolean'},
+    sentOnlyToMe: {type: 'Edm.Boolean'},
+    sentToAddresses: {type: 'graph.recipient', collection: true},
+    sentToMe: {type: 'Edm.Boolean'},
+    sentToOrCcMe: {type: 'Edm.Boolean'},
+    subjectContains: {type: 'Edm.String', collection: true},
     withinSizeRange: {type: 'graph.sizeRange'}
   }
 } as EntityConfig<MessageRulePredicates>;

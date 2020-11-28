@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { ProductDetail } from './productdetail.entity';
+import { ProductDetailModel } from './productdetail.model';
+import { ProductDetailCollection } from './productdetail.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class ProductDetailsService extends ODataEntityService<ProductDetail> {
     super(client, 'ProductDetails', 'ODataDemo.ProductDetail');
   }
 
+  //#region ODataApi Model
+  productDetailModel(): ProductDetailModel<ProductDetail> {
+    return super.model() as ProductDetailModel<ProductDetail>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  productDetailCollection(): ProductDetailCollection<ProductDetail, ProductDetailModel<ProductDetail>> {
+    return super.collection() as ProductDetailCollection<ProductDetail, ProductDetailModel<ProductDetail>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

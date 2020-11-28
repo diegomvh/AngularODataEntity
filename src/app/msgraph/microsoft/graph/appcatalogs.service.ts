@@ -22,6 +22,10 @@ import {
 //#region ODataApi Imports
 import { AppCatalogs } from './appcatalogs.entity';
 import { TeamsApp } from './teamsapp.entity';
+import { AppCatalogsModel } from './appcatalogs.model';
+import { TeamsAppModel } from './teamsapp.model';
+import { AppCatalogsCollection } from './appcatalogs.collection';
+import { TeamsAppCollection } from './teamsapp.collection';
 //#endregion
 
 @Injectable()

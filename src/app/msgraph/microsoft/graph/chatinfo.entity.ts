@@ -5,8 +5,8 @@
 
 export interface ChatInfo {
   //#region ODataApi Properties
-  threadId?: string;
   messageId?: string;
   replyChainMessageId?: string;
+  threadId?: string;
   //#endregion
 }

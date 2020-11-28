@@ -3,13 +3,17 @@
 //#region ODataApi Imports
 import { ManagedMobileLobApp } from './managedmobilelobapp.entity';
 import { AndroidMinimumOperatingSystem } from './androidminimumoperatingsystem.entity';
+import { AndroidMinimumOperatingSystemModel } from './androidminimumoperatingsystem.model';
+import { ManagedMobileLobAppModel } from './managedmobilelobapp.model';
+import { AndroidMinimumOperatingSystemCollection } from './androidminimumoperatingsystem.collection';
+import { ManagedMobileLobAppCollection } from './managedmobilelobapp.collection';
 //#endregion
 
 export interface ManagedAndroidLobApp extends ManagedMobileLobApp {
   //#region ODataApi Properties
-  packageId?: string;
   minimumSupportedOperatingSystem?: AndroidMinimumOperatingSystem;
-  versionName?: string;
+  packageId?: string;
   versionCode?: string;
+  versionName?: string;
   //#endregion
 }

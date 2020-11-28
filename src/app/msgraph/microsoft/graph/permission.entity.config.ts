@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { Permission } from './permission.entity';
+import { PermissionModel } from './permission.model';
+import { PermissionCollection } from './permission.collection';
 //#endregion
 
 export const PermissionConfig = {
   name: "permission",
   base: "microsoft.graph.entity",
+  model: PermissionModel,
+  collection: PermissionCollection,
   annotations: [],
   fields: {
     expirationDateTime: {type: 'Edm.DateTimeOffset'},

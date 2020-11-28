@@ -2,12 +2,16 @@
 
 //#region ODataApi Imports
 import { SecureScore } from './securescore.entity';
+import { SecureScoreModel } from './securescore.model';
+import { SecureScoreCollection } from './securescore.collection';
 //#endregion
 
 export const SecureScoreConfig = {
   name: "secureScore",
   base: "microsoft.graph.entity",
   open: true,
+  model: SecureScoreModel,
+  collection: SecureScoreCollection,
   annotations: [],
   fields: {
     activeUserCount: {type: 'Edm.Int32'},

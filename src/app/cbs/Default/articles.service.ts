@@ -21,9 +21,15 @@ import {
 
 //#region ODataApi Imports
 import { ArticleType } from '../CBS/Website/ODataApi/Models/articletype.enum';
-import { ErrataList } from '../CBS/Website/ODataApi/Models/erratalist.entity';
-import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.entity';
+import { ErrataList } from '../CBS/Website/ODataApi/Models/erratalist.complex';
+import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.complex';
 import { Article } from '../CBS/Website/ODataApi/Models/article.entity';
+import { ErrataListModel } from '../CBS/Website/ODataApi/Models/erratalist.model';
+import { LinkListModel } from '../CBS/Website/ODataApi/Models/linklist.model';
+import { ArticleModel } from '../CBS/Website/ODataApi/Models/article.model';
+import { ErrataListCollection } from '../CBS/Website/ODataApi/Models/erratalist.collection';
+import { LinkListCollection } from '../CBS/Website/ODataApi/Models/linklist.collection';
+import { ArticleCollection } from '../CBS/Website/ODataApi/Models/article.collection';
 //#endregion
 
 @Injectable()
@@ -32,6 +38,16 @@ export class ArticlesService extends ODataEntityService<Article> {
     super(client, 'Articles', 'CBS.Website.ODataApi.Models.Article');
   }
 
+  //#region ODataApi Model
+  articleModel(): ArticleModel<Article> {
+    return this.entity().asModel() as ArticleModel<Article>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  articleCollection(): ArticleCollection<Article, ArticleModel<Article>> {
+    return this.entities().asCollection() as ArticleCollection<Article, ArticleModel<Article>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -1,11 +1,15 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Medium } from './medium.entity';
+import { MediumModel } from './medium.model';
+import { MediumCollection } from './medium.collection';
 //#endregion
 
 export const MediumConfig = {
   name: "Medium",
+  model: MediumModel,
+  collection: MediumCollection,
   annotations: [],
   fields: {
     UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
@@ -28,4 +32,4 @@ export const MediumConfig = {
     Created: {type: 'Edm.DateTimeOffset', nullable: false},
     Permalink: {type: 'Edm.String'}
   }
-} as EntityConfig<Medium>;
+} as StructuredTypeConfig<Medium>;

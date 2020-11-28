@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { Contract } from './contract.entity';
+import { ContractModel } from './contract.model';
+import { ContractCollection } from './contract.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class ContractsService extends ODataEntityService<Contract> {
     super(client, 'contracts', 'microsoft.graph.contract');
   }
 
+  //#region ODataApi Model
+  contractModel(): ContractModel<Contract> {
+    return super.model() as ContractModel<Contract>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  contractCollection(): ContractCollection<Contract, ContractModel<Contract>> {
+    return super.collection() as ContractCollection<Contract, ContractModel<Contract>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

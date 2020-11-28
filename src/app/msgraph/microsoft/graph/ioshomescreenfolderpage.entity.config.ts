@@ -2,13 +2,17 @@
 
 //#region ODataApi Imports
 import { IosHomeScreenFolderPage } from './ioshomescreenfolderpage.entity';
+import { IosHomeScreenFolderPageModel } from './ioshomescreenfolderpage.model';
+import { IosHomeScreenFolderPageCollection } from './ioshomescreenfolderpage.collection';
 //#endregion
 
 export const IosHomeScreenFolderPageConfig = {
   name: "iosHomeScreenFolderPage",
+  model: IosHomeScreenFolderPageModel,
+  collection: IosHomeScreenFolderPageCollection,
   annotations: [],
   fields: {
-    displayName: {type: 'Edm.String'},
-    apps: {type: 'graph.iosHomeScreenApp', nullable: false, collection: true}
+    apps: {type: 'graph.iosHomeScreenApp', nullable: false, collection: true},
+    displayName: {type: 'Edm.String'}
   }
 } as EntityConfig<IosHomeScreenFolderPage>;

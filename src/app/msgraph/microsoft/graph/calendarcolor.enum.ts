@@ -6,6 +6,7 @@ export enum CalendarColor {
   //#region ODataApi Members
   lightBlue = 0,
   lightGreen = 1,
+  auto = -1,
   lightOrange = 2,
   lightGray = 3,
   lightYellow = 4,
@@ -14,6 +15,5 @@ export enum CalendarColor {
   lightBrown = 7,
   lightRed = 8,
   maxColor = 9,
-  auto = -1,
   //#endregion
 }

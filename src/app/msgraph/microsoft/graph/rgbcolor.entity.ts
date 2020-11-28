@@ -5,8 +5,8 @@
 
 export interface RgbColor {
   //#region ODataApi Properties
-  r: number;
-  g: number;
   b: number;
+  g: number;
+  r: number;
   //#endregion
 }

@@ -23,6 +23,12 @@ import {
 import { PhysicalAddress } from './physicaladdress.entity';
 import { OutlookGeoCoordinates } from './outlookgeocoordinates.entity';
 import { Place } from './place.entity';
+import { PhysicalAddressModel } from './physicaladdress.model';
+import { OutlookGeoCoordinatesModel } from './outlookgeocoordinates.model';
+import { PlaceModel } from './place.model';
+import { PhysicalAddressCollection } from './physicaladdress.collection';
+import { OutlookGeoCoordinatesCollection } from './outlookgeocoordinates.collection';
+import { PlaceCollection } from './place.collection';
 //#endregion
 
 @Injectable()
@@ -31,6 +37,16 @@ export class PlacesService extends ODataEntityService<Place> {
     super(client, 'places', 'microsoft.graph.place');
   }
 
+  //#region ODataApi Model
+  placeModel(): PlaceModel<Place> {
+    return super.model() as PlaceModel<Place>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  placeCollection(): PlaceCollection<Place, PlaceModel<Place>> {
+    return super.collection() as PlaceCollection<Place, PlaceModel<Place>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

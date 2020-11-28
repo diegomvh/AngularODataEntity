@@ -3,11 +3,13 @@
 //#region ODataApi Imports
 import { ConditionalAccessSessionControl } from './conditionalaccesssessioncontrol.entity';
 import { SigninFrequencyType } from './signinfrequencytype.enum';
+import { ConditionalAccessSessionControlModel } from './conditionalaccesssessioncontrol.model';
+import { ConditionalAccessSessionControlCollection } from './conditionalaccesssessioncontrol.collection';
 //#endregion
 
 export interface SignInFrequencySessionControl extends ConditionalAccessSessionControl {
   //#region ODataApi Properties
-  value?: number;
   type?: SigninFrequencyType;
+  value?: number;
   //#endregion
 }

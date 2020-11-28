@@ -2,9 +2,17 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
-import { SecurityVendorInformation } from './securityvendorinformation.entity';
 import { ComplianceInformation } from './complianceinformation.entity';
 import { SecureScoreControlStateUpdate } from './securescorecontrolstateupdate.entity';
+import { SecurityVendorInformation } from './securityvendorinformation.entity';
+import { ComplianceInformationModel } from './complianceinformation.model';
+import { SecureScoreControlStateUpdateModel } from './securescorecontrolstateupdate.model';
+import { SecurityVendorInformationModel } from './securityvendorinformation.model';
+import { EntityModel } from './entity.model';
+import { ComplianceInformationCollection } from './complianceinformation.collection';
+import { SecureScoreControlStateUpdateCollection } from './securescorecontrolstateupdate.collection';
+import { SecurityVendorInformationCollection } from './securityvendorinformation.collection';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface SecureScoreControlProfile extends Entity {

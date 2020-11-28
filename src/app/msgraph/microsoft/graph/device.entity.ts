@@ -4,6 +4,12 @@
 import { DirectoryObject } from './directoryobject.entity';
 import { AlternativeSecurityId } from './alternativesecurityid.entity';
 import { Extension } from './extension.entity';
+import { AlternativeSecurityIdModel } from './alternativesecurityid.model';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { ExtensionModel } from './extension.model';
+import { AlternativeSecurityIdCollection } from './alternativesecurityid.collection';
+import { DirectoryObjectCollection } from './directoryobject.collection';
+import { ExtensionCollection } from './extension.collection';
 //#endregion
 
 export interface Device extends DirectoryObject {

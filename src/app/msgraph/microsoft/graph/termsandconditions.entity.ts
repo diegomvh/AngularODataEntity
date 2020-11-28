@@ -2,21 +2,27 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
-import { TermsAndConditionsAssignment } from './termsandconditionsassignment.entity';
 import { TermsAndConditionsAcceptanceStatus } from './termsandconditionsacceptancestatus.entity';
+import { TermsAndConditionsAssignment } from './termsandconditionsassignment.entity';
+import { EntityModel } from './entity.model';
+import { TermsAndConditionsAcceptanceStatusModel } from './termsandconditionsacceptancestatus.model';
+import { TermsAndConditionsAssignmentModel } from './termsandconditionsassignment.model';
+import { EntityCollection } from './entity.collection';
+import { TermsAndConditionsAcceptanceStatusCollection } from './termsandconditionsacceptancestatus.collection';
+import { TermsAndConditionsAssignmentCollection } from './termsandconditionsassignment.collection';
 //#endregion
 
 export interface TermsAndConditions extends Entity {
   //#region ODataApi Properties
-  createdDateTime: Date;
-  lastModifiedDateTime: Date;
-  displayName: string;
-  description?: string;
-  title?: string;
-  bodyText?: string;
   acceptanceStatement?: string;
+  bodyText?: string;
+  createdDateTime: Date;
+  description?: string;
+  displayName: string;
+  lastModifiedDateTime: Date;
+  title?: string;
   version: number;
-  assignments?: TermsAndConditionsAssignment[];
   acceptanceStatuses?: TermsAndConditionsAcceptanceStatus[];
+  assignments?: TermsAndConditionsAssignment[];
   //#endregion
 }

@@ -1,4 +1,4 @@
-﻿import { ODataModel, HttpOptions, Duration } from 'angular-odata';
+﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -27,8 +27,5 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public setRegion(model: RegionModel<Region> | null) {
-    this.setNavigationProperty<Region, RegionModel<Region>>(this._config.field('Region'), model);
-  }
   //#endregion
 }

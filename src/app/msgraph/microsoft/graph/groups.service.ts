@@ -28,6 +28,22 @@ import { DirectoryObject } from './directoryobject.entity';
 import { User } from './user.entity';
 import { Group } from './group.entity';
 import { DriveItem } from './driveitem.entity';
+import { AssignedLicenseModel } from './assignedlicense.model';
+import { OnPremisesProvisioningErrorModel } from './onpremisesprovisioningerror.model';
+import { AssignedLabelModel } from './assignedlabel.model';
+import { LicenseProcessingStateModel } from './licenseprocessingstate.model';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { UserModel } from './user.model';
+import { GroupModel } from './group.model';
+import { DriveItemModel } from './driveitem.model';
+import { AssignedLicenseCollection } from './assignedlicense.collection';
+import { OnPremisesProvisioningErrorCollection } from './onpremisesprovisioningerror.collection';
+import { AssignedLabelCollection } from './assignedlabel.collection';
+import { LicenseProcessingStateCollection } from './licenseprocessingstate.collection';
+import { DirectoryObjectCollection } from './directoryobject.collection';
+import { UserCollection } from './user.collection';
+import { GroupCollection } from './group.collection';
+import { DriveItemCollection } from './driveitem.collection';
 //#endregion
 
 @Injectable()
@@ -36,6 +52,16 @@ export class GroupsService extends ODataEntityService<Group> {
     super(client, 'groups', 'microsoft.graph.group');
   }
 
+  //#region ODataApi Model
+  groupModel(): GroupModel<Group> {
+    return super.model() as GroupModel<Group>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  groupCollection(): GroupCollection<Group, GroupModel<Group>> {
+    return super.collection() as GroupCollection<Group, GroupModel<Group>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   public assignLicense(entity: EntityKey<Group>): ODataActionResource<{addLicenses: AssignedLicense[], removeLicenses: string[]}, Group> {
     const resource = this.entity(entity).action<{addLicenses: AssignedLicense[], removeLicenses: string[]}, Group>('microsoft.graph.assignLicense');
@@ -43,14 +69,6 @@ export class GroupsService extends ODataEntityService<Group> {
   }
   public validateProperties(entity: EntityKey<Group>): ODataActionResource<{displayName: string, mailNickname: string, onBehalfOfUserId: string}, any> {
     const resource = this.entity(entity).action<{displayName: string, mailNickname: string, onBehalfOfUserId: string}, any>('microsoft.graph.validateProperties');
-    return resource;
-  }
-  public subscribeByMail(entity: EntityKey<Group>): ODataActionResource<null, any> {
-    const resource = this.entity(entity).action<null, any>('microsoft.graph.subscribeByMail');
-    return resource;
-  }
-  public unsubscribeByMail(entity: EntityKey<Group>): ODataActionResource<null, any> {
-    const resource = this.entity(entity).action<null, any>('microsoft.graph.unsubscribeByMail');
     return resource;
   }
   public addFavorite(entity: EntityKey<Group>): ODataActionResource<null, any> {
@@ -63,6 +81,14 @@ export class GroupsService extends ODataEntityService<Group> {
   }
   public resetUnseenCount(entity: EntityKey<Group>): ODataActionResource<null, any> {
     const resource = this.entity(entity).action<null, any>('microsoft.graph.resetUnseenCount');
+    return resource;
+  }
+  public subscribeByMail(entity: EntityKey<Group>): ODataActionResource<null, any> {
+    const resource = this.entity(entity).action<null, any>('microsoft.graph.subscribeByMail');
+    return resource;
+  }
+  public unsubscribeByMail(entity: EntityKey<Group>): ODataActionResource<null, any> {
+    const resource = this.entity(entity).action<null, any>('microsoft.graph.unsubscribeByMail');
     return resource;
   }
   public renew(entity: EntityKey<Group>): ODataActionResource<null, any> {

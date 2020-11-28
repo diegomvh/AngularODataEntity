@@ -7,8 +7,8 @@ import { SelectionLikelihoodInfo } from './selectionlikelihoodinfo.enum';
 export interface ScoredEmailAddress {
   //#region ODataApi Properties
   address?: string;
+  itemId?: string;
   relevanceScore?: number;
   selectionLikelihood?: SelectionLikelihoodInfo;
-  itemId?: string;
   //#endregion
 }

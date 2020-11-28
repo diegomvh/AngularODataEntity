@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { GeoCoordinates } from './geocoordinates.entity';
+import { GeoCoordinatesModel } from './geocoordinates.model';
+import { GeoCoordinatesCollection } from './geocoordinates.collection';
 //#endregion
 
 export const GeoCoordinatesConfig = {
   name: "geoCoordinates",
+  model: GeoCoordinatesModel,
+  collection: GeoCoordinatesCollection,
   annotations: [],
   fields: {
     altitude: {type: 'Edm.Double'},

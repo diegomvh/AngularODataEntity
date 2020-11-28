@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { Category } from './category.entity';
+import { CategoryModel } from './category.model';
+import { CategoryCollection } from './category.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class CategoriesService extends ODataEntityService<Category> {
     super(client, 'Categories', 'ODataDemo.Category');
   }
 
+  //#region ODataApi Model
+  categoryModel(): CategoryModel<Category> {
+    return super.model() as CategoryModel<Category>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  categoryCollection(): CategoryCollection<Category, CategoryModel<Category>> {
+    return super.collection() as CategoryCollection<Category, CategoryModel<Category>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { OptionalClaim } from './optionalclaim.entity';
+import { OptionalClaimModel } from './optionalclaim.model';
+import { OptionalClaimCollection } from './optionalclaim.collection';
 //#endregion
 
 export const OptionalClaimConfig = {
   name: "optionalClaim",
+  model: OptionalClaimModel,
+  collection: OptionalClaimCollection,
   annotations: [],
   fields: {
-    name: {type: 'Edm.String', nullable: false},
-    source: {type: 'Edm.String'},
+    additionalProperties: {type: 'Edm.String', collection: true},
     essential: {type: 'Edm.Boolean', nullable: false},
-    additionalProperties: {type: 'Edm.String', collection: true}
+    name: {type: 'Edm.String', nullable: false},
+    source: {type: 'Edm.String'}
   }
 } as EntityConfig<OptionalClaim>;

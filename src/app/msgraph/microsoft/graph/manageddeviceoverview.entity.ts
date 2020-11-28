@@ -2,16 +2,22 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
-import { DeviceOperatingSystemSummary } from './deviceoperatingsystemsummary.entity';
 import { DeviceExchangeAccessStateSummary } from './deviceexchangeaccessstatesummary.entity';
+import { DeviceOperatingSystemSummary } from './deviceoperatingsystemsummary.entity';
+import { DeviceExchangeAccessStateSummaryModel } from './deviceexchangeaccessstatesummary.model';
+import { DeviceOperatingSystemSummaryModel } from './deviceoperatingsystemsummary.model';
+import { EntityModel } from './entity.model';
+import { DeviceExchangeAccessStateSummaryCollection } from './deviceexchangeaccessstatesummary.collection';
+import { DeviceOperatingSystemSummaryCollection } from './deviceoperatingsystemsummary.collection';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface ManagedDeviceOverview extends Entity {
   //#region ODataApi Properties
+  deviceExchangeAccessStateSummary?: DeviceExchangeAccessStateSummary;
+  deviceOperatingSystemSummary?: DeviceOperatingSystemSummary;
+  dualEnrolledDeviceCount: number;
   enrolledDeviceCount: number;
   mdmEnrolledCount: number;
-  dualEnrolledDeviceCount: number;
-  deviceOperatingSystemSummary?: DeviceOperatingSystemSummary;
-  deviceExchangeAccessStateSummary?: DeviceExchangeAccessStateSummary;
   //#endregion
 }

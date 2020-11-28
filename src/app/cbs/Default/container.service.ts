@@ -26,6 +26,14 @@ import { Article } from '../CBS/Website/ODataApi/Models/article.entity';
 import { Medium } from '../CBS/Website/ODataApi/Models/medium.entity';
 import { Page } from '../CBS/Website/ODataApi/Models/page.entity';
 import { SearchResultItem } from '../CBS/Website/ODataApi/Models/searchresultitem.entity';
+import { ArticleModel } from '../CBS/Website/ODataApi/Models/article.model';
+import { MediumModel } from '../CBS/Website/ODataApi/Models/medium.model';
+import { PageModel } from '../CBS/Website/ODataApi/Models/page.model';
+import { SearchResultItemModel } from '../CBS/Website/ODataApi/Models/searchresultitem.model';
+import { ArticleCollection } from '../CBS/Website/ODataApi/Models/article.collection';
+import { MediumCollection } from '../CBS/Website/ODataApi/Models/medium.collection';
+import { PageCollection } from '../CBS/Website/ODataApi/Models/page.collection';
+import { SearchResultItemCollection } from '../CBS/Website/ODataApi/Models/searchresultitem.collection';
 //#endregion
 
 @Injectable()

@@ -1,4 +1,4 @@
-﻿import { ODataModel, HttpOptions, Duration } from 'angular-odata';
+﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -38,11 +38,5 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public setCategory(model: CategoryModel<Category> | null) {
-    this.setNavigationProperty<Category, CategoryModel<Category>>(this._config.field('Category'), model);
-  }
-  public setSupplier(model: SupplierModel<Supplier> | null) {
-    this.setNavigationProperty<Supplier, SupplierModel<Supplier>>(this._config.field('Supplier'), model);
-  }
   //#endregion
 }

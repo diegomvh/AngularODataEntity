@@ -2,13 +2,17 @@
 
 //#region ODataApi Imports
 import { MeetingParticipants } from './meetingparticipants.entity';
+import { MeetingParticipantsModel } from './meetingparticipants.model';
+import { MeetingParticipantsCollection } from './meetingparticipants.collection';
 //#endregion
 
 export const MeetingParticipantsConfig = {
   name: "meetingParticipants",
+  model: MeetingParticipantsModel,
+  collection: MeetingParticipantsCollection,
   annotations: [],
   fields: {
-    organizer: {type: 'graph.meetingParticipantInfo'},
-    attendees: {type: 'graph.meetingParticipantInfo', collection: true}
+    attendees: {type: 'graph.meetingParticipantInfo', collection: true},
+    organizer: {type: 'graph.meetingParticipantInfo'}
   }
 } as EntityConfig<MeetingParticipants>;

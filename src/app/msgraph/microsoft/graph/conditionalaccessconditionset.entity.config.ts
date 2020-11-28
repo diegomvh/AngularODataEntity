@@ -2,17 +2,21 @@
 
 //#region ODataApi Imports
 import { ConditionalAccessConditionSet } from './conditionalaccessconditionset.entity';
+import { ConditionalAccessConditionSetModel } from './conditionalaccessconditionset.model';
+import { ConditionalAccessConditionSetCollection } from './conditionalaccessconditionset.collection';
 //#endregion
 
 export const ConditionalAccessConditionSetConfig = {
   name: "conditionalAccessConditionSet",
+  model: ConditionalAccessConditionSetModel,
+  collection: ConditionalAccessConditionSetCollection,
   annotations: [],
   fields: {
     applications: {type: 'graph.conditionalAccessApplications'},
-    users: {type: 'graph.conditionalAccessUsers', nullable: false},
-    signInRiskLevels: {type: 'graph.riskLevel', nullable: false, collection: true},
-    platforms: {type: 'graph.conditionalAccessPlatforms'},
+    clientAppTypes: {type: 'graph.conditionalAccessClientApp', nullable: false, collection: true},
     locations: {type: 'graph.conditionalAccessLocations'},
-    clientAppTypes: {type: 'graph.conditionalAccessClientApp', nullable: false, collection: true}
+    platforms: {type: 'graph.conditionalAccessPlatforms'},
+    signInRiskLevels: {type: 'graph.riskLevel', nullable: false, collection: true},
+    users: {type: 'graph.conditionalAccessUsers', nullable: false}
   }
 } as EntityConfig<ConditionalAccessConditionSet>;

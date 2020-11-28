@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { ReportRoot } from './reportroot.entity';
+import { ReportRootModel } from './reportroot.model';
+import { ReportRootCollection } from './reportroot.collection';
 //#endregion
 
 @Injectable()

@@ -7,22 +7,26 @@ import { PrereleaseFeatures } from './prereleasefeatures.enum';
 import { WindowsDeliveryOptimizationMode } from './windowsdeliveryoptimizationmode.enum';
 import { WindowsUpdateType } from './windowsupdatetype.enum';
 import { WindowsUpdateInstallScheduleType } from './windowsupdateinstallscheduletype.entity';
+import { WindowsUpdateInstallScheduleTypeModel } from './windowsupdateinstallscheduletype.model';
+import { DeviceConfigurationModel } from './deviceconfiguration.model';
+import { WindowsUpdateInstallScheduleTypeCollection } from './windowsupdateinstallscheduletype.collection';
+import { DeviceConfigurationCollection } from './deviceconfiguration.collection';
 //#endregion
 
 export interface WindowsUpdateForBusinessConfiguration extends DeviceConfiguration {
   //#region ODataApi Properties
-  deliveryOptimizationMode: WindowsDeliveryOptimizationMode;
-  prereleaseFeatures: PrereleaseFeatures;
   automaticUpdateMode: AutomaticUpdateMode;
-  microsoftUpdateServiceAllowed: boolean;
-  driversExcluded: boolean;
-  installationSchedule?: WindowsUpdateInstallScheduleType;
-  qualityUpdatesDeferralPeriodInDays: number;
-  featureUpdatesDeferralPeriodInDays: number;
-  qualityUpdatesPaused: boolean;
-  featureUpdatesPaused: boolean;
-  qualityUpdatesPauseExpiryDateTime: Date;
-  featureUpdatesPauseExpiryDateTime: Date;
   businessReadyUpdatesOnly: WindowsUpdateType;
+  deliveryOptimizationMode: WindowsDeliveryOptimizationMode;
+  driversExcluded: boolean;
+  featureUpdatesDeferralPeriodInDays: number;
+  featureUpdatesPaused: boolean;
+  featureUpdatesPauseExpiryDateTime: Date;
+  installationSchedule?: WindowsUpdateInstallScheduleType;
+  microsoftUpdateServiceAllowed: boolean;
+  prereleaseFeatures: PrereleaseFeatures;
+  qualityUpdatesDeferralPeriodInDays: number;
+  qualityUpdatesPaused: boolean;
+  qualityUpdatesPauseExpiryDateTime: Date;
   //#endregion
 }

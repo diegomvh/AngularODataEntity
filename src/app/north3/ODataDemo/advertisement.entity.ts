@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { FeaturedProduct } from './featuredproduct.entity';
+import { FeaturedProductModel } from './featuredproduct.model';
+import { FeaturedProductCollection } from './featuredproduct.collection';
 //#endregion
 
 export interface Advertisement {

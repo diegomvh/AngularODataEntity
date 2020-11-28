@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Thumbnail } from './thumbnail.entity';
+import { ThumbnailModel } from './thumbnail.model';
+import { ThumbnailCollection } from './thumbnail.collection';
 //#endregion
 
 export const ThumbnailConfig = {
   name: "thumbnail",
+  model: ThumbnailModel,
+  collection: ThumbnailCollection,
   annotations: [],
   fields: {
     content: {type: 'Edm.Stream'},

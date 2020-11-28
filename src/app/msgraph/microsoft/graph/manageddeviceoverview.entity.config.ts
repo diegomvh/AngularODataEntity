@@ -2,17 +2,21 @@
 
 //#region ODataApi Imports
 import { ManagedDeviceOverview } from './manageddeviceoverview.entity';
+import { ManagedDeviceOverviewModel } from './manageddeviceoverview.model';
+import { ManagedDeviceOverviewCollection } from './manageddeviceoverview.collection';
 //#endregion
 
 export const ManagedDeviceOverviewConfig = {
   name: "managedDeviceOverview",
   base: "microsoft.graph.entity",
+  model: ManagedDeviceOverviewModel,
+  collection: ManagedDeviceOverviewCollection,
   annotations: [],
   fields: {
-    enrolledDeviceCount: {type: 'Edm.Int32', nullable: false},
-    mdmEnrolledCount: {type: 'Edm.Int32', nullable: false},
-    dualEnrolledDeviceCount: {type: 'Edm.Int32', nullable: false},
+    deviceExchangeAccessStateSummary: {type: 'graph.deviceExchangeAccessStateSummary'},
     deviceOperatingSystemSummary: {type: 'graph.deviceOperatingSystemSummary'},
-    deviceExchangeAccessStateSummary: {type: 'graph.deviceExchangeAccessStateSummary'}
+    dualEnrolledDeviceCount: {type: 'Edm.Int32', nullable: false},
+    enrolledDeviceCount: {type: 'Edm.Int32', nullable: false},
+    mdmEnrolledCount: {type: 'Edm.Int32', nullable: false}
   }
 } as EntityConfig<ManagedDeviceOverview>;

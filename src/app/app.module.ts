@@ -8,6 +8,7 @@ import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
 import { TabViewModule } from 'primeng/tabview';
+import { SiuConfig, SiuModule } from './siu';
 import { TripPinConfig, TripPinModule } from './trippin';
 import { NorthwindConfig, NorthwindModule } from './northwind';
 import { North2Config, North2Module } from './north2';
@@ -44,6 +45,11 @@ import { EmployeesComponent } from './components/northwind/employees.component';
     DialogModule,
     TabViewModule,
     ODataModule.forRoot(
+      // Siu
+      Object.assign(SiuConfig, {
+        metadata: 'full',
+        stringAsEnum: true
+      }), 
       // TripPin
       Object.assign(TripPinConfig, {
         serviceRootUrl: 'http://localhost:4200/trippin/',
@@ -73,6 +79,7 @@ import { EmployeesComponent } from './components/northwind/employees.component';
     ),
     TripPinModule,
     NorthwindModule,
+    SiuModule, 
     North2Module, 
     North3Module,
     MsGraphModule,

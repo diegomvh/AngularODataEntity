@@ -2,17 +2,19 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface Subscription extends Entity {
   //#region ODataApi Properties
-  resource: string;
+  applicationId?: string;
   changeType: string;
   clientState?: string;
-  notificationUrl: string;
-  expirationDateTime: Date;
-  applicationId?: string;
   creatorId?: string;
+  expirationDateTime: Date;
   latestSupportedTlsVersion?: string;
+  notificationUrl: string;
+  resource: string;
   //#endregion
 }

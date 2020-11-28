@@ -6,7 +6,7 @@ import { ConditionalAccessDevicePlatform } from './conditionalaccessdeviceplatfo
 
 export interface ConditionalAccessPlatforms {
   //#region ODataApi Properties
-  includePlatforms: ConditionalAccessDevicePlatform;
   excludePlatforms: ConditionalAccessDevicePlatform;
+  includePlatforms: ConditionalAccessDevicePlatform;
   //#endregion
 }

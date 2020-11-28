@@ -5,7 +5,7 @@
 
 export interface GenericError {
   //#region ODataApi Properties
-  message?: string;
   code?: string;
+  message?: string;
   //#endregion
 }

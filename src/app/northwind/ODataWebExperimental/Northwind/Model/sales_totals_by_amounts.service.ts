@@ -31,11 +31,20 @@ export class SalesTotalsByAmountsService extends ODataEntityService<SalesTotalsB
     super(client, 'Sales_Totals_by_Amounts', 'NorthwindModel.Sales_Totals_by_Amount');
   }
 
+  //#region ODataApi Model
   salesTotalsByAmountModel(): SalesTotalsByAmountModel<SalesTotalsByAmount> {
     return super.model() as SalesTotalsByAmountModel<SalesTotalsByAmount>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   salesTotalsByAmountCollection(): SalesTotalsByAmountCollection<SalesTotalsByAmount, SalesTotalsByAmountModel<SalesTotalsByAmount>> {
     return super.collection() as SalesTotalsByAmountCollection<SalesTotalsByAmount, SalesTotalsByAmountModel<SalesTotalsByAmount>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

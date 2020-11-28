@@ -5,10 +5,10 @@
 
 export interface OutlookGeoCoordinates {
   //#region ODataApi Properties
-  latitude?: number;
-  longitude?: number;
   accuracy?: number;
   altitude?: number;
   altitudeAccuracy?: number;
+  latitude?: number;
+  longitude?: number;
   //#endregion
 }

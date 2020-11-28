@@ -5,10 +5,10 @@
 
 export interface LicenseAssignmentState {
   //#region ODataApi Properties
-  skuId?: string;
-  disabledPlans?: string[];
   assignedByGroup?: string;
-  state?: string;
+  disabledPlans?: string[];
   error?: string;
+  skuId?: string;
+  state?: string;
   //#endregion
 }

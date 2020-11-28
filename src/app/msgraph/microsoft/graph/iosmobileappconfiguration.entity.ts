@@ -3,6 +3,10 @@
 //#region ODataApi Imports
 import { ManagedDeviceMobileAppConfiguration } from './manageddevicemobileappconfiguration.entity';
 import { AppConfigurationSettingItem } from './appconfigurationsettingitem.entity';
+import { AppConfigurationSettingItemModel } from './appconfigurationsettingitem.model';
+import { ManagedDeviceMobileAppConfigurationModel } from './manageddevicemobileappconfiguration.model';
+import { AppConfigurationSettingItemCollection } from './appconfigurationsettingitem.collection';
+import { ManagedDeviceMobileAppConfigurationCollection } from './manageddevicemobileappconfiguration.collection';
 //#endregion
 
 export interface IosMobileAppConfiguration extends ManagedDeviceMobileAppConfiguration {

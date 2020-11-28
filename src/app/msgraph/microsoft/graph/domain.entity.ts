@@ -5,6 +5,14 @@ import { Entity } from './entity.entity';
 import { DomainState } from './domainstate.entity';
 import { DirectoryObject } from './directoryobject.entity';
 import { DomainDnsRecord } from './domaindnsrecord.entity';
+import { DomainStateModel } from './domainstate.model';
+import { EntityModel } from './entity.model';
+import { DirectoryObjectModel } from './directoryobject.model';
+import { DomainDnsRecordModel } from './domaindnsrecord.model';
+import { DomainStateCollection } from './domainstate.collection';
+import { EntityCollection } from './entity.collection';
+import { DirectoryObjectCollection } from './directoryobject.collection';
+import { DomainDnsRecordCollection } from './domaindnsrecord.collection';
 //#endregion
 
 export interface Domain extends Entity {
@@ -20,10 +28,10 @@ export interface Domain extends Entity {
   model?: string;
   passwordNotificationWindowInDays?: number;
   passwordValidityPeriodInDays?: number;
-  supportedServices: string[];
   state?: DomainState;
+  supportedServices: string[];
+  domainNameReferences?: DirectoryObject[];
   serviceConfigurationRecords?: DomainDnsRecord[];
   verificationDnsRecords?: DomainDnsRecord[];
-  domainNameReferences?: DirectoryObject[];
   //#endregion
 }

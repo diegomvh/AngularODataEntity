@@ -8,10 +8,10 @@ export interface KeyCredential {
   customKeyIdentifier?: ArrayBuffer;
   displayName?: string;
   endDateTime?: Date;
+  key?: ArrayBuffer;
   keyId?: string;
   startDateTime?: Date;
   type?: string;
   usage?: string;
-  key?: ArrayBuffer;
   //#endregion
 }

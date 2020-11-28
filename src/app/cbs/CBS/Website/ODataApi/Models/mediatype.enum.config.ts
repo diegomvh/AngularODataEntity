@@ -1,4 +1,4 @@
-﻿import { EnumConfig } from 'angular-odata';
+﻿import { EnumTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { MediaType } from './mediatype.enum';
@@ -7,4 +7,4 @@ import { MediaType } from './mediatype.enum';
 export const MediaTypeConfig = {
   name: "MediaType",
   members: MediaType
-} as EnumConfig<MediaType>;
+} as EnumTypeConfig<MediaType>;

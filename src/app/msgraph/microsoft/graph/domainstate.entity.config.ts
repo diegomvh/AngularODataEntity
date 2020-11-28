@@ -2,14 +2,18 @@
 
 //#region ODataApi Imports
 import { DomainState } from './domainstate.entity';
+import { DomainStateModel } from './domainstate.model';
+import { DomainStateCollection } from './domainstate.collection';
 //#endregion
 
 export const DomainStateConfig = {
   name: "domainState",
+  model: DomainStateModel,
+  collection: DomainStateCollection,
   annotations: [],
   fields: {
-    status: {type: 'Edm.String'},
+    lastActionDateTime: {type: 'Edm.DateTimeOffset'},
     operation: {type: 'Edm.String'},
-    lastActionDateTime: {type: 'Edm.DateTimeOffset'}
+    status: {type: 'Edm.String'}
   }
 } as EntityConfig<DomainState>;

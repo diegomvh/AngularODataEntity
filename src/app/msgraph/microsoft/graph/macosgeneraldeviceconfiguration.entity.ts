@@ -5,12 +5,16 @@ import { DeviceConfiguration } from './deviceconfiguration.entity';
 import { AppListType } from './applisttype.enum';
 import { RequiredPasswordType } from './requiredpasswordtype.enum';
 import { AppListItem } from './applistitem.entity';
+import { AppListItemModel } from './applistitem.model';
+import { DeviceConfigurationModel } from './deviceconfiguration.model';
+import { AppListItemCollection } from './applistitem.collection';
+import { DeviceConfigurationCollection } from './deviceconfiguration.collection';
 //#endregion
 
 export interface MacOSGeneralDeviceConfiguration extends DeviceConfiguration {
   //#region ODataApi Properties
-  compliantAppsList?: AppListItem[];
   compliantAppListType: AppListType;
+  compliantAppsList?: AppListItem[];
   emailInDomainSuffixes?: string[];
   passwordBlockSimple: boolean;
   passwordExpirationDays?: number;
@@ -19,7 +23,7 @@ export interface MacOSGeneralDeviceConfiguration extends DeviceConfiguration {
   passwordMinutesOfInactivityBeforeLock?: number;
   passwordMinutesOfInactivityBeforeScreenTimeout?: number;
   passwordPreviousPasswordBlockCount?: number;
-  passwordRequiredType: RequiredPasswordType;
   passwordRequired: boolean;
+  passwordRequiredType: RequiredPasswordType;
   //#endregion
 }

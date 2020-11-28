@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { WindowsInformationProtectionResourceCollection } from './windowsinformationprotectionresourcecollection.entity';
+import { WindowsInformationProtectionResourceCollectionModel } from './windowsinformationprotectionresourcecollection.model';
+import { WindowsInformationProtectionResourceCollectionCollection } from './windowsinformationprotectionresourcecollection.collection';
 //#endregion
 
 export const WindowsInformationProtectionResourceCollectionConfig = {
   name: "windowsInformationProtectionResourceCollection",
+  model: WindowsInformationProtectionResourceCollectionModel,
+  collection: WindowsInformationProtectionResourceCollectionCollection,
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String', nullable: false},

@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { WorkbookRangeBorder } from './workbookrangeborder.entity';
+import { WorkbookRangeBorderModel } from './workbookrangeborder.model';
+import { WorkbookRangeBorderCollection } from './workbookrangeborder.collection';
 //#endregion
 
 export const WorkbookRangeBorderConfig = {
   name: "workbookRangeBorder",
   base: "microsoft.graph.entity",
+  model: WorkbookRangeBorderModel,
+  collection: WorkbookRangeBorderCollection,
   annotations: [],
   fields: {
     color: {type: 'Edm.String'},

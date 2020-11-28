@@ -8,12 +8,12 @@ import { WeekIndex } from './weekindex.enum';
 
 export interface RecurrencePattern {
   //#region ODataApi Properties
-  type?: RecurrencePatternType;
-  interval: number;
-  month: number;
   dayOfMonth: number;
   daysOfWeek?: DayOfWeek;
   firstDayOfWeek?: DayOfWeek;
   index?: WeekIndex;
+  interval: number;
+  month: number;
+  type?: RecurrencePatternType;
   //#endregion
 }

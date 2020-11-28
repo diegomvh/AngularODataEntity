@@ -34,11 +34,23 @@ export class SuppliersService extends ODataEntityService<Supplier> {
     super(client, 'Suppliers', 'NorthwindModel.Supplier');
   }
 
+  //#region ODataApi Model
   supplierModel(): SupplierModel<Supplier> {
     return super.model() as SupplierModel<Supplier>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   supplierCollection(): SupplierCollection<Supplier, SupplierModel<Supplier>> {
     return super.collection() as SupplierCollection<Supplier, SupplierModel<Supplier>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public products(entity: EntityKey<Supplier>): ODataNavigationPropertyResource<Product> {
+    return this.entity(entity).navigationProperty<Product>('Products');
+  }
+  //#endregion
 }

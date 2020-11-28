@@ -2,11 +2,13 @@
 
 //#region ODataApi Imports
 import { CommsOperation } from './commsoperation.entity';
+import { CommsOperationModel } from './commsoperation.model';
+import { CommsOperationCollection } from './commsoperation.collection';
 //#endregion
 
 export interface RecordOperation extends CommsOperation {
   //#region ODataApi Properties
-  recordingLocation?: string;
   recordingAccessToken?: string;
+  recordingLocation?: string;
   //#endregion
 }

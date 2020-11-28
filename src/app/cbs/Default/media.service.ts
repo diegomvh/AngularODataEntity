@@ -22,6 +22,8 @@ import {
 //#region ODataApi Imports
 import { MediaType } from '../CBS/Website/ODataApi/Models/mediatype.enum';
 import { Medium } from '../CBS/Website/ODataApi/Models/medium.entity';
+import { MediumModel } from '../CBS/Website/ODataApi/Models/medium.model';
+import { MediumCollection } from '../CBS/Website/ODataApi/Models/medium.collection';
 //#endregion
 
 @Injectable()
@@ -30,6 +32,16 @@ export class MediaService extends ODataEntityService<Medium> {
     super(client, 'Media', 'CBS.Website.ODataApi.Models.Medium');
   }
 
+  //#region ODataApi Model
+  mediumModel(): MediumModel<Medium> {
+    return this.entity().asModel() as MediumModel<Medium>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  mediumCollection(): MediumCollection<Medium, MediumModel<Medium>> {
+    return this.entities().asCollection() as MediumCollection<Medium, MediumModel<Medium>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

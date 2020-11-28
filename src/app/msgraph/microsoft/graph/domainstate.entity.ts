@@ -5,8 +5,8 @@
 
 export interface DomainState {
   //#region ODataApi Properties
-  status?: string;
-  operation?: string;
   lastActionDateTime?: Date;
+  operation?: string;
+  status?: string;
   //#endregion
 }

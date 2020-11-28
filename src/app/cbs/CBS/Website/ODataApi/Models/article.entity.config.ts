@@ -1,11 +1,15 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Article } from './article.entity';
+import { ArticleModel } from './article.model';
+import { ArticleCollection } from './article.collection';
 //#endregion
 
 export const ArticleConfig = {
   name: "Article",
+  model: ArticleModel,
+  collection: ArticleCollection,
   annotations: [],
   fields: {
     UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
@@ -41,4 +45,4 @@ export const ArticleConfig = {
     Created: {type: 'Edm.DateTimeOffset', nullable: false},
     Permalink: {type: 'Edm.String'}
   }
-} as EntityConfig<Article>;
+} as StructuredTypeConfig<Article>;

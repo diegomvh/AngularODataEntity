@@ -8,9 +8,9 @@ export interface PasswordCredential {
   customKeyIdentifier?: ArrayBuffer;
   displayName?: string;
   endDateTime?: Date;
-  keyId?: string;
-  startDateTime?: Date;
-  secretText?: string;
   hint?: string;
+  keyId?: string;
+  secretText?: string;
+  startDateTime?: Date;
   //#endregion
 }

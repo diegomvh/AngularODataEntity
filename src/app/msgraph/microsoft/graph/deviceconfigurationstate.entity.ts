@@ -5,15 +5,19 @@ import { Entity } from './entity.entity';
 import { ComplianceStatus } from './compliancestatus.enum';
 import { PolicyPlatformType } from './policyplatformtype.enum';
 import { DeviceConfigurationSettingState } from './deviceconfigurationsettingstate.entity';
+import { DeviceConfigurationSettingStateModel } from './deviceconfigurationsettingstate.model';
+import { EntityModel } from './entity.model';
+import { DeviceConfigurationSettingStateCollection } from './deviceconfigurationsettingstate.collection';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface DeviceConfigurationState extends Entity {
   //#region ODataApi Properties
-  settingStates?: DeviceConfigurationSettingState[];
   displayName?: string;
-  version: number;
   platformType: PolicyPlatformType;
-  state: ComplianceStatus;
   settingCount: number;
+  settingStates?: DeviceConfigurationSettingState[];
+  state: ComplianceStatus;
+  version: number;
   //#endregion
 }

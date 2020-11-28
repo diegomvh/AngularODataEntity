@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { TeamsTemplate } from './teamstemplate.entity';
+import { TeamsTemplateModel } from './teamstemplate.model';
+import { TeamsTemplateCollection } from './teamstemplate.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class TeamsTemplatesService extends ODataEntityService<TeamsTemplate> {
     super(client, 'teamsTemplates', 'microsoft.graph.teamsTemplate');
   }
 
+  //#region ODataApi Model
+  teamsTemplateModel(): TeamsTemplateModel<TeamsTemplate> {
+    return super.model() as TeamsTemplateModel<TeamsTemplate>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  teamsTemplateCollection(): TeamsTemplateCollection<TeamsTemplate, TeamsTemplateModel<TeamsTemplate>> {
+    return super.collection() as TeamsTemplateCollection<TeamsTemplate, TeamsTemplateModel<TeamsTemplate>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

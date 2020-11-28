@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { WorkbookSortField } from './workbooksortfield.entity';
+import { WorkbookSortFieldModel } from './workbooksortfield.model';
+import { WorkbookSortFieldCollection } from './workbooksortfield.collection';
 //#endregion
 
 export const WorkbookSortFieldConfig = {
   name: "workbookSortField",
+  model: WorkbookSortFieldModel,
+  collection: WorkbookSortFieldCollection,
   annotations: [],
   fields: {
     ascending: {type: 'Edm.Boolean', nullable: false},

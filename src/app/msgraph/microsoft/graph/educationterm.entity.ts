@@ -5,9 +5,9 @@
 
 export interface EducationTerm {
   //#region ODataApi Properties
+  displayName?: string;
+  endDate?: Date;
   externalId?: string;
   startDate?: Date;
-  endDate?: Date;
-  displayName?: string;
   //#endregion
 }

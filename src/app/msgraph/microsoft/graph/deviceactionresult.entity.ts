@@ -8,7 +8,7 @@ export interface DeviceActionResult {
   //#region ODataApi Properties
   actionName?: string;
   actionState: ActionState;
-  startDateTime: Date;
   lastUpdatedDateTime: Date;
+  startDateTime: Date;
   //#endregion
 }

@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { PersonDetail } from './persondetail.entity';
+import { PersonDetailModel } from './persondetail.model';
+import { PersonDetailCollection } from './persondetail.collection';
 //#endregion
 
 export interface Person {

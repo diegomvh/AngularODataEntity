@@ -5,8 +5,8 @@
 
 export interface PasswordProfile {
   //#region ODataApi Properties
-  password?: string;
   forceChangePasswordNextSignIn?: boolean;
   forceChangePasswordNextSignInWithMfa?: boolean;
+  password?: string;
   //#endregion
 }

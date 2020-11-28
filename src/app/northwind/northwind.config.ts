@@ -9,7 +9,7 @@ export const NorthwindConfig = {
   name: 'Northwind',
   serviceRootUrl: 'https://services.odata.org/V4/Northwind/Northwind.svc/',
   version: '4.0',
-  creation: new Date('2020-08-09T21:39:28.7786040-03:00'),
+  creation: new Date('2020-09-10T09:06:06.5777515-03:00'),
   schemas: [
     NorthwindModelSchema,
     ModelSchema

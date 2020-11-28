@@ -5,8 +5,8 @@
 
 export interface ObjectIdentity {
   //#region ODataApi Properties
-  signInType?: string;
   issuer?: string;
   issuerAssignedId?: string;
+  signInType?: string;
   //#endregion
 }

@@ -2,14 +2,18 @@
 
 //#region ODataApi Imports
 import { UserIdentity } from './useridentity.entity';
+import { UserIdentityModel } from './useridentity.model';
+import { UserIdentityCollection } from './useridentity.collection';
 //#endregion
 
 export const UserIdentityConfig = {
   name: "userIdentity",
+  model: UserIdentityModel,
+  collection: UserIdentityCollection,
   annotations: [],
   fields: {
-    id: {type: 'Edm.String'},
     displayName: {type: 'Edm.String'},
+    id: {type: 'Edm.String'},
     ipAddress: {type: 'Edm.String'},
     userPrincipalName: {type: 'Edm.String'}
   }

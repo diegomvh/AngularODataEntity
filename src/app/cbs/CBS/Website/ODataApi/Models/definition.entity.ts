@@ -2,7 +2,9 @@
 
 //#region ODataApi Imports
 import { DefinitionType } from './definitiontype.enum';
-import { LinkList } from './linklist.entity';
+import { LinkList } from './linklist.complex';
+import { LinkListModel } from './linklist.model';
+import { LinkListCollection } from './linklist.collection';
 //#endregion
 
 export interface Definition {
@@ -10,6 +12,7 @@ export interface Definition {
   UniqueId: string;
   Title?: string;
   DefinitionType: DefinitionType;
+  DefinitionTypeInt: number;
   Description?: string;
   LeadText?: string;
   Url?: string;

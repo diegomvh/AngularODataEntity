@@ -2,22 +2,26 @@
 
 //#region ODataApi Imports
 import { IosVppApp } from './iosvppapp.entity';
+import { IosVppAppModel } from './iosvppapp.model';
+import { IosVppAppCollection } from './iosvppapp.collection';
 //#endregion
 
 export const IosVppAppConfig = {
   name: "iosVppApp",
   base: "microsoft.graph.mobileApp",
+  model: IosVppAppModel,
+  collection: IosVppAppCollection,
   annotations: [],
   fields: {
-    usedLicenseCount: {type: 'Edm.Int32', nullable: false},
-    totalLicenseCount: {type: 'Edm.Int32', nullable: false},
-    releaseDateTime: {type: 'Edm.DateTimeOffset'},
-    appStoreUrl: {type: 'Edm.String'},
-    licensingType: {type: 'graph.vppLicensingType'},
     applicableDeviceType: {type: 'graph.iosDeviceType'},
-    vppTokenOrganizationName: {type: 'Edm.String'},
+    appStoreUrl: {type: 'Edm.String'},
+    bundleId: {type: 'Edm.String'},
+    licensingType: {type: 'graph.vppLicensingType'},
+    releaseDateTime: {type: 'Edm.DateTimeOffset'},
+    totalLicenseCount: {type: 'Edm.Int32', nullable: false},
+    usedLicenseCount: {type: 'Edm.Int32', nullable: false},
     vppTokenAccountType: {type: 'graph.vppTokenAccountType', nullable: false},
     vppTokenAppleId: {type: 'Edm.String'},
-    bundleId: {type: 'Edm.String'}
+    vppTokenOrganizationName: {type: 'Edm.String'}
   }
 } as EntityConfig<IosVppApp>;

@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { ChangeTrackedEntity } from './changetrackedentity.entity';
+import { ChangeTrackedEntityModel } from './changetrackedentity.model';
+import { ChangeTrackedEntityCollection } from './changetrackedentity.collection';
 //#endregion
 
 export interface SchedulingGroup extends ChangeTrackedEntity {

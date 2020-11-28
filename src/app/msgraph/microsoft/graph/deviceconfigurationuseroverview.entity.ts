@@ -2,16 +2,18 @@
 
 //#region ODataApi Imports
 import { Entity } from './entity.entity';
+import { EntityModel } from './entity.model';
+import { EntityCollection } from './entity.collection';
 //#endregion
 
 export interface DeviceConfigurationUserOverview extends Entity {
   //#region ODataApi Properties
-  pendingCount: number;
-  notApplicableCount: number;
-  successCount: number;
+  configurationVersion: number;
   errorCount: number;
   failedCount: number;
   lastUpdateDateTime: Date;
-  configurationVersion: number;
+  notApplicableCount: number;
+  pendingCount: number;
+  successCount: number;
   //#endregion
 }

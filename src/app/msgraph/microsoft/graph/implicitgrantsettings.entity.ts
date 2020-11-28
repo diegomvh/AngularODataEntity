@@ -5,7 +5,7 @@
 
 export interface ImplicitGrantSettings {
   //#region ODataApi Properties
-  enableIdTokenIssuance?: boolean;
   enableAccessTokenIssuance?: boolean;
+  enableIdTokenIssuance?: boolean;
   //#endregion
 }

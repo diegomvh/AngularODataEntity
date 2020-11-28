@@ -2,12 +2,14 @@
 
 //#region ODataApi Imports
 import { IdentitySet } from './identityset.entity';
+import { IdentitySetModel } from './identityset.model';
+import { IdentitySetCollection } from './identityset.collection';
 //#endregion
 
 export interface ChatMessageReaction {
   //#region ODataApi Properties
-  reactionType: string;
   createdDateTime: Date;
+  reactionType: string;
   user: IdentitySet;
   //#endregion
 }

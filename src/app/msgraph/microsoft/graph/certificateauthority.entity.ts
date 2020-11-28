@@ -5,10 +5,10 @@
 
 export interface CertificateAuthority {
   //#region ODataApi Properties
-  isRootAuthority: boolean;
+  certificate: ArrayBuffer;
   certificateRevocationListUrl?: string;
   deltaCertificateRevocationListUrl?: string;
-  certificate: ArrayBuffer;
+  isRootAuthority: boolean;
   issuer: string;
   issuerSki: string;
   //#endregion

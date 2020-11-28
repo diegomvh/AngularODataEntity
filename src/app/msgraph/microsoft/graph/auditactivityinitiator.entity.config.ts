@@ -2,13 +2,17 @@
 
 //#region ODataApi Imports
 import { AuditActivityInitiator } from './auditactivityinitiator.entity';
+import { AuditActivityInitiatorModel } from './auditactivityinitiator.model';
+import { AuditActivityInitiatorCollection } from './auditactivityinitiator.collection';
 //#endregion
 
 export const AuditActivityInitiatorConfig = {
   name: "auditActivityInitiator",
+  model: AuditActivityInitiatorModel,
+  collection: AuditActivityInitiatorCollection,
   annotations: [],
   fields: {
-    user: {type: 'graph.userIdentity'},
-    app: {type: 'graph.appIdentity'}
+    app: {type: 'graph.appIdentity'},
+    user: {type: 'graph.userIdentity'}
   }
 } as EntityConfig<AuditActivityInitiator>;

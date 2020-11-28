@@ -31,11 +31,20 @@ export class ProductsByCategoriesService extends ODataEntityService<ProductsByCa
     super(client, 'Products_by_Categories', 'NorthwindModel.Products_by_Category');
   }
 
+  //#region ODataApi Model
   productsByCategoryModel(): ProductsByCategoryModel<ProductsByCategory> {
     return super.model() as ProductsByCategoryModel<ProductsByCategory>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   productsByCategoryCollection(): ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>> {
     return super.collection() as ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

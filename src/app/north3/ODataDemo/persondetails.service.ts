@@ -22,6 +22,10 @@ import {
 //#region ODataApi Imports
 import { Address } from './address.entity';
 import { PersonDetail } from './persondetail.entity';
+import { AddressModel } from './address.model';
+import { PersonDetailModel } from './persondetail.model';
+import { AddressCollection } from './address.collection';
+import { PersonDetailCollection } from './persondetail.collection';
 //#endregion
 
 @Injectable()
@@ -30,6 +34,16 @@ export class PersonDetailsService extends ODataEntityService<PersonDetail> {
     super(client, 'PersonDetails', 'ODataDemo.PersonDetail');
   }
 
+  //#region ODataApi Model
+  personDetailModel(): PersonDetailModel<PersonDetail> {
+    return super.model() as PersonDetailModel<PersonDetail>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  personDetailCollection(): PersonDetailCollection<PersonDetail, PersonDetailModel<PersonDetail>> {
+    return super.collection() as PersonDetailCollection<PersonDetail, PersonDetailModel<PersonDetail>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

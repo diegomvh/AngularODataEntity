@@ -31,11 +31,20 @@ export class PhotosService extends ODataEntityService<Photo> {
     super(client, 'Photos', 'Microsoft.OData.SampleService.Models.TripPin.Photo');
   }
 
+  //#region ODataApi Model
   photoModel(): PhotoModel<Photo> {
-    return super.model() as PhotoModel<Photo>;
+    return this.entity().asModel() as PhotoModel<Photo>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   photoCollection(): PhotoCollection<Photo, PhotoModel<Photo>> {
-    return super.collection() as PhotoCollection<Photo, PhotoModel<Photo>>;
+    return this.entities().asCollection() as PhotoCollection<Photo, PhotoModel<Photo>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

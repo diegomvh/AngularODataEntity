@@ -6,6 +6,7 @@ export enum CategoryColor {
   //#region ODataApi Members
   preset0 = 0,
   preset1 = 1,
+  none = -1,
   preset2 = 2,
   preset3 = 3,
   preset4 = 4,
@@ -29,6 +30,5 @@ export enum CategoryColor {
   preset22 = 22,
   preset23 = 23,
   preset24 = 24,
-  none = -1,
   //#endregion
 }

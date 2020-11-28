@@ -6,8 +6,8 @@ import { WebsiteType } from './websitetype.enum';
 
 export interface Website {
   //#region ODataApi Properties
-  type?: WebsiteType;
   address?: string;
   displayName?: string;
+  type?: WebsiteType;
   //#endregion
 }

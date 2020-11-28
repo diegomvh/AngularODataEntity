@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { PermissionScope } from './permissionscope.entity';
+import { PermissionScopeModel } from './permissionscope.model';
+import { PermissionScopeCollection } from './permissionscope.collection';
 //#endregion
 
 export const PermissionScopeConfig = {
   name: "permissionScope",
+  model: PermissionScopeModel,
+  collection: PermissionScopeCollection,
   annotations: [],
   fields: {
     adminConsentDescription: {type: 'Edm.String'},

@@ -31,11 +31,20 @@ export class OrderDetailsExtendedsService extends ODataEntityService<OrderDetail
     super(client, 'Order_Details_Extendeds', 'NorthwindModel.Order_Details_Extended');
   }
 
+  //#region ODataApi Model
   orderDetailsExtendedModel(): OrderDetailsExtendedModel<OrderDetailsExtended> {
     return super.model() as OrderDetailsExtendedModel<OrderDetailsExtended>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   orderDetailsExtendedCollection(): OrderDetailsExtendedCollection<OrderDetailsExtended, OrderDetailsExtendedModel<OrderDetailsExtended>> {
     return super.collection() as OrderDetailsExtendedCollection<OrderDetailsExtended, OrderDetailsExtendedModel<OrderDetailsExtended>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  //#endregion
 }

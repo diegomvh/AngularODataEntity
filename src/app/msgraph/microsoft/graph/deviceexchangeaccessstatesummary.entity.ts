@@ -8,7 +8,7 @@ export interface DeviceExchangeAccessStateSummary {
   allowedDeviceCount: number;
   blockedDeviceCount: number;
   quarantinedDeviceCount: number;
-  unknownDeviceCount: number;
   unavailableDeviceCount: number;
+  unknownDeviceCount: number;
   //#endregion
 }

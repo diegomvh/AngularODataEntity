@@ -1,11 +1,15 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { CalendarEvent } from './calendarevent.entity';
+import { CalendarEventModel } from './calendarevent.model';
+import { CalendarEventCollection } from './calendarevent.collection';
 //#endregion
 
 export const CalendarEventConfig = {
   name: "CalendarEvent",
+  model: CalendarEventModel,
+  collection: CalendarEventCollection,
   annotations: [],
   fields: {
     UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
@@ -30,4 +34,4 @@ export const CalendarEventConfig = {
     Created: {type: 'Edm.DateTimeOffset', nullable: false},
     Permalink: {type: 'Edm.String'}
   }
-} as EntityConfig<CalendarEvent>;
+} as StructuredTypeConfig<CalendarEvent>;

@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { List } from './list.entity';
+import { ListModel } from './list.model';
+import { ListCollection } from './list.collection';
 //#endregion
 
 export const ListConfig = {
   name: "list",
   base: "microsoft.graph.baseItem",
+  model: ListModel,
+  collection: ListCollection,
   annotations: [],
   fields: {
     displayName: {type: 'Edm.String'},

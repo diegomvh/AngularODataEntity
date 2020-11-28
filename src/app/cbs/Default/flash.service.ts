@@ -21,6 +21,8 @@ import {
 
 //#region ODataApi Imports
 import { Flash } from '../CBS/Website/ODataApi/Models/flash.entity';
+import { FlashModel } from '../CBS/Website/ODataApi/Models/flash.model';
+import { FlashCollection } from '../CBS/Website/ODataApi/Models/flash.collection';
 //#endregion
 
 @Injectable()
@@ -29,6 +31,16 @@ export class FlashService extends ODataEntityService<Flash> {
     super(client, 'Flash', 'CBS.Website.ODataApi.Models.Flash');
   }
 
+  //#region ODataApi Model
+  flashModel(): FlashModel<Flash> {
+    return this.entity().asModel() as FlashModel<Flash>;
+  }
+  //#endregion
+  //#region ODataApi Collection
+  flashCollection(): FlashCollection<Flash, FlashModel<Flash>> {
+    return this.entities().asCollection() as FlashCollection<Flash, FlashModel<Flash>>;
+  }
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

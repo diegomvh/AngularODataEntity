@@ -8,8 +8,8 @@ export interface DeviceOperatingSystemSummary {
   androidCount: number;
   iosCount: number;
   macOSCount: number;
-  windowsMobileCount: number;
-  windowsCount: number;
   unknownCount: number;
+  windowsCount: number;
+  windowsMobileCount: number;
   //#endregion
 }

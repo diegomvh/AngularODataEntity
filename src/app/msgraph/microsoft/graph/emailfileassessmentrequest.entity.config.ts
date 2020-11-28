@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { EmailFileAssessmentRequest } from './emailfileassessmentrequest.entity';
+import { EmailFileAssessmentRequestModel } from './emailfileassessmentrequest.model';
+import { EmailFileAssessmentRequestCollection } from './emailfileassessmentrequest.collection';
 //#endregion
 
 export const EmailFileAssessmentRequestConfig = {
   name: "emailFileAssessmentRequest",
   base: "microsoft.graph.threatAssessmentRequest",
+  model: EmailFileAssessmentRequestModel,
+  collection: EmailFileAssessmentRequestCollection,
   annotations: [],
   fields: {
-    recipientEmail: {type: 'Edm.String', nullable: false},
+    contentData: {type: 'Edm.String', nullable: false},
     destinationRoutingReason: {type: 'graph.mailDestinationRoutingReason'},
-    contentData: {type: 'Edm.String', nullable: false}
+    recipientEmail: {type: 'Edm.String', nullable: false}
   }
 } as EntityConfig<EmailFileAssessmentRequest>;

@@ -5,7 +5,7 @@
 
 export interface SettingSource {
   //#region ODataApi Properties
-  id?: string;
   displayName?: string;
+  id?: string;
   //#endregion
 }

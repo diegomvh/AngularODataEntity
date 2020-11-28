@@ -2,11 +2,15 @@
 
 //#region ODataApi Imports
 import { DomainDnsSrvRecord } from './domaindnssrvrecord.entity';
+import { DomainDnsSrvRecordModel } from './domaindnssrvrecord.model';
+import { DomainDnsSrvRecordCollection } from './domaindnssrvrecord.collection';
 //#endregion
 
 export const DomainDnsSrvRecordConfig = {
   name: "domainDnsSrvRecord",
   base: "microsoft.graph.domainDnsRecord",
+  model: DomainDnsSrvRecordModel,
+  collection: DomainDnsSrvRecordCollection,
   annotations: [],
   fields: {
     nameTarget: {type: 'Edm.String'},

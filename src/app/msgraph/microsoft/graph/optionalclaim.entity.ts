@@ -5,9 +5,9 @@
 
 export interface OptionalClaim {
   //#region ODataApi Properties
+  additionalProperties?: string[];
+  essential: boolean;
   name: string;
   source?: string;
-  essential: boolean;
-  additionalProperties?: string[];
   //#endregion
 }

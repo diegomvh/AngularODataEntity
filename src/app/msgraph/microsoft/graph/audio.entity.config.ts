@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Audio } from './audio.entity';
+import { AudioModel } from './audio.model';
+import { AudioCollection } from './audio.collection';
 //#endregion
 
 export const AudioConfig = {
   name: "audio",
+  model: AudioModel,
+  collection: AudioCollection,
   annotations: [],
   fields: {
     album: {type: 'Edm.String'},

@@ -3,6 +3,8 @@
 //#region ODataApi Imports
 import { ProcessIntegrityLevel } from './processintegritylevel.enum';
 import { FileHash } from './filehash.entity';
+import { FileHashModel } from './filehash.model';
+import { FileHashCollection } from './filehash.collection';
 //#endregion
 
 export interface Process {

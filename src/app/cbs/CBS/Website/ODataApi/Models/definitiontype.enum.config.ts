@@ -1,4 +1,4 @@
-﻿import { EnumConfig } from 'angular-odata';
+﻿import { EnumTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { DefinitionType } from './definitiontype.enum';
@@ -7,4 +7,4 @@ import { DefinitionType } from './definitiontype.enum';
 export const DefinitionTypeConfig = {
   name: "DefinitionType",
   members: DefinitionType
-} as EnumConfig<DefinitionType>;
+} as EnumTypeConfig<DefinitionType>;

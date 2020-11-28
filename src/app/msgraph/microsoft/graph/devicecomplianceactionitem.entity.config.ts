@@ -2,16 +2,20 @@
 
 //#region ODataApi Imports
 import { DeviceComplianceActionItem } from './devicecomplianceactionitem.entity';
+import { DeviceComplianceActionItemModel } from './devicecomplianceactionitem.model';
+import { DeviceComplianceActionItemCollection } from './devicecomplianceactionitem.collection';
 //#endregion
 
 export const DeviceComplianceActionItemConfig = {
   name: "deviceComplianceActionItem",
   base: "microsoft.graph.entity",
+  model: DeviceComplianceActionItemModel,
+  collection: DeviceComplianceActionItemCollection,
   annotations: [],
   fields: {
-    gracePeriodHours: {type: 'Edm.Int32', nullable: false},
     actionType: {type: 'graph.deviceComplianceActionType', nullable: false},
-    notificationTemplateId: {type: 'Edm.String'},
-    notificationMessageCCList: {type: 'Edm.String', collection: true}
+    gracePeriodHours: {type: 'Edm.Int32', nullable: false},
+    notificationMessageCCList: {type: 'Edm.String', collection: true},
+    notificationTemplateId: {type: 'Edm.String'}
   }
 } as EntityConfig<DeviceComplianceActionItem>;

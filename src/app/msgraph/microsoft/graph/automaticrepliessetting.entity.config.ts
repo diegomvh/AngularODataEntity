@@ -2,17 +2,21 @@
 
 //#region ODataApi Imports
 import { AutomaticRepliesSetting } from './automaticrepliessetting.entity';
+import { AutomaticRepliesSettingModel } from './automaticrepliessetting.model';
+import { AutomaticRepliesSettingCollection } from './automaticrepliessetting.collection';
 //#endregion
 
 export const AutomaticRepliesSettingConfig = {
   name: "automaticRepliesSetting",
+  model: AutomaticRepliesSettingModel,
+  collection: AutomaticRepliesSettingCollection,
   annotations: [],
   fields: {
-    status: {type: 'graph.automaticRepliesStatus'},
     externalAudience: {type: 'graph.externalAudienceScope'},
-    scheduledStartDateTime: {type: 'graph.dateTimeTimeZone'},
-    scheduledEndDateTime: {type: 'graph.dateTimeTimeZone'},
+    externalReplyMessage: {type: 'Edm.String'},
     internalReplyMessage: {type: 'Edm.String'},
-    externalReplyMessage: {type: 'Edm.String'}
+    scheduledEndDateTime: {type: 'graph.dateTimeTimeZone'},
+    scheduledStartDateTime: {type: 'graph.dateTimeTimeZone'},
+    status: {type: 'graph.automaticRepliesStatus'}
   }
 } as EntityConfig<AutomaticRepliesSetting>;

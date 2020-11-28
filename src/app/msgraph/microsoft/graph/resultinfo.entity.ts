@@ -6,7 +6,7 @@
 export interface ResultInfo {
   //#region ODataApi Properties
   code: number;
-  subcode: number;
   message?: string;
+  subcode: number;
   //#endregion
 }

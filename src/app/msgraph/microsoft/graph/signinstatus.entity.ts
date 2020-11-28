@@ -5,8 +5,8 @@
 
 export interface SignInStatus {
   //#region ODataApi Properties
+  additionalDetails?: string;
   errorCode?: number;
   failureReason?: string;
-  additionalDetails?: string;
   //#endregion
 }

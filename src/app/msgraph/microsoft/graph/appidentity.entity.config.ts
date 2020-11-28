@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { AppIdentity } from './appidentity.entity';
+import { AppIdentityModel } from './appidentity.model';
+import { AppIdentityCollection } from './appidentity.collection';
 //#endregion
 
 export const AppIdentityConfig = {
   name: "appIdentity",
+  model: AppIdentityModel,
+  collection: AppIdentityCollection,
   annotations: [],
   fields: {
     appId: {type: 'Edm.String'},

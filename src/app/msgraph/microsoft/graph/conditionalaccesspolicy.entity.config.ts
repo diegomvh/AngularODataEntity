@@ -2,20 +2,24 @@
 
 //#region ODataApi Imports
 import { ConditionalAccessPolicy } from './conditionalaccesspolicy.entity';
+import { ConditionalAccessPolicyModel } from './conditionalaccesspolicy.model';
+import { ConditionalAccessPolicyCollection } from './conditionalaccesspolicy.collection';
 //#endregion
 
 export const ConditionalAccessPolicyConfig = {
   name: "conditionalAccessPolicy",
   base: "microsoft.graph.entity",
+  model: ConditionalAccessPolicyModel,
+  collection: ConditionalAccessPolicyCollection,
   annotations: [],
   fields: {
-    createdDateTime: {type: 'Edm.DateTimeOffset'},
-    modifiedDateTime: {type: 'Edm.DateTimeOffset'},
-    displayName: {type: 'Edm.String', nullable: false},
-    description: {type: 'Edm.String'},
-    state: {type: 'graph.conditionalAccessPolicyState', nullable: false},
     conditions: {type: 'graph.conditionalAccessConditionSet', nullable: false},
+    createdDateTime: {type: 'Edm.DateTimeOffset'},
+    description: {type: 'Edm.String'},
+    displayName: {type: 'Edm.String', nullable: false},
     grantControls: {type: 'graph.conditionalAccessGrantControls'},
-    sessionControls: {type: 'graph.conditionalAccessSessionControls'}
+    modifiedDateTime: {type: 'Edm.DateTimeOffset'},
+    sessionControls: {type: 'graph.conditionalAccessSessionControls'},
+    state: {type: 'graph.conditionalAccessPolicyState', nullable: false}
   }
 } as EntityConfig<ConditionalAccessPolicy>;

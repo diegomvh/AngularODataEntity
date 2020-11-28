@@ -2,10 +2,14 @@
 
 //#region ODataApi Imports
 import { Photo } from './photo.entity';
+import { PhotoModel } from './photo.model';
+import { PhotoCollection } from './photo.collection';
 //#endregion
 
 export const PhotoConfig = {
   name: "photo",
+  model: PhotoModel,
+  collection: PhotoCollection,
   annotations: [],
   fields: {
     cameraMake: {type: 'Edm.String'},

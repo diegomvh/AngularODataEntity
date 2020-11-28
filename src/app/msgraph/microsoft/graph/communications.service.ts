@@ -24,6 +24,14 @@ import { OnlineMeeting } from './onlinemeeting.entity';
 import { CloudCommunications } from './cloudcommunications.entity';
 import { Call } from './call.entity';
 import { CallRecord } from './callRecords/callrecord.entity';
+import { OnlineMeetingModel } from './onlinemeeting.model';
+import { CloudCommunicationsModel } from './cloudcommunications.model';
+import { CallModel } from './call.model';
+import { CallRecordModel } from './callRecords/callrecord.model';
+import { OnlineMeetingCollection } from './onlinemeeting.collection';
+import { CloudCommunicationsCollection } from './cloudcommunications.collection';
+import { CallCollection } from './call.collection';
+import { CallRecordCollection } from './callRecords/callrecord.collection';
 //#endregion
 
 @Injectable()

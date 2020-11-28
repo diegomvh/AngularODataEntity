@@ -6,9 +6,9 @@ import { ConditionalAccessGrantControl } from './conditionalaccessgrantcontrol.e
 
 export interface ConditionalAccessGrantControls {
   //#region ODataApi Properties
-  operator?: string;
   builtInControls: ConditionalAccessGrantControl;
   customAuthenticationFactors: string[];
+  operator?: string;
   termsOfUse: string[];
   //#endregion
 }

@@ -2,12 +2,14 @@
 
 //#region ODataApi Imports
 import { DeviceConfiguration } from './deviceconfiguration.entity';
+import { DeviceConfigurationModel } from './deviceconfiguration.model';
+import { DeviceConfigurationCollection } from './deviceconfiguration.collection';
 //#endregion
 
 export interface MacOSCustomConfiguration extends DeviceConfiguration {
   //#region ODataApi Properties
-  payloadName: string;
-  payloadFileName?: string;
   payload: ArrayBuffer;
+  payloadFileName?: string;
+  payloadName: string;
   //#endregion
 }

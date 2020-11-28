@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { OnPremisesProvisioningError } from './onpremisesprovisioningerror.entity';
+import { OnPremisesProvisioningErrorModel } from './onpremisesprovisioningerror.model';
+import { OnPremisesProvisioningErrorCollection } from './onpremisesprovisioningerror.collection';
 //#endregion
 
 export const OnPremisesProvisioningErrorConfig = {
   name: "onPremisesProvisioningError",
+  model: OnPremisesProvisioningErrorModel,
+  collection: OnPremisesProvisioningErrorCollection,
   annotations: [],
   fields: {
-    value: {type: 'Edm.String'},
     category: {type: 'Edm.String'},
+    occurredDateTime: {type: 'Edm.DateTimeOffset'},
     propertyCausingError: {type: 'Edm.String'},
-    occurredDateTime: {type: 'Edm.DateTimeOffset'}
+    value: {type: 'Edm.String'}
   }
 } as EntityConfig<OnPremisesProvisioningError>;

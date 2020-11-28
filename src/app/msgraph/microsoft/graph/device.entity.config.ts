@@ -2,12 +2,16 @@
 
 //#region ODataApi Imports
 import { Device } from './device.entity';
+import { DeviceModel } from './device.model';
+import { DeviceCollection } from './device.collection';
 //#endregion
 
 export const DeviceConfig = {
   name: "device",
   base: "microsoft.graph.directoryObject",
   open: true,
+  model: DeviceModel,
+  collection: DeviceCollection,
   annotations: [],
   fields: {
     accountEnabled: {type: 'Edm.Boolean'},

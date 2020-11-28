@@ -37,11 +37,26 @@ export class CustomersService extends ODataEntityService<Customer> {
     super(client, 'Customers', 'NorthwindModel.Customer');
   }
 
+  //#region ODataApi Model
   customerModel(): CustomerModel<Customer> {
     return super.model() as CustomerModel<Customer>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   customerCollection(): CustomerCollection<Customer, CustomerModel<Customer>> {
     return super.collection() as CustomerCollection<Customer, CustomerModel<Customer>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public customerDemographics(entity: EntityKey<Customer>): ODataNavigationPropertyResource<CustomerDemographic> {
+    return this.entity(entity).navigationProperty<CustomerDemographic>('CustomerDemographics');
+  }
+  public orders(entity: EntityKey<Customer>): ODataNavigationPropertyResource<Order> {
+    return this.entity(entity).navigationProperty<Order>('Orders');
+  }
+  //#endregion
 }

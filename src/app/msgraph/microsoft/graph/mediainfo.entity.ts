@@ -5,7 +5,7 @@
 
 export interface MediaInfo {
   //#region ODataApi Properties
-  uri: string;
   resourceId?: string;
+  uri: string;
   //#endregion
 }

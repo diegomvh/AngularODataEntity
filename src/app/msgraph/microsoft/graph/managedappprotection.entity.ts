@@ -2,41 +2,43 @@
 
 //#region ODataApi Imports
 import { ManagedAppPolicy } from './managedapppolicy.entity';
+import { ManagedAppClipboardSharingLevel } from './managedappclipboardsharinglevel.enum';
 import { ManagedAppDataStorageLocation } from './managedappdatastoragelocation.enum';
 import { ManagedAppDataTransferLevel } from './managedappdatatransferlevel.enum';
-import { ManagedAppClipboardSharingLevel } from './managedappclipboardsharinglevel.enum';
 import { ManagedAppPinCharacterSet } from './managedapppincharacterset.enum';
 import { ManagedBrowserType } from './managedbrowsertype.enum';
+import { ManagedAppPolicyModel } from './managedapppolicy.model';
+import { ManagedAppPolicyCollection } from './managedapppolicy.collection';
 //#endregion
 
 export interface ManagedAppProtection extends ManagedAppPolicy {
   //#region ODataApi Properties
-  periodOfflineBeforeAccessCheck: Duration;
-  periodOnlineBeforeAccessCheck: Duration;
+  allowedDataStorageLocations: ManagedAppDataStorageLocation;
   allowedInboundDataTransferSources: ManagedAppDataTransferLevel;
-  allowedOutboundDataTransferDestinations: ManagedAppDataTransferLevel;
-  organizationalCredentialsRequired: boolean;
   allowedOutboundClipboardSharingLevel: ManagedAppClipboardSharingLevel;
+  allowedOutboundDataTransferDestinations: ManagedAppDataTransferLevel;
+  contactSyncBlocked: boolean;
   dataBackupBlocked: boolean;
   deviceComplianceRequired: boolean;
-  managedBrowserToOpenLinksRequired: boolean;
-  saveAsBlocked: boolean;
-  periodOfflineBeforeWipeIsEnforced: Duration;
-  pinRequired: boolean;
-  maximumPinRetries: number;
-  simplePinBlocked: boolean;
-  minimumPinLength: number;
-  pinCharacterSet: ManagedAppPinCharacterSet;
-  periodBeforePinReset: Duration;
-  allowedDataStorageLocations: ManagedAppDataStorageLocation;
-  contactSyncBlocked: boolean;
-  printBlocked: boolean;
-  fingerprintBlocked: boolean;
   disableAppPinIfDevicePinIsSet: boolean;
-  minimumRequiredOsVersion?: string;
-  minimumWarningOsVersion?: string;
-  minimumRequiredAppVersion?: string;
-  minimumWarningAppVersion?: string;
+  fingerprintBlocked: boolean;
   managedBrowser: ManagedBrowserType;
+  managedBrowserToOpenLinksRequired: boolean;
+  maximumPinRetries: number;
+  minimumPinLength: number;
+  minimumRequiredAppVersion?: string;
+  minimumRequiredOsVersion?: string;
+  minimumWarningAppVersion?: string;
+  minimumWarningOsVersion?: string;
+  organizationalCredentialsRequired: boolean;
+  periodBeforePinReset: Duration;
+  periodOfflineBeforeAccessCheck: Duration;
+  periodOfflineBeforeWipeIsEnforced: Duration;
+  periodOnlineBeforeAccessCheck: Duration;
+  pinCharacterSet: ManagedAppPinCharacterSet;
+  pinRequired: boolean;
+  printBlocked: boolean;
+  saveAsBlocked: boolean;
+  simplePinBlocked: boolean;
   //#endregion
 }

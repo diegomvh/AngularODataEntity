@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { MacOSCustomConfiguration } from './macoscustomconfiguration.entity';
+import { MacOSCustomConfigurationModel } from './macoscustomconfiguration.model';
+import { MacOSCustomConfigurationCollection } from './macoscustomconfiguration.collection';
 //#endregion
 
 export const MacOSCustomConfigurationConfig = {
   name: "macOSCustomConfiguration",
   base: "microsoft.graph.deviceConfiguration",
+  model: MacOSCustomConfigurationModel,
+  collection: MacOSCustomConfigurationCollection,
   annotations: [],
   fields: {
-    payloadName: {type: 'Edm.String', nullable: false},
+    payload: {type: 'Edm.Binary', nullable: false},
     payloadFileName: {type: 'Edm.String'},
-    payload: {type: 'Edm.Binary', nullable: false}
+    payloadName: {type: 'Edm.String', nullable: false}
   }
 } as EntityConfig<MacOSCustomConfiguration>;

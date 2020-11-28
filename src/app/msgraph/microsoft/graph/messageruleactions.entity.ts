@@ -3,20 +3,22 @@
 //#region ODataApi Imports
 import { Importance } from './importance.enum';
 import { Recipient } from './recipient.entity';
+import { RecipientModel } from './recipient.model';
+import { RecipientCollection } from './recipient.collection';
 //#endregion
 
 export interface MessageRuleActions {
   //#region ODataApi Properties
-  moveToFolder?: string;
+  assignCategories?: string[];
   copyToFolder?: string;
   delete?: boolean;
-  permanentDelete?: boolean;
+  forwardAsAttachmentTo?: Recipient[];
+  forwardTo?: Recipient[];
   markAsRead?: boolean;
   markImportance?: Importance;
-  forwardTo?: Recipient[];
-  forwardAsAttachmentTo?: Recipient[];
+  moveToFolder?: string;
+  permanentDelete?: boolean;
   redirectTo?: Recipient[];
-  assignCategories?: string[];
   stopProcessingRules?: boolean;
   //#endregion
 }

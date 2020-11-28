@@ -34,11 +34,23 @@ export class CategoriesService extends ODataEntityService<Category> {
     super(client, 'Categories', 'NorthwindModel.Category');
   }
 
+  //#region ODataApi Model
   categoryModel(): CategoryModel<Category> {
     return super.model() as CategoryModel<Category>;
   }
-  
+  //#endregion
+  //#region ODataApi Collection
   categoryCollection(): CategoryCollection<Category, CategoryModel<Category>> {
     return super.collection() as CategoryCollection<Category, CategoryModel<Category>>;
   }
+  //#endregion
+  //#region ODataApi Actions
+  //#endregion
+  //#region ODataApi Functions
+  //#endregion
+  //#region ODataApi Navigations
+  public products(entity: EntityKey<Category>): ODataNavigationPropertyResource<Product> {
+    return this.entity(entity).navigationProperty<Product>('Products');
+  }
+  //#endregion
 }

@@ -2,15 +2,19 @@
 
 //#region ODataApi Imports
 import { DeviceEnrollmentPlatformRestriction } from './deviceenrollmentplatformrestriction.entity';
+import { DeviceEnrollmentPlatformRestrictionModel } from './deviceenrollmentplatformrestriction.model';
+import { DeviceEnrollmentPlatformRestrictionCollection } from './deviceenrollmentplatformrestriction.collection';
 //#endregion
 
 export const DeviceEnrollmentPlatformRestrictionConfig = {
   name: "deviceEnrollmentPlatformRestriction",
+  model: DeviceEnrollmentPlatformRestrictionModel,
+  collection: DeviceEnrollmentPlatformRestrictionCollection,
   annotations: [],
   fields: {
-    platformBlocked: {type: 'Edm.Boolean', nullable: false},
-    personalDeviceEnrollmentBlocked: {type: 'Edm.Boolean', nullable: false},
+    osMaximumVersion: {type: 'Edm.String'},
     osMinimumVersion: {type: 'Edm.String'},
-    osMaximumVersion: {type: 'Edm.String'}
+    personalDeviceEnrollmentBlocked: {type: 'Edm.Boolean', nullable: false},
+    platformBlocked: {type: 'Edm.Boolean', nullable: false}
   }
 } as EntityConfig<DeviceEnrollmentPlatformRestriction>;

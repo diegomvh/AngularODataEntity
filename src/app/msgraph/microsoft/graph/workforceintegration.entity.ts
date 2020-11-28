@@ -4,15 +4,19 @@
 import { ChangeTrackedEntity } from './changetrackedentity.entity';
 import { WorkforceIntegrationSupportedEntities } from './workforceintegrationsupportedentities.enum';
 import { WorkforceIntegrationEncryption } from './workforceintegrationencryption.entity';
+import { WorkforceIntegrationEncryptionModel } from './workforceintegrationencryption.model';
+import { ChangeTrackedEntityModel } from './changetrackedentity.model';
+import { WorkforceIntegrationEncryptionCollection } from './workforceintegrationencryption.collection';
+import { ChangeTrackedEntityCollection } from './changetrackedentity.collection';
 //#endregion
 
 export interface WorkforceIntegration extends ChangeTrackedEntity {
   //#region ODataApi Properties
-  displayName?: string;
   apiVersion?: number;
+  displayName?: string;
   encryption?: WorkforceIntegrationEncryption;
   isActive?: boolean;
-  url?: string;
   supportedEntities?: WorkforceIntegrationSupportedEntities;
+  url?: string;
   //#endregion
 }

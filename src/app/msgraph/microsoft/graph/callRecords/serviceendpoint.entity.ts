@@ -2,6 +2,8 @@
 
 //#region ODataApi Imports
 import { Endpoint } from './endpoint.entity';
+import { EndpointModel } from './endpoint.model';
+import { EndpointCollection } from './endpoint.collection';
 //#endregion
 
 export interface ServiceEndpoint extends Endpoint {
