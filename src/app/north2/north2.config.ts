@@ -8,7 +8,7 @@ export const North2Config = {
   name: 'North2',
   serviceRootUrl: 'https://services.odata.org/V2/(S(hovbiiwxashh0qaz2p0p5go0))/OData/OData.svc/',
   version: '2.0',
-  creation: new Date('2020-09-10T09:05:44.5414553-03:00'),
+  creation: new Date('2020-11-28T09:26:53.6457538-03:00'),
   schemas: [
     ODataDemoSchema
   ],

@@ -20,7 +20,7 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Address } from './address.entity';
+import { Address } from './address.complex';
 import { Supplier } from './supplier.entity';
 import { AddressModel } from './address.model';
 import { SupplierModel } from './supplier.model';
@@ -36,12 +36,12 @@ export class SuppliersService extends ODataEntityService<Supplier> {
 
   //#region ODataApi Model
   supplierModel(): SupplierModel<Supplier> {
-    return super.model() as SupplierModel<Supplier>;
+    return this.entity().asModel() as SupplierModel<Supplier>;
   }
   //#endregion
   //#region ODataApi Collection
   supplierCollection(): SupplierCollection<Supplier, SupplierModel<Supplier>> {
-    return super.collection() as SupplierCollection<Supplier, SupplierModel<Supplier>>;
+    return this.entities().asCollection() as SupplierCollection<Supplier, SupplierModel<Supplier>>;
   }
   //#endregion
   //#region ODataApi Actions

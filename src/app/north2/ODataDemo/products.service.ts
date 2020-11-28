@@ -33,12 +33,12 @@ export class ProductsService extends ODataEntityService<Product> {
 
   //#region ODataApi Model
   productModel(): ProductModel<Product> {
-    return super.model() as ProductModel<Product>;
+    return this.entity().asModel() as ProductModel<Product>;
   }
   //#endregion
   //#region ODataApi Collection
   productCollection(): ProductCollection<Product, ProductModel<Product>> {
-    return super.collection() as ProductCollection<Product, ProductModel<Product>>;
+    return this.entities().asCollection() as ProductCollection<Product, ProductModel<Product>>;
   }
   //#endregion
   //#region ODataApi Actions

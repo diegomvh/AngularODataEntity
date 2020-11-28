@@ -1,7 +1,7 @@
 ﻿import { SchemaConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { AddressConfig } from './address.entity.config';
+import { AddressConfig } from './address.complex.config';
 import { ProductConfig } from './product.entity.config';
 import { CategoryConfig } from './category.entity.config';
 import { SupplierConfig } from './supplier.entity.config';
