@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 //#region ODataApi Imports
 import { LocationCollection } from './location.collection';
-import { AirportLocation } from './airportlocation.entity';
+import { AirportLocation } from './airportlocation.complex';
 import { AirportLocationModel } from './airportlocation.model';
 //#endregion
 

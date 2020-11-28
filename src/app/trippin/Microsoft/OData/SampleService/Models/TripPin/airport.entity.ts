@@ -1,7 +1,7 @@
 ﻿import { Duration } from 'angular-odata';
 
 //#region ODataApi Imports
-import { AirportLocation } from './airportlocation.entity';
+import { AirportLocation } from './airportlocation.complex';
 import { AirportLocationModel } from './airportlocation.model';
 import { AirportLocationCollection } from './airportlocation.collection';
 //#endregion

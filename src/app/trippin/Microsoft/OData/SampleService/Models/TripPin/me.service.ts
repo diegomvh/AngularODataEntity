@@ -21,7 +21,7 @@ import {
 
 //#region ODataApi Imports
 import { PersonGender } from './persongender.enum';
-import { Location } from './location.entity';
+import { Location } from './location.complex';
 import { Photo } from './photo.entity';
 import { Person } from './person.entity';
 import { Trip } from './trip.entity';

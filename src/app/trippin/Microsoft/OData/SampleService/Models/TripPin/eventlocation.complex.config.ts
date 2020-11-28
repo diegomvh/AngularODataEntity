@@ -1,7 +1,7 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { EventLocation } from './eventlocation.entity';
+import { EventLocation } from './eventlocation.complex';
 import { EventLocationModel } from './eventlocation.model';
 import { EventLocationCollection } from './eventlocation.collection';
 //#endregion
@@ -16,4 +16,4 @@ export const EventLocationConfig = {
   fields: {
     BuildingInfo: {type: 'Edm.String'}
   }
-} as EntityConfig<EventLocation>;
+} as StructuredTypeConfig<EventLocation>;

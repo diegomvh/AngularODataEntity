@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 //#region ODataApi Imports
 import { LocationModel } from './location.model';
-import { EventLocation } from './eventlocation.entity';
+import { EventLocation } from './eventlocation.complex';
 import { EventLocationCollection } from './eventlocation.collection';
 //#endregion
 

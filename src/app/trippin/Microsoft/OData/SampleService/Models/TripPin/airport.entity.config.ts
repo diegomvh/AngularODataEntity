@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Airport } from './airport.entity';
@@ -17,4 +17,4 @@ export const AirportConfig = {
     IataCode: {type: 'Edm.String', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Immutable","bool":true}]},
     Location: {type: 'Microsoft.OData.SampleService.Models.TripPin.AirportLocation', nullable: false}
   }
-} as EntityConfig<Airport>;
+} as StructuredTypeConfig<Airport>;

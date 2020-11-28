@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //#region ODataApi Imports
-import { City } from './city.entity';
-import { Location } from './location.entity';
+import { City } from './city.complex';
+import { Location } from './location.complex';
 import { CityModel } from './city.model';
 import { CityCollection } from './city.collection';
 import { LocationCollection } from './location.collection';

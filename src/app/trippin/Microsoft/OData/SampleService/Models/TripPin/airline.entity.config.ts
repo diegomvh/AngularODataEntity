@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Airline } from './airline.entity';
@@ -15,4 +15,4 @@ export const AirlineConfig = {
     AirlineCode: {type: 'Edm.String', key: true, ref: 'AirlineCode', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     Name: {type: 'Edm.String', nullable: false}
   }
-} as EntityConfig<Airline>;
+} as StructuredTypeConfig<Airline>;

@@ -1,4 +1,4 @@
-﻿import { ServiceConfig } from 'angular-odata';
+﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 //#endregion
@@ -25,4 +25,4 @@ export const AirlinesServiceConfig = {
     ]
   }
 ]
-} as ServiceConfig;
+} as EntitySetConfig;

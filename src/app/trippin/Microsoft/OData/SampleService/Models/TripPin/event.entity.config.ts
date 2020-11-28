@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Event } from './event.entity';
@@ -17,4 +17,4 @@ export const EventConfig = {
     Description: {type: 'Edm.String'},
     OccursAt: {type: 'Microsoft.OData.SampleService.Models.TripPin.EventLocation', nullable: false}
   }
-} as EntityConfig<Event>;
+} as StructuredTypeConfig<Event>;

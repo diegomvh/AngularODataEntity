@@ -1,7 +1,7 @@
 ﻿import { Duration } from 'angular-odata';
 
 //#region ODataApi Imports
-import { PublicTransportation, PublicTransportation as TripPinPublicTransportation } from './publictransportation.entity';
+import { PublicTransportation } from './publictransportation.entity';
 import { Airline } from './airline.entity';
 import { Airport } from './airport.entity';
 import { AirlineModel } from './airline.model';
@@ -12,7 +12,7 @@ import { AirportCollection } from './airport.collection';
 import { PublicTransportationCollection } from './publictransportation.collection';
 //#endregion
 
-export interface Flight extends TripPinPublicTransportation {
+export interface Flight extends PublicTransportation {
   //#region ODataApi Properties
   FlightNumber: string;
   From?: Airport;

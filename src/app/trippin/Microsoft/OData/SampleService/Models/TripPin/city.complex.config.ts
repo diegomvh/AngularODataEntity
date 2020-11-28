@@ -1,7 +1,7 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { City } from './city.entity';
+import { City } from './city.complex';
 import { CityModel } from './city.model';
 import { CityCollection } from './city.collection';
 //#endregion
@@ -16,4 +16,4 @@ export const CityConfig = {
     Name: {type: 'Edm.String', nullable: false},
     Region: {type: 'Edm.String', nullable: false}
   }
-} as EntityConfig<City>;
+} as StructuredTypeConfig<City>;

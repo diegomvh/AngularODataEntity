@@ -20,7 +20,7 @@ import {
 } from 'angular-odata';
 
 //#region ODataApi Imports
-import { AirportLocation } from './airportlocation.entity';
+import { AirportLocation } from './airportlocation.complex';
 import { Airport } from './airport.entity';
 import { AirportLocationModel } from './airportlocation.model';
 import { AirportModel } from './airport.model';

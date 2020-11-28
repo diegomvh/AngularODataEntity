@@ -1,4 +1,4 @@
-﻿import { ContainerConfig } from 'angular-odata';
+﻿import { EntityContainerConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { PhotosServiceConfig } from './photos.service.config';
@@ -79,4 +79,4 @@ export const DefaultContainerContainer = {
     AirportsServiceConfig,
     MeServiceConfig
   ]
-} as ContainerConfig;
+} as EntityContainerConfig;

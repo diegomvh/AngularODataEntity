@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { Trip } from './trip.entity';
@@ -23,4 +23,4 @@ export const TripConfig = {
     Photos: {type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', collection: true, navigation: true},
     PlanItems: {type: 'Microsoft.OData.SampleService.Models.TripPin.PlanItem', collection: true, navigation: true}
   }
-} as EntityConfig<Trip>;
+} as StructuredTypeConfig<Trip>;

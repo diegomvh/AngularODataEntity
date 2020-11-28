@@ -1,4 +1,4 @@
-﻿import { ServiceConfig } from 'angular-odata';
+﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 //#endregion
@@ -34,4 +34,4 @@ export const PeopleServiceConfig = {
     ]
   }
 ]
-} as ServiceConfig;
+} as EntitySetConfig;

@@ -2,10 +2,10 @@
 
 //#region ODataApi Imports
 import { PersonGenderConfig } from './persongender.enum.config';
-import { CityConfig } from './city.entity.config';
-import { LocationConfig } from './location.entity.config';
-import { EventLocationConfig } from './eventlocation.entity.config';
-import { AirportLocationConfig } from './airportlocation.entity.config';
+import { CityConfig } from './city.complex.config';
+import { LocationConfig } from './location.complex.config';
+import { EventLocationConfig } from './eventlocation.complex.config';
+import { AirportLocationConfig } from './airportlocation.complex.config';
 import { PhotoConfig } from './photo.entity.config';
 import { PersonConfig } from './person.entity.config';
 import { AirlineConfig } from './airline.entity.config';

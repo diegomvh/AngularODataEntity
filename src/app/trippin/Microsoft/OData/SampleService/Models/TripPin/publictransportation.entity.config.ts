@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { PublicTransportation } from './publictransportation.entity';
@@ -15,4 +15,4 @@ export const PublicTransportationConfig = {
   fields: {
     SeatNumber: {type: 'Edm.String'}
   }
-} as EntityConfig<PublicTransportation>;
+} as StructuredTypeConfig<PublicTransportation>;

@@ -1,7 +1,7 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { AirportLocation } from './airportlocation.entity';
+import { AirportLocation } from './airportlocation.complex';
 import { AirportLocationModel } from './airportlocation.model';
 import { AirportLocationCollection } from './airportlocation.collection';
 //#endregion
@@ -16,4 +16,4 @@ export const AirportLocationConfig = {
   fields: {
     Loc: {type: 'Edm.GeographyPoint', nullable: false, srid: '4326'}
   }
-} as EntityConfig<AirportLocation>;
+} as StructuredTypeConfig<AirportLocation>;

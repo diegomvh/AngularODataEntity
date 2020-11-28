@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //#region ODataApi Imports
-import { AirportLocation } from './airportlocation.entity';
+import { AirportLocation } from './airportlocation.complex';
 import { Airport } from './airport.entity';
 import { AirportLocationModel } from './airportlocation.model';
 import { AirportLocationCollection } from './airportlocation.collection';

@@ -1,4 +1,4 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
 import { PlanItem } from './planitem.entity';
@@ -18,4 +18,4 @@ export const PlanItemConfig = {
     EndsAt: {type: 'Edm.DateTimeOffset'},
     Duration: {type: 'Edm.Duration'}
   }
-} as EntityConfig<PlanItem>;
+} as StructuredTypeConfig<PlanItem>;

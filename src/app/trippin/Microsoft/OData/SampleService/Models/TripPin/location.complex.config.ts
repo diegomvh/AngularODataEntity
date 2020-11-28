@@ -1,7 +1,7 @@
-﻿import { EntityConfig } from 'angular-odata';
+﻿import { StructuredTypeConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { Location } from './location.entity';
+import { Location } from './location.complex';
 import { LocationModel } from './location.model';
 import { LocationCollection } from './location.collection';
 //#endregion
@@ -16,4 +16,4 @@ export const LocationConfig = {
     Address: {type: 'Edm.String', nullable: false},
     City: {type: 'Microsoft.OData.SampleService.Models.TripPin.City', nullable: false}
   }
-} as EntityConfig<Location>;
+} as StructuredTypeConfig<Location>;
