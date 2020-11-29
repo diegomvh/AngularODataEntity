@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ODataModule } from 'angular-odata';
+import { ODataCacheLocalStorage, ODataModule } from 'angular-odata';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
@@ -46,6 +46,10 @@ import { EmployeesComponent } from './components/northwind/employees.component';
       // TripPin
       Object.assign(TripPinConfig, {
         serviceRootUrl: 'http://localhost:4200/trippin/',
+        cache: {
+          maxAge: 600000,
+          storage: new ODataCacheLocalStorage("TripPin", localStorage)
+        },
         options: {
           metadata: 'full',
           stringAsEnum: true
@@ -71,6 +75,9 @@ import { EmployeesComponent } from './components/northwind/employees.component';
       }),
       // Northwind version 4
       Object.assign(NorthwindConfig, {
+        cache: {
+          maxAge: 600000
+        },
         options: {
           ieee754Compatible: true
         }

@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient } from 'angular-odata';
 import { PeopleService, Airport, Person, PersonGender, Photo } from './trippin';
 import { OrdersService } from './northwind';
-import { switchMap, switchMapTo } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin';
 import { ProductsService } from './north3';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
