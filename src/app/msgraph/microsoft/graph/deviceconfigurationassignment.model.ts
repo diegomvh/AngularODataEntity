@@ -14,7 +14,7 @@ import { DeviceConfigurationAssignmentCollection } from './deviceconfigurationas
 
 export class DeviceConfigurationAssignmentModel<E extends DeviceConfigurationAssignment> extends EntityModel<E> {
   //#region ODataApi Properties
-  target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
+  _target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

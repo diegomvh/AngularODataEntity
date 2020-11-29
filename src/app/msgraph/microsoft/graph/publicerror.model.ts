@@ -20,7 +20,7 @@ export class PublicErrorModel<E extends PublicError> extends ODataModel<E> {
   details?: PublicErrorDetailCollection<PublicErrorDetail, PublicErrorDetailModel<PublicErrorDetail>>;
   innerError?: PublicInnerErrorModel<PublicInnerError>;
   message?: string;
-  target?: string;
+  _target?: string;
   //#endregion
   //#region ODataApi Actions
   //#endregion

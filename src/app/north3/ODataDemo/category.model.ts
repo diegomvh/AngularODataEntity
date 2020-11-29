@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //#region ODataApi Imports
+import { Product } from './product.entity';
 import { Category } from './category.entity';
+import { ProductModel } from './product.model';
+import { ProductCollection } from './product.collection';
 import { CategoryCollection } from './category.collection';
 //#endregion
 

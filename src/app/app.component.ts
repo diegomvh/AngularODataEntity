@@ -19,7 +19,7 @@ export class AppComponent {
     private api: DefaultContainerService,
     private people: PeopleService,
     private products: ProductsService,
-    private orders: OrdersService 
+    private orders: OrdersService
   ) {
     //this.nort2();
     //this.nort3();
@@ -29,11 +29,11 @@ export class AppComponent {
 
   //#region APIs
   nort2() {
-    this.products.entities().get({withCount: true, config: "North2"}).subscribe(console.log);
+    this.products.entities().get({withCount: true, apiName: "North2"}).subscribe(console.log);
   }
 
   nort3() {
-    this.products.entities().get({withCount: true, config: "North3"}).subscribe(console.log);
+    this.products.entities().get({withCount: true, apiName: "North3"}).subscribe(console.log);
   }
 
   trippin() {
@@ -105,9 +105,9 @@ export class AppComponent {
 
     // Expand (inmutable resource)
     people.expand({
-      Friends: { 
-        expand: { Friends: { select: ['AddressInfo']}} 
-      }, 
+      Friends: {
+        expand: { Friends: { select: ['AddressInfo']}}
+      },
       Trips: { select: ['Name', 'Tags'] },
     })
     .get({withCount: true})
@@ -121,11 +121,11 @@ export class AppComponent {
     // Create service without Type for Person entity
     let peopleService = this.factory.entity<Person>("People");
     let person = peopleService.entity("scottketchum");
-    person.get({config: 'TripPin'}).subscribe(({entity, meta}) => console.log(meta.property('Emails')));
+    person.get({apiName: 'TripPin'}).subscribe(({entity, meta}) => console.log(meta.property('Emails')));
 
     let friends = person.navigationProperty<Person>("Friends");
     // Use TripPin config
-    friends.get({responseType: 'entities', config: 'TripPin'}).subscribe(console.log);
+    friends.get({responseType: 'entities', apiName: 'TripPin'}).subscribe(console.log);
   }
 
   property() {
@@ -165,12 +165,12 @@ export class AppComponent {
   }
 
   createPerson() {
-    const odata = this.people.apiConfig.options.helper;
+    const odata = this.people.api.options.helper;
     // Use Person Service
     this.people.create({
-      Emails: ['some@email.com'], 
-      UserName: 'diegomvh', 
-      Gender: PersonGender.Male, 
+      Emails: ['some@email.com'],
+      UserName: 'diegomvh',
+      Gender: PersonGender.Male,
       FirstName: 'Diego',
       LastName: 'van Haaster'
     }).pipe(

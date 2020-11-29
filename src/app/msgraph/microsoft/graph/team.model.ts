@@ -74,7 +74,7 @@ export class TeamModel<E extends Team> extends EntityModel<E> {
     res.segment.entitySet('teams');
     return res.call({shouldSetSpoSiteReadOnlyForMembers}, 'property', options) as Observable<any>;
   }
-  public clone(displayName: string, description: string, mailNickname: string, classification: string, visibility: TeamVisibilityType, partsToClone: ClonableTeamParts, options?: HttpOptions): Observable<any> {
+  public _clone(displayName: string, description: string, mailNickname: string, classification: string, visibility: TeamVisibilityType, partsToClone: ClonableTeamParts, options?: HttpOptions): Observable<any> {
     var res = this._action<{displayName: string, description: string, mailNickname: string, classification: string, visibility: TeamVisibilityType, partsToClone: ClonableTeamParts}, any>('microsoft.graph.clone');
     res.segment.entitySet('teams');
     return res.call({displayName, description, mailNickname, classification, visibility, partsToClone}, 'property', options) as Observable<any>;

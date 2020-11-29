@@ -5,9 +5,12 @@ import { map } from 'rxjs/operators';
 
 //#region ODataApi Imports
 import { Address } from './address.complex';
+import { Product } from './product.entity';
 import { Supplier } from './supplier.entity';
 import { AddressModel } from './address.model';
+import { ProductModel } from './product.model';
 import { AddressCollection } from './address.collection';
+import { ProductCollection } from './product.collection';
 import { SupplierCollection } from './supplier.collection';
 //#endregion
 

@@ -16,7 +16,7 @@ import { ManagedEBookAssignmentCollection } from './managedebookassignment.colle
 export class ManagedEBookAssignmentModel<E extends ManagedEBookAssignment> extends EntityModel<E> {
   //#region ODataApi Properties
   installIntent: InstallIntent;
-  target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
+  _target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

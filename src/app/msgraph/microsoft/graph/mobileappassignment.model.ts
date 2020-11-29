@@ -20,7 +20,7 @@ export class MobileAppAssignmentModel<E extends MobileAppAssignment> extends Ent
   //#region ODataApi Properties
   intent: InstallIntent;
   settings?: MobileAppAssignmentSettingsModel<MobileAppAssignmentSettings>;
-  target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
+  _target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

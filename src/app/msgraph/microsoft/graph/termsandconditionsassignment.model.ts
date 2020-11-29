@@ -14,7 +14,7 @@ import { TermsAndConditionsAssignmentCollection } from './termsandconditionsassi
 
 export class TermsAndConditionsAssignmentModel<E extends TermsAndConditionsAssignment> extends EntityModel<E> {
   //#region ODataApi Properties
-  target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
+  _target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

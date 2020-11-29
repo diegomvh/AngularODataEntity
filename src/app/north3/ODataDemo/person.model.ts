@@ -5,7 +5,10 @@ import { map } from 'rxjs/operators';
 
 //#region ODataApi Imports
 import { Person } from './person.entity';
+import { PersonDetail } from './persondetail.entity';
+import { PersonDetailModel } from './persondetail.model';
 import { PersonCollection } from './person.collection';
+import { PersonDetailCollection } from './persondetail.collection';
 //#endregion
 
 export class PersonModel<E extends Person> extends ODataModel<E> {

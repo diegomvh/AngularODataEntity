@@ -14,7 +14,7 @@ import { DeviceCompliancePolicyAssignmentCollection } from './devicecompliancepo
 
 export class DeviceCompliancePolicyAssignmentModel<E extends DeviceCompliancePolicyAssignment> extends EntityModel<E> {
   //#region ODataApi Properties
-  target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
+  _target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

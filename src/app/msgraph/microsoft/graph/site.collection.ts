@@ -8,7 +8,6 @@ import { BaseItemCollection } from './baseitem.collection';
 import { SharepointIds } from './sharepointids.complex';
 import { Root } from './root.complex';
 import { PublicError } from './publicerror.complex';
-import { SiteCollection } from './sitecollection.complex';
 import { BaseItem } from './baseitem.entity';
 import { Drive } from './drive.entity';
 import { Site } from './site.entity';
@@ -46,12 +45,12 @@ import { ItemActivityStatCollection } from './itemactivitystat.collection';
 
 export class SiteCollection<E extends Site, M extends SiteModel<E>> extends BaseItemCollection<E, M> {
   //#region ODataApi Actions
-  public add(value: Site[], options?: HttpOptions): Observable<SiteCollection<Site, SiteModel<Site>>> {
+  public _add(value: Site[], options?: HttpOptions): Observable<SiteCollection<Site, SiteModel<Site>>> {
     var res = this._action<{value: Site[]}, Site>('microsoft.graph.add');
     res.segment.entitySet('sites');
     return res.call({value}, 'collection', options) as Observable<SiteCollection<Site, SiteModel<Site>>>;
   }
-  public remove(value: Site[], options?: HttpOptions): Observable<SiteCollection<Site, SiteModel<Site>>> {
+  public _remove(value: Site[], options?: HttpOptions): Observable<SiteCollection<Site, SiteModel<Site>>> {
     var res = this._action<{value: Site[]}, Site>('microsoft.graph.remove');
     res.segment.entitySet('sites');
     return res.call({value}, 'collection', options) as Observable<SiteCollection<Site, SiteModel<Site>>>;

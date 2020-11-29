@@ -14,7 +14,7 @@ import { ManagedDeviceMobileAppConfigurationAssignmentCollection } from './manag
 
 export class ManagedDeviceMobileAppConfigurationAssignmentModel<E extends ManagedDeviceMobileAppConfigurationAssignment> extends EntityModel<E> {
   //#region ODataApi Properties
-  target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
+  _target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

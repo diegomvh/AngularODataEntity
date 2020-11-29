@@ -5,7 +5,13 @@ import { map } from 'rxjs/operators';
 
 //#region ODataApi Imports
 import { Product } from './product.entity';
+import { Category } from './category.entity';
+import { Supplier } from './supplier.entity';
+import { CategoryModel } from './category.model';
+import { SupplierModel } from './supplier.model';
 import { ProductCollection } from './product.collection';
+import { CategoryCollection } from './category.collection';
+import { SupplierCollection } from './supplier.collection';
 //#endregion
 
 export class ProductModel<E extends Product> extends ODataModel<E> {

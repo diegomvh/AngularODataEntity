@@ -16,7 +16,7 @@ export class PublicInnerErrorModel<E extends PublicInnerError> extends ODataMode
   code?: string;
   details?: PublicErrorDetailCollection<PublicErrorDetail, PublicErrorDetailModel<PublicErrorDetail>>;
   message?: string;
-  target?: string;
+  _target?: string;
   //#endregion
   //#region ODataApi Actions
   //#endregion

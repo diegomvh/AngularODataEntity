@@ -3,12 +3,12 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { 
+import {
   ODataClient,
-  ODataEntityService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntityService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -52,8 +52,8 @@ export class SitesService extends ODataEntityService<Site> {
   }
   //#endregion
   //#region ODataApi Collection
-  siteCollection(): SiteCollection<Site, SiteModel<Site>> {
-    return this.entities().asCollection() as SiteCollection<Site, SiteModel<Site>>;
+  siteCollection(): EcstaticLovelace<Site, SiteModel<Site>> {
+    return this.entities().asCollection() as EcstaticLovelace<Site, SiteModel<Site>>;
   }
   //#endregion
   //#region ODataApi Actions

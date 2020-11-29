@@ -12,7 +12,7 @@ export class PublicErrorDetailModel<E extends PublicErrorDetail> extends ODataMo
   //#region ODataApi Properties
   code?: string;
   message?: string;
-  target?: string;
+  _target?: string;
   //#endregion
   //#region ODataApi Actions
   //#endregion

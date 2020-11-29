@@ -14,7 +14,7 @@ import { TargetedManagedAppPolicyAssignmentCollection } from './targetedmanageda
 
 export class TargetedManagedAppPolicyAssignmentModel<E extends TargetedManagedAppPolicyAssignment> extends EntityModel<E> {
   //#region ODataApi Properties
-  target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
+  _target?: DeviceAndAppManagementAssignmentTargetModel<DeviceAndAppManagementAssignmentTarget>;
   //#endregion
   //#region ODataApi Actions
   //#endregion
