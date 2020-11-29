@@ -38,9 +38,9 @@ export class AppComponent {
 
   trippin() {
     this.api.resetDataSource().call(null).subscribe(() => {
-      //this.queries();
+      this.queries();
       //this.mutate();
-      this.trippinModels();
+      //this.trippinModels();
     });
   }
 
@@ -115,6 +115,12 @@ export class AppComponent {
 
     console.log(people.toJSON());
     console.log(this.odata.fromJSON(people.toJSON()));
+
+    this.odata.batch("TripPin").post(batch => {
+      console.log(batch);
+      people.get().subscribe(console.log);
+      airports.get().subscribe(console.log);
+    }).subscribe();
   }
 
   navigation() {
