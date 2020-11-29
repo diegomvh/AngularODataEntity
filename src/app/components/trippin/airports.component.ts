@@ -29,7 +29,7 @@ import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odat
     </ng-template>
 </p-table>`,
 })
-export class AirportsComponent implements OnInit {
+export class AirportsComponent {
   rows: Airport[];
   cols: any[];
 
@@ -44,15 +44,11 @@ export class AirportsComponent implements OnInit {
     private airports: AirportsService
   ) {
     this.resource = this.airports.entities();
-    // Try toJSON, fromJSON
-    this.resource = this.client.fromJSON<ODataEntitySetResource<Airport>>(this.resource.toJSON());
-  }
-
-  ngOnInit() {
     this.cols = this.resource.schema.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
-    this.loading = true;
+    // Try toJSON, fromJSON
+    this.resource = this.client.fromJSON<ODataEntitySetResource<Airport>>(this.resource.toJSON());
   }
 
   fetch(resource: ODataEntitySetResource<Airport>) {

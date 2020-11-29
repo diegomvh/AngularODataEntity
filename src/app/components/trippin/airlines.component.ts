@@ -28,7 +28,7 @@ import { ODataEntitySetResource, ODataClient, Alias } from 'angular-odata';
     </ng-template>
 </p-table>`,
 })
-export class AirlinesComponent implements OnInit {
+export class AirlinesComponent {
   rows: Airline[];
   cols: any[];
 
@@ -44,21 +44,18 @@ export class AirlinesComponent implements OnInit {
     private airlines: AirlinesService
   ) {
     this.resource = this.airlines.entities();
+    this.cols = this.resource.schema.fields()
+      .filter(f => !f.navigation)
+      .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
     // Try toJSON, fromJSON
     this.resource = this.client.fromJSON<ODataEntitySetResource<Airline>>(this.resource.toJSON());
     this.alias = this.resource.alias("alias");
   }
 
-  ngOnInit() {
-    this.cols = this.resource.schema.fields()
-      .filter(f => !f.navigation)
-      .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
-    this.loading = true;
-  }
-
   fetch(resource: ODataEntitySetResource<Airline>) {
     this.loading = true;
-    resource.get({withCount: true}).subscribe(({entities, meta}) => {
+    resource
+      .get({withCount: true}).subscribe(({entities, meta}) => {
       this.rows = entities;
       if (!this.total)
         this.total = meta.count;

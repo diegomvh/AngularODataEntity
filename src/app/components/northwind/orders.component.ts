@@ -28,7 +28,7 @@ import { Order, OrdersService } from 'src/app/northwind';
     </ng-template>
 </p-table>`,
 })
-export class OrdersComponent implements OnInit {
+export class OrdersComponent {
   rows: Order[];
   cols: any[];
 
@@ -42,13 +42,9 @@ export class OrdersComponent implements OnInit {
     private orders: OrdersService
   ) {
     this.resource = this.orders.entities().top(this.size);
-  }
-
-  ngOnInit() {
     this.cols = this.resource.schema.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
-    this.loading = true;
   }
 
   fetch(resource: ODataEntitySetResource<Order>) {

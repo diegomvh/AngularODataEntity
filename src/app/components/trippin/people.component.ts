@@ -33,7 +33,7 @@ import { config } from 'rxjs';
 </p-table>
 <trip-person #person></trip-person>`,
 })
-export class PeopleComponent implements OnInit {
+export class PeopleComponent {
   Gender = PersonGender;
   rows: Person[];
   cols: any[];
@@ -51,15 +51,11 @@ export class PeopleComponent implements OnInit {
     private people: PeopleService
   ) {
     this.resource = this.people.entities();
-    // Try toJSON, fromJSON
-    this.resource = this.client.fromJSON<ODataEntitySetResource<Person>>(this.resource.toJSON());
-  }
-
-  ngOnInit() {
     this.cols = this.resource.schema.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
-    this.loading = true;
+    // Try toJSON, fromJSON
+    this.resource = this.client.fromJSON<ODataEntitySetResource<Person>>(this.resource.toJSON());
   }
 
   fetch(resource: ODataEntitySetResource<Person>) {

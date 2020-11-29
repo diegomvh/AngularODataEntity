@@ -28,7 +28,7 @@ import { Category, CategoriesService } from 'src/app/northwind';
     </ng-template>
 </p-table>`,
 })
-export class CategoriesComponent implements OnInit {
+export class CategoriesComponent {
   rows: Category[];
   cols: any[];
 
@@ -42,13 +42,9 @@ export class CategoriesComponent implements OnInit {
     private categories: CategoriesService
   ) {
     this.resource = this.categories.entities().top(this.size);
-  }
-
-  ngOnInit() {
     this.cols = this.resource.schema.fields()
       .filter(f => !f.navigation)
       .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
-    this.loading = true;
   }
 
   fetch(resource: ODataEntitySetResource<Category>) {
