@@ -30,14 +30,14 @@ import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odat
 </p-table>`,
 })
 export class AirportsComponent {
-  rows: Airport[];
+  rows!: Airport[];
   cols: any[];
 
-  total: number;
-  size: number;
+  total!: number;
+  size!: number;
 
   resource: ODataEntitySetResource<Airport>;
-  loading: boolean;
+  loading: boolean = false;
 
   constructor(
     private client: ODataClient,

@@ -29,14 +29,14 @@ import { ODataEntitySetResource, ODataClient, Alias } from 'angular-odata';
 </p-table>`,
 })
 export class AirlinesComponent {
-  rows: Airline[];
+  rows!: Airline[];
   cols: any[];
 
-  total: number;
-  size: number;
+  total!: number;
+  size!: number;
 
   resource: ODataEntitySetResource<Airline>;
-  loading: boolean;
+  loading: boolean = false;
   alias: Alias;
 
   constructor(

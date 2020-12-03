@@ -29,14 +29,14 @@ import { Category, CategoriesService } from 'src/app/northwind';
 </p-table>`,
 })
 export class CategoriesComponent {
-  rows: Category[];
+  rows!: Category[];
   cols: any[];
 
-  total: number;
+  total!: number;
   size: number = 6;
 
   resource: ODataEntitySetResource<Category>;
-  loading: boolean;
+  loading: boolean = false;
 
   constructor(
     private categories: CategoriesService

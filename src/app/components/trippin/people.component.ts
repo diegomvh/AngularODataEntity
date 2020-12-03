@@ -35,14 +35,14 @@ import { config } from 'rxjs';
 })
 export class PeopleComponent {
   Gender = PersonGender;
-  rows: Person[];
+  rows!: Person[];
   cols: any[];
 
-  total: number;
-  size: number;
+  total!: number;
+  size!: number;
 
   resource: ODataEntitySetResource<Person>;
-  loading: boolean;
+  loading: boolean = false;
 
   @ViewChild('person') person: PersonComponent;
 

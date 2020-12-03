@@ -29,14 +29,14 @@ import { Product, ProductsService } from 'src/app/northwind';
 </p-table>`,
 })
 export class ProductsComponent {
-  rows: Product[];
+  rows!: Product[];
   cols: any[];
 
-  total: number;
+  total!: number;
   size: number = 6;
 
   resource: ODataEntitySetResource<Product>;
-  loading: boolean;
+  loading: boolean = false;
 
   constructor(
     private products: ProductsService

@@ -29,14 +29,14 @@ import { Employee, EmployeesService } from 'src/app/northwind';
 </p-table>`,
 })
 export class EmployeesComponent {
-  rows: Employee[];
+  rows!: Employee[];
   cols: any[];
 
-  total: number;
+  total!: number;
   size: number = 6;
 
   resource: ODataEntitySetResource<Employee>;
-  loading: boolean;
+  loading: boolean = false;
 
   constructor(
     private employees: EmployeesService

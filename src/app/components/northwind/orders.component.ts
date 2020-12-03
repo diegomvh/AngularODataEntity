@@ -29,14 +29,14 @@ import { Order, OrdersService } from 'src/app/northwind';
 </p-table>`,
 })
 export class OrdersComponent {
-  rows: Order[];
+  rows!: Order[];
   cols: any[];
 
-  total: number;
+  total!: number;
   size: number = 6;
 
   resource: ODataEntitySetResource<Order>;
-  loading: boolean;
+  loading: boolean = false;
 
   constructor(
     private orders: OrdersService

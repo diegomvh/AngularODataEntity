@@ -30,14 +30,14 @@ import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odat
 </p-table>`,
 })
 export class ArticlesComponent {
-  rows: Article[];
+  rows!: Article[];
   cols: any[];
 
-  total: number;
-  size: number;
+  total!: number;
+  size!: number;
 
   resource: ODataEntitySetResource<Article>;
-  loading: boolean;
+  loading: boolean = false;
 
   constructor(
     private client: ODataClient,
@@ -75,7 +75,7 @@ export class ArticlesComponent {
     this.fetch(this.resource);
   }
 
-  loadArticlesLazy(event) {
+  loadArticlesLazy(event: any) {
     //Pagination
     let resource = this.resource.skip(event.first).top(event.rows);
     //Ordering
