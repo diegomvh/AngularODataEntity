@@ -16,12 +16,12 @@ import { PersonDetailCollection } from './persondetail.collection';
 
 export class PersonDetailModel<E extends PersonDetail> extends ODataModel<E> {
   //#region ODataApi Properties
-  PersonID: number;
-  Age: number;
-  Gender: boolean;
+  PersonID!: number;
+  Age!: number;
+  Gender!: boolean;
   Phone?: string;
   Address?: AddressModel<Address>;
-  Photo: any;
+  Photo!: any;
   Person?: PersonModel<Person>;
   //#endregion
   //#region ODataApi Actions

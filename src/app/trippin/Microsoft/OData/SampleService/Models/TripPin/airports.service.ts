@@ -35,13 +35,13 @@ export class AirportsService extends ODataEntityService<Airport> {
   }
 
   //#region ODataApi Model
-  airportModel(): AirportModel<Airport> {
-    return this.entity().asModel() as AirportModel<Airport>;
+  airportModel(attrs?: Partial<Airport>): AirportModel<Airport> {
+    return this.entity().asModel(attrs || {}) as AirportModel<Airport>;
   }
   //#endregion
   //#region ODataApi Collection
-  airportCollection(): AirportCollection<Airport, AirportModel<Airport>> {
-    return this.entities().asCollection() as AirportCollection<Airport, AirportModel<Airport>>;
+  airportCollection(models?: Partial<Airport>[]): AirportCollection<Airport, AirportModel<Airport>> {
+    return this.entities().asCollection(models || []) as AirportCollection<Airport, AirportModel<Airport>>;
   }
   //#endregion
   //#region ODataApi Actions

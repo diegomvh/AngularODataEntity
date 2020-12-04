@@ -10,19 +10,19 @@ import { FlashCollection } from './flash.collection';
 
 export class FlashModel<E extends Flash> extends ODataModel<E> {
   //#region ODataApi Properties
-  UniqueId: string;
+  UniqueId!: string;
   Title?: string;
-  ReleaseTime: Date;
+  ReleaseTime!: Date;
   Description?: string;
   LeadText?: string;
   Url?: string;
   MetaDescription?: string;
   Language?: string;
-  Version: number;
-  SortOrder: number;
+  Version!: number;
+  SortOrder!: number;
   ItemNameLowerCase?: string;
-  Updated: Date;
-  Created: Date;
+  Updated!: Date;
+  Created!: Date;
   //#endregion
   //#region ODataApi Actions
   //#endregion

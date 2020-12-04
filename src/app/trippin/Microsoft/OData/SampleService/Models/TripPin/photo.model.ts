@@ -10,7 +10,7 @@ import { PhotoCollection } from './photo.collection';
 
 export class PhotoModel<E extends Photo> extends ODataModel<E> {
   //#region ODataApi Properties
-  Id: number;
+  Id!: number;
   Name?: string;
   //#endregion
   //#region ODataApi Actions

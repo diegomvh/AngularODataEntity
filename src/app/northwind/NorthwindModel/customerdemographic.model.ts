@@ -13,7 +13,7 @@ import { CustomerCollection } from './customer.collection';
 
 export class CustomerDemographicModel<E extends CustomerDemographic> extends ODataModel<E> {
   //#region ODataApi Properties
-  CustomerTypeID: string;
+  CustomerTypeID!: string;
   CustomerDesc?: string;
   Customers?: CustomerCollection<Customer, CustomerModel<Customer>>;
   //#endregion

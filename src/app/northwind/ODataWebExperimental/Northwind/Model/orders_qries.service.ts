@@ -32,13 +32,13 @@ export class OrdersQriesService extends ODataEntityService<OrdersQry> {
   }
 
   //#region ODataApi Model
-  ordersQryModel(): OrdersQryModel<OrdersQry> {
-    return this.entity().asModel() as OrdersQryModel<OrdersQry>;
+  ordersQryModel(attrs?: Partial<OrdersQry>): OrdersQryModel<OrdersQry> {
+    return this.entity().asModel(attrs || {}) as OrdersQryModel<OrdersQry>;
   }
   //#endregion
   //#region ODataApi Collection
-  ordersQryCollection(): OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>> {
-    return this.entities().asCollection() as OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>>;
+  ordersQryCollection(models?: Partial<OrdersQry>[]): OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>> {
+    return this.entities().asCollection(models || []) as OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>>;
   }
   //#endregion
   //#region ODataApi Actions

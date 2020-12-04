@@ -13,8 +13,8 @@ import { TerritoryCollection } from './territory.collection';
 
 export class RegionModel<E extends Region> extends ODataModel<E> {
   //#region ODataApi Properties
-  RegionID: number;
-  RegionDescription: string;
+  RegionID!: number;
+  RegionDescription!: string;
   Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
   //#endregion
   //#region ODataApi Actions

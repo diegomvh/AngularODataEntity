@@ -32,13 +32,13 @@ export class PersonsService extends ODataEntityService<Person> {
   }
 
   //#region ODataApi Model
-  personModel(): PersonModel<Person> {
-    return this.entity().asModel() as PersonModel<Person>;
+  personModel(attrs?: Partial<Person>): PersonModel<Person> {
+    return this.entity().asModel(attrs || {}) as PersonModel<Person>;
   }
   //#endregion
   //#region ODataApi Collection
-  personCollection(): PersonCollection<Person, PersonModel<Person>> {
-    return this.entities().asCollection() as PersonCollection<Person, PersonModel<Person>>;
+  personCollection(models?: Partial<Person>[]): PersonCollection<Person, PersonModel<Person>> {
+    return this.entities().asCollection(models || []) as PersonCollection<Person, PersonModel<Person>>;
   }
   //#endregion
   //#region ODataApi Actions

@@ -13,7 +13,7 @@ import { VacancyCollection } from './vacancy.collection';
 
 export class VacancyModel<E extends Vacancy> extends ODataModel<E> {
   //#region ODataApi Properties
-  UniqueId: string;
+  UniqueId!: string;
   Title?: string;
   Url?: string;
   MetaDescription?: string;
@@ -27,8 +27,8 @@ export class VacancyModel<E extends Vacancy> extends ODataModel<E> {
   YourProfile?: string;
   TermsOfEmployment?: string;
   MoreInformation?: string;
-  PublicationDate: Date;
-  ClosingDate: Date;
+  PublicationDate!: Date;
+  ClosingDate!: Date;
   Engagement?: string;
   VacancyCategory?: string[];
   HoursPerWeek?: string;
@@ -39,11 +39,11 @@ export class VacancyModel<E extends Vacancy> extends ODataModel<E> {
   Downloads?: LinkListModel<LinkList>;
   Links?: LinkListModel<LinkList>;
   Language?: string;
-  Version: number;
-  SortOrder: number;
+  Version!: number;
+  SortOrder!: number;
   ItemNameLowerCase?: string;
-  Updated: Date;
-  Created: Date;
+  Updated!: Date;
+  Created!: Date;
   Permalink?: string;
   //#endregion
   //#region ODataApi Actions

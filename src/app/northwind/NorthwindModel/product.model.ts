@@ -19,8 +19,8 @@ import { SupplierCollection } from './supplier.collection';
 
 export class ProductModel<E extends Product> extends ODataModel<E> {
   //#region ODataApi Properties
-  ProductID: number;
-  ProductName: string;
+  ProductID!: number;
+  ProductName!: string;
   SupplierID?: number;
   CategoryID?: number;
   QuantityPerUnit?: string;
@@ -28,7 +28,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   UnitsInStock?: number;
   UnitsOnOrder?: number;
   ReorderLevel?: number;
-  Discontinued: boolean;
+  Discontinued!: boolean;
   Category?: CategoryModel<Category>;
   Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
   Supplier?: SupplierModel<Supplier>;

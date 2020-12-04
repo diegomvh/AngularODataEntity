@@ -13,7 +13,7 @@ import { ProductDetailCollection } from './productdetail.collection';
 
 export class ProductDetailModel<E extends ProductDetail> extends ODataModel<E> {
   //#region ODataApi Properties
-  ProductID: number;
+  ProductID!: number;
   Details?: string;
   Product?: ProductModel<Product>;
   //#endregion

@@ -13,7 +13,7 @@ import { PersonDetailCollection } from './persondetail.collection';
 
 export class PersonModel<E extends Person> extends ODataModel<E> {
   //#region ODataApi Properties
-  ID: number;
+  ID!: number;
   Name?: string;
   PersonDetail?: PersonDetailModel<PersonDetail>;
   //#endregion

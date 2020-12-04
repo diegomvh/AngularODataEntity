@@ -16,10 +16,10 @@ import { SupplierCollection } from './supplier.collection';
 
 export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   //#region ODataApi Properties
-  ID: number;
+  ID!: number;
   Name?: string;
-  Address: AddressModel<Address>;
-  Concurrency: number;
+  Address!: AddressModel<Address>;
+  Concurrency!: number;
   Products?: ProductCollection<Product, ProductModel<Product>>;
   //#endregion
   //#region ODataApi Actions

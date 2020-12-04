@@ -35,13 +35,13 @@ export class RegionsService extends ODataEntityService<Region> {
   }
 
   //#region ODataApi Model
-  regionModel(): RegionModel<Region> {
-    return this.entity().asModel() as RegionModel<Region>;
+  regionModel(attrs?: Partial<Region>): RegionModel<Region> {
+    return this.entity().asModel(attrs || {}) as RegionModel<Region>;
   }
   //#endregion
   //#region ODataApi Collection
-  regionCollection(): RegionCollection<Region, RegionModel<Region>> {
-    return this.entities().asCollection() as RegionCollection<Region, RegionModel<Region>>;
+  regionCollection(models?: Partial<Region>[]): RegionCollection<Region, RegionModel<Region>> {
+    return this.entities().asCollection(models || []) as RegionCollection<Region, RegionModel<Region>>;
   }
   //#endregion
   //#region ODataApi Actions

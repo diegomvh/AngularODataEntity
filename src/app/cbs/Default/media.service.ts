@@ -33,13 +33,13 @@ export class MediaService extends ODataEntityService<Medium> {
   }
 
   //#region ODataApi Model
-  mediumModel(): MediumModel<Medium> {
-    return this.entity().asModel() as MediumModel<Medium>;
+  mediumModel(attrs?: Partial<Medium>): MediumModel<Medium> {
+    return this.entity().asModel(attrs || {}) as MediumModel<Medium>;
   }
   //#endregion
   //#region ODataApi Collection
-  mediumCollection(): MediumCollection<Medium, MediumModel<Medium>> {
-    return this.entities().asCollection() as MediumCollection<Medium, MediumModel<Medium>>;
+  mediumCollection(models?: Partial<Medium>[]): MediumCollection<Medium, MediumModel<Medium>> {
+    return this.entities().asCollection(models || []) as MediumCollection<Medium, MediumModel<Medium>>;
   }
   //#endregion
   //#region ODataApi Actions

@@ -14,10 +14,10 @@ import { DefinitionCollection } from './definition.collection';
 
 export class DefinitionModel<E extends Definition> extends ODataModel<E> {
   //#region ODataApi Properties
-  UniqueId: string;
+  UniqueId!: string;
   Title?: string;
-  DefinitionType: DefinitionType;
-  DefinitionTypeInt: number;
+  DefinitionType!: DefinitionType;
+  DefinitionTypeInt!: number;
   Description?: string;
   LeadText?: string;
   Url?: string;
@@ -26,9 +26,9 @@ export class DefinitionModel<E extends Definition> extends ODataModel<E> {
   Themes?: string[];
   Series?: string[];
   Language?: string;
-  Version: number;
-  Updated: Date;
-  Created: Date;
+  Version!: number;
+  Updated!: Date;
+  Created!: Date;
   Permalink?: string;
   References?: LinkListModel<LinkList>;
   Links?: LinkListModel<LinkList>;

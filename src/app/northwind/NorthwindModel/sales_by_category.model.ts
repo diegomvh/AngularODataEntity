@@ -10,9 +10,9 @@ import { SalesByCategoryCollection } from './sales_by_category.collection';
 
 export class SalesByCategoryModel<E extends SalesByCategory> extends ODataModel<E> {
   //#region ODataApi Properties
-  CategoryID: number;
-  CategoryName: string;
-  ProductName: string;
+  CategoryID!: number;
+  CategoryName!: string;
+  ProductName!: string;
   ProductSales?: number;
   //#endregion
   //#region ODataApi Actions

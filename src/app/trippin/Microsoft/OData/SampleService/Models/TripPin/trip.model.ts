@@ -16,14 +16,14 @@ import { TripCollection } from './trip.collection';
 
 export class TripModel<E extends Trip> extends ODataModel<E> {
   //#region ODataApi Properties
-  TripId: number;
+  TripId!: number;
   ShareId?: string;
   Description?: string;
-  Name: string;
-  Budget: number;
-  StartsAt: Date;
-  EndsAt: Date;
-  Tags: string[];
+  Name!: string;
+  Budget!: number;
+  StartsAt!: Date;
+  EndsAt!: Date;
+  Tags!: string[];
   Photos?: PhotoCollection<Photo, PhotoModel<Photo>>;
   PlanItems?: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>;
   //#endregion

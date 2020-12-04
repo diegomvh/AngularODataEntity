@@ -11,7 +11,7 @@ import { CustomerCollection } from './customer.collection';
 
 export class CustomerModel<E extends Customer> extends PersonModel<E> {
   //#region ODataApi Properties
-  TotalExpense: number;
+  TotalExpense!: number;
   //#endregion
   //#region ODataApi Actions
   //#endregion

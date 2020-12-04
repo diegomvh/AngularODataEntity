@@ -12,7 +12,7 @@ import { AirportLocationCollection } from './airportlocation.collection';
 
 export class AirportLocationModel<E extends AirportLocation> extends LocationModel<E> {
   //#region ODataApi Properties
-  Loc: Point;
+  Loc!: Point;
   //#endregion
   //#region ODataApi Actions
   //#endregion

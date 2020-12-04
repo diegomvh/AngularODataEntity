@@ -17,7 +17,7 @@ import { FlightCollection } from './flight.collection';
 
 export class FlightModel<E extends Flight> extends PublicTransportationModel<E> {
   //#region ODataApi Properties
-  FlightNumber: string;
+  FlightNumber!: string;
   From?: AirportModel<Airport>;
   To?: AirportModel<Airport>;
   Airline?: AirlineModel<Airline>;

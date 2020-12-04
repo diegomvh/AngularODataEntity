@@ -10,7 +10,7 @@ import { ProductsAboveAveragePriceCollection } from './products_above_average_pr
 
 export class ProductsAboveAveragePriceModel<E extends ProductsAboveAveragePrice> extends ODataModel<E> {
   //#region ODataApi Properties
-  ProductName: string;
+  ProductName!: string;
   UnitPrice?: number;
   //#endregion
   //#region ODataApi Actions

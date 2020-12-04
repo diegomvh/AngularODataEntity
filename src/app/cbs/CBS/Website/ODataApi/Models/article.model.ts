@@ -17,11 +17,11 @@ import { ArticleCollection } from './article.collection';
 
 export class ArticleModel<E extends Article> extends ODataModel<E> {
   //#region ODataApi Properties
-  UniqueId: string;
-  ArticleType: ArticleType;
-  ArticleTypeInt: number;
+  UniqueId!: string;
+  ArticleType!: ArticleType;
+  ArticleTypeInt!: number;
   Title?: string;
-  ReleaseTime: Date;
+  ReleaseTime!: Date;
   Url?: string;
   MetaDescription?: string;
   Image?: string;
@@ -43,11 +43,11 @@ export class ArticleModel<E extends Article> extends ODataModel<E> {
   Downloads?: LinkListModel<LinkList>;
   Links?: LinkListModel<LinkList>;
   Language?: string;
-  Version: number;
-  SortOrder: number;
+  Version!: number;
+  SortOrder!: number;
   ItemNameLowerCase?: string;
-  Updated: Date;
-  Created: Date;
+  Updated!: Date;
+  Created!: Date;
   Permalink?: string;
   //#endregion
   //#region ODataApi Actions

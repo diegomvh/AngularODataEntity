@@ -13,8 +13,8 @@ import { ProductCollection } from './product.collection';
 
 export class CategoryModel<E extends Category> extends ODataModel<E> {
   //#region ODataApi Properties
-  CategoryID: number;
-  CategoryName: string;
+  CategoryID!: number;
+  CategoryName!: string;
   Description?: string;
   Picture?: ArrayBuffer;
   Products?: ProductCollection<Product, ProductModel<Product>>;

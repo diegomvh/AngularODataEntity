@@ -10,8 +10,8 @@ import { AirlineCollection } from './airline.collection';
 
 export class AirlineModel<E extends Airline> extends ODataModel<E> {
   //#region ODataApi Properties
-  AirlineCode: string;
-  Name: string;
+  AirlineCode!: string;
+  Name!: string;
   //#endregion
   //#region ODataApi Actions
   //#endregion

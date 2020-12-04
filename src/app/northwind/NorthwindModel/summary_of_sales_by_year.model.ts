@@ -11,7 +11,7 @@ import { SummaryOfSalesByYearCollection } from './summary_of_sales_by_year.colle
 export class SummaryOfSalesByYearModel<E extends SummaryOfSalesByYear> extends ODataModel<E> {
   //#region ODataApi Properties
   ShippedDate?: Date;
-  OrderID: number;
+  OrderID!: number;
   Subtotal?: number;
   //#endregion
   //#region ODataApi Actions

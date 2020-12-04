@@ -15,7 +15,7 @@ import { EventCollection } from './event.collection';
 export class EventModel<E extends Event> extends PlanItemModel<E> {
   //#region ODataApi Properties
   Description?: string;
-  OccursAt: EventLocationModel<EventLocation>;
+  OccursAt!: EventLocationModel<EventLocation>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

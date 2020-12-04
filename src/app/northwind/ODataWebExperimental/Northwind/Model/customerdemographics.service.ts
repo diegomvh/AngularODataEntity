@@ -35,13 +35,13 @@ export class CustomerDemographicsService extends ODataEntityService<CustomerDemo
   }
 
   //#region ODataApi Model
-  customerDemographicModel(): CustomerDemographicModel<CustomerDemographic> {
-    return this.entity().asModel() as CustomerDemographicModel<CustomerDemographic>;
+  customerDemographicModel(attrs?: Partial<CustomerDemographic>): CustomerDemographicModel<CustomerDemographic> {
+    return this.entity().asModel(attrs || {}) as CustomerDemographicModel<CustomerDemographic>;
   }
   //#endregion
   //#region ODataApi Collection
-  customerDemographicCollection(): CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>> {
-    return this.entities().asCollection() as CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
+  customerDemographicCollection(models?: Partial<CustomerDemographic>[]): CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>> {
+    return this.entities().asCollection(models || []) as CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
   }
   //#endregion
   //#region ODataApi Actions

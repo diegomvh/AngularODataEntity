@@ -10,26 +10,26 @@ import { CalendarEventCollection } from './calendarevent.collection';
 
 export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   //#region ODataApi Properties
-  UniqueId: string;
+  UniqueId!: string;
   Title?: string;
   Url?: string;
   MetaDescription?: string;
   Image?: string;
   ImageAlt?: string;
   Description?: string;
-  PlannedPublicationTime: Date;
+  PlannedPublicationTime!: Date;
   ReportingPeriod?: string;
-  Priority: number;
-  UnderEmbargo: boolean;
-  PublishTimeUnknown: boolean;
+  Priority!: number;
+  UnderEmbargo!: boolean;
+  PublishTimeUnknown!: boolean;
   RegionalClassification?: string;
   Themes?: string[];
   Language?: string;
-  Version: number;
-  SortOrder: number;
+  Version!: number;
+  SortOrder!: number;
   ItemNameLowerCase?: string;
-  Updated: Date;
-  Created: Date;
+  Updated!: Date;
+  Created!: Date;
   Permalink?: string;
   //#endregion
   //#region ODataApi Actions

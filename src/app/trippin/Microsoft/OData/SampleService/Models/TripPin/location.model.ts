@@ -13,8 +13,8 @@ import { LocationCollection } from './location.collection';
 
 export class LocationModel<E extends Location> extends ODataModel<E> {
   //#region ODataApi Properties
-  Address: string;
-  City: CityModel<City>;
+  Address!: string;
+  City!: CityModel<City>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

@@ -29,13 +29,13 @@ import { TripCollection } from './trip.collection';
 
 export class PersonModel<E extends Person> extends ODataModel<E> {
   //#region ODataApi Properties
-  UserName: string;
-  FirstName: string;
-  LastName: string;
+  UserName!: string;
+  FirstName!: string;
+  LastName!: string;
   Emails?: string[];
   AddressInfo?: LocationCollection<Location, LocationModel<Location>>;
   Gender?: PersonGender;
-  Concurrency: number;
+  Concurrency!: number;
   Friends?: PersonCollection<Person, PersonModel<Person>>;
   Trips?: TripCollection<Trip, TripModel<Trip>>;
   Photo?: PhotoModel<Photo>;
@@ -46,16 +46,16 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   //#endregion
   //#region ODataApi Navigations
   public airline() {
-    return this._navigationProperty<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline').asModel() as ODataModel<Airline>;
+    return this._navigationProperty<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline').asModel({}) as ODataModel<Airline>;
   }
   public from() {
-    return this._navigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From').asModel() as ODataModel<Airport>;
+    return this._navigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From').asModel({}) as ODataModel<Airport>;
   }
   public to() {
-    return this._navigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To').asModel() as ODataModel<Airport>;
+    return this._navigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To').asModel({}) as ODataModel<Airport>;
   }
   public photos() {
-    return this._navigationProperty<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos').asCollection() as ODataCollection<Photo, ODataModel<Photo>>;
+    return this._navigationProperty<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos').asCollection([]) as ODataCollection<Photo, ODataModel<Photo>>;
   }
   //#endregion
 }

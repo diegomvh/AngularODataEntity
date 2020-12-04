@@ -10,11 +10,11 @@ import { SearchResultItemCollection } from './searchresultitem.collection';
 
 export class SearchResultItemModel<E extends SearchResultItem> extends ODataModel<E> {
   //#region ODataApi Properties
-  UniqueId: string;
+  UniqueId!: string;
   Type?: string;
   Permalink?: string;
   Title?: string;
-  ReleaseTime: Date;
+  ReleaseTime!: Date;
   Url?: string;
   MetaDescription?: string;
   Image?: string;
@@ -28,7 +28,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   Themes?: string[];
   TemplateName?: string;
   ItemNameLowerCase?: string;
-  SortOrder: number;
+  SortOrder!: number;
   //#endregion
   //#region ODataApi Actions
   //#endregion

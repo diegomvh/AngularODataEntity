@@ -13,9 +13,9 @@ import { AdvertisementCollection } from './advertisement.collection';
 
 export class AdvertisementModel<E extends Advertisement> extends ODataModel<E> {
   //#region ODataApi Properties
-  ID: string;
+  ID!: string;
   Name?: string;
-  AirDate: any;
+  AirDate!: any;
   FeaturedProduct?: FeaturedProductModel<FeaturedProduct>;
   //#endregion
   //#region ODataApi Actions

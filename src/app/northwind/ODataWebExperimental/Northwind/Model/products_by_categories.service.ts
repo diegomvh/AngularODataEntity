@@ -32,13 +32,13 @@ export class ProductsByCategoriesService extends ODataEntityService<ProductsByCa
   }
 
   //#region ODataApi Model
-  productsByCategoryModel(): ProductsByCategoryModel<ProductsByCategory> {
-    return this.entity().asModel() as ProductsByCategoryModel<ProductsByCategory>;
+  productsByCategoryModel(attrs?: Partial<ProductsByCategory>): ProductsByCategoryModel<ProductsByCategory> {
+    return this.entity().asModel(attrs || {}) as ProductsByCategoryModel<ProductsByCategory>;
   }
   //#endregion
   //#region ODataApi Collection
-  productsByCategoryCollection(): ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>> {
-    return this.entities().asCollection() as ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>>;
+  productsByCategoryCollection(models?: Partial<ProductsByCategory>[]): ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>> {
+    return this.entities().asCollection(models || []) as ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>>;
   }
   //#endregion
   //#region ODataApi Actions

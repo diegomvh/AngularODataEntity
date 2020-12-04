@@ -14,9 +14,9 @@ import { PageCollection } from './page.collection';
 
 export class PageModel<E extends Page> extends ODataModel<E> {
   //#region ODataApi Properties
-  UniqueId: string;
-  PageType: PageType;
-  PageTypeInt: number;
+  UniqueId!: string;
+  PageType!: PageType;
+  PageTypeInt!: number;
   Title?: string;
   SubTitle?: string;
   Edition?: string;
@@ -38,12 +38,12 @@ export class PageModel<E extends Page> extends ODataModel<E> {
   Downloads?: LinkListModel<LinkList>;
   Links?: LinkListModel<LinkList>;
   Language?: string;
-  Version: number;
-  SortOrder: number;
+  Version!: number;
+  SortOrder!: number;
   ItemNameLowerCase?: string;
-  Updated: Date;
-  ReleaseTime: Date;
-  Created: Date;
+  Updated!: Date;
+  ReleaseTime!: Date;
+  Created!: Date;
   Permalink?: string;
   //#endregion
   //#region ODataApi Actions

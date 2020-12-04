@@ -11,7 +11,7 @@ import { SummaryOfSalesByQuarterCollection } from './summary_of_sales_by_quarter
 export class SummaryOfSalesByQuarterModel<E extends SummaryOfSalesByQuarter> extends ODataModel<E> {
   //#region ODataApi Properties
   ShippedDate?: Date;
-  OrderID: number;
+  OrderID!: number;
   Subtotal?: number;
   //#endregion
   //#region ODataApi Actions

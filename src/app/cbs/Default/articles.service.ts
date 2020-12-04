@@ -39,13 +39,13 @@ export class ArticlesService extends ODataEntityService<Article> {
   }
 
   //#region ODataApi Model
-  articleModel(): ArticleModel<Article> {
-    return this.entity().asModel() as ArticleModel<Article>;
+  articleModel(attrs?: Partial<Article>): ArticleModel<Article> {
+    return this.entity().asModel(attrs || {}) as ArticleModel<Article>;
   }
   //#endregion
   //#region ODataApi Collection
-  articleCollection(): ArticleCollection<Article, ArticleModel<Article>> {
-    return this.entities().asCollection() as ArticleCollection<Article, ArticleModel<Article>>;
+  articleCollection(models?: Partial<Article>[]): ArticleCollection<Article, ArticleModel<Article>> {
+    return this.entities().asCollection(models || []) as ArticleCollection<Article, ArticleModel<Article>>;
   }
   //#endregion
   //#region ODataApi Actions

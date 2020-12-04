@@ -10,8 +10,8 @@ import { CurrentProductListCollection } from './current_product_list.collection'
 
 export class CurrentProductListModel<E extends CurrentProductList> extends ODataModel<E> {
   //#region ODataApi Properties
-  ProductID: number;
-  ProductName: string;
+  ProductID!: number;
+  ProductName!: string;
   //#endregion
   //#region ODataApi Actions
   //#endregion

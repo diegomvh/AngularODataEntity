@@ -3,6 +3,7 @@ import { PeopleService, Person, PersonGender } from '../../trippin';
 import { ODataEntitySetResource, ODataSettings, ODataClient } from 'angular-odata';
 import { PersonComponent } from './person.component';
 import { config } from 'rxjs';
+import { LazyLoadEvent } from 'primeng/api';
 
 @Component({
   selector: 'trip-people',
@@ -17,7 +18,7 @@ import { config } from 'rxjs';
         </tr>
         <tr>
             <th *ngFor="let col of columns" [ngSwitch]="col.field">
-              <input *ngIf="col.filter" pInputText type="text" (input)="filter($event.target.value, col.field)">
+              <input *ngIf="col.filter" pInputText type="text" (input)="filter($event, col.field)">
             </th>
         </tr>
     </ng-template>
@@ -38,39 +39,44 @@ export class PeopleComponent {
   rows!: Person[];
   cols: any[];
 
-  total!: number;
+  total: number = 0;
   size!: number;
 
   resource: ODataEntitySetResource<Person>;
   loading: boolean = false;
 
-  @ViewChild('person') person: PersonComponent;
+  @ViewChild('person') person!: PersonComponent;
 
   constructor(
     private client: ODataClient,
     private people: PeopleService
   ) {
     this.resource = this.people.entities();
-    this.cols = this.resource.schema.fields()
-      .filter(f => !f.navigation)
-      .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' }));
+    const schema = this.resource.schema;
+    this.cols = (schema !== null) ?
+      schema.fields()
+        .filter(f => !f.navigation)
+        .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' })) :
+      [];
     // Try toJSON, fromJSON
-    this.resource = this.client.fromJSON<ODataEntitySetResource<Person>>(this.resource.toJSON());
+    this.resource = this.client.fromJSON<Person>(this.resource.toJSON()) as ODataEntitySetResource<Person>;
   }
 
   fetch(resource: ODataEntitySetResource<Person>) {
     this.loading = true;
     resource.get({withCount: true}).subscribe(({entities, meta}) => {
-      this.rows = entities;
+      this.rows = entities || [];
       if (!this.total)
         this.total = meta.count;
       if (!this.size)
-        this.size = meta.skip || entities.length;
+        this.size = meta.skip || this.rows.length;
       this.loading = false;
     });
   }
 
-  filter(value: string, field: string) {
+  filter(event: Event, field: string) {
+    const input = event.target as HTMLInputElement;
+    const value = input.value;
     field = `tolower(${field})`;
     if (value) {
       let filter = {[field]: {contains: value.toLowerCase()}};
@@ -82,13 +88,16 @@ export class PeopleComponent {
     this.fetch(this.resource);
   }
 
-  loadPeopleLazy(event) {
+  loadPeopleLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource.skip(event.first).top(event.rows);
+    let resource = this.resource.clone();
+    if (event.first !== undefined)
+      resource = resource.skip(event.first);
+    if (event.rows !== undefined)
+      resource = resource.top(event.rows);
     //Ordering
-    if (event.sortField) {
-      resource = resource.orderBy([[event.sortField, event.sortOrder == -1 ? "desc": "asc"]]);
-    }
+    if (event.sortField !== undefined)
+      resource = resource.orderBy([[event.sortField as keyof Person, event.sortOrder == -1 ? "desc": "asc"]]);
     this.fetch(resource);
   }
 

@@ -10,9 +10,9 @@ import { CityCollection } from './city.collection';
 
 export class CityModel<E extends City> extends ODataModel<E> {
   //#region ODataApi Properties
-  CountryRegion: string;
-  Name: string;
-  Region: string;
+  CountryRegion!: string;
+  Name!: string;
+  Region!: string;
   //#endregion
   //#region ODataApi Actions
   //#endregion

@@ -32,13 +32,13 @@ export class SummaryOfSalesByYearsService extends ODataEntityService<SummaryOfSa
   }
 
   //#region ODataApi Model
-  summaryOfSalesByYearModel(): SummaryOfSalesByYearModel<SummaryOfSalesByYear> {
-    return this.entity().asModel() as SummaryOfSalesByYearModel<SummaryOfSalesByYear>;
+  summaryOfSalesByYearModel(attrs?: Partial<SummaryOfSalesByYear>): SummaryOfSalesByYearModel<SummaryOfSalesByYear> {
+    return this.entity().asModel(attrs || {}) as SummaryOfSalesByYearModel<SummaryOfSalesByYear>;
   }
   //#endregion
   //#region ODataApi Collection
-  summaryOfSalesByYearCollection(): SummaryOfSalesByYearCollection<SummaryOfSalesByYear, SummaryOfSalesByYearModel<SummaryOfSalesByYear>> {
-    return this.entities().asCollection() as SummaryOfSalesByYearCollection<SummaryOfSalesByYear, SummaryOfSalesByYearModel<SummaryOfSalesByYear>>;
+  summaryOfSalesByYearCollection(models?: Partial<SummaryOfSalesByYear>[]): SummaryOfSalesByYearCollection<SummaryOfSalesByYear, SummaryOfSalesByYearModel<SummaryOfSalesByYear>> {
+    return this.entities().asCollection(models || []) as SummaryOfSalesByYearCollection<SummaryOfSalesByYear, SummaryOfSalesByYearModel<SummaryOfSalesByYear>>;
   }
   //#endregion
   //#region ODataApi Actions

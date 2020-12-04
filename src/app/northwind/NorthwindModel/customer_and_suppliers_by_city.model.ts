@@ -11,9 +11,9 @@ import { CustomerAndSuppliersByCityCollection } from './customer_and_suppliers_b
 export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCity> extends ODataModel<E> {
   //#region ODataApi Properties
   City?: string;
-  CompanyName: string;
+  CompanyName!: string;
   ContactName?: string;
-  Relationship: string;
+  Relationship!: string;
   //#endregion
   //#region ODataApi Actions
   //#endregion

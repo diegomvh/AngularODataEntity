@@ -13,8 +13,8 @@ import { SupplierCollection } from './supplier.collection';
 
 export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   //#region ODataApi Properties
-  SupplierID: number;
-  CompanyName: string;
+  SupplierID!: number;
+  CompanyName!: string;
   ContactName?: string;
   ContactTitle?: string;
   Address?: string;

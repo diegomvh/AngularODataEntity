@@ -35,13 +35,13 @@ export class ShippersService extends ODataEntityService<Shipper> {
   }
 
   //#region ODataApi Model
-  shipperModel(): ShipperModel<Shipper> {
-    return this.entity().asModel() as ShipperModel<Shipper>;
+  shipperModel(attrs?: Partial<Shipper>): ShipperModel<Shipper> {
+    return this.entity().asModel(attrs || {}) as ShipperModel<Shipper>;
   }
   //#endregion
   //#region ODataApi Collection
-  shipperCollection(): ShipperCollection<Shipper, ShipperModel<Shipper>> {
-    return this.entities().asCollection() as ShipperCollection<Shipper, ShipperModel<Shipper>>;
+  shipperCollection(models?: Partial<Shipper>[]): ShipperCollection<Shipper, ShipperModel<Shipper>> {
+    return this.entities().asCollection(models || []) as ShipperCollection<Shipper, ShipperModel<Shipper>>;
   }
   //#endregion
   //#region ODataApi Actions

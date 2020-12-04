@@ -32,13 +32,13 @@ export class SummaryOfSalesByQuartersService extends ODataEntityService<SummaryO
   }
 
   //#region ODataApi Model
-  summaryOfSalesByQuarterModel(): SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter> {
-    return this.entity().asModel() as SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>;
+  summaryOfSalesByQuarterModel(attrs?: Partial<SummaryOfSalesByQuarter>): SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter> {
+    return this.entity().asModel(attrs || {}) as SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>;
   }
   //#endregion
   //#region ODataApi Collection
-  summaryOfSalesByQuarterCollection(): SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>> {
-    return this.entities().asCollection() as SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>>;
+  summaryOfSalesByQuarterCollection(models?: Partial<SummaryOfSalesByQuarter>[]): SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>> {
+    return this.entities().asCollection(models || []) as SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>>;
   }
   //#endregion
   //#region ODataApi Actions

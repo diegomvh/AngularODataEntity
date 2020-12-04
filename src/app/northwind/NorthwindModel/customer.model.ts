@@ -16,8 +16,8 @@ import { OrderCollection } from './order.collection';
 
 export class CustomerModel<E extends Customer> extends ODataModel<E> {
   //#region ODataApi Properties
-  CustomerID: string;
-  CompanyName: string;
+  CustomerID!: string;
+  CompanyName!: string;
   ContactName?: string;
   ContactTitle?: string;
   Address?: string;

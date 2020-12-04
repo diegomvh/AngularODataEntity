@@ -32,13 +32,13 @@ export class PhotosService extends ODataEntityService<Photo> {
   }
 
   //#region ODataApi Model
-  photoModel(): PhotoModel<Photo> {
-    return this.entity().asModel() as PhotoModel<Photo>;
+  photoModel(attrs?: Partial<Photo>): PhotoModel<Photo> {
+    return this.entity().asModel(attrs || {}) as PhotoModel<Photo>;
   }
   //#endregion
   //#region ODataApi Collection
-  photoCollection(): PhotoCollection<Photo, PhotoModel<Photo>> {
-    return this.entities().asCollection() as PhotoCollection<Photo, PhotoModel<Photo>>;
+  photoCollection(models?: Partial<Photo>[]): PhotoCollection<Photo, PhotoModel<Photo>> {
+    return this.entities().asCollection(models || []) as PhotoCollection<Photo, PhotoModel<Photo>>;
   }
   //#endregion
   //#region ODataApi Actions

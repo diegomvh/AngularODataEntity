@@ -38,13 +38,13 @@ export class TerritoriesService extends ODataEntityService<Territory> {
   }
 
   //#region ODataApi Model
-  territoryModel(): TerritoryModel<Territory> {
-    return this.entity().asModel() as TerritoryModel<Territory>;
+  territoryModel(attrs?: Partial<Territory>): TerritoryModel<Territory> {
+    return this.entity().asModel(attrs || {}) as TerritoryModel<Territory>;
   }
   //#endregion
   //#region ODataApi Collection
-  territoryCollection(): TerritoryCollection<Territory, TerritoryModel<Territory>> {
-    return this.entities().asCollection() as TerritoryCollection<Territory, TerritoryModel<Territory>>;
+  territoryCollection(models?: Partial<Territory>[]): TerritoryCollection<Territory, TerritoryModel<Territory>> {
+    return this.entities().asCollection(models || []) as TerritoryCollection<Territory, TerritoryModel<Territory>>;
   }
   //#endregion
   //#region ODataApi Actions

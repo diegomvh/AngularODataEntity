@@ -22,7 +22,7 @@ import { ShipperCollection } from './shipper.collection';
 
 export class OrderModel<E extends Order> extends ODataModel<E> {
   //#region ODataApi Properties
-  OrderID: number;
+  OrderID!: number;
   CustomerID?: string;
   EmployeeID?: number;
   OrderDate?: Date;

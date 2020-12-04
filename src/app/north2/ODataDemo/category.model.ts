@@ -13,7 +13,7 @@ import { CategoryCollection } from './category.collection';
 
 export class CategoryModel<E extends Category> extends ODataModel<E> {
   //#region ODataApi Properties
-  ID: number;
+  ID!: number;
   Name?: string;
   Products?: ProductCollection<Product, ProductModel<Product>>;
   //#endregion

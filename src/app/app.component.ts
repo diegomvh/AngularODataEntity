@@ -5,6 +5,7 @@ import { OrdersService } from './northwind';
 import { switchMap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin';
 import { ProductsService } from './north3';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -181,12 +182,14 @@ export class AppComponent {
     }).pipe(
       switchMap((person) => {
         // etag
-        console.log(odata.etag(person))
-        return this.people.assign(person, {UserName: person.UserName, Gender: PersonGender.Female});
+        return (person !== null) ?
+          this.people.assign(person, {UserName: person.UserName, Gender: PersonGender.Female}) : of(person)
       })
     ).subscribe((person) => {
       //New etag
-      console.log(odata.etag(person))
+      if (person !== null) {
+        console.log(odata.etag(person))
+      }
     });
   }
 

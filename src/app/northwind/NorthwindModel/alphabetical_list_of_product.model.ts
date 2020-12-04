@@ -10,8 +10,8 @@ import { AlphabeticalListOfProductCollection } from './alphabetical_list_of_prod
 
 export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct> extends ODataModel<E> {
   //#region ODataApi Properties
-  ProductID: number;
-  ProductName: string;
+  ProductID!: number;
+  ProductName!: string;
   SupplierID?: number;
   CategoryID?: number;
   QuantityPerUnit?: string;
@@ -19,8 +19,8 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   UnitsInStock?: number;
   UnitsOnOrder?: number;
   ReorderLevel?: number;
-  Discontinued: boolean;
-  CategoryName: string;
+  Discontinued!: boolean;
+  CategoryName!: string;
   //#endregion
   //#region ODataApi Actions
   //#endregion

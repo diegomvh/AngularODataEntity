@@ -8,8 +8,8 @@ import { PeopleService, Person, PhotosService } from '../../trippin';
   </p-dialog>`,
 })
 export class PersonComponent {
-  person: Person;
-  display: boolean;
+  person: Person | null = null;
+  display: boolean = false;
 
   constructor(
     private photos: PhotosService,
@@ -17,23 +17,20 @@ export class PersonComponent {
   ) { }
 
   show(name: string) {
-    let person = this.people.entity({UserName: name})
+    this.people.entity({UserName: name})
     .expand({
-      Friends: {orderBy: [["UserName", 'asc']]}, 
+      Photo: {},
+      Friends: { expand: { Emails: {}}, levels: 10 },
       Trips: {
-        orderBy: ['StartsAt', ['Name', 'desc'], ['Description', 'asc']],
-        expand: {
-          Photos: {}, 
-          PlanItems: {}
-        }
-      }, 
-      Photo: {}
+        orderBy: ['Photos'],
+        //orderBy: [['Name', 'desc']],
+        expand: {Photos: {}, PlanItems: {}}}
     })
     .get()
     .subscribe(({entity, meta}) => {
       console.log(entity, meta);
-      this.person = entity;
-      if (this.person.Photo) {
+      this.person = entity || null;
+      if (this.person !== null && this.person.Photo) {
         this.photos
         .entity(this.person.Photo)
         .value()

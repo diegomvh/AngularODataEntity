@@ -11,9 +11,9 @@ import { EmployeeCollection } from './employee.collection';
 
 export class EmployeeModel<E extends Employee> extends PersonModel<E> {
   //#region ODataApi Properties
-  EmployeeID: number;
-  HireDate: any;
-  Salary: number;
+  EmployeeID!: number;
+  HireDate!: any;
+  Salary!: number;
   //#endregion
   //#region ODataApi Actions
   //#endregion

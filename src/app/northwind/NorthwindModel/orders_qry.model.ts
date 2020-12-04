@@ -10,7 +10,7 @@ import { OrdersQryCollection } from './orders_qry.collection';
 
 export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   //#region ODataApi Properties
-  OrderID: number;
+  OrderID!: number;
   CustomerID?: string;
   EmployeeID?: number;
   OrderDate?: Date;
@@ -24,7 +24,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   ShipRegion?: string;
   ShipPostalCode?: string;
   ShipCountry?: string;
-  CompanyName: string;
+  CompanyName!: string;
   Address?: string;
   City?: string;
   Region?: string;

@@ -32,13 +32,13 @@ export class OrderDetailsExtendedsService extends ODataEntityService<OrderDetail
   }
 
   //#region ODataApi Model
-  orderDetailsExtendedModel(): OrderDetailsExtendedModel<OrderDetailsExtended> {
-    return this.entity().asModel() as OrderDetailsExtendedModel<OrderDetailsExtended>;
+  orderDetailsExtendedModel(attrs?: Partial<OrderDetailsExtended>): OrderDetailsExtendedModel<OrderDetailsExtended> {
+    return this.entity().asModel(attrs || {}) as OrderDetailsExtendedModel<OrderDetailsExtended>;
   }
   //#endregion
   //#region ODataApi Collection
-  orderDetailsExtendedCollection(): OrderDetailsExtendedCollection<OrderDetailsExtended, OrderDetailsExtendedModel<OrderDetailsExtended>> {
-    return this.entities().asCollection() as OrderDetailsExtendedCollection<OrderDetailsExtended, OrderDetailsExtendedModel<OrderDetailsExtended>>;
+  orderDetailsExtendedCollection(models?: Partial<OrderDetailsExtended>[]): OrderDetailsExtendedCollection<OrderDetailsExtended, OrderDetailsExtendedModel<OrderDetailsExtended>> {
+    return this.entities().asCollection(models || []) as OrderDetailsExtendedCollection<OrderDetailsExtended, OrderDetailsExtendedModel<OrderDetailsExtended>>;
   }
   //#endregion
   //#region ODataApi Actions

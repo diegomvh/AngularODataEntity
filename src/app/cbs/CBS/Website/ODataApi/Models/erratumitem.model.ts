@@ -10,7 +10,7 @@ import { ErratumItemCollection } from './erratumitem.collection';
 
 export class ErratumItemModel<E extends ErratumItem> extends ODataModel<E> {
   //#region ODataApi Properties
-  PresentationTime: Date;
+  PresentationTime!: Date;
   Body?: string;
   //#endregion
   //#region ODataApi Actions

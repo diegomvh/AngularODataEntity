@@ -10,7 +10,7 @@ import { PlanItemCollection } from './planitem.collection';
 
 export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   //#region ODataApi Properties
-  PlanItemId: number;
+  PlanItemId!: number;
   ConfirmationCode?: string;
   StartsAt?: Date;
   EndsAt?: Date;

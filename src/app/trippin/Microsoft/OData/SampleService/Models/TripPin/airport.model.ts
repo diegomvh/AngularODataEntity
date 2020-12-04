@@ -13,10 +13,10 @@ import { AirportCollection } from './airport.collection';
 
 export class AirportModel<E extends Airport> extends ODataModel<E> {
   //#region ODataApi Properties
-  IcaoCode: string;
-  Name: string;
-  IataCode: string;
-  Location: AirportLocationModel<AirportLocation>;
+  IcaoCode!: string;
+  Name!: string;
+  IataCode!: string;
+  Location!: AirportLocationModel<AirportLocation>;
   //#endregion
   //#region ODataApi Actions
   //#endregion

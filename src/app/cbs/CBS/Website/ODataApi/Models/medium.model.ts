@@ -11,11 +11,11 @@ import { MediumCollection } from './medium.collection';
 
 export class MediumModel<E extends Medium> extends ODataModel<E> {
   //#region ODataApi Properties
-  UniqueId: string;
+  UniqueId!: string;
   Title?: string;
-  MediaType: MediaType;
-  MediaTypeInt: number;
-  ReleaseTime: Date;
+  MediaType!: MediaType;
+  MediaTypeInt!: number;
+  ReleaseTime!: Date;
   Description?: string;
   LeadText?: string;
   Url?: string;
@@ -24,11 +24,11 @@ export class MediumModel<E extends Medium> extends ODataModel<E> {
   Themes?: string[];
   Series?: string[];
   Language?: string;
-  Version: number;
-  SortOrder: number;
+  Version!: number;
+  SortOrder!: number;
   ItemNameLowerCase?: string;
-  Updated: Date;
-  Created: Date;
+  Updated!: Date;
+  Created!: Date;
   Permalink?: string;
   //#endregion
   //#region ODataApi Actions

@@ -36,13 +36,13 @@ export class DefinitionsService extends ODataEntityService<Definition> {
   }
 
   //#region ODataApi Model
-  definitionModel(): DefinitionModel<Definition> {
-    return this.entity().asModel() as DefinitionModel<Definition>;
+  definitionModel(attrs?: Partial<Definition>): DefinitionModel<Definition> {
+    return this.entity().asModel(attrs || {}) as DefinitionModel<Definition>;
   }
   //#endregion
   //#region ODataApi Collection
-  definitionCollection(): DefinitionCollection<Definition, DefinitionModel<Definition>> {
-    return this.entities().asCollection() as DefinitionCollection<Definition, DefinitionModel<Definition>>;
+  definitionCollection(models?: Partial<Definition>[]): DefinitionCollection<Definition, DefinitionModel<Definition>> {
+    return this.entities().asCollection(models || []) as DefinitionCollection<Definition, DefinitionModel<Definition>>;
   }
   //#endregion
   //#region ODataApi Actions

@@ -32,13 +32,13 @@ export class SalesByCategoriesService extends ODataEntityService<SalesByCategory
   }
 
   //#region ODataApi Model
-  salesByCategoryModel(): SalesByCategoryModel<SalesByCategory> {
-    return this.entity().asModel() as SalesByCategoryModel<SalesByCategory>;
+  salesByCategoryModel(attrs?: Partial<SalesByCategory>): SalesByCategoryModel<SalesByCategory> {
+    return this.entity().asModel(attrs || {}) as SalesByCategoryModel<SalesByCategory>;
   }
   //#endregion
   //#region ODataApi Collection
-  salesByCategoryCollection(): SalesByCategoryCollection<SalesByCategory, SalesByCategoryModel<SalesByCategory>> {
-    return this.entities().asCollection() as SalesByCategoryCollection<SalesByCategory, SalesByCategoryModel<SalesByCategory>>;
+  salesByCategoryCollection(models?: Partial<SalesByCategory>[]): SalesByCategoryCollection<SalesByCategory, SalesByCategoryModel<SalesByCategory>> {
+    return this.entities().asCollection(models || []) as SalesByCategoryCollection<SalesByCategory, SalesByCategoryModel<SalesByCategory>>;
   }
   //#endregion
   //#region ODataApi Actions

@@ -38,13 +38,13 @@ export class EmployeesService extends ODataEntityService<Employee> {
   }
 
   //#region ODataApi Model
-  employeeModel(): EmployeeModel<Employee> {
-    return this.entity().asModel() as EmployeeModel<Employee>;
+  employeeModel(attrs?: Partial<Employee>): EmployeeModel<Employee> {
+    return this.entity().asModel(attrs || {}) as EmployeeModel<Employee>;
   }
   //#endregion
   //#region ODataApi Collection
-  employeeCollection(): EmployeeCollection<Employee, EmployeeModel<Employee>> {
-    return this.entities().asCollection() as EmployeeCollection<Employee, EmployeeModel<Employee>>;
+  employeeCollection(models?: Partial<Employee>[]): EmployeeCollection<Employee, EmployeeModel<Employee>> {
+    return this.entities().asCollection(models || []) as EmployeeCollection<Employee, EmployeeModel<Employee>>;
   }
   //#endregion
   //#region ODataApi Actions
