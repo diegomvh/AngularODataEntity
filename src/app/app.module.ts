@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ODataCacheLocalStorage, ODataModule } from 'angular-odata';
+import { ApiConfig, ODataCacheLocalStorage, ODataModule } from 'angular-odata';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
@@ -50,37 +50,39 @@ import { EmployeesComponent } from './components/northwind/employees.component';
           maxAge: 600000,
           storage: new ODataCacheLocalStorage("TripPin", localStorage)
         },
-        options: {
+        options: Object.assign(TripPinConfig.options, {
           metadata: 'full',
           stringAsEnum: true
-        }
-      }),
+        })
+      } as ApiConfig),
       // North version 2
       Object.assign(North2Config, {
         serviceRootUrl: 'http://localhost:4200/north2/',
-        options: {
+        options: Object.assign(North2Config.options, {
           metadata: 'full',
           withCredentials: true,
-          params: {"$format": "json"}
-        }
-      }),
+          params: {"$format": "json"},
+          fetchPolicy: 'cache-and-network'
+        })
+      } as ApiConfig),
       // North version 3
       Object.assign(North3Config, {
         serviceRootUrl: 'http://localhost:4200/north3/',
-        options: {
+        options: Object.assign(North3Config.options, {
           metadata: 'full',
           withCredentials: true,
-          params: {"$format": "json"}
-        }
-      }),
+          params: {"$format": "json"},
+          fetchPolicy: 'no-cache'
+        })
+      } as ApiConfig),
       // Northwind version 4
       Object.assign(NorthwindConfig, {
         cache: {
           maxAge: 600000
         },
-        options: {
+        options: Object.assign(NorthwindConfig.options, {
           ieee754Compatible: true
-        }
+        })
       }),
       Object.assign(CBSConfig)
     ),

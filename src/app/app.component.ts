@@ -70,6 +70,13 @@ export class AppComponent {
     .all()
     .subscribe(aports => console.log("All: ", aports));
 
+    this.products.entities()
+    .get({withCount: true, fetchPolicy: 'cache-only', apiName: 'North3'})
+    .subscribe(
+      ({entities, meta}) => {console.log(entities)},
+      (err) => console.log(err)
+    );
+
     // Fetch airports with count
     airports
     .get({withCount: true})
@@ -78,6 +85,7 @@ export class AppComponent {
     // Fetch airport with key
     airports
     .entity("CYYZ").get()
+    .pipe(switchMap(() => airports.entity("CYYZ").get({fetchPolicy: 'cache-first'}))) // From Cache!
     .subscribe(({entity, meta}) => console.log("Airport: ", entity, "Annotations: ", meta));
 
     // Filter airports (inmutable resource)

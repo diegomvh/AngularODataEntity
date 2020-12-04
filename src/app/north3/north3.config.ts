@@ -7,8 +7,10 @@ import { ODataDemoSchema } from './ODataDemo/odatademo.schema';
 export const North3Config = {
   name: 'North3',
   serviceRootUrl: 'https://services.odata.org/V3/(S(hovbiiwxashh0qaz2p0p5go0))/OData/OData.svc/',
-  version: '3.0',
-  creation: new Date('2020-12-03T20:43:42.1196342-03:00'),
+  creation: new Date('2020-12-03T22:49:30.3855123-03:00'),
+  options: {
+    version: '3.0'
+  },
   schemas: [
     ODataDemoSchema
   ],

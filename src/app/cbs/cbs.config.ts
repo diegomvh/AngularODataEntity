@@ -8,8 +8,10 @@ import { DefaultSchema } from './Default/default.schema';
 export const CBSConfig = {
   name: 'CBS',
   serviceRootUrl: 'https://www.cbs.nl/odata/v1/',
-  version: '4.0',
-  creation: new Date('2020-12-03T20:41:43.8472620-03:00'),
+  creation: new Date('2020-12-03T22:49:52.6691068-03:00'),
+  options: {
+    version: '4.0'
+  },
   schemas: [
     ModelsSchema,
     DefaultSchema
