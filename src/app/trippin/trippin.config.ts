@@ -5,12 +5,10 @@ import { TripPinSchema } from './Microsoft/OData/SampleService/Models/TripPin/tr
 //#endregion
 
 export const TripPinConfig = {
-  name: 'TripPin',
   serviceRootUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
-  creation: new Date('2020-12-03T22:50:09.0028105-03:00'),
-  options: {
-    version: '4.0'
-  },
+  name: 'TripPin',
+  version: '4.0',
+  creation: new Date('2020-12-03T23:07:09.8087814-03:00'),
   schemas: [
     TripPinSchema
   ],
