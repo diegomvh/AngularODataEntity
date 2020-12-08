@@ -32,13 +32,13 @@ export class DataPropertiesService extends ODataEntityService<DimensionOrTopic> 
   }
 
   //#region ODataApi Model
-  dimensionOrTopicModel(): DimensionOrTopicModel<DimensionOrTopic> {
-    return this.entity().asModel() as DimensionOrTopicModel<DimensionOrTopic>;
+  dimensionOrTopicModel(attrs?: Partial<DimensionOrTopic>): DimensionOrTopicModel<DimensionOrTopic> {
+    return this.entity().asModel(attrs || {}) as DimensionOrTopicModel<DimensionOrTopic>;
   }
   //#endregion
   //#region ODataApi Collection
-  dimensionOrTopicCollection(): DimensionOrTopicCollection<DimensionOrTopic, DimensionOrTopicModel<DimensionOrTopic>> {
-    return this.entities().asCollection() as DimensionOrTopicCollection<DimensionOrTopic, DimensionOrTopicModel<DimensionOrTopic>>;
+  dimensionOrTopicCollection(models?: Partial<DimensionOrTopic>[]): DimensionOrTopicCollection<DimensionOrTopic, DimensionOrTopicModel<DimensionOrTopic>> {
+    return this.entities().asCollection(models || []) as DimensionOrTopicCollection<DimensionOrTopic, DimensionOrTopicModel<DimensionOrTopic>>;
   }
   //#endregion
   //#region ODataApi Actions

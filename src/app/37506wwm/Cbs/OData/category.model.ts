@@ -10,7 +10,7 @@ import { CategoryCollection } from './category.collection';
 
 export class CategoryModel<E extends Category> extends ODataModel<E> {
   //#region ODataApi Properties
-  Key: string;
+  Key!: string;
   Title?: string;
   Description?: string;
   CategoryGroupID?: number;

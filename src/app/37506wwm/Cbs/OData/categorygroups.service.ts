@@ -32,13 +32,13 @@ export class CategoryGroupsService extends ODataEntityService<CategoryGroup> {
   }
 
   //#region ODataApi Model
-  categoryGroupModel(): CategoryGroupModel<CategoryGroup> {
-    return this.entity().asModel() as CategoryGroupModel<CategoryGroup>;
+  categoryGroupModel(attrs?: Partial<CategoryGroup>): CategoryGroupModel<CategoryGroup> {
+    return this.entity().asModel(attrs || {}) as CategoryGroupModel<CategoryGroup>;
   }
   //#endregion
   //#region ODataApi Collection
-  categoryGroupCollection(): CategoryGroupCollection<CategoryGroup, CategoryGroupModel<CategoryGroup>> {
-    return this.entities().asCollection() as CategoryGroupCollection<CategoryGroup, CategoryGroupModel<CategoryGroup>>;
+  categoryGroupCollection(models?: Partial<CategoryGroup>[]): CategoryGroupCollection<CategoryGroup, CategoryGroupModel<CategoryGroup>> {
+    return this.entities().asCollection(models || []) as CategoryGroupCollection<CategoryGroup, CategoryGroupModel<CategoryGroup>>;
   }
   //#endregion
   //#region ODataApi Actions

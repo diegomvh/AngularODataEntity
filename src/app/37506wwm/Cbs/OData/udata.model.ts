@@ -10,7 +10,7 @@ import { UDataCollection } from './udata.collection';
 
 export class UDataModel<E extends UData> extends ODataModel<E> {
   //#region ODataApi Properties
-  ID: number;
+  ID!: number;
   Geslacht?: string;
   Leeftijd?: string;
   Perioden?: string;

@@ -10,7 +10,7 @@ import { GeoDetailCategoryCollection } from './geodetailcategory.collection';
 
 export class GeoDetailCategoryModel<E extends GeoDetailCategory> extends ODataModel<E> {
   //#region ODataApi Properties
-  Key: string;
+  Key!: string;
   Title?: string;
   Description?: string;
   Municipality?: string;

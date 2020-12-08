@@ -10,7 +10,7 @@ import { CategoryGroupCollection } from './categorygroup.collection';
 
 export class CategoryGroupModel<E extends CategoryGroup> extends ODataModel<E> {
   //#region ODataApi Properties
-  ID: number;
+  ID!: number;
   DimensionKey?: string;
   Title?: string;
   Description?: string;

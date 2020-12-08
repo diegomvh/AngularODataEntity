@@ -32,13 +32,13 @@ export class TableInfosService extends ODataEntityService<TableInfo> {
   }
 
   //#region ODataApi Model
-  tableInfoModel(): TableInfoModel<TableInfo> {
-    return this.entity().asModel() as TableInfoModel<TableInfo>;
+  tableInfoModel(attrs?: Partial<TableInfo>): TableInfoModel<TableInfo> {
+    return this.entity().asModel(attrs || {}) as TableInfoModel<TableInfo>;
   }
   //#endregion
   //#region ODataApi Collection
-  tableInfoCollection(): TableInfoCollection<TableInfo, TableInfoModel<TableInfo>> {
-    return this.entities().asCollection() as TableInfoCollection<TableInfo, TableInfoModel<TableInfo>>;
+  tableInfoCollection(models?: Partial<TableInfo>[]): TableInfoCollection<TableInfo, TableInfoModel<TableInfo>> {
+    return this.entities().asCollection(models || []) as TableInfoCollection<TableInfo, TableInfoModel<TableInfo>>;
   }
   //#endregion
   //#region ODataApi Actions

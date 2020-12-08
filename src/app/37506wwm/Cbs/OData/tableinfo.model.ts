@@ -10,7 +10,7 @@ import { TableInfoCollection } from './tableinfo.collection';
 
 export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   //#region ODataApi Properties
-  ID: number;
+  ID!: number;
   Title?: string;
   ShortTitle?: string;
   Identifier?: string;

@@ -32,13 +32,13 @@ export class TypedDataSetService extends ODataEntityService<TData> {
   }
 
   //#region ODataApi Model
-  tDataModel(): TDataModel<TData> {
-    return this.entity().asModel() as TDataModel<TData>;
+  tDataModel(attrs?: Partial<TData>): TDataModel<TData> {
+    return this.entity().asModel(attrs || {}) as TDataModel<TData>;
   }
   //#endregion
   //#region ODataApi Collection
-  tDataCollection(): TDataCollection<TData, TDataModel<TData>> {
-    return this.entities().asCollection() as TDataCollection<TData, TDataModel<TData>>;
+  tDataCollection(models?: Partial<TData>[]): TDataCollection<TData, TDataModel<TData>> {
+    return this.entities().asCollection(models || []) as TDataCollection<TData, TDataModel<TData>>;
   }
   //#endregion
   //#region ODataApi Actions

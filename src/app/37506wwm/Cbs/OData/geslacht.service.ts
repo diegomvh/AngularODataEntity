@@ -32,13 +32,13 @@ export class GeslachtService extends ODataEntityService<Category> {
   }
 
   //#region ODataApi Model
-  categoryModel(): CategoryModel<Category> {
-    return this.entity().asModel() as CategoryModel<Category>;
+  categoryModel(attrs?: Partial<Category>): CategoryModel<Category> {
+    return this.entity().asModel(attrs || {}) as CategoryModel<Category>;
   }
   //#endregion
   //#region ODataApi Collection
-  categoryCollection(): CategoryCollection<Category, CategoryModel<Category>> {
-    return this.entities().asCollection() as CategoryCollection<Category, CategoryModel<Category>>;
+  categoryCollection(models?: Partial<Category>[]): CategoryCollection<Category, CategoryModel<Category>> {
+    return this.entities().asCollection(models || []) as CategoryCollection<Category, CategoryModel<Category>>;
   }
   //#endregion
   //#region ODataApi Actions

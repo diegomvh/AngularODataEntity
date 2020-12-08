@@ -10,7 +10,7 @@ import { TimeCategoryCollection } from './timecategory.collection';
 
 export class TimeCategoryModel<E extends TimeCategory> extends ODataModel<E> {
   //#region ODataApi Properties
-  Key: string;
+  Key!: string;
   Title?: string;
   Description?: string;
   Status?: string;

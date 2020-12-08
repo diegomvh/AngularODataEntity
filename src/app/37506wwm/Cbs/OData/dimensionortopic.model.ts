@@ -10,7 +10,7 @@ import { DimensionOrTopicCollection } from './dimensionortopic.collection';
 
 export class DimensionOrTopicModel<E extends DimensionOrTopic> extends ODataModel<E> {
   //#region ODataApi Properties
-  ID: number;
+  ID!: number;
   Position?: number;
   ParentID?: number;
   Type?: string;

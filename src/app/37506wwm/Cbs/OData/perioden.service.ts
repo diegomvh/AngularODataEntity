@@ -32,13 +32,13 @@ export class PeriodenService extends ODataEntityService<TimeCategory> {
   }
 
   //#region ODataApi Model
-  timeCategoryModel(): TimeCategoryModel<TimeCategory> {
-    return this.entity().asModel() as TimeCategoryModel<TimeCategory>;
+  timeCategoryModel(attrs?: Partial<TimeCategory>): TimeCategoryModel<TimeCategory> {
+    return this.entity().asModel(attrs || {}) as TimeCategoryModel<TimeCategory>;
   }
   //#endregion
   //#region ODataApi Collection
-  timeCategoryCollection(): TimeCategoryCollection<TimeCategory, TimeCategoryModel<TimeCategory>> {
-    return this.entities().asCollection() as TimeCategoryCollection<TimeCategory, TimeCategoryModel<TimeCategory>>;
+  timeCategoryCollection(models?: Partial<TimeCategory>[]): TimeCategoryCollection<TimeCategory, TimeCategoryModel<TimeCategory>> {
+    return this.entities().asCollection(models || []) as TimeCategoryCollection<TimeCategory, TimeCategoryModel<TimeCategory>>;
   }
   //#endregion
   //#region ODataApi Actions
