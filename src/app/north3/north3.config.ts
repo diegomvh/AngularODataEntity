@@ -5,12 +5,10 @@ import { ODataDemoSchema } from './ODataDemo/odatademo.schema';
 //#endregion
 
 export const North3Config = {
-  name: 'North3',
   serviceRootUrl: 'https://services.odata.org/V3/(S(hovbiiwxashh0qaz2p0p5go0))/OData/OData.svc/',
-  creation: new Date('2020-12-03T22:49:30.3855123-03:00'),
-  options: {
-    version: '3.0'
-  },
+  name: 'North3',
+  version: '3.0',
+  creation: new Date('2020-12-04T07:21:22.3796141-03:00'),
   schemas: [
     ODataDemoSchema
   ],

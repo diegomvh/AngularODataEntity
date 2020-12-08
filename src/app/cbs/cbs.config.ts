@@ -6,12 +6,10 @@ import { DefaultSchema } from './Default/default.schema';
 //#endregion
 
 export const CBSConfig = {
-  name: 'CBS',
   serviceRootUrl: 'https://www.cbs.nl/odata/v1/',
-  creation: new Date('2020-12-03T22:49:52.6691068-03:00'),
-  options: {
-    version: '4.0'
-  },
+  name: 'CBS',
+  version: '4.0',
+  creation: new Date('2020-12-08T06:47:59.9819061-03:00'),
   schemas: [
     ModelsSchema,
     DefaultSchema
