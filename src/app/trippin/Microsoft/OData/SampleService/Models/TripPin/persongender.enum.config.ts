@@ -6,5 +6,11 @@ import { PersonGender } from './persongender.enum';
 
 export const PersonGenderConfig = {
   name: "PersonGender",
-  members: PersonGender
+  members: PersonGender,
+  annotations: [],
+  fields: {
+    Male: {value: 0},
+    Female: {value: 1},
+    Unknown: {value: 2}
+  }
 } as EnumTypeConfig<PersonGender>;
