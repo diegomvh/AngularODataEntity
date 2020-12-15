@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ApiConfig, ODataCacheLocalStorage, ODataModule } from 'angular-odata';
+import { ApiConfig, ODataInMemoryCache, ODataInStorageCache, ODataModule } from 'angular-odata';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
@@ -46,43 +46,38 @@ import { EmployeesComponent } from './components/northwind/employees.component';
       // TripPin
       Object.assign(TripPinConfig, {
         serviceRootUrl: 'http://localhost:4200/trippin/',
-        cache: {
-          maxAge: 600000,
-          storage: new ODataCacheLocalStorage("TripPin", localStorage)
-        },
-        options: Object.assign(TripPinConfig.options, {
+        cache: new ODataInStorageCache({timeout: 60, name: "TripPinCache"}),
+        options: {
           metadata: 'full',
           stringAsEnum: true
-        })
+        }
       } as ApiConfig),
       // North version 2
       Object.assign(North2Config, {
         serviceRootUrl: 'http://localhost:4200/north2/',
-        options: Object.assign(North2Config.options, {
+        options: {
           metadata: 'full',
           withCredentials: true,
           params: {"$format": "json"},
           fetchPolicy: 'cache-and-network'
-        })
+        }
       } as ApiConfig),
       // North version 3
       Object.assign(North3Config, {
         serviceRootUrl: 'http://localhost:4200/north3/',
-        options: Object.assign(North3Config.options, {
+        options: {
           metadata: 'full',
           withCredentials: true,
           params: {"$format": "json"},
           fetchPolicy: 'no-cache'
-        })
+        }
       } as ApiConfig),
       // Northwind version 4
       Object.assign(NorthwindConfig, {
-        cache: {
-          maxAge: 600000
-        },
-        options: Object.assign(NorthwindConfig.options, {
+        cache: new ODataInMemoryCache({timeout: 60}),
+        options: {
           ieee754Compatible: true
-        })
+        }
       }),
       Object.assign(CBSConfig)
     ),
