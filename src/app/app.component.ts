@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient } from 'angular-odata';
-import { PeopleService, Airport, Person, PersonGender, Photo } from './trippin';
+import { PeopleService, Airport, Person, PersonGender, Photo, PhotosService } from './trippin';
 import { OrdersService } from './northwind';
 import { switchMap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin';
@@ -18,6 +18,7 @@ export class AppComponent {
     private factory: ODataServiceFactory,
     private api: DefaultContainerService,
     private people: PeopleService,
+    private photos: PhotosService,
     private products: ProductsService,
     private orders: OrdersService
   ) {
@@ -39,8 +40,8 @@ export class AppComponent {
   trippin() {
     this.api.resetDataSource().call(null).subscribe(() => {
       this.queries();
-      //this.mutate();
-      //this.trippinModels();
+      this.mutate();
+      this.trippinModels();
     });
   }
 
@@ -176,6 +177,7 @@ export class AppComponent {
 
   mutate() {
     this.createPerson();
+    this.makeReferences();
   }
 
   createPerson() {
@@ -199,6 +201,28 @@ export class AppComponent {
         console.log(odata.etag(person))
       }
     });
+  }
+
+  makeReferences() {
+    let photo = this.photos.entity(1); // Photo with id=1
+    let scott = this.people.entity("scottketchum"); // Entity resource
+    let photoOfScott = scott.navigationProperty<Photo>("Photo");
+    // Set Reference
+    photoOfScott.reference().set(photo).subscribe(console.log); // Set is a shortcut for .put()
+    // Unset reference
+    photoOfScott.reference().unset().subscribe(console.log); // Unset the foto of scott
+
+    let diego = this.people.entity("diegomvh"); // Entity resource
+    // Add Friend
+    scott.navigationProperty<Person>("Friends")
+      .reference()
+      .add(diego)   // Add is a shortcut for .post()
+      .subscribe(console.log);
+    // Remove Friend
+    scott.navigationProperty<Person>("Firends")
+      .reference()
+      .remove(diego)
+      .subscribe(console.log);
   }
 
   batch() {
