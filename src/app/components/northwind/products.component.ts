@@ -56,7 +56,7 @@ export class ProductsComponent {
     resource.get({withCount: true}).subscribe(({entities, meta}) => {
       this.rows = entities || [];
       if (!this.total)
-        this.total = meta.count;
+        this.total = meta.count as number;
       this.loading = false;
     });
   }

@@ -62,7 +62,7 @@ export class AirlinesComponent {
       .get({withCount: true}).subscribe(({entities, meta}) => {
       this.rows = entities || [];
       if (!this.total)
-        this.total = meta.count;
+        this.total = meta.count as number;
       if (!this.size)
         this.size = meta.skip || this.rows.length;
       this.loading = false;

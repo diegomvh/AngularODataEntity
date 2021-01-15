@@ -22,21 +22,11 @@ export class AppComponent {
     private products: ProductsService,
     private orders: OrdersService
   ) {
-    //this.nort2();
-    //this.nort3();
     this.trippin();
     //this.northwind();
   }
 
   //#region APIs
-  nort2() {
-    this.products.entities().get({withCount: true, apiName: "North2"}).subscribe(console.log);
-  }
-
-  nort3() {
-    this.products.entities().get({withCount: true, apiName: "North3"}).subscribe(console.log);
-  }
-
   trippin() {
     this.api.resetDataSource().call(null).subscribe(() => {
       this.queries();
@@ -59,8 +49,8 @@ export class AppComponent {
 
   entities() {
     // Use OData Service Factory
-    let airportsService = this.factory.entity<Airport>("Airports", 'Microsoft.OData.SampleService.Models.TripPin.Airport');
-    let peopleService = this.factory.entity<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
+    let airportsService = this.factory.entitySet<Airport>("Airports", 'Microsoft.OData.SampleService.Models.TripPin.Airport');
+    let peopleService = this.factory.entitySet<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
 
     let airports = airportsService.entities();
 
@@ -72,7 +62,7 @@ export class AppComponent {
     .subscribe(aports => console.log("All: ", aports));
 
     this.products.entities()
-    .get({withCount: true, fetchPolicy: 'cache-only', apiName: 'North3'})
+    .get({withCount: true, fetchPolicy: 'cache-only'})
     .subscribe(
       ({entities, meta}) => {console.log(entities)},
       (err) => console.log(err)
@@ -134,18 +124,18 @@ export class AppComponent {
 
   navigation() {
     // Create service without Type for Person entity
-    let peopleService = this.factory.entity<Person>("People");
+    let peopleService = this.factory.entitySet<Person>("People");
     let person = peopleService.entity("scottketchum");
-    person.get({apiName: 'TripPin'}).subscribe(({entity, meta}) => console.log(meta.property('Emails')));
+    //person.get({apiName: 'TripPin'}).subscribe(({entity, meta}) => console.log(meta.property('Emails')));
 
     let friends = person.navigationProperty<Person>("Friends");
     // Use TripPin config
-    friends.get({responseType: 'entities', apiName: 'TripPin'}).subscribe(console.log);
+    //friends.get({responseType: 'entities', apiName: 'TripPin'}).subscribe(console.log);
   }
 
   property() {
     // Create Service with Type
-    let peopleService = this.factory.entity<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
+    let peopleService = this.factory.entitySet<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');
     let person = peopleService.entity("scottketchum");
     person.property<string[]>("Emails").fetch().subscribe(console.log)
     person.property<Person[]>("Friends").fetch().subscribe(console.log)
