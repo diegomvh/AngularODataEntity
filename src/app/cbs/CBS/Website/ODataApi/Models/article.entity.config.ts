@@ -6,6 +6,7 @@ import { ArticleModel } from './article.model';
 import { ArticleCollection } from './article.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const ArticleConfig = {
   name: "Article",
   model: ArticleModel,
@@ -46,3 +47,4 @@ export const ArticleConfig = {
     Permalink: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<Article>;
+//#endregion

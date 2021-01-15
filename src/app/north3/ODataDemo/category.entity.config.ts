@@ -6,6 +6,7 @@ import { CategoryModel } from './category.model';
 import { CategoryCollection } from './category.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const CategoryConfig = {
   name: "Category",
   open: true,
@@ -18,3 +19,4 @@ export const CategoryConfig = {
     Products: {type: 'ODataDemo.Product', collection: true, navigation: true}
   }
 } as StructuredTypeConfig<Category>;
+//#endregion

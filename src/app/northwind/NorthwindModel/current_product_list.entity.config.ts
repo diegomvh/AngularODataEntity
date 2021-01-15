@@ -6,6 +6,7 @@ import { CurrentProductListModel } from './current_product_list.model';
 import { CurrentProductListCollection } from './current_product_list.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const CurrentProductListConfig = {
   name: "Current_Product_List",
   model: CurrentProductListModel,
@@ -16,3 +17,4 @@ export const CurrentProductListConfig = {
     ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40}
   }
 } as StructuredTypeConfig<CurrentProductList>;
+//#endregion

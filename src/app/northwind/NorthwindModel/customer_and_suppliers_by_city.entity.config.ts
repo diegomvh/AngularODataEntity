@@ -6,6 +6,7 @@ import { CustomerAndSuppliersByCityModel } from './customer_and_suppliers_by_cit
 import { CustomerAndSuppliersByCityCollection } from './customer_and_suppliers_by_city.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const CustomerAndSuppliersByCityConfig = {
   name: "Customer_and_Suppliers_by_City",
   model: CustomerAndSuppliersByCityModel,
@@ -18,3 +19,4 @@ export const CustomerAndSuppliersByCityConfig = {
     Relationship: {type: 'Edm.String', key: true, ref: 'Relationship', nullable: false, maxLength: 9}
   }
 } as StructuredTypeConfig<CustomerAndSuppliersByCity>;
+//#endregion

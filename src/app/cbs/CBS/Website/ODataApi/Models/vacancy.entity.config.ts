@@ -6,6 +6,7 @@ import { VacancyModel } from './vacancy.model';
 import { VacancyCollection } from './vacancy.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const VacancyConfig = {
   name: "Vacancy",
   model: VacancyModel,
@@ -46,3 +47,4 @@ export const VacancyConfig = {
     Permalink: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<Vacancy>;
+//#endregion

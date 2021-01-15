@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -27,7 +27,7 @@ import { SearchResultItemCollection } from '../CBS/Website/ODataApi/Models/searc
 //#endregion
 
 @Injectable()
-export class SearchService extends ODataEntityService<SearchResultItem> {
+export class SearchService extends ODataEntitySetService<SearchResultItem> {
   constructor(protected client: ODataClient) {
     super(client, 'Search', 'CBS.Website.ODataApi.Models.SearchResultItem');
   }

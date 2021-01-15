@@ -6,6 +6,7 @@ import { PlanItemModel } from './planitem.model';
 import { PlanItemCollection } from './planitem.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const PlanItemConfig = {
   name: "PlanItem",
   model: PlanItemModel,
@@ -19,3 +20,4 @@ export const PlanItemConfig = {
     Duration: {type: 'Edm.Duration'}
   }
 } as StructuredTypeConfig<PlanItem>;
+//#endregion

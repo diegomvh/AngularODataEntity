@@ -8,6 +8,7 @@ import { SupplierConfig } from './supplier.entity.config';
 import { DemoServiceContainer } from './demoservice.container';
 //#endregion
 
+//#region ODataApi SchemaConfig
 export const ODataDemoSchema = {
   namespace: "ODataDemo",
   enums: [],
@@ -18,3 +19,4 @@ export const ODataDemoSchema = {
   callables: [],
   containers: [DemoServiceContainer]
 } as SchemaConfig;
+//#endregion

@@ -6,6 +6,7 @@ import { SupplierModel } from './supplier.model';
 import { SupplierCollection } from './supplier.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const SupplierConfig = {
   name: "Supplier",
   model: SupplierModel,
@@ -27,3 +28,4 @@ export const SupplierConfig = {
     Products: {type: 'NorthwindModel.Product', collection: true, navigation: true}
   }
 } as StructuredTypeConfig<Supplier>;
+//#endregion

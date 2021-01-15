@@ -6,6 +6,7 @@ import { OrderDetailsExtendedModel } from './order_details_extended.model';
 import { OrderDetailsExtendedCollection } from './order_details_extended.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const OrderDetailsExtendedConfig = {
   name: "Order_Details_Extended",
   model: OrderDetailsExtendedModel,
@@ -21,3 +22,4 @@ export const OrderDetailsExtendedConfig = {
     ExtendedPrice: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as StructuredTypeConfig<OrderDetailsExtended>;
+//#endregion

@@ -6,6 +6,7 @@ import { AlphabeticalListOfProductModel } from './alphabetical_list_of_product.m
 import { AlphabeticalListOfProductCollection } from './alphabetical_list_of_product.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const AlphabeticalListOfProductConfig = {
   name: "Alphabetical_list_of_product",
   model: AlphabeticalListOfProductModel,
@@ -25,3 +26,4 @@ export const AlphabeticalListOfProductConfig = {
     CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15}
   }
 } as StructuredTypeConfig<AlphabeticalListOfProduct>;
+//#endregion

@@ -6,6 +6,7 @@ import { SalesByCategoryModel } from './sales_by_category.model';
 import { SalesByCategoryCollection } from './sales_by_category.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const SalesByCategoryConfig = {
   name: "Sales_by_Category",
   model: SalesByCategoryModel,
@@ -18,3 +19,4 @@ export const SalesByCategoryConfig = {
     ProductSales: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as StructuredTypeConfig<SalesByCategory>;
+//#endregion

@@ -6,6 +6,7 @@ import { InvoiceModel } from './invoice.model';
 import { InvoiceCollection } from './invoice.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const InvoiceConfig = {
   name: "Invoice",
   model: InvoiceModel,
@@ -40,3 +41,4 @@ export const InvoiceConfig = {
     Freight: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as StructuredTypeConfig<Invoice>;
+//#endregion

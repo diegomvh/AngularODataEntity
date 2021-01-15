@@ -6,6 +6,7 @@ import { ProductsAboveAveragePriceModel } from './products_above_average_price.m
 import { ProductsAboveAveragePriceCollection } from './products_above_average_price.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const ProductsAboveAveragePriceConfig = {
   name: "Products_Above_Average_Price",
   model: ProductsAboveAveragePriceModel,
@@ -16,3 +17,4 @@ export const ProductsAboveAveragePriceConfig = {
     UnitPrice: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as StructuredTypeConfig<ProductsAboveAveragePrice>;
+//#endregion

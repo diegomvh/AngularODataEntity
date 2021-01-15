@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -27,7 +27,7 @@ import { MediumCollection } from '../CBS/Website/ODataApi/Models/medium.collecti
 //#endregion
 
 @Injectable()
-export class MediaService extends ODataEntityService<Medium> {
+export class MediaService extends ODataEntitySetService<Medium> {
   constructor(protected client: ODataClient) {
     super(client, 'Media', 'CBS.Website.ODataApi.Models.Medium');
   }

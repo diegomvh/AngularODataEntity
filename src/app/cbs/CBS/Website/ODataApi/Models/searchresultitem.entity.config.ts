@@ -6,6 +6,7 @@ import { SearchResultItemModel } from './searchresultitem.model';
 import { SearchResultItemCollection } from './searchresultitem.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const SearchResultItemConfig = {
   name: "SearchResultItem",
   model: SearchResultItemModel,
@@ -33,3 +34,4 @@ export const SearchResultItemConfig = {
     SortOrder: {type: 'Edm.Int32', nullable: false}
   }
 } as StructuredTypeConfig<SearchResultItem>;
+//#endregion

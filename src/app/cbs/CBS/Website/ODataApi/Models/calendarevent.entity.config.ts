@@ -6,6 +6,7 @@ import { CalendarEventModel } from './calendarevent.model';
 import { CalendarEventCollection } from './calendarevent.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const CalendarEventConfig = {
   name: "CalendarEvent",
   model: CalendarEventModel,
@@ -35,3 +36,4 @@ export const CalendarEventConfig = {
     Permalink: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<CalendarEvent>;
+//#endregion

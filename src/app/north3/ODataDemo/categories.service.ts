@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -26,7 +26,7 @@ import { CategoryCollection } from './category.collection';
 //#endregion
 
 @Injectable()
-export class CategoriesService extends ODataEntityService<Category> {
+export class CategoriesService extends ODataEntitySetService<Category> {
   constructor(protected client: ODataClient) {
     super(client, 'Categories', 'ODataDemo.Category');
   }

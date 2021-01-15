@@ -4,6 +4,7 @@
 import { NorthwindEntitiesContainer } from './northwindentities.container';
 //#endregion
 
+//#region ODataApi SchemaConfig
 export const ModelSchema = {
   namespace: "ODataWebExperimental.Northwind.Model",
   enums: [],
@@ -11,3 +12,4 @@ export const ModelSchema = {
   callables: [],
   containers: [NorthwindEntitiesContainer]
 } as SchemaConfig;
+//#endregion

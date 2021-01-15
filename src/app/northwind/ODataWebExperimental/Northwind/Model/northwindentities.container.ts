@@ -1,63 +1,65 @@
 ﻿import { EntityContainerConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { CategoriesServiceConfig } from './categories.service.config';
-import { CustomerDemographicsServiceConfig } from './customerdemographics.service.config';
-import { CustomersServiceConfig } from './customers.service.config';
-import { EmployeesServiceConfig } from './employees.service.config';
-import { OrderDetailsServiceConfig } from './order_details.service.config';
-import { OrdersServiceConfig } from './orders.service.config';
-import { ProductsServiceConfig } from './products.service.config';
-import { RegionsServiceConfig } from './regions.service.config';
-import { ShippersServiceConfig } from './shippers.service.config';
-import { SuppliersServiceConfig } from './suppliers.service.config';
-import { TerritoriesServiceConfig } from './territories.service.config';
-import { AlphabeticalListOfProductsServiceConfig } from './alphabetical_list_of_products.service.config';
-import { CategorySalesFor1997ServiceConfig } from './category_sales_for_1997.service.config';
-import { CurrentProductListsServiceConfig } from './current_product_lists.service.config';
-import { CustomerAndSuppliersByCitiesServiceConfig } from './customer_and_suppliers_by_cities.service.config';
-import { InvoicesServiceConfig } from './invoices.service.config';
-import { OrderDetailsExtendedsServiceConfig } from './order_details_extendeds.service.config';
-import { OrderSubtotalsServiceConfig } from './order_subtotals.service.config';
-import { OrdersQriesServiceConfig } from './orders_qries.service.config';
-import { ProductSalesFor1997ServiceConfig } from './product_sales_for_1997.service.config';
-import { ProductsAboveAveragePricesServiceConfig } from './products_above_average_prices.service.config';
-import { ProductsByCategoriesServiceConfig } from './products_by_categories.service.config';
-import { SalesByCategoriesServiceConfig } from './sales_by_categories.service.config';
-import { SalesTotalsByAmountsServiceConfig } from './sales_totals_by_amounts.service.config';
-import { SummaryOfSalesByQuartersServiceConfig } from './summary_of_sales_by_quarters.service.config';
-import { SummaryOfSalesByYearsServiceConfig } from './summary_of_sales_by_years.service.config';
+import { CategoriesConfig } from './categories.service.config';
+import { CustomerDemographicsConfig } from './customerdemographics.service.config';
+import { CustomersConfig } from './customers.service.config';
+import { EmployeesConfig } from './employees.service.config';
+import { OrderDetailsConfig } from './order_details.service.config';
+import { OrdersConfig } from './orders.service.config';
+import { ProductsConfig } from './products.service.config';
+import { RegionsConfig } from './regions.service.config';
+import { ShippersConfig } from './shippers.service.config';
+import { SuppliersConfig } from './suppliers.service.config';
+import { TerritoriesConfig } from './territories.service.config';
+import { AlphabeticalListOfProductsConfig } from './alphabetical_list_of_products.service.config';
+import { CategorySalesFor1997Config } from './category_sales_for_1997.service.config';
+import { CurrentProductListsConfig } from './current_product_lists.service.config';
+import { CustomerAndSuppliersByCitiesConfig } from './customer_and_suppliers_by_cities.service.config';
+import { InvoicesConfig } from './invoices.service.config';
+import { OrderDetailsExtendedsConfig } from './order_details_extendeds.service.config';
+import { OrderSubtotalsConfig } from './order_subtotals.service.config';
+import { OrdersQriesConfig } from './orders_qries.service.config';
+import { ProductSalesFor1997Config } from './product_sales_for_1997.service.config';
+import { ProductsAboveAveragePricesConfig } from './products_above_average_prices.service.config';
+import { ProductsByCategoriesConfig } from './products_by_categories.service.config';
+import { SalesByCategoriesConfig } from './sales_by_categories.service.config';
+import { SalesTotalsByAmountsConfig } from './sales_totals_by_amounts.service.config';
+import { SummaryOfSalesByQuartersConfig } from './summary_of_sales_by_quarters.service.config';
+import { SummaryOfSalesByYearsConfig } from './summary_of_sales_by_years.service.config';
 //#endregion
 
+//#region ODataApi EntityContainerConfig
 export const NorthwindEntitiesContainer = {
   name: "NorthwindEntities",
   annotations: [],
-  services: [
-    CategoriesServiceConfig,
-    CustomerDemographicsServiceConfig,
-    CustomersServiceConfig,
-    EmployeesServiceConfig,
-    OrderDetailsServiceConfig,
-    OrdersServiceConfig,
-    ProductsServiceConfig,
-    RegionsServiceConfig,
-    ShippersServiceConfig,
-    SuppliersServiceConfig,
-    TerritoriesServiceConfig,
-    AlphabeticalListOfProductsServiceConfig,
-    CategorySalesFor1997ServiceConfig,
-    CurrentProductListsServiceConfig,
-    CustomerAndSuppliersByCitiesServiceConfig,
-    InvoicesServiceConfig,
-    OrderDetailsExtendedsServiceConfig,
-    OrderSubtotalsServiceConfig,
-    OrdersQriesServiceConfig,
-    ProductSalesFor1997ServiceConfig,
-    ProductsAboveAveragePricesServiceConfig,
-    ProductsByCategoriesServiceConfig,
-    SalesByCategoriesServiceConfig,
-    SalesTotalsByAmountsServiceConfig,
-    SummaryOfSalesByQuartersServiceConfig,
-    SummaryOfSalesByYearsServiceConfig
+  entitySets: [
+    CategoriesConfig,
+    CustomerDemographicsConfig,
+    CustomersConfig,
+    EmployeesConfig,
+    OrderDetailsConfig,
+    OrdersConfig,
+    ProductsConfig,
+    RegionsConfig,
+    ShippersConfig,
+    SuppliersConfig,
+    TerritoriesConfig,
+    AlphabeticalListOfProductsConfig,
+    CategorySalesFor1997Config,
+    CurrentProductListsConfig,
+    CustomerAndSuppliersByCitiesConfig,
+    InvoicesConfig,
+    OrderDetailsExtendedsConfig,
+    OrderSubtotalsConfig,
+    OrdersQriesConfig,
+    ProductSalesFor1997Config,
+    ProductsAboveAveragePricesConfig,
+    ProductsByCategoriesConfig,
+    SalesByCategoriesConfig,
+    SalesTotalsByAmountsConfig,
+    SummaryOfSalesByQuartersConfig,
+    SummaryOfSalesByYearsConfig
   ]
 } as EntityContainerConfig;
+//#endregion

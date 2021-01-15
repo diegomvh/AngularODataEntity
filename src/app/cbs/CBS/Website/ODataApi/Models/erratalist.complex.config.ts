@@ -6,6 +6,7 @@ import { ErrataListModel } from './erratalist.model';
 import { ErrataListCollection } from './erratalist.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const ErrataListConfig = {
   name: "ErrataList",
   model: ErrataListModel,
@@ -15,3 +16,4 @@ export const ErrataListConfig = {
     Items: {type: 'CBS.Website.ODataApi.Models.ErratumItem', collection: true}
   }
 } as StructuredTypeConfig<ErrataList>;
+//#endregion

@@ -14,6 +14,7 @@ import { VacanciesService } from './Default/vacancies.service';
 
 @NgModule({
   providers: [
+//#region ODataApi Providers
     ContainerService,
     ArticlesService,
     DefinitionsService,
@@ -22,7 +23,7 @@ import { VacanciesService } from './Default/vacancies.service';
     FlashService,
     PagesService,
     SearchService,
-    VacanciesService
+    VacanciesService//#endregion
   ]
 })
 export class CBSModule { }

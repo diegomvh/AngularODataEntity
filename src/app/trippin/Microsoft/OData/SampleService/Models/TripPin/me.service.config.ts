@@ -1,10 +1,14 @@
 ﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
+import { MeService } from './me.service';
 //#endregion
 
-export const MeServiceConfig = {
+//#region ODataApi EntitySetConfig
+export const MeConfig = {
   name: "Me",
+  entityType: "Microsoft.OData.SampleService.Models.TripPin.Person",
+  service: MeService,
   annotations: [
   {
     "type": "Org.OData.Core.V1.ResourcePath",
@@ -12,3 +16,4 @@ export const MeServiceConfig = {
   }
 ]
 } as EntitySetConfig;
+//#endregion

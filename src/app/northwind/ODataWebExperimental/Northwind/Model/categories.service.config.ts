@@ -1,9 +1,14 @@
 ﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
+import { CategoriesService } from './categories.service';
 //#endregion
 
-export const CategoriesServiceConfig = {
+//#region ODataApi EntitySetConfig
+export const CategoriesConfig = {
   name: "Categories",
+  entityType: "NorthwindModel.Category",
+  service: CategoriesService,
   annotations: []
 } as EntitySetConfig;
+//#endregion

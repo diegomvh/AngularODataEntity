@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -26,7 +26,7 @@ import { FlashCollection } from '../CBS/Website/ODataApi/Models/flash.collection
 //#endregion
 
 @Injectable()
-export class FlashService extends ODataEntityService<Flash> {
+export class FlashService extends ODataEntitySetService<Flash> {
   constructor(protected client: ODataClient) {
     super(client, 'Flash', 'CBS.Website.ODataApi.Models.Flash');
   }

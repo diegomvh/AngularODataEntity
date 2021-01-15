@@ -6,6 +6,7 @@ import { LinkListModel } from './linklist.model';
 import { LinkListCollection } from './linklist.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const LinkListConfig = {
   name: "LinkList",
   model: LinkListModel,
@@ -15,3 +16,4 @@ export const LinkListConfig = {
     Items: {type: 'CBS.Website.ODataApi.Models.Link', collection: true}
   }
 } as StructuredTypeConfig<LinkList>;
+//#endregion

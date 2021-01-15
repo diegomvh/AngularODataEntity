@@ -6,6 +6,7 @@ import { FlashModel } from './flash.model';
 import { FlashCollection } from './flash.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const FlashConfig = {
   name: "Flash",
   model: FlashModel,
@@ -27,3 +28,4 @@ export const FlashConfig = {
     Created: {type: 'Edm.DateTimeOffset', nullable: false}
   }
 } as StructuredTypeConfig<Flash>;
+//#endregion

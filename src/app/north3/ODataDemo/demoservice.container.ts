@@ -1,25 +1,27 @@
 ﻿import { EntityContainerConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { ProductsServiceConfig } from './products.service.config';
-import { ProductDetailsServiceConfig } from './productdetails.service.config';
-import { CategoriesServiceConfig } from './categories.service.config';
-import { SuppliersServiceConfig } from './suppliers.service.config';
-import { PersonsServiceConfig } from './persons.service.config';
-import { PersonDetailsServiceConfig } from './persondetails.service.config';
-import { AdvertisementsServiceConfig } from './advertisements.service.config';
+import { ProductsConfig } from './products.service.config';
+import { ProductDetailsConfig } from './productdetails.service.config';
+import { CategoriesConfig } from './categories.service.config';
+import { SuppliersConfig } from './suppliers.service.config';
+import { PersonsConfig } from './persons.service.config';
+import { PersonDetailsConfig } from './persondetails.service.config';
+import { AdvertisementsConfig } from './advertisements.service.config';
 //#endregion
 
+//#region ODataApi EntityContainerConfig
 export const DemoServiceContainer = {
   name: "DemoService",
   annotations: [],
-  services: [
-    ProductsServiceConfig,
-    ProductDetailsServiceConfig,
-    CategoriesServiceConfig,
-    SuppliersServiceConfig,
-    PersonsServiceConfig,
-    PersonDetailsServiceConfig,
-    AdvertisementsServiceConfig
+  entitySets: [
+    ProductsConfig,
+    ProductDetailsConfig,
+    CategoriesConfig,
+    SuppliersConfig,
+    PersonsConfig,
+    PersonDetailsConfig,
+    AdvertisementsConfig
   ]
 } as EntityContainerConfig;
+//#endregion

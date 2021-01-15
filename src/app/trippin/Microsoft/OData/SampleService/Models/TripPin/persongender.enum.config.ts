@@ -4,6 +4,7 @@
 import { PersonGender } from './persongender.enum';
 //#endregion
 
+//#region ODataApi EnumTypeConfig
 export const PersonGenderConfig = {
   name: "PersonGender",
   members: PersonGender,
@@ -14,3 +15,4 @@ export const PersonGenderConfig = {
     Unknown: {value: 2}
   }
 } as EnumTypeConfig<PersonGender>;
+//#endregion

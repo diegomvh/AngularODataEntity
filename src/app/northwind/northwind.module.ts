@@ -32,6 +32,7 @@ import { SummaryOfSalesByYearsService } from './ODataWebExperimental/Northwind/M
 
 @NgModule({
   providers: [
+//#region ODataApi Providers
     NorthwindEntitiesService,
     CategoriesService,
     CustomerDemographicsService,
@@ -58,7 +59,7 @@ import { SummaryOfSalesByYearsService } from './ODataWebExperimental/Northwind/M
     SalesByCategoriesService,
     SalesTotalsByAmountsService,
     SummaryOfSalesByQuartersService,
-    SummaryOfSalesByYearsService
+    SummaryOfSalesByYearsService//#endregion
   ]
 })
 export class NorthwindModule { }

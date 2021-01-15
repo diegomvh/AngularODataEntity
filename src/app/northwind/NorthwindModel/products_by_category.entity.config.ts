@@ -6,6 +6,7 @@ import { ProductsByCategoryModel } from './products_by_category.model';
 import { ProductsByCategoryCollection } from './products_by_category.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const ProductsByCategoryConfig = {
   name: "Products_by_Category",
   model: ProductsByCategoryModel,
@@ -19,3 +20,4 @@ export const ProductsByCategoryConfig = {
     Discontinued: {type: 'Edm.Boolean', key: true, ref: 'Discontinued', nullable: false}
   }
 } as StructuredTypeConfig<ProductsByCategory>;
+//#endregion

@@ -6,6 +6,7 @@ import { AddressModel } from './address.model';
 import { AddressCollection } from './address.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const AddressConfig = {
   name: "Address",
   model: AddressModel,
@@ -19,3 +20,4 @@ export const AddressConfig = {
     Country: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<Address>;
+//#endregion

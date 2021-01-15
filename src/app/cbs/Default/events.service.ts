@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -26,7 +26,7 @@ import { CalendarEventCollection } from '../CBS/Website/ODataApi/Models/calendar
 //#endregion
 
 @Injectable()
-export class EventsService extends ODataEntityService<CalendarEvent> {
+export class EventsService extends ODataEntitySetService<CalendarEvent> {
   constructor(protected client: ODataClient) {
     super(client, 'Events', 'CBS.Website.ODataApi.Models.CalendarEvent');
   }

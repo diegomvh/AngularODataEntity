@@ -6,6 +6,7 @@ import { PersonModel } from './person.model';
 import { PersonCollection } from './person.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const PersonConfig = {
   name: "Person",
   model: PersonModel,
@@ -17,3 +18,4 @@ export const PersonConfig = {
     PersonDetail: {type: 'ODataDemo.PersonDetail', navigation: true}
   }
 } as StructuredTypeConfig<Person>;
+//#endregion

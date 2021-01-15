@@ -19,6 +19,7 @@ import { SearchResultItemConfig } from './searchresultitem.entity.config';
 import { VacancyConfig } from './vacancy.entity.config';
 //#endregion
 
+//#region ODataApi SchemaConfig
 export const ModelsSchema = {
   namespace: "CBS.Website.ODataApi.Models",
   enums: [ArticleTypeConfig,
@@ -40,3 +41,4 @@ export const ModelsSchema = {
   callables: [],
   containers: []
 } as SchemaConfig;
+//#endregion

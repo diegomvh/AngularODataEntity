@@ -6,6 +6,7 @@ import { AdvertisementModel } from './advertisement.model';
 import { AdvertisementCollection } from './advertisement.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const AdvertisementConfig = {
   name: "Advertisement",
   model: AdvertisementModel,
@@ -18,3 +19,4 @@ export const AdvertisementConfig = {
     FeaturedProduct: {type: 'ODataDemo.FeaturedProduct', navigation: true}
   }
 } as StructuredTypeConfig<Advertisement>;
+//#endregion

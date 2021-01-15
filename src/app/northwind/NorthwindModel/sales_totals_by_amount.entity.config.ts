@@ -6,6 +6,7 @@ import { SalesTotalsByAmountModel } from './sales_totals_by_amount.model';
 import { SalesTotalsByAmountCollection } from './sales_totals_by_amount.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const SalesTotalsByAmountConfig = {
   name: "Sales_Totals_by_Amount",
   model: SalesTotalsByAmountModel,
@@ -18,3 +19,4 @@ export const SalesTotalsByAmountConfig = {
     ShippedDate: {type: 'Edm.DateTimeOffset'}
   }
 } as StructuredTypeConfig<SalesTotalsByAmount>;
+//#endregion

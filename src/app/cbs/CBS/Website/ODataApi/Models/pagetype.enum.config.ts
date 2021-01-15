@@ -4,6 +4,7 @@
 import { PageType } from './pagetype.enum';
 //#endregion
 
+//#region ODataApi EnumTypeConfig
 export const PageTypeConfig = {
   name: "PageType",
   members: PageType,
@@ -21,3 +22,4 @@ export const PageTypeConfig = {
     Unknown: {value: -1}
   }
 } as EnumTypeConfig<PageType>;
+//#endregion

@@ -6,6 +6,7 @@ import { AirportLocationModel } from './airportlocation.model';
 import { AirportLocationCollection } from './airportlocation.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const AirportLocationConfig = {
   name: "AirportLocation",
   base: "Microsoft.OData.SampleService.Models.TripPin.Location",
@@ -17,3 +18,4 @@ export const AirportLocationConfig = {
     Loc: {type: 'Edm.GeographyPoint', nullable: false, srid: '4326'}
   }
 } as StructuredTypeConfig<AirportLocation>;
+//#endregion

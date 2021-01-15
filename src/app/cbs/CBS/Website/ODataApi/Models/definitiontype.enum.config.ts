@@ -4,6 +4,7 @@
 import { DefinitionType } from './definitiontype.enum';
 //#endregion
 
+//#region ODataApi EnumTypeConfig
 export const DefinitionTypeConfig = {
   name: "DefinitionType",
   members: DefinitionType,
@@ -16,3 +17,4 @@ export const DefinitionTypeConfig = {
     Unknown: {value: -1}
   }
 } as EnumTypeConfig<DefinitionType>;
+//#endregion

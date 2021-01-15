@@ -29,6 +29,7 @@ import { SummaryOfSalesByQuarterConfig } from './summary_of_sales_by_quarter.ent
 import { SummaryOfSalesByYearConfig } from './summary_of_sales_by_year.entity.config';
 //#endregion
 
+//#region ODataApi SchemaConfig
 export const NorthwindModelSchema = {
   namespace: "NorthwindModel",
   enums: [],
@@ -61,3 +62,4 @@ export const NorthwindModelSchema = {
   callables: [],
   containers: []
 } as SchemaConfig;
+//#endregion

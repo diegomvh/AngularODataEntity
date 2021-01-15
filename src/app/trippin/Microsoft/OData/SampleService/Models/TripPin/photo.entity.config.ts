@@ -6,6 +6,7 @@ import { PhotoModel } from './photo.model';
 import { PhotoCollection } from './photo.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const PhotoConfig = {
   name: "Photo",
   model: PhotoModel,
@@ -16,3 +17,4 @@ export const PhotoConfig = {
     Name: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<Photo>;
+//#endregion

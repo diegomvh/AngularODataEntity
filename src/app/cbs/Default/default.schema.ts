@@ -4,6 +4,7 @@
 import { ContainerContainer } from './container.container';
 //#endregion
 
+//#region ODataApi SchemaConfig
 export const DefaultSchema = {
   namespace: "Default",
   enums: [],
@@ -113,3 +114,4 @@ export const DefaultSchema = {
   }],
   containers: [ContainerContainer]
 } as SchemaConfig;
+//#endregion

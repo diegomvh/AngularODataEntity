@@ -6,6 +6,7 @@ import { CustomerModel } from './customer.model';
 import { CustomerCollection } from './customer.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const CustomerConfig = {
   name: "Customer",
   base: "ODataDemo.Person",
@@ -16,3 +17,4 @@ export const CustomerConfig = {
     TotalExpense: {type: 'Edm.Decimal', nullable: false}
   }
 } as StructuredTypeConfig<Customer>;
+//#endregion

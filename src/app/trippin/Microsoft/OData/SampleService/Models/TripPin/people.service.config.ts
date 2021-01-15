@@ -1,14 +1,18 @@
 ﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
+import { PeopleService } from './people.service';
 //#endregion
 
-export const PeopleServiceConfig = {
+//#region ODataApi EntitySetConfig
+export const PeopleConfig = {
   name: "People",
+  entityType: "Microsoft.OData.SampleService.Models.TripPin.Person",
+  service: PeopleService,
   annotations: [
   {
     "type": "Org.OData.Core.V1.OptimisticConcurrency",
-    "values": [
+    "properties": [
       "Concurrency"
     ]
   },
@@ -35,3 +39,4 @@ export const PeopleServiceConfig = {
   }
 ]
 } as EntitySetConfig;
+//#endregion

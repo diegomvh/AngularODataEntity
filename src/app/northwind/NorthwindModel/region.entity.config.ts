@@ -6,6 +6,7 @@ import { RegionModel } from './region.model';
 import { RegionCollection } from './region.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const RegionConfig = {
   name: "Region",
   model: RegionModel,
@@ -17,3 +18,4 @@ export const RegionConfig = {
     Territories: {type: 'NorthwindModel.Territory', collection: true, navigation: true}
   }
 } as StructuredTypeConfig<Region>;
+//#endregion

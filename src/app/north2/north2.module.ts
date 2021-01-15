@@ -9,10 +9,11 @@ import { SuppliersService } from './ODataDemo/suppliers.service';
 
 @NgModule({
   providers: [
+//#region ODataApi Providers
     DemoServiceService,
     ProductsService,
     CategoriesService,
-    SuppliersService
+    SuppliersService//#endregion
   ]
 })
 export class North2Module { }

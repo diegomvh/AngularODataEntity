@@ -4,6 +4,7 @@
 import { ArticleType } from './articletype.enum';
 //#endregion
 
+//#region ODataApi EnumTypeConfig
 export const ArticleTypeConfig = {
   name: "ArticleType",
   members: ArticleType,
@@ -20,3 +21,4 @@ export const ArticleTypeConfig = {
     Unknown: {value: -1}
   }
 } as EnumTypeConfig<ArticleType>;
+//#endregion

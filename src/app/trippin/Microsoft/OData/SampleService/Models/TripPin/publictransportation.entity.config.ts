@@ -6,6 +6,7 @@ import { PublicTransportationModel } from './publictransportation.model';
 import { PublicTransportationCollection } from './publictransportation.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const PublicTransportationConfig = {
   name: "PublicTransportation",
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
@@ -16,3 +17,4 @@ export const PublicTransportationConfig = {
     SeatNumber: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<PublicTransportation>;
+//#endregion

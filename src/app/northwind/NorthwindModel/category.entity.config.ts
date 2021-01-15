@@ -6,6 +6,7 @@ import { CategoryModel } from './category.model';
 import { CategoryCollection } from './category.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const CategoryConfig = {
   name: "Category",
   model: CategoryModel,
@@ -19,3 +20,4 @@ export const CategoryConfig = {
     Products: {type: 'NorthwindModel.Product', collection: true, navigation: true}
   }
 } as StructuredTypeConfig<Category>;
+//#endregion

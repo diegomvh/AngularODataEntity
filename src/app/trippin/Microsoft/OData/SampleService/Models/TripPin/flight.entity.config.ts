@@ -6,6 +6,7 @@ import { FlightModel } from './flight.model';
 import { FlightCollection } from './flight.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const FlightConfig = {
   name: "Flight",
   base: "Microsoft.OData.SampleService.Models.TripPin.PublicTransportation",
@@ -19,3 +20,4 @@ export const FlightConfig = {
     Airline: {type: 'Microsoft.OData.SampleService.Models.TripPin.Airline', navigation: true}
   }
 } as StructuredTypeConfig<Flight>;
+//#endregion

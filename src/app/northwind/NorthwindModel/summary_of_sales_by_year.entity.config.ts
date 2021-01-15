@@ -6,6 +6,7 @@ import { SummaryOfSalesByYearModel } from './summary_of_sales_by_year.model';
 import { SummaryOfSalesByYearCollection } from './summary_of_sales_by_year.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const SummaryOfSalesByYearConfig = {
   name: "Summary_of_Sales_by_Year",
   model: SummaryOfSalesByYearModel,
@@ -17,3 +18,4 @@ export const SummaryOfSalesByYearConfig = {
     Subtotal: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as StructuredTypeConfig<SummaryOfSalesByYear>;
+//#endregion

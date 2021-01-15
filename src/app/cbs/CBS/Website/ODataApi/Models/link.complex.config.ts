@@ -6,6 +6,7 @@ import { LinkModel } from './link.model';
 import { LinkCollection } from './link.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const LinkConfig = {
   name: "Link",
   model: LinkModel,
@@ -19,3 +20,4 @@ export const LinkConfig = {
     Icon: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<Link>;
+//#endregion

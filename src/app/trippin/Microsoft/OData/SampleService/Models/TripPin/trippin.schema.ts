@@ -18,6 +18,7 @@ import { TripConfig } from './trip.entity.config';
 import { DefaultContainerContainer } from './defaultcontainer.container';
 //#endregion
 
+//#region ODataApi SchemaConfig
 export const TripPinSchema = {
   namespace: "Microsoft.OData.SampleService.Models.TripPin",
   enums: [PersonGenderConfig],
@@ -72,3 +73,4 @@ export const TripPinSchema = {
   }],
   containers: [DefaultContainerContainer]
 } as SchemaConfig;
+//#endregion

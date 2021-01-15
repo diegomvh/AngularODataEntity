@@ -6,6 +6,7 @@ import { DefinitionModel } from './definition.model';
 import { DefinitionCollection } from './definition.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const DefinitionConfig = {
   name: "Definition",
   model: DefinitionModel,
@@ -32,3 +33,4 @@ export const DefinitionConfig = {
     Links: {type: 'CBS.Website.ODataApi.Models.LinkList'}
   }
 } as StructuredTypeConfig<Definition>;
+//#endregion

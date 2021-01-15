@@ -6,6 +6,7 @@ import { EmployeeModel } from './employee.model';
 import { EmployeeCollection } from './employee.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const EmployeeConfig = {
   name: "Employee",
   base: "ODataDemo.Person",
@@ -18,3 +19,4 @@ export const EmployeeConfig = {
     Salary: {type: 'Edm.Single', nullable: false}
   }
 } as StructuredTypeConfig<Employee>;
+//#endregion

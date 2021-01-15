@@ -4,6 +4,7 @@
 import { MediaType } from './mediatype.enum';
 //#endregion
 
+//#region ODataApi EnumTypeConfig
 export const MediaTypeConfig = {
   name: "MediaType",
   members: MediaType,
@@ -17,3 +18,4 @@ export const MediaTypeConfig = {
     Unknown: {value: -1}
   }
 } as EnumTypeConfig<MediaType>;
+//#endregion

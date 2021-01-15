@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -26,7 +26,7 @@ import { AirlineCollection } from './airline.collection';
 //#endregion
 
 @Injectable()
-export class AirlinesService extends ODataEntityService<Airline> {
+export class AirlinesService extends ODataEntitySetService<Airline> {
   constructor(protected client: ODataClient) {
     super(client, 'Airlines', 'Microsoft.OData.SampleService.Models.TripPin.Airline');
   }

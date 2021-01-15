@@ -6,6 +6,7 @@ import { AirlineModel } from './airline.model';
 import { AirlineCollection } from './airline.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const AirlineConfig = {
   name: "Airline",
   model: AirlineModel,
@@ -16,3 +17,4 @@ export const AirlineConfig = {
     Name: {type: 'Edm.String', nullable: false}
   }
 } as StructuredTypeConfig<Airline>;
+//#endregion

@@ -6,6 +6,7 @@ import { CityModel } from './city.model';
 import { CityCollection } from './city.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const CityConfig = {
   name: "City",
   model: CityModel,
@@ -17,3 +18,4 @@ export const CityConfig = {
     Region: {type: 'Edm.String', nullable: false}
   }
 } as StructuredTypeConfig<City>;
+//#endregion

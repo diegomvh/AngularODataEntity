@@ -6,6 +6,7 @@ import { OrderSubtotalModel } from './order_subtotal.model';
 import { OrderSubtotalCollection } from './order_subtotal.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const OrderSubtotalConfig = {
   name: "Order_Subtotal",
   model: OrderSubtotalModel,
@@ -16,3 +17,4 @@ export const OrderSubtotalConfig = {
     Subtotal: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as StructuredTypeConfig<OrderSubtotal>;
+//#endregion

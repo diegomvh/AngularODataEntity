@@ -1,9 +1,14 @@
 ﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
+import { ProductDetailsService } from './productdetails.service';
 //#endregion
 
-export const ProductDetailsServiceConfig = {
+//#region ODataApi EntitySetConfig
+export const ProductDetailsConfig = {
   name: "ProductDetails",
+  entityType: "ODataDemo.ProductDetail",
+  service: ProductDetailsService,
   annotations: []
 } as EntitySetConfig;
+//#endregion

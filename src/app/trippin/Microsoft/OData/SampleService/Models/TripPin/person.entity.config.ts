@@ -6,6 +6,7 @@ import { PersonModel } from './person.model';
 import { PersonCollection } from './person.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const PersonConfig = {
   name: "Person",
   open: true,
@@ -25,3 +26,4 @@ export const PersonConfig = {
     Photo: {type: 'Microsoft.OData.SampleService.Models.TripPin.Photo', navigation: true}
   }
 } as StructuredTypeConfig<Person>;
+//#endregion

@@ -6,6 +6,7 @@ import { EmployeeModel } from './employee.model';
 import { EmployeeCollection } from './employee.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const EmployeeConfig = {
   name: "Employee",
   model: EmployeeModel,
@@ -36,3 +37,4 @@ export const EmployeeConfig = {
     Territories: {type: 'NorthwindModel.Territory', collection: true, navigation: true}
   }
 } as StructuredTypeConfig<Employee>;
+//#endregion

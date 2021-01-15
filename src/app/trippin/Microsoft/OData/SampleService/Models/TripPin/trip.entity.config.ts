@@ -6,6 +6,7 @@ import { TripModel } from './trip.model';
 import { TripCollection } from './trip.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const TripConfig = {
   name: "Trip",
   model: TripModel,
@@ -24,3 +25,4 @@ export const TripConfig = {
     PlanItems: {type: 'Microsoft.OData.SampleService.Models.TripPin.PlanItem', collection: true, navigation: true}
   }
 } as StructuredTypeConfig<Trip>;
+//#endregion

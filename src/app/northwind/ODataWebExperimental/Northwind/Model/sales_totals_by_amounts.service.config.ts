@@ -1,9 +1,14 @@
 ﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
+import { SalesTotalsByAmountsService } from './sales_totals_by_amounts.service';
 //#endregion
 
-export const SalesTotalsByAmountsServiceConfig = {
+//#region ODataApi EntitySetConfig
+export const SalesTotalsByAmountsConfig = {
   name: "Sales_Totals_by_Amounts",
+  entityType: "NorthwindModel.Sales_Totals_by_Amount",
+  service: SalesTotalsByAmountsService,
   annotations: []
 } as EntitySetConfig;
+//#endregion

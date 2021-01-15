@@ -6,6 +6,7 @@ import { MediumModel } from './medium.model';
 import { MediumCollection } from './medium.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const MediumConfig = {
   name: "Medium",
   model: MediumModel,
@@ -33,3 +34,4 @@ export const MediumConfig = {
     Permalink: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<Medium>;
+//#endregion

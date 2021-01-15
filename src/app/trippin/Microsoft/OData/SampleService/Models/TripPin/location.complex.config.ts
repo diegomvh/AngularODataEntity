@@ -6,6 +6,7 @@ import { LocationModel } from './location.model';
 import { LocationCollection } from './location.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const LocationConfig = {
   name: "Location",
   open: true,
@@ -17,3 +18,4 @@ export const LocationConfig = {
     City: {type: 'Microsoft.OData.SampleService.Models.TripPin.City', nullable: false}
   }
 } as StructuredTypeConfig<Location>;
+//#endregion

@@ -11,12 +11,13 @@ import { MeService } from './Microsoft/OData/SampleService/Models/TripPin/me.ser
 
 @NgModule({
   providers: [
+//#region ODataApi Providers
     DefaultContainerService,
     PhotosService,
     PeopleService,
     AirlinesService,
     AirportsService,
-    MeService
+    MeService//#endregion
   ]
 })
 export class TripPinModule { }

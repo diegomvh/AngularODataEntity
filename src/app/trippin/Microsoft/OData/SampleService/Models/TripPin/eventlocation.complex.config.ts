@@ -6,6 +6,7 @@ import { EventLocationModel } from './eventlocation.model';
 import { EventLocationCollection } from './eventlocation.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const EventLocationConfig = {
   name: "EventLocation",
   base: "Microsoft.OData.SampleService.Models.TripPin.Location",
@@ -17,3 +18,4 @@ export const EventLocationConfig = {
     BuildingInfo: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<EventLocation>;
+//#endregion

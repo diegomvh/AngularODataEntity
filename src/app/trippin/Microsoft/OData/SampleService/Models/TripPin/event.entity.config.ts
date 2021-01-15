@@ -6,6 +6,7 @@ import { EventModel } from './event.model';
 import { EventCollection } from './event.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const EventConfig = {
   name: "Event",
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
@@ -18,3 +19,4 @@ export const EventConfig = {
     OccursAt: {type: 'Microsoft.OData.SampleService.Models.TripPin.EventLocation', nullable: false}
   }
 } as StructuredTypeConfig<Event>;
+//#endregion

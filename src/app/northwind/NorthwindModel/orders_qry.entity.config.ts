@@ -6,6 +6,7 @@ import { OrdersQryModel } from './orders_qry.model';
 import { OrdersQryCollection } from './orders_qry.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const OrdersQryConfig = {
   name: "Orders_Qry",
   model: OrdersQryModel,
@@ -34,3 +35,4 @@ export const OrdersQryConfig = {
     Country: {type: 'Edm.String', maxLength: 15}
   }
 } as StructuredTypeConfig<OrdersQry>;
+//#endregion

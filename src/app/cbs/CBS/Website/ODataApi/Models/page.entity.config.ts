@@ -6,6 +6,7 @@ import { PageModel } from './page.model';
 import { PageCollection } from './page.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const PageConfig = {
   name: "Page",
   model: PageModel,
@@ -45,3 +46,4 @@ export const PageConfig = {
     Permalink: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<Page>;
+//#endregion

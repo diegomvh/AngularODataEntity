@@ -13,6 +13,7 @@ import { AdvertisementsService } from './ODataDemo/advertisements.service';
 
 @NgModule({
   providers: [
+//#region ODataApi Providers
     DemoServiceService,
     ProductsService,
     ProductDetailsService,
@@ -20,7 +21,7 @@ import { AdvertisementsService } from './ODataDemo/advertisements.service';
     SuppliersService,
     PersonsService,
     PersonDetailsService,
-    AdvertisementsService
+    AdvertisementsService//#endregion
   ]
 })
 export class North3Module { }

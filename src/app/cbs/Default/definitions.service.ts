@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -30,7 +30,7 @@ import { DefinitionCollection } from '../CBS/Website/ODataApi/Models/definition.
 //#endregion
 
 @Injectable()
-export class DefinitionsService extends ODataEntityService<Definition> {
+export class DefinitionsService extends ODataEntitySetService<Definition> {
   constructor(protected client: ODataClient) {
     super(client, 'Definitions', 'CBS.Website.ODataApi.Models.Definition');
   }

@@ -6,6 +6,7 @@ import { ErratumItemModel } from './erratumitem.model';
 import { ErratumItemCollection } from './erratumitem.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const ErratumItemConfig = {
   name: "ErratumItem",
   model: ErratumItemModel,
@@ -16,3 +17,4 @@ export const ErratumItemConfig = {
     Body: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<ErratumItem>;
+//#endregion

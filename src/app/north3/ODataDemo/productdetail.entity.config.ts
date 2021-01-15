@@ -6,6 +6,7 @@ import { ProductDetailModel } from './productdetail.model';
 import { ProductDetailCollection } from './productdetail.collection';
 //#endregion
 
+//#region ODataApi StrucutredTypeConfig
 export const ProductDetailConfig = {
   name: "ProductDetail",
   model: ProductDetailModel,
@@ -17,3 +18,4 @@ export const ProductDetailConfig = {
     Product: {type: 'ODataDemo.Product', navigation: true}
   }
 } as StructuredTypeConfig<ProductDetail>;
+//#endregion
