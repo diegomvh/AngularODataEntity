@@ -5,7 +5,7 @@ import { VacanciesService } from './vacancies.service';
 //#endregion
 
 //#region ODataApi EntitySetConfig
-export const VacanciesConfig = {
+export const VacanciesServiceEntitySetConfig = {
   name: "Vacancies",
   entityType: "CBS.Website.ODataApi.Models.Vacancy",
   service: VacanciesService,

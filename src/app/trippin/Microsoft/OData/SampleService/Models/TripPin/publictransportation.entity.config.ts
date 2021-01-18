@@ -7,7 +7,7 @@ import { PublicTransportationCollection } from './publictransportation.collectio
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const PublicTransportationConfig = {
+export const PublicTransportationEntityConfig = {
   name: "PublicTransportation",
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
   model: PublicTransportationModel,

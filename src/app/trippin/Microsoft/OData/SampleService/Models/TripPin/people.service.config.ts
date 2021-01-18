@@ -5,7 +5,7 @@ import { PeopleService } from './people.service';
 //#endregion
 
 //#region ODataApi EntitySetConfig
-export const PeopleConfig = {
+export const PeopleServiceEntitySetConfig = {
   name: "People",
   entityType: "Microsoft.OData.SampleService.Models.TripPin.Person",
   service: PeopleService,

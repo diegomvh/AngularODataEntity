@@ -7,7 +7,7 @@ import { MediumCollection } from './medium.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const MediumConfig = {
+export const MediumEntityConfig = {
   name: "Medium",
   model: MediumModel,
   collection: MediumCollection,

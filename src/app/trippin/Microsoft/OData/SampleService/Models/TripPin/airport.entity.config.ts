@@ -7,7 +7,7 @@ import { AirportCollection } from './airport.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const AirportConfig = {
+export const AirportEntityConfig = {
   name: "Airport",
   model: AirportModel,
   collection: AirportCollection,

@@ -7,7 +7,7 @@ import { CategorySalesFor1997Collection } from './category_sales_for_1997.collec
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const CategorySalesFor1997Config = {
+export const CategorySalesFor1997EntityConfig = {
   name: "Category_Sales_for_1997",
   model: CategorySalesFor1997Model,
   collection: CategorySalesFor1997Collection,

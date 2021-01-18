@@ -5,7 +5,7 @@ import { PhotosService } from './photos.service';
 //#endregion
 
 //#region ODataApi EntitySetConfig
-export const PhotosConfig = {
+export const PhotosServiceEntitySetConfig = {
   name: "Photos",
   entityType: "Microsoft.OData.SampleService.Models.TripPin.Photo",
   service: PhotosService,

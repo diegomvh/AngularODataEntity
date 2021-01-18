@@ -7,7 +7,7 @@ import { CustomerAndSuppliersByCityCollection } from './customer_and_suppliers_b
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const CustomerAndSuppliersByCityConfig = {
+export const CustomerAndSuppliersByCityEntityConfig = {
   name: "Customer_and_Suppliers_by_City",
   model: CustomerAndSuppliersByCityModel,
   collection: CustomerAndSuppliersByCityCollection,

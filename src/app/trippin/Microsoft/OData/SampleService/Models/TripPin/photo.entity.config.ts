@@ -7,7 +7,7 @@ import { PhotoCollection } from './photo.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const PhotoConfig = {
+export const PhotoEntityConfig = {
   name: "Photo",
   model: PhotoModel,
   collection: PhotoCollection,

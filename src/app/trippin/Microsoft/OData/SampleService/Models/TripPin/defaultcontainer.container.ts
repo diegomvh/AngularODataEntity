@@ -1,11 +1,11 @@
 ﻿import { EntityContainerConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { PhotosConfig } from './photos.service.config';
-import { PeopleConfig } from './people.service.config';
-import { AirlinesConfig } from './airlines.service.config';
-import { AirportsConfig } from './airports.service.config';
-import { MeConfig } from './me.service.config';
+import { PhotosServiceEntitySetConfig } from './photos.service.config';
+import { PeopleServiceEntitySetConfig } from './people.service.config';
+import { AirlinesServiceEntitySetConfig } from './airlines.service.config';
+import { AirportsServiceEntitySetConfig } from './airports.service.config';
+import { MeServiceEntitySetConfig } from './me.service.config';
 //#endregion
 
 //#region ODataApi EntityContainerConfig
@@ -74,11 +74,11 @@ export const DefaultContainerContainer = {
   }
 ],
   entitySets: [
-    PhotosConfig,
-    PeopleConfig,
-    AirlinesConfig,
-    AirportsConfig,
-    MeConfig
+    PhotosServiceEntitySetConfig,
+    PeopleServiceEntitySetConfig,
+    AirlinesServiceEntitySetConfig,
+    AirportsServiceEntitySetConfig,
+    MeServiceEntitySetConfig
   ]
 } as EntityContainerConfig;
 //#endregion

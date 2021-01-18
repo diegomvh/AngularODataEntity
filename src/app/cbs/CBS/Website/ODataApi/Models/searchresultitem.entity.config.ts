@@ -7,7 +7,7 @@ import { SearchResultItemCollection } from './searchresultitem.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const SearchResultItemConfig = {
+export const SearchResultItemEntityConfig = {
   name: "SearchResultItem",
   model: SearchResultItemModel,
   collection: SearchResultItemCollection,

@@ -7,7 +7,7 @@ import { RegionCollection } from './region.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const RegionConfig = {
+export const RegionEntityConfig = {
   name: "Region",
   model: RegionModel,
   collection: RegionCollection,

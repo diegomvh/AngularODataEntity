@@ -7,7 +7,7 @@ import { AirportLocationCollection } from './airportlocation.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const AirportLocationConfig = {
+export const AirportLocationComplexConfig = {
   name: "AirportLocation",
   base: "Microsoft.OData.SampleService.Models.TripPin.Location",
   open: true,

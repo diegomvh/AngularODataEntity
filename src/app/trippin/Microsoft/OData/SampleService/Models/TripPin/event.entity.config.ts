@@ -7,7 +7,7 @@ import { EventCollection } from './event.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const EventConfig = {
+export const EventEntityConfig = {
   name: "Event",
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
   open: true,

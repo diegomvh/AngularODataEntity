@@ -7,7 +7,7 @@ import { VacancyCollection } from './vacancy.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const VacancyConfig = {
+export const VacancyEntityConfig = {
   name: "Vacancy",
   model: VacancyModel,
   collection: VacancyCollection,

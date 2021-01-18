@@ -5,7 +5,7 @@ import { FlashService } from './flash.service';
 //#endregion
 
 //#region ODataApi EntitySetConfig
-export const FlashConfig = {
+export const FlashServiceEntitySetConfig = {
   name: "Flash",
   entityType: "CBS.Website.ODataApi.Models.Flash",
   service: FlashService,

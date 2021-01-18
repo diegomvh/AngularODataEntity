@@ -7,7 +7,7 @@ import { FlashCollection } from './flash.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const FlashConfig = {
+export const FlashEntityConfig = {
   name: "Flash",
   model: FlashModel,
   collection: FlashCollection,

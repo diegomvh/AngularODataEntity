@@ -7,7 +7,7 @@ import { PageCollection } from './page.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const PageConfig = {
+export const PageEntityConfig = {
   name: "Page",
   model: PageModel,
   collection: PageCollection,

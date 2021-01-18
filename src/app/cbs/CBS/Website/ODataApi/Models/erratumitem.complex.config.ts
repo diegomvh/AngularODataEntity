@@ -7,7 +7,7 @@ import { ErratumItemCollection } from './erratumitem.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const ErratumItemConfig = {
+export const ErratumItemComplexConfig = {
   name: "ErratumItem",
   model: ErratumItemModel,
   collection: ErratumItemCollection,

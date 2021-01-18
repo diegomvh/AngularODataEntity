@@ -7,7 +7,7 @@ import { CalendarEventCollection } from './calendarevent.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const CalendarEventConfig = {
+export const CalendarEventEntityConfig = {
   name: "CalendarEvent",
   model: CalendarEventModel,
   collection: CalendarEventCollection,

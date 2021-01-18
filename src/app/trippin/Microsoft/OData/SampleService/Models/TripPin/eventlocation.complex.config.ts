@@ -7,7 +7,7 @@ import { EventLocationCollection } from './eventlocation.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const EventLocationConfig = {
+export const EventLocationComplexConfig = {
   name: "EventLocation",
   base: "Microsoft.OData.SampleService.Models.TripPin.Location",
   open: true,

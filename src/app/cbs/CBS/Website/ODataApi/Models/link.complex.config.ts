@@ -7,7 +7,7 @@ import { LinkCollection } from './link.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const LinkConfig = {
+export const LinkComplexConfig = {
   name: "Link",
   model: LinkModel,
   collection: LinkCollection,

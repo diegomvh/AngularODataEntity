@@ -7,7 +7,7 @@ import { CityCollection } from './city.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const CityConfig = {
+export const CityComplexConfig = {
   name: "City",
   model: CityModel,
   collection: CityCollection,

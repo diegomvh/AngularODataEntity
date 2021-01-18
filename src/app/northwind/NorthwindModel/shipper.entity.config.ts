@@ -7,7 +7,7 @@ import { ShipperCollection } from './shipper.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const ShipperConfig = {
+export const ShipperEntityConfig = {
   name: "Shipper",
   model: ShipperModel,
   collection: ShipperCollection,

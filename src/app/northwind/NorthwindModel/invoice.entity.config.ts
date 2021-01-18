@@ -7,7 +7,7 @@ import { InvoiceCollection } from './invoice.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const InvoiceConfig = {
+export const InvoiceEntityConfig = {
   name: "Invoice",
   model: InvoiceModel,
   collection: InvoiceCollection,

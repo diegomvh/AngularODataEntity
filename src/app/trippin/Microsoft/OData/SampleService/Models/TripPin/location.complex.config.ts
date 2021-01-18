@@ -7,7 +7,7 @@ import { LocationCollection } from './location.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const LocationConfig = {
+export const LocationComplexConfig = {
   name: "Location",
   open: true,
   model: LocationModel,

@@ -7,7 +7,7 @@ import { OrdersQryCollection } from './orders_qry.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const OrdersQryConfig = {
+export const OrdersQryEntityConfig = {
   name: "Orders_Qry",
   model: OrdersQryModel,
   collection: OrdersQryCollection,

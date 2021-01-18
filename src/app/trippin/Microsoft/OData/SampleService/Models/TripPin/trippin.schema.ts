@@ -2,19 +2,19 @@
 
 //#region ODataApi Imports
 import { PersonGenderConfig } from './persongender.enum.config';
-import { CityConfig } from './city.complex.config';
-import { LocationConfig } from './location.complex.config';
-import { EventLocationConfig } from './eventlocation.complex.config';
-import { AirportLocationConfig } from './airportlocation.complex.config';
-import { PhotoConfig } from './photo.entity.config';
-import { PersonConfig } from './person.entity.config';
-import { AirlineConfig } from './airline.entity.config';
-import { AirportConfig } from './airport.entity.config';
-import { PlanItemConfig } from './planitem.entity.config';
-import { PublicTransportationConfig } from './publictransportation.entity.config';
-import { FlightConfig } from './flight.entity.config';
-import { EventConfig } from './event.entity.config';
-import { TripConfig } from './trip.entity.config';
+import { CityComplexConfig } from './city.complex.config';
+import { LocationComplexConfig } from './location.complex.config';
+import { EventLocationComplexConfig } from './eventlocation.complex.config';
+import { AirportLocationComplexConfig } from './airportlocation.complex.config';
+import { PhotoEntityConfig } from './photo.entity.config';
+import { PersonEntityConfig } from './person.entity.config';
+import { AirlineEntityConfig } from './airline.entity.config';
+import { AirportEntityConfig } from './airport.entity.config';
+import { PlanItemEntityConfig } from './planitem.entity.config';
+import { PublicTransportationEntityConfig } from './publictransportation.entity.config';
+import { FlightEntityConfig } from './flight.entity.config';
+import { EventEntityConfig } from './event.entity.config';
+import { TripEntityConfig } from './trip.entity.config';
 import { DefaultContainerContainer } from './defaultcontainer.container';
 //#endregion
 
@@ -22,19 +22,19 @@ import { DefaultContainerContainer } from './defaultcontainer.container';
 export const TripPinSchema = {
   namespace: "Microsoft.OData.SampleService.Models.TripPin",
   enums: [PersonGenderConfig],
-  entities: [CityConfig,
-    LocationConfig,
-    EventLocationConfig,
-    AirportLocationConfig,
-    PhotoConfig,
-    PersonConfig,
-    AirlineConfig,
-    AirportConfig,
-    PlanItemConfig,
-    PublicTransportationConfig,
-    FlightConfig,
-    EventConfig,
-    TripConfig],
+  entities: [CityComplexConfig,
+    LocationComplexConfig,
+    EventLocationComplexConfig,
+    AirportLocationComplexConfig,
+    PhotoEntityConfig,
+    PersonEntityConfig,
+    AirlineEntityConfig,
+    AirportEntityConfig,
+    PlanItemEntityConfig,
+    PublicTransportationEntityConfig,
+    FlightEntityConfig,
+    EventEntityConfig,
+    TripEntityConfig],
   callables: [{
     name: 'GetFavoriteAirline',
     path: "person/Trips/PlanItems/Microsoft.OData.SampleService.Models.TripPin.Flight/Airline",

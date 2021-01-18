@@ -5,7 +5,7 @@ import { RegionsService } from './regions.service';
 //#endregion
 
 //#region ODataApi EntitySetConfig
-export const RegionsConfig = {
+export const RegionsServiceEntitySetConfig = {
   name: "Regions",
   entityType: "NorthwindModel.Region",
   service: RegionsService,

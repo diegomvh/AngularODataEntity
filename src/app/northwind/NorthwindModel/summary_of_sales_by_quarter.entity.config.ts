@@ -7,7 +7,7 @@ import { SummaryOfSalesByQuarterCollection } from './summary_of_sales_by_quarter
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const SummaryOfSalesByQuarterConfig = {
+export const SummaryOfSalesByQuarterEntityConfig = {
   name: "Summary_of_Sales_by_Quarter",
   model: SummaryOfSalesByQuarterModel,
   collection: SummaryOfSalesByQuarterCollection,

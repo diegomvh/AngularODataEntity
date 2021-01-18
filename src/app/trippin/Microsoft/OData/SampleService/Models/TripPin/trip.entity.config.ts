@@ -7,7 +7,7 @@ import { TripCollection } from './trip.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const TripConfig = {
+export const TripEntityConfig = {
   name: "Trip",
   model: TripModel,
   collection: TripCollection,

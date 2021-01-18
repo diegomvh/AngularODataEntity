@@ -7,7 +7,7 @@ import { SalesTotalsByAmountCollection } from './sales_totals_by_amount.collecti
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const SalesTotalsByAmountConfig = {
+export const SalesTotalsByAmountEntityConfig = {
   name: "Sales_Totals_by_Amount",
   model: SalesTotalsByAmountModel,
   collection: SalesTotalsByAmountCollection,

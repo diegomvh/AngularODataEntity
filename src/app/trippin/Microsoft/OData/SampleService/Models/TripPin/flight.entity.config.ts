@@ -7,7 +7,7 @@ import { FlightCollection } from './flight.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const FlightConfig = {
+export const FlightEntityConfig = {
   name: "Flight",
   base: "Microsoft.OData.SampleService.Models.TripPin.PublicTransportation",
   model: FlightModel,

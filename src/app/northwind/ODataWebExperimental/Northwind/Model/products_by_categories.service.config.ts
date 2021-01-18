@@ -5,7 +5,7 @@ import { ProductsByCategoriesService } from './products_by_categories.service';
 //#endregion
 
 //#region ODataApi EntitySetConfig
-export const ProductsByCategoriesConfig = {
+export const ProductsByCategoriesServiceEntitySetConfig = {
   name: "Products_by_Categories",
   entityType: "NorthwindModel.Products_by_Category",
   service: ProductsByCategoriesService,

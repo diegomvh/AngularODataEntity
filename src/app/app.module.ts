@@ -55,6 +55,7 @@ import { EmployeesComponent } from './components/northwind/employees.component';
       // North version 2
       Object.assign(North2Config, {
         serviceRootUrl: 'http://localhost:4200/north2/',
+          default: true,
         options: {
           metadata: 'full',
           withCredentials: true,

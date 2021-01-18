@@ -7,7 +7,7 @@ import { SalesByCategoryCollection } from './sales_by_category.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const SalesByCategoryConfig = {
+export const SalesByCategoryEntityConfig = {
   name: "Sales_by_Category",
   model: SalesByCategoryModel,
   collection: SalesByCategoryCollection,

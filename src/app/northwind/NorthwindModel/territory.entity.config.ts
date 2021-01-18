@@ -7,7 +7,7 @@ import { TerritoryCollection } from './territory.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const TerritoryConfig = {
+export const TerritoryEntityConfig = {
   name: "Territory",
   model: TerritoryModel,
   collection: TerritoryCollection,

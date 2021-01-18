@@ -7,7 +7,7 @@ import { PlanItemCollection } from './planitem.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const PlanItemConfig = {
+export const PlanItemEntityConfig = {
   name: "PlanItem",
   model: PlanItemModel,
   collection: PlanItemCollection,

@@ -5,7 +5,7 @@ import { AirportsService } from './airports.service';
 //#endregion
 
 //#region ODataApi EntitySetConfig
-export const AirportsConfig = {
+export const AirportsServiceEntitySetConfig = {
   name: "Airports",
   entityType: "Microsoft.OData.SampleService.Models.TripPin.Airport",
   service: AirportsService,

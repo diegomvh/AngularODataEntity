@@ -7,7 +7,7 @@ import { SummaryOfSalesByYearCollection } from './summary_of_sales_by_year.colle
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const SummaryOfSalesByYearConfig = {
+export const SummaryOfSalesByYearEntityConfig = {
   name: "Summary_of_Sales_by_Year",
   model: SummaryOfSalesByYearModel,
   collection: SummaryOfSalesByYearCollection,

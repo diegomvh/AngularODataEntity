@@ -30,8 +30,8 @@ export class AppComponent {
   trippin() {
     this.api.resetDataSource().call(null).subscribe(() => {
       this.queries();
-      this.mutate();
-      this.trippinModels();
+      //this.mutate();
+      //this.trippinModels();
     });
   }
 
@@ -41,10 +41,10 @@ export class AppComponent {
   //#endregion
 
   queries() {
-    this.entities();
+    //this.entities();
     this.navigation();
-    this.property();
-    this.batch();
+    //this.property();
+    //this.batch();
   }
 
   entities() {
@@ -126,11 +126,11 @@ export class AppComponent {
     // Create service without Type for Person entity
     let peopleService = this.factory.entitySet<Person>("People");
     let person = peopleService.entity("scottketchum");
-    //person.get({apiName: 'TripPin'}).subscribe(({entity, meta}) => console.log(meta.property('Emails')));
+    person.get().subscribe(({entity, meta}) => console.log(meta.property('Emails')));
 
     let friends = person.navigationProperty<Person>("Friends");
     // Use TripPin config
-    //friends.get({responseType: 'entities', apiName: 'TripPin'}).subscribe(console.log);
+    friends.get({responseType: 'entities'}).subscribe(console.log);
   }
 
   property() {

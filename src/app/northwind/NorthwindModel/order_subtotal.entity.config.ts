@@ -7,7 +7,7 @@ import { OrderSubtotalCollection } from './order_subtotal.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const OrderSubtotalConfig = {
+export const OrderSubtotalEntityConfig = {
   name: "Order_Subtotal",
   model: OrderSubtotalModel,
   collection: OrderSubtotalCollection,

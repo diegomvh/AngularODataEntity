@@ -7,7 +7,7 @@ import { ProductsByCategoryCollection } from './products_by_category.collection'
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const ProductsByCategoryConfig = {
+export const ProductsByCategoryEntityConfig = {
   name: "Products_by_Category",
   model: ProductsByCategoryModel,
   collection: ProductsByCategoryCollection,

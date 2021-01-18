@@ -5,7 +5,7 @@ import { OrderDetailsService } from './order_details.service';
 //#endregion
 
 //#region ODataApi EntitySetConfig
-export const OrderDetailsConfig = {
+export const OrderDetailsServiceEntitySetConfig = {
   name: "Order_Details",
   entityType: "NorthwindModel.Order_Detail",
   service: OrderDetailsService,

@@ -5,18 +5,18 @@ import { ArticleTypeConfig } from './articletype.enum.config';
 import { MediaTypeConfig } from './mediatype.enum.config';
 import { PageTypeConfig } from './pagetype.enum.config';
 import { DefinitionTypeConfig } from './definitiontype.enum.config';
-import { ErrataListConfig } from './erratalist.complex.config';
-import { ErratumItemConfig } from './erratumitem.complex.config';
-import { LinkListConfig } from './linklist.complex.config';
-import { LinkConfig } from './link.complex.config';
-import { ArticleConfig } from './article.entity.config';
-import { DefinitionConfig } from './definition.entity.config';
-import { MediumConfig } from './medium.entity.config';
-import { CalendarEventConfig } from './calendarevent.entity.config';
-import { FlashConfig } from './flash.entity.config';
-import { PageConfig } from './page.entity.config';
-import { SearchResultItemConfig } from './searchresultitem.entity.config';
-import { VacancyConfig } from './vacancy.entity.config';
+import { ErrataListComplexConfig } from './erratalist.complex.config';
+import { ErratumItemComplexConfig } from './erratumitem.complex.config';
+import { LinkListComplexConfig } from './linklist.complex.config';
+import { LinkComplexConfig } from './link.complex.config';
+import { ArticleEntityConfig } from './article.entity.config';
+import { DefinitionEntityConfig } from './definition.entity.config';
+import { MediumEntityConfig } from './medium.entity.config';
+import { CalendarEventEntityConfig } from './calendarevent.entity.config';
+import { FlashEntityConfig } from './flash.entity.config';
+import { PageEntityConfig } from './page.entity.config';
+import { SearchResultItemEntityConfig } from './searchresultitem.entity.config';
+import { VacancyEntityConfig } from './vacancy.entity.config';
 //#endregion
 
 //#region ODataApi SchemaConfig
@@ -26,18 +26,18 @@ export const ModelsSchema = {
     MediaTypeConfig,
     PageTypeConfig,
     DefinitionTypeConfig],
-  entities: [ErrataListConfig,
-    ErratumItemConfig,
-    LinkListConfig,
-    LinkConfig,
-    ArticleConfig,
-    DefinitionConfig,
-    MediumConfig,
-    CalendarEventConfig,
-    FlashConfig,
-    PageConfig,
-    SearchResultItemConfig,
-    VacancyConfig],
+  entities: [ErrataListComplexConfig,
+    ErratumItemComplexConfig,
+    LinkListComplexConfig,
+    LinkComplexConfig,
+    ArticleEntityConfig,
+    DefinitionEntityConfig,
+    MediumEntityConfig,
+    CalendarEventEntityConfig,
+    FlashEntityConfig,
+    PageEntityConfig,
+    SearchResultItemEntityConfig,
+    VacancyEntityConfig],
   callables: [],
   containers: []
 } as SchemaConfig;

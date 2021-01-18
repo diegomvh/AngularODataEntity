@@ -7,7 +7,7 @@ import { DefinitionCollection } from './definition.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const DefinitionConfig = {
+export const DefinitionEntityConfig = {
   name: "Definition",
   model: DefinitionModel,
   collection: DefinitionCollection,

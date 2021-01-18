@@ -7,7 +7,7 @@ import { AlphabeticalListOfProductCollection } from './alphabetical_list_of_prod
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const AlphabeticalListOfProductConfig = {
+export const AlphabeticalListOfProductEntityConfig = {
   name: "Alphabetical_list_of_product",
   model: AlphabeticalListOfProductModel,
   collection: AlphabeticalListOfProductCollection,
