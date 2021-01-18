@@ -124,7 +124,7 @@ export class AppComponent {
 
   navigation() {
     // Create service without Type for Person entity
-    let peopleService = this.factory.entitySet<Person>("People");
+    let peopleService = this.factory.entitySet<Person>("People", "TripPin");
     let person = peopleService.entity("scottketchum");
     person.get().subscribe(({entity, meta}) => console.log(meta.property('Emails')));
 
