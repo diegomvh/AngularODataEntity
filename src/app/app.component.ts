@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient } from 'angular-odata';
-import { PeopleService, Airport, Person, PersonGender, Photo, PhotosService } from './trippin';
+import { PeopleService, Airport, Person, PersonGender, Photo, PhotosService, PersonCollection, PersonModel } from './trippin';
 import { OrdersService } from './northwind';
 import { switchMap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin';
@@ -29,9 +29,9 @@ export class AppComponent {
   //#region APIs
   trippin() {
     this.api.resetDataSource().call(null).subscribe(() => {
-      this.queries();
+      //this.queries();
       //this.mutate();
-      //this.trippinModels();
+      this.trippinModels();
     });
   }
 
@@ -41,10 +41,10 @@ export class AppComponent {
   //#endregion
 
   queries() {
-    //this.entities();
+    this.entities();
     this.navigation();
-    //this.property();
-    //this.batch();
+    this.property();
+    this.batch();
   }
 
   entities() {
@@ -227,7 +227,7 @@ export class AppComponent {
       return person.save();
     }),
     switchMap(person => {
-      return person.airline().fetch();
+      return (person.Friends as PersonCollection<Person, PersonModel<Person>>).fetch();
     })
     ).subscribe(console.log);
   }

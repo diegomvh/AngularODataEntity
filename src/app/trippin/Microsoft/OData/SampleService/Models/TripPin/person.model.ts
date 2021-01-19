@@ -45,17 +45,19 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
+  /*
   public airline() {
-    return this._navigationProperty<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline').asModel({}) as ODataModel<Airline>;
+    return this._cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airline>('Airline').asModel({}) as ODataModel<Airline>;
   }
   public from() {
-    return this._navigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From').asModel({}) as ODataModel<Airport>;
+    return this._cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('From').asModel({}) as ODataModel<Airport>;
   }
   public to() {
-    return this._navigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To').asModel({}) as ODataModel<Airport>;
+    return this._cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('To').asModel({}) as ODataModel<Airport>;
   }
   public photos() {
-    return this._navigationProperty<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos').asCollection([]) as ODataCollection<Photo, ODataModel<Photo>>;
+    return this._cast<Trip>('Microsoft.OData.SampleService.Models.TripPin.Trip').navigationProperty<Photo>('Photos').asCollection([]) as ODataCollection<Photo, ODataModel<Photo>>;
   }
+  */
   //#endregion
 }
