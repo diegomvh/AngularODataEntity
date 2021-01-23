@@ -45,7 +45,7 @@ export class ProductsComponent {
     this.resource = this.products.entities().top(this.size);
     const schema = this.resource.schema;
     this.cols = (schema !== null) ?
-      schema.fields()
+      (schema?.fields() || [])
         .filter(f => !f.navigation)
         .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' })) :
       [];

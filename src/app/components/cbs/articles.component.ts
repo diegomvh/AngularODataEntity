@@ -47,7 +47,7 @@ export class ArticlesComponent {
     this.resource = this.articles.entities();
     const schema = this.resource.schema;
     this.cols = (schema !== null) ?
-      schema.fields()
+      (schema?.fields() || [])
         .filter(f => !f.navigation)
         .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' })) :
       [];

@@ -23,14 +23,14 @@ export class AppComponent {
     private orders: OrdersService
   ) {
     this.trippin();
-    //this.northwind();
+    this.northwind();
   }
 
   //#region APIs
   trippin() {
     this.api.resetDataSource().call(null).subscribe(() => {
-      //this.queries();
-      //this.mutate();
+      this.queries();
+      this.mutate();
       this.trippinModels();
     });
   }
@@ -41,13 +41,27 @@ export class AppComponent {
   //#endregion
 
   queries() {
-    this.entities();
+    this.entitiesWithoutTypes();
+    this.entitiesWithTypes();
     this.navigation();
     this.property();
     this.batch();
   }
 
-  entities() {
+  entitiesWithoutTypes() {
+    // Use OData Service Factory
+    // Remove Schema from TripPin Config
+    let airportsService = this.factory.entitySet<Airport>("Airports");
+    let peopleService = this.factory.entitySet<Person>("People");
+
+    let person = peopleService.entities();
+    let airports = airportsService.entities();
+
+    person.all().subscribe(console.log);
+    airports.all().subscribe(console.log);
+  }
+
+  entitiesWithTypes() {
     // Use OData Service Factory
     let airportsService = this.factory.entitySet<Airport>("Airports", 'Microsoft.OData.SampleService.Models.TripPin.Airport');
     let peopleService = this.factory.entitySet<Person>("People", 'Microsoft.OData.SampleService.Models.TripPin.Person');

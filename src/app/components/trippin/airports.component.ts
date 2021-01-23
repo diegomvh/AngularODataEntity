@@ -47,7 +47,7 @@ export class AirportsComponent {
     this.resource = this.airports.entities();
     const schema = this.resource.schema;
     this.cols = (schema !== null) ?
-      schema.fields()
+      (schema?.fields() || [])
         .filter(f => !f.navigation)
         .map(f => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === 'Edm.String' })) :
       [];
@@ -57,7 +57,7 @@ export class AirportsComponent {
 
   fetch(resource: ODataEntitySetResource<Airport>) {
     this.loading = true;
-    resource.get({withCount: true}).subscribe(({entities, meta}) => {
+    resource.get({withCount: true, fetchPolicy: 'cache-and-network'}).subscribe(({entities, meta}) => {
       this.rows = entities || [];
       if (!this.total)
         this.total = meta.count as number;
@@ -84,9 +84,9 @@ export class AirportsComponent {
   loadAirportsLazy(event: LazyLoadEvent) {
     //Pagination
     let resource = this.resource.clone();
-    if (event.first !== undefined)
+    if (event.first)
       resource = resource.skip(event.first);
-    if (event.rows !== undefined)
+    if (event.rows)
       resource = resource.top(event.rows);
     //Ordering
     if (event.sortField !== undefined)
