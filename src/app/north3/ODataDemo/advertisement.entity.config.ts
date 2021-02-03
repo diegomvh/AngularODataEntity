@@ -7,7 +7,7 @@ import { AdvertisementCollection } from './advertisement.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const AdvertisementConfig = {
+export const AdvertisementEntityConfig = {
   name: "Advertisement",
   model: AdvertisementModel,
   collection: AdvertisementCollection,

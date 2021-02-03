@@ -39,12 +39,12 @@ export class TerritoriesService extends ODataEntitySetService<Territory> {
 
   //#region ODataApi Model
   territoryModel(attrs?: Partial<Territory>): TerritoryModel<Territory> {
-    return this.entity().asModel(attrs || {}) as TerritoryModel<Territory>;
+    return this.entity().asModel<TerritoryModel<Territory>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   territoryCollection(models?: Partial<Territory>[]): TerritoryCollection<Territory, TerritoryModel<Territory>> {
-    return this.entities().asCollection(models || []) as TerritoryCollection<Territory, TerritoryModel<Territory>>;
+    return this.entities().asCollection<TerritoryModel<Territory>, TerritoryCollection<Territory, TerritoryModel<Territory>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

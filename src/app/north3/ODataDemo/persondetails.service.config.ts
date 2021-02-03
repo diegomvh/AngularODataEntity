@@ -5,7 +5,7 @@ import { PersonDetailsService } from './persondetails.service';
 //#endregion
 
 //#region ODataApi EntitySetConfig
-export const PersonDetailsConfig = {
+export const PersonDetailsServiceEntitySetConfig = {
   name: "PersonDetails",
   entityType: "ODataDemo.PersonDetail",
   service: PersonDetailsService,

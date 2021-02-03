@@ -36,12 +36,12 @@ export class VacanciesService extends ODataEntitySetService<Vacancy> {
 
   //#region ODataApi Model
   vacancyModel(attrs?: Partial<Vacancy>): VacancyModel<Vacancy> {
-    return this.entity().asModel(attrs || {}) as VacancyModel<Vacancy>;
+    return this.entity().asModel<VacancyModel<Vacancy>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   vacancyCollection(models?: Partial<Vacancy>[]): VacancyCollection<Vacancy, VacancyModel<Vacancy>> {
-    return this.entities().asCollection(models || []) as VacancyCollection<Vacancy, VacancyModel<Vacancy>>;
+    return this.entities().asCollection<VacancyModel<Vacancy>, VacancyCollection<Vacancy, VacancyModel<Vacancy>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

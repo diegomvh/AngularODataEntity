@@ -33,12 +33,12 @@ export class InvoicesService extends ODataEntitySetService<Invoice> {
 
   //#region ODataApi Model
   invoiceModel(attrs?: Partial<Invoice>): InvoiceModel<Invoice> {
-    return this.entity().asModel(attrs || {}) as InvoiceModel<Invoice>;
+    return this.entity().asModel<InvoiceModel<Invoice>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   invoiceCollection(models?: Partial<Invoice>[]): InvoiceCollection<Invoice, InvoiceModel<Invoice>> {
-    return this.entities().asCollection(models || []) as InvoiceCollection<Invoice, InvoiceModel<Invoice>>;
+    return this.entities().asCollection<InvoiceModel<Invoice>, InvoiceCollection<Invoice, InvoiceModel<Invoice>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

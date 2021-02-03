@@ -39,12 +39,12 @@ export class CustomersService extends ODataEntitySetService<Customer> {
 
   //#region ODataApi Model
   customerModel(attrs?: Partial<Customer>): CustomerModel<Customer> {
-    return this.entity().asModel(attrs || {}) as CustomerModel<Customer>;
+    return this.entity().asModel<CustomerModel<Customer>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   customerCollection(models?: Partial<Customer>[]): CustomerCollection<Customer, CustomerModel<Customer>> {
-    return this.entities().asCollection(models || []) as CustomerCollection<Customer, CustomerModel<Customer>>;
+    return this.entities().asCollection<CustomerModel<Customer>, CustomerCollection<Customer, CustomerModel<Customer>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

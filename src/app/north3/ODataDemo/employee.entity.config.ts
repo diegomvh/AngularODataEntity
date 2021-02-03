@@ -7,7 +7,7 @@ import { EmployeeCollection } from './employee.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const EmployeeConfig = {
+export const EmployeeEntityConfig = {
   name: "Employee",
   base: "ODataDemo.Person",
   model: EmployeeModel,

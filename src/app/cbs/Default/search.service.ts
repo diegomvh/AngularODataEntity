@@ -34,12 +34,12 @@ export class SearchService extends ODataEntitySetService<SearchResultItem> {
 
   //#region ODataApi Model
   searchResultItemModel(attrs?: Partial<SearchResultItem>): SearchResultItemModel<SearchResultItem> {
-    return this.entity().asModel(attrs || {}) as SearchResultItemModel<SearchResultItem>;
+    return this.entity().asModel<SearchResultItemModel<SearchResultItem>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   searchResultItemCollection(models?: Partial<SearchResultItem>[]): SearchResultItemCollection<SearchResultItem, SearchResultItemModel<SearchResultItem>> {
-    return this.entities().asCollection(models || []) as SearchResultItemCollection<SearchResultItem, SearchResultItemModel<SearchResultItem>>;
+    return this.entities().asCollection<SearchResultItemModel<SearchResultItem>, SearchResultItemCollection<SearchResultItem, SearchResultItemModel<SearchResultItem>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

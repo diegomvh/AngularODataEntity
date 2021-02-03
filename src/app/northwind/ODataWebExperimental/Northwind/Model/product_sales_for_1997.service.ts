@@ -33,12 +33,12 @@ export class ProductSalesFor1997Service extends ODataEntitySetService<ProductSal
 
   //#region ODataApi Model
   productSalesFor1997Model(attrs?: Partial<ProductSalesFor1997>): ProductSalesFor1997Model<ProductSalesFor1997> {
-    return this.entity().asModel(attrs || {}) as ProductSalesFor1997Model<ProductSalesFor1997>;
+    return this.entity().asModel<ProductSalesFor1997Model<ProductSalesFor1997>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   productSalesFor1997Collection(models?: Partial<ProductSalesFor1997>[]): ProductSalesFor1997Collection<ProductSalesFor1997, ProductSalesFor1997Model<ProductSalesFor1997>> {
-    return this.entities().asCollection(models || []) as ProductSalesFor1997Collection<ProductSalesFor1997, ProductSalesFor1997Model<ProductSalesFor1997>>;
+    return this.entities().asCollection<ProductSalesFor1997Model<ProductSalesFor1997>, ProductSalesFor1997Collection<ProductSalesFor1997, ProductSalesFor1997Model<ProductSalesFor1997>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

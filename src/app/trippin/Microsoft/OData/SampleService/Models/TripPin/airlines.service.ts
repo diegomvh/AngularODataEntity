@@ -33,12 +33,12 @@ export class AirlinesService extends ODataEntitySetService<Airline> {
 
   //#region ODataApi Model
   airlineModel(attrs?: Partial<Airline>): AirlineModel<Airline> {
-    return this.entity().asModel(attrs || {}) as AirlineModel<Airline>;
+    return this.entity().asModel<AirlineModel<Airline>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   airlineCollection(models?: Partial<Airline>[]): AirlineCollection<Airline, AirlineModel<Airline>> {
-    return this.entities().asCollection(models || []) as AirlineCollection<Airline, AirlineModel<Airline>>;
+    return this.entities().asCollection<AirlineModel<Airline>, AirlineCollection<Airline, AirlineModel<Airline>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

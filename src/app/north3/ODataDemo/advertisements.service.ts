@@ -33,12 +33,12 @@ export class AdvertisementsService extends ODataEntitySetService<Advertisement> 
 
   //#region ODataApi Model
   advertisementModel(attrs?: Partial<Advertisement>): AdvertisementModel<Advertisement> {
-    return this.entity().asModel(attrs || {}) as AdvertisementModel<Advertisement>;
+    return this.entity().asModel<AdvertisementModel<Advertisement>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   advertisementCollection(models?: Partial<Advertisement>[]): AdvertisementCollection<Advertisement, AdvertisementModel<Advertisement>> {
-    return this.entities().asCollection(models || []) as AdvertisementCollection<Advertisement, AdvertisementModel<Advertisement>>;
+    return this.entities().asCollection<AdvertisementModel<Advertisement>, AdvertisementCollection<Advertisement, AdvertisementModel<Advertisement>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

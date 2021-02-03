@@ -1,17 +1,17 @@
 ﻿import { SchemaConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { AddressConfig } from './address.complex.config';
-import { ProductConfig } from './product.entity.config';
-import { FeaturedProductConfig } from './featuredproduct.entity.config';
-import { ProductDetailConfig } from './productdetail.entity.config';
-import { CategoryConfig } from './category.entity.config';
-import { SupplierConfig } from './supplier.entity.config';
-import { PersonConfig } from './person.entity.config';
-import { CustomerConfig } from './customer.entity.config';
-import { EmployeeConfig } from './employee.entity.config';
-import { PersonDetailConfig } from './persondetail.entity.config';
-import { AdvertisementConfig } from './advertisement.entity.config';
+import { AddressComplexConfig } from './address.complex.config';
+import { ProductEntityConfig } from './product.entity.config';
+import { FeaturedProductEntityConfig } from './featuredproduct.entity.config';
+import { ProductDetailEntityConfig } from './productdetail.entity.config';
+import { CategoryEntityConfig } from './category.entity.config';
+import { SupplierEntityConfig } from './supplier.entity.config';
+import { PersonEntityConfig } from './person.entity.config';
+import { CustomerEntityConfig } from './customer.entity.config';
+import { EmployeeEntityConfig } from './employee.entity.config';
+import { PersonDetailEntityConfig } from './persondetail.entity.config';
+import { AdvertisementEntityConfig } from './advertisement.entity.config';
 import { DemoServiceContainer } from './demoservice.container';
 //#endregion
 
@@ -19,17 +19,17 @@ import { DemoServiceContainer } from './demoservice.container';
 export const ODataDemoSchema = {
   namespace: "ODataDemo",
   enums: [],
-  entities: [AddressConfig,
-    ProductConfig,
-    FeaturedProductConfig,
-    ProductDetailConfig,
-    CategoryConfig,
-    SupplierConfig,
-    PersonConfig,
-    CustomerConfig,
-    EmployeeConfig,
-    PersonDetailConfig,
-    AdvertisementConfig],
+  entities: [AddressComplexConfig,
+    ProductEntityConfig,
+    FeaturedProductEntityConfig,
+    ProductDetailEntityConfig,
+    CategoryEntityConfig,
+    SupplierEntityConfig,
+    PersonEntityConfig,
+    CustomerEntityConfig,
+    EmployeeEntityConfig,
+    PersonDetailEntityConfig,
+    AdvertisementEntityConfig],
   callables: [],
   containers: [DemoServiceContainer]
 } as SchemaConfig;

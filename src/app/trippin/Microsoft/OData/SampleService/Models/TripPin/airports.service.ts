@@ -36,12 +36,12 @@ export class AirportsService extends ODataEntitySetService<Airport> {
 
   //#region ODataApi Model
   airportModel(attrs?: Partial<Airport>): AirportModel<Airport> {
-    return this.entity().asModel(attrs || {}) as AirportModel<Airport>;
+    return this.entity().asModel<AirportModel<Airport>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   airportCollection(models?: Partial<Airport>[]): AirportCollection<Airport, AirportModel<Airport>> {
-    return this.entities().asCollection(models || []) as AirportCollection<Airport, AirportModel<Airport>>;
+    return this.entities().asCollection<AirportModel<Airport>, AirportCollection<Airport, AirportModel<Airport>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

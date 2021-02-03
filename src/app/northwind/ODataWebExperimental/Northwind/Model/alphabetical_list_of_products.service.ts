@@ -33,12 +33,12 @@ export class AlphabeticalListOfProductsService extends ODataEntitySetService<Alp
 
   //#region ODataApi Model
   alphabeticalListOfProductModel(attrs?: Partial<AlphabeticalListOfProduct>): AlphabeticalListOfProductModel<AlphabeticalListOfProduct> {
-    return this.entity().asModel(attrs || {}) as AlphabeticalListOfProductModel<AlphabeticalListOfProduct>;
+    return this.entity().asModel<AlphabeticalListOfProductModel<AlphabeticalListOfProduct>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   alphabeticalListOfProductCollection(models?: Partial<AlphabeticalListOfProduct>[]): AlphabeticalListOfProductCollection<AlphabeticalListOfProduct, AlphabeticalListOfProductModel<AlphabeticalListOfProduct>> {
-    return this.entities().asCollection(models || []) as AlphabeticalListOfProductCollection<AlphabeticalListOfProduct, AlphabeticalListOfProductModel<AlphabeticalListOfProduct>>;
+    return this.entities().asCollection<AlphabeticalListOfProductModel<AlphabeticalListOfProduct>, AlphabeticalListOfProductCollection<AlphabeticalListOfProduct, AlphabeticalListOfProductModel<AlphabeticalListOfProduct>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

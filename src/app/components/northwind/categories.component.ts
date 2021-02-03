@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ODataEntitySetResource } from 'angular-odata';
 import { LazyLoadEvent } from 'primeng/api';
 import { Category, CategoriesService } from 'src/app/northwind';

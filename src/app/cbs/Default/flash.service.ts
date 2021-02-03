@@ -33,12 +33,12 @@ export class FlashService extends ODataEntitySetService<Flash> {
 
   //#region ODataApi Model
   flashModel(attrs?: Partial<Flash>): FlashModel<Flash> {
-    return this.entity().asModel(attrs || {}) as FlashModel<Flash>;
+    return this.entity().asModel<FlashModel<Flash>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   flashCollection(models?: Partial<Flash>[]): FlashCollection<Flash, FlashModel<Flash>> {
-    return this.entities().asCollection(models || []) as FlashCollection<Flash, FlashModel<Flash>>;
+    return this.entities().asCollection<FlashModel<Flash>, FlashCollection<Flash, FlashModel<Flash>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

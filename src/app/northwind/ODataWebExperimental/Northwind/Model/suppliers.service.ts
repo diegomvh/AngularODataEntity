@@ -36,12 +36,12 @@ export class SuppliersService extends ODataEntitySetService<Supplier> {
 
   //#region ODataApi Model
   supplierModel(attrs?: Partial<Supplier>): SupplierModel<Supplier> {
-    return this.entity().asModel(attrs || {}) as SupplierModel<Supplier>;
+    return this.entity().asModel<SupplierModel<Supplier>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   supplierCollection(models?: Partial<Supplier>[]): SupplierCollection<Supplier, SupplierModel<Supplier>> {
-    return this.entities().asCollection(models || []) as SupplierCollection<Supplier, SupplierModel<Supplier>>;
+    return this.entities().asCollection<SupplierModel<Supplier>, SupplierCollection<Supplier, SupplierModel<Supplier>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

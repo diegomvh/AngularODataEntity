@@ -52,12 +52,12 @@ export class PeopleService extends ODataEntitySetService<Person> {
 
   //#region ODataApi Model
   personModel(attrs?: Partial<Person>): PersonModel<Person> {
-    return this.entity().asModel(attrs || {}) as PersonModel<Person>;
+    return this.entity().asModel<PersonModel<Person>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   personCollection(models?: Partial<Person>[]): PersonCollection<Person, PersonModel<Person>> {
-    return this.entities().asCollection(models || []) as PersonCollection<Person, PersonModel<Person>>;
+    return this.entities().asCollection<PersonModel<Person>, PersonCollection<Person, PersonModel<Person>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions
@@ -68,22 +68,20 @@ export class PeopleService extends ODataEntitySetService<Person> {
   public friends(entity: EntityKey<Person>): ODataNavigationPropertyResource<Person> {
     return this.entity(entity).navigationProperty<Person>('Friends');
   }
-  /*
   public airline(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airline> {
-    return this.entity(entity).cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airline>('Airline');
+    return this.entity(entity).cast<any>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airline>('Airline');
   }
   public from(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airport> {
-    return this.entity(entity).cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('From');
+    return this.entity(entity).cast<any>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('From');
   }
   public to(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airport> {
-    return this.entity(entity).cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('To');
+    return this.entity(entity).cast<any>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('To');
   }
-  public photos(entity: EntityKey<Person>): ODataNavigationPropertyResource<Photo> {
-    return this.entity(entity).cast<Trip>('Microsoft.OData.SampleService.Models.TripPin.Trip').navigationProperty<Photo>('Photos');
-  }
-  */
   public photo(entity: EntityKey<Person>): ODataNavigationPropertyResource<Photo> {
     return this.entity(entity).navigationProperty<Photo>('Photo');
+  }
+  public photos(entity: EntityKey<Person>): ODataNavigationPropertyResource<Photo> {
+    return this.entity(entity).cast<any>('Microsoft.OData.SampleService.Models.TripPin.Trip').navigationProperty<Photo>('Photos');
   }
   //#endregion
 }

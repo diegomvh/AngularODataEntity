@@ -7,7 +7,7 @@ import { AddressCollection } from './address.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const AddressConfig = {
+export const AddressComplexConfig = {
   name: "Address",
   model: AddressModel,
   collection: AddressCollection,

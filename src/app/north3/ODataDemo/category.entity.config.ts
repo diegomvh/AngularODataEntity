@@ -7,7 +7,7 @@ import { CategoryCollection } from './category.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const CategoryConfig = {
+export const CategoryEntityConfig = {
   name: "Category",
   open: true,
   model: CategoryModel,

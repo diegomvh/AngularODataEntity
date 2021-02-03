@@ -40,12 +40,12 @@ export class ArticlesService extends ODataEntitySetService<Article> {
 
   //#region ODataApi Model
   articleModel(attrs?: Partial<Article>): ArticleModel<Article> {
-    return this.entity().asModel(attrs || {}) as ArticleModel<Article>;
+    return this.entity().asModel<ArticleModel<Article>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   articleCollection(models?: Partial<Article>[]): ArticleCollection<Article, ArticleModel<Article>> {
-    return this.entities().asCollection(models || []) as ArticleCollection<Article, ArticleModel<Article>>;
+    return this.entities().asCollection<ArticleModel<Article>, ArticleCollection<Article, ArticleModel<Article>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

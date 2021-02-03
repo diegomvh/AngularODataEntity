@@ -36,12 +36,12 @@ export class CategoriesService extends ODataEntitySetService<Category> {
 
   //#region ODataApi Model
   categoryModel(attrs?: Partial<Category>): CategoryModel<Category> {
-    return this.entity().asModel(attrs || {}) as CategoryModel<Category>;
+    return this.entity().asModel<CategoryModel<Category>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   categoryCollection(models?: Partial<Category>[]): CategoryCollection<Category, CategoryModel<Category>> {
-    return this.entities().asCollection(models || []) as CategoryCollection<Category, CategoryModel<Category>>;
+    return this.entities().asCollection<CategoryModel<Category>, CategoryCollection<Category, CategoryModel<Category>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

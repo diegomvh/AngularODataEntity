@@ -1,10 +1,10 @@
 ﻿import { SchemaConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { AddressConfig } from './address.complex.config';
-import { ProductConfig } from './product.entity.config';
-import { CategoryConfig } from './category.entity.config';
-import { SupplierConfig } from './supplier.entity.config';
+import { AddressComplexConfig } from './address.complex.config';
+import { ProductEntityConfig } from './product.entity.config';
+import { CategoryEntityConfig } from './category.entity.config';
+import { SupplierEntityConfig } from './supplier.entity.config';
 import { DemoServiceContainer } from './demoservice.container';
 //#endregion
 
@@ -12,10 +12,10 @@ import { DemoServiceContainer } from './demoservice.container';
 export const ODataDemoSchema = {
   namespace: "ODataDemo",
   enums: [],
-  entities: [AddressConfig,
-    ProductConfig,
-    CategoryConfig,
-    SupplierConfig],
+  entities: [AddressComplexConfig,
+    ProductEntityConfig,
+    CategoryEntityConfig,
+    SupplierEntityConfig],
   callables: [],
   containers: [DemoServiceContainer]
 } as SchemaConfig;

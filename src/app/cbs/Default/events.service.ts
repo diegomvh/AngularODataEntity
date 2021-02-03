@@ -33,12 +33,12 @@ export class EventsService extends ODataEntitySetService<CalendarEvent> {
 
   //#region ODataApi Model
   calendarEventModel(attrs?: Partial<CalendarEvent>): CalendarEventModel<CalendarEvent> {
-    return this.entity().asModel(attrs || {}) as CalendarEventModel<CalendarEvent>;
+    return this.entity().asModel<CalendarEventModel<CalendarEvent>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   calendarEventCollection(models?: Partial<CalendarEvent>[]): CalendarEventCollection<CalendarEvent, CalendarEventModel<CalendarEvent>> {
-    return this.entities().asCollection(models || []) as CalendarEventCollection<CalendarEvent, CalendarEventModel<CalendarEvent>>;
+    return this.entities().asCollection<CalendarEventModel<CalendarEvent>, CalendarEventCollection<CalendarEvent, CalendarEventModel<CalendarEvent>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

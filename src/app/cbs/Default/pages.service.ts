@@ -37,12 +37,12 @@ export class PagesService extends ODataEntitySetService<Page> {
 
   //#region ODataApi Model
   pageModel(attrs?: Partial<Page>): PageModel<Page> {
-    return this.entity().asModel(attrs || {}) as PageModel<Page>;
+    return this.entity().asModel<PageModel<Page>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   pageCollection(models?: Partial<Page>[]): PageCollection<Page, PageModel<Page>> {
-    return this.entities().asCollection(models || []) as PageCollection<Page, PageModel<Page>>;
+    return this.entities().asCollection<PageModel<Page>, PageCollection<Page, PageModel<Page>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

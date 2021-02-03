@@ -7,7 +7,7 @@ import { FeaturedProductCollection } from './featuredproduct.collection';
 //#endregion
 
 //#region ODataApi StrucutredTypeConfig
-export const FeaturedProductConfig = {
+export const FeaturedProductEntityConfig = {
   name: "FeaturedProduct",
   base: "ODataDemo.Product",
   model: FeaturedProductModel,
