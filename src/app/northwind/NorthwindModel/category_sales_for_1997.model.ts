@@ -13,6 +13,8 @@ export class CategorySalesFor1997Model<E extends CategorySalesFor1997> extends O
   CategoryName!: string;
   CategorySales?: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

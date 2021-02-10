@@ -34,7 +34,7 @@ export class PersonComponent {
         this.photos
         .entity(this.person.Photo)
         .value()
-        .blob()
+        .fetchBlob()
         .subscribe(console.log);
       }
       this.display = true;

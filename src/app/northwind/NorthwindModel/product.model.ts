@@ -33,6 +33,12 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
   Supplier?: SupplierModel<Supplier>;
   //#endregion
+  //#region ODataApi Setters
+  public setCategory(model: CategoryModel<Category> | null, options?: HttpOptions) {
+    return this._setReference<Category>('Category', model, options);
+  }public setSupplier(model: SupplierModel<Supplier> | null, options?: HttpOptions) {
+    return this._setReference<Supplier>('Supplier', model, options);
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

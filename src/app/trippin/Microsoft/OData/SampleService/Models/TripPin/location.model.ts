@@ -16,6 +16,8 @@ export class LocationModel<E extends Location> extends ODataModel<E> {
   Address!: string;
   City!: CityModel<City>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

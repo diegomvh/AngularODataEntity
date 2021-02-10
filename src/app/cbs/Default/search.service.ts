@@ -45,33 +45,33 @@ export class SearchService extends ODataEntitySetService<SearchResultItem> {
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
-  public getSearchResultsByTheme(): ODataFunctionResource<{Theme: string}, SearchResultItem> {
-    const resource = this.client.function<{Theme: string}, SearchResultItem>('Default.GetSearchResultsByTheme');
-    return resource;
+  public getSearchResultsByTheme(Theme: string, options?: HttpOptions) {
+    return this.client.function<{Theme: string}, SearchResultItem>('Default.GetSearchResultsByTheme')
+      .callEntities({Theme}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByTemplate(): ODataFunctionResource<{Template: string}, SearchResultItem> {
-    const resource = this.client.function<{Template: string}, SearchResultItem>('Default.GetSearchResultsByTemplate');
-    return resource;
+  public getSearchResultsByTemplate(Template: string, options?: HttpOptions) {
+    return this.client.function<{Template: string}, SearchResultItem>('Default.GetSearchResultsByTemplate')
+      .callEntities({Template}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByArticleType(): ODataFunctionResource<{ArticleType: ArticleType}, SearchResultItem> {
-    const resource = this.client.function<{ArticleType: ArticleType}, SearchResultItem>('Default.GetSearchResultsByArticleType');
-    return resource;
+  public getSearchResultsByArticleType(ArticleType: ArticleType, options?: HttpOptions) {
+    return this.client.function<{ArticleType: ArticleType}, SearchResultItem>('Default.GetSearchResultsByArticleType')
+      .callEntities({ArticleType}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByWord(): ODataFunctionResource<{Word: string}, SearchResultItem> {
-    const resource = this.client.function<{Word: string}, SearchResultItem>('Default.GetSearchResultsByWord');
-    return resource;
+  public getSearchResultsByWord(Word: string, options?: HttpOptions) {
+    return this.client.function<{Word: string}, SearchResultItem>('Default.GetSearchResultsByWord')
+      .callEntities({Word}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByWordAndTemplateId(): ODataFunctionResource<{Word: string, TemplateId: string}, SearchResultItem> {
-    const resource = this.client.function<{Word: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByWordAndTemplateId');
-    return resource;
+  public getSearchResultsByWordAndTemplateId(Word: string, TemplateId: string, options?: HttpOptions) {
+    return this.client.function<{Word: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByWordAndTemplateId')
+      .callEntities({Word, TemplateId}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByPath(): ODataFunctionResource<{Path: string}, SearchResultItem> {
-    const resource = this.client.function<{Path: string}, SearchResultItem>('Default.GetSearchResultsByPath');
-    return resource;
+  public getSearchResultsByPath(Path: string, options?: HttpOptions) {
+    return this.client.function<{Path: string}, SearchResultItem>('Default.GetSearchResultsByPath')
+      .callEntities({Path}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByPathAndTemplateId(): ODataFunctionResource<{Path: string, TemplateId: string}, SearchResultItem> {
-    const resource = this.client.function<{Path: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByPathAndTemplateId');
-    return resource;
+  public getSearchResultsByPathAndTemplateId(Path: string, TemplateId: string, options?: HttpOptions) {
+    return this.client.function<{Path: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByPathAndTemplateId')
+      .callEntities({Path, TemplateId}, options) as Observable<SearchResultItem[] | null>;
   }
   //#endregion
   //#region ODataApi Navigations

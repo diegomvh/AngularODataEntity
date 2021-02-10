@@ -14,6 +14,8 @@ export class SummaryOfSalesByYearModel<E extends SummaryOfSalesByYear> extends O
   OrderID!: number;
   Subtotal?: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

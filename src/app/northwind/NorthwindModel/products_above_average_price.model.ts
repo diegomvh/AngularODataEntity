@@ -13,6 +13,8 @@ export class ProductsAboveAveragePriceModel<E extends ProductsAboveAveragePrice>
   ProductName!: string;
   UnitPrice?: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -18,6 +18,8 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   Phone?: string;
   Orders?: OrderCollection<Order, OrderModel<Order>>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

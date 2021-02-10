@@ -27,6 +27,8 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   Photos?: PhotoCollection<Photo, PhotoModel<Photo>>;
   PlanItems?: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

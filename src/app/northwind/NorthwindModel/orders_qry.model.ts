@@ -31,6 +31,8 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   PostalCode?: string;
   Country?: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

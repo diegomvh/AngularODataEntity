@@ -15,6 +15,8 @@ export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODa
   CompanyName!: string;
   ShippedDate?: Date;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

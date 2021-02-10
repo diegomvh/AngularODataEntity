@@ -23,6 +23,8 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   Concurrency!: number;
   Products?: ProductCollection<Product, ProductModel<Product>>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

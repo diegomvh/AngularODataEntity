@@ -14,6 +14,8 @@ export class AirportLocationModel<E extends AirportLocation> extends LocationMod
   //#region ODataApi Properties
   Loc!: Point;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -16,6 +16,10 @@ export class FeaturedProductModel<E extends FeaturedProduct> extends ProductMode
   //#region ODataApi Properties
   Advertisement?: AdvertisementModel<Advertisement>;
   //#endregion
+  //#region ODataApi Setters
+  public setAdvertisement(model: AdvertisementModel<Advertisement> | null, options?: HttpOptions) {
+    return this._setReference<Advertisement>('Advertisement', model, options);
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

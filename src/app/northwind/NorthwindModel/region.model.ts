@@ -17,6 +17,8 @@ export class RegionModel<E extends Region> extends ODataModel<E> {
   RegionDescription!: string;
   Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

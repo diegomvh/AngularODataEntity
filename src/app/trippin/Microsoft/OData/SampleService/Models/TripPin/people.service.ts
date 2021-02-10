@@ -3,12 +3,12 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import {
+import { 
   ODataClient,
-  ODataEntitySetService,
-  ODataEntity,
-  ODataEntities,
-  ODataProperty,
+  ODataEntitySetService, 
+  ODataEntity, 
+  ODataEntities, 
+  ODataProperty, 
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -69,19 +69,19 @@ export class PeopleService extends ODataEntitySetService<Person> {
     return this.entity(entity).navigationProperty<Person>('Friends');
   }
   public airline(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airline> {
-    return this.entity(entity).cast<any>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airline>('Airline');
+    return this.entity(entity).cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airline>('Airline');
   }
   public from(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airport> {
-    return this.entity(entity).cast<any>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('From');
+    return this.entity(entity).cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('From');
   }
   public to(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airport> {
-    return this.entity(entity).cast<any>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('To');
+    return this.entity(entity).cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('To');
   }
   public photo(entity: EntityKey<Person>): ODataNavigationPropertyResource<Photo> {
     return this.entity(entity).navigationProperty<Photo>('Photo');
   }
   public photos(entity: EntityKey<Person>): ODataNavigationPropertyResource<Photo> {
-    return this.entity(entity).cast<any>('Microsoft.OData.SampleService.Models.TripPin.Trip').navigationProperty<Photo>('Photos');
+    return this.entity(entity).cast<Trip>('Microsoft.OData.SampleService.Models.TripPin.Trip').navigationProperty<Photo>('Photos');
   }
   //#endregion
 }

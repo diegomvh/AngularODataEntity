@@ -14,6 +14,8 @@ export class SummaryOfSalesByQuarterModel<E extends SummaryOfSalesByQuarter> ext
   OrderID!: number;
   Subtotal?: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -13,6 +13,8 @@ export class ErratumItemModel<E extends ErratumItem> extends ODataModel<E> {
   PresentationTime!: Date;
   Body?: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

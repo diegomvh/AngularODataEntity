@@ -13,6 +13,8 @@ export class PublicTransportationModel<E extends PublicTransportation> extends P
   //#region ODataApi Properties
   SeatNumber?: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

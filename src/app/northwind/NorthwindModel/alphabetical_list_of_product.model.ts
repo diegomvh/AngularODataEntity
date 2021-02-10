@@ -22,6 +22,8 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   Discontinued!: boolean;
   CategoryName!: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

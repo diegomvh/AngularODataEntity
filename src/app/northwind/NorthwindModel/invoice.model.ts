@@ -37,6 +37,8 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   ExtendedPrice?: number;
   Freight?: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -18,6 +18,8 @@ export class AirportModel<E extends Airport> extends ODataModel<E> {
   IataCode!: string;
   Location!: AirportLocationModel<AirportLocation>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

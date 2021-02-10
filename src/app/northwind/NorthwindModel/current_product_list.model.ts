@@ -13,6 +13,8 @@ export class CurrentProductListModel<E extends CurrentProductList> extends OData
   ProductID!: number;
   ProductName!: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

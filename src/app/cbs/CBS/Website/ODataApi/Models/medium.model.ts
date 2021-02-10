@@ -31,6 +31,8 @@ export class MediumModel<E extends Medium> extends ODataModel<E> {
   Created!: Date;
   Permalink?: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

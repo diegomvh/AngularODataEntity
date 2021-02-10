@@ -28,7 +28,7 @@ export class AppComponent {
 
   //#region APIs
   trippin() {
-    this.api.resetDataSource().call(null).subscribe(() => {
+    this.api.resetDataSource().subscribe(() => {
       this.queries();
       this.mutate();
       this.trippinModels();
@@ -57,8 +57,8 @@ export class AppComponent {
     let person = peopleService.entities();
     let airports = airportsService.entities();
 
-    person.all().subscribe(console.log);
-    airports.all().subscribe(console.log);
+    person.fetchAll().subscribe(console.log);
+    airports.fetchAll().subscribe(console.log);
   }
 
   entitiesWithTypes() {
@@ -72,7 +72,7 @@ export class AppComponent {
 
     // Fetch all airports
     airports
-    .all()
+    .fetchAll()
     .subscribe(aports => console.log("All: ", aports));
 
     this.products.entities()
@@ -161,22 +161,22 @@ export class AppComponent {
     // Person gender
     let gender = person.property<PersonGender>("Gender");
     gender.fetch().subscribe(console.log);
-    gender.value().get().subscribe(console.log);
+    gender.value().fetch().subscribe(console.log);
 
     // Person name
     let name = person.property<string>("UserName");
     name.fetch().subscribe(console.log);
-    name.value().get().subscribe(console.log);
+    name.value().fetch().subscribe(console.log);
 
     // Person photo
     let photo = person.navigationProperty<Photo>("Photo");
-    photo.fetch().subscribe(console.log);
-    photo.value().arraybuffer().subscribe(console.log);
-    photo.value().blob().subscribe(console.log);
+    photo.fetchEntity().subscribe(console.log);
+    photo.value().fetchArraybuffer().subscribe(console.log);
+    photo.value().fetchBlob().subscribe(console.log);
     let photoName = photo.property<string>("Name");
     photoName.fetch().subscribe(console.log);
 
-    name.value().get().subscribe(console.log);
+    name.value().fetch().subscribe(console.log);
   }
 
   mutate() {

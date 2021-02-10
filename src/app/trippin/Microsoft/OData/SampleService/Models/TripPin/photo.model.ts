@@ -13,6 +13,8 @@ export class PhotoModel<E extends Photo> extends ODataModel<E> {
   Id!: number;
   Name?: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

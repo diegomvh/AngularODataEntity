@@ -17,6 +17,8 @@ export class EventModel<E extends Event> extends PlanItemModel<E> {
   Description?: string;
   OccursAt!: EventLocationModel<EventLocation>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

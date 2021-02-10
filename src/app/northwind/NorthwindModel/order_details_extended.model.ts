@@ -18,6 +18,8 @@ export class OrderDetailsExtendedModel<E extends OrderDetailsExtended> extends O
   Discount!: number;
   ExtendedPrice?: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -15,6 +15,8 @@ export class ErrataListModel<E extends ErrataList> extends ODataModel<E> {
   //#region ODataApi Properties
   Items?: ErratumItemCollection<ErratumItem, ErratumItemModel<ErratumItem>>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -41,6 +41,14 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
   Shipper?: ShipperModel<Shipper>;
   //#endregion
+  //#region ODataApi Setters
+  public setCustomer(model: CustomerModel<Customer> | null, options?: HttpOptions) {
+    return this._setReference<Customer>('Customer', model, options);
+  }public setEmployee(model: EmployeeModel<Employee> | null, options?: HttpOptions) {
+    return this._setReference<Employee>('Employee', model, options);
+  }public setShipper(model: ShipperModel<Shipper> | null, options?: HttpOptions) {
+    return this._setReference<Shipper>('Shipper', model, options);
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

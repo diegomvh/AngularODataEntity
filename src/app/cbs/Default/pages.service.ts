@@ -48,21 +48,21 @@ export class PagesService extends ODataEntitySetService<Page> {
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
-  public getPagesByTheme(): ODataFunctionResource<{Theme: string}, Page> {
-    const resource = this.client.function<{Theme: string}, Page>('Default.GetPagesByTheme');
-    return resource;
+  public getPagesByTheme(Theme: string, options?: HttpOptions) {
+    return this.client.function<{Theme: string}, Page>('Default.GetPagesByTheme')
+      .callEntities({Theme}, options) as Observable<Page[] | null>;
   }
-  public getPagesBySeries(): ODataFunctionResource<{Series: string}, Page> {
-    const resource = this.client.function<{Series: string}, Page>('Default.GetPagesBySeries');
-    return resource;
+  public getPagesBySeries(Series: string, options?: HttpOptions) {
+    return this.client.function<{Series: string}, Page>('Default.GetPagesBySeries')
+      .callEntities({Series}, options) as Observable<Page[] | null>;
   }
-  public getPagesByTaxonomyTag(): ODataFunctionResource<{Tag: string}, Page> {
-    const resource = this.client.function<{Tag: string}, Page>('Default.GetPagesByTaxonomyTag');
-    return resource;
+  public getPagesByTaxonomyTag(Tag: string, options?: HttpOptions) {
+    return this.client.function<{Tag: string}, Page>('Default.GetPagesByTaxonomyTag')
+      .callEntities({Tag}, options) as Observable<Page[] | null>;
   }
-  public getPagesByPageType(): ODataFunctionResource<{PageType: PageType}, Page> {
-    const resource = this.client.function<{PageType: PageType}, Page>('Default.GetPagesByPageType');
-    return resource;
+  public getPagesByPageType(PageType: PageType, options?: HttpOptions) {
+    return this.client.function<{PageType: PageType}, Page>('Default.GetPagesByPageType')
+      .callEntities({PageType}, options) as Observable<Page[] | null>;
   }
   //#endregion
   //#region ODataApi Navigations

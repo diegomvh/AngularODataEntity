@@ -33,6 +33,8 @@ export class DefinitionModel<E extends Definition> extends ODataModel<E> {
   References?: LinkListModel<LinkList>;
   Links?: LinkListModel<LinkList>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

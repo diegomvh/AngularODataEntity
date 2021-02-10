@@ -16,6 +16,8 @@ export class LinkModel<E extends Link> extends ODataModel<E> {
   TargetId?: string;
   Icon?: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

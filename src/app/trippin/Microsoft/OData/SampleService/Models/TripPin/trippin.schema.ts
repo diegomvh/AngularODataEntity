@@ -37,30 +37,30 @@ export const TripPinSchema = {
     TripEntityConfig],
   callables: [{
     name: 'GetFavoriteAirline',
-    path: "person/Trips/PlanItems/Microsoft.OData.SampleService.Models.TripPin.Flight/Airline",
+    entitySetPath: "person/Trips/PlanItems/Microsoft.OData.SampleService.Models.TripPin.Flight/Airline",
     bound: true,
     composable: true,
     parameters: { person: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', nullable: false} },
-    return: "Microsoft.OData.SampleService.Models.TripPin.Airline"
+    return: { type: "Microsoft.OData.SampleService.Models.TripPin.Airline", collection: false }
   }, {
     name: 'GetInvolvedPeople',
     bound: true,
     composable: true,
     parameters: { trip: {type: 'Microsoft.OData.SampleService.Models.TripPin.Trip', nullable: false} },
-    return: "Microsoft.OData.SampleService.Models.TripPin.Person"
+    return: { type: "Microsoft.OData.SampleService.Models.TripPin.Person", collection: true }
   }, {
     name: 'GetFriendsTrips',
-    path: "person/Friends/Trips",
+    entitySetPath: "person/Friends/Trips",
     bound: true,
     composable: true,
     parameters: { person: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', nullable: false}, userName: {type: 'Edm.String', nullable: false} },
-    return: "Microsoft.OData.SampleService.Models.TripPin.Trip"
+    return: { type: "Microsoft.OData.SampleService.Models.TripPin.Trip", collection: true }
   }, {
     name: 'GetNearestAirport',
     bound: false,
     composable: true,
     parameters: { lat: {type: 'Edm.Double', nullable: false}, lon: {type: 'Edm.Double', nullable: false} },
-    return: "Microsoft.OData.SampleService.Models.TripPin.Airport"
+    return: { type: "Microsoft.OData.SampleService.Models.TripPin.Airport", collection: false }
   }, {
     name: 'ResetDataSource',
     bound: false,

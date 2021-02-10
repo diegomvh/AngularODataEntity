@@ -15,6 +15,8 @@ export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCit
   ContactName?: string;
   Relationship!: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

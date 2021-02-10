@@ -16,6 +16,8 @@ export class AddressModel<E extends Address> extends ODataModel<E> {
   ZipCode?: string;
   Country?: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -39,6 +39,10 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   Orders?: OrderCollection<Order, OrderModel<Order>>;
   Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
   //#endregion
+  //#region ODataApi Setters
+  public setEmployee1(model: EmployeeModel<Employee> | null, options?: HttpOptions) {
+    return this._setReference<Employee>('Employee1', model, options);
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

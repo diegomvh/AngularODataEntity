@@ -16,6 +16,8 @@ export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   EndsAt?: Date;
   Duration?: Duration;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

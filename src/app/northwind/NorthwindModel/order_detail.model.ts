@@ -24,6 +24,12 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   Order?: OrderModel<Order>;
   Product?: ProductModel<Product>;
   //#endregion
+  //#region ODataApi Setters
+  public setOrder(model: OrderModel<Order> | null, options?: HttpOptions) {
+    return this._setReference<Order>('Order', model, options);
+  }public setProduct(model: ProductModel<Product> | null, options?: HttpOptions) {
+    return this._setReference<Product>('Product', model, options);
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

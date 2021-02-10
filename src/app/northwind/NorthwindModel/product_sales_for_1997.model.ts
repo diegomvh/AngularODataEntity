@@ -14,6 +14,8 @@ export class ProductSalesFor1997Model<E extends ProductSalesFor1997> extends ODa
   ProductName!: string;
   ProductSales?: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -15,6 +15,8 @@ export class LinkListModel<E extends LinkList> extends ODataModel<E> {
   //#region ODataApi Properties
   Items?: LinkCollection<Link, LinkModel<Link>>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

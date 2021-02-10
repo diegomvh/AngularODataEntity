@@ -30,15 +30,15 @@ export class DefaultContainerService {
   constructor(protected client: ODataClient) { }
 
   //#region ODataApi Actions
-  public resetDataSource(): ODataActionResource<null, any> {
-    const resource = this.client.action<null, any>('Microsoft.OData.SampleService.Models.TripPin.ResetDataSource');
-    return resource;
+  public resetDataSource(options?: HttpOptions) {
+    return this.client.action<null, any>('Microsoft.OData.SampleService.Models.TripPin.ResetDataSource')
+      .call(null, options);
   }
   //#endregion
   //#region ODataApi Functions
-  public getNearestAirport(): ODataFunctionResource<{lat: number, lon: number}, Airport> {
-    const resource = this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport');
-    return resource;
+  public getNearestAirport(lat: number, lon: number, options?: HttpOptions) {
+    return this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport')
+      .callEntity({lat, lon}, options) as Observable<Airport | null>;
   }
   //#endregion
 }

@@ -13,6 +13,8 @@ export class OrderSubtotalModel<E extends OrderSubtotal> extends ODataModel<E> {
   OrderID!: number;
   Subtotal?: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

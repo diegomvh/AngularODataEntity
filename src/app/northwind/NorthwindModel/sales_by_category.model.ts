@@ -15,6 +15,8 @@ export class SalesByCategoryModel<E extends SalesByCategory> extends ODataModel<
   ProductName!: string;
   ProductSales?: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

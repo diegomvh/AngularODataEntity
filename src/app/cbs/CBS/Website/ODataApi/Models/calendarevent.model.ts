@@ -32,6 +32,8 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   Created!: Date;
   Permalink?: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -44,73 +44,73 @@ export class ContainerService {
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
-  public getArticlesByTheme(): ODataFunctionResource<{Theme: string}, Article> {
-    const resource = this.client.function<{Theme: string}, Article>('Default.GetArticlesByTheme');
-    return resource;
+  public getArticlesByTheme(Theme: string, options?: HttpOptions) {
+    return this.client.function<{Theme: string}, Article>('Default.GetArticlesByTheme')
+      .callEntities({Theme}, options) as Observable<Article[] | null>;
   }
-  public getArticlesBySeries(): ODataFunctionResource<{Series: string}, Article> {
-    const resource = this.client.function<{Series: string}, Article>('Default.GetArticlesBySeries');
-    return resource;
+  public getArticlesBySeries(Series: string, options?: HttpOptions) {
+    return this.client.function<{Series: string}, Article>('Default.GetArticlesBySeries')
+      .callEntities({Series}, options) as Observable<Article[] | null>;
   }
-  public getArticlesByTaxonomyTag(): ODataFunctionResource<{Tag: string}, Article> {
-    const resource = this.client.function<{Tag: string}, Article>('Default.GetArticlesByTaxonomyTag');
-    return resource;
+  public getArticlesByTaxonomyTag(Tag: string, options?: HttpOptions) {
+    return this.client.function<{Tag: string}, Article>('Default.GetArticlesByTaxonomyTag')
+      .callEntities({Tag}, options) as Observable<Article[] | null>;
   }
-  public getArticlesByArticleType(): ODataFunctionResource<{ArticleType: ArticleType}, Article> {
-    const resource = this.client.function<{ArticleType: ArticleType}, Article>('Default.GetArticlesByArticleType');
-    return resource;
+  public getArticlesByArticleType(ArticleType: ArticleType, options?: HttpOptions) {
+    return this.client.function<{ArticleType: ArticleType}, Article>('Default.GetArticlesByArticleType')
+      .callEntities({ArticleType}, options) as Observable<Article[] | null>;
   }
-  public getArticlesByTableId(): ODataFunctionResource<{TableId: string}, Article> {
-    const resource = this.client.function<{TableId: string}, Article>('Default.GetArticlesByTableId');
-    return resource;
+  public getArticlesByTableId(TableId: string, options?: HttpOptions) {
+    return this.client.function<{TableId: string}, Article>('Default.GetArticlesByTableId')
+      .callEntities({TableId}, options) as Observable<Article[] | null>;
   }
-  public getMediaByMediaType(): ODataFunctionResource<{MediaType: MediaType}, Medium> {
-    const resource = this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType');
-    return resource;
+  public getMediaByMediaType(MediaType: MediaType, options?: HttpOptions) {
+    return this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType')
+      .callEntities({MediaType}, options) as Observable<Medium[] | null>;
   }
-  public getPagesByTheme(): ODataFunctionResource<{Theme: string}, Page> {
-    const resource = this.client.function<{Theme: string}, Page>('Default.GetPagesByTheme');
-    return resource;
+  public getPagesByTheme(Theme: string, options?: HttpOptions) {
+    return this.client.function<{Theme: string}, Page>('Default.GetPagesByTheme')
+      .callEntities({Theme}, options) as Observable<Page[] | null>;
   }
-  public getPagesBySeries(): ODataFunctionResource<{Series: string}, Page> {
-    const resource = this.client.function<{Series: string}, Page>('Default.GetPagesBySeries');
-    return resource;
+  public getPagesBySeries(Series: string, options?: HttpOptions) {
+    return this.client.function<{Series: string}, Page>('Default.GetPagesBySeries')
+      .callEntities({Series}, options) as Observable<Page[] | null>;
   }
-  public getPagesByTaxonomyTag(): ODataFunctionResource<{Tag: string}, Page> {
-    const resource = this.client.function<{Tag: string}, Page>('Default.GetPagesByTaxonomyTag');
-    return resource;
+  public getPagesByTaxonomyTag(Tag: string, options?: HttpOptions) {
+    return this.client.function<{Tag: string}, Page>('Default.GetPagesByTaxonomyTag')
+      .callEntities({Tag}, options) as Observable<Page[] | null>;
   }
-  public getPagesByPageType(): ODataFunctionResource<{PageType: PageType}, Page> {
-    const resource = this.client.function<{PageType: PageType}, Page>('Default.GetPagesByPageType');
-    return resource;
+  public getPagesByPageType(PageType: PageType, options?: HttpOptions) {
+    return this.client.function<{PageType: PageType}, Page>('Default.GetPagesByPageType')
+      .callEntities({PageType}, options) as Observable<Page[] | null>;
   }
-  public getSearchResultsByTheme(): ODataFunctionResource<{Theme: string}, SearchResultItem> {
-    const resource = this.client.function<{Theme: string}, SearchResultItem>('Default.GetSearchResultsByTheme');
-    return resource;
+  public getSearchResultsByTheme(Theme: string, options?: HttpOptions) {
+    return this.client.function<{Theme: string}, SearchResultItem>('Default.GetSearchResultsByTheme')
+      .callEntities({Theme}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByTemplate(): ODataFunctionResource<{Template: string}, SearchResultItem> {
-    const resource = this.client.function<{Template: string}, SearchResultItem>('Default.GetSearchResultsByTemplate');
-    return resource;
+  public getSearchResultsByTemplate(Template: string, options?: HttpOptions) {
+    return this.client.function<{Template: string}, SearchResultItem>('Default.GetSearchResultsByTemplate')
+      .callEntities({Template}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByArticleType(): ODataFunctionResource<{ArticleType: ArticleType}, SearchResultItem> {
-    const resource = this.client.function<{ArticleType: ArticleType}, SearchResultItem>('Default.GetSearchResultsByArticleType');
-    return resource;
+  public getSearchResultsByArticleType(ArticleType: ArticleType, options?: HttpOptions) {
+    return this.client.function<{ArticleType: ArticleType}, SearchResultItem>('Default.GetSearchResultsByArticleType')
+      .callEntities({ArticleType}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByWord(): ODataFunctionResource<{Word: string}, SearchResultItem> {
-    const resource = this.client.function<{Word: string}, SearchResultItem>('Default.GetSearchResultsByWord');
-    return resource;
+  public getSearchResultsByWord(Word: string, options?: HttpOptions) {
+    return this.client.function<{Word: string}, SearchResultItem>('Default.GetSearchResultsByWord')
+      .callEntities({Word}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByWordAndTemplateId(): ODataFunctionResource<{Word: string, TemplateId: string}, SearchResultItem> {
-    const resource = this.client.function<{Word: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByWordAndTemplateId');
-    return resource;
+  public getSearchResultsByWordAndTemplateId(Word: string, TemplateId: string, options?: HttpOptions) {
+    return this.client.function<{Word: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByWordAndTemplateId')
+      .callEntities({Word, TemplateId}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByPath(): ODataFunctionResource<{Path: string}, SearchResultItem> {
-    const resource = this.client.function<{Path: string}, SearchResultItem>('Default.GetSearchResultsByPath');
-    return resource;
+  public getSearchResultsByPath(Path: string, options?: HttpOptions) {
+    return this.client.function<{Path: string}, SearchResultItem>('Default.GetSearchResultsByPath')
+      .callEntities({Path}, options) as Observable<SearchResultItem[] | null>;
   }
-  public getSearchResultsByPathAndTemplateId(): ODataFunctionResource<{Path: string, TemplateId: string}, SearchResultItem> {
-    const resource = this.client.function<{Path: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByPathAndTemplateId');
-    return resource;
+  public getSearchResultsByPathAndTemplateId(Path: string, TemplateId: string, options?: HttpOptions) {
+    return this.client.function<{Path: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByPathAndTemplateId')
+      .callEntities({Path, TemplateId}, options) as Observable<SearchResultItem[] | null>;
   }
   //#endregion
 }

@@ -13,6 +13,8 @@ export class EventLocationModel<E extends EventLocation> extends LocationModel<E
   //#region ODataApi Properties
   BuildingInfo?: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

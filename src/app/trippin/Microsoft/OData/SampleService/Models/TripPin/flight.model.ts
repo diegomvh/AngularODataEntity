@@ -22,6 +22,14 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   To?: AirportModel<Airport>;
   Airline?: AirlineModel<Airline>;
   //#endregion
+  //#region ODataApi Setters
+  public setFrom(model: AirportModel<Airport> | null, options?: HttpOptions) {
+    return this._setReference<Airport>('From', model, options);
+  }public setTo(model: AirportModel<Airport> | null, options?: HttpOptions) {
+    return this._setReference<Airport>('To', model, options);
+  }public setAirline(model: AirlineModel<Airline> | null, options?: HttpOptions) {
+    return this._setReference<Airline>('Airline', model, options);
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

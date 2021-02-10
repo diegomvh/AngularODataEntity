@@ -47,9 +47,9 @@ export class AirportsService extends ODataEntitySetService<Airport> {
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
-  public getNearestAirport(): ODataFunctionResource<{lat: number, lon: number}, Airport> {
-    const resource = this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport');
-    return resource;
+  public getNearestAirport(lat: number, lon: number, options?: HttpOptions) {
+    return this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport')
+      .callEntity({lat, lon}, options) as Observable<Airport | null>;
   }
   //#endregion
   //#region ODataApi Navigations

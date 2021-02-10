@@ -17,6 +17,8 @@ export class CustomerDemographicModel<E extends CustomerDemographic> extends ODa
   CustomerDesc?: string;
   Customers?: CustomerCollection<Customer, CustomerModel<Customer>>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

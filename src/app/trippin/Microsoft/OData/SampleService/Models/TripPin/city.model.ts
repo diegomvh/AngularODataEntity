@@ -14,6 +14,8 @@ export class CityModel<E extends City> extends ODataModel<E> {
   Name!: string;
   Region!: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

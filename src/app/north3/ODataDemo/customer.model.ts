@@ -13,6 +13,8 @@ export class CustomerModel<E extends Customer> extends PersonModel<E> {
   //#region ODataApi Properties
   TotalExpense!: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

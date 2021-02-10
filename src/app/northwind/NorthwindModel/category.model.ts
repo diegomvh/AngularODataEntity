@@ -19,6 +19,8 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   Picture?: ArrayBuffer;
   Products?: ProductCollection<Product, ProductModel<Product>>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

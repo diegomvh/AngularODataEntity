@@ -15,6 +15,8 @@ export class EmployeeModel<E extends Employee> extends PersonModel<E> {
   HireDate!: any;
   Salary!: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -45,9 +45,9 @@ export class MediaService extends ODataEntitySetService<Medium> {
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
-  public getMediaByMediaType(): ODataFunctionResource<{MediaType: MediaType}, Medium> {
-    const resource = this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType');
-    return resource;
+  public getMediaByMediaType(MediaType: MediaType, options?: HttpOptions) {
+    return this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType')
+      .callEntities({MediaType}, options) as Observable<Medium[] | null>;
   }
   //#endregion
   //#region ODataApi Navigations

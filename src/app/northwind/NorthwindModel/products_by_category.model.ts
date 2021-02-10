@@ -16,6 +16,8 @@ export class ProductsByCategoryModel<E extends ProductsByCategory> extends OData
   UnitsInStock?: number;
   Discontinued!: boolean;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

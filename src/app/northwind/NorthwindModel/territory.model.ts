@@ -22,6 +22,10 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   Region?: RegionModel<Region>;
   Employees?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
   //#endregion
+  //#region ODataApi Setters
+  public setRegion(model: RegionModel<Region> | null, options?: HttpOptions) {
+    return this._setReference<Region>('Region', model, options);
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

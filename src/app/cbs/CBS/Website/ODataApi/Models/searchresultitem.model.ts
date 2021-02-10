@@ -30,6 +30,8 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   ItemNameLowerCase?: string;
   SortOrder!: number;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

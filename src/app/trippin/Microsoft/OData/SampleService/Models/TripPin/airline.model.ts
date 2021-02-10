@@ -13,6 +13,8 @@ export class AirlineModel<E extends Airline> extends ODataModel<E> {
   AirlineCode!: string;
   Name!: string;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

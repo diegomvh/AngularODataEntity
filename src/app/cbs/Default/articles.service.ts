@@ -51,25 +51,25 @@ export class ArticlesService extends ODataEntitySetService<Article> {
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
-  public getArticlesByTheme(): ODataFunctionResource<{Theme: string}, Article> {
-    const resource = this.client.function<{Theme: string}, Article>('Default.GetArticlesByTheme');
-    return resource;
+  public getArticlesByTheme(Theme: string, options?: HttpOptions) {
+    return this.client.function<{Theme: string}, Article>('Default.GetArticlesByTheme')
+      .callEntities({Theme}, options) as Observable<Article[] | null>;
   }
-  public getArticlesBySeries(): ODataFunctionResource<{Series: string}, Article> {
-    const resource = this.client.function<{Series: string}, Article>('Default.GetArticlesBySeries');
-    return resource;
+  public getArticlesBySeries(Series: string, options?: HttpOptions) {
+    return this.client.function<{Series: string}, Article>('Default.GetArticlesBySeries')
+      .callEntities({Series}, options) as Observable<Article[] | null>;
   }
-  public getArticlesByTaxonomyTag(): ODataFunctionResource<{Tag: string}, Article> {
-    const resource = this.client.function<{Tag: string}, Article>('Default.GetArticlesByTaxonomyTag');
-    return resource;
+  public getArticlesByTaxonomyTag(Tag: string, options?: HttpOptions) {
+    return this.client.function<{Tag: string}, Article>('Default.GetArticlesByTaxonomyTag')
+      .callEntities({Tag}, options) as Observable<Article[] | null>;
   }
-  public getArticlesByArticleType(): ODataFunctionResource<{ArticleType: ArticleType}, Article> {
-    const resource = this.client.function<{ArticleType: ArticleType}, Article>('Default.GetArticlesByArticleType');
-    return resource;
+  public getArticlesByArticleType(ArticleType: ArticleType, options?: HttpOptions) {
+    return this.client.function<{ArticleType: ArticleType}, Article>('Default.GetArticlesByArticleType')
+      .callEntities({ArticleType}, options) as Observable<Article[] | null>;
   }
-  public getArticlesByTableId(): ODataFunctionResource<{TableId: string}, Article> {
-    const resource = this.client.function<{TableId: string}, Article>('Default.GetArticlesByTableId');
-    return resource;
+  public getArticlesByTableId(TableId: string, options?: HttpOptions) {
+    return this.client.function<{TableId: string}, Article>('Default.GetArticlesByTableId')
+      .callEntities({TableId}, options) as Observable<Article[] | null>;
   }
   //#endregion
   //#region ODataApi Navigations

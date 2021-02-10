@@ -30,6 +30,8 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   Orders?: OrderCollection<Order, OrderModel<Order>>;
   CustomerDemographics?: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

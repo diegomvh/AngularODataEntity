@@ -17,6 +17,10 @@ export class ProductDetailModel<E extends ProductDetail> extends ODataModel<E> {
   Details?: string;
   Product?: ProductModel<Product>;
   //#endregion
+  //#region ODataApi Setters
+  public setProduct(model: ProductModel<Product> | null, options?: HttpOptions) {
+    return this._setReference<Product>('Product', model, options);
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

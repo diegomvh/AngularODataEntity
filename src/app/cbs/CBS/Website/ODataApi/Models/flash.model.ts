@@ -24,6 +24,8 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   Updated!: Date;
   Created!: Date;
   //#endregion
+  //#region ODataApi Setters
+  //#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
