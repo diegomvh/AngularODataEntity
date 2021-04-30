@@ -26,7 +26,7 @@ export class PersonDetailModel<E extends PersonDetail> extends ODataModel<E> {
   //#endregion
   //#region ODataApi Setters
   public setPerson(model: PersonModel<Person> | null, options?: HttpOptions) {
-    return this._setReference<Person>('Person', model, options);
+    return this.setReference<Person>('Person', model, options);
   }//#endregion
   //#region ODataApi Actions
   //#endregion

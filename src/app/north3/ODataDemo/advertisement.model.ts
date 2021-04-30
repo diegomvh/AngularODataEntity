@@ -20,7 +20,7 @@ export class AdvertisementModel<E extends Advertisement> extends ODataModel<E> {
   //#endregion
   //#region ODataApi Setters
   public setFeaturedProduct(model: FeaturedProductModel<FeaturedProduct> | null, options?: HttpOptions) {
-    return this._setReference<FeaturedProduct>('FeaturedProduct', model, options);
+    return this.setReference<FeaturedProduct>('FeaturedProduct', model, options);
   }//#endregion
   //#region ODataApi Actions
   //#endregion

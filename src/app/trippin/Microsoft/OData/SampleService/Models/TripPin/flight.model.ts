@@ -24,11 +24,11 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   //#endregion
   //#region ODataApi Setters
   public setFrom(model: AirportModel<Airport> | null, options?: HttpOptions) {
-    return this._setReference<Airport>('From', model, options);
+    return this.setReference<Airport>('From', model, options);
   }public setTo(model: AirportModel<Airport> | null, options?: HttpOptions) {
-    return this._setReference<Airport>('To', model, options);
+    return this.setReference<Airport>('To', model, options);
   }public setAirline(model: AirlineModel<Airline> | null, options?: HttpOptions) {
-    return this._setReference<Airline>('Airline', model, options);
+    return this.setReference<Airline>('Airline', model, options);
   }//#endregion
   //#region ODataApi Actions
   //#endregion

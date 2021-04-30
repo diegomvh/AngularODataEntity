@@ -43,11 +43,11 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   //#endregion
   //#region ODataApi Setters
   public setCustomer(model: CustomerModel<Customer> | null, options?: HttpOptions) {
-    return this._setReference<Customer>('Customer', model, options);
+    return this.setReference<Customer>('Customer', model, options);
   }public setEmployee(model: EmployeeModel<Employee> | null, options?: HttpOptions) {
-    return this._setReference<Employee>('Employee', model, options);
+    return this.setReference<Employee>('Employee', model, options);
   }public setShipper(model: ShipperModel<Shipper> | null, options?: HttpOptions) {
-    return this._setReference<Shipper>('Shipper', model, options);
+    return this.setReference<Shipper>('Shipper', model, options);
   }//#endregion
   //#region ODataApi Actions
   //#endregion

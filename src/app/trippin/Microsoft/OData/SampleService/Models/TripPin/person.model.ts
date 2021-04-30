@@ -42,7 +42,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   //#endregion
   //#region ODataApi Setters
   public setPhoto(model: PhotoModel<Photo> | null, options?: HttpOptions) {
-    return this._setReference<Photo>('Photo', model, options);
+    return this.setReference<Photo>('Photo', model, options);
   }//#endregion
   //#region ODataApi Actions
   //#endregion
@@ -50,16 +50,16 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   //#endregion
   //#region ODataApi Navigations
   public airline() {
-    return this._getBinding<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline', 'model') as Observable<ODataModel<Airline>>;
+    return this.getBinding<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline', 'model') as Observable<ODataModel<Airline>>;
   }
   public from() {
-    return this._getBinding<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From', 'model') as Observable<ODataModel<Airport>>;
+    return this.getBinding<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From', 'model') as Observable<ODataModel<Airport>>;
   }
   public to() {
-    return this._getBinding<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To', 'model') as Observable<ODataModel<Airport>>;
+    return this.getBinding<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To', 'model') as Observable<ODataModel<Airport>>;
   }
   public photos() {
-    return this._getBinding<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos', 'collection') as Observable<ODataCollection<Photo, ODataModel<Photo>>>;
+    return this.getBinding<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos', 'collection') as Observable<ODataCollection<Photo, ODataModel<Photo>>>;
   }
   //#endregion
 }

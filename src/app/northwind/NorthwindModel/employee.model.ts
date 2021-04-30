@@ -41,7 +41,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   //#endregion
   //#region ODataApi Setters
   public setEmployee1(model: EmployeeModel<Employee> | null, options?: HttpOptions) {
-    return this._setReference<Employee>('Employee1', model, options);
+    return this.setReference<Employee>('Employee1', model, options);
   }//#endregion
   //#region ODataApi Actions
   //#endregion

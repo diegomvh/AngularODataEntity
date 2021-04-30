@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { ODataServiceFactory, ODataClient } from 'angular-odata';
-import { PeopleService, Airport, Person, PersonGender, Photo, PhotosService, PersonCollection, PersonModel } from './trippin';
+import { ODataServiceFactory, ODataClient, ODataSettings } from 'angular-odata';
+import { PeopleService, Airport, Person, PersonGender, Photo, PhotosService, PersonCollection, PersonModel, PersonGenderConfig } from './trippin';
 import { OrdersService } from './northwind';
 import { switchMap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin';
 import { ProductsService } from './north3';
 import { of } from 'rxjs';
+import { PersonConfig } from 'projects/angular-odata/projects/angular-odata/src/lib/trippin.spec';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { of } from 'rxjs';
 export class AppComponent {
   constructor(
     private odata: ODataClient,
+    private odataSettings: ODataSettings,
     private factory: ODataServiceFactory,
     private api: DefaultContainerService,
     private people: PeopleService,
@@ -29,9 +31,10 @@ export class AppComponent {
   //#region APIs
   trippin() {
     this.api.resetDataSource().subscribe(() => {
-      this.queries();
-      this.mutate();
-      this.trippinModels();
+      //this.queries();
+      //this.mutate();
+      //this.trippinModels();
+      this.filterPeopleByGender();
     });
   }
 
@@ -136,6 +139,14 @@ export class AppComponent {
     }).subscribe();
   }
 
+  filterPeopleByGender() {
+    let personSchema = this.odataSettings.enumTypeByName<PersonGender>(PersonGenderConfig.name);
+    let female = personSchema.parser.serialize(PersonGender.Female, personSchema.api.options);
+    let femaleQuery = this.people.entities().filter({Gender: female});
+    console.log(`${femaleQuery}`);
+    femaleQuery.fetchAll().subscribe(console.log);
+  }
+
   navigation() {
     // Create service without Type for Person entity
     let peopleService = this.factory.entitySet<Person>("People", "TripPin");
@@ -236,7 +247,7 @@ export class AppComponent {
   trippinModels() {
     const people = this.people.personCollection();
     people.fetch().pipe(switchMap(people => {
-      const person = people.models[2];
+      const person = people.models()[2];
       person.Gender = PersonGender.Female;
       return person.save();
     }),
@@ -249,7 +260,7 @@ export class AppComponent {
   northwindModels() {
     const orders = this.orders.orderCollection();
     orders.fetch().pipe(switchMap(orders => {
-      const order = orders.models[1];
+      const order = orders.models()[1];
       order.ShipPostalCode = "12345";
       return order.save();
     })).subscribe(console.log);

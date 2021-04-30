@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Airline, AirlinesService } from '../../trippin';
-import { ODataEntitySetResource, ODataClient, Alias } from 'angular-odata';
+import { ODataEntitySetResource, ODataClient, Alias, alias } from 'angular-odata';
 import { LazyLoadEvent } from 'primeng/api';
 
 @Component({
@@ -53,7 +53,7 @@ export class AirlinesComponent {
       [];
     // Try toJSON, fromJSON
     this.resource = this.client.fromJSON<Airline>(this.resource.toJSON()) as ODataEntitySetResource<Airline>;
-    this.alias = this.resource.alias("alias");
+    this.alias = this.resource.createAlias("alias");
   }
 
   fetch(resource: ODataEntitySetResource<Airline>) {

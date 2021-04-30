@@ -24,7 +24,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   //#endregion
   //#region ODataApi Setters
   public setRegion(model: RegionModel<Region> | null, options?: HttpOptions) {
-    return this._setReference<Region>('Region', model, options);
+    return this.setReference<Region>('Region', model, options);
   }//#endregion
   //#region ODataApi Actions
   //#endregion
