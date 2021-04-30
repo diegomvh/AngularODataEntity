@@ -140,8 +140,8 @@ export class AppComponent {
   }
 
   filterPeopleByGender() {
-    let personSchema = this.odataSettings.enumTypeByName<PersonGender>(PersonGenderConfig.name);
-    let female = personSchema.parser.serialize(PersonGender.Female, personSchema.api.options);
+    let personGenderType = this.odataSettings.enumTypeByName<PersonGender>(PersonGenderConfig.name);
+    let female = personGenderType.parser.serialize(PersonGender.Female, personGenderType.api.options);
     let femaleQuery = this.people.entities().filter({Gender: female});
     console.log(`${femaleQuery}`);
     femaleQuery.fetchAll().subscribe(console.log);
