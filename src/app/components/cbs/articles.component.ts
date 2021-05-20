@@ -57,12 +57,12 @@ export class ArticlesComponent {
 
   fetch(resource: ODataEntitySetResource<Article>) {
     this.loading = true;
-    resource.get({withCount: true}).subscribe(({entities, meta}) => {
+    resource.get({withCount: true}).subscribe(({entities, annots}) => {
       this.rows = entities || [];
       if (!this.total)
-        this.total = meta.count as number;
+        this.total = annots.count as number;
       if (!this.size)
-        this.size = meta.skip || this.rows.length;
+        this.size = annots.skip || this.rows.length;
       this.loading = false;
     });
   }

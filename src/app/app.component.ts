@@ -81,32 +81,32 @@ export class AppComponent {
     this.products.entities()
     .get({withCount: true, fetchPolicy: 'cache-only'})
     .subscribe(
-      ({entities, meta}) => {console.log(entities)},
+      ({entities, annots}) => {console.log(entities)},
       (err) => console.log(err)
     );
 
     // Fetch airports with count
     airports
     .get({withCount: true})
-    .subscribe(({entities, meta}) => console.log("Airports: ", entities, "Annotations: ", meta));
+    .subscribe(({entities, annots}) => console.log("Airports: ", entities, "Annotations: ", annots));
 
     // Fetch airport with key
     airports
     .entity("CYYZ").get()
     .pipe(switchMap(() => airports.entity("CYYZ").get({fetchPolicy: 'cache-first'}))) // From Cache!
-    .subscribe(({entity, meta}) => console.log("Airport: ", entity, "Annotations: ", meta));
+    .subscribe(({entity, annots}) => console.log("Airport: ", entity, "Annotations: ", annots));
 
     // Filter airports (inmutable resource)
     airports
     .filter({Location: {City: {CountryRegion: "United States"}}})
     .get()
-    .subscribe(({entities, meta}) => console.log("Airports of United States: ", entities, "Annotations: ", meta));
+    .subscribe(({entities, annots}) => console.log("Airports of United States: ", entities, "Annotations: ", annots));
 
     // Add filter (mutable resource)
     airports.query.filter().push({Location: {City: {Region: "California"}}});
     airports
     .get()
-    .subscribe(({entities, meta}) => console.log("Airports in California: ", entities, "Annotations: ", meta));
+    .subscribe(({entities, annots}) => console.log("Airports in California: ", entities, "Annotations: ", annots));
 
     console.log(airports.toJSON());
     console.log(this.odata.fromJSON(airports.toJSON()));
@@ -115,7 +115,7 @@ export class AppComponent {
     airports.query.filter().clear();
     airports
     .get()
-    .subscribe(({entities, meta}) => console.log("Airports: ", entities, "Annotations: ", meta));
+    .subscribe(({entities, annots}) => console.log("Airports: ", entities, "Annotations: ", annots));
 
     let people = peopleService.entities();
 
@@ -127,7 +127,7 @@ export class AppComponent {
       Trips: { select: ['Name', 'Tags'] },
     })
     .get({withCount: true})
-    .subscribe(({entities, meta}) => console.log("People with Friends and Trips: ", entities, "Annotations: ", meta));
+    .subscribe(({entities, annots}) => console.log("People with Friends and Trips: ", entities, "Annotations: ", annots));
 
     console.log(people.toJSON());
     console.log(this.odata.fromJSON(people.toJSON()));
@@ -151,7 +151,7 @@ export class AppComponent {
     // Create service without Type for Person entity
     let peopleService = this.factory.entitySet<Person>("People", "TripPin");
     let person = peopleService.entity("scottketchum");
-    person.get().subscribe(({entity, meta}) => console.log(meta.property('Emails')));
+    person.get().subscribe(({entity, annots}) => console.log(annots.property('Emails')));
 
     let friends = person.navigationProperty<Person>("Friends");
     // Use TripPin config

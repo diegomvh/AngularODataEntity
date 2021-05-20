@@ -53,10 +53,10 @@ export class CategoriesComponent {
 
   fetch(resource: ODataEntitySetResource<Category>) {
     this.loading = true;
-    resource.get({withCount: true}).subscribe(({entities, meta}) => {
+    resource.get({withCount: true}).subscribe(({entities, annots}) => {
       this.rows = entities || [];
       if (!this.total)
-        this.total = meta.count as number;
+        this.total = annots.count as number;
       this.loading = false;
     });
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Airline, AirlinesService } from '../../trippin';
-import { ODataEntitySetResource, ODataClient, Alias, alias } from 'angular-odata';
+import { ODataEntitySetResource, ODataClient, alias, QueryCustomType } from 'angular-odata';
 import { LazyLoadEvent } from 'primeng/api';
 
 @Component({
@@ -38,7 +38,7 @@ export class AirlinesComponent {
 
   resource: ODataEntitySetResource<Airline>;
   loading: boolean = false;
-  alias: Alias;
+  alias: QueryCustomType;
 
   constructor(
     private client: ODataClient,
@@ -53,18 +53,18 @@ export class AirlinesComponent {
       [];
     // Try toJSON, fromJSON
     this.resource = this.client.fromJSON<Airline>(this.resource.toJSON()) as ODataEntitySetResource<Airline>;
-    this.alias = this.resource.createAlias("alias");
+    this.alias = alias(null);
   }
 
   fetch(resource: ODataEntitySetResource<Airline>) {
     this.loading = true;
     resource
-      .get({withCount: true, fetchPolicy: 'cache-and-network'}).subscribe(({entities, meta}) => {
+      .get({withCount: true, fetchPolicy: 'cache-and-network'}).subscribe(({entities, annots}) => {
       this.rows = entities || [];
       if (!this.total)
-        this.total = meta.count as number;
+        this.total = annots.count as number;
       if (!this.size)
-        this.size = meta.skip || this.rows.length;
+        this.size = annots.skip || this.rows.length;
       this.loading = false;
     });
   }

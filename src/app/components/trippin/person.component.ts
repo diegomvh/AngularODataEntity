@@ -27,8 +27,8 @@ export class PersonComponent {
         expand: {Photos: {}, PlanItems: {}}}
     })
     .get()
-    .subscribe(({entity, meta}) => {
-      console.log(entity, meta);
+    .subscribe(({entity, annots}) => {
+      console.log(entity, annots);
       this.person = entity || null;
       if (this.person !== null && this.person.Photo) {
         this.photos
