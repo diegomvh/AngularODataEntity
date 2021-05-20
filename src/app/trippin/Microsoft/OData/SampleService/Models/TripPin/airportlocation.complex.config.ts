@@ -13,7 +13,6 @@ export const AirportLocationComplexConfig = {
   open: true,
   model: AirportLocationModel,
   collection: AirportLocationCollection,
-  annotations: [],
   fields: {
     Loc: {type: 'Edm.GeographyPoint', nullable: false, srid: '4326'}
   }

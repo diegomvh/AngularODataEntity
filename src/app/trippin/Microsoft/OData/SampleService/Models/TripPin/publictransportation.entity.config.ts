@@ -12,7 +12,6 @@ export const PublicTransportationEntityConfig = {
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
   model: PublicTransportationModel,
   collection: PublicTransportationCollection,
-  annotations: [],
   fields: {
     SeatNumber: {type: 'Edm.String'}
   }

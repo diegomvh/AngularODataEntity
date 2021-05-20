@@ -8,12 +8,12 @@ import { MeService } from './me.service';
 export const MeServiceEntitySetConfig = {
   name: "Me",
   entityType: "Microsoft.OData.SampleService.Models.TripPin.Person",
-  service: MeService,
   annotations: [
   {
     "type": "Org.OData.Core.V1.ResourcePath",
     "string": "Me"
   }
-]
+],
+  service: MeService
 } as EntitySetConfig;
 //#endregion

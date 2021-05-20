@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -9,11 +9,13 @@ import { PublicTransportation } from './publictransportation.entity';
 import { PublicTransportationCollection } from './publictransportation.collection';
 //#endregion
 
+@Model()
 export class PublicTransportationModel<E extends PublicTransportation> extends PlanItemModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   SeatNumber?: string;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

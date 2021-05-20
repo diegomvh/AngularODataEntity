@@ -11,7 +11,6 @@ export const CityComplexConfig = {
   name: "City",
   model: CityModel,
   collection: CityCollection,
-  annotations: [],
   fields: {
     CountryRegion: {type: 'Edm.String', nullable: false},
     Name: {type: 'Edm.String', nullable: false},

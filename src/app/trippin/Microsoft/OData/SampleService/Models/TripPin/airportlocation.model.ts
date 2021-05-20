@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -10,11 +10,13 @@ import { AirportLocation } from './airportlocation.complex';
 import { AirportLocationCollection } from './airportlocation.collection';
 //#endregion
 
+@Model()
 export class AirportLocationModel<E extends AirportLocation> extends LocationModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   Loc!: Point;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

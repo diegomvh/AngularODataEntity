@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,13 +8,21 @@ import { City } from './city.complex';
 import { CityCollection } from './city.collection';
 //#endregion
 
+@Model()
 export class CityModel<E extends City> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   CountryRegion!: string;
+  
+  
+  @ModelField()
   Name!: string;
+  
+  
+  @ModelField()
   Region!: string;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

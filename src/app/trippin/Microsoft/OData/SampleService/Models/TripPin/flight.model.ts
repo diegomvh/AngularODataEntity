@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -15,21 +15,38 @@ import { AirportCollection } from './airport.collection';
 import { FlightCollection } from './flight.collection';
 //#endregion
 
+@Model()
 export class FlightModel<E extends Flight> extends PublicTransportationModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   FlightNumber!: string;
+  
+  
+  @ModelField()
   From?: AirportModel<Airport>;
+  public getFrom({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Airport>('From', {asEntity, ...options}) as Observable<AirportModel<Airport>>;
+  }
+  public setFrom(model: AirportModel<Airport> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Airport>('From', model, {asEntity, ...options});
+  }
+  @ModelField()
   To?: AirportModel<Airport>;
+  public getTo({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Airport>('To', {asEntity, ...options}) as Observable<AirportModel<Airport>>;
+  }
+  public setTo(model: AirportModel<Airport> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Airport>('To', model, {asEntity, ...options});
+  }
+  @ModelField()
   Airline?: AirlineModel<Airline>;
+  public getAirline({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Airline>('Airline', {asEntity, ...options}) as Observable<AirlineModel<Airline>>;
+  }
+  public setAirline(model: AirlineModel<Airline> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Airline>('Airline', model, {asEntity, ...options});
+  }
   //#endregion
-  //#region ODataApi Setters
-  public setFrom(model: AirportModel<Airport> | null, options?: HttpOptions) {
-    return this.setReference<Airport>('From', model, options);
-  }public setTo(model: AirportModel<Airport> | null, options?: HttpOptions) {
-    return this.setReference<Airport>('To', model, options);
-  }public setAirline(model: AirlineModel<Airline> | null, options?: HttpOptions) {
-    return this.setReference<Airline>('Airline', model, options);
-  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

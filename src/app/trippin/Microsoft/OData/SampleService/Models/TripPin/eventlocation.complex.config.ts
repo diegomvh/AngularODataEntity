@@ -13,7 +13,6 @@ export const EventLocationComplexConfig = {
   open: true,
   model: EventLocationModel,
   collection: EventLocationCollection,
-  annotations: [],
   fields: {
     BuildingInfo: {type: 'Edm.String'}
   }

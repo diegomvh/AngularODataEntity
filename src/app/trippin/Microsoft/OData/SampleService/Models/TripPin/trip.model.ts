@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -14,20 +14,49 @@ import { PlanItemCollection } from './planitem.collection';
 import { TripCollection } from './trip.collection';
 //#endregion
 
+@Model()
 export class TripModel<E extends Trip> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   TripId!: number;
+  
+  
+  @ModelField()
   ShareId?: string;
+  
+  
+  @ModelField()
   Description?: string;
+  
+  
+  @ModelField()
   Name!: string;
+  
+  
+  @ModelField()
   Budget!: number;
+  
+  
+  @ModelField()
   StartsAt!: Date;
+  
+  
+  @ModelField()
   EndsAt!: Date;
+  
+  
+  @ModelField()
   Tags!: string[];
+  
+  
+  @ModelField()
   Photos?: PhotoCollection<Photo, PhotoModel<Photo>>;
+  
+  
+  @ModelField()
   PlanItems?: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

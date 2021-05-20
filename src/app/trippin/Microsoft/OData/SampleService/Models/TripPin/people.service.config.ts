@@ -8,7 +8,6 @@ import { PeopleService } from './people.service';
 export const PeopleServiceEntitySetConfig = {
   name: "People",
   entityType: "Microsoft.OData.SampleService.Models.TripPin.Person",
-  service: PeopleService,
   annotations: [
   {
     "type": "Org.OData.Core.V1.OptimisticConcurrency",
@@ -37,6 +36,7 @@ export const PeopleServiceEntitySetConfig = {
       "TripsFriends"
     ]
   }
-]
+],
+  service: PeopleService
 } as EntitySetConfig;
 //#endregion

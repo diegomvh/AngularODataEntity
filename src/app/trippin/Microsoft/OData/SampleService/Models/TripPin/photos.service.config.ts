@@ -8,7 +8,6 @@ import { PhotosService } from './photos.service';
 export const PhotosServiceEntitySetConfig = {
   name: "Photos",
   entityType: "Microsoft.OData.SampleService.Models.TripPin.Photo",
-  service: PhotosService,
   annotations: [
   {
     "type": "Org.OData.Core.V1.ResourcePath",
@@ -28,6 +27,7 @@ export const PhotosServiceEntitySetConfig = {
       ""
     ]
   }
-]
+],
+  service: PhotosService
 } as EntitySetConfig;
 //#endregion

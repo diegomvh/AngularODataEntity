@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -12,12 +12,17 @@ import { EventLocationCollection } from './eventlocation.collection';
 import { EventCollection } from './event.collection';
 //#endregion
 
+@Model()
 export class EventModel<E extends Event> extends PlanItemModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   Description?: string;
+  
+  
+  @ModelField()
   OccursAt!: EventLocationModel<EventLocation>;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

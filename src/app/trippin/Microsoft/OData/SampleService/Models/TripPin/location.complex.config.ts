@@ -12,7 +12,6 @@ export const LocationComplexConfig = {
   open: true,
   model: LocationModel,
   collection: LocationCollection,
-  annotations: [],
   fields: {
     Address: {type: 'Edm.String', nullable: false},
     City: {type: 'Microsoft.OData.SampleService.Models.TripPin.City', nullable: false}

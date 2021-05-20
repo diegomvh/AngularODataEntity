@@ -11,9 +11,9 @@ export const TripEntityConfig = {
   name: "Trip",
   model: TripModel,
   collection: TripCollection,
-  annotations: [],
+  keys: [{ref: 'TripId'}],
   fields: {
-    TripId: {type: 'Edm.Int32', key: true, ref: 'TripId', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
+    TripId: {type: 'Edm.Int32', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     ShareId: {type: 'Edm.Guid'},
     Description: {type: 'Edm.String'},
     Name: {type: 'Edm.String', nullable: false},

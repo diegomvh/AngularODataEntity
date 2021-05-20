@@ -13,7 +13,6 @@ export const EventEntityConfig = {
   open: true,
   model: EventModel,
   collection: EventCollection,
-  annotations: [],
   fields: {
     Description: {type: 'Edm.String'},
     OccursAt: {type: 'Microsoft.OData.SampleService.Models.TripPin.EventLocation', nullable: false}

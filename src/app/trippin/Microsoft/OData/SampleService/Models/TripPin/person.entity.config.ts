@@ -12,9 +12,9 @@ export const PersonEntityConfig = {
   open: true,
   model: PersonModel,
   collection: PersonCollection,
-  annotations: [],
+  keys: [{ref: 'UserName'}],
   fields: {
-    UserName: {type: 'Edm.String', key: true, ref: 'UserName', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
+    UserName: {type: 'Edm.String', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     FirstName: {type: 'Edm.String', nullable: false},
     LastName: {type: 'Edm.String', nullable: false},
     Emails: {type: 'Edm.String', collection: true},

@@ -11,9 +11,9 @@ export const PlanItemEntityConfig = {
   name: "PlanItem",
   model: PlanItemModel,
   collection: PlanItemCollection,
-  annotations: [],
+  keys: [{ref: 'PlanItemId'}],
   fields: {
-    PlanItemId: {type: 'Edm.Int32', key: true, ref: 'PlanItemId', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
+    PlanItemId: {type: 'Edm.Int32', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     ConfirmationCode: {type: 'Edm.String'},
     StartsAt: {type: 'Edm.DateTimeOffset'},
     EndsAt: {type: 'Edm.DateTimeOffset'},

@@ -8,7 +8,6 @@ import { AirportsService } from './airports.service';
 export const AirportsServiceEntitySetConfig = {
   name: "Airports",
   entityType: "Microsoft.OData.SampleService.Models.TripPin.Airport",
-  service: AirportsService,
   annotations: [
   {
     "type": "Org.OData.Core.V1.ResourcePath",
@@ -35,6 +34,7 @@ export const AirportsServiceEntitySetConfig = {
       ""
     ]
   }
-]
+],
+  service: AirportsService
 } as EntitySetConfig;
 //#endregion

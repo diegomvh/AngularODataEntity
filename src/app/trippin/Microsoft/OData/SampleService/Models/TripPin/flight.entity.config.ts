@@ -12,7 +12,6 @@ export const FlightEntityConfig = {
   base: "Microsoft.OData.SampleService.Models.TripPin.PublicTransportation",
   model: FlightModel,
   collection: FlightCollection,
-  annotations: [],
   fields: {
     FlightNumber: {type: 'Edm.String', nullable: false},
     From: {type: 'Microsoft.OData.SampleService.Models.TripPin.Airport', navigation: true},

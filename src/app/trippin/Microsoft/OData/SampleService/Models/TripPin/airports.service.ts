@@ -16,8 +16,9 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions
-} from 'angular-odata';
+  Expand, 
+  Select,
+  HttpOptions} from 'angular-odata';
 
 //#region ODataApi Imports
 import { AirportLocation } from './airportlocation.complex';
@@ -47,9 +48,11 @@ export class AirportsService extends ODataEntitySetService<Airport> {
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
-  public getNearestAirport(lat: number, lon: number, options?: HttpOptions) {
-    return this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport')
-      .callEntity({lat, lon}, options) as Observable<Airport | null>;
+  public getNearestAirport(lat: number, lon: number, {alias, ...options}: {alias?: boolean} & HttpOptions = {}) {
+    return this.callFunction<{lat: number, lon: number}, Airport>(
+      {lat, lon}, 
+      this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport'), 
+      'entity', {alias, ...options}) as Observable<Airport | null>;
   }
   //#endregion
   //#region ODataApi Navigations

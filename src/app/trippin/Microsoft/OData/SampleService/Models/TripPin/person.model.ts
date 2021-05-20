@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -27,39 +27,70 @@ import { FlightCollection } from './flight.collection';
 import { TripCollection } from './trip.collection';
 //#endregion
 
+@Model()
 export class PersonModel<E extends Person> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   UserName!: string;
+  
+  
+  @ModelField()
   FirstName!: string;
+  
+  
+  @ModelField()
   LastName!: string;
+  
+  
+  @ModelField()
   Emails?: string[];
+  
+  
+  @ModelField()
   AddressInfo?: LocationCollection<Location, LocationModel<Location>>;
+  
+  
+  @ModelField()
   Gender?: PersonGender;
+  
+  
+  @ModelField()
   Concurrency!: number;
+  
+  
+  @ModelField()
   Friends?: PersonCollection<Person, PersonModel<Person>>;
+  
+  
+  @ModelField()
   Trips?: TripCollection<Trip, TripModel<Trip>>;
+  
+  
+  @ModelField()
   Photo?: PhotoModel<Photo>;
+  public getPhoto({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Photo>('Photo', {asEntity, ...options}) as Observable<PhotoModel<Photo>>;
+  }
+  public setPhoto(model: PhotoModel<Photo> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Photo>('Photo', model, {asEntity, ...options});
+  }
   //#endregion
-  //#region ODataApi Setters
-  public setPhoto(model: PhotoModel<Photo> | null, options?: HttpOptions) {
-    return this.setReference<Photo>('Photo', model, options);
-  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public airline() {
-    return this.getBinding<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline', 'model') as Observable<ODataModel<Airline>>;
+  public airline({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getBinding<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline', 'model', {asEntity, ...options}) as Observable<ODataModel<Airline>>;
   }
-  public from() {
-    return this.getBinding<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From', 'model') as Observable<ODataModel<Airport>>;
+  public from({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getBinding<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From', 'model', {asEntity, ...options}) as Observable<ODataModel<Airport>>;
   }
-  public to() {
-    return this.getBinding<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To', 'model') as Observable<ODataModel<Airport>>;
+  public to({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getBinding<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To', 'model', {asEntity, ...options}) as Observable<ODataModel<Airport>>;
   }
-  public photos() {
-    return this.getBinding<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos', 'collection') as Observable<ODataCollection<Photo, ODataModel<Photo>>>;
+  public photos({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getBinding<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos', 'collection', {asEntity, ...options}) as Observable<ODataCollection<Photo, ODataModel<Photo>>>;
   }
   //#endregion
 }
