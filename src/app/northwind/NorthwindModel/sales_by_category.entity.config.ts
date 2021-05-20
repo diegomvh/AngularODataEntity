@@ -11,11 +11,11 @@ export const SalesByCategoryEntityConfig = {
   name: "Sales_by_Category",
   model: SalesByCategoryModel,
   collection: SalesByCategoryCollection,
-  annotations: [],
+  keys: [{ref: 'CategoryID'},{ref: 'CategoryName'},{ref: 'ProductName'}],
   fields: {
-    CategoryID: {type: 'Edm.Int32', key: true, ref: 'CategoryID', nullable: false},
-    CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
+    CategoryID: {type: 'Edm.Int32', nullable: false},
+    CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
+    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
     ProductSales: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as StructuredTypeConfig<SalesByCategory>;

@@ -8,7 +8,6 @@ import { EmployeesService } from './employees.service';
 export const EmployeesServiceEntitySetConfig = {
   name: "Employees",
   entityType: "NorthwindModel.Employee",
-  service: EmployeesService,
-  annotations: []
+  service: EmployeesService
 } as EntitySetConfig;
 //#endregion

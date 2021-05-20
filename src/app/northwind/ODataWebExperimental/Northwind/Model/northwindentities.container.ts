@@ -32,7 +32,6 @@ import { SummaryOfSalesByYearsServiceEntitySetConfig } from './summary_of_sales_
 //#region ODataApi EntityContainerConfig
 export const NorthwindEntitiesContainer = {
   name: "NorthwindEntities",
-  annotations: [],
   entitySets: [
     CategoriesServiceEntitySetConfig,
     CustomerDemographicsServiceEntitySetConfig,

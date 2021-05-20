@@ -11,11 +11,11 @@ export const SalesTotalsByAmountEntityConfig = {
   name: "Sales_Totals_by_Amount",
   model: SalesTotalsByAmountModel,
   collection: SalesTotalsByAmountCollection,
-  annotations: [],
+  keys: [{ref: 'CompanyName'},{ref: 'OrderID'}],
   fields: {
     SaleAmount: {type: 'Edm.Decimal', precition: 19, scale: 4},
-    OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
-    CompanyName: {type: 'Edm.String', key: true, ref: 'CompanyName', nullable: false, maxLength: 40},
+    OrderID: {type: 'Edm.Int32', nullable: false},
+    CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},
     ShippedDate: {type: 'Edm.DateTimeOffset'}
   }
 } as StructuredTypeConfig<SalesTotalsByAmount>;

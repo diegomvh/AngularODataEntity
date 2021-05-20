@@ -8,7 +8,6 @@ import { ProductsAboveAveragePricesService } from './products_above_average_pric
 export const ProductsAboveAveragePricesServiceEntitySetConfig = {
   name: "Products_Above_Average_Prices",
   entityType: "NorthwindModel.Products_Above_Average_Price",
-  service: ProductsAboveAveragePricesService,
-  annotations: []
+  service: ProductsAboveAveragePricesService
 } as EntitySetConfig;
 //#endregion

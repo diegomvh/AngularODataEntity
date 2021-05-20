@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -14,22 +14,46 @@ import { OrderCollection } from './order.collection';
 import { ProductCollection } from './product.collection';
 //#endregion
 
+@Model()
 export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   OrderID!: number;
+  
+  
+  @ModelField()
   ProductID!: number;
+  
+  
+  @ModelField()
   UnitPrice!: number;
+  
+  
+  @ModelField()
   Quantity!: number;
+  
+  
+  @ModelField()
   Discount!: number;
+  
+  
+  @ModelField()
   Order?: OrderModel<Order>;
+  public getOrder({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Order>('Order', {asEntity, ...options}) as Observable<OrderModel<Order>>;
+  }
+  public setOrder(model: OrderModel<Order> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Order>('Order', model, {asEntity, ...options});
+  }
+  @ModelField()
   Product?: ProductModel<Product>;
+  public getProduct({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Product>('Product', {asEntity, ...options}) as Observable<ProductModel<Product>>;
+  }
+  public setProduct(model: ProductModel<Product> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Product>('Product', model, {asEntity, ...options});
+  }
   //#endregion
-  //#region ODataApi Setters
-  public setOrder(model: OrderModel<Order> | null, options?: HttpOptions) {
-    return this.setReference<Order>('Order', model, options);
-  }public setProduct(model: ProductModel<Product> | null, options?: HttpOptions) {
-    return this.setReference<Product>('Product', model, options);
-  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -11,9 +11,9 @@ export const OrderEntityConfig = {
   name: "Order",
   model: OrderModel,
   collection: OrderCollection,
-  annotations: [],
+  keys: [{ref: 'OrderID'}],
   fields: {
-    OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
+    OrderID: {type: 'Edm.Int32', nullable: false},
     CustomerID: {type: 'Edm.String', maxLength: 5},
     EmployeeID: {type: 'Edm.Int32'},
     OrderDate: {type: 'Edm.DateTimeOffset'},
@@ -27,10 +27,10 @@ export const OrderEntityConfig = {
     ShipRegion: {type: 'Edm.String', maxLength: 15},
     ShipPostalCode: {type: 'Edm.String', maxLength: 10},
     ShipCountry: {type: 'Edm.String', maxLength: 15},
-    Customer: {type: 'NorthwindModel.Customer', navigation: true, field: 'CustomerID', ref: 'CustomerID'},
-    Employee: {type: 'NorthwindModel.Employee', navigation: true, field: 'EmployeeID', ref: 'EmployeeID'},
+    Customer: {type: 'NorthwindModel.Customer', navigation: true, referential: 'CustomerID', referenced: 'CustomerID'},
+    Employee: {type: 'NorthwindModel.Employee', navigation: true, referential: 'EmployeeID', referenced: 'EmployeeID'},
     Order_Details: {type: 'NorthwindModel.Order_Detail', collection: true, navigation: true},
-    Shipper: {type: 'NorthwindModel.Shipper', navigation: true, field: 'ShipVia', ref: 'ShipperID'}
+    Shipper: {type: 'NorthwindModel.Shipper', navigation: true, referential: 'ShipVia', referenced: 'ShipperID'}
   }
 } as StructuredTypeConfig<Order>;
 //#endregion

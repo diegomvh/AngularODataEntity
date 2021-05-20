@@ -11,12 +11,12 @@ export const CustomerAndSuppliersByCityEntityConfig = {
   name: "Customer_and_Suppliers_by_City",
   model: CustomerAndSuppliersByCityModel,
   collection: CustomerAndSuppliersByCityCollection,
-  annotations: [],
+  keys: [{ref: 'CompanyName'},{ref: 'Relationship'}],
   fields: {
     City: {type: 'Edm.String', maxLength: 15},
-    CompanyName: {type: 'Edm.String', key: true, ref: 'CompanyName', nullable: false, maxLength: 40},
+    CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},
     ContactName: {type: 'Edm.String', maxLength: 30},
-    Relationship: {type: 'Edm.String', key: true, ref: 'Relationship', nullable: false, maxLength: 9}
+    Relationship: {type: 'Edm.String', nullable: false, maxLength: 9}
   }
 } as StructuredTypeConfig<CustomerAndSuppliersByCity>;
 //#endregion

@@ -8,7 +8,6 @@ import { AlphabeticalListOfProductsService } from './alphabetical_list_of_produc
 export const AlphabeticalListOfProductsServiceEntitySetConfig = {
   name: "Alphabetical_list_of_products",
   entityType: "NorthwindModel.Alphabetical_list_of_product",
-  service: AlphabeticalListOfProductsService,
-  annotations: []
+  service: AlphabeticalListOfProductsService
 } as EntitySetConfig;
 //#endregion

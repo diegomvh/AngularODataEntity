@@ -11,10 +11,10 @@ export const ProductSalesFor1997EntityConfig = {
   name: "Product_Sales_for_1997",
   model: ProductSalesFor1997Model,
   collection: ProductSalesFor1997Collection,
-  annotations: [],
+  keys: [{ref: 'CategoryName'},{ref: 'ProductName'}],
   fields: {
-    CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
+    CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
+    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
     ProductSales: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as StructuredTypeConfig<ProductSalesFor1997>;

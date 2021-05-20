@@ -8,7 +8,6 @@ import { TerritoriesService } from './territories.service';
 export const TerritoriesServiceEntitySetConfig = {
   name: "Territories",
   entityType: "NorthwindModel.Territory",
-  service: TerritoriesService,
-  annotations: []
+  service: TerritoriesService
 } as EntitySetConfig;
 //#endregion

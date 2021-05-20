@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -14,23 +14,61 @@ import { CustomerCollection } from './customer.collection';
 import { OrderCollection } from './order.collection';
 //#endregion
 
+@Model()
 export class CustomerModel<E extends Customer> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   CustomerID!: string;
+  
+  
+  @ModelField()
   CompanyName!: string;
+  
+  
+  @ModelField()
   ContactName?: string;
+  
+  
+  @ModelField()
   ContactTitle?: string;
+  
+  
+  @ModelField()
   Address?: string;
+  
+  
+  @ModelField()
   City?: string;
+  
+  
+  @ModelField()
   Region?: string;
+  
+  
+  @ModelField()
   PostalCode?: string;
+  
+  
+  @ModelField()
   Country?: string;
+  
+  
+  @ModelField()
   Phone?: string;
+  
+  
+  @ModelField()
   Fax?: string;
+  
+  
+  @ModelField()
   Orders?: OrderCollection<Order, OrderModel<Order>>;
+  
+  
+  @ModelField()
   CustomerDemographics?: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

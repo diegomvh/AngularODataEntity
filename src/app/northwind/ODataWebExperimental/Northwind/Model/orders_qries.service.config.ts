@@ -8,7 +8,6 @@ import { OrdersQriesService } from './orders_qries.service';
 export const OrdersQriesServiceEntitySetConfig = {
   name: "Orders_Qries",
   entityType: "NorthwindModel.Orders_Qry",
-  service: OrdersQriesService,
-  annotations: []
+  service: OrdersQriesService
 } as EntitySetConfig;
 //#endregion

@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,13 +8,21 @@ import { ProductSalesFor1997 } from './product_sales_for_1997.entity';
 import { ProductSalesFor1997Collection } from './product_sales_for_1997.collection';
 //#endregion
 
+@Model()
 export class ProductSalesFor1997Model<E extends ProductSalesFor1997> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   CategoryName!: string;
+  
+  
+  @ModelField()
   ProductName!: string;
+  
+  
+  @ModelField()
   ProductSales?: number;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

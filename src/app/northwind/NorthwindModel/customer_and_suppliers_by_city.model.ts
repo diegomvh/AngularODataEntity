@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,14 +8,25 @@ import { CustomerAndSuppliersByCity } from './customer_and_suppliers_by_city.ent
 import { CustomerAndSuppliersByCityCollection } from './customer_and_suppliers_by_city.collection';
 //#endregion
 
+@Model()
 export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCity> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   City?: string;
+  
+  
+  @ModelField()
   CompanyName!: string;
+  
+  
+  @ModelField()
   ContactName?: string;
+  
+  
+  @ModelField()
   Relationship!: string;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

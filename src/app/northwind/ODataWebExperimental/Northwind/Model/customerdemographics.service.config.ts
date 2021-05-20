@@ -8,7 +8,6 @@ import { CustomerDemographicsService } from './customerdemographics.service';
 export const CustomerDemographicsServiceEntitySetConfig = {
   name: "CustomerDemographics",
   entityType: "NorthwindModel.CustomerDemographic",
-  service: CustomerDemographicsService,
-  annotations: []
+  service: CustomerDemographicsService
 } as EntitySetConfig;
 //#endregion

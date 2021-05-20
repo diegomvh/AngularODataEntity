@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -14,18 +14,34 @@ import { RegionCollection } from './region.collection';
 import { TerritoryCollection } from './territory.collection';
 //#endregion
 
+@Model()
 export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   TerritoryID!: string;
+  
+  
+  @ModelField()
   TerritoryDescription!: string;
+  
+  
+  @ModelField()
   RegionID!: number;
+  
+  
+  @ModelField()
   Region?: RegionModel<Region>;
+  public getRegion({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Region>('Region', {asEntity, ...options}) as Observable<RegionModel<Region>>;
+  }
+  public setRegion(model: RegionModel<Region> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Region>('Region', model, {asEntity, ...options});
+  }
+  @ModelField()
   Employees?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
+  
+  
   //#endregion
-  //#region ODataApi Setters
-  public setRegion(model: RegionModel<Region> | null, options?: HttpOptions) {
-    return this.setReference<Region>('Region', model, options);
-  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

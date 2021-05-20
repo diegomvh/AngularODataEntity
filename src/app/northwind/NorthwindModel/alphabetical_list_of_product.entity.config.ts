@@ -11,10 +11,10 @@ export const AlphabeticalListOfProductEntityConfig = {
   name: "Alphabetical_list_of_product",
   model: AlphabeticalListOfProductModel,
   collection: AlphabeticalListOfProductCollection,
-  annotations: [],
+  keys: [{ref: 'CategoryName'},{ref: 'Discontinued'},{ref: 'ProductID'},{ref: 'ProductName'}],
   fields: {
-    ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
+    ProductID: {type: 'Edm.Int32', nullable: false},
+    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
     SupplierID: {type: 'Edm.Int32'},
     CategoryID: {type: 'Edm.Int32'},
     QuantityPerUnit: {type: 'Edm.String', maxLength: 20},
@@ -22,8 +22,8 @@ export const AlphabeticalListOfProductEntityConfig = {
     UnitsInStock: {type: 'Edm.Int16'},
     UnitsOnOrder: {type: 'Edm.Int16'},
     ReorderLevel: {type: 'Edm.Int16'},
-    Discontinued: {type: 'Edm.Boolean', key: true, ref: 'Discontinued', nullable: false},
-    CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15}
+    Discontinued: {type: 'Edm.Boolean', nullable: false},
+    CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15}
   }
 } as StructuredTypeConfig<AlphabeticalListOfProduct>;
 //#endregion

@@ -8,7 +8,6 @@ import { CurrentProductListsService } from './current_product_lists.service';
 export const CurrentProductListsServiceEntitySetConfig = {
   name: "Current_Product_Lists",
   entityType: "NorthwindModel.Current_Product_List",
-  service: CurrentProductListsService,
-  annotations: []
+  service: CurrentProductListsService
 } as EntitySetConfig;
 //#endregion

@@ -8,7 +8,6 @@ import { RegionsService } from './regions.service';
 export const RegionsServiceEntitySetConfig = {
   name: "Regions",
   entityType: "NorthwindModel.Region",
-  service: RegionsService,
-  annotations: []
+  service: RegionsService
 } as EntitySetConfig;
 //#endregion

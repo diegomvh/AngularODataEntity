@@ -11,14 +11,14 @@ export const OrderDetailsExtendedEntityConfig = {
   name: "Order_Details_Extended",
   model: OrderDetailsExtendedModel,
   collection: OrderDetailsExtendedCollection,
-  annotations: [],
+  keys: [{ref: 'Discount'},{ref: 'OrderID'},{ref: 'ProductID'},{ref: 'ProductName'},{ref: 'Quantity'},{ref: 'UnitPrice'}],
   fields: {
-    OrderID: {type: 'Edm.Int32', key: true, ref: 'OrderID', nullable: false},
-    ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
-    UnitPrice: {type: 'Edm.Decimal', key: true, ref: 'UnitPrice', nullable: false, precition: 19, scale: 4},
-    Quantity: {type: 'Edm.Int16', key: true, ref: 'Quantity', nullable: false},
-    Discount: {type: 'Edm.Single', key: true, ref: 'Discount', nullable: false},
+    OrderID: {type: 'Edm.Int32', nullable: false},
+    ProductID: {type: 'Edm.Int32', nullable: false},
+    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
+    UnitPrice: {type: 'Edm.Decimal', nullable: false, precition: 19, scale: 4},
+    Quantity: {type: 'Edm.Int16', nullable: false},
+    Discount: {type: 'Edm.Single', nullable: false},
     ExtendedPrice: {type: 'Edm.Decimal', precition: 19, scale: 4}
   }
 } as StructuredTypeConfig<OrderDetailsExtended>;

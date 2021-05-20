@@ -11,10 +11,10 @@ export const CurrentProductListEntityConfig = {
   name: "Current_Product_List",
   model: CurrentProductListModel,
   collection: CurrentProductListCollection,
-  annotations: [],
+  keys: [{ref: 'ProductID'},{ref: 'ProductName'}],
   fields: {
-    ProductID: {type: 'Edm.Int32', key: true, ref: 'ProductID', nullable: false},
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40}
+    ProductID: {type: 'Edm.Int32', nullable: false},
+    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40}
   }
 } as StructuredTypeConfig<CurrentProductList>;
 //#endregion

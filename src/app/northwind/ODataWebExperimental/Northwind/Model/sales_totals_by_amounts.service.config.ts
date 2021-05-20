@@ -8,7 +8,6 @@ import { SalesTotalsByAmountsService } from './sales_totals_by_amounts.service';
 export const SalesTotalsByAmountsServiceEntitySetConfig = {
   name: "Sales_Totals_by_Amounts",
   entityType: "NorthwindModel.Sales_Totals_by_Amount",
-  service: SalesTotalsByAmountsService,
-  annotations: []
+  service: SalesTotalsByAmountsService
 } as EntitySetConfig;
 //#endregion

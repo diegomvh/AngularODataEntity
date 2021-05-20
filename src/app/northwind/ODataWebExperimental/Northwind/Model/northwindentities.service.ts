@@ -15,16 +15,21 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions
+  HttpOptions,
+  Expand,
+  Select,
+  ODataBaseService
 } from 'angular-odata';
 
 //#region ODataApi Imports
 //#endregion
 
 @Injectable()
-export class NorthwindEntitiesService {
- 
-  constructor(protected client: ODataClient) { }
+export class NorthwindEntitiesService extends ODataBaseService {
+
+  constructor(protected client: ODataClient) {
+    super(client, 'NorthwindEntitiesContainer', '');
+  }
 
   //#region ODataApi Actions
   //#endregion

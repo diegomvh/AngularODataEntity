@@ -11,9 +11,9 @@ export const EmployeeEntityConfig = {
   name: "Employee",
   model: EmployeeModel,
   collection: EmployeeCollection,
-  annotations: [],
+  keys: [{ref: 'EmployeeID'}],
   fields: {
-    EmployeeID: {type: 'Edm.Int32', key: true, ref: 'EmployeeID', nullable: false},
+    EmployeeID: {type: 'Edm.Int32', nullable: false},
     LastName: {type: 'Edm.String', nullable: false, maxLength: 20},
     FirstName: {type: 'Edm.String', nullable: false, maxLength: 10},
     Title: {type: 'Edm.String', maxLength: 30},
@@ -32,7 +32,7 @@ export const EmployeeEntityConfig = {
     ReportsTo: {type: 'Edm.Int32'},
     PhotoPath: {type: 'Edm.String', maxLength: 255},
     Employees1: {type: 'NorthwindModel.Employee', collection: true, navigation: true},
-    Employee1: {type: 'NorthwindModel.Employee', navigation: true, field: 'ReportsTo', ref: 'EmployeeID'},
+    Employee1: {type: 'NorthwindModel.Employee', navigation: true, referential: 'ReportsTo', referenced: 'EmployeeID'},
     Orders: {type: 'NorthwindModel.Order', collection: true, navigation: true},
     Territories: {type: 'NorthwindModel.Territory', collection: true, navigation: true}
   }

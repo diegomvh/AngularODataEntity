@@ -11,13 +11,13 @@ export const ProductsByCategoryEntityConfig = {
   name: "Products_by_Category",
   model: ProductsByCategoryModel,
   collection: ProductsByCategoryCollection,
-  annotations: [],
+  keys: [{ref: 'CategoryName'},{ref: 'Discontinued'},{ref: 'ProductName'}],
   fields: {
-    CategoryName: {type: 'Edm.String', key: true, ref: 'CategoryName', nullable: false, maxLength: 15},
-    ProductName: {type: 'Edm.String', key: true, ref: 'ProductName', nullable: false, maxLength: 40},
+    CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
+    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
     QuantityPerUnit: {type: 'Edm.String', maxLength: 20},
     UnitsInStock: {type: 'Edm.Int16'},
-    Discontinued: {type: 'Edm.Boolean', key: true, ref: 'Discontinued', nullable: false}
+    Discontinued: {type: 'Edm.Boolean', nullable: false}
   }
 } as StructuredTypeConfig<ProductsByCategory>;
 //#endregion
