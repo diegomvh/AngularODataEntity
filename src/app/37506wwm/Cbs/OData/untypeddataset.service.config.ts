@@ -1,9 +1,13 @@
 ﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
+import { UntypedDataSetService } from './untypeddataset.service';
 //#endregion
 
-export const UntypedDataSetServiceConfig = {
+//#region ODataApi EntitySetConfig
+export const UntypedDataSetServiceEntitySetConfig = {
   name: "UntypedDataSet",
-  annotations: []
+  entityType: "Cbs.OData.UData",
+  service: UntypedDataSetService
 } as EntitySetConfig;
+//#endregion

@@ -6,13 +6,14 @@ import { UDataModel } from './udata.model';
 import { UDataCollection } from './udata.collection';
 //#endregion
 
-export const UDataConfig = {
+//#region ODataApi StrucutredTypeConfig
+export const UDataEntityConfig = {
   name: "UData",
   model: UDataModel,
   collection: UDataCollection,
-  annotations: [],
+  keys: [{ref: 'ID'}],
   fields: {
-    ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},
+    ID: {type: 'Edm.Int32', nullable: false},
     Geslacht: {type: 'Edm.String'},
     Leeftijd: {type: 'Edm.String'},
     Perioden: {type: 'Edm.String'},
@@ -35,3 +36,4 @@ export const UDataConfig = {
     LimburgPV_17: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<UData>;
+//#endregion

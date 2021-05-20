@@ -6,12 +6,12 @@ import { TopicModel } from './topic.model';
 import { TopicCollection } from './topic.collection';
 //#endregion
 
-export const TopicConfig = {
+//#region ODataApi StrucutredTypeConfig
+export const TopicEntityConfig = {
   name: "Topic",
   base: "Cbs.OData.DimensionOrTopic",
   model: TopicModel,
   collection: TopicCollection,
-  annotations: [],
   fields: {
     Datatype: {type: 'Edm.String'},
     Unit: {type: 'Edm.String'},
@@ -19,3 +19,4 @@ export const TopicConfig = {
     Default: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<Topic>;
+//#endregion

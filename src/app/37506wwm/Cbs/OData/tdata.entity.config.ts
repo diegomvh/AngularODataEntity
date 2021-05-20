@@ -6,13 +6,14 @@ import { TDataModel } from './tdata.model';
 import { TDataCollection } from './tdata.collection';
 //#endregion
 
-export const TDataConfig = {
+//#region ODataApi StrucutredTypeConfig
+export const TDataEntityConfig = {
   name: "TData",
   model: TDataModel,
   collection: TDataCollection,
-  annotations: [],
+  keys: [{ref: 'ID'}],
   fields: {
-    ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},
+    ID: {type: 'Edm.Int32', nullable: false},
     Geslacht: {type: 'Edm.String'},
     Leeftijd: {type: 'Edm.String'},
     Perioden: {type: 'Edm.String'},
@@ -35,3 +36,4 @@ export const TDataConfig = {
     LimburgPV_17: {type: 'Edm.Int32'}
   }
 } as StructuredTypeConfig<TData>;
+//#endregion

@@ -1,9 +1,13 @@
 ﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
+import { TableInfosService } from './tableinfos.service';
 //#endregion
 
-export const TableInfosServiceConfig = {
+//#region ODataApi EntitySetConfig
+export const TableInfosServiceEntitySetConfig = {
   name: "TableInfos",
-  annotations: []
+  entityType: "Cbs.OData.TableInfo",
+  service: TableInfosService
 } as EntitySetConfig;
+//#endregion

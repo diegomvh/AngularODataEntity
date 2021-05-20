@@ -14,6 +14,7 @@ import { PeriodenService } from './Cbs/OData/perioden.service';
 
 @NgModule({
   providers: [
+//#region ODataApi Providers
     WebAPIService,
     TableInfosService,
     UntypedDataSetService,
@@ -22,7 +23,7 @@ import { PeriodenService } from './Cbs/OData/perioden.service';
     CategoryGroupsService,
     GeslachtService,
     LeeftijdService,
-    PeriodenService
+    PeriodenService//#endregion
   ]
 })
 export class 37506wwmModule { }

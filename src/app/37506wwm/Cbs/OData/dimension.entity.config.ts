@@ -6,13 +6,14 @@ import { DimensionModel } from './dimension.model';
 import { DimensionCollection } from './dimension.collection';
 //#endregion
 
-export const DimensionConfig = {
+//#region ODataApi StrucutredTypeConfig
+export const DimensionEntityConfig = {
   name: "Dimension",
   base: "Cbs.OData.DimensionOrTopic",
   model: DimensionModel,
   collection: DimensionCollection,
-  annotations: [],
   fields: {
     
   }
 } as StructuredTypeConfig<Dimension>;
+//#endregion

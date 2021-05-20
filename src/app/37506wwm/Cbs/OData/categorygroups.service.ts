@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -16,8 +16,9 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions
-} from 'angular-odata';
+  Expand, 
+  Select,
+  HttpOptions} from 'angular-odata';
 
 //#region ODataApi Imports
 import { CategoryGroup } from './categorygroup.entity';
@@ -26,19 +27,19 @@ import { CategoryGroupCollection } from './categorygroup.collection';
 //#endregion
 
 @Injectable()
-export class CategoryGroupsService extends ODataEntityService<CategoryGroup> {
+export class CategoryGroupsService extends ODataEntitySetService<CategoryGroup> {
   constructor(protected client: ODataClient) {
     super(client, 'CategoryGroups', 'Cbs.OData.CategoryGroup');
   }
 
   //#region ODataApi Model
   categoryGroupModel(attrs?: Partial<CategoryGroup>): CategoryGroupModel<CategoryGroup> {
-    return this.entity().asModel(attrs || {}) as CategoryGroupModel<CategoryGroup>;
+    return this.entity().asModel<CategoryGroupModel<CategoryGroup>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   categoryGroupCollection(models?: Partial<CategoryGroup>[]): CategoryGroupCollection<CategoryGroup, CategoryGroupModel<CategoryGroup>> {
-    return this.entities().asCollection(models || []) as CategoryGroupCollection<CategoryGroup, CategoryGroupModel<CategoryGroup>>;
+    return this.entities().asCollection<CategoryGroupModel<CategoryGroup>, CategoryGroupCollection<CategoryGroup, CategoryGroupModel<CategoryGroup>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

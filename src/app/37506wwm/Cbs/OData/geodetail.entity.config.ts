@@ -6,13 +6,14 @@ import { GeoDetailModel } from './geodetail.model';
 import { GeoDetailCollection } from './geodetail.collection';
 //#endregion
 
-export const GeoDetailConfig = {
+//#region ODataApi StrucutredTypeConfig
+export const GeoDetailEntityConfig = {
   name: "GeoDetail",
   base: "Cbs.OData.DimensionOrTopic",
   model: GeoDetailModel,
   collection: GeoDetailCollection,
-  annotations: [],
   fields: {
     MapYear: {type: 'Edm.Int32'}
   }
 } as StructuredTypeConfig<GeoDetail>;
+//#endregion

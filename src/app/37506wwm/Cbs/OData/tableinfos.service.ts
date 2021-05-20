@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -16,8 +16,9 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions
-} from 'angular-odata';
+  Expand, 
+  Select,
+  HttpOptions} from 'angular-odata';
 
 //#region ODataApi Imports
 import { TableInfo } from './tableinfo.entity';
@@ -26,19 +27,19 @@ import { TableInfoCollection } from './tableinfo.collection';
 //#endregion
 
 @Injectable()
-export class TableInfosService extends ODataEntityService<TableInfo> {
+export class TableInfosService extends ODataEntitySetService<TableInfo> {
   constructor(protected client: ODataClient) {
     super(client, 'TableInfos', 'Cbs.OData.TableInfo');
   }
 
   //#region ODataApi Model
   tableInfoModel(attrs?: Partial<TableInfo>): TableInfoModel<TableInfo> {
-    return this.entity().asModel(attrs || {}) as TableInfoModel<TableInfo>;
+    return this.entity().asModel<TableInfoModel<TableInfo>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   tableInfoCollection(models?: Partial<TableInfo>[]): TableInfoCollection<TableInfo, TableInfoModel<TableInfo>> {
-    return this.entities().asCollection(models || []) as TableInfoCollection<TableInfo, TableInfoModel<TableInfo>>;
+    return this.entities().asCollection<TableInfoModel<TableInfo>, TableInfoCollection<TableInfo, TableInfoModel<TableInfo>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

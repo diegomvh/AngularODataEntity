@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -16,8 +16,9 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions
-} from 'angular-odata';
+  Expand, 
+  Select,
+  HttpOptions} from 'angular-odata';
 
 //#region ODataApi Imports
 import { UData } from './udata.entity';
@@ -26,19 +27,19 @@ import { UDataCollection } from './udata.collection';
 //#endregion
 
 @Injectable()
-export class UntypedDataSetService extends ODataEntityService<UData> {
+export class UntypedDataSetService extends ODataEntitySetService<UData> {
   constructor(protected client: ODataClient) {
     super(client, 'UntypedDataSet', 'Cbs.OData.UData');
   }
 
   //#region ODataApi Model
   uDataModel(attrs?: Partial<UData>): UDataModel<UData> {
-    return this.entity().asModel(attrs || {}) as UDataModel<UData>;
+    return this.entity().asModel<UDataModel<UData>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   uDataCollection(models?: Partial<UData>[]): UDataCollection<UData, UDataModel<UData>> {
-    return this.entities().asCollection(models || []) as UDataCollection<UData, UDataModel<UData>>;
+    return this.entities().asCollection<UDataModel<UData>, UDataCollection<UData, UDataModel<UData>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

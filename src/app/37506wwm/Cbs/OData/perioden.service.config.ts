@@ -1,9 +1,13 @@
 ﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
+import { PeriodenService } from './perioden.service';
 //#endregion
 
-export const PeriodenServiceConfig = {
+//#region ODataApi EntitySetConfig
+export const PeriodenServiceEntitySetConfig = {
   name: "Perioden",
-  annotations: []
+  entityType: "Cbs.OData.TimeCategory",
+  service: PeriodenService
 } as EntitySetConfig;
+//#endregion

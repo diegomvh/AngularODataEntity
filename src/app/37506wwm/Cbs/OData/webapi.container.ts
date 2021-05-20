@@ -1,27 +1,28 @@
 ﻿import { EntityContainerConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { TableInfosServiceConfig } from './tableinfos.service.config';
-import { UntypedDataSetServiceConfig } from './untypeddataset.service.config';
-import { TypedDataSetServiceConfig } from './typeddataset.service.config';
-import { DataPropertiesServiceConfig } from './dataproperties.service.config';
-import { CategoryGroupsServiceConfig } from './categorygroups.service.config';
-import { GeslachtServiceConfig } from './geslacht.service.config';
-import { LeeftijdServiceConfig } from './leeftijd.service.config';
-import { PeriodenServiceConfig } from './perioden.service.config';
+import { TableInfosServiceEntitySetConfig } from './tableinfos.service.config';
+import { UntypedDataSetServiceEntitySetConfig } from './untypeddataset.service.config';
+import { TypedDataSetServiceEntitySetConfig } from './typeddataset.service.config';
+import { DataPropertiesServiceEntitySetConfig } from './dataproperties.service.config';
+import { CategoryGroupsServiceEntitySetConfig } from './categorygroups.service.config';
+import { GeslachtServiceEntitySetConfig } from './geslacht.service.config';
+import { LeeftijdServiceEntitySetConfig } from './leeftijd.service.config';
+import { PeriodenServiceEntitySetConfig } from './perioden.service.config';
 //#endregion
 
+//#region ODataApi EntityContainerConfig
 export const WebAPIContainer = {
   name: "WebAPI",
-  annotations: [],
-  services: [
-    TableInfosServiceConfig,
-    UntypedDataSetServiceConfig,
-    TypedDataSetServiceConfig,
-    DataPropertiesServiceConfig,
-    CategoryGroupsServiceConfig,
-    GeslachtServiceConfig,
-    LeeftijdServiceConfig,
-    PeriodenServiceConfig
+  entitySets: [
+    TableInfosServiceEntitySetConfig,
+    UntypedDataSetServiceEntitySetConfig,
+    TypedDataSetServiceEntitySetConfig,
+    DataPropertiesServiceEntitySetConfig,
+    CategoryGroupsServiceEntitySetConfig,
+    GeslachtServiceEntitySetConfig,
+    LeeftijdServiceEntitySetConfig,
+    PeriodenServiceEntitySetConfig
   ]
 } as EntityContainerConfig;
+//#endregion

@@ -1,40 +1,42 @@
 ﻿import { SchemaConfig } from 'angular-odata';
 
 //#region ODataApi Imports
-import { TableInfoConfig } from './tableinfo.entity.config';
-import { CategoryConfig } from './category.entity.config';
-import { TimeCategoryConfig } from './timecategory.entity.config';
-import { GeoDetailCategoryConfig } from './geodetailcategory.entity.config';
-import { UDataConfig } from './udata.entity.config';
-import { TDataConfig } from './tdata.entity.config';
-import { DimensionOrTopicConfig } from './dimensionortopic.entity.config';
-import { DimensionConfig } from './dimension.entity.config';
-import { GeoDimensionConfig } from './geodimension.entity.config';
-import { GeoDetailConfig } from './geodetail.entity.config';
-import { TimeDimensionConfig } from './timedimension.entity.config';
-import { TopicConfig } from './topic.entity.config';
-import { TopicGroupConfig } from './topicgroup.entity.config';
-import { CategoryGroupConfig } from './categorygroup.entity.config';
+import { TableInfoEntityConfig } from './tableinfo.entity.config';
+import { CategoryEntityConfig } from './category.entity.config';
+import { TimeCategoryEntityConfig } from './timecategory.entity.config';
+import { GeoDetailCategoryEntityConfig } from './geodetailcategory.entity.config';
+import { UDataEntityConfig } from './udata.entity.config';
+import { TDataEntityConfig } from './tdata.entity.config';
+import { DimensionOrTopicEntityConfig } from './dimensionortopic.entity.config';
+import { DimensionEntityConfig } from './dimension.entity.config';
+import { GeoDimensionEntityConfig } from './geodimension.entity.config';
+import { GeoDetailEntityConfig } from './geodetail.entity.config';
+import { TimeDimensionEntityConfig } from './timedimension.entity.config';
+import { TopicEntityConfig } from './topic.entity.config';
+import { TopicGroupEntityConfig } from './topicgroup.entity.config';
+import { CategoryGroupEntityConfig } from './categorygroup.entity.config';
 import { WebAPIContainer } from './webapi.container';
 //#endregion
 
+//#region ODataApi SchemaConfig
 export const ODataSchema = {
   namespace: "Cbs.OData",
   enums: [],
-  entities: [TableInfoConfig,
-    CategoryConfig,
-    TimeCategoryConfig,
-    GeoDetailCategoryConfig,
-    UDataConfig,
-    TDataConfig,
-    DimensionOrTopicConfig,
-    DimensionConfig,
-    GeoDimensionConfig,
-    GeoDetailConfig,
-    TimeDimensionConfig,
-    TopicConfig,
-    TopicGroupConfig,
-    CategoryGroupConfig],
+  entities: [TableInfoEntityConfig,
+    CategoryEntityConfig,
+    TimeCategoryEntityConfig,
+    GeoDetailCategoryEntityConfig,
+    UDataEntityConfig,
+    TDataEntityConfig,
+    DimensionOrTopicEntityConfig,
+    DimensionEntityConfig,
+    GeoDimensionEntityConfig,
+    GeoDetailEntityConfig,
+    TimeDimensionEntityConfig,
+    TopicEntityConfig,
+    TopicGroupEntityConfig,
+    CategoryGroupEntityConfig],
   callables: [],
   containers: [WebAPIContainer]
 } as SchemaConfig;
+//#endregion

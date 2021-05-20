@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,13 +8,29 @@ import { CategoryGroup } from './categorygroup.entity';
 import { CategoryGroupCollection } from './categorygroup.collection';
 //#endregion
 
+@Model()
 export class CategoryGroupModel<E extends CategoryGroup> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   ID!: number;
+  
+  
+  @ModelField()
   DimensionKey?: string;
+  
+  
+  @ModelField()
   Title?: string;
+  
+  
+  @ModelField()
   Description?: string;
+  
+  
+  @ModelField()
   ParentID?: number;
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

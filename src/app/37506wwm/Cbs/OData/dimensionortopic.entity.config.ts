@@ -6,13 +6,14 @@ import { DimensionOrTopicModel } from './dimensionortopic.model';
 import { DimensionOrTopicCollection } from './dimensionortopic.collection';
 //#endregion
 
-export const DimensionOrTopicConfig = {
+//#region ODataApi StrucutredTypeConfig
+export const DimensionOrTopicEntityConfig = {
   name: "DimensionOrTopic",
   model: DimensionOrTopicModel,
   collection: DimensionOrTopicCollection,
-  annotations: [],
+  keys: [{ref: 'ID'}],
   fields: {
-    ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},
+    ID: {type: 'Edm.Int32', nullable: false},
     Position: {type: 'Edm.Int32'},
     ParentID: {type: 'Edm.Int32'},
     Type: {type: 'Edm.String'},
@@ -21,3 +22,4 @@ export const DimensionOrTopicConfig = {
     Description: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<DimensionOrTopic>;
+//#endregion

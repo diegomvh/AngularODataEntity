@@ -1,9 +1,13 @@
 ﻿import { EntitySetConfig } from 'angular-odata';
 
 //#region ODataApi Imports
+import { CategoryGroupsService } from './categorygroups.service';
 //#endregion
 
-export const CategoryGroupsServiceConfig = {
+//#region ODataApi EntitySetConfig
+export const CategoryGroupsServiceEntitySetConfig = {
   name: "CategoryGroups",
-  annotations: []
+  entityType: "Cbs.OData.CategoryGroup",
+  service: CategoryGroupsService
 } as EntitySetConfig;
+//#endregion

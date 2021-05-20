@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { 
   ODataClient,
-  ODataEntityService, 
+  ODataEntitySetService, 
   ODataEntity, 
   ODataEntities, 
   ODataProperty, 
@@ -16,8 +16,9 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions
-} from 'angular-odata';
+  Expand, 
+  Select,
+  HttpOptions} from 'angular-odata';
 
 //#region ODataApi Imports
 import { TData } from './tdata.entity';
@@ -26,19 +27,19 @@ import { TDataCollection } from './tdata.collection';
 //#endregion
 
 @Injectable()
-export class TypedDataSetService extends ODataEntityService<TData> {
+export class TypedDataSetService extends ODataEntitySetService<TData> {
   constructor(protected client: ODataClient) {
     super(client, 'TypedDataSet', 'Cbs.OData.TData');
   }
 
   //#region ODataApi Model
   tDataModel(attrs?: Partial<TData>): TDataModel<TData> {
-    return this.entity().asModel(attrs || {}) as TDataModel<TData>;
+    return this.entity().asModel<TDataModel<TData>>(attrs || {});
   }
   //#endregion
   //#region ODataApi Collection
   tDataCollection(models?: Partial<TData>[]): TDataCollection<TData, TDataModel<TData>> {
-    return this.entities().asCollection(models || []) as TDataCollection<TData, TDataModel<TData>>;
+    return this.entities().asCollection<TDataModel<TData>, TDataCollection<TData, TDataModel<TData>>>(models || []);
   }
   //#endregion
   //#region ODataApi Actions

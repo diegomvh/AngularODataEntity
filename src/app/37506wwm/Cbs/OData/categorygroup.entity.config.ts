@@ -6,16 +6,18 @@ import { CategoryGroupModel } from './categorygroup.model';
 import { CategoryGroupCollection } from './categorygroup.collection';
 //#endregion
 
-export const CategoryGroupConfig = {
+//#region ODataApi StrucutredTypeConfig
+export const CategoryGroupEntityConfig = {
   name: "CategoryGroup",
   model: CategoryGroupModel,
   collection: CategoryGroupCollection,
-  annotations: [],
+  keys: [{ref: 'ID'}],
   fields: {
-    ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},
+    ID: {type: 'Edm.Int32', nullable: false},
     DimensionKey: {type: 'Edm.String'},
     Title: {type: 'Edm.String'},
     Description: {type: 'Edm.String'},
     ParentID: {type: 'Edm.Int32'}
   }
 } as StructuredTypeConfig<CategoryGroup>;
+//#endregion

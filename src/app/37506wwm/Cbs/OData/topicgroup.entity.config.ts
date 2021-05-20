@@ -6,13 +6,14 @@ import { TopicGroupModel } from './topicgroup.model';
 import { TopicGroupCollection } from './topicgroup.collection';
 //#endregion
 
-export const TopicGroupConfig = {
+//#region ODataApi StrucutredTypeConfig
+export const TopicGroupEntityConfig = {
   name: "TopicGroup",
   base: "Cbs.OData.DimensionOrTopic",
   model: TopicGroupModel,
   collection: TopicGroupCollection,
-  annotations: [],
   fields: {
     
   }
 } as StructuredTypeConfig<TopicGroup>;
+//#endregion

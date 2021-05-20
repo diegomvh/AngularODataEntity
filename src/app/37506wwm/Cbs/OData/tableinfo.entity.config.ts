@@ -6,13 +6,14 @@ import { TableInfoModel } from './tableinfo.model';
 import { TableInfoCollection } from './tableinfo.collection';
 //#endregion
 
-export const TableInfoConfig = {
+//#region ODataApi StrucutredTypeConfig
+export const TableInfoEntityConfig = {
   name: "TableInfo",
   model: TableInfoModel,
   collection: TableInfoCollection,
-  annotations: [],
+  keys: [{ref: 'ID'}],
   fields: {
-    ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},
+    ID: {type: 'Edm.Int32', nullable: false},
     Title: {type: 'Edm.String'},
     ShortTitle: {type: 'Edm.String'},
     Identifier: {type: 'Edm.String'},
@@ -35,3 +36,4 @@ export const TableInfoConfig = {
     SearchPriority: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<TableInfo>;
+//#endregion
