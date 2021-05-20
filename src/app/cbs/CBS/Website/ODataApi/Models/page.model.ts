@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -12,41 +12,133 @@ import { LinkListCollection } from './linklist.collection';
 import { PageCollection } from './page.collection';
 //#endregion
 
+@Model()
 export class PageModel<E extends Page> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   UniqueId!: string;
+  
+  
+  @ModelField()
   PageType!: PageType;
+  
+  
+  @ModelField()
   PageTypeInt!: number;
+  
+  
+  @ModelField()
   Title?: string;
+  
+  
+  @ModelField()
   SubTitle?: string;
+  
+  
+  @ModelField()
   Edition?: string;
+  
+  
+  @ModelField()
   Url?: string;
+  
+  
+  @ModelField()
   MetaDescription?: string;
+  
+  
+  @ModelField()
   Image?: string;
+  
+  
+  @ModelField()
   ImageAlt?: string;
+  
+  
+  @ModelField()
   Category?: string[];
+  
+  
+  @ModelField()
   Photographer?: string;
+  
+  
+  @ModelField()
   LeadText?: string;
+  
+  
+  @ModelField()
   Body?: string;
+  
+  
+  @ModelField()
   Footnote?: string;
+  
+  
+  @ModelField()
   Authors?: string;
+  
+  
+  @ModelField()
   Location?: string;
+  
+  
+  @ModelField()
   TaxonomyTags?: string[];
+  
+  
+  @ModelField()
   Themes?: string[];
+  
+  
+  @ModelField()
   Series?: string[];
+  
+  
+  @ModelField()
   References?: LinkListModel<LinkList>;
+  
+  
+  @ModelField()
   Downloads?: LinkListModel<LinkList>;
+  
+  
+  @ModelField()
   Links?: LinkListModel<LinkList>;
+  
+  
+  @ModelField()
   Language?: string;
+  
+  
+  @ModelField()
   Version!: number;
+  
+  
+  @ModelField()
   SortOrder!: number;
+  
+  
+  @ModelField()
   ItemNameLowerCase?: string;
+  
+  
+  @ModelField()
   Updated!: Date;
+  
+  
+  @ModelField()
   ReleaseTime!: Date;
+  
+  
+  @ModelField()
   Created!: Date;
+  
+  
+  @ModelField()
   Permalink?: string;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

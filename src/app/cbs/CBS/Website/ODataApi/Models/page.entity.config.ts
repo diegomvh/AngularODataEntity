@@ -11,9 +11,9 @@ export const PageEntityConfig = {
   name: "Page",
   model: PageModel,
   collection: PageCollection,
-  annotations: [],
+  keys: [{ref: 'UniqueId'}],
   fields: {
-    UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
+    UniqueId: {type: 'Edm.String', nullable: false},
     PageType: {type: 'CBS.Website.ODataApi.Models.PageType', nullable: false},
     PageTypeInt: {type: 'Edm.Int32', nullable: false},
     Title: {type: 'Edm.String'},

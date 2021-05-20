@@ -8,7 +8,6 @@ import { DefinitionType } from './definitiontype.enum';
 export const DefinitionTypeConfig = {
   name: "DefinitionType",
   members: DefinitionType,
-  annotations: [],
   fields: {
     Any: {value: 0},
     FAQ: {value: 1},

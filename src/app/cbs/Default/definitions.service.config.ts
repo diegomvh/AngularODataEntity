@@ -8,7 +8,6 @@ import { DefinitionsService } from './definitions.service';
 export const DefinitionsServiceEntitySetConfig = {
   name: "Definitions",
   entityType: "CBS.Website.ODataApi.Models.Definition",
-  service: DefinitionsService,
-  annotations: []
+  service: DefinitionsService
 } as EntitySetConfig;
 //#endregion

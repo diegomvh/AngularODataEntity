@@ -8,7 +8,6 @@ import { EventsService } from './events.service';
 export const EventsServiceEntitySetConfig = {
   name: "Events",
   entityType: "CBS.Website.ODataApi.Models.CalendarEvent",
-  service: EventsService,
-  annotations: []
+  service: EventsService
 } as EntitySetConfig;
 //#endregion

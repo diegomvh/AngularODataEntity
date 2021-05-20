@@ -8,7 +8,6 @@ import { ArticleType } from './articletype.enum';
 export const ArticleTypeConfig = {
   name: "ArticleType",
   members: ArticleType,
-  annotations: [],
   fields: {
     Any: {value: 0},
     Article: {value: 1},

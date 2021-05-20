@@ -8,7 +8,6 @@ import { PageType } from './pagetype.enum';
 export const PageTypeConfig = {
   name: "PageType",
   members: PageType,
-  annotations: [],
   fields: {
     Any: {value: 0},
     Page: {value: 1},

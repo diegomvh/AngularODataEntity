@@ -11,9 +11,9 @@ export const MediumEntityConfig = {
   name: "Medium",
   model: MediumModel,
   collection: MediumCollection,
-  annotations: [],
+  keys: [{ref: 'UniqueId'}],
   fields: {
-    UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
+    UniqueId: {type: 'Edm.String', nullable: false},
     Title: {type: 'Edm.String'},
     MediaType: {type: 'CBS.Website.ODataApi.Models.MediaType', nullable: false},
     MediaTypeInt: {type: 'Edm.Int32', nullable: false},

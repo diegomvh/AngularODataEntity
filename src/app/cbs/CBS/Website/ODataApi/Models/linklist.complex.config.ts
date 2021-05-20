@@ -11,7 +11,6 @@ export const LinkListComplexConfig = {
   name: "LinkList",
   model: LinkListModel,
   collection: LinkListCollection,
-  annotations: [],
   fields: {
     Items: {type: 'CBS.Website.ODataApi.Models.Link', collection: true}
   }

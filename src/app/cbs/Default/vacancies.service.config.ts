@@ -8,7 +8,6 @@ import { VacanciesService } from './vacancies.service';
 export const VacanciesServiceEntitySetConfig = {
   name: "Vacancies",
   entityType: "CBS.Website.ODataApi.Models.Vacancy",
-  service: VacanciesService,
-  annotations: []
+  service: VacanciesService
 } as EntitySetConfig;
 //#endregion

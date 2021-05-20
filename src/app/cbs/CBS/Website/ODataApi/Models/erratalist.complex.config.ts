@@ -11,7 +11,6 @@ export const ErrataListComplexConfig = {
   name: "ErrataList",
   model: ErrataListModel,
   collection: ErrataListCollection,
-  annotations: [],
   fields: {
     Items: {type: 'CBS.Website.ODataApi.Models.ErratumItem', collection: true}
   }

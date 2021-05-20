@@ -1,7 +1,6 @@
 ﻿//#region ODataApi Imports
 //#endregion
 
-export const ISFLAGS_DEFINITIONTYPE = false;
 export enum DefinitionType {
   //#region ODataApi Members
   Any = 0,

@@ -1,7 +1,6 @@
 ﻿//#region ODataApi Imports
 //#endregion
 
-export const ISFLAGS_ARTICLETYPE = false;
 export enum ArticleType {
   //#region ODataApi Members
   Any = 0,

@@ -11,9 +11,9 @@ export const FlashEntityConfig = {
   name: "Flash",
   model: FlashModel,
   collection: FlashCollection,
-  annotations: [],
+  keys: [{ref: 'UniqueId'}],
   fields: {
-    UniqueId: {type: 'Edm.String', key: true, ref: 'UniqueId', nullable: false},
+    UniqueId: {type: 'Edm.String', nullable: false},
     Title: {type: 'Edm.String'},
     ReleaseTime: {type: 'Edm.DateTimeOffset', nullable: false},
     Description: {type: 'Edm.String'},

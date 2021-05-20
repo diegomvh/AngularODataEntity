@@ -1,7 +1,6 @@
 ﻿//#region ODataApi Imports
 //#endregion
 
-export const ISFLAGS_PAGETYPE = false;
 export enum PageType {
   //#region ODataApi Members
   Any = 0,

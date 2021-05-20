@@ -1,7 +1,6 @@
 ﻿//#region ODataApi Imports
 //#endregion
 
-export const ISFLAGS_MEDIATYPE = false;
 export enum MediaType {
   //#region ODataApi Members
   Any = 0,

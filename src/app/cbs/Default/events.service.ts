@@ -16,8 +16,9 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions
-} from 'angular-odata';
+  Expand, 
+  Select,
+  HttpOptions} from 'angular-odata';
 
 //#region ODataApi Imports
 import { CalendarEvent } from '../CBS/Website/ODataApi/Models/calendarevent.entity';

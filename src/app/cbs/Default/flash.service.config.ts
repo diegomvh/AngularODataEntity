@@ -8,7 +8,6 @@ import { FlashService } from './flash.service';
 export const FlashServiceEntitySetConfig = {
   name: "Flash",
   entityType: "CBS.Website.ODataApi.Models.Flash",
-  service: FlashService,
-  annotations: []
+  service: FlashService
 } as EntitySetConfig;
 //#endregion

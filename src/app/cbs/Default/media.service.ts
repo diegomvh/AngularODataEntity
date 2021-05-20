@@ -16,8 +16,9 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions
-} from 'angular-odata';
+  Expand, 
+  Select,
+  HttpOptions} from 'angular-odata';
 
 //#region ODataApi Imports
 import { MediaType } from '../CBS/Website/ODataApi/Models/mediatype.enum';
@@ -45,9 +46,11 @@ export class MediaService extends ODataEntitySetService<Medium> {
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
-  public getMediaByMediaType(MediaType: MediaType, options?: HttpOptions) {
-    return this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType')
-      .callEntities({MediaType}, options) as Observable<Medium[] | null>;
+  public getMediaByMediaType(MediaType: MediaType, {alias, ...options}: {alias?: boolean} & HttpOptions = {}) {
+    return this.callFunction<{MediaType: MediaType}, Medium>(
+      {MediaType}, 
+      this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType'), 
+      'entities', {alias, ...options}) as Observable<Medium[] | null>;
   }
   //#endregion
   //#region ODataApi Navigations

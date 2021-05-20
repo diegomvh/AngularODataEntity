@@ -8,7 +8,6 @@ import { SearchService } from './search.service';
 export const SearchServiceEntitySetConfig = {
   name: "Search",
   entityType: "CBS.Website.ODataApi.Models.SearchResultItem",
-  service: SearchService,
-  annotations: []
+  service: SearchService
 } as EntitySetConfig;
 //#endregion

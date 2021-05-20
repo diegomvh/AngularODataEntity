@@ -11,7 +11,6 @@ export const LinkComplexConfig = {
   name: "Link",
   model: LinkModel,
   collection: LinkCollection,
-  annotations: [],
   fields: {
     Text: {type: 'Edm.String'},
     Url: {type: 'Edm.String'},

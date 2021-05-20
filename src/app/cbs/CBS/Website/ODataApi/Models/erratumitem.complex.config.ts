@@ -11,7 +11,6 @@ export const ErratumItemComplexConfig = {
   name: "ErratumItem",
   model: ErratumItemModel,
   collection: ErratumItemCollection,
-  annotations: [],
   fields: {
     PresentationTime: {type: 'Edm.DateTimeOffset', nullable: false},
     Body: {type: 'Edm.String'}

@@ -8,7 +8,6 @@ import { MediaService } from './media.service';
 export const MediaServiceEntitySetConfig = {
   name: "Media",
   entityType: "CBS.Website.ODataApi.Models.Medium",
-  service: MediaService,
-  annotations: []
+  service: MediaService
 } as EntitySetConfig;
 //#endregion

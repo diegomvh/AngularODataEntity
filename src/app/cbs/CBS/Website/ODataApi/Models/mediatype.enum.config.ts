@@ -8,7 +8,6 @@ import { MediaType } from './mediatype.enum';
 export const MediaTypeConfig = {
   name: "MediaType",
   members: MediaType,
-  annotations: [],
   fields: {
     Any: {value: 0},
     Video: {value: 1},
