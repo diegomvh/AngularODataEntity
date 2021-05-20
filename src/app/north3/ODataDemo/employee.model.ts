@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -9,13 +9,21 @@ import { Employee } from './employee.entity';
 import { EmployeeCollection } from './employee.collection';
 //#endregion
 
+@Model()
 export class EmployeeModel<E extends Employee> extends PersonModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   EmployeeID!: number;
+  
+  
+  @ModelField()
   HireDate!: any;
+  
+  
+  @ModelField()
   Salary!: number;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

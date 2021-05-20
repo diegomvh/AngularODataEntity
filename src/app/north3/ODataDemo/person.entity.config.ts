@@ -11,9 +11,9 @@ export const PersonEntityConfig = {
   name: "Person",
   model: PersonModel,
   collection: PersonCollection,
-  annotations: [],
+  keys: [{ref: 'ID'}],
   fields: {
-    ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},
+    ID: {type: 'Edm.Int32', nullable: false},
     Name: {type: 'Edm.String'},
     PersonDetail: {type: 'ODataDemo.PersonDetail', navigation: true}
   }

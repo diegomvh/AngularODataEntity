@@ -15,16 +15,21 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions
+  HttpOptions,
+  Expand,
+  Select,
+  ODataBaseService
 } from 'angular-odata';
 
 //#region ODataApi Imports
 //#endregion
 
 @Injectable()
-export class DemoServiceService {
- 
-  constructor(protected client: ODataClient) { }
+export class DemoServiceService extends ODataBaseService {
+
+  constructor(protected client: ODataClient) {
+    super(client, 'DemoServiceContainer', '');
+  }
 
   //#region ODataApi Actions
   //#endregion

@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,17 +11,30 @@ import { FeaturedProductCollection } from './featuredproduct.collection';
 import { AdvertisementCollection } from './advertisement.collection';
 //#endregion
 
+@Model()
 export class AdvertisementModel<E extends Advertisement> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   ID!: string;
+  
+  
+  @ModelField()
   Name?: string;
+  
+  
+  @ModelField()
   AirDate!: any;
+  
+  
+  @ModelField()
   FeaturedProduct?: FeaturedProductModel<FeaturedProduct>;
+  public getFeaturedProduct({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<FeaturedProduct>('FeaturedProduct', {asEntity, ...options}) as Observable<FeaturedProductModel<FeaturedProduct>>;
+  }
+  public setFeaturedProduct(model: FeaturedProductModel<FeaturedProduct> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<FeaturedProduct>('FeaturedProduct', model, {asEntity, ...options});
+  }
   //#endregion
-  //#region ODataApi Setters
-  public setFeaturedProduct(model: FeaturedProductModel<FeaturedProduct> | null, options?: HttpOptions) {
-    return this.setReference<FeaturedProduct>('FeaturedProduct', model, options);
-  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

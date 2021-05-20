@@ -11,7 +11,6 @@ export const AddressComplexConfig = {
   name: "Address",
   model: AddressModel,
   collection: AddressCollection,
-  annotations: [],
   fields: {
     Street: {type: 'Edm.String'},
     City: {type: 'Edm.String'},

@@ -12,7 +12,6 @@ export const FeaturedProductEntityConfig = {
   base: "ODataDemo.Product",
   model: FeaturedProductModel,
   collection: FeaturedProductCollection,
-  annotations: [],
   fields: {
     Advertisement: {type: 'ODataDemo.Advertisement', navigation: true}
   }

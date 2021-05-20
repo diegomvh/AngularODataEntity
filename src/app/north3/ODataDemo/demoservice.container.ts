@@ -13,7 +13,6 @@ import { AdvertisementsServiceEntitySetConfig } from './advertisements.service.c
 //#region ODataApi EntityContainerConfig
 export const DemoServiceContainer = {
   name: "DemoService",
-  annotations: [],
   entitySets: [
     ProductsServiceEntitySetConfig,
     ProductDetailsServiceEntitySetConfig,

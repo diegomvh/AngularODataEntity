@@ -11,9 +11,9 @@ export const PersonDetailEntityConfig = {
   name: "PersonDetail",
   model: PersonDetailModel,
   collection: PersonDetailCollection,
-  annotations: [],
+  keys: [{ref: 'PersonID'}],
   fields: {
-    PersonID: {type: 'Edm.Int32', key: true, ref: 'PersonID', nullable: false},
+    PersonID: {type: 'Edm.Int32', nullable: false},
     Age: {type: 'Edm.Byte', nullable: false},
     Gender: {type: 'Edm.Boolean', nullable: false},
     Phone: {type: 'Edm.String'},

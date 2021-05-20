@@ -12,7 +12,6 @@ export const EmployeeEntityConfig = {
   base: "ODataDemo.Person",
   model: EmployeeModel,
   collection: EmployeeCollection,
-  annotations: [],
   fields: {
     EmployeeID: {type: 'Edm.Int64', nullable: false},
     HireDate: {type: 'Edm.DateTime', nullable: false},

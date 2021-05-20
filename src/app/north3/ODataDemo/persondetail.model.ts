@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -14,20 +14,42 @@ import { PersonCollection } from './person.collection';
 import { PersonDetailCollection } from './persondetail.collection';
 //#endregion
 
+@Model()
 export class PersonDetailModel<E extends PersonDetail> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   PersonID!: number;
+  
+  
+  @ModelField()
   Age!: number;
+  
+  
+  @ModelField()
   Gender!: boolean;
+  
+  
+  @ModelField()
   Phone?: string;
+  
+  
+  @ModelField()
   Address?: AddressModel<Address>;
+  
+  
+  @ModelField()
   Photo!: any;
+  
+  
+  @ModelField()
   Person?: PersonModel<Person>;
+  public getPerson({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Person>('Person', {asEntity, ...options}) as Observable<PersonModel<Person>>;
+  }
+  public setPerson(model: PersonModel<Person> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Person>('Person', model, {asEntity, ...options});
+  }
   //#endregion
-  //#region ODataApi Setters
-  public setPerson(model: PersonModel<Person> | null, options?: HttpOptions) {
-    return this.setReference<Person>('Person', model, options);
-  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

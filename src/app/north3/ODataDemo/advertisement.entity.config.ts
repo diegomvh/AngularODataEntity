@@ -11,9 +11,9 @@ export const AdvertisementEntityConfig = {
   name: "Advertisement",
   model: AdvertisementModel,
   collection: AdvertisementCollection,
-  annotations: [],
+  keys: [{ref: 'ID'}],
   fields: {
-    ID: {type: 'Edm.Guid', key: true, ref: 'ID', nullable: false},
+    ID: {type: 'Edm.Guid', nullable: false},
     Name: {type: 'Edm.String'},
     AirDate: {type: 'Edm.DateTime', nullable: false},
     FeaturedProduct: {type: 'ODataDemo.FeaturedProduct', navigation: true}

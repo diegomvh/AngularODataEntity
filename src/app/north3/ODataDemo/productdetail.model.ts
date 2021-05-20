@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,16 +11,26 @@ import { ProductCollection } from './product.collection';
 import { ProductDetailCollection } from './productdetail.collection';
 //#endregion
 
+@Model()
 export class ProductDetailModel<E extends ProductDetail> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   ProductID!: number;
+  
+  
+  @ModelField()
   Details?: string;
+  
+  
+  @ModelField()
   Product?: ProductModel<Product>;
+  public getProduct({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Product>('Product', {asEntity, ...options}) as Observable<ProductModel<Product>>;
+  }
+  public setProduct(model: ProductModel<Product> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Product>('Product', model, {asEntity, ...options});
+  }
   //#endregion
-  //#region ODataApi Setters
-  public setProduct(model: ProductModel<Product> | null, options?: HttpOptions) {
-    return this.setReference<Product>('Product', model, options);
-  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

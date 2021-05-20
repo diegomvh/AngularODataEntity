@@ -12,7 +12,6 @@ export const CustomerEntityConfig = {
   base: "ODataDemo.Person",
   model: CustomerModel,
   collection: CustomerCollection,
-  annotations: [],
   fields: {
     TotalExpense: {type: 'Edm.Decimal', nullable: false}
   }

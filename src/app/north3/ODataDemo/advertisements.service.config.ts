@@ -8,7 +8,6 @@ import { AdvertisementsService } from './advertisements.service';
 export const AdvertisementsServiceEntitySetConfig = {
   name: "Advertisements",
   entityType: "ODataDemo.Advertisement",
-  service: AdvertisementsService,
-  annotations: []
+  service: AdvertisementsService
 } as EntitySetConfig;
 //#endregion

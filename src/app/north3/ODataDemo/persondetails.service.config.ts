@@ -8,7 +8,6 @@ import { PersonDetailsService } from './persondetails.service';
 export const PersonDetailsServiceEntitySetConfig = {
   name: "PersonDetails",
   entityType: "ODataDemo.PersonDetail",
-  service: PersonDetailsService,
-  annotations: []
+  service: PersonDetailsService
 } as EntitySetConfig;
 //#endregion
