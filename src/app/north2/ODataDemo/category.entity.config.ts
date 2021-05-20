@@ -11,9 +11,9 @@ export const CategoryEntityConfig = {
   name: "Category",
   model: CategoryModel,
   collection: CategoryCollection,
-  annotations: [],
+  keys: [{ref: 'ID'}],
   fields: {
-    ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},
+    ID: {type: 'Edm.Int32', nullable: false},
     Name: {type: 'Edm.String'},
     Products: {type: 'ODataDemo.Product', collection: true, navigation: true}
   }

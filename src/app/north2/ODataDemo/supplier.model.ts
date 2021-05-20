@@ -1,4 +1,4 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Duration } from 'angular-odata';
+﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -14,15 +14,29 @@ import { ProductCollection } from './product.collection';
 import { SupplierCollection } from './supplier.collection';
 //#endregion
 
+@Model()
 export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   //#region ODataApi Properties
+  @ModelField()
   ID!: number;
+  
+  
+  @ModelField()
   Name?: string;
+  
+  
+  @ModelField()
   Address!: AddressModel<Address>;
+  
+  
+  @ModelField()
   Concurrency!: number;
+  
+  
+  @ModelField()
   Products?: ProductCollection<Product, ProductModel<Product>>;
-  //#endregion
-  //#region ODataApi Setters
+  
+  
   //#endregion
   //#region ODataApi Actions
   //#endregion

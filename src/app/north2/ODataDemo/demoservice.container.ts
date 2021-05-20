@@ -9,7 +9,6 @@ import { SuppliersServiceEntitySetConfig } from './suppliers.service.config';
 //#region ODataApi EntityContainerConfig
 export const DemoServiceContainer = {
   name: "DemoService",
-  annotations: [],
   entitySets: [
     ProductsServiceEntitySetConfig,
     CategoriesServiceEntitySetConfig,

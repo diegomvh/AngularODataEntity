@@ -11,9 +11,9 @@ export const SupplierEntityConfig = {
   name: "Supplier",
   model: SupplierModel,
   collection: SupplierCollection,
-  annotations: [],
+  keys: [{ref: 'ID'}],
   fields: {
-    ID: {type: 'Edm.Int32', key: true, ref: 'ID', nullable: false},
+    ID: {type: 'Edm.Int32', nullable: false},
     Name: {type: 'Edm.String'},
     Address: {type: 'ODataDemo.Address', nullable: false},
     Concurrency: {type: 'Edm.Int32', nullable: false},
