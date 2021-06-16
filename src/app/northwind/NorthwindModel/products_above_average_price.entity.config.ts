@@ -1,4 +1,7 @@
-﻿import { StructuredTypeConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  StructuredTypeConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { ProductsAboveAveragePrice } from './products_above_average_price.entity';

@@ -1,4 +1,7 @@
-﻿import { StructuredTypeConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  StructuredTypeConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { AlphabeticalListOfProduct } from './alphabetical_list_of_product.entity';

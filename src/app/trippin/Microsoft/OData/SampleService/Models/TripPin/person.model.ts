@@ -1,7 +1,19 @@
-﻿import { Model, ModelField, ODataModel, ODataCollection, HttpOptions, Duration, Expand, Select } from 'angular-odata';
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+﻿import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+//#region AngularOData Imports
+import { 
+  Model, 
+  ModelField, 
+  ODataModel, 
+  ODataCollection, 
+  HttpOptions, 
+  HttpActionOptions, 
+  HttpFunctionOptions, 
+  HttpNavigationPropertyOptions, 
+  Duration, 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { PersonGender } from './persongender.enum';
@@ -80,17 +92,17 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public airline({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.getBinding<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline', 'model', {asEntity, ...options}) as Observable<ODataModel<Airline>>;
+  public airline({asEntity, ...options}: {asEntity?: boolean} & HttpNavigationPropertyOptions<Airline> = {}) {
+    return this.fetchNavigationProperty<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline', 'model', {asEntity, ...options}) as Observable<ODataModel<Airline>>;
   }
-  public from({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.getBinding<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From', 'model', {asEntity, ...options}) as Observable<ODataModel<Airport>>;
+  public from({asEntity, ...options}: {asEntity?: boolean} & HttpNavigationPropertyOptions<Airport> = {}) {
+    return this.fetchNavigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From', 'model', {asEntity, ...options}) as Observable<ODataModel<Airport>>;
   }
-  public to({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.getBinding<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To', 'model', {asEntity, ...options}) as Observable<ODataModel<Airport>>;
+  public to({asEntity, ...options}: {asEntity?: boolean} & HttpNavigationPropertyOptions<Airport> = {}) {
+    return this.fetchNavigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To', 'model', {asEntity, ...options}) as Observable<ODataModel<Airport>>;
   }
-  public photos({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.getBinding<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos', 'collection', {asEntity, ...options}) as Observable<ODataCollection<Photo, ODataModel<Photo>>>;
+  public photos({asEntity, ...options}: {asEntity?: boolean} & HttpNavigationPropertyOptions<Photo> = {}) {
+    return this.fetchNavigationProperty<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos', 'collection', {asEntity, ...options}) as Observable<ODataCollection<Photo, ODataModel<Photo>>>;
   }
   //#endregion
 }

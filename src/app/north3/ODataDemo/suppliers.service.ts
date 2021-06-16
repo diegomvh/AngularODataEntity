@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Address } from './address.complex';
@@ -34,17 +39,14 @@ export class SuppliersService extends ODataEntitySetService<Supplier> {
   constructor(protected client: ODataClient) {
     super(client, 'Suppliers', 'ODataDemo.Supplier');
   }
-
   //#region ODataApi Model
   supplierModel(attrs?: Partial<Supplier>): SupplierModel<Supplier> {
     return this.entity().asModel<SupplierModel<Supplier>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   supplierCollection(models?: Partial<Supplier>[]): SupplierCollection<Supplier, SupplierModel<Supplier>> {
     return this.entities().asCollection<SupplierModel<Supplier>, SupplierCollection<Supplier, SupplierModel<Supplier>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

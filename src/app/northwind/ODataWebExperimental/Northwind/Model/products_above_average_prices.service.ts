@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { ProductsAboveAveragePrice } from '../../../NorthwindModel/products_above_average_price.entity';
@@ -31,17 +36,14 @@ export class ProductsAboveAveragePricesService extends ODataEntitySetService<Pro
   constructor(protected client: ODataClient) {
     super(client, 'Products_Above_Average_Prices', 'NorthwindModel.Products_Above_Average_Price');
   }
-
   //#region ODataApi Model
   productsAboveAveragePriceModel(attrs?: Partial<ProductsAboveAveragePrice>): ProductsAboveAveragePriceModel<ProductsAboveAveragePrice> {
     return this.entity().asModel<ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   productsAboveAveragePriceCollection(models?: Partial<ProductsAboveAveragePrice>[]): ProductsAboveAveragePriceCollection<ProductsAboveAveragePrice, ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>> {
     return this.entities().asCollection<ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>, ProductsAboveAveragePriceCollection<ProductsAboveAveragePrice, ProductsAboveAveragePriceModel<ProductsAboveAveragePrice>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

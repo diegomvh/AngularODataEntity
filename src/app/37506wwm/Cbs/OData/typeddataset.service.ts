@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { TData } from './tdata.entity';
@@ -31,17 +36,14 @@ export class TypedDataSetService extends ODataEntitySetService<TData> {
   constructor(protected client: ODataClient) {
     super(client, 'TypedDataSet', 'Cbs.OData.TData');
   }
-
   //#region ODataApi Model
   tDataModel(attrs?: Partial<TData>): TDataModel<TData> {
     return this.entity().asModel<TDataModel<TData>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   tDataCollection(models?: Partial<TData>[]): TDataCollection<TData, TDataModel<TData>> {
     return this.entities().asCollection<TDataModel<TData>, TDataCollection<TData, TDataModel<TData>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

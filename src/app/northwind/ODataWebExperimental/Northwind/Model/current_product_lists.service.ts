@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { CurrentProductList } from '../../../NorthwindModel/current_product_list.entity';
@@ -31,17 +36,14 @@ export class CurrentProductListsService extends ODataEntitySetService<CurrentPro
   constructor(protected client: ODataClient) {
     super(client, 'Current_Product_Lists', 'NorthwindModel.Current_Product_List');
   }
-
   //#region ODataApi Model
   currentProductListModel(attrs?: Partial<CurrentProductList>): CurrentProductListModel<CurrentProductList> {
     return this.entity().asModel<CurrentProductListModel<CurrentProductList>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   currentProductListCollection(models?: Partial<CurrentProductList>[]): CurrentProductListCollection<CurrentProductList, CurrentProductListModel<CurrentProductList>> {
     return this.entities().asCollection<CurrentProductListModel<CurrentProductList>, CurrentProductListCollection<CurrentProductList, CurrentProductListModel<CurrentProductList>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

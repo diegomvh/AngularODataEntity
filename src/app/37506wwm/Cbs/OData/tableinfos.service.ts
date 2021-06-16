@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { TableInfo } from './tableinfo.entity';
@@ -31,17 +36,14 @@ export class TableInfosService extends ODataEntitySetService<TableInfo> {
   constructor(protected client: ODataClient) {
     super(client, 'TableInfos', 'Cbs.OData.TableInfo');
   }
-
   //#region ODataApi Model
   tableInfoModel(attrs?: Partial<TableInfo>): TableInfoModel<TableInfo> {
     return this.entity().asModel<TableInfoModel<TableInfo>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   tableInfoCollection(models?: Partial<TableInfo>[]): TableInfoCollection<TableInfo, TableInfoModel<TableInfo>> {
     return this.entities().asCollection<TableInfoModel<TableInfo>, TableInfoCollection<TableInfo, TableInfoModel<TableInfo>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

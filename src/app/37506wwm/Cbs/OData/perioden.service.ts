@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { TimeCategory } from './timecategory.entity';
@@ -31,17 +36,14 @@ export class PeriodenService extends ODataEntitySetService<TimeCategory> {
   constructor(protected client: ODataClient) {
     super(client, 'Perioden', 'Cbs.OData.TimeCategory');
   }
-
   //#region ODataApi Model
   timeCategoryModel(attrs?: Partial<TimeCategory>): TimeCategoryModel<TimeCategory> {
     return this.entity().asModel<TimeCategoryModel<TimeCategory>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   timeCategoryCollection(models?: Partial<TimeCategory>[]): TimeCategoryCollection<TimeCategory, TimeCategoryModel<TimeCategory>> {
     return this.entities().asCollection<TimeCategoryModel<TimeCategory>, TimeCategoryCollection<TimeCategory, TimeCategoryModel<TimeCategory>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

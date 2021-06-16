@@ -1,4 +1,7 @@
-﻿import { StructuredTypeConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  StructuredTypeConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Airport } from './airport.entity';
@@ -11,7 +14,7 @@ export const AirportEntityConfig = {
   name: "Airport",
   model: AirportModel,
   collection: AirportCollection,
-  keys: [{ref: 'IcaoCode'}],
+  keys: [{name: 'IcaoCode'}],
   fields: {
     IcaoCode: {type: 'Edm.String', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     Name: {type: 'Edm.String', nullable: false},

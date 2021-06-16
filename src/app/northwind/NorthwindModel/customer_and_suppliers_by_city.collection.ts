@@ -1,7 +1,16 @@
-﻿import { ODataModel, ODataCollection, HttpOptions, Expand, Select } from 'angular-odata';
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+﻿import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+//#region AngularOData Imports
+import { 
+  ODataModel, 
+  ODataCollection, 
+  HttpOptions, 
+  HttpActionOptions, 
+  HttpFunctionOptions, 
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { CustomerAndSuppliersByCity } from './customer_and_suppliers_by_city.entity';

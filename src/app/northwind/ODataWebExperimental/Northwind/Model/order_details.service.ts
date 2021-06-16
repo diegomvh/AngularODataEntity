@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { OrderDetail } from '../../../NorthwindModel/order_detail.entity';
@@ -37,27 +42,50 @@ export class OrderDetailsService extends ODataEntitySetService<OrderDetail> {
   constructor(protected client: ODataClient) {
     super(client, 'Order_Details', 'NorthwindModel.Order_Detail');
   }
-
   //#region ODataApi Model
   orderDetailModel(attrs?: Partial<OrderDetail>): OrderDetailModel<OrderDetail> {
     return this.entity().asModel<OrderDetailModel<OrderDetail>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   orderDetailCollection(models?: Partial<OrderDetail>[]): OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>> {
     return this.entities().asCollection<OrderDetailModel<OrderDetail>, OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public order(entity: EntityKey<OrderDetail>): ODataNavigationPropertyResource<Order> {
-    return this.entity(entity).navigationProperty<Order>('Order');
+  public order(key: EntityKey<OrderDetail>): ODataNavigationPropertyResource<Order> { 
+    return this.entity(key).navigationProperty<Order>('Order'); 
   }
-  public product(entity: EntityKey<OrderDetail>): ODataNavigationPropertyResource<Product> {
-    return this.entity(entity).navigationProperty<Product>('Product');
+  public fetchOrder(key: EntityKey<OrderDetail>, options?: HttpNavigationPropertyOptions<Order>) {
+    return this.fetchNavigationProperty<Order>(
+      this.order(key), 
+      'entity', options) as Observable<ODataEntity<Order>>;
+  }
+  public setOrderAsOrder(key: EntityKey<OrderDetail>, target: ODataEntityResource<ODataEntity<Order>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.order(key).reference()
+      .set(target, {etag});
+  }
+  public unsetOrderAsOrder(key: EntityKey<OrderDetail>, {target, etag}: {target?: ODataEntityResource<ODataEntity<Order>>, etag?: string} = {}): Observable<any> {
+    return this.order(key).reference()
+      .unset({etag});
+  }
+  public product(key: EntityKey<OrderDetail>): ODataNavigationPropertyResource<Product> { 
+    return this.entity(key).navigationProperty<Product>('Product'); 
+  }
+  public fetchProduct(key: EntityKey<OrderDetail>, options?: HttpNavigationPropertyOptions<Product>) {
+    return this.fetchNavigationProperty<Product>(
+      this.product(key), 
+      'entity', options) as Observable<ODataEntity<Product>>;
+  }
+  public setProductAsProduct(key: EntityKey<OrderDetail>, target: ODataEntityResource<ODataEntity<Product>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.product(key).reference()
+      .set(target, {etag});
+  }
+  public unsetProductAsProduct(key: EntityKey<OrderDetail>, {target, etag}: {target?: ODataEntityResource<ODataEntity<Product>>, etag?: string} = {}): Observable<any> {
+    return this.product(key).reference()
+      .unset({etag});
   }
   //#endregion
 }

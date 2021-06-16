@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.complex';
@@ -34,17 +39,14 @@ export class VacanciesService extends ODataEntitySetService<Vacancy> {
   constructor(protected client: ODataClient) {
     super(client, 'Vacancies', 'CBS.Website.ODataApi.Models.Vacancy');
   }
-
   //#region ODataApi Model
   vacancyModel(attrs?: Partial<Vacancy>): VacancyModel<Vacancy> {
     return this.entity().asModel<VacancyModel<Vacancy>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   vacancyCollection(models?: Partial<Vacancy>[]): VacancyCollection<Vacancy, VacancyModel<Vacancy>> {
     return this.entities().asCollection<VacancyModel<Vacancy>, VacancyCollection<Vacancy, VacancyModel<Vacancy>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

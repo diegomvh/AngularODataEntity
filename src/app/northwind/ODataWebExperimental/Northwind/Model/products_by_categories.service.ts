@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { ProductsByCategory } from '../../../NorthwindModel/products_by_category.entity';
@@ -31,17 +36,14 @@ export class ProductsByCategoriesService extends ODataEntitySetService<ProductsB
   constructor(protected client: ODataClient) {
     super(client, 'Products_by_Categories', 'NorthwindModel.Products_by_Category');
   }
-
   //#region ODataApi Model
   productsByCategoryModel(attrs?: Partial<ProductsByCategory>): ProductsByCategoryModel<ProductsByCategory> {
     return this.entity().asModel<ProductsByCategoryModel<ProductsByCategory>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   productsByCategoryCollection(models?: Partial<ProductsByCategory>[]): ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>> {
     return this.entities().asCollection<ProductsByCategoryModel<ProductsByCategory>, ProductsByCategoryCollection<ProductsByCategory, ProductsByCategoryModel<ProductsByCategory>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { CustomerAndSuppliersByCity } from '../../../NorthwindModel/customer_and_suppliers_by_city.entity';
@@ -31,17 +36,14 @@ export class CustomerAndSuppliersByCitiesService extends ODataEntitySetService<C
   constructor(protected client: ODataClient) {
     super(client, 'Customer_and_Suppliers_by_Cities', 'NorthwindModel.Customer_and_Suppliers_by_City');
   }
-
   //#region ODataApi Model
   customerAndSuppliersByCityModel(attrs?: Partial<CustomerAndSuppliersByCity>): CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity> {
     return this.entity().asModel<CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   customerAndSuppliersByCityCollection(models?: Partial<CustomerAndSuppliersByCity>[]): CustomerAndSuppliersByCityCollection<CustomerAndSuppliersByCity, CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>> {
     return this.entities().asCollection<CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>, CustomerAndSuppliersByCityCollection<CustomerAndSuppliersByCity, CustomerAndSuppliersByCityModel<CustomerAndSuppliersByCity>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

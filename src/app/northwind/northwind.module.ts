@@ -1,4 +1,7 @@
-﻿import { NgModule } from '@angular/core';
+﻿//#region AngularOData Imports
+import { 
+  NgModule 
+} from '@angular/core';//#endregion
 
 //#region ODataApi Imports
 import { NorthwindEntitiesService } from './ODataWebExperimental/Northwind/Model/northwindentities.service';

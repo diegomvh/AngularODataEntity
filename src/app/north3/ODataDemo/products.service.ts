@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Product } from './product.entity';
@@ -31,17 +36,14 @@ export class ProductsService extends ODataEntitySetService<Product> {
   constructor(protected client: ODataClient) {
     super(client, 'Products', 'ODataDemo.Product');
   }
-
   //#region ODataApi Model
   productModel(attrs?: Partial<Product>): ProductModel<Product> {
     return this.entity().asModel<ProductModel<Product>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   productCollection(models?: Partial<Product>[]): ProductCollection<Product, ProductModel<Product>> {
     return this.entities().asCollection<ProductModel<Product>, ProductCollection<Product, ProductModel<Product>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

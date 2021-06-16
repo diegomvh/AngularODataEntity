@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Order } from '../../../NorthwindModel/order.entity';
@@ -34,24 +39,34 @@ export class ShippersService extends ODataEntitySetService<Shipper> {
   constructor(protected client: ODataClient) {
     super(client, 'Shippers', 'NorthwindModel.Shipper');
   }
-
   //#region ODataApi Model
   shipperModel(attrs?: Partial<Shipper>): ShipperModel<Shipper> {
     return this.entity().asModel<ShipperModel<Shipper>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   shipperCollection(models?: Partial<Shipper>[]): ShipperCollection<Shipper, ShipperModel<Shipper>> {
     return this.entities().asCollection<ShipperModel<Shipper>, ShipperCollection<Shipper, ShipperModel<Shipper>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public orders(entity: EntityKey<Shipper>): ODataNavigationPropertyResource<Order> {
-    return this.entity(entity).navigationProperty<Order>('Orders');
+  public orders(key: EntityKey<Shipper>): ODataNavigationPropertyResource<Order> { 
+    return this.entity(key).navigationProperty<Order>('Orders'); 
+  }
+  public fetchOrders(key: EntityKey<Shipper>, options?: HttpNavigationPropertyOptions<Order>) {
+    return this.fetchNavigationProperty<Order>(
+      this.orders(key), 
+      'entities', options) as Observable<ODataEntities<Order>>;
+  }
+  public addOrderToOrders(key: EntityKey<Shipper>, target: ODataEntityResource<ODataEntities<Order>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.orders(key).reference()
+      .add(target);
+  }
+  public removeOrderFromOrders(key: EntityKey<Shipper>, {target, etag}: {target?: ODataEntityResource<ODataEntities<Order>>, etag?: string} = {}): Observable<any> {
+    return this.orders(key).reference()
+      .remove(target);
   }
   //#endregion
 }

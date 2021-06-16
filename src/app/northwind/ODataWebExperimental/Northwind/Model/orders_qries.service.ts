@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { OrdersQry } from '../../../NorthwindModel/orders_qry.entity';
@@ -31,17 +36,14 @@ export class OrdersQriesService extends ODataEntitySetService<OrdersQry> {
   constructor(protected client: ODataClient) {
     super(client, 'Orders_Qries', 'NorthwindModel.Orders_Qry');
   }
-
   //#region ODataApi Model
   ordersQryModel(attrs?: Partial<OrdersQry>): OrdersQryModel<OrdersQry> {
     return this.entity().asModel<OrdersQryModel<OrdersQry>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   ordersQryCollection(models?: Partial<OrdersQry>[]): OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>> {
     return this.entities().asCollection<OrdersQryModel<OrdersQry>, OrdersQryCollection<OrdersQry, OrdersQryModel<OrdersQry>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

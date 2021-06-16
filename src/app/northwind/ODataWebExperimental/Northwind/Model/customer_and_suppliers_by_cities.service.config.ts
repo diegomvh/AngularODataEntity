@@ -1,4 +1,7 @@
-﻿import { EntitySetConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  EntitySetConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { CustomerAndSuppliersByCitiesService } from './customer_and_suppliers_by_cities.service';

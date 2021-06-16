@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { ProductSalesFor1997 } from '../../../NorthwindModel/product_sales_for_1997.entity';
@@ -31,17 +36,14 @@ export class ProductSalesFor1997Service extends ODataEntitySetService<ProductSal
   constructor(protected client: ODataClient) {
     super(client, 'Product_Sales_for_1997', 'NorthwindModel.Product_Sales_for_1997');
   }
-
   //#region ODataApi Model
   productSalesFor1997Model(attrs?: Partial<ProductSalesFor1997>): ProductSalesFor1997Model<ProductSalesFor1997> {
     return this.entity().asModel<ProductSalesFor1997Model<ProductSalesFor1997>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   productSalesFor1997Collection(models?: Partial<ProductSalesFor1997>[]): ProductSalesFor1997Collection<ProductSalesFor1997, ProductSalesFor1997Model<ProductSalesFor1997>> {
     return this.entities().asCollection<ProductSalesFor1997Model<ProductSalesFor1997>, ProductSalesFor1997Collection<ProductSalesFor1997, ProductSalesFor1997Model<ProductSalesFor1997>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { SalesTotalsByAmount } from '../../../NorthwindModel/sales_totals_by_amount.entity';
@@ -31,17 +36,14 @@ export class SalesTotalsByAmountsService extends ODataEntitySetService<SalesTota
   constructor(protected client: ODataClient) {
     super(client, 'Sales_Totals_by_Amounts', 'NorthwindModel.Sales_Totals_by_Amount');
   }
-
   //#region ODataApi Model
   salesTotalsByAmountModel(attrs?: Partial<SalesTotalsByAmount>): SalesTotalsByAmountModel<SalesTotalsByAmount> {
     return this.entity().asModel<SalesTotalsByAmountModel<SalesTotalsByAmount>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   salesTotalsByAmountCollection(models?: Partial<SalesTotalsByAmount>[]): SalesTotalsByAmountCollection<SalesTotalsByAmount, SalesTotalsByAmountModel<SalesTotalsByAmount>> {
     return this.entities().asCollection<SalesTotalsByAmountModel<SalesTotalsByAmount>, SalesTotalsByAmountCollection<SalesTotalsByAmount, SalesTotalsByAmountModel<SalesTotalsByAmount>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { PageType } from '../CBS/Website/ODataApi/Models/pagetype.enum';
@@ -35,43 +40,52 @@ export class PagesService extends ODataEntitySetService<Page> {
   constructor(protected client: ODataClient) {
     super(client, 'Pages', 'CBS.Website.ODataApi.Models.Page');
   }
-
   //#region ODataApi Model
   pageModel(attrs?: Partial<Page>): PageModel<Page> {
     return this.entity().asModel<PageModel<Page>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   pageCollection(models?: Partial<Page>[]): PageCollection<Page, PageModel<Page>> {
     return this.entities().asCollection<PageModel<Page>, PageCollection<Page, PageModel<Page>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
-  public getPagesByTheme(Theme: string, {alias, ...options}: {alias?: boolean} & HttpOptions = {}) {
+  public getPagesByTheme(): ODataFunctionResource<{Theme: string}, Page> { 
+    return this.client.function<{Theme: string}, Page>('Default.GetPagesByTheme');
+  }
+  public callGetPagesByTheme(Theme: string, options?: HttpFunctionOptions<Page>) {
     return this.callFunction<{Theme: string}, Page>(
       {Theme}, 
-      this.client.function<{Theme: string}, Page>('Default.GetPagesByTheme'), 
-      'entities', {alias, ...options}) as Observable<Page[] | null>;
+      this.getPagesByTheme(), 
+      'entities', options) as Observable<ODataEntities<Page>>;
   }
-  public getPagesBySeries(Series: string, {alias, ...options}: {alias?: boolean} & HttpOptions = {}) {
+  public getPagesBySeries(): ODataFunctionResource<{Series: string}, Page> { 
+    return this.client.function<{Series: string}, Page>('Default.GetPagesBySeries');
+  }
+  public callGetPagesBySeries(Series: string, options?: HttpFunctionOptions<Page>) {
     return this.callFunction<{Series: string}, Page>(
       {Series}, 
-      this.client.function<{Series: string}, Page>('Default.GetPagesBySeries'), 
-      'entities', {alias, ...options}) as Observable<Page[] | null>;
+      this.getPagesBySeries(), 
+      'entities', options) as Observable<ODataEntities<Page>>;
   }
-  public getPagesByTaxonomyTag(Tag: string, {alias, ...options}: {alias?: boolean} & HttpOptions = {}) {
+  public getPagesByTaxonomyTag(): ODataFunctionResource<{Tag: string}, Page> { 
+    return this.client.function<{Tag: string}, Page>('Default.GetPagesByTaxonomyTag');
+  }
+  public callGetPagesByTaxonomyTag(Tag: string, options?: HttpFunctionOptions<Page>) {
     return this.callFunction<{Tag: string}, Page>(
       {Tag}, 
-      this.client.function<{Tag: string}, Page>('Default.GetPagesByTaxonomyTag'), 
-      'entities', {alias, ...options}) as Observable<Page[] | null>;
+      this.getPagesByTaxonomyTag(), 
+      'entities', options) as Observable<ODataEntities<Page>>;
   }
-  public getPagesByPageType(PageType: PageType, {alias, ...options}: {alias?: boolean} & HttpOptions = {}) {
+  public getPagesByPageType(): ODataFunctionResource<{PageType: PageType}, Page> { 
+    return this.client.function<{PageType: PageType}, Page>('Default.GetPagesByPageType');
+  }
+  public callGetPagesByPageType(PageType: PageType, options?: HttpFunctionOptions<Page>) {
     return this.callFunction<{PageType: PageType}, Page>(
       {PageType}, 
-      this.client.function<{PageType: PageType}, Page>('Default.GetPagesByPageType'), 
-      'entities', {alias, ...options}) as Observable<Page[] | null>;
+      this.getPagesByPageType(), 
+      'entities', options) as Observable<ODataEntities<Page>>;
   }
   //#endregion
   //#region ODataApi Navigations

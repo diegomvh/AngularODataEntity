@@ -1,4 +1,7 @@
-﻿import { StructuredTypeConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  StructuredTypeConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Photo } from './photo.entity';
@@ -16,7 +19,7 @@ export const PhotoEntityConfig = {
     "type": "Org.OData.Core.V1.AcceptableMediaTypes"
   }
 ],
-  keys: [{ref: 'Id'}],
+  keys: [{name: 'Id'}],
   fields: {
     Id: {type: 'Edm.Int64', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     Name: {type: 'Edm.String'}

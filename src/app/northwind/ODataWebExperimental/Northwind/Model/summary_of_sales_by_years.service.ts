@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { SummaryOfSalesByYear } from '../../../NorthwindModel/summary_of_sales_by_year.entity';
@@ -31,17 +36,14 @@ export class SummaryOfSalesByYearsService extends ODataEntitySetService<SummaryO
   constructor(protected client: ODataClient) {
     super(client, 'Summary_of_Sales_by_Years', 'NorthwindModel.Summary_of_Sales_by_Year');
   }
-
   //#region ODataApi Model
   summaryOfSalesByYearModel(attrs?: Partial<SummaryOfSalesByYear>): SummaryOfSalesByYearModel<SummaryOfSalesByYear> {
     return this.entity().asModel<SummaryOfSalesByYearModel<SummaryOfSalesByYear>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   summaryOfSalesByYearCollection(models?: Partial<SummaryOfSalesByYear>[]): SummaryOfSalesByYearCollection<SummaryOfSalesByYear, SummaryOfSalesByYearModel<SummaryOfSalesByYear>> {
     return this.entities().asCollection<SummaryOfSalesByYearModel<SummaryOfSalesByYear>, SummaryOfSalesByYearCollection<SummaryOfSalesByYear, SummaryOfSalesByYearModel<SummaryOfSalesByYear>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

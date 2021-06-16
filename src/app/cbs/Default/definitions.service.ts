@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { DefinitionType } from '../CBS/Website/ODataApi/Models/definitiontype.enum';
@@ -35,17 +40,14 @@ export class DefinitionsService extends ODataEntitySetService<Definition> {
   constructor(protected client: ODataClient) {
     super(client, 'Definitions', 'CBS.Website.ODataApi.Models.Definition');
   }
-
   //#region ODataApi Model
   definitionModel(attrs?: Partial<Definition>): DefinitionModel<Definition> {
     return this.entity().asModel<DefinitionModel<Definition>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   definitionCollection(models?: Partial<Definition>[]): DefinitionCollection<Definition, DefinitionModel<Definition>> {
     return this.entities().asCollection<DefinitionModel<Definition>, DefinitionCollection<Definition, DefinitionModel<Definition>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

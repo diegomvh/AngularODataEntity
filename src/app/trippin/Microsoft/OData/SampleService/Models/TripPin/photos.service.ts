@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Photo } from './photo.entity';
@@ -31,17 +36,14 @@ export class PhotosService extends ODataEntitySetService<Photo> {
   constructor(protected client: ODataClient) {
     super(client, 'Photos', 'Microsoft.OData.SampleService.Models.TripPin.Photo');
   }
-
   //#region ODataApi Model
   photoModel(attrs?: Partial<Photo>): PhotoModel<Photo> {
     return this.entity().asModel<PhotoModel<Photo>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   photoCollection(models?: Partial<Photo>[]): PhotoCollection<Photo, PhotoModel<Photo>> {
     return this.entities().asCollection<PhotoModel<Photo>, PhotoCollection<Photo, PhotoModel<Photo>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

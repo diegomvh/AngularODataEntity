@@ -1,4 +1,7 @@
-﻿import { StructuredTypeConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  StructuredTypeConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { PlanItem } from './planitem.entity';
@@ -11,7 +14,7 @@ export const PlanItemEntityConfig = {
   name: "PlanItem",
   model: PlanItemModel,
   collection: PlanItemCollection,
-  keys: [{ref: 'PlanItemId'}],
+  keys: [{name: 'PlanItemId'}],
   fields: {
     PlanItemId: {type: 'Edm.Int32', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     ConfirmationCode: {type: 'Edm.String'},

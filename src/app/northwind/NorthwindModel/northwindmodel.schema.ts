@@ -1,4 +1,7 @@
-﻿import { SchemaConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  SchemaConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { CategoryEntityConfig } from './category.entity.config';

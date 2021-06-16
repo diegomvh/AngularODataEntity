@@ -1,4 +1,7 @@
-﻿import { EntitySetConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  EntitySetConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { SummaryOfSalesByYearsService } from './summary_of_sales_by_years.service';

@@ -1,4 +1,7 @@
-﻿import { Duration } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  Duration 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Product } from './product.entity';

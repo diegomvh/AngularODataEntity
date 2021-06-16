@@ -30,11 +30,11 @@ export class AppComponent {
 
   //#region APIs
   trippin() {
-    this.api.resetDataSource().subscribe(() => {
+    this.api.callResetDataSource().subscribe(() => {
       //this.queries();
       //this.mutate();
-      //this.trippinModels();
-      this.filterPeopleByGender();
+      this.trippinModels();
+      //this.filterPeopleByGender();
     });
   }
 

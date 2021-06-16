@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Employee } from '../../../NorthwindModel/employee.entity';
@@ -37,33 +42,82 @@ export class EmployeesService extends ODataEntitySetService<Employee> {
   constructor(protected client: ODataClient) {
     super(client, 'Employees', 'NorthwindModel.Employee');
   }
-
   //#region ODataApi Model
   employeeModel(attrs?: Partial<Employee>): EmployeeModel<Employee> {
     return this.entity().asModel<EmployeeModel<Employee>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   employeeCollection(models?: Partial<Employee>[]): EmployeeCollection<Employee, EmployeeModel<Employee>> {
     return this.entities().asCollection<EmployeeModel<Employee>, EmployeeCollection<Employee, EmployeeModel<Employee>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public employees1(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Employee> {
-    return this.entity(entity).navigationProperty<Employee>('Employees1');
+  public employees1(key: EntityKey<Employee>): ODataNavigationPropertyResource<Employee> { 
+    return this.entity(key).navigationProperty<Employee>('Employees1'); 
   }
-  public employee1(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Employee> {
-    return this.entity(entity).navigationProperty<Employee>('Employee1');
+  public fetchEmployees1(key: EntityKey<Employee>, options?: HttpNavigationPropertyOptions<Employee>) {
+    return this.fetchNavigationProperty<Employee>(
+      this.employees1(key), 
+      'entities', options) as Observable<ODataEntities<Employee>>;
   }
-  public orders(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Order> {
-    return this.entity(entity).navigationProperty<Order>('Orders');
+  public addEmployeeToEmployees1(key: EntityKey<Employee>, target: ODataEntityResource<ODataEntities<Employee>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.employees1(key).reference()
+      .add(target);
   }
-  public territories(entity: EntityKey<Employee>): ODataNavigationPropertyResource<Territory> {
-    return this.entity(entity).navigationProperty<Territory>('Territories');
+  public removeEmployeeFromEmployees1(key: EntityKey<Employee>, {target, etag}: {target?: ODataEntityResource<ODataEntities<Employee>>, etag?: string} = {}): Observable<any> {
+    return this.employees1(key).reference()
+      .remove(target);
+  }
+  public employee1(key: EntityKey<Employee>): ODataNavigationPropertyResource<Employee> { 
+    return this.entity(key).navigationProperty<Employee>('Employee1'); 
+  }
+  public fetchEmployee1(key: EntityKey<Employee>, options?: HttpNavigationPropertyOptions<Employee>) {
+    return this.fetchNavigationProperty<Employee>(
+      this.employee1(key), 
+      'entity', options) as Observable<ODataEntity<Employee>>;
+  }
+  public setEmployeeAsEmployee1(key: EntityKey<Employee>, target: ODataEntityResource<ODataEntity<Employee>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.employee1(key).reference()
+      .set(target, {etag});
+  }
+  public unsetEmployeeAsEmployee1(key: EntityKey<Employee>, {target, etag}: {target?: ODataEntityResource<ODataEntity<Employee>>, etag?: string} = {}): Observable<any> {
+    return this.employee1(key).reference()
+      .unset({etag});
+  }
+  public orders(key: EntityKey<Employee>): ODataNavigationPropertyResource<Order> { 
+    return this.entity(key).navigationProperty<Order>('Orders'); 
+  }
+  public fetchOrders(key: EntityKey<Employee>, options?: HttpNavigationPropertyOptions<Order>) {
+    return this.fetchNavigationProperty<Order>(
+      this.orders(key), 
+      'entities', options) as Observable<ODataEntities<Order>>;
+  }
+  public addOrderToOrders(key: EntityKey<Employee>, target: ODataEntityResource<ODataEntities<Order>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.orders(key).reference()
+      .add(target);
+  }
+  public removeOrderFromOrders(key: EntityKey<Employee>, {target, etag}: {target?: ODataEntityResource<ODataEntities<Order>>, etag?: string} = {}): Observable<any> {
+    return this.orders(key).reference()
+      .remove(target);
+  }
+  public territories(key: EntityKey<Employee>): ODataNavigationPropertyResource<Territory> { 
+    return this.entity(key).navigationProperty<Territory>('Territories'); 
+  }
+  public fetchTerritories(key: EntityKey<Employee>, options?: HttpNavigationPropertyOptions<Territory>) {
+    return this.fetchNavigationProperty<Territory>(
+      this.territories(key), 
+      'entities', options) as Observable<ODataEntities<Territory>>;
+  }
+  public addTerritoryToTerritories(key: EntityKey<Employee>, target: ODataEntityResource<ODataEntities<Territory>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.territories(key).reference()
+      .add(target);
+  }
+  public removeTerritoryFromTerritories(key: EntityKey<Employee>, {target, etag}: {target?: ODataEntityResource<ODataEntities<Territory>>, etag?: string} = {}): Observable<any> {
+    return this.territories(key).reference()
+      .remove(target);
   }
   //#endregion
 }

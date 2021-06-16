@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Invoice } from '../../../NorthwindModel/invoice.entity';
@@ -31,17 +36,14 @@ export class InvoicesService extends ODataEntitySetService<Invoice> {
   constructor(protected client: ODataClient) {
     super(client, 'Invoices', 'NorthwindModel.Invoice');
   }
-
   //#region ODataApi Model
   invoiceModel(attrs?: Partial<Invoice>): InvoiceModel<Invoice> {
     return this.entity().asModel<InvoiceModel<Invoice>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   invoiceCollection(models?: Partial<Invoice>[]): InvoiceCollection<Invoice, InvoiceModel<Invoice>> {
     return this.entities().asCollection<InvoiceModel<Invoice>, InvoiceCollection<Invoice, InvoiceModel<Invoice>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

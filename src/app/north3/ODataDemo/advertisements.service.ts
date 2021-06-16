@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Advertisement } from './advertisement.entity';
@@ -31,17 +36,14 @@ export class AdvertisementsService extends ODataEntitySetService<Advertisement> 
   constructor(protected client: ODataClient) {
     super(client, 'Advertisements', 'ODataDemo.Advertisement');
   }
-
   //#region ODataApi Model
   advertisementModel(attrs?: Partial<Advertisement>): AdvertisementModel<Advertisement> {
     return this.entity().asModel<AdvertisementModel<Advertisement>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   advertisementCollection(models?: Partial<Advertisement>[]): AdvertisementCollection<Advertisement, AdvertisementModel<Advertisement>> {
     return this.entities().asCollection<AdvertisementModel<Advertisement>, AdvertisementCollection<Advertisement, AdvertisementModel<Advertisement>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

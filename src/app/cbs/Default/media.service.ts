@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { MediaType } from '../CBS/Website/ODataApi/Models/mediatype.enum';
@@ -32,25 +37,25 @@ export class MediaService extends ODataEntitySetService<Medium> {
   constructor(protected client: ODataClient) {
     super(client, 'Media', 'CBS.Website.ODataApi.Models.Medium');
   }
-
   //#region ODataApi Model
   mediumModel(attrs?: Partial<Medium>): MediumModel<Medium> {
     return this.entity().asModel<MediumModel<Medium>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   mediumCollection(models?: Partial<Medium>[]): MediumCollection<Medium, MediumModel<Medium>> {
     return this.entities().asCollection<MediumModel<Medium>, MediumCollection<Medium, MediumModel<Medium>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
-  public getMediaByMediaType(MediaType: MediaType, {alias, ...options}: {alias?: boolean} & HttpOptions = {}) {
+  public getMediaByMediaType(): ODataFunctionResource<{MediaType: MediaType}, Medium> { 
+    return this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType');
+  }
+  public callGetMediaByMediaType(MediaType: MediaType, options?: HttpFunctionOptions<Medium>) {
     return this.callFunction<{MediaType: MediaType}, Medium>(
       {MediaType}, 
-      this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType'), 
-      'entities', {alias, ...options}) as Observable<Medium[] | null>;
+      this.getMediaByMediaType(), 
+      'entities', options) as Observable<ODataEntities<Medium>>;
   }
   //#endregion
   //#region ODataApi Navigations

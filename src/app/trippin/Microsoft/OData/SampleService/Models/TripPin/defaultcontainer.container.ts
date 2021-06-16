@@ -1,4 +1,7 @@
-﻿import { EntityContainerConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  EntityContainerConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { PhotosServiceEntitySetConfig } from './photos.service.config';

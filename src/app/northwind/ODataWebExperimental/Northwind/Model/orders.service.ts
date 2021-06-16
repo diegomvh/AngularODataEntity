@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Customer } from '../../../NorthwindModel/customer.entity';
@@ -43,33 +48,82 @@ export class OrdersService extends ODataEntitySetService<Order> {
   constructor(protected client: ODataClient) {
     super(client, 'Orders', 'NorthwindModel.Order');
   }
-
   //#region ODataApi Model
   orderModel(attrs?: Partial<Order>): OrderModel<Order> {
     return this.entity().asModel<OrderModel<Order>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   orderCollection(models?: Partial<Order>[]): OrderCollection<Order, OrderModel<Order>> {
     return this.entities().asCollection<OrderModel<Order>, OrderCollection<Order, OrderModel<Order>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public customer(entity: EntityKey<Order>): ODataNavigationPropertyResource<Customer> {
-    return this.entity(entity).navigationProperty<Customer>('Customer');
+  public customer(key: EntityKey<Order>): ODataNavigationPropertyResource<Customer> { 
+    return this.entity(key).navigationProperty<Customer>('Customer'); 
   }
-  public employee(entity: EntityKey<Order>): ODataNavigationPropertyResource<Employee> {
-    return this.entity(entity).navigationProperty<Employee>('Employee');
+  public fetchCustomer(key: EntityKey<Order>, options?: HttpNavigationPropertyOptions<Customer>) {
+    return this.fetchNavigationProperty<Customer>(
+      this.customer(key), 
+      'entity', options) as Observable<ODataEntity<Customer>>;
   }
-  public order_Details(entity: EntityKey<Order>): ODataNavigationPropertyResource<OrderDetail> {
-    return this.entity(entity).navigationProperty<OrderDetail>('Order_Details');
+  public setCustomerAsCustomer(key: EntityKey<Order>, target: ODataEntityResource<ODataEntity<Customer>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.customer(key).reference()
+      .set(target, {etag});
   }
-  public shipper(entity: EntityKey<Order>): ODataNavigationPropertyResource<Shipper> {
-    return this.entity(entity).navigationProperty<Shipper>('Shipper');
+  public unsetCustomerAsCustomer(key: EntityKey<Order>, {target, etag}: {target?: ODataEntityResource<ODataEntity<Customer>>, etag?: string} = {}): Observable<any> {
+    return this.customer(key).reference()
+      .unset({etag});
+  }
+  public employee(key: EntityKey<Order>): ODataNavigationPropertyResource<Employee> { 
+    return this.entity(key).navigationProperty<Employee>('Employee'); 
+  }
+  public fetchEmployee(key: EntityKey<Order>, options?: HttpNavigationPropertyOptions<Employee>) {
+    return this.fetchNavigationProperty<Employee>(
+      this.employee(key), 
+      'entity', options) as Observable<ODataEntity<Employee>>;
+  }
+  public setEmployeeAsEmployee(key: EntityKey<Order>, target: ODataEntityResource<ODataEntity<Employee>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.employee(key).reference()
+      .set(target, {etag});
+  }
+  public unsetEmployeeAsEmployee(key: EntityKey<Order>, {target, etag}: {target?: ODataEntityResource<ODataEntity<Employee>>, etag?: string} = {}): Observable<any> {
+    return this.employee(key).reference()
+      .unset({etag});
+  }
+  public order_Details(key: EntityKey<Order>): ODataNavigationPropertyResource<OrderDetail> { 
+    return this.entity(key).navigationProperty<OrderDetail>('Order_Details'); 
+  }
+  public fetchOrder_Details(key: EntityKey<Order>, options?: HttpNavigationPropertyOptions<OrderDetail>) {
+    return this.fetchNavigationProperty<OrderDetail>(
+      this.order_Details(key), 
+      'entities', options) as Observable<ODataEntities<OrderDetail>>;
+  }
+  public addOrderDetailToOrder_Details(key: EntityKey<Order>, target: ODataEntityResource<ODataEntities<OrderDetail>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.order_Details(key).reference()
+      .add(target);
+  }
+  public removeOrderDetailFromOrder_Details(key: EntityKey<Order>, {target, etag}: {target?: ODataEntityResource<ODataEntities<OrderDetail>>, etag?: string} = {}): Observable<any> {
+    return this.order_Details(key).reference()
+      .remove(target);
+  }
+  public shipper(key: EntityKey<Order>): ODataNavigationPropertyResource<Shipper> { 
+    return this.entity(key).navigationProperty<Shipper>('Shipper'); 
+  }
+  public fetchShipper(key: EntityKey<Order>, options?: HttpNavigationPropertyOptions<Shipper>) {
+    return this.fetchNavigationProperty<Shipper>(
+      this.shipper(key), 
+      'entity', options) as Observable<ODataEntity<Shipper>>;
+  }
+  public setShipperAsShipper(key: EntityKey<Order>, target: ODataEntityResource<ODataEntity<Shipper>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.shipper(key).reference()
+      .set(target, {etag});
+  }
+  public unsetShipperAsShipper(key: EntityKey<Order>, {target, etag}: {target?: ODataEntityResource<ODataEntity<Shipper>>, etag?: string} = {}): Observable<any> {
+    return this.shipper(key).reference()
+      .unset({etag});
   }
   //#endregion
 }

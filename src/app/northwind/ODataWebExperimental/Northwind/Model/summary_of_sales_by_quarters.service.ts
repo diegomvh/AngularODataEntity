@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { SummaryOfSalesByQuarter } from '../../../NorthwindModel/summary_of_sales_by_quarter.entity';
@@ -31,17 +36,14 @@ export class SummaryOfSalesByQuartersService extends ODataEntitySetService<Summa
   constructor(protected client: ODataClient) {
     super(client, 'Summary_of_Sales_by_Quarters', 'NorthwindModel.Summary_of_Sales_by_Quarter');
   }
-
   //#region ODataApi Model
   summaryOfSalesByQuarterModel(attrs?: Partial<SummaryOfSalesByQuarter>): SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter> {
     return this.entity().asModel<SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   summaryOfSalesByQuarterCollection(models?: Partial<SummaryOfSalesByQuarter>[]): SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>> {
     return this.entities().asCollection<SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>, SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

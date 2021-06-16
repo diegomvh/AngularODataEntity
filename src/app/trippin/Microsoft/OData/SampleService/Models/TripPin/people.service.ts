@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { PersonGender } from './persongender.enum';
@@ -50,39 +55,114 @@ export class PeopleService extends ODataEntitySetService<Person> {
   constructor(protected client: ODataClient) {
     super(client, 'People', 'Microsoft.OData.SampleService.Models.TripPin.Person');
   }
-
   //#region ODataApi Model
   personModel(attrs?: Partial<Person>): PersonModel<Person> {
     return this.entity().asModel<PersonModel<Person>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   personCollection(models?: Partial<Person>[]): PersonCollection<Person, PersonModel<Person>> {
     return this.entities().asCollection<PersonModel<Person>, PersonCollection<Person, PersonModel<Person>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public friends(entity: EntityKey<Person>): ODataNavigationPropertyResource<Person> {
-    return this.entity(entity).navigationProperty<Person>('Friends');
+  public friends(key: EntityKey<Person>): ODataNavigationPropertyResource<Person> { 
+    return this.entity(key).navigationProperty<Person>('Friends'); 
   }
-  public airline(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airline> {
-    return this.entity(entity).cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airline>('Airline');
+  public fetchFriends(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Person>) {
+    return this.fetchNavigationProperty<Person>(
+      this.friends(key), 
+      'entities', options) as Observable<ODataEntities<Person>>;
   }
-  public from(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airport> {
-    return this.entity(entity).cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('From');
+  public addPersonToFriends(key: EntityKey<Person>, target: ODataEntityResource<ODataEntities<Person>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.friends(key).reference()
+      .add(target);
   }
-  public to(entity: EntityKey<Person>): ODataNavigationPropertyResource<Airport> {
-    return this.entity(entity).cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').navigationProperty<Airport>('To');
+  public removePersonFromFriends(key: EntityKey<Person>, {target, etag}: {target?: ODataEntityResource<ODataEntities<Person>>, etag?: string} = {}): Observable<any> {
+    return this.friends(key).reference()
+      .remove(target);
   }
-  public photo(entity: EntityKey<Person>): ODataNavigationPropertyResource<Photo> {
-    return this.entity(entity).navigationProperty<Photo>('Photo');
+  public airline(key: EntityKey<Person>): ODataNavigationPropertyResource<Airline> { 
+    return this.entity(key).navigationProperty<Airline>('Airline'); 
   }
-  public photos(entity: EntityKey<Person>): ODataNavigationPropertyResource<Photo> {
-    return this.entity(entity).cast<Trip>('Microsoft.OData.SampleService.Models.TripPin.Trip').navigationProperty<Photo>('Photos');
+  public fetchAirline(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Airline>) {
+    return this.fetchNavigationProperty<Airline>(
+      this.airline(key), 
+      'entity', options) as Observable<ODataEntity<Airline>>;
+  }
+  public setAirlineAsAirline(key: EntityKey<Person>, target: ODataEntityResource<ODataEntity<Airline>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.airline(key).reference()
+      .set(target, {etag});
+  }
+  public unsetAirlineAsAirline(key: EntityKey<Person>, {target, etag}: {target?: ODataEntityResource<ODataEntity<Airline>>, etag?: string} = {}): Observable<any> {
+    return this.airline(key).reference()
+      .unset({etag});
+  }
+  public from(key: EntityKey<Person>): ODataNavigationPropertyResource<Airport> { 
+    return this.entity(key).navigationProperty<Airport>('From'); 
+  }
+  public fetchFrom(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Airport>) {
+    return this.fetchNavigationProperty<Airport>(
+      this.from(key), 
+      'entity', options) as Observable<ODataEntity<Airport>>;
+  }
+  public setAirportAsFrom(key: EntityKey<Person>, target: ODataEntityResource<ODataEntity<Airport>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.from(key).reference()
+      .set(target, {etag});
+  }
+  public unsetAirportAsFrom(key: EntityKey<Person>, {target, etag}: {target?: ODataEntityResource<ODataEntity<Airport>>, etag?: string} = {}): Observable<any> {
+    return this.from(key).reference()
+      .unset({etag});
+  }
+  public to(key: EntityKey<Person>): ODataNavigationPropertyResource<Airport> { 
+    return this.entity(key).navigationProperty<Airport>('To'); 
+  }
+  public fetchTo(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Airport>) {
+    return this.fetchNavigationProperty<Airport>(
+      this.to(key), 
+      'entity', options) as Observable<ODataEntity<Airport>>;
+  }
+  public setAirportAsTo(key: EntityKey<Person>, target: ODataEntityResource<ODataEntity<Airport>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.to(key).reference()
+      .set(target, {etag});
+  }
+  public unsetAirportAsTo(key: EntityKey<Person>, {target, etag}: {target?: ODataEntityResource<ODataEntity<Airport>>, etag?: string} = {}): Observable<any> {
+    return this.to(key).reference()
+      .unset({etag});
+  }
+  public photo(key: EntityKey<Person>): ODataNavigationPropertyResource<Photo> { 
+    return this.entity(key).navigationProperty<Photo>('Photo'); 
+  }
+  public fetchPhoto(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Photo>) {
+    return this.fetchNavigationProperty<Photo>(
+      this.photo(key), 
+      'entity', options) as Observable<ODataEntity<Photo>>;
+  }
+  public setPhotoAsPhoto(key: EntityKey<Person>, target: ODataEntityResource<ODataEntity<Photo>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.photo(key).reference()
+      .set(target, {etag});
+  }
+  public unsetPhotoAsPhoto(key: EntityKey<Person>, {target, etag}: {target?: ODataEntityResource<ODataEntity<Photo>>, etag?: string} = {}): Observable<any> {
+    return this.photo(key).reference()
+      .unset({etag});
+  }
+  public photos(key: EntityKey<Person>): ODataNavigationPropertyResource<Photo> { 
+    return this.entity(key).navigationProperty<Photo>('Photos'); 
+  }
+  public fetchPhotos(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Photo>) {
+    return this.fetchNavigationProperty<Photo>(
+      this.photos(key), 
+      'entities', options) as Observable<ODataEntities<Photo>>;
+  }
+  public addPhotoToPhotos(key: EntityKey<Person>, target: ODataEntityResource<ODataEntities<Photo>>, {etag}: {etag?: string} = {}): Observable<any> {
+    return this.photos(key).reference()
+      .add(target);
+  }
+  public removePhotoFromPhotos(key: EntityKey<Person>, {target, etag}: {target?: ODataEntityResource<ODataEntities<Photo>>, etag?: string} = {}): Observable<any> {
+    return this.photos(key).reference()
+      .remove(target);
   }
   //#endregion
 }

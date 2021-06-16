@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { SalesByCategory } from '../../../NorthwindModel/sales_by_category.entity';
@@ -31,17 +36,14 @@ export class SalesByCategoriesService extends ODataEntitySetService<SalesByCateg
   constructor(protected client: ODataClient) {
     super(client, 'Sales_by_Categories', 'NorthwindModel.Sales_by_Category');
   }
-
   //#region ODataApi Model
   salesByCategoryModel(attrs?: Partial<SalesByCategory>): SalesByCategoryModel<SalesByCategory> {
     return this.entity().asModel<SalesByCategoryModel<SalesByCategory>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   salesByCategoryCollection(models?: Partial<SalesByCategory>[]): SalesByCategoryCollection<SalesByCategory, SalesByCategoryModel<SalesByCategory>> {
     return this.entities().asCollection<SalesByCategoryModel<SalesByCategory>, SalesByCategoryCollection<SalesByCategory, SalesByCategoryModel<SalesByCategory>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

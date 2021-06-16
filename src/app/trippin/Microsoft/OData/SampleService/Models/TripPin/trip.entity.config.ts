@@ -1,4 +1,7 @@
-﻿import { StructuredTypeConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  StructuredTypeConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Trip } from './trip.entity';
@@ -11,7 +14,7 @@ export const TripEntityConfig = {
   name: "Trip",
   model: TripModel,
   collection: TripCollection,
-  keys: [{ref: 'TripId'}],
+  keys: [{name: 'TripId'}],
   fields: {
     TripId: {type: 'Edm.Int32', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     ShareId: {type: 'Edm.Guid'},

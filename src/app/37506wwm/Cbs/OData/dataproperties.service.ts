@@ -3,6 +3,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//#region AngularOData Imports
 import { 
   ODataClient,
   ODataEntitySetService, 
@@ -18,7 +19,11 @@ import {
   ODataFunctionResource,
   Expand, 
   Select,
-  HttpOptions} from 'angular-odata';
+  HttpOptions,
+  HttpActionOptions,
+  HttpFunctionOptions,
+  HttpNavigationPropertyOptions
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { DimensionOrTopic } from './dimensionortopic.entity';
@@ -31,17 +36,14 @@ export class DataPropertiesService extends ODataEntitySetService<DimensionOrTopi
   constructor(protected client: ODataClient) {
     super(client, 'DataProperties', 'Cbs.OData.DimensionOrTopic');
   }
-
   //#region ODataApi Model
   dimensionOrTopicModel(attrs?: Partial<DimensionOrTopic>): DimensionOrTopicModel<DimensionOrTopic> {
     return this.entity().asModel<DimensionOrTopicModel<DimensionOrTopic>>(attrs || {});
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Collection
   dimensionOrTopicCollection(models?: Partial<DimensionOrTopic>[]): DimensionOrTopicCollection<DimensionOrTopic, DimensionOrTopicModel<DimensionOrTopic>> {
     return this.entities().asCollection<DimensionOrTopicModel<DimensionOrTopic>, DimensionOrTopicCollection<DimensionOrTopic, DimensionOrTopicModel<DimensionOrTopic>>>(models || []);
-  }
-  //#endregion
+  }//#endregion
   //#region ODataApi Actions
   //#endregion
   //#region ODataApi Functions

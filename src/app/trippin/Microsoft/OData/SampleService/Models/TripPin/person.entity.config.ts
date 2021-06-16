@@ -1,4 +1,7 @@
-﻿import { StructuredTypeConfig } from 'angular-odata';
+﻿//#region AngularOData Imports
+import { 
+  StructuredTypeConfig 
+} from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Person } from './person.entity';
@@ -12,7 +15,7 @@ export const PersonEntityConfig = {
   open: true,
   model: PersonModel,
   collection: PersonCollection,
-  keys: [{ref: 'UserName'}],
+  keys: [{name: 'UserName'}],
   fields: {
     UserName: {type: 'Edm.String', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     FirstName: {type: 'Edm.String', nullable: false},
