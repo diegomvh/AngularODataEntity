@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient, ODataSettings } from 'angular-odata';
 import { PeopleService, Airport, Person, PersonGender, Photo, PhotosService, PersonCollection, PersonModel, PersonGenderConfig } from './trippin';
 import { OrdersService } from './northwind';
-import { switchMap } from 'rxjs/operators';
+import { filter, switchMap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin';
 import { ProductsService } from './north3';
 import { of } from 'rxjs';
@@ -255,6 +255,17 @@ export class AppComponent {
       return (person.Friends as PersonCollection<Person, PersonModel<Person>>).fetch();
     })
     ).subscribe(console.log);
+  }
+
+  trippinModelsEvents() {
+    const gender = PersonModel.meta.fields().find(f => f.name === "Gender");
+    const people = this.people.personCollection();
+
+    people.events$.pipe(filter(e => e.name === "sync")).subscribe(e => console.log(people));
+    people.events$.pipe(filter(e => e.name === "attach")).subscribe(e => people.fetch().toPromise());
+    people.query(q => {
+      q.filter({Gender: gender?.encode(PersonGender.Female)});
+    });
   }
 
   northwindModels() {
