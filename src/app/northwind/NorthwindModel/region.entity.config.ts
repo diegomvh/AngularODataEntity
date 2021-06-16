@@ -14,7 +14,7 @@ export const RegionEntityConfig = {
   name: "Region",
   model: RegionModel,
   collection: RegionCollection,
-  keys: [{ref: 'RegionID'}],
+  keys: [{name: 'RegionID'}],
   fields: {
     RegionID: {type: 'Edm.Int32', nullable: false},
     RegionDescription: {type: 'Edm.String', nullable: false, maxLength: 50},

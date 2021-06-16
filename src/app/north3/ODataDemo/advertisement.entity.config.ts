@@ -14,7 +14,7 @@ export const AdvertisementEntityConfig = {
   name: "Advertisement",
   model: AdvertisementModel,
   collection: AdvertisementCollection,
-  keys: [{ref: 'ID'}],
+  keys: [{name: 'ID'}],
   fields: {
     ID: {type: 'Edm.Guid', nullable: false},
     Name: {type: 'Edm.String'},

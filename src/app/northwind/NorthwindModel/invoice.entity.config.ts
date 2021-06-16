@@ -14,7 +14,7 @@ export const InvoiceEntityConfig = {
   name: "Invoice",
   model: InvoiceModel,
   collection: InvoiceCollection,
-  keys: [{ref: 'CustomerName'},{ref: 'Discount'},{ref: 'OrderID'},{ref: 'ProductID'},{ref: 'ProductName'},{ref: 'Quantity'},{ref: 'Salesperson'},{ref: 'ShipperName'},{ref: 'UnitPrice'}],
+  keys: [{name: 'CustomerName'},{name: 'Discount'},{name: 'OrderID'},{name: 'ProductID'},{name: 'ProductName'},{name: 'Quantity'},{name: 'Salesperson'},{name: 'ShipperName'},{name: 'UnitPrice'}],
   fields: {
     ShipName: {type: 'Edm.String', maxLength: 40},
     ShipAddress: {type: 'Edm.String', maxLength: 60},

@@ -14,7 +14,7 @@ export const CurrentProductListEntityConfig = {
   name: "Current_Product_List",
   model: CurrentProductListModel,
   collection: CurrentProductListCollection,
-  keys: [{ref: 'ProductID'},{ref: 'ProductName'}],
+  keys: [{name: 'ProductID'},{name: 'ProductName'}],
   fields: {
     ProductID: {type: 'Edm.Int32', nullable: false},
     ProductName: {type: 'Edm.String', nullable: false, maxLength: 40}

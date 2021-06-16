@@ -14,7 +14,7 @@ export const TableInfoEntityConfig = {
   name: "TableInfo",
   model: TableInfoModel,
   collection: TableInfoCollection,
-  keys: [{ref: 'ID'}],
+  keys: [{name: 'ID'}],
   fields: {
     ID: {type: 'Edm.Int32', nullable: false},
     Title: {type: 'Edm.String'},

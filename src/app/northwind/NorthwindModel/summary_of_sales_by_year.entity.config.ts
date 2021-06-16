@@ -14,7 +14,7 @@ export const SummaryOfSalesByYearEntityConfig = {
   name: "Summary_of_Sales_by_Year",
   model: SummaryOfSalesByYearModel,
   collection: SummaryOfSalesByYearCollection,
-  keys: [{ref: 'OrderID'}],
+  keys: [{name: 'OrderID'}],
   fields: {
     ShippedDate: {type: 'Edm.DateTimeOffset'},
     OrderID: {type: 'Edm.Int32', nullable: false},

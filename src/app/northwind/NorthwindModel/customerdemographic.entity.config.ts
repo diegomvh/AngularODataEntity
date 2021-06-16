@@ -14,7 +14,7 @@ export const CustomerDemographicEntityConfig = {
   name: "CustomerDemographic",
   model: CustomerDemographicModel,
   collection: CustomerDemographicCollection,
-  keys: [{ref: 'CustomerTypeID'}],
+  keys: [{name: 'CustomerTypeID'}],
   fields: {
     CustomerTypeID: {type: 'Edm.String', nullable: false, maxLength: 10},
     CustomerDesc: {type: 'Edm.String'},

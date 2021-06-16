@@ -14,7 +14,7 @@ export const SalesByCategoryEntityConfig = {
   name: "Sales_by_Category",
   model: SalesByCategoryModel,
   collection: SalesByCategoryCollection,
-  keys: [{ref: 'CategoryID'},{ref: 'CategoryName'},{ref: 'ProductName'}],
+  keys: [{name: 'CategoryID'},{name: 'CategoryName'},{name: 'ProductName'}],
   fields: {
     CategoryID: {type: 'Edm.Int32', nullable: false},
     CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},

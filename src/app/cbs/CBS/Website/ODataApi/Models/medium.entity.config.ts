@@ -14,7 +14,7 @@ export const MediumEntityConfig = {
   name: "Medium",
   model: MediumModel,
   collection: MediumCollection,
-  keys: [{ref: 'UniqueId'}],
+  keys: [{name: 'UniqueId'}],
   fields: {
     UniqueId: {type: 'Edm.String', nullable: false},
     Title: {type: 'Edm.String'},

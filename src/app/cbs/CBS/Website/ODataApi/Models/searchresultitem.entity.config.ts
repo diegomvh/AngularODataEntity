@@ -14,7 +14,7 @@ export const SearchResultItemEntityConfig = {
   name: "SearchResultItem",
   model: SearchResultItemModel,
   collection: SearchResultItemCollection,
-  keys: [{ref: 'UniqueId'}],
+  keys: [{name: 'UniqueId'}],
   fields: {
     UniqueId: {type: 'Edm.String', nullable: false},
     Type: {type: 'Edm.String'},

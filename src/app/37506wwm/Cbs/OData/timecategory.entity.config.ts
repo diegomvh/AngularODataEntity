@@ -14,7 +14,7 @@ export const TimeCategoryEntityConfig = {
   name: "TimeCategory",
   model: TimeCategoryModel,
   collection: TimeCategoryCollection,
-  keys: [{ref: 'Key'}],
+  keys: [{name: 'Key'}],
   fields: {
     Key: {type: 'Edm.String', nullable: false},
     Title: {type: 'Edm.String'},

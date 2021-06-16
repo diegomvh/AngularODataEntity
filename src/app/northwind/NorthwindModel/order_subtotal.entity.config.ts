@@ -14,7 +14,7 @@ export const OrderSubtotalEntityConfig = {
   name: "Order_Subtotal",
   model: OrderSubtotalModel,
   collection: OrderSubtotalCollection,
-  keys: [{ref: 'OrderID'}],
+  keys: [{name: 'OrderID'}],
   fields: {
     OrderID: {type: 'Edm.Int32', nullable: false},
     Subtotal: {type: 'Edm.Decimal', precition: 19, scale: 4}

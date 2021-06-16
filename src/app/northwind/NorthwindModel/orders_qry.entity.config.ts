@@ -14,7 +14,7 @@ export const OrdersQryEntityConfig = {
   name: "Orders_Qry",
   model: OrdersQryModel,
   collection: OrdersQryCollection,
-  keys: [{ref: 'CompanyName'},{ref: 'OrderID'}],
+  keys: [{name: 'CompanyName'},{name: 'OrderID'}],
   fields: {
     OrderID: {type: 'Edm.Int32', nullable: false},
     CustomerID: {type: 'Edm.String', maxLength: 5},

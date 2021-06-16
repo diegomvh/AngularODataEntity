@@ -14,7 +14,7 @@ export const CustomerEntityConfig = {
   name: "Customer",
   model: CustomerModel,
   collection: CustomerCollection,
-  keys: [{ref: 'CustomerID'}],
+  keys: [{name: 'CustomerID'}],
   fields: {
     CustomerID: {type: 'Edm.String', nullable: false, maxLength: 5},
     CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},

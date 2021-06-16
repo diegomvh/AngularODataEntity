@@ -14,7 +14,7 @@ export const DimensionOrTopicEntityConfig = {
   name: "DimensionOrTopic",
   model: DimensionOrTopicModel,
   collection: DimensionOrTopicCollection,
-  keys: [{ref: 'ID'}],
+  keys: [{name: 'ID'}],
   fields: {
     ID: {type: 'Edm.Int32', nullable: false},
     Position: {type: 'Edm.Int32'},

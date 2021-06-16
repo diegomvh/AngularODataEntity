@@ -14,7 +14,7 @@ export const CategorySalesFor1997EntityConfig = {
   name: "Category_Sales_for_1997",
   model: CategorySalesFor1997Model,
   collection: CategorySalesFor1997Collection,
-  keys: [{ref: 'CategoryName'}],
+  keys: [{name: 'CategoryName'}],
   fields: {
     CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
     CategorySales: {type: 'Edm.Decimal', precition: 19, scale: 4}

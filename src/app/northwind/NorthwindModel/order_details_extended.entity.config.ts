@@ -14,7 +14,7 @@ export const OrderDetailsExtendedEntityConfig = {
   name: "Order_Details_Extended",
   model: OrderDetailsExtendedModel,
   collection: OrderDetailsExtendedCollection,
-  keys: [{ref: 'Discount'},{ref: 'OrderID'},{ref: 'ProductID'},{ref: 'ProductName'},{ref: 'Quantity'},{ref: 'UnitPrice'}],
+  keys: [{name: 'Discount'},{name: 'OrderID'},{name: 'ProductID'},{name: 'ProductName'},{name: 'Quantity'},{name: 'UnitPrice'}],
   fields: {
     OrderID: {type: 'Edm.Int32', nullable: false},
     ProductID: {type: 'Edm.Int32', nullable: false},

@@ -14,7 +14,7 @@ export const CategoryGroupEntityConfig = {
   name: "CategoryGroup",
   model: CategoryGroupModel,
   collection: CategoryGroupCollection,
-  keys: [{ref: 'ID'}],
+  keys: [{name: 'ID'}],
   fields: {
     ID: {type: 'Edm.Int32', nullable: false},
     DimensionKey: {type: 'Edm.String'},

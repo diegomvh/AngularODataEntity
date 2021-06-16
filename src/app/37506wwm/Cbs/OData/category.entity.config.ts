@@ -14,7 +14,7 @@ export const CategoryEntityConfig = {
   name: "Category",
   model: CategoryModel,
   collection: CategoryCollection,
-  keys: [{ref: 'Key'}],
+  keys: [{name: 'Key'}],
   fields: {
     Key: {type: 'Edm.String', nullable: false},
     Title: {type: 'Edm.String'},

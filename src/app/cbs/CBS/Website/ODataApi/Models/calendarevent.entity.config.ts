@@ -14,7 +14,7 @@ export const CalendarEventEntityConfig = {
   name: "CalendarEvent",
   model: CalendarEventModel,
   collection: CalendarEventCollection,
-  keys: [{ref: 'UniqueId'}],
+  keys: [{name: 'UniqueId'}],
   fields: {
     UniqueId: {type: 'Edm.String', nullable: false},
     Title: {type: 'Edm.String'},

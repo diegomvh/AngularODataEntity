@@ -14,7 +14,7 @@ export const AlphabeticalListOfProductEntityConfig = {
   name: "Alphabetical_list_of_product",
   model: AlphabeticalListOfProductModel,
   collection: AlphabeticalListOfProductCollection,
-  keys: [{ref: 'CategoryName'},{ref: 'Discontinued'},{ref: 'ProductID'},{ref: 'ProductName'}],
+  keys: [{name: 'CategoryName'},{name: 'Discontinued'},{name: 'ProductID'},{name: 'ProductName'}],
   fields: {
     ProductID: {type: 'Edm.Int32', nullable: false},
     ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},

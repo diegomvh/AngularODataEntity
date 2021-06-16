@@ -14,7 +14,7 @@ export const DefinitionEntityConfig = {
   name: "Definition",
   model: DefinitionModel,
   collection: DefinitionCollection,
-  keys: [{ref: 'UniqueId'}],
+  keys: [{name: 'UniqueId'}],
   fields: {
     UniqueId: {type: 'Edm.String', nullable: false},
     Title: {type: 'Edm.String'},

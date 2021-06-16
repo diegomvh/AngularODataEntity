@@ -14,7 +14,7 @@ export const TDataEntityConfig = {
   name: "TData",
   model: TDataModel,
   collection: TDataCollection,
-  keys: [{ref: 'ID'}],
+  keys: [{name: 'ID'}],
   fields: {
     ID: {type: 'Edm.Int32', nullable: false},
     Geslacht: {type: 'Edm.String'},

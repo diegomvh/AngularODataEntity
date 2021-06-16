@@ -14,7 +14,7 @@ export const UDataEntityConfig = {
   name: "UData",
   model: UDataModel,
   collection: UDataCollection,
-  keys: [{ref: 'ID'}],
+  keys: [{name: 'ID'}],
   fields: {
     ID: {type: 'Edm.Int32', nullable: false},
     Geslacht: {type: 'Edm.String'},

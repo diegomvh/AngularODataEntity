@@ -14,7 +14,7 @@ export const ArticleEntityConfig = {
   name: "Article",
   model: ArticleModel,
   collection: ArticleCollection,
-  keys: [{ref: 'UniqueId'}],
+  keys: [{name: 'UniqueId'}],
   fields: {
     UniqueId: {type: 'Edm.String', nullable: false},
     ArticleType: {type: 'CBS.Website.ODataApi.Models.ArticleType', nullable: false},

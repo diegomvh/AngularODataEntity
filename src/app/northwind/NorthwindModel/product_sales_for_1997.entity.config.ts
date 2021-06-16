@@ -14,7 +14,7 @@ export const ProductSalesFor1997EntityConfig = {
   name: "Product_Sales_for_1997",
   model: ProductSalesFor1997Model,
   collection: ProductSalesFor1997Collection,
-  keys: [{ref: 'CategoryName'},{ref: 'ProductName'}],
+  keys: [{name: 'CategoryName'},{name: 'ProductName'}],
   fields: {
     CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
     ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},

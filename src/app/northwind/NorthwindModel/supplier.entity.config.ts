@@ -14,7 +14,7 @@ export const SupplierEntityConfig = {
   name: "Supplier",
   model: SupplierModel,
   collection: SupplierCollection,
-  keys: [{ref: 'SupplierID'}],
+  keys: [{name: 'SupplierID'}],
   fields: {
     SupplierID: {type: 'Edm.Int32', nullable: false},
     CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},

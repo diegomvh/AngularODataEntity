@@ -14,7 +14,7 @@ export const ProductsByCategoryEntityConfig = {
   name: "Products_by_Category",
   model: ProductsByCategoryModel,
   collection: ProductsByCategoryCollection,
-  keys: [{ref: 'CategoryName'},{ref: 'Discontinued'},{ref: 'ProductName'}],
+  keys: [{name: 'CategoryName'},{name: 'Discontinued'},{name: 'ProductName'}],
   fields: {
     CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
     ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},

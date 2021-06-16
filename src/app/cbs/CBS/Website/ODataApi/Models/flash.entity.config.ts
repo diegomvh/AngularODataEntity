@@ -14,7 +14,7 @@ export const FlashEntityConfig = {
   name: "Flash",
   model: FlashModel,
   collection: FlashCollection,
-  keys: [{ref: 'UniqueId'}],
+  keys: [{name: 'UniqueId'}],
   fields: {
     UniqueId: {type: 'Edm.String', nullable: false},
     Title: {type: 'Edm.String'},

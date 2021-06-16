@@ -14,7 +14,7 @@ export const ProductDetailEntityConfig = {
   name: "ProductDetail",
   model: ProductDetailModel,
   collection: ProductDetailCollection,
-  keys: [{ref: 'ProductID'}],
+  keys: [{name: 'ProductID'}],
   fields: {
     ProductID: {type: 'Edm.Int32', nullable: false},
     Details: {type: 'Edm.String'},

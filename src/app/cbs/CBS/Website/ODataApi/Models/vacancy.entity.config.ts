@@ -14,7 +14,7 @@ export const VacancyEntityConfig = {
   name: "Vacancy",
   model: VacancyModel,
   collection: VacancyCollection,
-  keys: [{ref: 'UniqueId'}],
+  keys: [{name: 'UniqueId'}],
   fields: {
     UniqueId: {type: 'Edm.String', nullable: false},
     Title: {type: 'Edm.String'},

@@ -14,7 +14,7 @@ export const CustomerAndSuppliersByCityEntityConfig = {
   name: "Customer_and_Suppliers_by_City",
   model: CustomerAndSuppliersByCityModel,
   collection: CustomerAndSuppliersByCityCollection,
-  keys: [{ref: 'CompanyName'},{ref: 'Relationship'}],
+  keys: [{name: 'CompanyName'},{name: 'Relationship'}],
   fields: {
     City: {type: 'Edm.String', maxLength: 15},
     CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},

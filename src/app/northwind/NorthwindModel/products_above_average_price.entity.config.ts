@@ -14,7 +14,7 @@ export const ProductsAboveAveragePriceEntityConfig = {
   name: "Products_Above_Average_Price",
   model: ProductsAboveAveragePriceModel,
   collection: ProductsAboveAveragePriceCollection,
-  keys: [{ref: 'ProductName'}],
+  keys: [{name: 'ProductName'}],
   fields: {
     ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
     UnitPrice: {type: 'Edm.Decimal', precition: 19, scale: 4}

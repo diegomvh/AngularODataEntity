@@ -14,7 +14,7 @@ export const GeoDetailCategoryEntityConfig = {
   name: "GeoDetailCategory",
   model: GeoDetailCategoryModel,
   collection: GeoDetailCategoryCollection,
-  keys: [{ref: 'Key'}],
+  keys: [{name: 'Key'}],
   fields: {
     Key: {type: 'Edm.String', nullable: false},
     Title: {type: 'Edm.String'},
