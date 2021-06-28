@@ -43,7 +43,7 @@ export class ProductsComponent {
     private products: ProductsService
   ) {
     this.resource = this.products.entities().top(this.size);
-    const schema = this.resource.schema;
+    const schema = this.resource.schema();
     this.cols = (schema !== null) ?
       (schema?.fields() || [])
         .filter(f => !f.navigation)

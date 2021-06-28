@@ -49,7 +49,7 @@ import { EmployeesComponent } from './components/northwind/employees.component';
         cache: new ODataInStorageCache({timeout: 60, name: "TripPinCache"}),
         options: {
           metadata: 'full',
-          stringAsEnum: false
+          stringAsEnum: true,
         }
       } as ApiConfig),
       // North version 2

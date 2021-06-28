@@ -2,11 +2,9 @@ import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient, ODataSettings } from 'angular-odata';
 import { PeopleService, Airport, Person, PersonGender, Photo, PhotosService, PersonCollection, PersonModel, PersonGenderConfig } from './trippin';
 import { OrdersService } from './northwind';
-import { filter, switchMap } from 'rxjs/operators';
+import { filter, switchMap, map } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin';
 import { ProductsService } from './north3';
-import { of } from 'rxjs';
-import { PersonConfig } from 'projects/angular-odata/projects/angular-odata/src/lib/trippin.spec';
 
 @Component({
   selector: 'app-root',
@@ -19,10 +17,10 @@ export class AppComponent {
     private odataSettings: ODataSettings,
     private factory: ODataServiceFactory,
     private api: DefaultContainerService,
-    private people: PeopleService,
-    private photos: PhotosService,
-    private products: ProductsService,
-    private orders: OrdersService
+    private peopleService: PeopleService,
+    private photosService: PhotosService,
+    private productsService: ProductsService,
+    private ordersService: OrdersService
   ) {
     this.trippin();
     this.northwind();
@@ -30,10 +28,11 @@ export class AppComponent {
 
   //#region APIs
   trippin() {
+    //this.mutate();
     this.api.callResetDataSource().subscribe(() => {
       //this.queries();
-      //this.mutate();
-      this.trippinModels();
+      this.mutate();
+      //this.trippinModels();
       //this.filterPeopleByGender();
     });
   }
@@ -78,7 +77,7 @@ export class AppComponent {
     .fetchAll()
     .subscribe(aports => console.log("All: ", aports));
 
-    this.products.entities()
+    this.productsService.entities()
     .get({withCount: true, fetchPolicy: 'cache-only'})
     .subscribe(
       ({entities, annots}) => {console.log(entities)},
@@ -142,7 +141,7 @@ export class AppComponent {
   filterPeopleByGender() {
     let personGenderType = this.odataSettings.enumTypeByName<PersonGender>(PersonGenderConfig.name);
     let female = personGenderType.encode(PersonGender.Female);
-    let femaleQuery = this.people.entities().filter({Gender: female});
+    let femaleQuery = this.peopleService.entities().filter({Gender: female});
     console.log(`${femaleQuery}`);
     femaleQuery.fetchAll().subscribe(console.log);
   }
@@ -191,43 +190,58 @@ export class AppComponent {
   }
 
   mutate() {
-    this.createPerson();
-    this.makeReferences();
+    this.personCRUD();
+    //this.makeReferences();
   }
 
-  createPerson() {
-    const odata = this.people.api.options.helper;
-    // Use Person Service
-    this.people.create({
+  async personCRUD() {
+    const odata = this.peopleService.api.options.helper;
+
+    // Service Without Parser to TripPin Api (if you have more than one api, the name is necessary)
+    const serviceWithParser = this.peopleService;
+    // Use Person Typed Service
+    // Create Person
+    let person = await serviceWithParser.create({
       Emails: ['some@email.com'],
       UserName: 'diegomvh',
       Gender: PersonGender.Male,
       FirstName: 'Diego',
-      LastName: 'van Haaster'
-    }).pipe(
-      switchMap((person) => {
-        // etag
-        return (person !== null) ?
-          this.people.assign(person, {UserName: person.UserName, Gender: PersonGender.Female}) : of(person)
-      })
-    ).subscribe((person) => {
-      //New etag
-      if (person !== null) {
-        console.log(odata.etag(person))
-      }
-    });
+      LastName: 'Van Haaster'
+    }).pipe(map(({entity}) => entity)).toPromise();
+    console.log(person);
+
+    // Retrieve Person
+    person = await serviceWithParser.fetchOne('diegomvh').pipe(map(({entity}) => entity )).toPromise();
+    console.log(person);
+
+    if (person !== null) {
+      // Update Person
+      person.Emails?.push('other@email.com');
+      person = await serviceWithParser.update('diegomvh', person).pipe(map(({entity}) => entity)).toPromise();
+    }
+    console.log(person);
+
+    if (person !== null) {
+      // Update Person
+      person = await serviceWithParser.patch('diegomvh', {LastName: "van Haaster"}).pipe(map(({entity}) => entity)).toPromise();
+    }
+    console.log(person);
+
+    // Delete Person
+    person = await serviceWithParser.destroy('diegomvh').toPromise();
+    console.log(person);
   }
 
   makeReferences() {
-    let photo = this.photos.entity(1); // Photo with id=1
-    let scott = this.people.entity("scottketchum"); // Entity resource
+    let photo = this.photosService.entity(1); // Photo with id=1
+    let scott = this.peopleService.entity("scottketchum"); // Entity resource
     let photoOfScott = scott.navigationProperty<Photo>("Photo");
     // Set Reference
     photoOfScott.reference().set(photo).subscribe(console.log); // Set is a shortcut for .put()
     // Unset reference
     photoOfScott.reference().unset().subscribe(console.log); // Unset the foto of scott
 
-    let diego = this.people.entity("diegomvh"); // Entity resource
+    let diego = this.peopleService.entity("diegomvh"); // Entity resource
     // Add Friend
     scott.navigationProperty<Person>("Friends")
       .reference()
@@ -245,7 +259,7 @@ export class AppComponent {
   }
 
   trippinModels() {
-    const people = this.people.personCollection();
+    const people = this.peopleService.personCollection();
     people.fetch().pipe(switchMap(people => {
       const person = people.models()[2];
       person.Gender = PersonGender.Female;
@@ -259,17 +273,17 @@ export class AppComponent {
 
   trippinModelsEvents() {
     const gender = PersonModel.meta.fields().find(f => f.name === "Gender");
-    const people = this.people.personCollection();
+    const people = this.peopleService.personCollection();
 
     people.events$.pipe(filter(e => e.name === "sync")).subscribe(e => console.log(people));
     people.events$.pipe(filter(e => e.name === "attach")).subscribe(e => people.fetch().toPromise());
     people.query(q => {
-      q.filter({Gender: gender?.encode(PersonGender.Female)});
+      q.filter({Gender: gender?.parser.encode(PersonGender.Female)});
     });
   }
 
   northwindModels() {
-    const orders = this.orders.orderCollection();
+    const orders = this.ordersService.orderCollection();
     orders.fetch().pipe(switchMap(orders => {
       const order = orders.models()[1];
       order.ShipPostalCode = "12345";
