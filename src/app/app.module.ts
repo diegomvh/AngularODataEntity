@@ -48,15 +48,20 @@ import { EmployeesComponent } from './components/northwind/employees.component';
         serviceRootUrl: 'http://localhost:4200/trippin/',
         cache: new ODataInStorageCache({timeout: 60, name: "TripPinCache"}),
         options: {
-          metadata: 'full',
           stringAsEnum: true,
+          stripMetadata: 'minimal',
+          accept: {
+            metadata: 'full',
+          }
         }
       } as ApiConfig),
       // North version 2
       Object.assign(North2Config, {
         serviceRootUrl: 'http://localhost:4200/north2/',
         options: {
-          metadata: 'full',
+          accept: {
+            metadata: 'full',
+          },
           withCredentials: true,
           params: {"$format": "json"},
           fetchPolicy: 'cache-and-network'
@@ -66,7 +71,9 @@ import { EmployeesComponent } from './components/northwind/employees.component';
       Object.assign(North3Config, {
         serviceRootUrl: 'http://localhost:4200/north3/',
         options: {
-          metadata: 'full',
+          accept: {
+            metadata: 'full',
+          },
           withCredentials: true,
           params: {"$format": "json"},
           fetchPolicy: 'no-cache'
@@ -76,7 +83,9 @@ import { EmployeesComponent } from './components/northwind/employees.component';
       Object.assign(NorthwindConfig, {
         cache: new ODataInMemoryCache({timeout: 60}),
         options: {
-          ieee754Compatible: true
+          accept: {
+            ieee754Compatible: true
+          },
         }
       }),
       Object.assign(CBSConfig)

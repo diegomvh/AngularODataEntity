@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ODataServiceFactory, ODataClient, ODataSettings } from 'angular-odata';
 import { PeopleService, Airport, Person, PersonGender, Photo, PhotosService, PersonCollection, PersonModel, PersonGenderConfig } from './trippin';
 import { OrdersService } from './northwind';
-import { filter, switchMap, map } from 'rxjs/operators';
+import { filter, switchMap, map, tap } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin';
 import { ProductsService } from './north3';
 
@@ -195,7 +195,7 @@ export class AppComponent {
   }
 
   async personCRUD() {
-    const odata = this.peopleService.api.options.helper;
+    let etag;
 
     // Service Without Parser to TripPin Api (if you have more than one api, the name is necessary)
     const serviceWithParser = this.peopleService;
@@ -207,28 +207,42 @@ export class AppComponent {
       Gender: PersonGender.Male,
       FirstName: 'Diego',
       LastName: 'Van Haaster'
-    }).pipe(map(({entity}) => entity)).toPromise();
-    console.log(person);
+    }).pipe(
+      map(({entity, annots}) => {etag = annots.etag; return entity;})
+    ).toPromise();
+    console.log(person, etag);
 
     // Retrieve Person
-    person = await serviceWithParser.fetchOne('diegomvh').pipe(map(({entity}) => entity )).toPromise();
-    console.log(person);
+    person = await serviceWithParser.fetchOne('diegomvh').pipe(
+      map(({entity, annots}) => {etag = annots.etag; return entity;})
+    ).toPromise();
+    console.log(person, etag);
 
     if (person !== null) {
       // Update Person
       person.Emails?.push('other@email.com');
-      person = await serviceWithParser.update('diegomvh', person).pipe(map(({entity}) => entity)).toPromise();
+      await serviceWithParser.update('diegomvh', person, {etag}).pipe(
+        map(({entity, annots}) => {etag = annots.etag; return entity;})
+      ).toPromise();
     }
-    console.log(person);
+    console.log(person, etag);
 
     if (person !== null) {
-      // Update Person
-      person = await serviceWithParser.patch('diegomvh', {LastName: "van Haaster"}).pipe(map(({entity}) => entity)).toPromise();
+      // Patch Person
+      await serviceWithParser.patch('diegomvh', {LastName: "van Haaster"}, {etag}).pipe(
+        map(({entity, annots}) => {etag = annots.etag; return entity;})
+      ).toPromise();
     }
-    console.log(person);
+    console.log(person, etag);
+
+    // Retrieve Person
+    person = await serviceWithParser.fetchOne('diegomvh', {etag}).pipe(
+      map(({entity, annots}) => {etag = annots.etag; return entity;})
+    ).toPromise();
+    console.log("Fetch", person, etag);
 
     // Delete Person
-    person = await serviceWithParser.destroy('diegomvh').toPromise();
+    person = await serviceWithParser.destroy('diegomvh', {etag}).toPromise();
     console.log(person);
   }
 
