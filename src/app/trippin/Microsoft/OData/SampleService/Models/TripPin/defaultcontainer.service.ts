@@ -37,7 +37,7 @@ export class DefaultContainerService extends ODataBaseService {
 
   //#region ODataApi Actions
   public resetDataSource(): ODataActionResource<null, any> { 
-    return this.client.action<null, any>('Microsoft.OData.SampleService.Models.TripPin.ResetDataSource');
+    return this.client.action<null, any>('Microsoft.OData.SampleService.Models.TripPin.ResetDataSource', this.apiNameOrEntityType);
   }
   public callResetDataSource(options?: HttpActionOptions<any>) {
     return this.callAction<null, any>(
@@ -48,7 +48,7 @@ export class DefaultContainerService extends ODataBaseService {
   //#endregion
   //#region ODataApi Functions
   public getNearestAirport(): ODataFunctionResource<{lat: number, lon: number}, Airport> { 
-    return this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport');
+    return this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport', this.apiNameOrEntityType);
   }
   public callGetNearestAirport(lat: number, lon: number, options?: HttpFunctionOptions<Airport>) {
     return this.callFunction<{lat: number, lon: number}, Airport>(

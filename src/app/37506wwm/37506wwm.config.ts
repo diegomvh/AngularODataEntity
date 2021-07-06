@@ -1,7 +1,7 @@
 ﻿//#region AngularOData Imports
-import { 
-  ApiConfig, 
-  EDM_PARSERS 
+import {
+  ApiConfig,
+  EDM_PARSERS
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -9,7 +9,7 @@ import { ODataSchema } from './Cbs/OData/odata.schema';
 //#endregion
 
 //#region ODataApi ApiConfig
-export const 37506wwmConfig = {
+export const WwmConfig = {
   serviceRootUrl: 'https://opendata.cbs.nl/ODataApi/OData/37506wwm/',
   name: '37506wwm',
   version: '3.0',

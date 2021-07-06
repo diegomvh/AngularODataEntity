@@ -29,6 +29,7 @@ export class AppComponent {
   //#region APIs
   trippin() {
     //this.mutate();
+    console.log("hola");
     this.api.callResetDataSource().subscribe(() => {
       //this.queries();
       this.mutate();
