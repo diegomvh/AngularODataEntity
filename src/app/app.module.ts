@@ -43,18 +43,6 @@ import { EmployeesComponent } from './components/northwind/employees.component';
     DialogModule,
     TabViewModule,
     ODataModule.forRoot(
-      // TripPin
-      Object.assign(TripPinConfig, {
-        serviceRootUrl: 'http://localhost:4200/trippin/',
-        cache: new ODataInStorageCache({timeout: 60, name: "TripPinCache"}),
-        options: {
-          stringAsEnum: true,
-          stripMetadata: 'minimal',
-          accept: {
-            metadata: 'full',
-          }
-        }
-      } as ApiConfig),
       // North version 2
       Object.assign(North2Config, {
         serviceRootUrl: 'http://localhost:4200/north2/',
@@ -88,6 +76,18 @@ import { EmployeesComponent } from './components/northwind/employees.component';
           },
         }
       }),
+      // TripPin
+      Object.assign(TripPinConfig, {
+        serviceRootUrl: 'http://localhost:4200/trippin/',
+        cache: new ODataInStorageCache({timeout: 60, name: "TripPinCache"}),
+        options: {
+          stringAsEnum: true,
+          stripMetadata: 'minimal',
+          accept: {
+            metadata: 'full',
+          }
+        }
+      } as ApiConfig),
       Object.assign(CBSConfig)
     ),
     TripPinModule,

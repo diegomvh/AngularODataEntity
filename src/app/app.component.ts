@@ -198,6 +198,8 @@ export class AppComponent {
     let etag;
 
     // Service Without Parser to TripPin Api (if you have more than one api, the name is necessary)
+    const serviceWithoutParser = this.factory.entitySet("People", "TripPin");
+    console.log(serviceWithoutParser);
     const serviceWithParser = this.peopleService;
     // Use Person Typed Service
     // Create Person

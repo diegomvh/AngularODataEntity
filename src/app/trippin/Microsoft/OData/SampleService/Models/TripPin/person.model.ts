@@ -72,12 +72,20 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   
   @ModelField()
   Friends?: PersonCollection<Person, PersonModel<Person>>;
-  
-  
+  public getFriends({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Person>('Friends', {asEntity, ...options}) as Observable<PersonCollection<Person, PersonModel<Person>>>;
+  }
+  public setFriends(model: PersonCollection<Person, PersonModel<Person>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Person>('Friends', model, {asEntity, ...options});
+  }
   @ModelField()
   Trips?: TripCollection<Trip, TripModel<Trip>>;
-  
-  
+  public getTrips({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Trip>('Trips', {asEntity, ...options}) as Observable<TripCollection<Trip, TripModel<Trip>>>;
+  }
+  public setTrips(model: TripCollection<Trip, TripModel<Trip>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Trip>('Trips', model, {asEntity, ...options});
+  }
   @ModelField()
   Photo?: PhotoModel<Photo>;
   public getPhoto({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
