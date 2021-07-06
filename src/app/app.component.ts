@@ -206,17 +206,17 @@ export class AppComponent {
     // Create Person
     let person = await serviceWithParser.create({
       Emails: ['some@email.com'],
-      UserName: 'diegomvh',
+      UserName: 'someuser',
       Gender: PersonGender.Male,
-      FirstName: 'Diego',
-      LastName: 'Van Haaster'
+      FirstName: 'Some',
+      LastName: 'User'
     }).pipe(
       map(({entity, annots}) => {etag = annots.etag; return entity;})
     ).toPromise();
     console.log(person, etag);
 
     // Retrieve Person
-    person = await serviceWithParser.fetchOne('diegomvh').pipe(
+    person = await serviceWithParser.fetchOne('someuser').pipe(
       map(({entity, annots}) => {etag = annots.etag; return entity;})
     ).toPromise();
     console.log(person, etag);
@@ -224,7 +224,7 @@ export class AppComponent {
     if (person !== null) {
       // Update Person
       person.Emails?.push('other@email.com');
-      await serviceWithParser.update('diegomvh', person, {etag}).pipe(
+      await serviceWithParser.update('someuser', person, {etag}).pipe(
         map(({entity, annots}) => {etag = annots.etag; return entity;})
       ).toPromise();
     }
@@ -232,20 +232,20 @@ export class AppComponent {
 
     if (person !== null) {
       // Patch Person
-      await serviceWithParser.patch('diegomvh', {LastName: "van Haaster"}, {etag}).pipe(
+      await serviceWithParser.patch('someuser', {LastName: "LastName"}, {etag}).pipe(
         map(({entity, annots}) => {etag = annots.etag; return entity;})
       ).toPromise();
     }
     console.log(person, etag);
 
     // Retrieve Person
-    person = await serviceWithParser.fetchOne('diegomvh', {etag}).pipe(
+    person = await serviceWithParser.fetchOne('someuser', {etag}).pipe(
       map(({entity, annots}) => {etag = annots.etag; return entity;})
     ).toPromise();
     console.log("Fetch", person, etag);
 
     // Delete Person
-    person = await serviceWithParser.destroy('diegomvh', {etag}).toPromise();
+    person = await serviceWithParser.destroy('someuser', {etag}).toPromise();
     console.log(person);
   }
 

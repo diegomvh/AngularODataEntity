@@ -85,6 +85,9 @@ import { EmployeesComponent } from './components/northwind/employees.component';
           stripMetadata: 'minimal',
           accept: {
             metadata: 'full',
+          },
+          prefer: {
+            return: 'representation'
           }
         }
       } as ApiConfig),
