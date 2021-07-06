@@ -36,8 +36,12 @@ export class CustomerDemographicModel<E extends CustomerDemographic> extends ODa
   
   @ModelField()
   Customers?: CustomerCollection<Customer, CustomerModel<Customer>>;
-  
-  
+  public getCustomers({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Customer>('Customers', {asEntity, ...options}) as Observable<CustomerCollection<Customer, CustomerModel<Customer>>>;
+  }
+  public setCustomers(model: CustomerCollection<Customer, CustomerModel<Customer>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Customer>('Customers', model, {asEntity, ...options});
+  }
   //#endregion
   //#region ODataApi Actions
   //#endregion

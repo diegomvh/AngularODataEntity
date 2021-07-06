@@ -51,8 +51,12 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   }
   @ModelField()
   Employees?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
-  
-  
+  public getEmployees({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Employee>('Employees', {asEntity, ...options}) as Observable<EmployeeCollection<Employee, EmployeeModel<Employee>>>;
+  }
+  public setEmployees(model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Employee>('Employees', model, {asEntity, ...options});
+  }
   //#endregion
   //#region ODataApi Actions
   //#endregion

@@ -36,8 +36,12 @@ export class RegionModel<E extends Region> extends ODataModel<E> {
   
   @ModelField()
   Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
-  
-  
+  public getTerritories({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Territory>('Territories', {asEntity, ...options}) as Observable<TerritoryCollection<Territory, TerritoryModel<Territory>>>;
+  }
+  public setTerritories(model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Territory>('Territories', model, {asEntity, ...options});
+  }
   //#endregion
   //#region ODataApi Actions
   //#endregion

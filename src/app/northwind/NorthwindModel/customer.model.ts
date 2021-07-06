@@ -75,12 +75,20 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   
   @ModelField()
   Orders?: OrderCollection<Order, OrderModel<Order>>;
-  
-  
+  public getOrders({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Order>('Orders', {asEntity, ...options}) as Observable<OrderCollection<Order, OrderModel<Order>>>;
+  }
+  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Order>('Orders', model, {asEntity, ...options});
+  }
   @ModelField()
   CustomerDemographics?: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
-  
-  
+  public getCustomerDemographics({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<CustomerDemographic>('CustomerDemographics', {asEntity, ...options}) as Observable<CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>>;
+  }
+  public setCustomerDemographics(model: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<CustomerDemographic>('CustomerDemographics', model, {asEntity, ...options});
+  }
   //#endregion
   //#region ODataApi Actions
   //#endregion

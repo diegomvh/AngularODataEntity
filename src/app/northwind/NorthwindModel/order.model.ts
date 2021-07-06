@@ -109,8 +109,12 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
   @ModelField()
   Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
-  
-  
+  public getOrder_Details({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<OrderDetail>('Order_Details', {asEntity, ...options}) as Observable<OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>>;
+  }
+  public setOrder_Details(model: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<OrderDetail>('Order_Details', model, {asEntity, ...options});
+  }
   @ModelField()
   Shipper?: ShipperModel<Shipper>;
   public getShipper({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {

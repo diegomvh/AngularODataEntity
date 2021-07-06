@@ -103,8 +103,12 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   
   @ModelField()
   Employees1?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
-  
-  
+  public getEmployees1({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Employee>('Employees1', {asEntity, ...options}) as Observable<EmployeeCollection<Employee, EmployeeModel<Employee>>>;
+  }
+  public setEmployees1(model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Employee>('Employees1', model, {asEntity, ...options});
+  }
   @ModelField()
   Employee1?: EmployeeModel<Employee>;
   public getEmployee1({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -115,12 +119,20 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
   @ModelField()
   Orders?: OrderCollection<Order, OrderModel<Order>>;
-  
-  
+  public getOrders({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Order>('Orders', {asEntity, ...options}) as Observable<OrderCollection<Order, OrderModel<Order>>>;
+  }
+  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Order>('Orders', model, {asEntity, ...options});
+  }
   @ModelField()
   Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
-  
-  
+  public getTerritories({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Territory>('Territories', {asEntity, ...options}) as Observable<TerritoryCollection<Territory, TerritoryModel<Territory>>>;
+  }
+  public setTerritories(model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Territory>('Territories', model, {asEntity, ...options});
+  }
   //#endregion
   //#region ODataApi Actions
   //#endregion

@@ -40,8 +40,12 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   
   @ModelField()
   Orders?: OrderCollection<Order, OrderModel<Order>>;
-  
-  
+  public getOrders({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Order>('Orders', {asEntity, ...options}) as Observable<OrderCollection<Order, OrderModel<Order>>>;
+  }
+  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Order>('Orders', model, {asEntity, ...options});
+  }
   //#endregion
   //#region ODataApi Actions
   //#endregion

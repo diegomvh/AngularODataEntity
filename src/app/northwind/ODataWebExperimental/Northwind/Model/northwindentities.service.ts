@@ -29,7 +29,7 @@ import {
 export class NorthwindEntitiesService extends ODataBaseService {
 
   constructor(protected client: ODataClient) {
-    super(client, 'NorthwindEntitiesContainer', '');
+    super(client, 'NorthwindEntitiesContainer', 'Northwind');
   }
 
   //#region ODataApi Actions
