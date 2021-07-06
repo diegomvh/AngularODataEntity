@@ -44,7 +44,7 @@ import { SearchResultItemCollection } from '../CBS/Website/ODataApi/Models/searc
 export class ContainerService extends ODataBaseService {
 
   constructor(protected client: ODataClient) {
-    super(client, 'ContainerContainer', '');
+    super(client, 'ContainerContainer', 'CBS');
   }
 
   //#region ODataApi Actions
