@@ -29,7 +29,7 @@ import {
 export class WebAPIService extends ODataBaseService {
 
   constructor(protected client: ODataClient) {
-    super(client, 'WebAPIContainer', '');
+    super(client, 'WebAPIContainer', '37506wwm');
   }
 
   //#region ODataApi Actions
