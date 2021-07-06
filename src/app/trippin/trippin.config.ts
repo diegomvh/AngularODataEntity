@@ -1,7 +1,7 @@
 ﻿//#region AngularOData Imports
-import { 
-  ApiConfig, 
-  EDM_PARSERS 
+import {
+  ApiConfig,
+  EDM_PARSERS
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports

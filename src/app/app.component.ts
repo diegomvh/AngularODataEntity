@@ -29,7 +29,6 @@ export class AppComponent {
   //#region APIs
   trippin() {
     //this.mutate();
-    console.log("hola");
     this.api.callResetDataSource().subscribe(() => {
       //this.queries();
       this.mutate();
@@ -198,10 +197,11 @@ export class AppComponent {
   async personCRUD() {
     let etag;
 
-    // Service Without Parser to TripPin Api (if you have more than one api, the name is necessary)
-    const serviceWithoutParser = this.factory.entitySet("People", "TripPin");
-    console.log(serviceWithoutParser);
-    const serviceWithParser = this.peopleService;
+    // Service With Parser From Factory
+    const serviceWithParser = this.factory.entitySet<Person>("People", "TripPin");
+    //Or Use PersonsService Injected
+    //const serviceWithParser = this.peopleService;
+
     // Use Person Typed Service
     // Create Person
     let person = await serviceWithParser.create({
