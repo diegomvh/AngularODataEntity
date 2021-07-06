@@ -17,8 +17,7 @@ export const PersonEntityConfig = {
   keys: [{name: 'ID'}],
   fields: {
     ID: {type: 'Edm.Int32', nullable: false},
-    Name: {type: 'Edm.String'},
-    PersonDetail: {type: 'ODataDemo.PersonDetail', navigation: true}
+    Name: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<Person>;
 //#endregion

@@ -29,7 +29,7 @@ import {
 export class DemoServiceService extends ODataBaseService {
 
   constructor(protected client: ODataClient) {
-    super(client, 'DemoServiceContainer', '');
+    super(client, 'DemoServiceContainer', 'North3');
   }
 
   //#region ODataApi Actions

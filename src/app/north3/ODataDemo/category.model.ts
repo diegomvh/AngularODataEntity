@@ -16,10 +16,7 @@ import {
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
-import { Product } from './product.entity';
 import { Category } from './category.entity';
-import { ProductModel } from './product.model';
-import { ProductCollection } from './product.collection';
 import { CategoryCollection } from './category.collection';
 //#endregion
 
@@ -32,10 +29,6 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   
   @ModelField()
   Name?: string;
-  
-  
-  @ModelField()
-  Products?: ProductCollection<Product, ProductModel<Product>>;
   
   
   //#endregion

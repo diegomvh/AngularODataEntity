@@ -13,11 +13,8 @@ import {
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
-import { Product } from './product.entity';
 import { ProductDetail } from './productdetail.entity';
-import { ProductModel } from './product.model';
 import { ProductDetailModel } from './productdetail.model';
-import { ProductCollection } from './product.collection';
 //#endregion
 
 export class ProductDetailCollection<E extends ProductDetail, M extends ProductDetailModel<E>> extends ODataCollection<E, M> {

@@ -18,8 +18,7 @@ export const AdvertisementEntityConfig = {
   fields: {
     ID: {type: 'Edm.Guid', nullable: false},
     Name: {type: 'Edm.String'},
-    AirDate: {type: 'Edm.DateTime', nullable: false},
-    FeaturedProduct: {type: 'ODataDemo.FeaturedProduct', navigation: true}
+    AirDate: {type: 'Edm.DateTime', nullable: false}
   }
 } as StructuredTypeConfig<Advertisement>;
 //#endregion

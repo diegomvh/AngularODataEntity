@@ -14,10 +14,7 @@ import {
 
 //#region ODataApi Imports
 import { Person } from './person.entity';
-import { PersonDetail } from './persondetail.entity';
 import { PersonModel } from './person.model';
-import { PersonDetailModel } from './persondetail.model';
-import { PersonDetailCollection } from './persondetail.collection';
 //#endregion
 
 export class PersonCollection<E extends Person, M extends PersonModel<E>> extends ODataCollection<E, M> {

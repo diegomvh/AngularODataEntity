@@ -22,10 +22,7 @@ export const ProductEntityConfig = {
     ReleaseDate: {type: 'Edm.DateTime', nullable: false},
     DiscontinuedDate: {type: 'Edm.DateTime'},
     Rating: {type: 'Edm.Int16', nullable: false},
-    Price: {type: 'Edm.Double', nullable: false},
-    Categories: {type: 'ODataDemo.Category', collection: true, navigation: true},
-    Supplier: {type: 'ODataDemo.Supplier', navigation: true},
-    ProductDetail: {type: 'ODataDemo.ProductDetail', navigation: true}
+    Price: {type: 'Edm.Double', nullable: false}
   }
 } as StructuredTypeConfig<Product>;
 //#endregion
