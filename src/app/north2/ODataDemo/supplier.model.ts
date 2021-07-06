@@ -47,8 +47,12 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   
   @ModelField()
   Products?: ProductCollection<Product, ProductModel<Product>>;
-  
-  
+  public getProducts({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.getReference<Product>('Products', {asEntity, ...options}) as Observable<ProductCollection<Product, ProductModel<Product>>>;
+  }
+  public setProducts(model: ProductCollection<Product, ProductModel<Product>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Product>('Products', model, {asEntity, ...options});
+  }
   //#endregion
   //#region ODataApi Actions
   //#endregion
