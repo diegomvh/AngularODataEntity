@@ -33,7 +33,7 @@ export class PersonComponent {
       if (this.person !== null && this.person.Photo) {
         this.photos
         .entity(this.person.Photo)
-        .value()
+        .media()
         .fetchBlob()
         .subscribe(console.log);
       }

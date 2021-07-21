@@ -80,6 +80,7 @@ import { EmployeesComponent } from './components/northwind/employees.component';
       Object.assign(TripPinConfig, {
         serviceRootUrl: 'http://localhost:4200/trippin/',
         cache: new ODataInStorageCache({timeout: 60, name: "TripPinCache"}),
+        default: true,
         options: {
           stringAsEnum: true,
           stripMetadata: 'minimal',

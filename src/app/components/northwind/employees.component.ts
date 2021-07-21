@@ -87,4 +87,15 @@ export class EmployeesComponent {
       resource = resource.orderBy([[event.sortField as keyof Employee, event.sortOrder == -1 ? "desc": "asc"]]);
     this.fetch(resource);
   }
+
+  photoImgSource(employee: Employee) {
+    let binary = '';
+    let bytes = new Uint8Array(employee.Photo as ArrayBuffer);
+    let len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+    }
+    var base64 = window.btoa(binary);
+    return `data:image/png;base64,${base64}`;
+  }
 }

@@ -31,7 +31,7 @@ export class AppComponent {
     //this.mutate();
     this.api.callResetDataSource().subscribe(() => {
       //this.queries();
-      this.mutate();
+      //this.mutate();
       //this.trippinModels();
       //this.filterPeopleByGender();
     });
@@ -47,6 +47,7 @@ export class AppComponent {
     this.entitiesWithTypes();
     this.navigation();
     this.property();
+    this.mediaEntity();
     this.batch();
   }
 
@@ -181,12 +182,20 @@ export class AppComponent {
     // Person photo
     let photo = person.navigationProperty<Photo>("Photo");
     photo.fetchEntity().subscribe(console.log);
-    photo.value().fetchArraybuffer().subscribe(console.log);
-    photo.value().fetchBlob().subscribe(console.log);
+    photo.media().fetchArraybuffer().subscribe(console.log);
+    photo.media().fetchBlob().subscribe(console.log);
     let photoName = photo.property<string>("Name");
     photoName.fetch().subscribe(console.log);
 
     name.value().fetch().subscribe(console.log);
+  }
+
+  async mediaEntity() {
+    let photos = this.factory.entitySet<Photo>("Photos", 'Microsoft.OData.SampleService.Models.TripPin.Photo');
+    for (var photo of await photos.entities().fetchAll().toPromise()) {
+      photos.entity(photo).media().fetchArraybuffer().subscribe(console.log);
+      photos.entity(photo).media().fetchBlob().subscribe(console.log);
+    }
   }
 
   mutate() {
