@@ -32,7 +32,7 @@ export class AppComponent {
     this.api.callResetDataSource().subscribe(() => {
       //this.queries();
       //this.mutate();
-      //this.trippinModels();
+      this.trippinModels();
       //this.filterPeopleByGender();
     });
   }
@@ -286,6 +286,7 @@ export class AppComponent {
 
   trippinModels() {
     const people = this.peopleService.personCollection();
+    people.query(q => q.expand({Friends: {}}));
     people.fetch().pipe(switchMap(people => {
       const person = people.models()[2];
       person.Gender = PersonGender.Female;
