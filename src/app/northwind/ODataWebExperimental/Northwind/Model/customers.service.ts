@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -58,7 +56,7 @@ export class CustomersService extends ODataEntitySetService<Customer> {
   public customerDemographics(key: EntityKey<Customer>): ODataNavigationPropertyResource<CustomerDemographic> { 
     return this.entity(key).navigationProperty<CustomerDemographic>('CustomerDemographics'); 
   }
-  public fetchCustomerDemographics(key: EntityKey<Customer>, options?: HttpNavigationPropertyOptions<CustomerDemographic>) {
+  public fetchCustomerDemographics(key: EntityKey<Customer>, options?: HttpQueryOptions<CustomerDemographic>) {
     return this.fetchNavigationProperty<CustomerDemographic>(
       this.customerDemographics(key), 
       'entities', options) as Observable<ODataEntities<CustomerDemographic>>;
@@ -74,7 +72,7 @@ export class CustomersService extends ODataEntitySetService<Customer> {
   public orders(key: EntityKey<Customer>): ODataNavigationPropertyResource<Order> { 
     return this.entity(key).navigationProperty<Order>('Orders'); 
   }
-  public fetchOrders(key: EntityKey<Customer>, options?: HttpNavigationPropertyOptions<Order>) {
+  public fetchOrders(key: EntityKey<Customer>, options?: HttpQueryOptions<Order>) {
     return this.fetchNavigationProperty<Order>(
       this.orders(key), 
       'entities', options) as Observable<ODataEntities<Order>>;

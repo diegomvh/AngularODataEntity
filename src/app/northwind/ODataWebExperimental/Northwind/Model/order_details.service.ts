@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -58,7 +56,7 @@ export class OrderDetailsService extends ODataEntitySetService<OrderDetail> {
   public order(key: EntityKey<OrderDetail>): ODataNavigationPropertyResource<Order> { 
     return this.entity(key).navigationProperty<Order>('Order'); 
   }
-  public fetchOrder(key: EntityKey<OrderDetail>, options?: HttpNavigationPropertyOptions<Order>) {
+  public fetchOrder(key: EntityKey<OrderDetail>, options?: HttpQueryOptions<Order>) {
     return this.fetchNavigationProperty<Order>(
       this.order(key), 
       'entity', options) as Observable<ODataEntity<Order>>;
@@ -74,7 +72,7 @@ export class OrderDetailsService extends ODataEntitySetService<OrderDetail> {
   public product(key: EntityKey<OrderDetail>): ODataNavigationPropertyResource<Product> { 
     return this.entity(key).navigationProperty<Product>('Product'); 
   }
-  public fetchProduct(key: EntityKey<OrderDetail>, options?: HttpNavigationPropertyOptions<Product>) {
+  public fetchProduct(key: EntityKey<OrderDetail>, options?: HttpQueryOptions<Product>) {
     return this.fetchNavigationProperty<Product>(
       this.product(key), 
       'entity', options) as Observable<ODataEntity<Product>>;

@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -44,7 +42,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   
   @ModelField()
   Products?: ProductCollection<Product, ProductModel<Product>>;
-  public getProducts({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getProducts({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Product> = {}) {
     return this.getReference<Product>('Products', {asEntity, ...options}) as Observable<ProductCollection<Product, ProductModel<Product>>>;
   }
   public setProducts(model: ProductCollection<Product, ProductModel<Product>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {

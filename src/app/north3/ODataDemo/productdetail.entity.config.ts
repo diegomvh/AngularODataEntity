@@ -17,7 +17,8 @@ export const ProductDetailEntityConfig = {
   keys: [{name: 'ProductID'}],
   fields: {
     ProductID: {type: 'Edm.Int32', nullable: false},
-    Details: {type: 'Edm.String'}
+    Details: {type: 'Edm.String'},
+    Product: {type: 'ODataDemo.Product', navigation: true}
   }
 } as StructuredTypeConfig<ProductDetail>;
 //#endregion

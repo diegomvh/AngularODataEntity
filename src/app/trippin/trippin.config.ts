@@ -1,7 +1,7 @@
 ﻿//#region AngularOData Imports
-import {
-  ApiConfig,
-  EDM_PARSERS
+import { 
+  ApiConfig, 
+  EDM_PARSERS 
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -13,7 +13,7 @@ export const TripPinConfig = {
   serviceRootUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
   name: 'TripPin',
   version: '4.0',
-  creation: new Date('2021-07-06T16:15:15.7505195-03:00'),
+  creation: new Date('2021-08-11T21:57:03.9660032-03:00'),
   schemas: [
     TripPinSchema
   ],

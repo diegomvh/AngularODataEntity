@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -93,7 +91,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   
   @ModelField()
   Customer?: CustomerModel<Customer>;
-  public getCustomer({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getCustomer({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Customer> = {}) {
     return this.getReference<Customer>('Customer', {asEntity, ...options}) as Observable<CustomerModel<Customer>>;
   }
   public setCustomer(model: CustomerModel<Customer> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -101,7 +99,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
   @ModelField()
   Employee?: EmployeeModel<Employee>;
-  public getEmployee({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getEmployee({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Employee> = {}) {
     return this.getReference<Employee>('Employee', {asEntity, ...options}) as Observable<EmployeeModel<Employee>>;
   }
   public setEmployee(model: EmployeeModel<Employee> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -109,7 +107,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
   @ModelField()
   Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
-  public getOrder_Details({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getOrder_Details({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<OrderDetail> = {}) {
     return this.getReference<OrderDetail>('Order_Details', {asEntity, ...options}) as Observable<OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>>;
   }
   public setOrder_Details(model: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -117,7 +115,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
   @ModelField()
   Shipper?: ShipperModel<Shipper>;
-  public getShipper({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getShipper({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Shipper> = {}) {
     return this.getReference<Shipper>('Shipper', {asEntity, ...options}) as Observable<ShipperModel<Shipper>>;
   }
   public setShipper(model: ShipperModel<Shipper> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {

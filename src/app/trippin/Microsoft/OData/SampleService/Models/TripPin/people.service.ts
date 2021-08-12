@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -71,7 +69,7 @@ export class PeopleService extends ODataEntitySetService<Person> {
   public friends(key: EntityKey<Person>): ODataNavigationPropertyResource<Person> { 
     return this.entity(key).navigationProperty<Person>('Friends'); 
   }
-  public fetchFriends(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Person>) {
+  public fetchFriends(key: EntityKey<Person>, options?: HttpQueryOptions<Person>) {
     return this.fetchNavigationProperty<Person>(
       this.friends(key), 
       'entities', options) as Observable<ODataEntities<Person>>;
@@ -87,7 +85,7 @@ export class PeopleService extends ODataEntitySetService<Person> {
   public airline(key: EntityKey<Person>): ODataNavigationPropertyResource<Airline> { 
     return this.entity(key).navigationProperty<Airline>('Airline'); 
   }
-  public fetchAirline(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Airline>) {
+  public fetchAirline(key: EntityKey<Person>, options?: HttpQueryOptions<Airline>) {
     return this.fetchNavigationProperty<Airline>(
       this.airline(key), 
       'entity', options) as Observable<ODataEntity<Airline>>;
@@ -103,7 +101,7 @@ export class PeopleService extends ODataEntitySetService<Person> {
   public from(key: EntityKey<Person>): ODataNavigationPropertyResource<Airport> { 
     return this.entity(key).navigationProperty<Airport>('From'); 
   }
-  public fetchFrom(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Airport>) {
+  public fetchFrom(key: EntityKey<Person>, options?: HttpQueryOptions<Airport>) {
     return this.fetchNavigationProperty<Airport>(
       this.from(key), 
       'entity', options) as Observable<ODataEntity<Airport>>;
@@ -119,7 +117,7 @@ export class PeopleService extends ODataEntitySetService<Person> {
   public to(key: EntityKey<Person>): ODataNavigationPropertyResource<Airport> { 
     return this.entity(key).navigationProperty<Airport>('To'); 
   }
-  public fetchTo(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Airport>) {
+  public fetchTo(key: EntityKey<Person>, options?: HttpQueryOptions<Airport>) {
     return this.fetchNavigationProperty<Airport>(
       this.to(key), 
       'entity', options) as Observable<ODataEntity<Airport>>;
@@ -135,7 +133,7 @@ export class PeopleService extends ODataEntitySetService<Person> {
   public photo(key: EntityKey<Person>): ODataNavigationPropertyResource<Photo> { 
     return this.entity(key).navigationProperty<Photo>('Photo'); 
   }
-  public fetchPhoto(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Photo>) {
+  public fetchPhoto(key: EntityKey<Person>, options?: HttpQueryOptions<Photo>) {
     return this.fetchNavigationProperty<Photo>(
       this.photo(key), 
       'entity', options) as Observable<ODataEntity<Photo>>;
@@ -151,7 +149,7 @@ export class PeopleService extends ODataEntitySetService<Person> {
   public photos(key: EntityKey<Person>): ODataNavigationPropertyResource<Photo> { 
     return this.entity(key).navigationProperty<Photo>('Photos'); 
   }
-  public fetchPhotos(key: EntityKey<Person>, options?: HttpNavigationPropertyOptions<Photo>) {
+  public fetchPhotos(key: EntityKey<Person>, options?: HttpQueryOptions<Photo>) {
     return this.fetchNavigationProperty<Photo>(
       this.photos(key), 
       'entities', options) as Observable<ODataEntities<Photo>>;

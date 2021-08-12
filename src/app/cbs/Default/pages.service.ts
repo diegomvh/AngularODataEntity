@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -52,36 +50,36 @@ export class PagesService extends ODataEntitySetService<Page> {
   //#endregion
   //#region ODataApi Functions
   public getPagesByTheme(): ODataFunctionResource<{Theme: string}, Page> { 
-    return this.client.function<{Theme: string}, Page>('Default.GetPagesByTheme');
+    return this.client.function<{Theme: string}, Page>('Default.GetPagesByTheme', this.apiNameOrEntityType);
   }
-  public callGetPagesByTheme(Theme: string, options?: HttpFunctionOptions<Page>) {
+  public callGetPagesByTheme(Theme: string, options?: HttpQueryOptions<Page>) {
     return this.callFunction<{Theme: string}, Page>(
       {Theme}, 
       this.getPagesByTheme(), 
       'entities', options) as Observable<ODataEntities<Page>>;
   }
   public getPagesBySeries(): ODataFunctionResource<{Series: string}, Page> { 
-    return this.client.function<{Series: string}, Page>('Default.GetPagesBySeries');
+    return this.client.function<{Series: string}, Page>('Default.GetPagesBySeries', this.apiNameOrEntityType);
   }
-  public callGetPagesBySeries(Series: string, options?: HttpFunctionOptions<Page>) {
+  public callGetPagesBySeries(Series: string, options?: HttpQueryOptions<Page>) {
     return this.callFunction<{Series: string}, Page>(
       {Series}, 
       this.getPagesBySeries(), 
       'entities', options) as Observable<ODataEntities<Page>>;
   }
   public getPagesByTaxonomyTag(): ODataFunctionResource<{Tag: string}, Page> { 
-    return this.client.function<{Tag: string}, Page>('Default.GetPagesByTaxonomyTag');
+    return this.client.function<{Tag: string}, Page>('Default.GetPagesByTaxonomyTag', this.apiNameOrEntityType);
   }
-  public callGetPagesByTaxonomyTag(Tag: string, options?: HttpFunctionOptions<Page>) {
+  public callGetPagesByTaxonomyTag(Tag: string, options?: HttpQueryOptions<Page>) {
     return this.callFunction<{Tag: string}, Page>(
       {Tag}, 
       this.getPagesByTaxonomyTag(), 
       'entities', options) as Observable<ODataEntities<Page>>;
   }
   public getPagesByPageType(): ODataFunctionResource<{PageType: PageType}, Page> { 
-    return this.client.function<{PageType: PageType}, Page>('Default.GetPagesByPageType');
+    return this.client.function<{PageType: PageType}, Page>('Default.GetPagesByPageType', this.apiNameOrEntityType);
   }
-  public callGetPagesByPageType(PageType: PageType, options?: HttpFunctionOptions<Page>) {
+  public callGetPagesByPageType(PageType: PageType, options?: HttpQueryOptions<Page>) {
     return this.callFunction<{PageType: PageType}, Page>(
       {PageType}, 
       this.getPagesByPageType(), 

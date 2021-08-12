@@ -20,7 +20,8 @@ export const SupplierEntityConfig = {
     Name: {type: 'Edm.String'},
     Address: {type: 'ODataDemo.Address'},
     Location: {type: 'Edm.GeographyPoint', srid: 'Variable'},
-    Concurrency: {type: 'Edm.Int32', nullable: false}
+    Concurrency: {type: 'Edm.Int32', nullable: false},
+    Products: {type: 'ODataDemo.Product', collection: true, navigation: true}
   }
 } as StructuredTypeConfig<Supplier>;
 //#endregion

@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -72,7 +70,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   
   @ModelField()
   Friends?: PersonCollection<Person, PersonModel<Person>>;
-  public getFriends({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getFriends({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Person> = {}) {
     return this.getReference<Person>('Friends', {asEntity, ...options}) as Observable<PersonCollection<Person, PersonModel<Person>>>;
   }
   public setFriends(model: PersonCollection<Person, PersonModel<Person>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -80,7 +78,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
   @ModelField()
   Trips?: TripCollection<Trip, TripModel<Trip>>;
-  public getTrips({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getTrips({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Trip> = {}) {
     return this.getReference<Trip>('Trips', {asEntity, ...options}) as Observable<TripCollection<Trip, TripModel<Trip>>>;
   }
   public setTrips(model: TripCollection<Trip, TripModel<Trip>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -88,7 +86,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
   @ModelField()
   Photo?: PhotoModel<Photo>;
-  public getPhoto({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getPhoto({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Photo> = {}) {
     return this.getReference<Photo>('Photo', {asEntity, ...options}) as Observable<PhotoModel<Photo>>;
   }
   public setPhoto(model: PhotoModel<Photo> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -100,16 +98,16 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   //#region ODataApi Functions
   //#endregion
   //#region ODataApi Navigations
-  public airline({asEntity, ...options}: {asEntity?: boolean} & HttpNavigationPropertyOptions<Airline> = {}) {
+  public airline({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Airline> = {}) {
     return this.fetchNavigationProperty<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline', 'model', {asEntity, ...options}) as Observable<ODataModel<Airline>>;
   }
-  public from({asEntity, ...options}: {asEntity?: boolean} & HttpNavigationPropertyOptions<Airport> = {}) {
+  public from({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Airport> = {}) {
     return this.fetchNavigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From', 'model', {asEntity, ...options}) as Observable<ODataModel<Airport>>;
   }
-  public to({asEntity, ...options}: {asEntity?: boolean} & HttpNavigationPropertyOptions<Airport> = {}) {
+  public to({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Airport> = {}) {
     return this.fetchNavigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To', 'model', {asEntity, ...options}) as Observable<ODataModel<Airport>>;
   }
-  public photos({asEntity, ...options}: {asEntity?: boolean} & HttpNavigationPropertyOptions<Photo> = {}) {
+  public photos({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Photo> = {}) {
     return this.fetchNavigationProperty<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos', 'collection', {asEntity, ...options}) as Observable<ODataCollection<Photo, ODataModel<Photo>>>;
   }
   //#endregion

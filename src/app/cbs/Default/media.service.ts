@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -49,9 +47,9 @@ export class MediaService extends ODataEntitySetService<Medium> {
   //#endregion
   //#region ODataApi Functions
   public getMediaByMediaType(): ODataFunctionResource<{MediaType: MediaType}, Medium> { 
-    return this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType');
+    return this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType', this.apiNameOrEntityType);
   }
-  public callGetMediaByMediaType(MediaType: MediaType, options?: HttpFunctionOptions<Medium>) {
+  public callGetMediaByMediaType(MediaType: MediaType, options?: HttpQueryOptions<Medium>) {
     return this.callFunction<{MediaType: MediaType}, Medium>(
       {MediaType}, 
       this.getMediaByMediaType(), 

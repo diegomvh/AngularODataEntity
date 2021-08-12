@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -58,7 +56,7 @@ export class EmployeesService extends ODataEntitySetService<Employee> {
   public employees1(key: EntityKey<Employee>): ODataNavigationPropertyResource<Employee> { 
     return this.entity(key).navigationProperty<Employee>('Employees1'); 
   }
-  public fetchEmployees1(key: EntityKey<Employee>, options?: HttpNavigationPropertyOptions<Employee>) {
+  public fetchEmployees1(key: EntityKey<Employee>, options?: HttpQueryOptions<Employee>) {
     return this.fetchNavigationProperty<Employee>(
       this.employees1(key), 
       'entities', options) as Observable<ODataEntities<Employee>>;
@@ -74,7 +72,7 @@ export class EmployeesService extends ODataEntitySetService<Employee> {
   public employee1(key: EntityKey<Employee>): ODataNavigationPropertyResource<Employee> { 
     return this.entity(key).navigationProperty<Employee>('Employee1'); 
   }
-  public fetchEmployee1(key: EntityKey<Employee>, options?: HttpNavigationPropertyOptions<Employee>) {
+  public fetchEmployee1(key: EntityKey<Employee>, options?: HttpQueryOptions<Employee>) {
     return this.fetchNavigationProperty<Employee>(
       this.employee1(key), 
       'entity', options) as Observable<ODataEntity<Employee>>;
@@ -90,7 +88,7 @@ export class EmployeesService extends ODataEntitySetService<Employee> {
   public orders(key: EntityKey<Employee>): ODataNavigationPropertyResource<Order> { 
     return this.entity(key).navigationProperty<Order>('Orders'); 
   }
-  public fetchOrders(key: EntityKey<Employee>, options?: HttpNavigationPropertyOptions<Order>) {
+  public fetchOrders(key: EntityKey<Employee>, options?: HttpQueryOptions<Order>) {
     return this.fetchNavigationProperty<Order>(
       this.orders(key), 
       'entities', options) as Observable<ODataEntities<Order>>;
@@ -106,7 +104,7 @@ export class EmployeesService extends ODataEntitySetService<Employee> {
   public territories(key: EntityKey<Employee>): ODataNavigationPropertyResource<Territory> { 
     return this.entity(key).navigationProperty<Territory>('Territories'); 
   }
-  public fetchTerritories(key: EntityKey<Employee>, options?: HttpNavigationPropertyOptions<Territory>) {
+  public fetchTerritories(key: EntityKey<Employee>, options?: HttpQueryOptions<Territory>) {
     return this.fetchNavigationProperty<Territory>(
       this.territories(key), 
       'entities', options) as Observable<ODataEntities<Territory>>;

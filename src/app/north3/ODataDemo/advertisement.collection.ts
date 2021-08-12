@@ -7,14 +7,15 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
+import { FeaturedProduct } from './featuredproduct.entity';
 import { Advertisement } from './advertisement.entity';
+import { FeaturedProductModel } from './featuredproduct.model';
 import { AdvertisementModel } from './advertisement.model';
+import { FeaturedProductCollection } from './featuredproduct.collection';
 //#endregion
 
 export class AdvertisementCollection<E extends Advertisement, M extends AdvertisementModel<E>> extends ODataCollection<E, M> {

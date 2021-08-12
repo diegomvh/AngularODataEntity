@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -74,7 +72,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   
   @ModelField()
   Category?: CategoryModel<Category>;
-  public getCategory({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getCategory({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Category> = {}) {
     return this.getReference<Category>('Category', {asEntity, ...options}) as Observable<CategoryModel<Category>>;
   }
   public setCategory(model: CategoryModel<Category> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -82,7 +80,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
   @ModelField()
   Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
-  public getOrder_Details({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getOrder_Details({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<OrderDetail> = {}) {
     return this.getReference<OrderDetail>('Order_Details', {asEntity, ...options}) as Observable<OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>>;
   }
   public setOrder_Details(model: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -90,7 +88,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
   @ModelField()
   Supplier?: SupplierModel<Supplier>;
-  public getSupplier({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getSupplier({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Supplier> = {}) {
     return this.getReference<Supplier>('Supplier', {asEntity, ...options}) as Observable<SupplierModel<Supplier>>;
   }
   public setSupplier(model: SupplierModel<Supplier> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {

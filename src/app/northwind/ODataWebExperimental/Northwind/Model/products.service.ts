@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -61,7 +59,7 @@ export class ProductsService extends ODataEntitySetService<Product> {
   public category(key: EntityKey<Product>): ODataNavigationPropertyResource<Category> { 
     return this.entity(key).navigationProperty<Category>('Category'); 
   }
-  public fetchCategory(key: EntityKey<Product>, options?: HttpNavigationPropertyOptions<Category>) {
+  public fetchCategory(key: EntityKey<Product>, options?: HttpQueryOptions<Category>) {
     return this.fetchNavigationProperty<Category>(
       this.category(key), 
       'entity', options) as Observable<ODataEntity<Category>>;
@@ -77,7 +75,7 @@ export class ProductsService extends ODataEntitySetService<Product> {
   public order_Details(key: EntityKey<Product>): ODataNavigationPropertyResource<OrderDetail> { 
     return this.entity(key).navigationProperty<OrderDetail>('Order_Details'); 
   }
-  public fetchOrder_Details(key: EntityKey<Product>, options?: HttpNavigationPropertyOptions<OrderDetail>) {
+  public fetchOrder_Details(key: EntityKey<Product>, options?: HttpQueryOptions<OrderDetail>) {
     return this.fetchNavigationProperty<OrderDetail>(
       this.order_Details(key), 
       'entities', options) as Observable<ODataEntities<OrderDetail>>;
@@ -93,7 +91,7 @@ export class ProductsService extends ODataEntitySetService<Product> {
   public supplier(key: EntityKey<Product>): ODataNavigationPropertyResource<Supplier> { 
     return this.entity(key).navigationProperty<Supplier>('Supplier'); 
   }
-  public fetchSupplier(key: EntityKey<Product>, options?: HttpNavigationPropertyOptions<Supplier>) {
+  public fetchSupplier(key: EntityKey<Product>, options?: HttpQueryOptions<Supplier>) {
     return this.fetchNavigationProperty<Supplier>(
       this.supplier(key), 
       'entity', options) as Observable<ODataEntity<Supplier>>;

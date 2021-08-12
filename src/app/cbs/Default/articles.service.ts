@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -55,45 +53,45 @@ export class ArticlesService extends ODataEntitySetService<Article> {
   //#endregion
   //#region ODataApi Functions
   public getArticlesByTheme(): ODataFunctionResource<{Theme: string}, Article> { 
-    return this.client.function<{Theme: string}, Article>('Default.GetArticlesByTheme');
+    return this.client.function<{Theme: string}, Article>('Default.GetArticlesByTheme', this.apiNameOrEntityType);
   }
-  public callGetArticlesByTheme(Theme: string, options?: HttpFunctionOptions<Article>) {
+  public callGetArticlesByTheme(Theme: string, options?: HttpQueryOptions<Article>) {
     return this.callFunction<{Theme: string}, Article>(
       {Theme}, 
       this.getArticlesByTheme(), 
       'entities', options) as Observable<ODataEntities<Article>>;
   }
   public getArticlesBySeries(): ODataFunctionResource<{Series: string}, Article> { 
-    return this.client.function<{Series: string}, Article>('Default.GetArticlesBySeries');
+    return this.client.function<{Series: string}, Article>('Default.GetArticlesBySeries', this.apiNameOrEntityType);
   }
-  public callGetArticlesBySeries(Series: string, options?: HttpFunctionOptions<Article>) {
+  public callGetArticlesBySeries(Series: string, options?: HttpQueryOptions<Article>) {
     return this.callFunction<{Series: string}, Article>(
       {Series}, 
       this.getArticlesBySeries(), 
       'entities', options) as Observable<ODataEntities<Article>>;
   }
   public getArticlesByTaxonomyTag(): ODataFunctionResource<{Tag: string}, Article> { 
-    return this.client.function<{Tag: string}, Article>('Default.GetArticlesByTaxonomyTag');
+    return this.client.function<{Tag: string}, Article>('Default.GetArticlesByTaxonomyTag', this.apiNameOrEntityType);
   }
-  public callGetArticlesByTaxonomyTag(Tag: string, options?: HttpFunctionOptions<Article>) {
+  public callGetArticlesByTaxonomyTag(Tag: string, options?: HttpQueryOptions<Article>) {
     return this.callFunction<{Tag: string}, Article>(
       {Tag}, 
       this.getArticlesByTaxonomyTag(), 
       'entities', options) as Observable<ODataEntities<Article>>;
   }
   public getArticlesByArticleType(): ODataFunctionResource<{ArticleType: ArticleType}, Article> { 
-    return this.client.function<{ArticleType: ArticleType}, Article>('Default.GetArticlesByArticleType');
+    return this.client.function<{ArticleType: ArticleType}, Article>('Default.GetArticlesByArticleType', this.apiNameOrEntityType);
   }
-  public callGetArticlesByArticleType(ArticleType: ArticleType, options?: HttpFunctionOptions<Article>) {
+  public callGetArticlesByArticleType(ArticleType: ArticleType, options?: HttpQueryOptions<Article>) {
     return this.callFunction<{ArticleType: ArticleType}, Article>(
       {ArticleType}, 
       this.getArticlesByArticleType(), 
       'entities', options) as Observable<ODataEntities<Article>>;
   }
   public getArticlesByTableId(): ODataFunctionResource<{TableId: string}, Article> { 
-    return this.client.function<{TableId: string}, Article>('Default.GetArticlesByTableId');
+    return this.client.function<{TableId: string}, Article>('Default.GetArticlesByTableId', this.apiNameOrEntityType);
   }
-  public callGetArticlesByTableId(TableId: string, options?: HttpFunctionOptions<Article>) {
+  public callGetArticlesByTableId(TableId: string, options?: HttpQueryOptions<Article>) {
     return this.callFunction<{TableId: string}, Article>(
       {TableId}, 
       this.getArticlesByTableId(), 

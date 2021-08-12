@@ -21,7 +21,8 @@ export const PersonDetailEntityConfig = {
     Gender: {type: 'Edm.Boolean', nullable: false},
     Phone: {type: 'Edm.String'},
     Address: {type: 'ODataDemo.Address'},
-    Photo: {type: 'Edm.Stream', nullable: false}
+    Photo: {type: 'Edm.Stream', nullable: false},
+    Person: {type: 'ODataDemo.Person', navigation: true}
   }
 } as StructuredTypeConfig<PersonDetail>;
 //#endregion

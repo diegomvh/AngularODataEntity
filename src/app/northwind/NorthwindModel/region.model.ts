@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -36,7 +34,7 @@ export class RegionModel<E extends Region> extends ODataModel<E> {
   
   @ModelField()
   Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
-  public getTerritories({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getTerritories({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Territory> = {}) {
     return this.getReference<Territory>('Territories', {asEntity, ...options}) as Observable<TerritoryCollection<Territory, TerritoryModel<Territory>>>;
   }
   public setTerritories(model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {

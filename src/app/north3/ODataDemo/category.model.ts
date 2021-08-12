@@ -9,14 +9,15 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
+import { Product } from './product.entity';
 import { Category } from './category.entity';
+import { ProductModel } from './product.model';
+import { ProductCollection } from './product.collection';
 import { CategoryCollection } from './category.collection';
 //#endregion
 
@@ -31,6 +32,14 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   Name?: string;
   
   
+  @ModelField()
+  Products?: ProductCollection<Product, ProductModel<Product>>;
+  public getProducts({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Product> = {}) {
+    return this.getReference<Product>('Products', {asEntity, ...options}) as Observable<ProductCollection<Product, ProductModel<Product>>>;
+  }
+  public setProducts(model: ProductCollection<Product, ProductModel<Product>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+    return this.setReference<Product>('Products', model, {asEntity, ...options});
+  }
   //#endregion
   //#region ODataApi Actions
   //#endregion

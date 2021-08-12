@@ -5,8 +5,11 @@ import {
 
 //#region ODataApi Imports
 import { Address } from './address.complex';
+import { Person } from './person.entity';
 import { AddressModel } from './address.model';
+import { PersonModel } from './person.model';
 import { AddressCollection } from './address.collection';
+import { PersonCollection } from './person.collection';
 //#endregion
 
 export interface PersonDetail {
@@ -17,5 +20,6 @@ export interface PersonDetail {
   Phone?: string;
   Address?: Address;
   Photo: any;
+  Person?: Person;
   //#endregion
 }

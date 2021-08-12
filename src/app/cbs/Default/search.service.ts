@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -49,63 +47,63 @@ export class SearchService extends ODataEntitySetService<SearchResultItem> {
   //#endregion
   //#region ODataApi Functions
   public getSearchResultsByTheme(): ODataFunctionResource<{Theme: string}, SearchResultItem> { 
-    return this.client.function<{Theme: string}, SearchResultItem>('Default.GetSearchResultsByTheme');
+    return this.client.function<{Theme: string}, SearchResultItem>('Default.GetSearchResultsByTheme', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByTheme(Theme: string, options?: HttpFunctionOptions<SearchResultItem>) {
+  public callGetSearchResultsByTheme(Theme: string, options?: HttpQueryOptions<SearchResultItem>) {
     return this.callFunction<{Theme: string}, SearchResultItem>(
       {Theme}, 
       this.getSearchResultsByTheme(), 
       'entities', options) as Observable<ODataEntities<SearchResultItem>>;
   }
   public getSearchResultsByTemplate(): ODataFunctionResource<{Template: string}, SearchResultItem> { 
-    return this.client.function<{Template: string}, SearchResultItem>('Default.GetSearchResultsByTemplate');
+    return this.client.function<{Template: string}, SearchResultItem>('Default.GetSearchResultsByTemplate', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByTemplate(Template: string, options?: HttpFunctionOptions<SearchResultItem>) {
+  public callGetSearchResultsByTemplate(Template: string, options?: HttpQueryOptions<SearchResultItem>) {
     return this.callFunction<{Template: string}, SearchResultItem>(
       {Template}, 
       this.getSearchResultsByTemplate(), 
       'entities', options) as Observable<ODataEntities<SearchResultItem>>;
   }
   public getSearchResultsByArticleType(): ODataFunctionResource<{ArticleType: ArticleType}, SearchResultItem> { 
-    return this.client.function<{ArticleType: ArticleType}, SearchResultItem>('Default.GetSearchResultsByArticleType');
+    return this.client.function<{ArticleType: ArticleType}, SearchResultItem>('Default.GetSearchResultsByArticleType', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByArticleType(ArticleType: ArticleType, options?: HttpFunctionOptions<SearchResultItem>) {
+  public callGetSearchResultsByArticleType(ArticleType: ArticleType, options?: HttpQueryOptions<SearchResultItem>) {
     return this.callFunction<{ArticleType: ArticleType}, SearchResultItem>(
       {ArticleType}, 
       this.getSearchResultsByArticleType(), 
       'entities', options) as Observable<ODataEntities<SearchResultItem>>;
   }
   public getSearchResultsByWord(): ODataFunctionResource<{Word: string}, SearchResultItem> { 
-    return this.client.function<{Word: string}, SearchResultItem>('Default.GetSearchResultsByWord');
+    return this.client.function<{Word: string}, SearchResultItem>('Default.GetSearchResultsByWord', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByWord(Word: string, options?: HttpFunctionOptions<SearchResultItem>) {
+  public callGetSearchResultsByWord(Word: string, options?: HttpQueryOptions<SearchResultItem>) {
     return this.callFunction<{Word: string}, SearchResultItem>(
       {Word}, 
       this.getSearchResultsByWord(), 
       'entities', options) as Observable<ODataEntities<SearchResultItem>>;
   }
   public getSearchResultsByWordAndTemplateId(): ODataFunctionResource<{Word: string, TemplateId: string}, SearchResultItem> { 
-    return this.client.function<{Word: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByWordAndTemplateId');
+    return this.client.function<{Word: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByWordAndTemplateId', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByWordAndTemplateId(Word: string, TemplateId: string, options?: HttpFunctionOptions<SearchResultItem>) {
+  public callGetSearchResultsByWordAndTemplateId(Word: string, TemplateId: string, options?: HttpQueryOptions<SearchResultItem>) {
     return this.callFunction<{Word: string, TemplateId: string}, SearchResultItem>(
       {Word, TemplateId}, 
       this.getSearchResultsByWordAndTemplateId(), 
       'entities', options) as Observable<ODataEntities<SearchResultItem>>;
   }
   public getSearchResultsByPath(): ODataFunctionResource<{Path: string}, SearchResultItem> { 
-    return this.client.function<{Path: string}, SearchResultItem>('Default.GetSearchResultsByPath');
+    return this.client.function<{Path: string}, SearchResultItem>('Default.GetSearchResultsByPath', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByPath(Path: string, options?: HttpFunctionOptions<SearchResultItem>) {
+  public callGetSearchResultsByPath(Path: string, options?: HttpQueryOptions<SearchResultItem>) {
     return this.callFunction<{Path: string}, SearchResultItem>(
       {Path}, 
       this.getSearchResultsByPath(), 
       'entities', options) as Observable<ODataEntities<SearchResultItem>>;
   }
   public getSearchResultsByPathAndTemplateId(): ODataFunctionResource<{Path: string, TemplateId: string}, SearchResultItem> { 
-    return this.client.function<{Path: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByPathAndTemplateId');
+    return this.client.function<{Path: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByPathAndTemplateId', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByPathAndTemplateId(Path: string, TemplateId: string, options?: HttpFunctionOptions<SearchResultItem>) {
+  public callGetSearchResultsByPathAndTemplateId(Path: string, TemplateId: string, options?: HttpQueryOptions<SearchResultItem>) {
     return this.callFunction<{Path: string, TemplateId: string}, SearchResultItem>(
       {Path, TemplateId}, 
       this.getSearchResultsByPathAndTemplateId(), 

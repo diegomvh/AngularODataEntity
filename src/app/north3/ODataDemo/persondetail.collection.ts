@@ -7,17 +7,18 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
 import { Address } from './address.complex';
+import { Person } from './person.entity';
 import { PersonDetail } from './persondetail.entity';
 import { AddressModel } from './address.model';
+import { PersonModel } from './person.model';
 import { PersonDetailModel } from './persondetail.model';
 import { AddressCollection } from './address.collection';
+import { PersonCollection } from './person.collection';
 //#endregion
 
 export class PersonDetailCollection<E extends PersonDetail, M extends PersonDetailModel<E>> extends ODataCollection<E, M> {

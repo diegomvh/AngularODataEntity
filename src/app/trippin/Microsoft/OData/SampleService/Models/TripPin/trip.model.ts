@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -63,7 +61,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   
   @ModelField()
   Photos?: PhotoCollection<Photo, PhotoModel<Photo>>;
-  public getPhotos({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getPhotos({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Photo> = {}) {
     return this.getReference<Photo>('Photos', {asEntity, ...options}) as Observable<PhotoCollection<Photo, PhotoModel<Photo>>>;
   }
   public setPhotos(model: PhotoCollection<Photo, PhotoModel<Photo>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -71,7 +69,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   }
   @ModelField()
   PlanItems?: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>;
-  public getPlanItems({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getPlanItems({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<PlanItem> = {}) {
     return this.getReference<PlanItem>('PlanItems', {asEntity, ...options}) as Observable<PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>>;
   }
   public setPlanItems(model: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {

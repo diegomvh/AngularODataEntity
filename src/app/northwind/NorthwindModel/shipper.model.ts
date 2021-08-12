@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -40,7 +38,7 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   
   @ModelField()
   Orders?: OrderCollection<Order, OrderModel<Order>>;
-  public getOrders({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getOrders({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Order> = {}) {
     return this.getReference<Order>('Orders', {asEntity, ...options}) as Observable<OrderCollection<Order, OrderModel<Order>>>;
   }
   public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {

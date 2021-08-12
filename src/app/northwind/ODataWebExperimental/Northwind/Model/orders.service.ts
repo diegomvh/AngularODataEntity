@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -64,7 +62,7 @@ export class OrdersService extends ODataEntitySetService<Order> {
   public customer(key: EntityKey<Order>): ODataNavigationPropertyResource<Customer> { 
     return this.entity(key).navigationProperty<Customer>('Customer'); 
   }
-  public fetchCustomer(key: EntityKey<Order>, options?: HttpNavigationPropertyOptions<Customer>) {
+  public fetchCustomer(key: EntityKey<Order>, options?: HttpQueryOptions<Customer>) {
     return this.fetchNavigationProperty<Customer>(
       this.customer(key), 
       'entity', options) as Observable<ODataEntity<Customer>>;
@@ -80,7 +78,7 @@ export class OrdersService extends ODataEntitySetService<Order> {
   public employee(key: EntityKey<Order>): ODataNavigationPropertyResource<Employee> { 
     return this.entity(key).navigationProperty<Employee>('Employee'); 
   }
-  public fetchEmployee(key: EntityKey<Order>, options?: HttpNavigationPropertyOptions<Employee>) {
+  public fetchEmployee(key: EntityKey<Order>, options?: HttpQueryOptions<Employee>) {
     return this.fetchNavigationProperty<Employee>(
       this.employee(key), 
       'entity', options) as Observable<ODataEntity<Employee>>;
@@ -96,7 +94,7 @@ export class OrdersService extends ODataEntitySetService<Order> {
   public order_Details(key: EntityKey<Order>): ODataNavigationPropertyResource<OrderDetail> { 
     return this.entity(key).navigationProperty<OrderDetail>('Order_Details'); 
   }
-  public fetchOrder_Details(key: EntityKey<Order>, options?: HttpNavigationPropertyOptions<OrderDetail>) {
+  public fetchOrder_Details(key: EntityKey<Order>, options?: HttpQueryOptions<OrderDetail>) {
     return this.fetchNavigationProperty<OrderDetail>(
       this.order_Details(key), 
       'entities', options) as Observable<ODataEntities<OrderDetail>>;
@@ -112,7 +110,7 @@ export class OrdersService extends ODataEntitySetService<Order> {
   public shipper(key: EntityKey<Order>): ODataNavigationPropertyResource<Shipper> { 
     return this.entity(key).navigationProperty<Shipper>('Shipper'); 
   }
-  public fetchShipper(key: EntityKey<Order>, options?: HttpNavigationPropertyOptions<Shipper>) {
+  public fetchShipper(key: EntityKey<Order>, options?: HttpQueryOptions<Shipper>) {
     return this.fetchNavigationProperty<Shipper>(
       this.shipper(key), 
       'entity', options) as Observable<ODataEntity<Shipper>>;

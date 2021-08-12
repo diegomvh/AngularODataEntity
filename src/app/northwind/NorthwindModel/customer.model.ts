@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -75,7 +73,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   
   @ModelField()
   Orders?: OrderCollection<Order, OrderModel<Order>>;
-  public getOrders({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getOrders({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Order> = {}) {
     return this.getReference<Order>('Orders', {asEntity, ...options}) as Observable<OrderCollection<Order, OrderModel<Order>>>;
   }
   public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -83,7 +81,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
   @ModelField()
   CustomerDemographics?: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
-  public getCustomerDemographics({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getCustomerDemographics({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<CustomerDemographic> = {}) {
     return this.getReference<CustomerDemographic>('CustomerDemographics', {asEntity, ...options}) as Observable<CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>>;
   }
   public setCustomerDemographics(model: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {

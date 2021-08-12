@@ -18,7 +18,8 @@ export const CategoryEntityConfig = {
   keys: [{name: 'ID'}],
   fields: {
     ID: {type: 'Edm.Int32', nullable: false},
-    Name: {type: 'Edm.String'}
+    Name: {type: 'Edm.String'},
+    Products: {type: 'ODataDemo.Product', collection: true, navigation: true}
   }
 } as StructuredTypeConfig<Category>;
 //#endregion

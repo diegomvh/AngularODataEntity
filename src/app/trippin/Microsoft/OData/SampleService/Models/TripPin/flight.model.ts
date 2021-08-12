@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -36,7 +34,7 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   
   @ModelField()
   From?: AirportModel<Airport>;
-  public getFrom({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getFrom({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Airport> = {}) {
     return this.getReference<Airport>('From', {asEntity, ...options}) as Observable<AirportModel<Airport>>;
   }
   public setFrom(model: AirportModel<Airport> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -44,7 +42,7 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   }
   @ModelField()
   To?: AirportModel<Airport>;
-  public getTo({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getTo({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Airport> = {}) {
     return this.getReference<Airport>('To', {asEntity, ...options}) as Observable<AirportModel<Airport>>;
   }
   public setTo(model: AirportModel<Airport> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -52,7 +50,7 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   }
   @ModelField()
   Airline?: AirlineModel<Airline>;
-  public getAirline({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getAirline({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Airline> = {}) {
     return this.getReference<Airline>('Airline', {asEntity, ...options}) as Observable<AirlineModel<Airline>>;
   }
   public setAirline(model: AirlineModel<Airline> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {

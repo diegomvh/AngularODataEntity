@@ -20,9 +20,7 @@ import {
   Expand, 
   Select,
   HttpOptions,
-  HttpActionOptions,
-  HttpFunctionOptions,
-  HttpNavigationPropertyOptions
+  HttpQueryOptions
 } from 'angular-odata';//#endregion
 
 //#region ODataApi Imports
@@ -55,7 +53,7 @@ export class RegionsService extends ODataEntitySetService<Region> {
   public territories(key: EntityKey<Region>): ODataNavigationPropertyResource<Territory> { 
     return this.entity(key).navigationProperty<Territory>('Territories'); 
   }
-  public fetchTerritories(key: EntityKey<Region>, options?: HttpNavigationPropertyOptions<Territory>) {
+  public fetchTerritories(key: EntityKey<Region>, options?: HttpQueryOptions<Territory>) {
     return this.fetchNavigationProperty<Territory>(
       this.territories(key), 
       'entities', options) as Observable<ODataEntities<Territory>>;

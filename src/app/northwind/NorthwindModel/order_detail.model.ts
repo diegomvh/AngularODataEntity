@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -51,7 +49,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   
   @ModelField()
   Order?: OrderModel<Order>;
-  public getOrder({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getOrder({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Order> = {}) {
     return this.getReference<Order>('Order', {asEntity, ...options}) as Observable<OrderModel<Order>>;
   }
   public setOrder(model: OrderModel<Order> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -59,7 +57,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   }
   @ModelField()
   Product?: ProductModel<Product>;
-  public getProduct({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getProduct({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Product> = {}) {
     return this.getReference<Product>('Product', {asEntity, ...options}) as Observable<ProductModel<Product>>;
   }
   public setProduct(model: ProductModel<Product> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {

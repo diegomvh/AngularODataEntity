@@ -9,9 +9,7 @@ import {
   ODataModel, 
   ODataCollection, 
   HttpOptions, 
-  HttpActionOptions, 
-  HttpFunctionOptions, 
-  HttpNavigationPropertyOptions, 
+  HttpQueryOptions, 
   Duration, 
 } from 'angular-odata';//#endregion
 
@@ -43,7 +41,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   
   @ModelField()
   Region?: RegionModel<Region>;
-  public getRegion({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getRegion({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Region> = {}) {
     return this.getReference<Region>('Region', {asEntity, ...options}) as Observable<RegionModel<Region>>;
   }
   public setRegion(model: RegionModel<Region> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
@@ -51,7 +49,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   }
   @ModelField()
   Employees?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
-  public getEmployees({asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
+  public getEmployees({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Employee> = {}) {
     return this.getReference<Employee>('Employees', {asEntity, ...options}) as Observable<EmployeeCollection<Employee, EmployeeModel<Employee>>>;
   }
   public setEmployees(model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
