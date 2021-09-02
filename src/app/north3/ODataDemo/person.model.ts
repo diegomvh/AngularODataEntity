@@ -26,19 +26,32 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   ID!: number;
-  
+  public $ID() {
+    return this.property<number>('ID');
+  }
+  public getID(options?: HttpOptions) {
+    return this.getValue<number>('ID', options) as Observable<number>;
+  }
   
   @ModelField()
   Name?: string;
-  
+  public $Name() {
+    return this.property<string>('Name');
+  }
+  public getName(options?: HttpOptions) {
+    return this.getValue<string>('Name', options) as Observable<string>;
+  }
   
   @ModelField()
   PersonDetail?: PersonDetailModel<PersonDetail>;
-  public getPersonDetail({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<PersonDetail> = {}) {
-    return this.getReference<PersonDetail>('PersonDetail', {asEntity, ...options}) as Observable<PersonDetailModel<PersonDetail>>;
+  public $PersonDetail() {
+    return this.navigationProperty<PersonDetail>('PersonDetail');
   }
-  public setPersonDetail(model: PersonDetailModel<PersonDetail> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<PersonDetail>('PersonDetail', model, {asEntity, ...options});
+  public getPersonDetail() {
+    return this.getReference<PersonDetail>('PersonDetail') as PersonDetailModel<PersonDetail>;
+  }
+  public setPersonDetail(model: PersonDetailModel<PersonDetail> | null, options?: HttpOptions) {
+    return this.setReference<PersonDetail>('PersonDetail', model, options);
   }
   //#endregion
   //#region ODataApi Actions

@@ -26,23 +26,41 @@ export class AdvertisementModel<E extends Advertisement> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   ID!: string;
-  
+  public $ID() {
+    return this.property<string>('ID');
+  }
+  public getID(options?: HttpOptions) {
+    return this.getValue<string>('ID', options) as Observable<string>;
+  }
   
   @ModelField()
   Name?: string;
-  
+  public $Name() {
+    return this.property<string>('Name');
+  }
+  public getName(options?: HttpOptions) {
+    return this.getValue<string>('Name', options) as Observable<string>;
+  }
   
   @ModelField()
   AirDate!: any;
-  
+  public $AirDate() {
+    return this.property<any>('AirDate');
+  }
+  public getAirDate(options?: HttpOptions) {
+    return this.getValue<any>('AirDate', options) as Observable<any>;
+  }
   
   @ModelField()
   FeaturedProduct?: FeaturedProductModel<FeaturedProduct>;
-  public getFeaturedProduct({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<FeaturedProduct> = {}) {
-    return this.getReference<FeaturedProduct>('FeaturedProduct', {asEntity, ...options}) as Observable<FeaturedProductModel<FeaturedProduct>>;
+  public $FeaturedProduct() {
+    return this.navigationProperty<FeaturedProduct>('FeaturedProduct');
   }
-  public setFeaturedProduct(model: FeaturedProductModel<FeaturedProduct> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<FeaturedProduct>('FeaturedProduct', model, {asEntity, ...options});
+  public getFeaturedProduct() {
+    return this.getReference<FeaturedProduct>('FeaturedProduct') as FeaturedProductModel<FeaturedProduct>;
+  }
+  public setFeaturedProduct(model: FeaturedProductModel<FeaturedProduct> | null, options?: HttpOptions) {
+    return this.setReference<FeaturedProduct>('FeaturedProduct', model, options);
   }
   //#endregion
   //#region ODataApi Actions

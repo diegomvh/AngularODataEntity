@@ -32,55 +32,99 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   ID!: number;
-  
+  public $ID() {
+    return this.property<number>('ID');
+  }
+  public getID(options?: HttpOptions) {
+    return this.getValue<number>('ID', options) as Observable<number>;
+  }
   
   @ModelField()
   Name?: string;
-  
+  public $Name() {
+    return this.property<string>('Name');
+  }
+  public getName(options?: HttpOptions) {
+    return this.getValue<string>('Name', options) as Observable<string>;
+  }
   
   @ModelField()
   Description?: string;
-  
+  public $Description() {
+    return this.property<string>('Description');
+  }
+  public getDescription(options?: HttpOptions) {
+    return this.getValue<string>('Description', options) as Observable<string>;
+  }
   
   @ModelField()
   ReleaseDate!: any;
-  
+  public $ReleaseDate() {
+    return this.property<any>('ReleaseDate');
+  }
+  public getReleaseDate(options?: HttpOptions) {
+    return this.getValue<any>('ReleaseDate', options) as Observable<any>;
+  }
   
   @ModelField()
   DiscontinuedDate?: any;
-  
+  public $DiscontinuedDate() {
+    return this.property<any>('DiscontinuedDate');
+  }
+  public getDiscontinuedDate(options?: HttpOptions) {
+    return this.getValue<any>('DiscontinuedDate', options) as Observable<any>;
+  }
   
   @ModelField()
   Rating!: number;
-  
+  public $Rating() {
+    return this.property<number>('Rating');
+  }
+  public getRating(options?: HttpOptions) {
+    return this.getValue<number>('Rating', options) as Observable<number>;
+  }
   
   @ModelField()
   Price!: number;
-  
+  public $Price() {
+    return this.property<number>('Price');
+  }
+  public getPrice(options?: HttpOptions) {
+    return this.getValue<number>('Price', options) as Observable<number>;
+  }
   
   @ModelField()
   Categories?: CategoryCollection<Category, CategoryModel<Category>>;
-  public getCategories({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Category> = {}) {
-    return this.getReference<Category>('Categories', {asEntity, ...options}) as Observable<CategoryCollection<Category, CategoryModel<Category>>>;
+  public $Categories() {
+    return this.navigationProperty<Category>('Categories');
   }
-  public setCategories(model: CategoryCollection<Category, CategoryModel<Category>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Category>('Categories', model, {asEntity, ...options});
+  public getCategories() {
+    return this.getReference<Category>('Categories') as CategoryCollection<Category, CategoryModel<Category>>;
+  }
+  public setCategories(model: CategoryCollection<Category, CategoryModel<Category>> | null, options?: HttpOptions) {
+    return this.setReference<Category>('Categories', model, options);
   }
   @ModelField()
   Supplier?: SupplierModel<Supplier>;
-  public getSupplier({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Supplier> = {}) {
-    return this.getReference<Supplier>('Supplier', {asEntity, ...options}) as Observable<SupplierModel<Supplier>>;
+  public $Supplier() {
+    return this.navigationProperty<Supplier>('Supplier');
   }
-  public setSupplier(model: SupplierModel<Supplier> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Supplier>('Supplier', model, {asEntity, ...options});
+  public getSupplier() {
+    return this.getReference<Supplier>('Supplier') as SupplierModel<Supplier>;
+  }
+  public setSupplier(model: SupplierModel<Supplier> | null, options?: HttpOptions) {
+    return this.setReference<Supplier>('Supplier', model, options);
   }
   @ModelField()
   ProductDetail?: ProductDetailModel<ProductDetail>;
-  public getProductDetail({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<ProductDetail> = {}) {
-    return this.getReference<ProductDetail>('ProductDetail', {asEntity, ...options}) as Observable<ProductDetailModel<ProductDetail>>;
+  public $ProductDetail() {
+    return this.navigationProperty<ProductDetail>('ProductDetail');
   }
-  public setProductDetail(model: ProductDetailModel<ProductDetail> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<ProductDetail>('ProductDetail', model, {asEntity, ...options});
+  public getProductDetail() {
+    return this.getReference<ProductDetail>('ProductDetail') as ProductDetailModel<ProductDetail>;
+  }
+  public setProductDetail(model: ProductDetailModel<ProductDetail> | null, options?: HttpOptions) {
+    return this.setReference<ProductDetail>('ProductDetail', model, options);
   }
   //#endregion
   //#region ODataApi Actions

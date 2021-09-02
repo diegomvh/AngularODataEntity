@@ -24,15 +24,30 @@ export class EmployeeModel<E extends Employee> extends PersonModel<E> {
   //#region ODataApi Properties
   @ModelField()
   EmployeeID!: number;
-  
+  public $EmployeeID() {
+    return this.property<number>('EmployeeID');
+  }
+  public getEmployeeID(options?: HttpOptions) {
+    return this.getValue<number>('EmployeeID', options) as Observable<number>;
+  }
   
   @ModelField()
   HireDate!: any;
-  
+  public $HireDate() {
+    return this.property<any>('HireDate');
+  }
+  public getHireDate(options?: HttpOptions) {
+    return this.getValue<any>('HireDate', options) as Observable<any>;
+  }
   
   @ModelField()
   Salary!: number;
-  
+  public $Salary() {
+    return this.property<number>('Salary');
+  }
+  public getSalary(options?: HttpOptions) {
+    return this.getValue<number>('Salary', options) as Observable<number>;
+  }
   
   //#endregion
   //#region ODataApi Actions

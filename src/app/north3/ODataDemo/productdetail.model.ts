@@ -26,19 +26,32 @@ export class ProductDetailModel<E extends ProductDetail> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   ProductID!: number;
-  
+  public $ProductID() {
+    return this.property<number>('ProductID');
+  }
+  public getProductID(options?: HttpOptions) {
+    return this.getValue<number>('ProductID', options) as Observable<number>;
+  }
   
   @ModelField()
   Details?: string;
-  
+  public $Details() {
+    return this.property<string>('Details');
+  }
+  public getDetails(options?: HttpOptions) {
+    return this.getValue<string>('Details', options) as Observable<string>;
+  }
   
   @ModelField()
   Product?: ProductModel<Product>;
-  public getProduct({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Product> = {}) {
-    return this.getReference<Product>('Product', {asEntity, ...options}) as Observable<ProductModel<Product>>;
+  public $Product() {
+    return this.navigationProperty<Product>('Product');
   }
-  public setProduct(model: ProductModel<Product> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Product>('Product', model, {asEntity, ...options});
+  public getProduct() {
+    return this.getReference<Product>('Product') as ProductModel<Product>;
+  }
+  public setProduct(model: ProductModel<Product> | null, options?: HttpOptions) {
+    return this.setReference<Product>('Product', model, options);
   }
   //#endregion
   //#region ODataApi Actions

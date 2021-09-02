@@ -24,7 +24,12 @@ export class CustomerModel<E extends Customer> extends PersonModel<E> {
   //#region ODataApi Properties
   @ModelField()
   TotalExpense!: number;
-  
+  public $TotalExpense() {
+    return this.property<number>('TotalExpense');
+  }
+  public getTotalExpense(options?: HttpOptions) {
+    return this.getValue<number>('TotalExpense', options) as Observable<number>;
+  }
   
   //#endregion
   //#region ODataApi Actions

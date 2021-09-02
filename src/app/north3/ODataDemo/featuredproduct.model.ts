@@ -27,11 +27,14 @@ export class FeaturedProductModel<E extends FeaturedProduct> extends ProductMode
   //#region ODataApi Properties
   @ModelField()
   Advertisement?: AdvertisementModel<Advertisement>;
-  public getAdvertisement({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Advertisement> = {}) {
-    return this.getReference<Advertisement>('Advertisement', {asEntity, ...options}) as Observable<AdvertisementModel<Advertisement>>;
+  public $Advertisement() {
+    return this.navigationProperty<Advertisement>('Advertisement');
   }
-  public setAdvertisement(model: AdvertisementModel<Advertisement> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Advertisement>('Advertisement', model, {asEntity, ...options});
+  public getAdvertisement() {
+    return this.getReference<Advertisement>('Advertisement') as AdvertisementModel<Advertisement>;
+  }
+  public setAdvertisement(model: AdvertisementModel<Advertisement> | null, options?: HttpOptions) {
+    return this.setReference<Advertisement>('Advertisement', model, options);
   }
   //#endregion
   //#region ODataApi Actions
