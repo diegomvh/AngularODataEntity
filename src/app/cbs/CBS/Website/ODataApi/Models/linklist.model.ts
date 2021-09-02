@@ -26,7 +26,12 @@ export class LinkListModel<E extends LinkList> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   Items?: LinkCollection<Link, LinkModel<Link>>;
-  
+  public $Items() {
+    return this.property<LinkCollection<Link, LinkModel<Link>>>('Items');
+  }
+  public getItems(options?: HttpOptions) {
+    return this.getValue<LinkCollection<Link, LinkModel<Link>>>('Items', options) as Observable<LinkCollection<Link, LinkModel<Link>>>;
+  }
   
   //#endregion
   //#region ODataApi Actions

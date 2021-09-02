@@ -26,7 +26,12 @@ export class ErrataListModel<E extends ErrataList> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   Items?: ErratumItemCollection<ErratumItem, ErratumItemModel<ErratumItem>>;
-  
+  public $Items() {
+    return this.property<ErratumItemCollection<ErratumItem, ErratumItemModel<ErratumItem>>>('Items');
+  }
+  public getItems(options?: HttpOptions) {
+    return this.getValue<ErratumItemCollection<ErratumItem, ErratumItemModel<ErratumItem>>>('Items', options) as Observable<ErratumItemCollection<ErratumItem, ErratumItemModel<ErratumItem>>>;
+  }
   
   //#endregion
   //#region ODataApi Actions

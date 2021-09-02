@@ -23,11 +23,21 @@ export class ErratumItemModel<E extends ErratumItem> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   PresentationTime!: Date;
-  
+  public $PresentationTime() {
+    return this.property<Date>('PresentationTime');
+  }
+  public getPresentationTime(options?: HttpOptions) {
+    return this.getValue<Date>('PresentationTime', options) as Observable<Date>;
+  }
   
   @ModelField()
   Body?: string;
-  
+  public $Body() {
+    return this.property<string>('Body');
+  }
+  public getBody(options?: HttpOptions) {
+    return this.getValue<string>('Body', options) as Observable<string>;
+  }
   
   //#endregion
   //#region ODataApi Actions
