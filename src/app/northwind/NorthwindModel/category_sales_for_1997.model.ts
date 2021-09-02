@@ -23,11 +23,21 @@ export class CategorySalesFor1997Model<E extends CategorySalesFor1997> extends O
   //#region ODataApi Properties
   @ModelField()
   CategoryName!: string;
-  
+  public $CategoryName() {
+    return this.property<string>('CategoryName');
+  }
+  public getCategoryName(options?: HttpOptions) {
+    return this.getValue<string>('CategoryName', options) as Observable<string>;
+  }
   
   @ModelField()
   CategorySales?: number;
-  
+  public $CategorySales() {
+    return this.property<number>('CategorySales');
+  }
+  public getCategorySales(options?: HttpOptions) {
+    return this.getValue<number>('CategorySales', options) as Observable<number>;
+  }
   
   //#endregion
   //#region ODataApi Actions

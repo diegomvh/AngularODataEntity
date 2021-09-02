@@ -26,19 +26,32 @@ export class RegionModel<E extends Region> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   RegionID!: number;
-  
+  public $RegionID() {
+    return this.property<number>('RegionID');
+  }
+  public getRegionID(options?: HttpOptions) {
+    return this.getValue<number>('RegionID', options) as Observable<number>;
+  }
   
   @ModelField()
   RegionDescription!: string;
-  
+  public $RegionDescription() {
+    return this.property<string>('RegionDescription');
+  }
+  public getRegionDescription(options?: HttpOptions) {
+    return this.getValue<string>('RegionDescription', options) as Observable<string>;
+  }
   
   @ModelField()
   Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
-  public getTerritories({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Territory> = {}) {
-    return this.getReference<Territory>('Territories', {asEntity, ...options}) as Observable<TerritoryCollection<Territory, TerritoryModel<Territory>>>;
+  public $Territories() {
+    return this.navigationProperty<Territory>('Territories');
   }
-  public setTerritories(model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Territory>('Territories', model, {asEntity, ...options});
+  public getTerritories() {
+    return this.getReference<Territory>('Territories') as TerritoryCollection<Territory, TerritoryModel<Territory>>;
+  }
+  public setTerritories(model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null, options?: HttpOptions) {
+    return this.setReference<Territory>('Territories', model, options);
   }
   //#endregion
   //#region ODataApi Actions

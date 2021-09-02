@@ -26,19 +26,32 @@ export class CustomerDemographicModel<E extends CustomerDemographic> extends ODa
   //#region ODataApi Properties
   @ModelField()
   CustomerTypeID!: string;
-  
+  public $CustomerTypeID() {
+    return this.property<string>('CustomerTypeID');
+  }
+  public getCustomerTypeID(options?: HttpOptions) {
+    return this.getValue<string>('CustomerTypeID', options) as Observable<string>;
+  }
   
   @ModelField()
   CustomerDesc?: string;
-  
+  public $CustomerDesc() {
+    return this.property<string>('CustomerDesc');
+  }
+  public getCustomerDesc(options?: HttpOptions) {
+    return this.getValue<string>('CustomerDesc', options) as Observable<string>;
+  }
   
   @ModelField()
   Customers?: CustomerCollection<Customer, CustomerModel<Customer>>;
-  public getCustomers({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Customer> = {}) {
-    return this.getReference<Customer>('Customers', {asEntity, ...options}) as Observable<CustomerCollection<Customer, CustomerModel<Customer>>>;
+  public $Customers() {
+    return this.navigationProperty<Customer>('Customers');
   }
-  public setCustomers(model: CustomerCollection<Customer, CustomerModel<Customer>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Customer>('Customers', model, {asEntity, ...options});
+  public getCustomers() {
+    return this.getReference<Customer>('Customers') as CustomerCollection<Customer, CustomerModel<Customer>>;
+  }
+  public setCustomers(model: CustomerCollection<Customer, CustomerModel<Customer>> | null, options?: HttpOptions) {
+    return this.setReference<Customer>('Customers', model, options);
   }
   //#endregion
   //#region ODataApi Actions

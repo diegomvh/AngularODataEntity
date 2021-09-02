@@ -23,15 +23,30 @@ export class ProductSalesFor1997Model<E extends ProductSalesFor1997> extends ODa
   //#region ODataApi Properties
   @ModelField()
   CategoryName!: string;
-  
+  public $CategoryName() {
+    return this.property<string>('CategoryName');
+  }
+  public getCategoryName(options?: HttpOptions) {
+    return this.getValue<string>('CategoryName', options) as Observable<string>;
+  }
   
   @ModelField()
   ProductName!: string;
-  
+  public $ProductName() {
+    return this.property<string>('ProductName');
+  }
+  public getProductName(options?: HttpOptions) {
+    return this.getValue<string>('ProductName', options) as Observable<string>;
+  }
   
   @ModelField()
   ProductSales?: number;
-  
+  public $ProductSales() {
+    return this.property<number>('ProductSales');
+  }
+  public getProductSales(options?: HttpOptions) {
+    return this.getValue<number>('ProductSales', options) as Observable<number>;
+  }
   
   //#endregion
   //#region ODataApi Actions

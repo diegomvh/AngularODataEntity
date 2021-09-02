@@ -29,31 +29,52 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   TerritoryID!: string;
-  
+  public $TerritoryID() {
+    return this.property<string>('TerritoryID');
+  }
+  public getTerritoryID(options?: HttpOptions) {
+    return this.getValue<string>('TerritoryID', options) as Observable<string>;
+  }
   
   @ModelField()
   TerritoryDescription!: string;
-  
+  public $TerritoryDescription() {
+    return this.property<string>('TerritoryDescription');
+  }
+  public getTerritoryDescription(options?: HttpOptions) {
+    return this.getValue<string>('TerritoryDescription', options) as Observable<string>;
+  }
   
   @ModelField()
   RegionID!: number;
-  
+  public $RegionID() {
+    return this.property<number>('RegionID');
+  }
+  public getRegionID(options?: HttpOptions) {
+    return this.getValue<number>('RegionID', options) as Observable<number>;
+  }
   
   @ModelField()
   Region?: RegionModel<Region>;
-  public getRegion({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Region> = {}) {
-    return this.getReference<Region>('Region', {asEntity, ...options}) as Observable<RegionModel<Region>>;
+  public $Region() {
+    return this.navigationProperty<Region>('Region');
   }
-  public setRegion(model: RegionModel<Region> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Region>('Region', model, {asEntity, ...options});
+  public getRegion() {
+    return this.getReference<Region>('Region') as RegionModel<Region>;
+  }
+  public setRegion(model: RegionModel<Region> | null, options?: HttpOptions) {
+    return this.setReference<Region>('Region', model, options);
   }
   @ModelField()
   Employees?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
-  public getEmployees({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Employee> = {}) {
-    return this.getReference<Employee>('Employees', {asEntity, ...options}) as Observable<EmployeeCollection<Employee, EmployeeModel<Employee>>>;
+  public $Employees() {
+    return this.navigationProperty<Employee>('Employees');
   }
-  public setEmployees(model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Employee>('Employees', model, {asEntity, ...options});
+  public getEmployees() {
+    return this.getReference<Employee>('Employees') as EmployeeCollection<Employee, EmployeeModel<Employee>>;
+  }
+  public setEmployees(model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null, options?: HttpOptions) {
+    return this.setReference<Employee>('Employees', model, options);
   }
   //#endregion
   //#region ODataApi Actions

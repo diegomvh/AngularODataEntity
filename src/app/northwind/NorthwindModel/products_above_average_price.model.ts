@@ -23,11 +23,21 @@ export class ProductsAboveAveragePriceModel<E extends ProductsAboveAveragePrice>
   //#region ODataApi Properties
   @ModelField()
   ProductName!: string;
-  
+  public $ProductName() {
+    return this.property<string>('ProductName');
+  }
+  public getProductName(options?: HttpOptions) {
+    return this.getValue<string>('ProductName', options) as Observable<string>;
+  }
   
   @ModelField()
   UnitPrice?: number;
-  
+  public $UnitPrice() {
+    return this.property<number>('UnitPrice');
+  }
+  public getUnitPrice(options?: HttpOptions) {
+    return this.getValue<number>('UnitPrice', options) as Observable<number>;
+  }
   
   //#endregion
   //#region ODataApi Actions

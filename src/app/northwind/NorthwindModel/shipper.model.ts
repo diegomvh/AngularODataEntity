@@ -26,23 +26,41 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   ShipperID!: number;
-  
+  public $ShipperID() {
+    return this.property<number>('ShipperID');
+  }
+  public getShipperID(options?: HttpOptions) {
+    return this.getValue<number>('ShipperID', options) as Observable<number>;
+  }
   
   @ModelField()
   CompanyName!: string;
-  
+  public $CompanyName() {
+    return this.property<string>('CompanyName');
+  }
+  public getCompanyName(options?: HttpOptions) {
+    return this.getValue<string>('CompanyName', options) as Observable<string>;
+  }
   
   @ModelField()
   Phone?: string;
-  
+  public $Phone() {
+    return this.property<string>('Phone');
+  }
+  public getPhone(options?: HttpOptions) {
+    return this.getValue<string>('Phone', options) as Observable<string>;
+  }
   
   @ModelField()
   Orders?: OrderCollection<Order, OrderModel<Order>>;
-  public getOrders({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Order> = {}) {
-    return this.getReference<Order>('Orders', {asEntity, ...options}) as Observable<OrderCollection<Order, OrderModel<Order>>>;
+  public $Orders() {
+    return this.navigationProperty<Order>('Orders');
   }
-  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Order>('Orders', model, {asEntity, ...options});
+  public getOrders() {
+    return this.getReference<Order>('Orders') as OrderCollection<Order, OrderModel<Order>>;
+  }
+  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, options?: HttpOptions) {
+    return this.setReference<Order>('Orders', model, options);
   }
   //#endregion
   //#region ODataApi Actions

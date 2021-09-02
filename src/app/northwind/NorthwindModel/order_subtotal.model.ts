@@ -23,11 +23,21 @@ export class OrderSubtotalModel<E extends OrderSubtotal> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   OrderID!: number;
-  
+  public $OrderID() {
+    return this.property<number>('OrderID');
+  }
+  public getOrderID(options?: HttpOptions) {
+    return this.getValue<number>('OrderID', options) as Observable<number>;
+  }
   
   @ModelField()
   Subtotal?: number;
-  
+  public $Subtotal() {
+    return this.property<number>('Subtotal');
+  }
+  public getSubtotal(options?: HttpOptions) {
+    return this.getValue<number>('Subtotal', options) as Observable<number>;
+  }
   
   //#endregion
   //#region ODataApi Actions

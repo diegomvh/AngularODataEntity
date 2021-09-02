@@ -23,11 +23,21 @@ export class CurrentProductListModel<E extends CurrentProductList> extends OData
   //#region ODataApi Properties
   @ModelField()
   ProductID!: number;
-  
+  public $ProductID() {
+    return this.property<number>('ProductID');
+  }
+  public getProductID(options?: HttpOptions) {
+    return this.getValue<number>('ProductID', options) as Observable<number>;
+  }
   
   @ModelField()
   ProductName!: string;
-  
+  public $ProductName() {
+    return this.property<string>('ProductName');
+  }
+  public getProductName(options?: HttpOptions) {
+    return this.getValue<string>('ProductName', options) as Observable<string>;
+  }
   
   //#endregion
   //#region ODataApi Actions
