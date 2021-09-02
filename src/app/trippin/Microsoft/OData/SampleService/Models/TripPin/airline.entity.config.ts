@@ -16,7 +16,7 @@ export const AirlineEntityConfig = {
   collection: AirlineCollection,
   keys: [{name: 'AirlineCode'}],
   fields: {
-    AirlineCode: {type: 'Edm.String', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
+    AirlineCode: {type: 'Edm.String', nullable: false, annotations: [{"term":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     Name: {type: 'Edm.String', nullable: false}
   }
 } as StructuredTypeConfig<Airline>;

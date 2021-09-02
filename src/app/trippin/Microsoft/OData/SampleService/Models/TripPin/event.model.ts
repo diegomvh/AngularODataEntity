@@ -27,11 +27,21 @@ export class EventModel<E extends Event> extends PlanItemModel<E> {
   //#region ODataApi Properties
   @ModelField()
   Description?: string;
-  
+  public $Description() {
+    return this.property<string>('Description');
+  }
+  public getDescription(options?: HttpOptions) {
+    return this.getValue<string>('Description', options) as Observable<string>;
+  }
   
   @ModelField()
   OccursAt!: EventLocationModel<EventLocation>;
-  
+  public $OccursAt() {
+    return this.property<EventLocationModel<EventLocation>>('OccursAt');
+  }
+  public getOccursAt(options?: HttpOptions) {
+    return this.getValue<EventLocationModel<EventLocation>>('OccursAt', options) as Observable<EventLocationModel<EventLocation>>;
+  }
   
   //#endregion
   //#region ODataApi Actions

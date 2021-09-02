@@ -13,7 +13,7 @@ export const MeServiceEntitySetConfig = {
   entityType: "Microsoft.OData.SampleService.Models.TripPin.Person",
   annotations: [
   {
-    "type": "Org.OData.Core.V1.ResourcePath",
+    "term": "Org.OData.Core.V1.ResourcePath",
     "string": "Me"
   }
 ],

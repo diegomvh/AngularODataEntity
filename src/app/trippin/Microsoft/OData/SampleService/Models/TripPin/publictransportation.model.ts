@@ -24,7 +24,12 @@ export class PublicTransportationModel<E extends PublicTransportation> extends P
   //#region ODataApi Properties
   @ModelField()
   SeatNumber?: string;
-  
+  public $SeatNumber() {
+    return this.property<string>('SeatNumber');
+  }
+  public getSeatNumber(options?: HttpOptions) {
+    return this.getValue<string>('SeatNumber', options) as Observable<string>;
+  }
   
   //#endregion
   //#region ODataApi Actions

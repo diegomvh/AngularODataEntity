@@ -13,18 +13,18 @@ export const AirlinesServiceEntitySetConfig = {
   entityType: "Microsoft.OData.SampleService.Models.TripPin.Airline",
   annotations: [
   {
-    "type": "Org.OData.Core.V1.ResourcePath",
+    "term": "Org.OData.Core.V1.ResourcePath",
     "string": "Airlines"
   },
   {
-    "type": "Org.OData.Capabilities.V1.SearchRestrictions",
+    "term": "Org.OData.Capabilities.V1.SearchRestrictions",
     "values": [
       "",
       "Org.OData.Capabilities.V1.SearchExpressions/none"
     ]
   },
   {
-    "type": "Org.OData.Capabilities.V1.InsertRestrictions",
+    "term": "Org.OData.Capabilities.V1.InsertRestrictions",
     "values": [
       "",
       ""

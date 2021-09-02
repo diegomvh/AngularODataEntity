@@ -24,7 +24,12 @@ export class EventLocationModel<E extends EventLocation> extends LocationModel<E
   //#region ODataApi Properties
   @ModelField()
   BuildingInfo?: string;
-  
+  public $BuildingInfo() {
+    return this.property<string>('BuildingInfo');
+  }
+  public getBuildingInfo(options?: HttpOptions) {
+    return this.getValue<string>('BuildingInfo', options) as Observable<string>;
+  }
   
   //#endregion
   //#region ODataApi Actions

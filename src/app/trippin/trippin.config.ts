@@ -13,7 +13,7 @@ export const TripPinConfig = {
   serviceRootUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
   name: 'TripPin',
   version: '4.0',
-  creation: new Date('2021-08-11T21:57:03.9660032-03:00'),
+  creation: new Date('2021-09-02T13:37:58.6931560-03:00'),
   schemas: [
     TripPinSchema
   ],

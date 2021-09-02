@@ -16,9 +16,9 @@ export const AirportEntityConfig = {
   collection: AirportCollection,
   keys: [{name: 'IcaoCode'}],
   fields: {
-    IcaoCode: {type: 'Edm.String', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
+    IcaoCode: {type: 'Edm.String', nullable: false, annotations: [{"term":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     Name: {type: 'Edm.String', nullable: false},
-    IataCode: {type: 'Edm.String', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Immutable","bool":true}]},
+    IataCode: {type: 'Edm.String', nullable: false, annotations: [{"term":"Org.OData.Core.V1.Immutable","bool":true}]},
     Location: {type: 'Microsoft.OData.SampleService.Models.TripPin.AirportLocation', nullable: false}
   }
 } as StructuredTypeConfig<Airport>;

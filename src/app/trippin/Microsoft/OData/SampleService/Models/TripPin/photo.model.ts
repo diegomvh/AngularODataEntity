@@ -23,11 +23,21 @@ export class PhotoModel<E extends Photo> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   Id!: number;
-  
+  public $Id() {
+    return this.property<number>('Id');
+  }
+  public getId(options?: HttpOptions) {
+    return this.getValue<number>('Id', options) as Observable<number>;
+  }
   
   @ModelField()
   Name?: string;
-  
+  public $Name() {
+    return this.property<string>('Name');
+  }
+  public getName(options?: HttpOptions) {
+    return this.getValue<string>('Name', options) as Observable<string>;
+  }
   
   //#endregion
   //#region ODataApi Actions

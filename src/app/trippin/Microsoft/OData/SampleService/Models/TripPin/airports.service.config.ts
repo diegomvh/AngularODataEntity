@@ -13,25 +13,25 @@ export const AirportsServiceEntitySetConfig = {
   entityType: "Microsoft.OData.SampleService.Models.TripPin.Airport",
   annotations: [
   {
-    "type": "Org.OData.Core.V1.ResourcePath",
+    "term": "Org.OData.Core.V1.ResourcePath",
     "string": "Airports"
   },
   {
-    "type": "Org.OData.Capabilities.V1.SearchRestrictions",
+    "term": "Org.OData.Capabilities.V1.SearchRestrictions",
     "values": [
       "",
       "Org.OData.Capabilities.V1.SearchExpressions/none"
     ]
   },
   {
-    "type": "Org.OData.Capabilities.V1.InsertRestrictions",
+    "term": "Org.OData.Capabilities.V1.InsertRestrictions",
     "values": [
       "",
       ""
     ]
   },
   {
-    "type": "Org.OData.Capabilities.V1.DeleteRestrictions",
+    "term": "Org.OData.Capabilities.V1.DeleteRestrictions",
     "values": [
       "",
       ""

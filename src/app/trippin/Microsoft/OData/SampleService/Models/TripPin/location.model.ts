@@ -26,11 +26,21 @@ export class LocationModel<E extends Location> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   Address!: string;
-  
+  public $Address() {
+    return this.property<string>('Address');
+  }
+  public getAddress(options?: HttpOptions) {
+    return this.getValue<string>('Address', options) as Observable<string>;
+  }
   
   @ModelField()
   City!: CityModel<City>;
-  
+  public $City() {
+    return this.property<CityModel<City>>('City');
+  }
+  public getCity(options?: HttpOptions) {
+    return this.getValue<CityModel<City>>('City', options) as Observable<CityModel<City>>;
+  }
   
   //#endregion
   //#region ODataApi Actions

@@ -16,12 +16,12 @@ export const PhotoEntityConfig = {
   collection: PhotoCollection,
   annotations: [
   {
-    "type": "Org.OData.Core.V1.AcceptableMediaTypes"
+    "term": "Org.OData.Core.V1.AcceptableMediaTypes"
   }
 ],
   keys: [{name: 'Id'}],
   fields: {
-    Id: {type: 'Edm.Int64', nullable: false, annotations: [{"type":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
+    Id: {type: 'Edm.Int64', nullable: false, annotations: [{"term":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},
     Name: {type: 'Edm.String'}
   }
 } as StructuredTypeConfig<Photo>;

@@ -25,7 +25,12 @@ export class AirportLocationModel<E extends AirportLocation> extends LocationMod
   //#region ODataApi Properties
   @ModelField()
   Loc!: Point;
-  
+  public $Loc() {
+    return this.property<Point>('Loc');
+  }
+  public getLoc(options?: HttpOptions) {
+    return this.getValue<Point>('Loc', options) as Observable<Point>;
+  }
   
   //#endregion
   //#region ODataApi Actions

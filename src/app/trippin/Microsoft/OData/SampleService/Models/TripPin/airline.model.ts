@@ -23,11 +23,21 @@ export class AirlineModel<E extends Airline> extends ODataModel<E> {
   //#region ODataApi Properties
   @ModelField()
   AirlineCode!: string;
-  
+  public $AirlineCode() {
+    return this.property<string>('AirlineCode');
+  }
+  public getAirlineCode(options?: HttpOptions) {
+    return this.getValue<string>('AirlineCode', options) as Observable<string>;
+  }
   
   @ModelField()
   Name!: string;
-  
+  public $Name() {
+    return this.property<string>('Name');
+  }
+  public getName(options?: HttpOptions) {
+    return this.getValue<string>('Name', options) as Observable<string>;
+  }
   
   //#endregion
   //#region ODataApi Actions

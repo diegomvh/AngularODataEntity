@@ -30,31 +30,45 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   //#region ODataApi Properties
   @ModelField()
   FlightNumber!: string;
-  
+  public $FlightNumber() {
+    return this.property<string>('FlightNumber');
+  }
+  public getFlightNumber(options?: HttpOptions) {
+    return this.getValue<string>('FlightNumber', options) as Observable<string>;
+  }
   
   @ModelField()
   From?: AirportModel<Airport>;
-  public getFrom({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Airport> = {}) {
-    return this.getReference<Airport>('From', {asEntity, ...options}) as Observable<AirportModel<Airport>>;
+  public $From() {
+    return this.navigationProperty<Airport>('From');
   }
-  public setFrom(model: AirportModel<Airport> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Airport>('From', model, {asEntity, ...options});
+  public getFrom() {
+    return this.getReference<Airport>('From') as AirportModel<Airport>;
+  }
+  public setFrom(model: AirportModel<Airport> | null, options?: HttpOptions) {
+    return this.setReference<Airport>('From', model, options);
   }
   @ModelField()
   To?: AirportModel<Airport>;
-  public getTo({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Airport> = {}) {
-    return this.getReference<Airport>('To', {asEntity, ...options}) as Observable<AirportModel<Airport>>;
+  public $To() {
+    return this.navigationProperty<Airport>('To');
   }
-  public setTo(model: AirportModel<Airport> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Airport>('To', model, {asEntity, ...options});
+  public getTo() {
+    return this.getReference<Airport>('To') as AirportModel<Airport>;
+  }
+  public setTo(model: AirportModel<Airport> | null, options?: HttpOptions) {
+    return this.setReference<Airport>('To', model, options);
   }
   @ModelField()
   Airline?: AirlineModel<Airline>;
-  public getAirline({asEntity, ...options}: {asEntity?: boolean} & HttpQueryOptions<Airline> = {}) {
-    return this.getReference<Airline>('Airline', {asEntity, ...options}) as Observable<AirlineModel<Airline>>;
+  public $Airline() {
+    return this.navigationProperty<Airline>('Airline');
   }
-  public setAirline(model: AirlineModel<Airline> | null, {asEntity, ...options}: {asEntity?: boolean} & HttpOptions = {}) {
-    return this.setReference<Airline>('Airline', model, {asEntity, ...options});
+  public getAirline() {
+    return this.getReference<Airline>('Airline') as AirlineModel<Airline>;
+  }
+  public setAirline(model: AirlineModel<Airline> | null, options?: HttpOptions) {
+    return this.setReference<Airline>('Airline', model, options);
   }
   //#endregion
   //#region ODataApi Actions

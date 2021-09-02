@@ -16,25 +16,25 @@ export const DefaultContainerContainer = {
   name: "DefaultContainer",
   annotations: [
   {
-    "type": "Org.OData.Core.V1.Description",
+    "term": "Org.OData.Core.V1.Description",
     "string": "TripPin service is a sample service for OData V4."
   },
   {
-    "type": "Org.OData.Core.V1.DereferenceableIDs",
+    "term": "Org.OData.Core.V1.DereferenceableIDs",
     "bool": true
   },
   {
-    "type": "Org.OData.Core.V1.ConventionalIDs",
+    "term": "Org.OData.Core.V1.ConventionalIDs",
     "bool": true
   },
   {
-    "type": "Org.OData.Capabilities.V1.ConformanceLevel",
+    "term": "Org.OData.Capabilities.V1.ConformanceLevel",
     "values": [
       "Org.OData.Capabilities.V1.ConformanceLevelType/Advanced"
     ]
   },
   {
-    "type": "Org.OData.Capabilities.V1.SupportedFormats",
+    "term": "Org.OData.Capabilities.V1.SupportedFormats",
     "values": [
       "application/json;odata.metadata=full;IEEE754Compatible=false;odata.streaming=true",
       "application/json;odata.metadata=minimal;IEEE754Compatible=false;odata.streaming=true",
@@ -42,15 +42,15 @@ export const DefaultContainerContainer = {
     ]
   },
   {
-    "type": "Org.OData.Capabilities.V1.AsynchronousRequestsSupported",
+    "term": "Org.OData.Capabilities.V1.AsynchronousRequestsSupported",
     "bool": true
   },
   {
-    "type": "Org.OData.Capabilities.V1.BatchContinueOnErrorSupported",
+    "term": "Org.OData.Capabilities.V1.BatchContinueOnErrorSupported",
     "bool": false
   },
   {
-    "type": "Org.OData.Capabilities.V1.FilterFunctions",
+    "term": "Org.OData.Capabilities.V1.FilterFunctions",
     "values": [
       "contains",
       "endswith",
