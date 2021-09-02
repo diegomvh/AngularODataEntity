@@ -24,7 +24,12 @@ export class GeoDetailModel<E extends GeoDetail> extends DimensionOrTopicModel<E
   //#region ODataApi Properties
   @ModelField()
   MapYear?: number;
-  
+  public $MapYear() {
+    return this.property<number>('MapYear');
+  }
+  public getMapYear(options?: HttpOptions) {
+    return this.getValue<number>('MapYear', options) as Observable<number>;
+  }
   
   //#endregion
   //#region ODataApi Actions

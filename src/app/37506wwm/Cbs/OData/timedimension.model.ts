@@ -24,7 +24,12 @@ export class TimeDimensionModel<E extends TimeDimension> extends DimensionOrTopi
   //#region ODataApi Properties
   @ModelField()
   ReleasePolicy?: boolean;
-  
+  public $ReleasePolicy() {
+    return this.property<boolean>('ReleasePolicy');
+  }
+  public getReleasePolicy(options?: HttpOptions) {
+    return this.getValue<boolean>('ReleasePolicy', options) as Observable<boolean>;
+  }
   
   //#endregion
   //#region ODataApi Actions
