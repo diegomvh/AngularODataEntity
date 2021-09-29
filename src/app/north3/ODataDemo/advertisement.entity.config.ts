@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Advertisement } from './advertisement.entity';
 import { AdvertisementModel } from './advertisement.model';
 import { AdvertisementCollection } from './advertisement.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const AdvertisementEntityConfig = {
   name: "Advertisement",
   model: AdvertisementModel,

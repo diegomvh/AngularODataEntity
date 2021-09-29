@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { UData } from './udata.entity';
 import { UDataCollection } from './udata.collection';
 //#endregion
 
 @Model()
 export class UDataModel<E extends UData> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   ID!: number;
   public $ID() {
     return this.property<number>('ID');
   }
-  public getID(options?: HttpOptions) {
+  public getID(options?: ODataOptions) {
     return this.getValue<number>('ID', options) as Observable<number>;
   }
   
@@ -35,7 +35,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $Geslacht() {
     return this.property<string>('Geslacht');
   }
-  public getGeslacht(options?: HttpOptions) {
+  public getGeslacht(options?: ODataOptions) {
     return this.getValue<string>('Geslacht', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $Leeftijd() {
     return this.property<string>('Leeftijd');
   }
-  public getLeeftijd(options?: HttpOptions) {
+  public getLeeftijd(options?: ODataOptions) {
     return this.getValue<string>('Leeftijd', options) as Observable<string>;
   }
   
@@ -53,7 +53,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $Perioden() {
     return this.property<string>('Perioden');
   }
-  public getPerioden(options?: HttpOptions) {
+  public getPerioden(options?: ODataOptions) {
     return this.getValue<string>('Perioden', options) as Observable<string>;
   }
   
@@ -62,7 +62,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $AantalWWUitkeringen_1() {
     return this.property<string>('AantalWWUitkeringen_1');
   }
-  public getAantalWWUitkeringen_1(options?: HttpOptions) {
+  public getAantalWWUitkeringen_1(options?: ODataOptions) {
     return this.getValue<string>('AantalWWUitkeringen_1', options) as Observable<string>;
   }
   
@@ -71,7 +71,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $NoordNederland_2() {
     return this.property<string>('NoordNederland_2');
   }
-  public getNoordNederland_2(options?: HttpOptions) {
+  public getNoordNederland_2(options?: ODataOptions) {
     return this.getValue<string>('NoordNederland_2', options) as Observable<string>;
   }
   
@@ -80,7 +80,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $OostNederland_3() {
     return this.property<string>('OostNederland_3');
   }
-  public getOostNederland_3(options?: HttpOptions) {
+  public getOostNederland_3(options?: ODataOptions) {
     return this.getValue<string>('OostNederland_3', options) as Observable<string>;
   }
   
@@ -89,7 +89,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $WestNederland_4() {
     return this.property<string>('WestNederland_4');
   }
-  public getWestNederland_4(options?: HttpOptions) {
+  public getWestNederland_4(options?: ODataOptions) {
     return this.getValue<string>('WestNederland_4', options) as Observable<string>;
   }
   
@@ -98,7 +98,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $ZuidNederland_5() {
     return this.property<string>('ZuidNederland_5');
   }
-  public getZuidNederland_5(options?: HttpOptions) {
+  public getZuidNederland_5(options?: ODataOptions) {
     return this.getValue<string>('ZuidNederland_5', options) as Observable<string>;
   }
   
@@ -107,7 +107,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $GroningenPV_6() {
     return this.property<string>('GroningenPV_6');
   }
-  public getGroningenPV_6(options?: HttpOptions) {
+  public getGroningenPV_6(options?: ODataOptions) {
     return this.getValue<string>('GroningenPV_6', options) as Observable<string>;
   }
   
@@ -116,7 +116,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $FrieslandPV_7() {
     return this.property<string>('FrieslandPV_7');
   }
-  public getFrieslandPV_7(options?: HttpOptions) {
+  public getFrieslandPV_7(options?: ODataOptions) {
     return this.getValue<string>('FrieslandPV_7', options) as Observable<string>;
   }
   
@@ -125,7 +125,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $DrenthePV_8() {
     return this.property<string>('DrenthePV_8');
   }
-  public getDrenthePV_8(options?: HttpOptions) {
+  public getDrenthePV_8(options?: ODataOptions) {
     return this.getValue<string>('DrenthePV_8', options) as Observable<string>;
   }
   
@@ -134,7 +134,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $OverijsselPV_9() {
     return this.property<string>('OverijsselPV_9');
   }
-  public getOverijsselPV_9(options?: HttpOptions) {
+  public getOverijsselPV_9(options?: ODataOptions) {
     return this.getValue<string>('OverijsselPV_9', options) as Observable<string>;
   }
   
@@ -143,7 +143,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $FlevolandPV_10() {
     return this.property<string>('FlevolandPV_10');
   }
-  public getFlevolandPV_10(options?: HttpOptions) {
+  public getFlevolandPV_10(options?: ODataOptions) {
     return this.getValue<string>('FlevolandPV_10', options) as Observable<string>;
   }
   
@@ -152,7 +152,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $GelderlandPV_11() {
     return this.property<string>('GelderlandPV_11');
   }
-  public getGelderlandPV_11(options?: HttpOptions) {
+  public getGelderlandPV_11(options?: ODataOptions) {
     return this.getValue<string>('GelderlandPV_11', options) as Observable<string>;
   }
   
@@ -161,7 +161,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $UtrechtPV_12() {
     return this.property<string>('UtrechtPV_12');
   }
-  public getUtrechtPV_12(options?: HttpOptions) {
+  public getUtrechtPV_12(options?: ODataOptions) {
     return this.getValue<string>('UtrechtPV_12', options) as Observable<string>;
   }
   
@@ -170,7 +170,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $NoordHollandPV_13() {
     return this.property<string>('NoordHollandPV_13');
   }
-  public getNoordHollandPV_13(options?: HttpOptions) {
+  public getNoordHollandPV_13(options?: ODataOptions) {
     return this.getValue<string>('NoordHollandPV_13', options) as Observable<string>;
   }
   
@@ -179,7 +179,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $ZuidHollandPV_14() {
     return this.property<string>('ZuidHollandPV_14');
   }
-  public getZuidHollandPV_14(options?: HttpOptions) {
+  public getZuidHollandPV_14(options?: ODataOptions) {
     return this.getValue<string>('ZuidHollandPV_14', options) as Observable<string>;
   }
   
@@ -188,7 +188,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $ZeelandPV_15() {
     return this.property<string>('ZeelandPV_15');
   }
-  public getZeelandPV_15(options?: HttpOptions) {
+  public getZeelandPV_15(options?: ODataOptions) {
     return this.getValue<string>('ZeelandPV_15', options) as Observable<string>;
   }
   
@@ -197,7 +197,7 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $NoordBrabantPV_16() {
     return this.property<string>('NoordBrabantPV_16');
   }
-  public getNoordBrabantPV_16(options?: HttpOptions) {
+  public getNoordBrabantPV_16(options?: ODataOptions) {
     return this.getValue<string>('NoordBrabantPV_16', options) as Observable<string>;
   }
   
@@ -206,15 +206,15 @@ export class UDataModel<E extends UData> extends ODataModel<E> {
   public $LimburgPV_17() {
     return this.property<string>('LimburgPV_17');
   }
-  public getLimburgPV_17(options?: HttpOptions) {
+  public getLimburgPV_17(options?: ODataOptions) {
     return this.getValue<string>('LimburgPV_17', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

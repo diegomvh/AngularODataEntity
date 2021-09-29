@@ -2,15 +2,15 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions
+//#region ODataApiGen ODataImports
+import {
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Customer } from './customer.entity';
 import { Employee } from './employee.entity';
 import { OrderDetail } from './order_detail.entity';
@@ -28,8 +28,8 @@ import { ShipperCollection } from './shipper.collection';
 //#endregion
 
 export class OrderCollection<E extends Order, M extends OrderModel<E>> extends ODataCollection<E, M> {
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
 }

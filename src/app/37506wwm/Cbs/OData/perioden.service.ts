@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { TimeCategory } from './timecategory.entity';
 import { TimeCategoryModel } from './timecategory.model';
 import { TimeCategoryCollection } from './timecategory.collection';
@@ -34,18 +32,18 @@ export class PeriodenService extends ODataEntitySetService<TimeCategory> {
   constructor(protected client: ODataClient) {
     super(client, 'Perioden', 'Cbs.OData.TimeCategory');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   timeCategoryModel(attrs?: Partial<TimeCategory>): TimeCategoryModel<TimeCategory> {
     return this.entity().asModel<TimeCategoryModel<TimeCategory>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   timeCategoryCollection(models?: Partial<TimeCategory>[]): TimeCategoryCollection<TimeCategory, TimeCategoryModel<TimeCategory>> {
     return this.entities().asCollection<TimeCategoryModel<TimeCategory>, TimeCategoryCollection<TimeCategory, TimeCategoryModel<TimeCategory>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

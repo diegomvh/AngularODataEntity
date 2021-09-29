@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  SchemaConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  SchemaConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CategoryEntityConfig } from './category.entity.config';
 import { CustomerDemographicEntityConfig } from './customerdemographic.entity.config';
 import { CustomerEntityConfig } from './customer.entity.config';
@@ -32,7 +32,7 @@ import { SummaryOfSalesByQuarterEntityConfig } from './summary_of_sales_by_quart
 import { SummaryOfSalesByYearEntityConfig } from './summary_of_sales_by_year.entity.config';
 //#endregion
 
-//#region ODataApi SchemaConfig
+//#region ODataApiGen SchemaConfig
 export const NorthwindModelSchema = {
   namespace: "NorthwindModel",
   enums: [],

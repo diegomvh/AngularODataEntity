@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PersonGender } from './persongender.enum';
 import { Location } from './location.complex';
 import { Photo } from './photo.entity';
@@ -19,7 +19,7 @@ import { TripCollection } from './trip.collection';
 //#endregion
 
 export interface Person {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   UserName: string;
   FirstName: string;
   LastName: string;

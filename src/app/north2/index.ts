@@ -1,4 +1,4 @@
-﻿//#region ODataApi Imports
+﻿//#region ODataApiGen Imports
 export * from './ODataDemo/address.complex';
 export * from './ODataDemo/product.entity';
 export * from './ODataDemo/category.entity';

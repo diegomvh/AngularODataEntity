@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { DimensionOrTopicModel } from './dimensionortopic.model';
 import { Topic } from './topic.entity';
 import { TopicCollection } from './topic.collection';
@@ -21,13 +21,13 @@ import { TopicCollection } from './topic.collection';
 
 @Model()
 export class TopicModel<E extends Topic> extends DimensionOrTopicModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   Datatype?: string;
   public $Datatype() {
     return this.property<string>('Datatype');
   }
-  public getDatatype(options?: HttpOptions) {
+  public getDatatype(options?: ODataOptions) {
     return this.getValue<string>('Datatype', options) as Observable<string>;
   }
   
@@ -36,7 +36,7 @@ export class TopicModel<E extends Topic> extends DimensionOrTopicModel<E> {
   public $Unit() {
     return this.property<string>('Unit');
   }
-  public getUnit(options?: HttpOptions) {
+  public getUnit(options?: ODataOptions) {
     return this.getValue<string>('Unit', options) as Observable<string>;
   }
   
@@ -45,7 +45,7 @@ export class TopicModel<E extends Topic> extends DimensionOrTopicModel<E> {
   public $Decimals() {
     return this.property<number>('Decimals');
   }
-  public getDecimals(options?: HttpOptions) {
+  public getDecimals(options?: ODataOptions) {
     return this.getValue<number>('Decimals', options) as Observable<number>;
   }
   
@@ -54,15 +54,15 @@ export class TopicModel<E extends Topic> extends DimensionOrTopicModel<E> {
   public $Default() {
     return this.property<string>('Default');
   }
-  public getDefault(options?: HttpOptions) {
+  public getDefault(options?: ODataOptions) {
     return this.getValue<string>('Default', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

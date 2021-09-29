@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { AlphabeticalListOfProduct } from './alphabetical_list_of_product.entity';
 import { AlphabeticalListOfProductCollection } from './alphabetical_list_of_product.collection';
 //#endregion
 
 @Model()
 export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   ProductID!: number;
   public $ProductID() {
     return this.property<number>('ProductID');
   }
-  public getProductID(options?: HttpOptions) {
+  public getProductID(options?: ODataOptions) {
     return this.getValue<number>('ProductID', options) as Observable<number>;
   }
   
@@ -35,7 +35,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   public $ProductName() {
     return this.property<string>('ProductName');
   }
-  public getProductName(options?: HttpOptions) {
+  public getProductName(options?: ODataOptions) {
     return this.getValue<string>('ProductName', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   public $SupplierID() {
     return this.property<number>('SupplierID');
   }
-  public getSupplierID(options?: HttpOptions) {
+  public getSupplierID(options?: ODataOptions) {
     return this.getValue<number>('SupplierID', options) as Observable<number>;
   }
   
@@ -53,7 +53,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   public $CategoryID() {
     return this.property<number>('CategoryID');
   }
-  public getCategoryID(options?: HttpOptions) {
+  public getCategoryID(options?: ODataOptions) {
     return this.getValue<number>('CategoryID', options) as Observable<number>;
   }
   
@@ -62,7 +62,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   public $QuantityPerUnit() {
     return this.property<string>('QuantityPerUnit');
   }
-  public getQuantityPerUnit(options?: HttpOptions) {
+  public getQuantityPerUnit(options?: ODataOptions) {
     return this.getValue<string>('QuantityPerUnit', options) as Observable<string>;
   }
   
@@ -71,7 +71,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   public $UnitPrice() {
     return this.property<number>('UnitPrice');
   }
-  public getUnitPrice(options?: HttpOptions) {
+  public getUnitPrice(options?: ODataOptions) {
     return this.getValue<number>('UnitPrice', options) as Observable<number>;
   }
   
@@ -80,7 +80,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   public $UnitsInStock() {
     return this.property<number>('UnitsInStock');
   }
-  public getUnitsInStock(options?: HttpOptions) {
+  public getUnitsInStock(options?: ODataOptions) {
     return this.getValue<number>('UnitsInStock', options) as Observable<number>;
   }
   
@@ -89,7 +89,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   public $UnitsOnOrder() {
     return this.property<number>('UnitsOnOrder');
   }
-  public getUnitsOnOrder(options?: HttpOptions) {
+  public getUnitsOnOrder(options?: ODataOptions) {
     return this.getValue<number>('UnitsOnOrder', options) as Observable<number>;
   }
   
@@ -98,7 +98,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   public $ReorderLevel() {
     return this.property<number>('ReorderLevel');
   }
-  public getReorderLevel(options?: HttpOptions) {
+  public getReorderLevel(options?: ODataOptions) {
     return this.getValue<number>('ReorderLevel', options) as Observable<number>;
   }
   
@@ -107,7 +107,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   public $Discontinued() {
     return this.property<boolean>('Discontinued');
   }
-  public getDiscontinued(options?: HttpOptions) {
+  public getDiscontinued(options?: ODataOptions) {
     return this.getValue<boolean>('Discontinued', options) as Observable<boolean>;
   }
   
@@ -116,15 +116,15 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   public $CategoryName() {
     return this.property<string>('CategoryName');
   }
-  public getCategoryName(options?: HttpOptions) {
+  public getCategoryName(options?: ODataOptions) {
     return this.getValue<string>('CategoryName', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Person } from './person.entity';
 import { PersonModel } from './person.model';
 import { PersonCollection } from './person.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const PersonEntityConfig = {
   name: "Person",
   model: PersonModel,

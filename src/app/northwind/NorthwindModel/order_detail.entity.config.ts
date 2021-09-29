@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { OrderDetail } from './order_detail.entity';
 import { OrderDetailModel } from './order_detail.model';
 import { OrderDetailCollection } from './order_detail.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const OrderDetailEntityConfig = {
   name: "Order_Detail",
   model: OrderDetailModel,

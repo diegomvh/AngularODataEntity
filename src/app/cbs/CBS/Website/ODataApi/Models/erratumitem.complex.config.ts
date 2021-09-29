@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ErratumItem } from './erratumitem.complex';
 import { ErratumItemModel } from './erratumitem.model';
 import { ErratumItemCollection } from './erratumitem.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const ErratumItemComplexConfig = {
   name: "ErratumItem",
   model: ErratumItemModel,

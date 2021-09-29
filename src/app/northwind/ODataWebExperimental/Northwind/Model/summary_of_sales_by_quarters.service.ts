@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { SummaryOfSalesByQuarter } from '../../../NorthwindModel/summary_of_sales_by_quarter.entity';
 import { SummaryOfSalesByQuarterModel } from '../../../NorthwindModel/summary_of_sales_by_quarter.model';
 import { SummaryOfSalesByQuarterCollection } from '../../../NorthwindModel/summary_of_sales_by_quarter.collection';
@@ -34,18 +32,18 @@ export class SummaryOfSalesByQuartersService extends ODataEntitySetService<Summa
   constructor(protected client: ODataClient) {
     super(client, 'Summary_of_Sales_by_Quarters', 'NorthwindModel.Summary_of_Sales_by_Quarter');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   summaryOfSalesByQuarterModel(attrs?: Partial<SummaryOfSalesByQuarter>): SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter> {
     return this.entity().asModel<SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   summaryOfSalesByQuarterCollection(models?: Partial<SummaryOfSalesByQuarter>[]): SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>> {
     return this.entities().asCollection<SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>, SummaryOfSalesByQuarterCollection<SummaryOfSalesByQuarter, SummaryOfSalesByQuarterModel<SummaryOfSalesByQuarter>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

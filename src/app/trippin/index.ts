@@ -1,4 +1,4 @@
-﻿//#region ODataApi Imports
+﻿//#region ODataApiGen Imports
 export * from './Microsoft/OData/SampleService/Models/TripPin/persongender.enum';
 export * from './Microsoft/OData/SampleService/Models/TripPin/persongender.enum.config';
 export * from './Microsoft/OData/SampleService/Models/TripPin/city.complex';

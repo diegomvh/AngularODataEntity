@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CurrentProductList } from './current_product_list.entity';
 import { CurrentProductListModel } from './current_product_list.model';
 import { CurrentProductListCollection } from './current_product_list.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const CurrentProductListEntityConfig = {
   name: "Current_Product_List",
   model: CurrentProductListModel,

@@ -1,4 +1,4 @@
-﻿//#region ODataApi Imports
+﻿//#region ODataApiGen Imports
 export * from './Cbs/OData/tableinfo.entity';
 export * from './Cbs/OData/category.entity';
 export * from './Cbs/OData/timecategory.entity';

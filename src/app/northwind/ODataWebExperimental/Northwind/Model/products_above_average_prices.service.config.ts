@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  EntitySetConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  EntitySetConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ProductsAboveAveragePricesService } from './products_above_average_prices.service';
 //#endregion
 
-//#region ODataApi EntitySetConfig
+//#region ODataApiGen EntitySetConfig
 export const ProductsAboveAveragePricesServiceEntitySetConfig = {
   name: "Products_Above_Average_Prices",
   entityType: "NorthwindModel.Products_Above_Average_Price",

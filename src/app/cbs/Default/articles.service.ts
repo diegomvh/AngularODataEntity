@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ArticleType } from '../CBS/Website/ODataApi/Models/articletype.enum';
 import { ErrataList } from '../CBS/Website/ODataApi/Models/erratalist.complex';
 import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.complex';
@@ -41,21 +39,21 @@ export class ArticlesService extends ODataEntitySetService<Article> {
   constructor(protected client: ODataClient) {
     super(client, 'Articles', 'CBS.Website.ODataApi.Models.Article');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   articleModel(attrs?: Partial<Article>): ArticleModel<Article> {
     return this.entity().asModel<ArticleModel<Article>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   articleCollection(models?: Partial<Article>[]): ArticleCollection<Article, ArticleModel<Article>> {
     return this.entities().asCollection<ArticleModel<Article>, ArticleCollection<Article, ArticleModel<Article>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   public getArticlesByTheme(): ODataFunctionResource<{Theme: string}, Article> { 
     return this.client.function<{Theme: string}, Article>('Default.GetArticlesByTheme', this.apiNameOrEntityType);
   }
-  public callGetArticlesByTheme(Theme: string, options?: HttpQueryOptions<Article>) {
+  public callGetArticlesByTheme(Theme: string, options?: ODataQueryArgumentsOptions<Article>) {
     return this.callFunction<{Theme: string}, Article>(
       {Theme}, 
       this.getArticlesByTheme(), 
@@ -64,7 +62,7 @@ export class ArticlesService extends ODataEntitySetService<Article> {
   public getArticlesBySeries(): ODataFunctionResource<{Series: string}, Article> { 
     return this.client.function<{Series: string}, Article>('Default.GetArticlesBySeries', this.apiNameOrEntityType);
   }
-  public callGetArticlesBySeries(Series: string, options?: HttpQueryOptions<Article>) {
+  public callGetArticlesBySeries(Series: string, options?: ODataQueryArgumentsOptions<Article>) {
     return this.callFunction<{Series: string}, Article>(
       {Series}, 
       this.getArticlesBySeries(), 
@@ -73,7 +71,7 @@ export class ArticlesService extends ODataEntitySetService<Article> {
   public getArticlesByTaxonomyTag(): ODataFunctionResource<{Tag: string}, Article> { 
     return this.client.function<{Tag: string}, Article>('Default.GetArticlesByTaxonomyTag', this.apiNameOrEntityType);
   }
-  public callGetArticlesByTaxonomyTag(Tag: string, options?: HttpQueryOptions<Article>) {
+  public callGetArticlesByTaxonomyTag(Tag: string, options?: ODataQueryArgumentsOptions<Article>) {
     return this.callFunction<{Tag: string}, Article>(
       {Tag}, 
       this.getArticlesByTaxonomyTag(), 
@@ -82,7 +80,7 @@ export class ArticlesService extends ODataEntitySetService<Article> {
   public getArticlesByArticleType(): ODataFunctionResource<{ArticleType: ArticleType}, Article> { 
     return this.client.function<{ArticleType: ArticleType}, Article>('Default.GetArticlesByArticleType', this.apiNameOrEntityType);
   }
-  public callGetArticlesByArticleType(ArticleType: ArticleType, options?: HttpQueryOptions<Article>) {
+  public callGetArticlesByArticleType(ArticleType: ArticleType, options?: ODataQueryArgumentsOptions<Article>) {
     return this.callFunction<{ArticleType: ArticleType}, Article>(
       {ArticleType}, 
       this.getArticlesByArticleType(), 
@@ -91,13 +89,13 @@ export class ArticlesService extends ODataEntitySetService<Article> {
   public getArticlesByTableId(): ODataFunctionResource<{TableId: string}, Article> { 
     return this.client.function<{TableId: string}, Article>('Default.GetArticlesByTableId', this.apiNameOrEntityType);
   }
-  public callGetArticlesByTableId(TableId: string, options?: HttpQueryOptions<Article>) {
+  public callGetArticlesByTableId(TableId: string, options?: ODataQueryArgumentsOptions<Article>) {
     return this.callFunction<{TableId: string}, Article>(
       {TableId}, 
       this.getArticlesByTableId(), 
       'entities', options) as Observable<ODataEntities<Article>>;
   }
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

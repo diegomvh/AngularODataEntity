@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ProductsByCategory } from './products_by_category.entity';
 import { ProductsByCategoryCollection } from './products_by_category.collection';
 //#endregion
 
 @Model()
 export class ProductsByCategoryModel<E extends ProductsByCategory> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   CategoryName!: string;
   public $CategoryName() {
     return this.property<string>('CategoryName');
   }
-  public getCategoryName(options?: HttpOptions) {
+  public getCategoryName(options?: ODataOptions) {
     return this.getValue<string>('CategoryName', options) as Observable<string>;
   }
   
@@ -35,7 +35,7 @@ export class ProductsByCategoryModel<E extends ProductsByCategory> extends OData
   public $ProductName() {
     return this.property<string>('ProductName');
   }
-  public getProductName(options?: HttpOptions) {
+  public getProductName(options?: ODataOptions) {
     return this.getValue<string>('ProductName', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class ProductsByCategoryModel<E extends ProductsByCategory> extends OData
   public $QuantityPerUnit() {
     return this.property<string>('QuantityPerUnit');
   }
-  public getQuantityPerUnit(options?: HttpOptions) {
+  public getQuantityPerUnit(options?: ODataOptions) {
     return this.getValue<string>('QuantityPerUnit', options) as Observable<string>;
   }
   
@@ -53,7 +53,7 @@ export class ProductsByCategoryModel<E extends ProductsByCategory> extends OData
   public $UnitsInStock() {
     return this.property<number>('UnitsInStock');
   }
-  public getUnitsInStock(options?: HttpOptions) {
+  public getUnitsInStock(options?: ODataOptions) {
     return this.getValue<number>('UnitsInStock', options) as Observable<number>;
   }
   
@@ -62,15 +62,15 @@ export class ProductsByCategoryModel<E extends ProductsByCategory> extends OData
   public $Discontinued() {
     return this.property<boolean>('Discontinued');
   }
-  public getDiscontinued(options?: HttpOptions) {
+  public getDiscontinued(options?: ODataOptions) {
     return this.getValue<boolean>('Discontinued', options) as Observable<boolean>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

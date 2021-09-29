@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Photo } from './photo.entity';
 import { PlanItem } from './planitem.entity';
 import { PhotoModel } from './photo.model';
@@ -13,7 +13,7 @@ import { PlanItemCollection } from './planitem.collection';
 //#endregion
 
 export interface Trip {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   TripId: number;
   ShareId?: string;
   Description?: string;

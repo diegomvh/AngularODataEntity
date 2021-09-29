@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Photo } from './photo.entity';
 import { PhotoCollection } from './photo.collection';
 //#endregion
 
 @Model()
 export class PhotoModel<E extends Photo> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   Id!: number;
   public $Id() {
     return this.property<number>('Id');
   }
-  public getId(options?: HttpOptions) {
+  public getId(options?: ODataOptions) {
     return this.getValue<number>('Id', options) as Observable<number>;
   }
   
@@ -35,15 +35,15 @@ export class PhotoModel<E extends Photo> extends ODataModel<E> {
   public $Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: HttpOptions) {
+  public getName(options?: ODataOptions) {
     return this.getValue<string>('Name', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

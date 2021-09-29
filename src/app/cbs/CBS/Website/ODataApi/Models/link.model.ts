@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Link } from './link.complex';
 import { LinkCollection } from './link.collection';
 //#endregion
 
 @Model()
 export class LinkModel<E extends Link> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   Text?: string;
   public $Text() {
     return this.property<string>('Text');
   }
-  public getText(options?: HttpOptions) {
+  public getText(options?: ODataOptions) {
     return this.getValue<string>('Text', options) as Observable<string>;
   }
   
@@ -35,7 +35,7 @@ export class LinkModel<E extends Link> extends ODataModel<E> {
   public $Url() {
     return this.property<string>('Url');
   }
-  public getUrl(options?: HttpOptions) {
+  public getUrl(options?: ODataOptions) {
     return this.getValue<string>('Url', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class LinkModel<E extends Link> extends ODataModel<E> {
   public $Prefix() {
     return this.property<string>('Prefix');
   }
-  public getPrefix(options?: HttpOptions) {
+  public getPrefix(options?: ODataOptions) {
     return this.getValue<string>('Prefix', options) as Observable<string>;
   }
   
@@ -53,7 +53,7 @@ export class LinkModel<E extends Link> extends ODataModel<E> {
   public $TargetId() {
     return this.property<string>('TargetId');
   }
-  public getTargetId(options?: HttpOptions) {
+  public getTargetId(options?: ODataOptions) {
     return this.getValue<string>('TargetId', options) as Observable<string>;
   }
   
@@ -62,15 +62,15 @@ export class LinkModel<E extends Link> extends ODataModel<E> {
   public $Icon() {
     return this.property<string>('Icon');
   }
-  public getIcon(options?: HttpOptions) {
+  public getIcon(options?: ODataOptions) {
     return this.getValue<string>('Icon', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Flash } from '../CBS/Website/ODataApi/Models/flash.entity';
 import { FlashModel } from '../CBS/Website/ODataApi/Models/flash.model';
 import { FlashCollection } from '../CBS/Website/ODataApi/Models/flash.collection';
@@ -34,18 +32,18 @@ export class FlashService extends ODataEntitySetService<Flash> {
   constructor(protected client: ODataClient) {
     super(client, 'Flash', 'CBS.Website.ODataApi.Models.Flash');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   flashModel(attrs?: Partial<Flash>): FlashModel<Flash> {
     return this.entity().asModel<FlashModel<Flash>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   flashCollection(models?: Partial<Flash>[]): FlashCollection<Flash, FlashModel<Flash>> {
     return this.entities().asCollection<FlashModel<Flash>, FlashCollection<Flash, FlashModel<Flash>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

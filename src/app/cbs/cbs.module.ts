@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  NgModule 
+﻿//#region ODataApiGen ODataImports
+import {
+  NgModule
 } from '@angular/core';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ContainerService } from './Default/container.service';
 import { ArticlesService } from './Default/articles.service';
 import { DefinitionsService } from './Default/definitions.service';
@@ -17,7 +17,7 @@ import { VacanciesService } from './Default/vacancies.service';
 
 @NgModule({
   providers: [
-//#region ODataApi Providers
+//#region ODataApiGen Providers
     ContainerService,
     ArticlesService,
     DefinitionsService,

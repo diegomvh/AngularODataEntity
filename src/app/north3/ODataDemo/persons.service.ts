@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Person } from './person.entity';
 import { PersonModel } from './person.model';
 import { PersonCollection } from './person.collection';
@@ -34,18 +32,18 @@ export class PersonsService extends ODataEntitySetService<Person> {
   constructor(protected client: ODataClient) {
     super(client, 'Persons', 'ODataDemo.Person');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   personModel(attrs?: Partial<Person>): PersonModel<Person> {
     return this.entity().asModel<PersonModel<Person>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   personCollection(models?: Partial<Person>[]): PersonCollection<Person, PersonModel<Person>> {
     return this.entities().asCollection<PersonModel<Person>, PersonCollection<Person, PersonModel<Person>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

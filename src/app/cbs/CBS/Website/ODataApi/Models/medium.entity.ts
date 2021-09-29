@@ -1,14 +1,14 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { MediaType } from './mediatype.enum';
 //#endregion
 
 export interface Medium {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   UniqueId: string;
   Title?: string;
   MediaType: MediaType;

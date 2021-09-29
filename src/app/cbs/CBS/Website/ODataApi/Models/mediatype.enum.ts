@@ -1,8 +1,8 @@
-﻿//#region ODataApi Imports
+﻿//#region ODataApiGen Imports
 //#endregion
 
 export enum MediaType {
-  //#region ODataApi Members
+  //#region ODataApiGen Members
   Any = 0,
   Video = 1,
   Chart = 2,

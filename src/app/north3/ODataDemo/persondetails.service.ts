@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Address } from './address.complex';
 import { PersonDetail } from './persondetail.entity';
 import { AddressModel } from './address.model';
@@ -37,18 +35,18 @@ export class PersonDetailsService extends ODataEntitySetService<PersonDetail> {
   constructor(protected client: ODataClient) {
     super(client, 'PersonDetails', 'ODataDemo.PersonDetail');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   personDetailModel(attrs?: Partial<PersonDetail>): PersonDetailModel<PersonDetail> {
     return this.entity().asModel<PersonDetailModel<PersonDetail>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   personDetailCollection(models?: Partial<PersonDetail>[]): PersonDetailCollection<PersonDetail, PersonDetailModel<PersonDetail>> {
     return this.entities().asCollection<PersonDetailModel<PersonDetail>, PersonDetailCollection<PersonDetail, PersonDetailModel<PersonDetail>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

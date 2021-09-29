@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ProductDetail } from './productdetail.entity';
 import { ProductDetailModel } from './productdetail.model';
 import { ProductDetailCollection } from './productdetail.collection';
@@ -34,18 +32,18 @@ export class ProductDetailsService extends ODataEntitySetService<ProductDetail> 
   constructor(protected client: ODataClient) {
     super(client, 'ProductDetails', 'ODataDemo.ProductDetail');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   productDetailModel(attrs?: Partial<ProductDetail>): ProductDetailModel<ProductDetail> {
     return this.entity().asModel<ProductDetailModel<ProductDetail>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   productDetailCollection(models?: Partial<ProductDetail>[]): ProductDetailCollection<ProductDetail, ProductDetailModel<ProductDetail>> {
     return this.entities().asCollection<ProductDetailModel<ProductDetail>, ProductDetailCollection<ProductDetail, ProductDetailModel<ProductDetail>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

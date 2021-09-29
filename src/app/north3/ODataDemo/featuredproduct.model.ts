@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ProductModel } from './product.model';
 import { FeaturedProduct } from './featuredproduct.entity';
 import { Advertisement } from './advertisement.entity';
@@ -24,7 +24,7 @@ import { AdvertisementCollection } from './advertisement.collection';
 
 @Model()
 export class FeaturedProductModel<E extends FeaturedProduct> extends ProductModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   Advertisement?: AdvertisementModel<Advertisement>;
   public $Advertisement() {
@@ -33,14 +33,14 @@ export class FeaturedProductModel<E extends FeaturedProduct> extends ProductMode
   public getAdvertisement() {
     return this.getReference<Advertisement>('Advertisement') as AdvertisementModel<Advertisement>;
   }
-  public setAdvertisement(model: AdvertisementModel<Advertisement> | null, options?: HttpOptions) {
+  public setAdvertisement(model: AdvertisementModel<Advertisement> | null, options?: ODataOptions) {
     return this.setReference<Advertisement>('Advertisement', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

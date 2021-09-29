@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { GeoDetailCategory } from './geodetailcategory.entity';
 import { GeoDetailCategoryModel } from './geodetailcategory.model';
 import { GeoDetailCategoryCollection } from './geodetailcategory.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const GeoDetailCategoryEntityConfig = {
   name: "GeoDetailCategory",
   model: GeoDetailCategoryModel,

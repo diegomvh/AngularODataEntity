@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CalendarEvent } from './calendarevent.entity';
 import { CalendarEventModel } from './calendarevent.model';
 import { CalendarEventCollection } from './calendarevent.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const CalendarEventEntityConfig = {
   name: "CalendarEvent",
   model: CalendarEventModel,

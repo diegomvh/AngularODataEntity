@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  NgModule 
+﻿//#region ODataApiGen ODataImports
+import {
+  NgModule
 } from '@angular/core';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { DemoServiceService } from './ODataDemo/demoservice.service';
 import { ProductsService } from './ODataDemo/products.service';
 import { CategoriesService } from './ODataDemo/categories.service';
@@ -12,7 +12,7 @@ import { SuppliersService } from './ODataDemo/suppliers.service';
 
 @NgModule({
   providers: [
-//#region ODataApi Providers
+//#region ODataApiGen Providers
     DemoServiceService,
     ProductsService,
     CategoriesService,

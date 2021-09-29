@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CustomerDemographic } from './customerdemographic.entity';
 import { CustomerDemographicModel } from './customerdemographic.model';
 import { CustomerDemographicCollection } from './customerdemographic.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const CustomerDemographicEntityConfig = {
   name: "CustomerDemographic",
   model: CustomerDemographicModel,

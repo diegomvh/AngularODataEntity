@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 //#endregion
 
 export interface ProductsByCategory {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   CategoryName: string;
   ProductName: string;
   QuantityPerUnit?: string;

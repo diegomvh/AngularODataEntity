@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { TableInfo } from './tableinfo.entity';
 import { TableInfoModel } from './tableinfo.model';
 import { TableInfoCollection } from './tableinfo.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const TableInfoEntityConfig = {
   name: "TableInfo",
   model: TableInfoModel,

@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ArticleType } from '../CBS/Website/ODataApi/Models/articletype.enum';
 import { SearchResultItem } from '../CBS/Website/ODataApi/Models/searchresultitem.entity';
 import { SearchResultItemModel } from '../CBS/Website/ODataApi/Models/searchresultitem.model';
@@ -35,21 +33,21 @@ export class SearchService extends ODataEntitySetService<SearchResultItem> {
   constructor(protected client: ODataClient) {
     super(client, 'Search', 'CBS.Website.ODataApi.Models.SearchResultItem');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   searchResultItemModel(attrs?: Partial<SearchResultItem>): SearchResultItemModel<SearchResultItem> {
     return this.entity().asModel<SearchResultItemModel<SearchResultItem>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   searchResultItemCollection(models?: Partial<SearchResultItem>[]): SearchResultItemCollection<SearchResultItem, SearchResultItemModel<SearchResultItem>> {
     return this.entities().asCollection<SearchResultItemModel<SearchResultItem>, SearchResultItemCollection<SearchResultItem, SearchResultItemModel<SearchResultItem>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   public getSearchResultsByTheme(): ODataFunctionResource<{Theme: string}, SearchResultItem> { 
     return this.client.function<{Theme: string}, SearchResultItem>('Default.GetSearchResultsByTheme', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByTheme(Theme: string, options?: HttpQueryOptions<SearchResultItem>) {
+  public callGetSearchResultsByTheme(Theme: string, options?: ODataQueryArgumentsOptions<SearchResultItem>) {
     return this.callFunction<{Theme: string}, SearchResultItem>(
       {Theme}, 
       this.getSearchResultsByTheme(), 
@@ -58,7 +56,7 @@ export class SearchService extends ODataEntitySetService<SearchResultItem> {
   public getSearchResultsByTemplate(): ODataFunctionResource<{Template: string}, SearchResultItem> { 
     return this.client.function<{Template: string}, SearchResultItem>('Default.GetSearchResultsByTemplate', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByTemplate(Template: string, options?: HttpQueryOptions<SearchResultItem>) {
+  public callGetSearchResultsByTemplate(Template: string, options?: ODataQueryArgumentsOptions<SearchResultItem>) {
     return this.callFunction<{Template: string}, SearchResultItem>(
       {Template}, 
       this.getSearchResultsByTemplate(), 
@@ -67,7 +65,7 @@ export class SearchService extends ODataEntitySetService<SearchResultItem> {
   public getSearchResultsByArticleType(): ODataFunctionResource<{ArticleType: ArticleType}, SearchResultItem> { 
     return this.client.function<{ArticleType: ArticleType}, SearchResultItem>('Default.GetSearchResultsByArticleType', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByArticleType(ArticleType: ArticleType, options?: HttpQueryOptions<SearchResultItem>) {
+  public callGetSearchResultsByArticleType(ArticleType: ArticleType, options?: ODataQueryArgumentsOptions<SearchResultItem>) {
     return this.callFunction<{ArticleType: ArticleType}, SearchResultItem>(
       {ArticleType}, 
       this.getSearchResultsByArticleType(), 
@@ -76,7 +74,7 @@ export class SearchService extends ODataEntitySetService<SearchResultItem> {
   public getSearchResultsByWord(): ODataFunctionResource<{Word: string}, SearchResultItem> { 
     return this.client.function<{Word: string}, SearchResultItem>('Default.GetSearchResultsByWord', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByWord(Word: string, options?: HttpQueryOptions<SearchResultItem>) {
+  public callGetSearchResultsByWord(Word: string, options?: ODataQueryArgumentsOptions<SearchResultItem>) {
     return this.callFunction<{Word: string}, SearchResultItem>(
       {Word}, 
       this.getSearchResultsByWord(), 
@@ -85,7 +83,7 @@ export class SearchService extends ODataEntitySetService<SearchResultItem> {
   public getSearchResultsByWordAndTemplateId(): ODataFunctionResource<{Word: string, TemplateId: string}, SearchResultItem> { 
     return this.client.function<{Word: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByWordAndTemplateId', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByWordAndTemplateId(Word: string, TemplateId: string, options?: HttpQueryOptions<SearchResultItem>) {
+  public callGetSearchResultsByWordAndTemplateId(Word: string, TemplateId: string, options?: ODataQueryArgumentsOptions<SearchResultItem>) {
     return this.callFunction<{Word: string, TemplateId: string}, SearchResultItem>(
       {Word, TemplateId}, 
       this.getSearchResultsByWordAndTemplateId(), 
@@ -94,7 +92,7 @@ export class SearchService extends ODataEntitySetService<SearchResultItem> {
   public getSearchResultsByPath(): ODataFunctionResource<{Path: string}, SearchResultItem> { 
     return this.client.function<{Path: string}, SearchResultItem>('Default.GetSearchResultsByPath', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByPath(Path: string, options?: HttpQueryOptions<SearchResultItem>) {
+  public callGetSearchResultsByPath(Path: string, options?: ODataQueryArgumentsOptions<SearchResultItem>) {
     return this.callFunction<{Path: string}, SearchResultItem>(
       {Path}, 
       this.getSearchResultsByPath(), 
@@ -103,13 +101,13 @@ export class SearchService extends ODataEntitySetService<SearchResultItem> {
   public getSearchResultsByPathAndTemplateId(): ODataFunctionResource<{Path: string, TemplateId: string}, SearchResultItem> { 
     return this.client.function<{Path: string, TemplateId: string}, SearchResultItem>('Default.GetSearchResultsByPathAndTemplateId', this.apiNameOrEntityType);
   }
-  public callGetSearchResultsByPathAndTemplateId(Path: string, TemplateId: string, options?: HttpQueryOptions<SearchResultItem>) {
+  public callGetSearchResultsByPathAndTemplateId(Path: string, TemplateId: string, options?: ODataQueryArgumentsOptions<SearchResultItem>) {
     return this.callFunction<{Path: string, TemplateId: string}, SearchResultItem>(
       {Path, TemplateId}, 
       this.getSearchResultsByPathAndTemplateId(), 
       'entities', options) as Observable<ODataEntities<SearchResultItem>>;
   }
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

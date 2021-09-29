@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Photo } from './photo.entity';
 import { PlanItem } from './planitem.entity';
 import { Trip } from './trip.entity';
@@ -26,13 +26,13 @@ import { TripCollection } from './trip.collection';
 
 @Model()
 export class TripModel<E extends Trip> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   TripId!: number;
   public $TripId() {
     return this.property<number>('TripId');
   }
-  public getTripId(options?: HttpOptions) {
+  public getTripId(options?: ODataOptions) {
     return this.getValue<number>('TripId', options) as Observable<number>;
   }
   
@@ -41,7 +41,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   public $ShareId() {
     return this.property<string>('ShareId');
   }
-  public getShareId(options?: HttpOptions) {
+  public getShareId(options?: ODataOptions) {
     return this.getValue<string>('ShareId', options) as Observable<string>;
   }
   
@@ -50,7 +50,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   public $Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: HttpOptions) {
+  public getDescription(options?: ODataOptions) {
     return this.getValue<string>('Description', options) as Observable<string>;
   }
   
@@ -59,7 +59,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   public $Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: HttpOptions) {
+  public getName(options?: ODataOptions) {
     return this.getValue<string>('Name', options) as Observable<string>;
   }
   
@@ -68,7 +68,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   public $Budget() {
     return this.property<number>('Budget');
   }
-  public getBudget(options?: HttpOptions) {
+  public getBudget(options?: ODataOptions) {
     return this.getValue<number>('Budget', options) as Observable<number>;
   }
   
@@ -77,7 +77,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   public $StartsAt() {
     return this.property<Date>('StartsAt');
   }
-  public getStartsAt(options?: HttpOptions) {
+  public getStartsAt(options?: ODataOptions) {
     return this.getValue<Date>('StartsAt', options) as Observable<Date>;
   }
   
@@ -86,7 +86,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   public $EndsAt() {
     return this.property<Date>('EndsAt');
   }
-  public getEndsAt(options?: HttpOptions) {
+  public getEndsAt(options?: ODataOptions) {
     return this.getValue<Date>('EndsAt', options) as Observable<Date>;
   }
   
@@ -95,7 +95,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   public $Tags() {
     return this.property<string[]>('Tags');
   }
-  public getTags(options?: HttpOptions) {
+  public getTags(options?: ODataOptions) {
     return this.getValue<string[]>('Tags', options) as Observable<string[]>;
   }
   
@@ -107,7 +107,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   public getPhotos() {
     return this.getReference<Photo>('Photos') as PhotoCollection<Photo, PhotoModel<Photo>>;
   }
-  public setPhotos(model: PhotoCollection<Photo, PhotoModel<Photo>> | null, options?: HttpOptions) {
+  public setPhotos(model: PhotoCollection<Photo, PhotoModel<Photo>> | null, options?: ODataOptions) {
     return this.setReference<Photo>('Photos', model, options);
   }
   @ModelField()
@@ -118,14 +118,14 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   public getPlanItems() {
     return this.getReference<PlanItem>('PlanItems') as PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>;
   }
-  public setPlanItems(model: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>> | null, options?: HttpOptions) {
+  public setPlanItems(model: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>> | null, options?: ODataOptions) {
     return this.setReference<PlanItem>('PlanItems', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

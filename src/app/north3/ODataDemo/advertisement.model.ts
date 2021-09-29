@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { FeaturedProduct } from './featuredproduct.entity';
 import { Advertisement } from './advertisement.entity';
 import { FeaturedProductModel } from './featuredproduct.model';
@@ -23,13 +23,13 @@ import { AdvertisementCollection } from './advertisement.collection';
 
 @Model()
 export class AdvertisementModel<E extends Advertisement> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   ID!: string;
   public $ID() {
     return this.property<string>('ID');
   }
-  public getID(options?: HttpOptions) {
+  public getID(options?: ODataOptions) {
     return this.getValue<string>('ID', options) as Observable<string>;
   }
   
@@ -38,7 +38,7 @@ export class AdvertisementModel<E extends Advertisement> extends ODataModel<E> {
   public $Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: HttpOptions) {
+  public getName(options?: ODataOptions) {
     return this.getValue<string>('Name', options) as Observable<string>;
   }
   
@@ -47,7 +47,7 @@ export class AdvertisementModel<E extends Advertisement> extends ODataModel<E> {
   public $AirDate() {
     return this.property<any>('AirDate');
   }
-  public getAirDate(options?: HttpOptions) {
+  public getAirDate(options?: ODataOptions) {
     return this.getValue<any>('AirDate', options) as Observable<any>;
   }
   
@@ -59,14 +59,14 @@ export class AdvertisementModel<E extends Advertisement> extends ODataModel<E> {
   public getFeaturedProduct() {
     return this.getReference<FeaturedProduct>('FeaturedProduct') as FeaturedProductModel<FeaturedProduct>;
   }
-  public setFeaturedProduct(model: FeaturedProductModel<FeaturedProduct> | null, options?: HttpOptions) {
+  public setFeaturedProduct(model: FeaturedProductModel<FeaturedProduct> | null, options?: ODataOptions) {
     return this.setReference<FeaturedProduct>('FeaturedProduct', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

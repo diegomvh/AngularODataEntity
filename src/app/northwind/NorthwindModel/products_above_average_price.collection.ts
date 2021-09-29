@@ -2,22 +2,22 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions
+//#region ODataApiGen ODataImports
+import {
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ProductsAboveAveragePrice } from './products_above_average_price.entity';
 import { ProductsAboveAveragePriceModel } from './products_above_average_price.model';
 //#endregion
 
 export class ProductsAboveAveragePriceCollection<E extends ProductsAboveAveragePrice, M extends ProductsAboveAveragePriceModel<E>> extends ODataCollection<E, M> {
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
 }

@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PublicTransportationModel } from './publictransportation.model';
 import { Airline } from './airline.entity';
 import { Airport } from './airport.entity';
@@ -27,13 +27,13 @@ import { FlightCollection } from './flight.collection';
 
 @Model()
 export class FlightModel<E extends Flight> extends PublicTransportationModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   FlightNumber!: string;
   public $FlightNumber() {
     return this.property<string>('FlightNumber');
   }
-  public getFlightNumber(options?: HttpOptions) {
+  public getFlightNumber(options?: ODataOptions) {
     return this.getValue<string>('FlightNumber', options) as Observable<string>;
   }
   
@@ -45,7 +45,7 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   public getFrom() {
     return this.getReference<Airport>('From') as AirportModel<Airport>;
   }
-  public setFrom(model: AirportModel<Airport> | null, options?: HttpOptions) {
+  public setFrom(model: AirportModel<Airport> | null, options?: ODataOptions) {
     return this.setReference<Airport>('From', model, options);
   }
   @ModelField()
@@ -56,7 +56,7 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   public getTo() {
     return this.getReference<Airport>('To') as AirportModel<Airport>;
   }
-  public setTo(model: AirportModel<Airport> | null, options?: HttpOptions) {
+  public setTo(model: AirportModel<Airport> | null, options?: ODataOptions) {
     return this.setReference<Airport>('To', model, options);
   }
   @ModelField()
@@ -67,14 +67,14 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   public getAirline() {
     return this.getReference<Airline>('Airline') as AirlineModel<Airline>;
   }
-  public setAirline(model: AirlineModel<Airline> | null, options?: HttpOptions) {
+  public setAirline(model: AirlineModel<Airline> | null, options?: ODataOptions) {
     return this.setReference<Airline>('Airline', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

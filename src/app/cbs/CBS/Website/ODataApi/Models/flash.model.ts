@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Flash } from './flash.entity';
 import { FlashCollection } from './flash.collection';
 //#endregion
 
 @Model()
 export class FlashModel<E extends Flash> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   UniqueId!: string;
   public $UniqueId() {
     return this.property<string>('UniqueId');
   }
-  public getUniqueId(options?: HttpOptions) {
+  public getUniqueId(options?: ODataOptions) {
     return this.getValue<string>('UniqueId', options) as Observable<string>;
   }
   
@@ -35,7 +35,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $Title() {
     return this.property<string>('Title');
   }
-  public getTitle(options?: HttpOptions) {
+  public getTitle(options?: ODataOptions) {
     return this.getValue<string>('Title', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $ReleaseTime() {
     return this.property<Date>('ReleaseTime');
   }
-  public getReleaseTime(options?: HttpOptions) {
+  public getReleaseTime(options?: ODataOptions) {
     return this.getValue<Date>('ReleaseTime', options) as Observable<Date>;
   }
   
@@ -53,7 +53,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: HttpOptions) {
+  public getDescription(options?: ODataOptions) {
     return this.getValue<string>('Description', options) as Observable<string>;
   }
   
@@ -62,7 +62,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $LeadText() {
     return this.property<string>('LeadText');
   }
-  public getLeadText(options?: HttpOptions) {
+  public getLeadText(options?: ODataOptions) {
     return this.getValue<string>('LeadText', options) as Observable<string>;
   }
   
@@ -71,7 +71,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $Url() {
     return this.property<string>('Url');
   }
-  public getUrl(options?: HttpOptions) {
+  public getUrl(options?: ODataOptions) {
     return this.getValue<string>('Url', options) as Observable<string>;
   }
   
@@ -80,7 +80,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $MetaDescription() {
     return this.property<string>('MetaDescription');
   }
-  public getMetaDescription(options?: HttpOptions) {
+  public getMetaDescription(options?: ODataOptions) {
     return this.getValue<string>('MetaDescription', options) as Observable<string>;
   }
   
@@ -89,7 +89,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $Language() {
     return this.property<string>('Language');
   }
-  public getLanguage(options?: HttpOptions) {
+  public getLanguage(options?: ODataOptions) {
     return this.getValue<string>('Language', options) as Observable<string>;
   }
   
@@ -98,7 +98,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $Version() {
     return this.property<number>('Version');
   }
-  public getVersion(options?: HttpOptions) {
+  public getVersion(options?: ODataOptions) {
     return this.getValue<number>('Version', options) as Observable<number>;
   }
   
@@ -107,7 +107,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $SortOrder() {
     return this.property<number>('SortOrder');
   }
-  public getSortOrder(options?: HttpOptions) {
+  public getSortOrder(options?: ODataOptions) {
     return this.getValue<number>('SortOrder', options) as Observable<number>;
   }
   
@@ -116,7 +116,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $ItemNameLowerCase() {
     return this.property<string>('ItemNameLowerCase');
   }
-  public getItemNameLowerCase(options?: HttpOptions) {
+  public getItemNameLowerCase(options?: ODataOptions) {
     return this.getValue<string>('ItemNameLowerCase', options) as Observable<string>;
   }
   
@@ -125,7 +125,7 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $Updated() {
     return this.property<Date>('Updated');
   }
-  public getUpdated(options?: HttpOptions) {
+  public getUpdated(options?: ODataOptions) {
     return this.getValue<Date>('Updated', options) as Observable<Date>;
   }
   
@@ -134,15 +134,15 @@ export class FlashModel<E extends Flash> extends ODataModel<E> {
   public $Created() {
     return this.property<Date>('Created');
   }
-  public getCreated(options?: HttpOptions) {
+  public getCreated(options?: ODataOptions) {
     return this.getValue<Date>('Created', options) as Observable<Date>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

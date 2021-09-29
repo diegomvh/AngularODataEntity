@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  SchemaConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  SchemaConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { TableInfoEntityConfig } from './tableinfo.entity.config';
 import { CategoryEntityConfig } from './category.entity.config';
 import { TimeCategoryEntityConfig } from './timecategory.entity.config';
@@ -21,7 +21,7 @@ import { CategoryGroupEntityConfig } from './categorygroup.entity.config';
 import { WebAPIContainer } from './webapi.container';
 //#endregion
 
-//#region ODataApi SchemaConfig
+//#region ODataApiGen SchemaConfig
 export const ODataSchema = {
   namespace: "Cbs.OData",
   enums: [],

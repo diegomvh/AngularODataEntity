@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { SalesByCategory } from './sales_by_category.entity';
 import { SalesByCategoryCollection } from './sales_by_category.collection';
 //#endregion
 
 @Model()
 export class SalesByCategoryModel<E extends SalesByCategory> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   CategoryID!: number;
   public $CategoryID() {
     return this.property<number>('CategoryID');
   }
-  public getCategoryID(options?: HttpOptions) {
+  public getCategoryID(options?: ODataOptions) {
     return this.getValue<number>('CategoryID', options) as Observable<number>;
   }
   
@@ -35,7 +35,7 @@ export class SalesByCategoryModel<E extends SalesByCategory> extends ODataModel<
   public $CategoryName() {
     return this.property<string>('CategoryName');
   }
-  public getCategoryName(options?: HttpOptions) {
+  public getCategoryName(options?: ODataOptions) {
     return this.getValue<string>('CategoryName', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class SalesByCategoryModel<E extends SalesByCategory> extends ODataModel<
   public $ProductName() {
     return this.property<string>('ProductName');
   }
-  public getProductName(options?: HttpOptions) {
+  public getProductName(options?: ODataOptions) {
     return this.getValue<string>('ProductName', options) as Observable<string>;
   }
   
@@ -53,15 +53,15 @@ export class SalesByCategoryModel<E extends SalesByCategory> extends ODataModel<
   public $ProductSales() {
     return this.property<number>('ProductSales');
   }
-  public getProductSales(options?: HttpOptions) {
+  public getProductSales(options?: ODataOptions) {
     return this.getValue<number>('ProductSales', options) as Observable<number>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

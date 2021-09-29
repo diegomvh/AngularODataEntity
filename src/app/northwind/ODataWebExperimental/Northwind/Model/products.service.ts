@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Category } from '../../../NorthwindModel/category.entity';
 import { OrderDetail } from '../../../NorthwindModel/order_detail.entity';
 import { Product } from '../../../NorthwindModel/product.entity';
@@ -43,23 +41,23 @@ export class ProductsService extends ODataEntitySetService<Product> {
   constructor(protected client: ODataClient) {
     super(client, 'Products', 'NorthwindModel.Product');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   productModel(attrs?: Partial<Product>): ProductModel<Product> {
     return this.entity().asModel<ProductModel<Product>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   productCollection(models?: Partial<Product>[]): ProductCollection<Product, ProductModel<Product>> {
     return this.entities().asCollection<ProductModel<Product>, ProductCollection<Product, ProductModel<Product>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   public category(key: EntityKey<Product>): ODataNavigationPropertyResource<Category> { 
     return this.entity(key).navigationProperty<Category>('Category'); 
   }
-  public fetchCategory(key: EntityKey<Product>, options?: HttpQueryOptions<Category>) {
+  public fetchCategory(key: EntityKey<Product>, options?: ODataQueryArgumentsOptions<Category>) {
     return this.fetchNavigationProperty<Category>(
       this.category(key), 
       'entity', options) as Observable<ODataEntity<Category>>;
@@ -75,7 +73,7 @@ export class ProductsService extends ODataEntitySetService<Product> {
   public order_Details(key: EntityKey<Product>): ODataNavigationPropertyResource<OrderDetail> { 
     return this.entity(key).navigationProperty<OrderDetail>('Order_Details'); 
   }
-  public fetchOrder_Details(key: EntityKey<Product>, options?: HttpQueryOptions<OrderDetail>) {
+  public fetchOrder_Details(key: EntityKey<Product>, options?: ODataQueryArgumentsOptions<OrderDetail>) {
     return this.fetchNavigationProperty<OrderDetail>(
       this.order_Details(key), 
       'entities', options) as Observable<ODataEntities<OrderDetail>>;
@@ -91,7 +89,7 @@ export class ProductsService extends ODataEntitySetService<Product> {
   public supplier(key: EntityKey<Product>): ODataNavigationPropertyResource<Supplier> { 
     return this.entity(key).navigationProperty<Supplier>('Supplier'); 
   }
-  public fetchSupplier(key: EntityKey<Product>, options?: HttpQueryOptions<Supplier>) {
+  public fetchSupplier(key: EntityKey<Product>, options?: ODataQueryArgumentsOptions<Supplier>) {
     return this.fetchNavigationProperty<Supplier>(
       this.supplier(key), 
       'entity', options) as Observable<ODataEntity<Supplier>>;

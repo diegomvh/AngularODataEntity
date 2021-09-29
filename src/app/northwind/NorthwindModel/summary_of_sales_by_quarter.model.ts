@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { SummaryOfSalesByQuarter } from './summary_of_sales_by_quarter.entity';
 import { SummaryOfSalesByQuarterCollection } from './summary_of_sales_by_quarter.collection';
 //#endregion
 
 @Model()
 export class SummaryOfSalesByQuarterModel<E extends SummaryOfSalesByQuarter> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   ShippedDate?: Date;
   public $ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
-  public getShippedDate(options?: HttpOptions) {
+  public getShippedDate(options?: ODataOptions) {
     return this.getValue<Date>('ShippedDate', options) as Observable<Date>;
   }
   
@@ -35,7 +35,7 @@ export class SummaryOfSalesByQuarterModel<E extends SummaryOfSalesByQuarter> ext
   public $OrderID() {
     return this.property<number>('OrderID');
   }
-  public getOrderID(options?: HttpOptions) {
+  public getOrderID(options?: ODataOptions) {
     return this.getValue<number>('OrderID', options) as Observable<number>;
   }
   
@@ -44,15 +44,15 @@ export class SummaryOfSalesByQuarterModel<E extends SummaryOfSalesByQuarter> ext
   public $Subtotal() {
     return this.property<number>('Subtotal');
   }
-  public getSubtotal(options?: HttpOptions) {
+  public getSubtotal(options?: ODataOptions) {
     return this.getValue<number>('Subtotal', options) as Observable<number>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

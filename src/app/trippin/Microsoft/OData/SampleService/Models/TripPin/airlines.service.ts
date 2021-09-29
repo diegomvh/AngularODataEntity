@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Airline } from './airline.entity';
 import { AirlineModel } from './airline.model';
 import { AirlineCollection } from './airline.collection';
@@ -34,18 +32,18 @@ export class AirlinesService extends ODataEntitySetService<Airline> {
   constructor(protected client: ODataClient) {
     super(client, 'Airlines', 'Microsoft.OData.SampleService.Models.TripPin.Airline');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   airlineModel(attrs?: Partial<Airline>): AirlineModel<Airline> {
     return this.entity().asModel<AirlineModel<Airline>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   airlineCollection(models?: Partial<Airline>[]): AirlineCollection<Airline, AirlineModel<Airline>> {
     return this.entities().asCollection<AirlineModel<Airline>, AirlineCollection<Airline, AirlineModel<Airline>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

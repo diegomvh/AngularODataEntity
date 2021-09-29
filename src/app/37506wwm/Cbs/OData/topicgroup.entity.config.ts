@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { TopicGroup } from './topicgroup.entity';
 import { TopicGroupModel } from './topicgroup.model';
 import { TopicGroupCollection } from './topicgroup.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const TopicGroupEntityConfig = {
   name: "TopicGroup",
   base: "Cbs.OData.DimensionOrTopic",

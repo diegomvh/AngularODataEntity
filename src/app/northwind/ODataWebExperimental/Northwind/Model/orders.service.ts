@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Customer } from '../../../NorthwindModel/customer.entity';
 import { Employee } from '../../../NorthwindModel/employee.entity';
 import { OrderDetail } from '../../../NorthwindModel/order_detail.entity';
@@ -46,23 +44,23 @@ export class OrdersService extends ODataEntitySetService<Order> {
   constructor(protected client: ODataClient) {
     super(client, 'Orders', 'NorthwindModel.Order');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   orderModel(attrs?: Partial<Order>): OrderModel<Order> {
     return this.entity().asModel<OrderModel<Order>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   orderCollection(models?: Partial<Order>[]): OrderCollection<Order, OrderModel<Order>> {
     return this.entities().asCollection<OrderModel<Order>, OrderCollection<Order, OrderModel<Order>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   public customer(key: EntityKey<Order>): ODataNavigationPropertyResource<Customer> { 
     return this.entity(key).navigationProperty<Customer>('Customer'); 
   }
-  public fetchCustomer(key: EntityKey<Order>, options?: HttpQueryOptions<Customer>) {
+  public fetchCustomer(key: EntityKey<Order>, options?: ODataQueryArgumentsOptions<Customer>) {
     return this.fetchNavigationProperty<Customer>(
       this.customer(key), 
       'entity', options) as Observable<ODataEntity<Customer>>;
@@ -78,7 +76,7 @@ export class OrdersService extends ODataEntitySetService<Order> {
   public employee(key: EntityKey<Order>): ODataNavigationPropertyResource<Employee> { 
     return this.entity(key).navigationProperty<Employee>('Employee'); 
   }
-  public fetchEmployee(key: EntityKey<Order>, options?: HttpQueryOptions<Employee>) {
+  public fetchEmployee(key: EntityKey<Order>, options?: ODataQueryArgumentsOptions<Employee>) {
     return this.fetchNavigationProperty<Employee>(
       this.employee(key), 
       'entity', options) as Observable<ODataEntity<Employee>>;
@@ -94,7 +92,7 @@ export class OrdersService extends ODataEntitySetService<Order> {
   public order_Details(key: EntityKey<Order>): ODataNavigationPropertyResource<OrderDetail> { 
     return this.entity(key).navigationProperty<OrderDetail>('Order_Details'); 
   }
-  public fetchOrder_Details(key: EntityKey<Order>, options?: HttpQueryOptions<OrderDetail>) {
+  public fetchOrder_Details(key: EntityKey<Order>, options?: ODataQueryArgumentsOptions<OrderDetail>) {
     return this.fetchNavigationProperty<OrderDetail>(
       this.order_Details(key), 
       'entities', options) as Observable<ODataEntities<OrderDetail>>;
@@ -110,7 +108,7 @@ export class OrdersService extends ODataEntitySetService<Order> {
   public shipper(key: EntityKey<Order>): ODataNavigationPropertyResource<Shipper> { 
     return this.entity(key).navigationProperty<Shipper>('Shipper'); 
   }
-  public fetchShipper(key: EntityKey<Order>, options?: HttpQueryOptions<Shipper>) {
+  public fetchShipper(key: EntityKey<Order>, options?: ODataQueryArgumentsOptions<Shipper>) {
     return this.fetchNavigationProperty<Shipper>(
       this.shipper(key), 
       'entity', options) as Observable<ODataEntity<Shipper>>;

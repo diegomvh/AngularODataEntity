@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { SummaryOfSalesByQuarter } from './summary_of_sales_by_quarter.entity';
 import { SummaryOfSalesByQuarterModel } from './summary_of_sales_by_quarter.model';
 import { SummaryOfSalesByQuarterCollection } from './summary_of_sales_by_quarter.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const SummaryOfSalesByQuarterEntityConfig = {
   name: "Summary_of_Sales_by_Quarter",
   model: SummaryOfSalesByQuarterModel,

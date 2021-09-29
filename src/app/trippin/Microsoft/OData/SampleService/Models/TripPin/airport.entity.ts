@@ -1,16 +1,16 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { AirportLocation } from './airportlocation.complex';
 import { AirportLocationModel } from './airportlocation.model';
 import { AirportLocationCollection } from './airportlocation.collection';
 //#endregion
 
 export interface Airport {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   IcaoCode: string;
   Name: string;
   IataCode: string;

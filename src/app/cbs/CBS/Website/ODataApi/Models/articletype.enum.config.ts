@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  EnumTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  EnumTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ArticleType } from './articletype.enum';
 //#endregion
 
-//#region ODataApi EnumTypeConfig
+//#region ODataApiGen EnumTypeConfig
 export const ArticleTypeConfig = {
   name: "ArticleType",
   members: ArticleType,

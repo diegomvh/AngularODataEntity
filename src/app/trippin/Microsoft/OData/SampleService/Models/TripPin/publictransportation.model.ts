@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PlanItemModel } from './planitem.model';
 import { PublicTransportation } from './publictransportation.entity';
 import { PublicTransportationCollection } from './publictransportation.collection';
@@ -21,21 +21,21 @@ import { PublicTransportationCollection } from './publictransportation.collectio
 
 @Model()
 export class PublicTransportationModel<E extends PublicTransportation> extends PlanItemModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   SeatNumber?: string;
   public $SeatNumber() {
     return this.property<string>('SeatNumber');
   }
-  public getSeatNumber(options?: HttpOptions) {
+  public getSeatNumber(options?: ODataOptions) {
     return this.getValue<string>('SeatNumber', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

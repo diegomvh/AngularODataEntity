@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 //#endregion
 
 export interface CalendarEvent {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   UniqueId: string;
   Title?: string;
   Url?: string;

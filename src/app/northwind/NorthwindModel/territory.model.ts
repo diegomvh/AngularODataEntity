@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Employee } from './employee.entity';
 import { Region } from './region.entity';
 import { Territory } from './territory.entity';
@@ -26,13 +26,13 @@ import { TerritoryCollection } from './territory.collection';
 
 @Model()
 export class TerritoryModel<E extends Territory> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   TerritoryID!: string;
   public $TerritoryID() {
     return this.property<string>('TerritoryID');
   }
-  public getTerritoryID(options?: HttpOptions) {
+  public getTerritoryID(options?: ODataOptions) {
     return this.getValue<string>('TerritoryID', options) as Observable<string>;
   }
   
@@ -41,7 +41,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   public $TerritoryDescription() {
     return this.property<string>('TerritoryDescription');
   }
-  public getTerritoryDescription(options?: HttpOptions) {
+  public getTerritoryDescription(options?: ODataOptions) {
     return this.getValue<string>('TerritoryDescription', options) as Observable<string>;
   }
   
@@ -50,7 +50,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   public $RegionID() {
     return this.property<number>('RegionID');
   }
-  public getRegionID(options?: HttpOptions) {
+  public getRegionID(options?: ODataOptions) {
     return this.getValue<number>('RegionID', options) as Observable<number>;
   }
   
@@ -62,7 +62,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   public getRegion() {
     return this.getReference<Region>('Region') as RegionModel<Region>;
   }
-  public setRegion(model: RegionModel<Region> | null, options?: HttpOptions) {
+  public setRegion(model: RegionModel<Region> | null, options?: ODataOptions) {
     return this.setReference<Region>('Region', model, options);
   }
   @ModelField()
@@ -73,14 +73,14 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   public getEmployees() {
     return this.getReference<Employee>('Employees') as EmployeeCollection<Employee, EmployeeModel<Employee>>;
   }
-  public setEmployees(model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null, options?: HttpOptions) {
+  public setEmployees(model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null, options?: ODataOptions) {
     return this.setReference<Employee>('Employees', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

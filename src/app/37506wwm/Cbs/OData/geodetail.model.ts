@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { DimensionOrTopicModel } from './dimensionortopic.model';
 import { GeoDetail } from './geodetail.entity';
 import { GeoDetailCollection } from './geodetail.collection';
@@ -21,21 +21,21 @@ import { GeoDetailCollection } from './geodetail.collection';
 
 @Model()
 export class GeoDetailModel<E extends GeoDetail> extends DimensionOrTopicModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   MapYear?: number;
   public $MapYear() {
     return this.property<number>('MapYear');
   }
-  public getMapYear(options?: HttpOptions) {
+  public getMapYear(options?: ODataOptions) {
     return this.getValue<number>('MapYear', options) as Observable<number>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

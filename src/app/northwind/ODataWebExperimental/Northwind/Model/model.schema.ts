@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  SchemaConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  SchemaConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { NorthwindEntitiesContainer } from './northwindentities.container';
 //#endregion
 
-//#region ODataApi SchemaConfig
+//#region ODataApiGen SchemaConfig
 export const ModelSchema = {
   namespace: "ODataWebExperimental.Northwind.Model",
   enums: [],

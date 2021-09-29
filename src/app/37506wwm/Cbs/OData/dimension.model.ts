@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { DimensionOrTopicModel } from './dimensionortopic.model';
 import { Dimension } from './dimension.entity';
 import { DimensionCollection } from './dimension.collection';
@@ -21,12 +21,12 @@ import { DimensionCollection } from './dimension.collection';
 
 @Model()
 export class DimensionModel<E extends Dimension> extends DimensionOrTopicModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

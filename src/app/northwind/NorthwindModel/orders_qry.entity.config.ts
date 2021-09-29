@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { OrdersQry } from './orders_qry.entity';
 import { OrdersQryModel } from './orders_qry.model';
 import { OrdersQryCollection } from './orders_qry.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const OrdersQryEntityConfig = {
   name: "Orders_Qry",
   model: OrdersQryModel,

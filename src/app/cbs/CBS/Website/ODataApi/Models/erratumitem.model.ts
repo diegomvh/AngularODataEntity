@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ErratumItem } from './erratumitem.complex';
 import { ErratumItemCollection } from './erratumitem.collection';
 //#endregion
 
 @Model()
 export class ErratumItemModel<E extends ErratumItem> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   PresentationTime!: Date;
   public $PresentationTime() {
     return this.property<Date>('PresentationTime');
   }
-  public getPresentationTime(options?: HttpOptions) {
+  public getPresentationTime(options?: ODataOptions) {
     return this.getValue<Date>('PresentationTime', options) as Observable<Date>;
   }
   
@@ -35,15 +35,15 @@ export class ErratumItemModel<E extends ErratumItem> extends ODataModel<E> {
   public $Body() {
     return this.property<string>('Body');
   }
-  public getBody(options?: HttpOptions) {
+  public getBody(options?: ODataOptions) {
     return this.getValue<string>('Body', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

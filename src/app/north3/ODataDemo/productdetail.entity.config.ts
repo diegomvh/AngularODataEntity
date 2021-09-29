@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ProductDetail } from './productdetail.entity';
 import { ProductDetailModel } from './productdetail.model';
 import { ProductDetailCollection } from './productdetail.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const ProductDetailEntityConfig = {
   name: "ProductDetail",
   model: ProductDetailModel,

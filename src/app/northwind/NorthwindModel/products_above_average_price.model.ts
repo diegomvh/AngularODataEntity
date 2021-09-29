@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ProductsAboveAveragePrice } from './products_above_average_price.entity';
 import { ProductsAboveAveragePriceCollection } from './products_above_average_price.collection';
 //#endregion
 
 @Model()
 export class ProductsAboveAveragePriceModel<E extends ProductsAboveAveragePrice> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   ProductName!: string;
   public $ProductName() {
     return this.property<string>('ProductName');
   }
-  public getProductName(options?: HttpOptions) {
+  public getProductName(options?: ODataOptions) {
     return this.getValue<string>('ProductName', options) as Observable<string>;
   }
   
@@ -35,15 +35,15 @@ export class ProductsAboveAveragePriceModel<E extends ProductsAboveAveragePrice>
   public $UnitPrice() {
     return this.property<number>('UnitPrice');
   }
-  public getUnitPrice(options?: HttpOptions) {
+  public getUnitPrice(options?: ODataOptions) {
     return this.getValue<number>('UnitPrice', options) as Observable<number>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

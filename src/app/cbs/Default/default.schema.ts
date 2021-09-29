@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  SchemaConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  SchemaConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ContainerContainer } from './container.container';
 //#endregion
 
-//#region ODataApi SchemaConfig
+//#region ODataApiGen SchemaConfig
 export const DefaultSchema = {
   namespace: "Default",
   enums: [],

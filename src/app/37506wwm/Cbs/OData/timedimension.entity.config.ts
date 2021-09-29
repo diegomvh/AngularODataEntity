@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { TimeDimension } from './timedimension.entity';
 import { TimeDimensionModel } from './timedimension.model';
 import { TimeDimensionCollection } from './timedimension.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const TimeDimensionEntityConfig = {
   name: "TimeDimension",
   base: "Cbs.OData.DimensionOrTopic",

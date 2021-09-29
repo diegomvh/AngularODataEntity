@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { OrderDetail } from './order_detail.entity';
 import { Order } from './order.entity';
 import { Product } from './product.entity';
@@ -26,13 +26,13 @@ import { ProductCollection } from './product.collection';
 
 @Model()
 export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   OrderID!: number;
   public $OrderID() {
     return this.property<number>('OrderID');
   }
-  public getOrderID(options?: HttpOptions) {
+  public getOrderID(options?: ODataOptions) {
     return this.getValue<number>('OrderID', options) as Observable<number>;
   }
   
@@ -41,7 +41,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   public $ProductID() {
     return this.property<number>('ProductID');
   }
-  public getProductID(options?: HttpOptions) {
+  public getProductID(options?: ODataOptions) {
     return this.getValue<number>('ProductID', options) as Observable<number>;
   }
   
@@ -50,7 +50,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   public $UnitPrice() {
     return this.property<number>('UnitPrice');
   }
-  public getUnitPrice(options?: HttpOptions) {
+  public getUnitPrice(options?: ODataOptions) {
     return this.getValue<number>('UnitPrice', options) as Observable<number>;
   }
   
@@ -59,7 +59,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   public $Quantity() {
     return this.property<number>('Quantity');
   }
-  public getQuantity(options?: HttpOptions) {
+  public getQuantity(options?: ODataOptions) {
     return this.getValue<number>('Quantity', options) as Observable<number>;
   }
   
@@ -68,7 +68,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   public $Discount() {
     return this.property<number>('Discount');
   }
-  public getDiscount(options?: HttpOptions) {
+  public getDiscount(options?: ODataOptions) {
     return this.getValue<number>('Discount', options) as Observable<number>;
   }
   
@@ -80,7 +80,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   public getOrder() {
     return this.getReference<Order>('Order') as OrderModel<Order>;
   }
-  public setOrder(model: OrderModel<Order> | null, options?: HttpOptions) {
+  public setOrder(model: OrderModel<Order> | null, options?: ODataOptions) {
     return this.setReference<Order>('Order', model, options);
   }
   @ModelField()
@@ -91,14 +91,14 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   public getProduct() {
     return this.getReference<Product>('Product') as ProductModel<Product>;
   }
-  public setProduct(model: ProductModel<Product> | null, options?: HttpOptions) {
+  public setProduct(model: ProductModel<Product> | null, options?: ODataOptions) {
     return this.setReference<Product>('Product', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

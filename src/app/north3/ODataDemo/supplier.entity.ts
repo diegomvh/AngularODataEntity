@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Address } from './address.complex';
 import { Product } from './product.entity';
 import { AddressModel } from './address.model';
@@ -13,7 +13,7 @@ import { ProductCollection } from './product.collection';
 //#endregion
 
 export interface Supplier {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   ID: number;
   Name?: string;
   Address?: Address;

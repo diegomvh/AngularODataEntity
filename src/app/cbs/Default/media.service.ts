@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { MediaType } from '../CBS/Website/ODataApi/Models/mediatype.enum';
 import { Medium } from '../CBS/Website/ODataApi/Models/medium.entity';
 import { MediumModel } from '../CBS/Website/ODataApi/Models/medium.model';
@@ -35,27 +33,27 @@ export class MediaService extends ODataEntitySetService<Medium> {
   constructor(protected client: ODataClient) {
     super(client, 'Media', 'CBS.Website.ODataApi.Models.Medium');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   mediumModel(attrs?: Partial<Medium>): MediumModel<Medium> {
     return this.entity().asModel<MediumModel<Medium>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   mediumCollection(models?: Partial<Medium>[]): MediumCollection<Medium, MediumModel<Medium>> {
     return this.entities().asCollection<MediumModel<Medium>, MediumCollection<Medium, MediumModel<Medium>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   public getMediaByMediaType(): ODataFunctionResource<{MediaType: MediaType}, Medium> { 
     return this.client.function<{MediaType: MediaType}, Medium>('Default.GetMediaByMediaType', this.apiNameOrEntityType);
   }
-  public callGetMediaByMediaType(MediaType: MediaType, options?: HttpQueryOptions<Medium>) {
+  public callGetMediaByMediaType(MediaType: MediaType, options?: ODataQueryArgumentsOptions<Medium>) {
     return this.callFunction<{MediaType: MediaType}, Medium>(
       {MediaType}, 
       this.getMediaByMediaType(), 
       'entities', options) as Observable<ODataEntities<Medium>>;
   }
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

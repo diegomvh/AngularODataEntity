@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { TableInfo } from './tableinfo.entity';
 import { TableInfoCollection } from './tableinfo.collection';
 //#endregion
 
 @Model()
 export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   ID!: number;
   public $ID() {
     return this.property<number>('ID');
   }
-  public getID(options?: HttpOptions) {
+  public getID(options?: ODataOptions) {
     return this.getValue<number>('ID', options) as Observable<number>;
   }
   
@@ -35,7 +35,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $Title() {
     return this.property<string>('Title');
   }
-  public getTitle(options?: HttpOptions) {
+  public getTitle(options?: ODataOptions) {
     return this.getValue<string>('Title', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $ShortTitle() {
     return this.property<string>('ShortTitle');
   }
-  public getShortTitle(options?: HttpOptions) {
+  public getShortTitle(options?: ODataOptions) {
     return this.getValue<string>('ShortTitle', options) as Observable<string>;
   }
   
@@ -53,7 +53,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $Identifier() {
     return this.property<string>('Identifier');
   }
-  public getIdentifier(options?: HttpOptions) {
+  public getIdentifier(options?: ODataOptions) {
     return this.getValue<string>('Identifier', options) as Observable<string>;
   }
   
@@ -62,7 +62,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $Summary() {
     return this.property<string>('Summary');
   }
-  public getSummary(options?: HttpOptions) {
+  public getSummary(options?: ODataOptions) {
     return this.getValue<string>('Summary', options) as Observable<string>;
   }
   
@@ -71,7 +71,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $Modified() {
     return this.property<any>('Modified');
   }
-  public getModified(options?: HttpOptions) {
+  public getModified(options?: ODataOptions) {
     return this.getValue<any>('Modified', options) as Observable<any>;
   }
   
@@ -80,7 +80,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $ReasonDelivery() {
     return this.property<string>('ReasonDelivery');
   }
-  public getReasonDelivery(options?: HttpOptions) {
+  public getReasonDelivery(options?: ODataOptions) {
     return this.getValue<string>('ReasonDelivery', options) as Observable<string>;
   }
   
@@ -89,7 +89,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $ExplanatoryText() {
     return this.property<string>('ExplanatoryText');
   }
-  public getExplanatoryText(options?: HttpOptions) {
+  public getExplanatoryText(options?: ODataOptions) {
     return this.getValue<string>('ExplanatoryText', options) as Observable<string>;
   }
   
@@ -98,7 +98,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $Language() {
     return this.property<string>('Language');
   }
-  public getLanguage(options?: HttpOptions) {
+  public getLanguage(options?: ODataOptions) {
     return this.getValue<string>('Language', options) as Observable<string>;
   }
   
@@ -107,7 +107,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $Catalog() {
     return this.property<string>('Catalog');
   }
-  public getCatalog(options?: HttpOptions) {
+  public getCatalog(options?: ODataOptions) {
     return this.getValue<string>('Catalog', options) as Observable<string>;
   }
   
@@ -116,7 +116,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $Frequency() {
     return this.property<string>('Frequency');
   }
-  public getFrequency(options?: HttpOptions) {
+  public getFrequency(options?: ODataOptions) {
     return this.getValue<string>('Frequency', options) as Observable<string>;
   }
   
@@ -125,7 +125,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $Period() {
     return this.property<string>('Period');
   }
-  public getPeriod(options?: HttpOptions) {
+  public getPeriod(options?: ODataOptions) {
     return this.getValue<string>('Period', options) as Observable<string>;
   }
   
@@ -134,7 +134,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $ShortDescription() {
     return this.property<string>('ShortDescription');
   }
-  public getShortDescription(options?: HttpOptions) {
+  public getShortDescription(options?: ODataOptions) {
     return this.getValue<string>('ShortDescription', options) as Observable<string>;
   }
   
@@ -143,7 +143,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: HttpOptions) {
+  public getDescription(options?: ODataOptions) {
     return this.getValue<string>('Description', options) as Observable<string>;
   }
   
@@ -152,7 +152,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $DefaultPresentation() {
     return this.property<string>('DefaultPresentation');
   }
-  public getDefaultPresentation(options?: HttpOptions) {
+  public getDefaultPresentation(options?: ODataOptions) {
     return this.getValue<string>('DefaultPresentation', options) as Observable<string>;
   }
   
@@ -161,7 +161,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $DefaultSelection() {
     return this.property<string>('DefaultSelection');
   }
-  public getDefaultSelection(options?: HttpOptions) {
+  public getDefaultSelection(options?: ODataOptions) {
     return this.getValue<string>('DefaultSelection', options) as Observable<string>;
   }
   
@@ -170,7 +170,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $GraphTypes() {
     return this.property<string>('GraphTypes');
   }
-  public getGraphTypes(options?: HttpOptions) {
+  public getGraphTypes(options?: ODataOptions) {
     return this.getValue<string>('GraphTypes', options) as Observable<string>;
   }
   
@@ -179,7 +179,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $OutputStatus() {
     return this.property<string>('OutputStatus');
   }
-  public getOutputStatus(options?: HttpOptions) {
+  public getOutputStatus(options?: ODataOptions) {
     return this.getValue<string>('OutputStatus', options) as Observable<string>;
   }
   
@@ -188,7 +188,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $Source() {
     return this.property<string>('Source');
   }
-  public getSource(options?: HttpOptions) {
+  public getSource(options?: ODataOptions) {
     return this.getValue<string>('Source', options) as Observable<string>;
   }
   
@@ -197,7 +197,7 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $MetaDataModified() {
     return this.property<any>('MetaDataModified');
   }
-  public getMetaDataModified(options?: HttpOptions) {
+  public getMetaDataModified(options?: ODataOptions) {
     return this.getValue<any>('MetaDataModified', options) as Observable<any>;
   }
   
@@ -206,15 +206,15 @@ export class TableInfoModel<E extends TableInfo> extends ODataModel<E> {
   public $SearchPriority() {
     return this.property<string>('SearchPriority');
   }
-  public getSearchPriority(options?: HttpOptions) {
+  public getSearchPriority(options?: ODataOptions) {
     return this.getValue<string>('SearchPriority', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

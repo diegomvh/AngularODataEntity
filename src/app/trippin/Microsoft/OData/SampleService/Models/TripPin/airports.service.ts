@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { AirportLocation } from './airportlocation.complex';
 import { Airport } from './airport.entity';
 import { AirportLocationModel } from './airportlocation.model';
@@ -37,27 +35,27 @@ export class AirportsService extends ODataEntitySetService<Airport> {
   constructor(protected client: ODataClient) {
     super(client, 'Airports', 'Microsoft.OData.SampleService.Models.TripPin.Airport');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   airportModel(attrs?: Partial<Airport>): AirportModel<Airport> {
     return this.entity().asModel<AirportModel<Airport>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   airportCollection(models?: Partial<Airport>[]): AirportCollection<Airport, AirportModel<Airport>> {
     return this.entities().asCollection<AirportModel<Airport>, AirportCollection<Airport, AirportModel<Airport>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   public getNearestAirport(): ODataFunctionResource<{lat: number, lon: number}, Airport> { 
     return this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport', this.apiNameOrEntityType);
   }
-  public callGetNearestAirport(lat: number, lon: number, options?: HttpQueryOptions<Airport>) {
+  public callGetNearestAirport(lat: number, lon: number, options?: ODataQueryArgumentsOptions<Airport>) {
     return this.callFunction<{lat: number, lon: number}, Airport>(
       {lat, lon}, 
       this.getNearestAirport(), 
       'entity', options) as Observable<ODataEntity<Airport>>;
   }
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

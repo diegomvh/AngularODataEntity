@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CategoryGroup } from './categorygroup.entity';
 import { CategoryGroupModel } from './categorygroup.model';
 import { CategoryGroupCollection } from './categorygroup.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const CategoryGroupEntityConfig = {
   name: "CategoryGroup",
   model: CategoryGroupModel,

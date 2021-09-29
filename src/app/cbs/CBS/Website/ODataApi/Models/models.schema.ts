@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  SchemaConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  SchemaConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ArticleTypeConfig } from './articletype.enum.config';
 import { MediaTypeConfig } from './mediatype.enum.config';
 import { PageTypeConfig } from './pagetype.enum.config';
@@ -22,7 +22,7 @@ import { SearchResultItemEntityConfig } from './searchresultitem.entity.config';
 import { VacancyEntityConfig } from './vacancy.entity.config';
 //#endregion
 
-//#region ODataApi SchemaConfig
+//#region ODataApiGen SchemaConfig
 export const ModelsSchema = {
   namespace: "CBS.Website.ODataApi.Models",
   enums: [ArticleTypeConfig,

@@ -3,12 +3,12 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -16,12 +16,12 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions,
-  HttpQueryOptions,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
   ODataBaseService
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 //#endregion
 
 @Injectable()
@@ -31,8 +31,8 @@ export class DemoServiceService extends ODataBaseService {
     super(client, 'DemoServiceContainer', 'North3');
   }
 
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
 }

@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CalendarEvent } from '../CBS/Website/ODataApi/Models/calendarevent.entity';
 import { CalendarEventModel } from '../CBS/Website/ODataApi/Models/calendarevent.model';
 import { CalendarEventCollection } from '../CBS/Website/ODataApi/Models/calendarevent.collection';
@@ -34,18 +32,18 @@ export class EventsService extends ODataEntitySetService<CalendarEvent> {
   constructor(protected client: ODataClient) {
     super(client, 'Events', 'CBS.Website.ODataApi.Models.CalendarEvent');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   calendarEventModel(attrs?: Partial<CalendarEvent>): CalendarEventModel<CalendarEvent> {
     return this.entity().asModel<CalendarEventModel<CalendarEvent>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   calendarEventCollection(models?: Partial<CalendarEvent>[]): CalendarEventCollection<CalendarEvent, CalendarEventModel<CalendarEvent>> {
     return this.entities().asCollection<CalendarEventModel<CalendarEvent>, CalendarEventCollection<CalendarEvent, CalendarEventModel<CalendarEvent>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

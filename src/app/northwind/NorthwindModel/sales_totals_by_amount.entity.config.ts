@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { SalesTotalsByAmount } from './sales_totals_by_amount.entity';
 import { SalesTotalsByAmountModel } from './sales_totals_by_amount.model';
 import { SalesTotalsByAmountCollection } from './sales_totals_by_amount.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const SalesTotalsByAmountEntityConfig = {
   name: "Sales_Totals_by_Amount",
   model: SalesTotalsByAmountModel,

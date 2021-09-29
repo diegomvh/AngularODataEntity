@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  EntityContainerConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  EntityContainerConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CategoriesServiceEntitySetConfig } from './categories.service.config';
 import { CustomerDemographicsServiceEntitySetConfig } from './customerdemographics.service.config';
 import { CustomersServiceEntitySetConfig } from './customers.service.config';
@@ -32,7 +32,7 @@ import { SummaryOfSalesByQuartersServiceEntitySetConfig } from './summary_of_sal
 import { SummaryOfSalesByYearsServiceEntitySetConfig } from './summary_of_sales_by_years.service.config';
 //#endregion
 
-//#region ODataApi EntityContainerConfig
+//#region ODataApiGen EntityContainerConfig
 export const NorthwindEntitiesContainer = {
   name: "NorthwindEntities",
   entitySets: [

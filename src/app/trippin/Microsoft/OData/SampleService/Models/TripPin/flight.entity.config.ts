@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Flight } from './flight.entity';
 import { FlightModel } from './flight.model';
 import { FlightCollection } from './flight.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const FlightEntityConfig = {
   name: "Flight",
   base: "Microsoft.OData.SampleService.Models.TripPin.PublicTransportation",

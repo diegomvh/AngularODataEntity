@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CustomerDemographic } from './customerdemographic.entity';
 import { Customer } from './customer.entity';
 import { Order } from './order.entity';
@@ -26,13 +26,13 @@ import { OrderCollection } from './order.collection';
 
 @Model()
 export class CustomerModel<E extends Customer> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   CustomerID!: string;
   public $CustomerID() {
     return this.property<string>('CustomerID');
   }
-  public getCustomerID(options?: HttpOptions) {
+  public getCustomerID(options?: ODataOptions) {
     return this.getValue<string>('CustomerID', options) as Observable<string>;
   }
   
@@ -41,7 +41,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public $CompanyName() {
     return this.property<string>('CompanyName');
   }
-  public getCompanyName(options?: HttpOptions) {
+  public getCompanyName(options?: ODataOptions) {
     return this.getValue<string>('CompanyName', options) as Observable<string>;
   }
   
@@ -50,7 +50,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public $ContactName() {
     return this.property<string>('ContactName');
   }
-  public getContactName(options?: HttpOptions) {
+  public getContactName(options?: ODataOptions) {
     return this.getValue<string>('ContactName', options) as Observable<string>;
   }
   
@@ -59,7 +59,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public $ContactTitle() {
     return this.property<string>('ContactTitle');
   }
-  public getContactTitle(options?: HttpOptions) {
+  public getContactTitle(options?: ODataOptions) {
     return this.getValue<string>('ContactTitle', options) as Observable<string>;
   }
   
@@ -68,7 +68,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public $Address() {
     return this.property<string>('Address');
   }
-  public getAddress(options?: HttpOptions) {
+  public getAddress(options?: ODataOptions) {
     return this.getValue<string>('Address', options) as Observable<string>;
   }
   
@@ -77,7 +77,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public $City() {
     return this.property<string>('City');
   }
-  public getCity(options?: HttpOptions) {
+  public getCity(options?: ODataOptions) {
     return this.getValue<string>('City', options) as Observable<string>;
   }
   
@@ -86,7 +86,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public $Region() {
     return this.property<string>('Region');
   }
-  public getRegion(options?: HttpOptions) {
+  public getRegion(options?: ODataOptions) {
     return this.getValue<string>('Region', options) as Observable<string>;
   }
   
@@ -95,7 +95,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public $PostalCode() {
     return this.property<string>('PostalCode');
   }
-  public getPostalCode(options?: HttpOptions) {
+  public getPostalCode(options?: ODataOptions) {
     return this.getValue<string>('PostalCode', options) as Observable<string>;
   }
   
@@ -104,7 +104,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public $Country() {
     return this.property<string>('Country');
   }
-  public getCountry(options?: HttpOptions) {
+  public getCountry(options?: ODataOptions) {
     return this.getValue<string>('Country', options) as Observable<string>;
   }
   
@@ -113,7 +113,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public $Phone() {
     return this.property<string>('Phone');
   }
-  public getPhone(options?: HttpOptions) {
+  public getPhone(options?: ODataOptions) {
     return this.getValue<string>('Phone', options) as Observable<string>;
   }
   
@@ -122,7 +122,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public $Fax() {
     return this.property<string>('Fax');
   }
-  public getFax(options?: HttpOptions) {
+  public getFax(options?: ODataOptions) {
     return this.getValue<string>('Fax', options) as Observable<string>;
   }
   
@@ -134,7 +134,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public getOrders() {
     return this.getReference<Order>('Orders') as OrderCollection<Order, OrderModel<Order>>;
   }
-  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, options?: HttpOptions) {
+  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, options?: ODataOptions) {
     return this.setReference<Order>('Orders', model, options);
   }
   @ModelField()
@@ -145,14 +145,14 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public getCustomerDemographics() {
     return this.getReference<CustomerDemographic>('CustomerDemographics') as CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
   }
-  public setCustomerDemographics(model: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>> | null, options?: HttpOptions) {
+  public setCustomerDemographics(model: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>> | null, options?: ODataOptions) {
     return this.setReference<CustomerDemographic>('CustomerDemographics', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

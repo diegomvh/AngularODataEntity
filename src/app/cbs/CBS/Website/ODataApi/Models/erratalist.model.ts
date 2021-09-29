@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ErrataList } from './erratalist.complex';
 import { ErratumItem } from './erratumitem.complex';
 import { ErratumItemModel } from './erratumitem.model';
@@ -23,21 +23,21 @@ import { ErratumItemCollection } from './erratumitem.collection';
 
 @Model()
 export class ErrataListModel<E extends ErrataList> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   Items?: ErratumItemCollection<ErratumItem, ErratumItemModel<ErratumItem>>;
   public $Items() {
     return this.property<ErratumItemCollection<ErratumItem, ErratumItemModel<ErratumItem>>>('Items');
   }
-  public getItems(options?: HttpOptions) {
+  public getItems(options?: ODataOptions) {
     return this.getValue<ErratumItemCollection<ErratumItem, ErratumItemModel<ErratumItem>>>('Items', options) as Observable<ErratumItemCollection<ErratumItem, ErratumItemModel<ErratumItem>>>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

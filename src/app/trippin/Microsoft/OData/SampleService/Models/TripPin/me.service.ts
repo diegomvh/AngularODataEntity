@@ -3,25 +3,24 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataSingletonService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataSingletonService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
-  Duration,
   ODataEntityResource,
   ODataEntitySetResource,
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PersonGender } from './persongender.enum';
 import { Location } from './location.complex';
 import { Photo } from './photo.entity';
@@ -42,11 +41,11 @@ export class MeService extends ODataSingletonService<Person> {
   constructor(protected client: ODataClient) {
     super(client, 'Me', 'Microsoft.OData.SampleService.Models.TripPin.Person');
   }
-  
-  //#region ODataApi Actions
+
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

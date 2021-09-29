@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { DimensionOrTopicModel } from './dimensionortopic.model';
 import { TimeDimension } from './timedimension.entity';
 import { TimeDimensionCollection } from './timedimension.collection';
@@ -21,21 +21,21 @@ import { TimeDimensionCollection } from './timedimension.collection';
 
 @Model()
 export class TimeDimensionModel<E extends TimeDimension> extends DimensionOrTopicModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   ReleasePolicy?: boolean;
   public $ReleasePolicy() {
     return this.property<boolean>('ReleasePolicy');
   }
-  public getReleasePolicy(options?: HttpOptions) {
+  public getReleasePolicy(options?: ODataOptions) {
     return this.getValue<boolean>('ReleasePolicy', options) as Observable<boolean>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

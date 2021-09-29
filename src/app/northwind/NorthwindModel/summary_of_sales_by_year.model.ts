@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { SummaryOfSalesByYear } from './summary_of_sales_by_year.entity';
 import { SummaryOfSalesByYearCollection } from './summary_of_sales_by_year.collection';
 //#endregion
 
 @Model()
 export class SummaryOfSalesByYearModel<E extends SummaryOfSalesByYear> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   ShippedDate?: Date;
   public $ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
-  public getShippedDate(options?: HttpOptions) {
+  public getShippedDate(options?: ODataOptions) {
     return this.getValue<Date>('ShippedDate', options) as Observable<Date>;
   }
   
@@ -35,7 +35,7 @@ export class SummaryOfSalesByYearModel<E extends SummaryOfSalesByYear> extends O
   public $OrderID() {
     return this.property<number>('OrderID');
   }
-  public getOrderID(options?: HttpOptions) {
+  public getOrderID(options?: ODataOptions) {
     return this.getValue<number>('OrderID', options) as Observable<number>;
   }
   
@@ -44,15 +44,15 @@ export class SummaryOfSalesByYearModel<E extends SummaryOfSalesByYear> extends O
   public $Subtotal() {
     return this.property<number>('Subtotal');
   }
-  public getSubtotal(options?: HttpOptions) {
+  public getSubtotal(options?: ODataOptions) {
     return this.getValue<number>('Subtotal', options) as Observable<number>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

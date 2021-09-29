@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { LinkList } from './linklist.complex';
 import { Link } from './link.complex';
 import { LinkModel } from './link.model';
@@ -23,21 +23,21 @@ import { LinkCollection } from './link.collection';
 
 @Model()
 export class LinkListModel<E extends LinkList> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   Items?: LinkCollection<Link, LinkModel<Link>>;
   public $Items() {
     return this.property<LinkCollection<Link, LinkModel<Link>>>('Items');
   }
-  public getItems(options?: HttpOptions) {
+  public getItems(options?: ODataOptions) {
     return this.getValue<LinkCollection<Link, LinkModel<Link>>>('Items', options) as Observable<LinkCollection<Link, LinkModel<Link>>>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

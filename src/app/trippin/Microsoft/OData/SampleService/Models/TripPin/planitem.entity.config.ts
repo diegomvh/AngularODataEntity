@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PlanItem } from './planitem.entity';
 import { PlanItemModel } from './planitem.model';
 import { PlanItemCollection } from './planitem.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const PlanItemEntityConfig = {
   name: "PlanItem",
   model: PlanItemModel,

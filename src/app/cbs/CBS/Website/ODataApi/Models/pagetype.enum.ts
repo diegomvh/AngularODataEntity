@@ -1,8 +1,8 @@
-﻿//#region ODataApi Imports
+﻿//#region ODataApiGen Imports
 //#endregion
 
 export enum PageType {
-  //#region ODataApi Members
+  //#region ODataApiGen Members
   Any = 0,
   Page = 1,
   Visualisation = 2,

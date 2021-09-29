@@ -3,12 +3,12 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -16,12 +16,12 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  HttpOptions,
-  HttpQueryOptions,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
   ODataBaseService
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Airport } from './airport.entity';
 import { AirportModel } from './airport.model';
 import { AirportCollection } from './airport.collection';
@@ -34,22 +34,22 @@ export class DefaultContainerService extends ODataBaseService {
     super(client, 'DefaultContainerContainer', 'TripPin');
   }
 
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   public resetDataSource(): ODataActionResource<null, any> { 
     return this.client.action<null, any>('Microsoft.OData.SampleService.Models.TripPin.ResetDataSource', this.apiNameOrEntityType);
   }
-  public callResetDataSource(options?: HttpQueryOptions<any>) {
+  public callResetDataSource(options?: ODataQueryArgumentsOptions<any>) {
     return this.callAction<null, any>(
       null, 
       this.resetDataSource(), 
       'none', options);
   }
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   public getNearestAirport(): ODataFunctionResource<{lat: number, lon: number}, Airport> { 
     return this.client.function<{lat: number, lon: number}, Airport>('Microsoft.OData.SampleService.Models.TripPin.GetNearestAirport', this.apiNameOrEntityType);
   }
-  public callGetNearestAirport(lat: number, lon: number, options?: HttpQueryOptions<Airport>) {
+  public callGetNearestAirport(lat: number, lon: number, options?: ODataQueryArgumentsOptions<Airport>) {
     return this.callFunction<{lat: number, lon: number}, Airport>(
       {lat, lon}, 
       this.getNearestAirport(), 

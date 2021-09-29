@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Address } from './address.complex';
 import { Person } from './person.entity';
 import { AddressModel } from './address.model';
@@ -13,7 +13,7 @@ import { PersonCollection } from './person.collection';
 //#endregion
 
 export interface PersonDetail {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   PersonID: number;
   Age: number;
   Gender: boolean;

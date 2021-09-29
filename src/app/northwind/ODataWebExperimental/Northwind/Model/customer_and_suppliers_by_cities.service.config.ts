@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  EntitySetConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  EntitySetConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CustomerAndSuppliersByCitiesService } from './customer_and_suppliers_by_cities.service';
 //#endregion
 
-//#region ODataApi EntitySetConfig
+//#region ODataApiGen EntitySetConfig
 export const CustomerAndSuppliersByCitiesServiceEntitySetConfig = {
   name: "Customer_and_Suppliers_by_Cities",
   entityType: "NorthwindModel.Customer_and_Suppliers_by_City",

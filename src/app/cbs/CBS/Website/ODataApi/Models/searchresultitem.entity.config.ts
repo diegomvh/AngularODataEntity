@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { SearchResultItem } from './searchresultitem.entity';
 import { SearchResultItemModel } from './searchresultitem.model';
 import { SearchResultItemCollection } from './searchresultitem.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const SearchResultItemEntityConfig = {
   name: "SearchResultItem",
   model: SearchResultItemModel,

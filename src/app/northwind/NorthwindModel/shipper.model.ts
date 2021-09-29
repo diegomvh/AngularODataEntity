@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Order } from './order.entity';
 import { Shipper } from './shipper.entity';
 import { OrderModel } from './order.model';
@@ -23,13 +23,13 @@ import { ShipperCollection } from './shipper.collection';
 
 @Model()
 export class ShipperModel<E extends Shipper> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   ShipperID!: number;
   public $ShipperID() {
     return this.property<number>('ShipperID');
   }
-  public getShipperID(options?: HttpOptions) {
+  public getShipperID(options?: ODataOptions) {
     return this.getValue<number>('ShipperID', options) as Observable<number>;
   }
   
@@ -38,7 +38,7 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   public $CompanyName() {
     return this.property<string>('CompanyName');
   }
-  public getCompanyName(options?: HttpOptions) {
+  public getCompanyName(options?: ODataOptions) {
     return this.getValue<string>('CompanyName', options) as Observable<string>;
   }
   
@@ -47,7 +47,7 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   public $Phone() {
     return this.property<string>('Phone');
   }
-  public getPhone(options?: HttpOptions) {
+  public getPhone(options?: ODataOptions) {
     return this.getValue<string>('Phone', options) as Observable<string>;
   }
   
@@ -59,14 +59,14 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   public getOrders() {
     return this.getReference<Order>('Orders') as OrderCollection<Order, OrderModel<Order>>;
   }
-  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, options?: HttpOptions) {
+  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, options?: ODataOptions) {
     return this.setReference<Order>('Orders', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

@@ -1,4 +1,4 @@
-﻿//#region ODataApi Imports
+﻿//#region ODataApiGen Imports
 export * from './NorthwindModel/category.entity';
 export * from './NorthwindModel/customerdemographic.entity';
 export * from './NorthwindModel/customer.entity';

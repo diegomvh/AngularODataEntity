@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 //#endregion
 
 export interface CustomerAndSuppliersByCity {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   City?: string;
   CompanyName: string;
   ContactName?: string;

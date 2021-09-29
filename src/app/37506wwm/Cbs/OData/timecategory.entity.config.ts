@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { TimeCategory } from './timecategory.entity';
 import { TimeCategoryModel } from './timecategory.model';
 import { TimeCategoryCollection } from './timecategory.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const TimeCategoryEntityConfig = {
   name: "TimeCategory",
   model: TimeCategoryModel,

@@ -1,16 +1,16 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PlanItem } from './planitem.entity';
 import { PlanItemModel } from './planitem.model';
 import { PlanItemCollection } from './planitem.collection';
 //#endregion
 
 export interface PublicTransportation extends PlanItem {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   SeatNumber?: string;
   //#endregion
 }

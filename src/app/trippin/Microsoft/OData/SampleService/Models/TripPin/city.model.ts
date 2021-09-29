@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { City } from './city.complex';
 import { CityCollection } from './city.collection';
 //#endregion
 
 @Model()
 export class CityModel<E extends City> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   CountryRegion!: string;
   public $CountryRegion() {
     return this.property<string>('CountryRegion');
   }
-  public getCountryRegion(options?: HttpOptions) {
+  public getCountryRegion(options?: ODataOptions) {
     return this.getValue<string>('CountryRegion', options) as Observable<string>;
   }
   
@@ -35,7 +35,7 @@ export class CityModel<E extends City> extends ODataModel<E> {
   public $Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: HttpOptions) {
+  public getName(options?: ODataOptions) {
     return this.getValue<string>('Name', options) as Observable<string>;
   }
   
@@ -44,15 +44,15 @@ export class CityModel<E extends City> extends ODataModel<E> {
   public $Region() {
     return this.property<string>('Region');
   }
-  public getRegion(options?: HttpOptions) {
+  public getRegion(options?: ODataOptions) {
     return this.getValue<string>('Region', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

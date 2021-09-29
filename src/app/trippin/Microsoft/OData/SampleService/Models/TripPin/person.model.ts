@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PersonGender } from './persongender.enum';
 import { Location } from './location.complex';
 import { Photo } from './photo.entity';
@@ -39,13 +39,13 @@ import { TripCollection } from './trip.collection';
 
 @Model()
 export class PersonModel<E extends Person> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   UserName!: string;
   public $UserName() {
     return this.property<string>('UserName');
   }
-  public getUserName(options?: HttpOptions) {
+  public getUserName(options?: ODataOptions) {
     return this.getValue<string>('UserName', options) as Observable<string>;
   }
   
@@ -54,7 +54,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public $FirstName() {
     return this.property<string>('FirstName');
   }
-  public getFirstName(options?: HttpOptions) {
+  public getFirstName(options?: ODataOptions) {
     return this.getValue<string>('FirstName', options) as Observable<string>;
   }
   
@@ -63,7 +63,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public $LastName() {
     return this.property<string>('LastName');
   }
-  public getLastName(options?: HttpOptions) {
+  public getLastName(options?: ODataOptions) {
     return this.getValue<string>('LastName', options) as Observable<string>;
   }
   
@@ -72,7 +72,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public $Emails() {
     return this.property<string[]>('Emails');
   }
-  public getEmails(options?: HttpOptions) {
+  public getEmails(options?: ODataOptions) {
     return this.getValue<string[]>('Emails', options) as Observable<string[]>;
   }
   
@@ -81,7 +81,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public $AddressInfo() {
     return this.property<LocationCollection<Location, LocationModel<Location>>>('AddressInfo');
   }
-  public getAddressInfo(options?: HttpOptions) {
+  public getAddressInfo(options?: ODataOptions) {
     return this.getValue<LocationCollection<Location, LocationModel<Location>>>('AddressInfo', options) as Observable<LocationCollection<Location, LocationModel<Location>>>;
   }
   
@@ -90,7 +90,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public $Gender() {
     return this.property<PersonGender>('Gender');
   }
-  public getGender(options?: HttpOptions) {
+  public getGender(options?: ODataOptions) {
     return this.getValue<PersonGender>('Gender', options) as Observable<PersonGender>;
   }
   
@@ -99,7 +99,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public $Concurrency() {
     return this.property<number>('Concurrency');
   }
-  public getConcurrency(options?: HttpOptions) {
+  public getConcurrency(options?: ODataOptions) {
     return this.getValue<number>('Concurrency', options) as Observable<number>;
   }
   
@@ -111,7 +111,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public getFriends() {
     return this.getReference<Person>('Friends') as PersonCollection<Person, PersonModel<Person>>;
   }
-  public setFriends(model: PersonCollection<Person, PersonModel<Person>> | null, options?: HttpOptions) {
+  public setFriends(model: PersonCollection<Person, PersonModel<Person>> | null, options?: ODataOptions) {
     return this.setReference<Person>('Friends', model, options);
   }
   @ModelField()
@@ -122,7 +122,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public getTrips() {
     return this.getReference<Trip>('Trips') as TripCollection<Trip, TripModel<Trip>>;
   }
-  public setTrips(model: TripCollection<Trip, TripModel<Trip>> | null, options?: HttpOptions) {
+  public setTrips(model: TripCollection<Trip, TripModel<Trip>> | null, options?: ODataOptions) {
     return this.setReference<Trip>('Trips', model, options);
   }
   @ModelField()
@@ -133,25 +133,25 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public getPhoto() {
     return this.getReference<Photo>('Photo') as PhotoModel<Photo>;
   }
-  public setPhoto(model: PhotoModel<Photo> | null, options?: HttpOptions) {
+  public setPhoto(model: PhotoModel<Photo> | null, options?: ODataOptions) {
     return this.setReference<Photo>('Photo', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
-  public airline(options?: HttpQueryOptions<Airline>) {
+  //#region ODataApiGen Navigations
+  public airline(options?: ODataQueryArgumentsOptions<Airline>) {
     return this.fetchNavigationProperty<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline', 'model', options) as Observable<ODataModel<Airline>>;
   }
-  public from(options?: HttpQueryOptions<Airport>) {
+  public from(options?: ODataQueryArgumentsOptions<Airport>) {
     return this.fetchNavigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From', 'model', options) as Observable<ODataModel<Airport>>;
   }
-  public to(options?: HttpQueryOptions<Airport>) {
+  public to(options?: ODataQueryArgumentsOptions<Airport>) {
     return this.fetchNavigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To', 'model', options) as Observable<ODataModel<Airport>>;
   }
-  public photos(options?: HttpQueryOptions<Photo>) {
+  public photos(options?: ODataQueryArgumentsOptions<Photo>) {
     return this.fetchNavigationProperty<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos', 'collection', options) as Observable<ODataCollection<Photo, ODataModel<Photo>>>;
   }
   //#endregion

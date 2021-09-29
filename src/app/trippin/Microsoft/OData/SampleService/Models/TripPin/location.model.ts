@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { City } from './city.complex';
 import { Location } from './location.complex';
 import { CityModel } from './city.model';
@@ -23,13 +23,13 @@ import { LocationCollection } from './location.collection';
 
 @Model()
 export class LocationModel<E extends Location> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   Address!: string;
   public $Address() {
     return this.property<string>('Address');
   }
-  public getAddress(options?: HttpOptions) {
+  public getAddress(options?: ODataOptions) {
     return this.getValue<string>('Address', options) as Observable<string>;
   }
   
@@ -38,15 +38,15 @@ export class LocationModel<E extends Location> extends ODataModel<E> {
   public $City() {
     return this.property<CityModel<City>>('City');
   }
-  public getCity(options?: HttpOptions) {
+  public getCity(options?: ODataOptions) {
     return this.getValue<CityModel<City>>('City', options) as Observable<CityModel<City>>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 //#endregion
 
 export interface DimensionOrTopic {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   ID: number;
   Position?: number;
   ParentID?: number;

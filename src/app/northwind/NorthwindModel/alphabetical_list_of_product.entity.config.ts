@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { AlphabeticalListOfProduct } from './alphabetical_list_of_product.entity';
 import { AlphabeticalListOfProductModel } from './alphabetical_list_of_product.model';
 import { AlphabeticalListOfProductCollection } from './alphabetical_list_of_product.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const AlphabeticalListOfProductEntityConfig = {
   name: "Alphabetical_list_of_product",
   model: AlphabeticalListOfProductModel,

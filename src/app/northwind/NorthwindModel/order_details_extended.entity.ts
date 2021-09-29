@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 //#endregion
 
 export interface OrderDetailsExtended {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   OrderID: number;
   ProductID: number;
   ProductName: string;

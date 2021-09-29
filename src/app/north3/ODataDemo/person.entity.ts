@@ -1,16 +1,16 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PersonDetail } from './persondetail.entity';
 import { PersonDetailModel } from './persondetail.model';
 import { PersonDetailCollection } from './persondetail.collection';
 //#endregion
 
 export interface Person {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   ID: number;
   Name?: string;
   PersonDetail?: PersonDetail;

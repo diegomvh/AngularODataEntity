@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { UData } from './udata.entity';
 import { UDataModel } from './udata.model';
 import { UDataCollection } from './udata.collection';
@@ -34,18 +32,18 @@ export class UntypedDataSetService extends ODataEntitySetService<UData> {
   constructor(protected client: ODataClient) {
     super(client, 'UntypedDataSet', 'Cbs.OData.UData');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   uDataModel(attrs?: Partial<UData>): UDataModel<UData> {
     return this.entity().asModel<UDataModel<UData>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   uDataCollection(models?: Partial<UData>[]): UDataCollection<UData, UDataModel<UData>> {
     return this.entities().asCollection<UDataModel<UData>, UDataCollection<UData, UDataModel<UData>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

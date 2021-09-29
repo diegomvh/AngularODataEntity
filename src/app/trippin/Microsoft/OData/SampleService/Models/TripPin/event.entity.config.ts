@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Event } from './event.entity';
 import { EventModel } from './event.model';
 import { EventCollection } from './event.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const EventEntityConfig = {
   name: "Event",
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",

@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  NgModule 
+﻿//#region ODataApiGen ODataImports
+import {
+  NgModule
 } from '@angular/core';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { DefaultContainerService } from './Microsoft/OData/SampleService/Models/TripPin/defaultcontainer.service';
 import { PhotosService } from './Microsoft/OData/SampleService/Models/TripPin/photos.service';
 import { PeopleService } from './Microsoft/OData/SampleService/Models/TripPin/people.service';
@@ -14,7 +14,7 @@ import { MeService } from './Microsoft/OData/SampleService/Models/TripPin/me.ser
 
 @NgModule({
   providers: [
-//#region ODataApi Providers
+//#region ODataApiGen Providers
     DefaultContainerService,
     PhotosService,
     PeopleService,

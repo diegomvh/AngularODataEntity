@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Product } from './product.entity';
 import { Supplier } from './supplier.entity';
 import { ProductModel } from './product.model';
@@ -23,13 +23,13 @@ import { SupplierCollection } from './supplier.collection';
 
 @Model()
 export class SupplierModel<E extends Supplier> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   SupplierID!: number;
   public $SupplierID() {
     return this.property<number>('SupplierID');
   }
-  public getSupplierID(options?: HttpOptions) {
+  public getSupplierID(options?: ODataOptions) {
     return this.getValue<number>('SupplierID', options) as Observable<number>;
   }
   
@@ -38,7 +38,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $CompanyName() {
     return this.property<string>('CompanyName');
   }
-  public getCompanyName(options?: HttpOptions) {
+  public getCompanyName(options?: ODataOptions) {
     return this.getValue<string>('CompanyName', options) as Observable<string>;
   }
   
@@ -47,7 +47,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $ContactName() {
     return this.property<string>('ContactName');
   }
-  public getContactName(options?: HttpOptions) {
+  public getContactName(options?: ODataOptions) {
     return this.getValue<string>('ContactName', options) as Observable<string>;
   }
   
@@ -56,7 +56,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $ContactTitle() {
     return this.property<string>('ContactTitle');
   }
-  public getContactTitle(options?: HttpOptions) {
+  public getContactTitle(options?: ODataOptions) {
     return this.getValue<string>('ContactTitle', options) as Observable<string>;
   }
   
@@ -65,7 +65,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $Address() {
     return this.property<string>('Address');
   }
-  public getAddress(options?: HttpOptions) {
+  public getAddress(options?: ODataOptions) {
     return this.getValue<string>('Address', options) as Observable<string>;
   }
   
@@ -74,7 +74,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $City() {
     return this.property<string>('City');
   }
-  public getCity(options?: HttpOptions) {
+  public getCity(options?: ODataOptions) {
     return this.getValue<string>('City', options) as Observable<string>;
   }
   
@@ -83,7 +83,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $Region() {
     return this.property<string>('Region');
   }
-  public getRegion(options?: HttpOptions) {
+  public getRegion(options?: ODataOptions) {
     return this.getValue<string>('Region', options) as Observable<string>;
   }
   
@@ -92,7 +92,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $PostalCode() {
     return this.property<string>('PostalCode');
   }
-  public getPostalCode(options?: HttpOptions) {
+  public getPostalCode(options?: ODataOptions) {
     return this.getValue<string>('PostalCode', options) as Observable<string>;
   }
   
@@ -101,7 +101,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $Country() {
     return this.property<string>('Country');
   }
-  public getCountry(options?: HttpOptions) {
+  public getCountry(options?: ODataOptions) {
     return this.getValue<string>('Country', options) as Observable<string>;
   }
   
@@ -110,7 +110,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $Phone() {
     return this.property<string>('Phone');
   }
-  public getPhone(options?: HttpOptions) {
+  public getPhone(options?: ODataOptions) {
     return this.getValue<string>('Phone', options) as Observable<string>;
   }
   
@@ -119,7 +119,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $Fax() {
     return this.property<string>('Fax');
   }
-  public getFax(options?: HttpOptions) {
+  public getFax(options?: ODataOptions) {
     return this.getValue<string>('Fax', options) as Observable<string>;
   }
   
@@ -128,7 +128,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public $HomePage() {
     return this.property<string>('HomePage');
   }
-  public getHomePage(options?: HttpOptions) {
+  public getHomePage(options?: ODataOptions) {
     return this.getValue<string>('HomePage', options) as Observable<string>;
   }
   
@@ -140,14 +140,14 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   public getProducts() {
     return this.getReference<Product>('Products') as ProductCollection<Product, ProductModel<Product>>;
   }
-  public setProducts(model: ProductCollection<Product, ProductModel<Product>> | null, options?: HttpOptions) {
+  public setProducts(model: ProductCollection<Product, ProductModel<Product>> | null, options?: ODataOptions) {
     return this.setReference<Product>('Products', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PlanItemModel } from './planitem.model';
 import { EventLocation } from './eventlocation.complex';
 import { Event } from './event.entity';
@@ -24,13 +24,13 @@ import { EventCollection } from './event.collection';
 
 @Model()
 export class EventModel<E extends Event> extends PlanItemModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   Description?: string;
   public $Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: HttpOptions) {
+  public getDescription(options?: ODataOptions) {
     return this.getValue<string>('Description', options) as Observable<string>;
   }
   
@@ -39,15 +39,15 @@ export class EventModel<E extends Event> extends PlanItemModel<E> {
   public $OccursAt() {
     return this.property<EventLocationModel<EventLocation>>('OccursAt');
   }
-  public getOccursAt(options?: HttpOptions) {
+  public getOccursAt(options?: ODataOptions) {
     return this.getValue<EventLocationModel<EventLocation>>('OccursAt', options) as Observable<EventLocationModel<EventLocation>>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

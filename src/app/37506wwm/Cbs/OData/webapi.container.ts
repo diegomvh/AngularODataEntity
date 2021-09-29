@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  EntityContainerConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  EntityContainerConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { TableInfosServiceEntitySetConfig } from './tableinfos.service.config';
 import { UntypedDataSetServiceEntitySetConfig } from './untypeddataset.service.config';
 import { TypedDataSetServiceEntitySetConfig } from './typeddataset.service.config';
@@ -14,7 +14,7 @@ import { LeeftijdServiceEntitySetConfig } from './leeftijd.service.config';
 import { PeriodenServiceEntitySetConfig } from './perioden.service.config';
 //#endregion
 
-//#region ODataApi EntityContainerConfig
+//#region ODataApiGen EntityContainerConfig
 export const WebAPIContainer = {
   name: "WebAPI",
   entitySets: [

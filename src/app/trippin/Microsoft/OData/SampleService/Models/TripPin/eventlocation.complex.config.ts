@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { EventLocation } from './eventlocation.complex';
 import { EventLocationModel } from './eventlocation.model';
 import { EventLocationCollection } from './eventlocation.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const EventLocationComplexConfig = {
   name: "EventLocation",
   base: "Microsoft.OData.SampleService.Models.TripPin.Location",

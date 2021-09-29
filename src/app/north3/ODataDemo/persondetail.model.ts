@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Address } from './address.complex';
 import { Person } from './person.entity';
 import { PersonDetail } from './persondetail.entity';
@@ -26,13 +26,13 @@ import { PersonDetailCollection } from './persondetail.collection';
 
 @Model()
 export class PersonDetailModel<E extends PersonDetail> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   PersonID!: number;
   public $PersonID() {
     return this.property<number>('PersonID');
   }
-  public getPersonID(options?: HttpOptions) {
+  public getPersonID(options?: ODataOptions) {
     return this.getValue<number>('PersonID', options) as Observable<number>;
   }
   
@@ -41,7 +41,7 @@ export class PersonDetailModel<E extends PersonDetail> extends ODataModel<E> {
   public $Age() {
     return this.property<number>('Age');
   }
-  public getAge(options?: HttpOptions) {
+  public getAge(options?: ODataOptions) {
     return this.getValue<number>('Age', options) as Observable<number>;
   }
   
@@ -50,7 +50,7 @@ export class PersonDetailModel<E extends PersonDetail> extends ODataModel<E> {
   public $Gender() {
     return this.property<boolean>('Gender');
   }
-  public getGender(options?: HttpOptions) {
+  public getGender(options?: ODataOptions) {
     return this.getValue<boolean>('Gender', options) as Observable<boolean>;
   }
   
@@ -59,7 +59,7 @@ export class PersonDetailModel<E extends PersonDetail> extends ODataModel<E> {
   public $Phone() {
     return this.property<string>('Phone');
   }
-  public getPhone(options?: HttpOptions) {
+  public getPhone(options?: ODataOptions) {
     return this.getValue<string>('Phone', options) as Observable<string>;
   }
   
@@ -68,7 +68,7 @@ export class PersonDetailModel<E extends PersonDetail> extends ODataModel<E> {
   public $Address() {
     return this.property<AddressModel<Address>>('Address');
   }
-  public getAddress(options?: HttpOptions) {
+  public getAddress(options?: ODataOptions) {
     return this.getValue<AddressModel<Address>>('Address', options) as Observable<AddressModel<Address>>;
   }
   
@@ -77,7 +77,7 @@ export class PersonDetailModel<E extends PersonDetail> extends ODataModel<E> {
   public $Photo() {
     return this.property<any>('Photo');
   }
-  public getPhoto(options?: HttpOptions) {
+  public getPhoto(options?: ODataOptions) {
     return this.getValue<any>('Photo', options) as Observable<any>;
   }
   
@@ -89,14 +89,14 @@ export class PersonDetailModel<E extends PersonDetail> extends ODataModel<E> {
   public getPerson() {
     return this.getReference<Person>('Person') as PersonModel<Person>;
   }
-  public setPerson(model: PersonModel<Person> | null, options?: HttpOptions) {
+  public setPerson(model: PersonModel<Person> | null, options?: ODataOptions) {
     return this.setReference<Person>('Person', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

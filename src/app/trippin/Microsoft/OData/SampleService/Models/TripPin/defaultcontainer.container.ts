@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  EntityContainerConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  EntityContainerConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PhotosServiceEntitySetConfig } from './photos.service.config';
 import { PeopleServiceEntitySetConfig } from './people.service.config';
 import { AirlinesServiceEntitySetConfig } from './airlines.service.config';
@@ -11,7 +11,7 @@ import { AirportsServiceEntitySetConfig } from './airports.service.config';
 import { MeServiceEntitySetConfig } from './me.service.config';
 //#endregion
 
-//#region ODataApi EntityContainerConfig
+//#region ODataApiGen EntityContainerConfig
 export const DefaultContainerContainer = {
   name: "DefaultContainer",
   annotations: [

@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CalendarEvent } from './calendarevent.entity';
 import { CalendarEventCollection } from './calendarevent.collection';
 //#endregion
 
 @Model()
 export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   UniqueId!: string;
   public $UniqueId() {
     return this.property<string>('UniqueId');
   }
-  public getUniqueId(options?: HttpOptions) {
+  public getUniqueId(options?: ODataOptions) {
     return this.getValue<string>('UniqueId', options) as Observable<string>;
   }
   
@@ -35,7 +35,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Title() {
     return this.property<string>('Title');
   }
-  public getTitle(options?: HttpOptions) {
+  public getTitle(options?: ODataOptions) {
     return this.getValue<string>('Title', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Url() {
     return this.property<string>('Url');
   }
-  public getUrl(options?: HttpOptions) {
+  public getUrl(options?: ODataOptions) {
     return this.getValue<string>('Url', options) as Observable<string>;
   }
   
@@ -53,7 +53,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $MetaDescription() {
     return this.property<string>('MetaDescription');
   }
-  public getMetaDescription(options?: HttpOptions) {
+  public getMetaDescription(options?: ODataOptions) {
     return this.getValue<string>('MetaDescription', options) as Observable<string>;
   }
   
@@ -62,7 +62,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Image() {
     return this.property<string>('Image');
   }
-  public getImage(options?: HttpOptions) {
+  public getImage(options?: ODataOptions) {
     return this.getValue<string>('Image', options) as Observable<string>;
   }
   
@@ -71,7 +71,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $ImageAlt() {
     return this.property<string>('ImageAlt');
   }
-  public getImageAlt(options?: HttpOptions) {
+  public getImageAlt(options?: ODataOptions) {
     return this.getValue<string>('ImageAlt', options) as Observable<string>;
   }
   
@@ -80,7 +80,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: HttpOptions) {
+  public getDescription(options?: ODataOptions) {
     return this.getValue<string>('Description', options) as Observable<string>;
   }
   
@@ -89,7 +89,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $PlannedPublicationTime() {
     return this.property<Date>('PlannedPublicationTime');
   }
-  public getPlannedPublicationTime(options?: HttpOptions) {
+  public getPlannedPublicationTime(options?: ODataOptions) {
     return this.getValue<Date>('PlannedPublicationTime', options) as Observable<Date>;
   }
   
@@ -98,7 +98,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $ReportingPeriod() {
     return this.property<string>('ReportingPeriod');
   }
-  public getReportingPeriod(options?: HttpOptions) {
+  public getReportingPeriod(options?: ODataOptions) {
     return this.getValue<string>('ReportingPeriod', options) as Observable<string>;
   }
   
@@ -107,7 +107,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Priority() {
     return this.property<number>('Priority');
   }
-  public getPriority(options?: HttpOptions) {
+  public getPriority(options?: ODataOptions) {
     return this.getValue<number>('Priority', options) as Observable<number>;
   }
   
@@ -116,7 +116,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $UnderEmbargo() {
     return this.property<boolean>('UnderEmbargo');
   }
-  public getUnderEmbargo(options?: HttpOptions) {
+  public getUnderEmbargo(options?: ODataOptions) {
     return this.getValue<boolean>('UnderEmbargo', options) as Observable<boolean>;
   }
   
@@ -125,7 +125,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $PublishTimeUnknown() {
     return this.property<boolean>('PublishTimeUnknown');
   }
-  public getPublishTimeUnknown(options?: HttpOptions) {
+  public getPublishTimeUnknown(options?: ODataOptions) {
     return this.getValue<boolean>('PublishTimeUnknown', options) as Observable<boolean>;
   }
   
@@ -134,7 +134,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $RegionalClassification() {
     return this.property<string>('RegionalClassification');
   }
-  public getRegionalClassification(options?: HttpOptions) {
+  public getRegionalClassification(options?: ODataOptions) {
     return this.getValue<string>('RegionalClassification', options) as Observable<string>;
   }
   
@@ -143,7 +143,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Themes() {
     return this.property<string[]>('Themes');
   }
-  public getThemes(options?: HttpOptions) {
+  public getThemes(options?: ODataOptions) {
     return this.getValue<string[]>('Themes', options) as Observable<string[]>;
   }
   
@@ -152,7 +152,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Language() {
     return this.property<string>('Language');
   }
-  public getLanguage(options?: HttpOptions) {
+  public getLanguage(options?: ODataOptions) {
     return this.getValue<string>('Language', options) as Observable<string>;
   }
   
@@ -161,7 +161,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Version() {
     return this.property<number>('Version');
   }
-  public getVersion(options?: HttpOptions) {
+  public getVersion(options?: ODataOptions) {
     return this.getValue<number>('Version', options) as Observable<number>;
   }
   
@@ -170,7 +170,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $SortOrder() {
     return this.property<number>('SortOrder');
   }
-  public getSortOrder(options?: HttpOptions) {
+  public getSortOrder(options?: ODataOptions) {
     return this.getValue<number>('SortOrder', options) as Observable<number>;
   }
   
@@ -179,7 +179,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $ItemNameLowerCase() {
     return this.property<string>('ItemNameLowerCase');
   }
-  public getItemNameLowerCase(options?: HttpOptions) {
+  public getItemNameLowerCase(options?: ODataOptions) {
     return this.getValue<string>('ItemNameLowerCase', options) as Observable<string>;
   }
   
@@ -188,7 +188,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Updated() {
     return this.property<Date>('Updated');
   }
-  public getUpdated(options?: HttpOptions) {
+  public getUpdated(options?: ODataOptions) {
     return this.getValue<Date>('Updated', options) as Observable<Date>;
   }
   
@@ -197,7 +197,7 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Created() {
     return this.property<Date>('Created');
   }
-  public getCreated(options?: HttpOptions) {
+  public getCreated(options?: ODataOptions) {
     return this.getValue<Date>('Created', options) as Observable<Date>;
   }
   
@@ -206,15 +206,15 @@ export class CalendarEventModel<E extends CalendarEvent> extends ODataModel<E> {
   public $Permalink() {
     return this.property<string>('Permalink');
   }
-  public getPermalink(options?: HttpOptions) {
+  public getPermalink(options?: ODataOptions) {
     return this.getValue<string>('Permalink', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

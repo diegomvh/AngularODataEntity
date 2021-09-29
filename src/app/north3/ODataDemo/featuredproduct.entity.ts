@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Product } from './product.entity';
 import { Advertisement } from './advertisement.entity';
 import { ProductModel } from './product.model';
@@ -13,7 +13,7 @@ import { AdvertisementCollection } from './advertisement.collection';
 //#endregion
 
 export interface FeaturedProduct extends Product {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   Advertisement?: Advertisement;
   //#endregion
 }

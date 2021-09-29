@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Category } from './category.entity';
 import { Product } from './product.entity';
 import { ProductModel } from './product.model';
@@ -23,13 +23,13 @@ import { ProductCollection } from './product.collection';
 
 @Model()
 export class CategoryModel<E extends Category> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   CategoryID!: number;
   public $CategoryID() {
     return this.property<number>('CategoryID');
   }
-  public getCategoryID(options?: HttpOptions) {
+  public getCategoryID(options?: ODataOptions) {
     return this.getValue<number>('CategoryID', options) as Observable<number>;
   }
   
@@ -38,7 +38,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   public $CategoryName() {
     return this.property<string>('CategoryName');
   }
-  public getCategoryName(options?: HttpOptions) {
+  public getCategoryName(options?: ODataOptions) {
     return this.getValue<string>('CategoryName', options) as Observable<string>;
   }
   
@@ -47,7 +47,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   public $Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: HttpOptions) {
+  public getDescription(options?: ODataOptions) {
     return this.getValue<string>('Description', options) as Observable<string>;
   }
   
@@ -56,7 +56,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   public $Picture() {
     return this.property<ArrayBuffer>('Picture');
   }
-  public getPicture(options?: HttpOptions) {
+  public getPicture(options?: ODataOptions) {
     return this.getValue<ArrayBuffer>('Picture', options) as Observable<ArrayBuffer>;
   }
   
@@ -68,14 +68,14 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   public getProducts() {
     return this.getReference<Product>('Products') as ProductCollection<Product, ProductModel<Product>>;
   }
-  public setProducts(model: ProductCollection<Product, ProductModel<Product>> | null, options?: HttpOptions) {
+  public setProducts(model: ProductCollection<Product, ProductModel<Product>> | null, options?: ODataOptions) {
     return this.setReference<Product>('Products', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CustomerAndSuppliersByCity } from './customer_and_suppliers_by_city.entity';
 import { CustomerAndSuppliersByCityCollection } from './customer_and_suppliers_by_city.collection';
 //#endregion
 
 @Model()
 export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCity> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   City?: string;
   public $City() {
     return this.property<string>('City');
   }
-  public getCity(options?: HttpOptions) {
+  public getCity(options?: ODataOptions) {
     return this.getValue<string>('City', options) as Observable<string>;
   }
   
@@ -35,7 +35,7 @@ export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCit
   public $CompanyName() {
     return this.property<string>('CompanyName');
   }
-  public getCompanyName(options?: HttpOptions) {
+  public getCompanyName(options?: ODataOptions) {
     return this.getValue<string>('CompanyName', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCit
   public $ContactName() {
     return this.property<string>('ContactName');
   }
-  public getContactName(options?: HttpOptions) {
+  public getContactName(options?: ODataOptions) {
     return this.getValue<string>('ContactName', options) as Observable<string>;
   }
   
@@ -53,15 +53,15 @@ export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCit
   public $Relationship() {
     return this.property<string>('Relationship');
   }
-  public getRelationship(options?: HttpOptions) {
+  public getRelationship(options?: ODataOptions) {
     return this.getValue<string>('Relationship', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { DefinitionType } from '../CBS/Website/ODataApi/Models/definitiontype.enum';
 import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.complex';
 import { Definition } from '../CBS/Website/ODataApi/Models/definition.entity';
@@ -38,18 +36,18 @@ export class DefinitionsService extends ODataEntitySetService<Definition> {
   constructor(protected client: ODataClient) {
     super(client, 'Definitions', 'CBS.Website.ODataApi.Models.Definition');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   definitionModel(attrs?: Partial<Definition>): DefinitionModel<Definition> {
     return this.entity().asModel<DefinitionModel<Definition>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   definitionCollection(models?: Partial<Definition>[]): DefinitionCollection<Definition, DefinitionModel<Definition>> {
     return this.entities().asCollection<DefinitionModel<Definition>, DefinitionCollection<Definition, DefinitionModel<Definition>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

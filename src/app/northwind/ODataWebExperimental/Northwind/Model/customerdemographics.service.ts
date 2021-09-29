@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CustomerDemographic } from '../../../NorthwindModel/customerdemographic.entity';
 import { Customer } from '../../../NorthwindModel/customer.entity';
 import { CustomerDemographicModel } from '../../../NorthwindModel/customerdemographic.model';
@@ -37,23 +35,23 @@ export class CustomerDemographicsService extends ODataEntitySetService<CustomerD
   constructor(protected client: ODataClient) {
     super(client, 'CustomerDemographics', 'NorthwindModel.CustomerDemographic');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   customerDemographicModel(attrs?: Partial<CustomerDemographic>): CustomerDemographicModel<CustomerDemographic> {
     return this.entity().asModel<CustomerDemographicModel<CustomerDemographic>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   customerDemographicCollection(models?: Partial<CustomerDemographic>[]): CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>> {
     return this.entities().asCollection<CustomerDemographicModel<CustomerDemographic>, CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   public customers(key: EntityKey<CustomerDemographic>): ODataNavigationPropertyResource<Customer> { 
     return this.entity(key).navigationProperty<Customer>('Customers'); 
   }
-  public fetchCustomers(key: EntityKey<CustomerDemographic>, options?: HttpQueryOptions<Customer>) {
+  public fetchCustomers(key: EntityKey<CustomerDemographic>, options?: ODataQueryArgumentsOptions<Customer>) {
     return this.fetchNavigationProperty<Customer>(
       this.customers(key), 
       'entities', options) as Observable<ODataEntities<Customer>>;

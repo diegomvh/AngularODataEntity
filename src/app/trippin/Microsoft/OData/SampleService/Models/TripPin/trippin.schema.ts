@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  SchemaConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  SchemaConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PersonGenderConfig } from './persongender.enum.config';
 import { CityComplexConfig } from './city.complex.config';
 import { LocationComplexConfig } from './location.complex.config';
@@ -21,7 +21,7 @@ import { TripEntityConfig } from './trip.entity.config';
 import { DefaultContainerContainer } from './defaultcontainer.container';
 //#endregion
 
-//#region ODataApi SchemaConfig
+//#region ODataApiGen SchemaConfig
 export const TripPinSchema = {
   namespace: "Microsoft.OData.SampleService.Models.TripPin",
   enums: [PersonGenderConfig],

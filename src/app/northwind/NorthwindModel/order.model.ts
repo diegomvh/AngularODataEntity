@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Customer } from './customer.entity';
 import { Employee } from './employee.entity';
 import { OrderDetail } from './order_detail.entity';
@@ -32,13 +32,13 @@ import { ShipperCollection } from './shipper.collection';
 
 @Model()
 export class OrderModel<E extends Order> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   OrderID!: number;
   public $OrderID() {
     return this.property<number>('OrderID');
   }
-  public getOrderID(options?: HttpOptions) {
+  public getOrderID(options?: ODataOptions) {
     return this.getValue<number>('OrderID', options) as Observable<number>;
   }
   
@@ -47,7 +47,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $CustomerID() {
     return this.property<string>('CustomerID');
   }
-  public getCustomerID(options?: HttpOptions) {
+  public getCustomerID(options?: ODataOptions) {
     return this.getValue<string>('CustomerID', options) as Observable<string>;
   }
   
@@ -56,7 +56,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $EmployeeID() {
     return this.property<number>('EmployeeID');
   }
-  public getEmployeeID(options?: HttpOptions) {
+  public getEmployeeID(options?: ODataOptions) {
     return this.getValue<number>('EmployeeID', options) as Observable<number>;
   }
   
@@ -65,7 +65,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $OrderDate() {
     return this.property<Date>('OrderDate');
   }
-  public getOrderDate(options?: HttpOptions) {
+  public getOrderDate(options?: ODataOptions) {
     return this.getValue<Date>('OrderDate', options) as Observable<Date>;
   }
   
@@ -74,7 +74,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $RequiredDate() {
     return this.property<Date>('RequiredDate');
   }
-  public getRequiredDate(options?: HttpOptions) {
+  public getRequiredDate(options?: ODataOptions) {
     return this.getValue<Date>('RequiredDate', options) as Observable<Date>;
   }
   
@@ -83,7 +83,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
-  public getShippedDate(options?: HttpOptions) {
+  public getShippedDate(options?: ODataOptions) {
     return this.getValue<Date>('ShippedDate', options) as Observable<Date>;
   }
   
@@ -92,7 +92,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $ShipVia() {
     return this.property<number>('ShipVia');
   }
-  public getShipVia(options?: HttpOptions) {
+  public getShipVia(options?: ODataOptions) {
     return this.getValue<number>('ShipVia', options) as Observable<number>;
   }
   
@@ -101,7 +101,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $Freight() {
     return this.property<number>('Freight');
   }
-  public getFreight(options?: HttpOptions) {
+  public getFreight(options?: ODataOptions) {
     return this.getValue<number>('Freight', options) as Observable<number>;
   }
   
@@ -110,7 +110,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $ShipName() {
     return this.property<string>('ShipName');
   }
-  public getShipName(options?: HttpOptions) {
+  public getShipName(options?: ODataOptions) {
     return this.getValue<string>('ShipName', options) as Observable<string>;
   }
   
@@ -119,7 +119,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $ShipAddress() {
     return this.property<string>('ShipAddress');
   }
-  public getShipAddress(options?: HttpOptions) {
+  public getShipAddress(options?: ODataOptions) {
     return this.getValue<string>('ShipAddress', options) as Observable<string>;
   }
   
@@ -128,7 +128,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $ShipCity() {
     return this.property<string>('ShipCity');
   }
-  public getShipCity(options?: HttpOptions) {
+  public getShipCity(options?: ODataOptions) {
     return this.getValue<string>('ShipCity', options) as Observable<string>;
   }
   
@@ -137,7 +137,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $ShipRegion() {
     return this.property<string>('ShipRegion');
   }
-  public getShipRegion(options?: HttpOptions) {
+  public getShipRegion(options?: ODataOptions) {
     return this.getValue<string>('ShipRegion', options) as Observable<string>;
   }
   
@@ -146,7 +146,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $ShipPostalCode() {
     return this.property<string>('ShipPostalCode');
   }
-  public getShipPostalCode(options?: HttpOptions) {
+  public getShipPostalCode(options?: ODataOptions) {
     return this.getValue<string>('ShipPostalCode', options) as Observable<string>;
   }
   
@@ -155,7 +155,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public $ShipCountry() {
     return this.property<string>('ShipCountry');
   }
-  public getShipCountry(options?: HttpOptions) {
+  public getShipCountry(options?: ODataOptions) {
     return this.getValue<string>('ShipCountry', options) as Observable<string>;
   }
   
@@ -167,7 +167,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public getCustomer() {
     return this.getReference<Customer>('Customer') as CustomerModel<Customer>;
   }
-  public setCustomer(model: CustomerModel<Customer> | null, options?: HttpOptions) {
+  public setCustomer(model: CustomerModel<Customer> | null, options?: ODataOptions) {
     return this.setReference<Customer>('Customer', model, options);
   }
   @ModelField()
@@ -178,7 +178,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public getEmployee() {
     return this.getReference<Employee>('Employee') as EmployeeModel<Employee>;
   }
-  public setEmployee(model: EmployeeModel<Employee> | null, options?: HttpOptions) {
+  public setEmployee(model: EmployeeModel<Employee> | null, options?: ODataOptions) {
     return this.setReference<Employee>('Employee', model, options);
   }
   @ModelField()
@@ -189,7 +189,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public getOrder_Details() {
     return this.getReference<OrderDetail>('Order_Details') as OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
   }
-  public setOrder_Details(model: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>> | null, options?: HttpOptions) {
+  public setOrder_Details(model: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>> | null, options?: ODataOptions) {
     return this.setReference<OrderDetail>('Order_Details', model, options);
   }
   @ModelField()
@@ -200,14 +200,14 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   public getShipper() {
     return this.getReference<Shipper>('Shipper') as ShipperModel<Shipper>;
   }
-  public setShipper(model: ShipperModel<Shipper> | null, options?: HttpOptions) {
+  public setShipper(model: ShipperModel<Shipper> | null, options?: ODataOptions) {
     return this.setReference<Shipper>('Shipper', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

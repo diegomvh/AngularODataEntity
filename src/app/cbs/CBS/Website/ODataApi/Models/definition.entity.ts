@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { DefinitionType } from './definitiontype.enum';
 import { LinkList } from './linklist.complex';
 import { LinkListModel } from './linklist.model';
@@ -11,7 +11,7 @@ import { LinkListCollection } from './linklist.collection';
 //#endregion
 
 export interface Definition {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   UniqueId: string;
   Title?: string;
   DefinitionType: DefinitionType;

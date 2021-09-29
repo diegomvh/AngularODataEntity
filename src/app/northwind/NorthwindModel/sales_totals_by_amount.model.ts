@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { SalesTotalsByAmount } from './sales_totals_by_amount.entity';
 import { SalesTotalsByAmountCollection } from './sales_totals_by_amount.collection';
 //#endregion
 
 @Model()
 export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   SaleAmount?: number;
   public $SaleAmount() {
     return this.property<number>('SaleAmount');
   }
-  public getSaleAmount(options?: HttpOptions) {
+  public getSaleAmount(options?: ODataOptions) {
     return this.getValue<number>('SaleAmount', options) as Observable<number>;
   }
   
@@ -35,7 +35,7 @@ export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODa
   public $OrderID() {
     return this.property<number>('OrderID');
   }
-  public getOrderID(options?: HttpOptions) {
+  public getOrderID(options?: ODataOptions) {
     return this.getValue<number>('OrderID', options) as Observable<number>;
   }
   
@@ -44,7 +44,7 @@ export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODa
   public $CompanyName() {
     return this.property<string>('CompanyName');
   }
-  public getCompanyName(options?: HttpOptions) {
+  public getCompanyName(options?: ODataOptions) {
     return this.getValue<string>('CompanyName', options) as Observable<string>;
   }
   
@@ -53,15 +53,15 @@ export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODa
   public $ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
-  public getShippedDate(options?: HttpOptions) {
+  public getShippedDate(options?: ODataOptions) {
     return this.getValue<Date>('ShippedDate', options) as Observable<Date>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

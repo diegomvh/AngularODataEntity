@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  NgModule 
+﻿//#region ODataApiGen ODataImports
+import {
+  NgModule
 } from '@angular/core';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { NorthwindEntitiesService } from './ODataWebExperimental/Northwind/Model/northwindentities.service';
 import { CategoriesService } from './ODataWebExperimental/Northwind/Model/categories.service';
 import { CustomerDemographicsService } from './ODataWebExperimental/Northwind/Model/customerdemographics.service';
@@ -35,7 +35,7 @@ import { SummaryOfSalesByYearsService } from './ODataWebExperimental/Northwind/M
 
 @NgModule({
   providers: [
-//#region ODataApi Providers
+//#region ODataApiGen Providers
     NorthwindEntitiesService,
     CategoriesService,
     CustomerDemographicsService,

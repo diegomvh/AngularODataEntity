@@ -1,8 +1,8 @@
-﻿//#region ODataApi Imports
+﻿//#region ODataApiGen Imports
 //#endregion
 
 export enum ArticleType {
-  //#region ODataApi Members
+  //#region ODataApiGen Members
   Any = 0,
   Article = 1,
   Background = 2,

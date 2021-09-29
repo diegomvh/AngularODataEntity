@@ -1,4 +1,4 @@
-﻿//#region ODataApi Imports
+﻿//#region ODataApiGen Imports
 export * from './CBS/Website/ODataApi/Models/articletype.enum';
 export * from './CBS/Website/ODataApi/Models/mediatype.enum';
 export * from './CBS/Website/ODataApi/Models/pagetype.enum';

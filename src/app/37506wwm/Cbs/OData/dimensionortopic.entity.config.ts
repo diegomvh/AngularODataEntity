@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { DimensionOrTopic } from './dimensionortopic.entity';
 import { DimensionOrTopicModel } from './dimensionortopic.model';
 import { DimensionOrTopicCollection } from './dimensionortopic.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const DimensionOrTopicEntityConfig = {
   name: "DimensionOrTopic",
   model: DimensionOrTopicModel,

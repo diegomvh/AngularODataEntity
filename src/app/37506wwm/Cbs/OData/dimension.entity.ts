@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { DimensionOrTopic } from './dimensionortopic.entity';
 import { DimensionOrTopicModel } from './dimensionortopic.model';
 import { DimensionOrTopicCollection } from './dimensionortopic.collection';
 //#endregion
 
 export interface Dimension extends DimensionOrTopic {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   //#endregion
 }

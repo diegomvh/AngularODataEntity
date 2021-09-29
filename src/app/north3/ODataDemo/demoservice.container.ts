@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  EntityContainerConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  EntityContainerConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ProductsServiceEntitySetConfig } from './products.service.config';
 import { ProductDetailsServiceEntitySetConfig } from './productdetails.service.config';
 import { CategoriesServiceEntitySetConfig } from './categories.service.config';
@@ -13,7 +13,7 @@ import { PersonDetailsServiceEntitySetConfig } from './persondetails.service.con
 import { AdvertisementsServiceEntitySetConfig } from './advertisements.service.config';
 //#endregion
 
-//#region ODataApi EntityContainerConfig
+//#region ODataApiGen EntityContainerConfig
 export const DemoServiceContainer = {
   name: "DemoService",
   entitySets: [

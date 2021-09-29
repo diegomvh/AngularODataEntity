@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Employee } from './employee.entity';
 import { Region } from './region.entity';
 import { EmployeeModel } from './employee.model';
@@ -13,7 +13,7 @@ import { RegionCollection } from './region.collection';
 //#endregion
 
 export interface Territory {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   TerritoryID: string;
   TerritoryDescription: string;
   RegionID: number;

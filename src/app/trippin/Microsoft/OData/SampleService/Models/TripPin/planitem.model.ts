@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PlanItem } from './planitem.entity';
 import { PlanItemCollection } from './planitem.collection';
 //#endregion
 
 @Model()
 export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   PlanItemId!: number;
   public $PlanItemId() {
     return this.property<number>('PlanItemId');
   }
-  public getPlanItemId(options?: HttpOptions) {
+  public getPlanItemId(options?: ODataOptions) {
     return this.getValue<number>('PlanItemId', options) as Observable<number>;
   }
   
@@ -35,7 +35,7 @@ export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   public $ConfirmationCode() {
     return this.property<string>('ConfirmationCode');
   }
-  public getConfirmationCode(options?: HttpOptions) {
+  public getConfirmationCode(options?: ODataOptions) {
     return this.getValue<string>('ConfirmationCode', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   public $StartsAt() {
     return this.property<Date>('StartsAt');
   }
-  public getStartsAt(options?: HttpOptions) {
+  public getStartsAt(options?: ODataOptions) {
     return this.getValue<Date>('StartsAt', options) as Observable<Date>;
   }
   
@@ -53,7 +53,7 @@ export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   public $EndsAt() {
     return this.property<Date>('EndsAt');
   }
-  public getEndsAt(options?: HttpOptions) {
+  public getEndsAt(options?: ODataOptions) {
     return this.getValue<Date>('EndsAt', options) as Observable<Date>;
   }
   
@@ -62,15 +62,15 @@ export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   public $Duration() {
     return this.property<Duration>('Duration');
   }
-  public getDuration(options?: HttpOptions) {
+  public getDuration(options?: ODataOptions) {
     return this.getValue<Duration>('Duration', options) as Observable<Duration>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

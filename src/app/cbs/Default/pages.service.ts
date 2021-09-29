@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PageType } from '../CBS/Website/ODataApi/Models/pagetype.enum';
 import { LinkList } from '../CBS/Website/ODataApi/Models/linklist.complex';
 import { Page } from '../CBS/Website/ODataApi/Models/page.entity';
@@ -38,21 +36,21 @@ export class PagesService extends ODataEntitySetService<Page> {
   constructor(protected client: ODataClient) {
     super(client, 'Pages', 'CBS.Website.ODataApi.Models.Page');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   pageModel(attrs?: Partial<Page>): PageModel<Page> {
     return this.entity().asModel<PageModel<Page>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   pageCollection(models?: Partial<Page>[]): PageCollection<Page, PageModel<Page>> {
     return this.entities().asCollection<PageModel<Page>, PageCollection<Page, PageModel<Page>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   public getPagesByTheme(): ODataFunctionResource<{Theme: string}, Page> { 
     return this.client.function<{Theme: string}, Page>('Default.GetPagesByTheme', this.apiNameOrEntityType);
   }
-  public callGetPagesByTheme(Theme: string, options?: HttpQueryOptions<Page>) {
+  public callGetPagesByTheme(Theme: string, options?: ODataQueryArgumentsOptions<Page>) {
     return this.callFunction<{Theme: string}, Page>(
       {Theme}, 
       this.getPagesByTheme(), 
@@ -61,7 +59,7 @@ export class PagesService extends ODataEntitySetService<Page> {
   public getPagesBySeries(): ODataFunctionResource<{Series: string}, Page> { 
     return this.client.function<{Series: string}, Page>('Default.GetPagesBySeries', this.apiNameOrEntityType);
   }
-  public callGetPagesBySeries(Series: string, options?: HttpQueryOptions<Page>) {
+  public callGetPagesBySeries(Series: string, options?: ODataQueryArgumentsOptions<Page>) {
     return this.callFunction<{Series: string}, Page>(
       {Series}, 
       this.getPagesBySeries(), 
@@ -70,7 +68,7 @@ export class PagesService extends ODataEntitySetService<Page> {
   public getPagesByTaxonomyTag(): ODataFunctionResource<{Tag: string}, Page> { 
     return this.client.function<{Tag: string}, Page>('Default.GetPagesByTaxonomyTag', this.apiNameOrEntityType);
   }
-  public callGetPagesByTaxonomyTag(Tag: string, options?: HttpQueryOptions<Page>) {
+  public callGetPagesByTaxonomyTag(Tag: string, options?: ODataQueryArgumentsOptions<Page>) {
     return this.callFunction<{Tag: string}, Page>(
       {Tag}, 
       this.getPagesByTaxonomyTag(), 
@@ -79,13 +77,13 @@ export class PagesService extends ODataEntitySetService<Page> {
   public getPagesByPageType(): ODataFunctionResource<{PageType: PageType}, Page> { 
     return this.client.function<{PageType: PageType}, Page>('Default.GetPagesByPageType', this.apiNameOrEntityType);
   }
-  public callGetPagesByPageType(PageType: PageType, options?: HttpQueryOptions<Page>) {
+  public callGetPagesByPageType(PageType: PageType, options?: ODataQueryArgumentsOptions<Page>) {
     return this.callFunction<{PageType: PageType}, Page>(
       {PageType}, 
       this.getPagesByPageType(), 
       'entities', options) as Observable<ODataEntities<Page>>;
   }
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

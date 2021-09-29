@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Region } from '../../../NorthwindModel/region.entity';
 import { Territory } from '../../../NorthwindModel/territory.entity';
 import { RegionModel } from '../../../NorthwindModel/region.model';
@@ -37,23 +35,23 @@ export class RegionsService extends ODataEntitySetService<Region> {
   constructor(protected client: ODataClient) {
     super(client, 'Regions', 'NorthwindModel.Region');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   regionModel(attrs?: Partial<Region>): RegionModel<Region> {
     return this.entity().asModel<RegionModel<Region>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   regionCollection(models?: Partial<Region>[]): RegionCollection<Region, RegionModel<Region>> {
     return this.entities().asCollection<RegionModel<Region>, RegionCollection<Region, RegionModel<Region>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   public territories(key: EntityKey<Region>): ODataNavigationPropertyResource<Territory> { 
     return this.entity(key).navigationProperty<Territory>('Territories'); 
   }
-  public fetchTerritories(key: EntityKey<Region>, options?: HttpQueryOptions<Territory>) {
+  public fetchTerritories(key: EntityKey<Region>, options?: ODataQueryArgumentsOptions<Territory>) {
     return this.fetchNavigationProperty<Territory>(
       this.territories(key), 
       'entities', options) as Observable<ODataEntities<Territory>>;

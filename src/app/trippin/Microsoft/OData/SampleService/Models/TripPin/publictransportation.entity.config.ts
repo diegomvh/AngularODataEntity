@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PublicTransportation } from './publictransportation.entity';
 import { PublicTransportationModel } from './publictransportation.model';
 import { PublicTransportationCollection } from './publictransportation.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const PublicTransportationEntityConfig = {
   name: "PublicTransportation",
   base: "Microsoft.OData.SampleService.Models.TripPin.PlanItem",

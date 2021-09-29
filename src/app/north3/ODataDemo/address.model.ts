@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Address } from './address.complex';
 import { AddressCollection } from './address.collection';
 //#endregion
 
 @Model()
 export class AddressModel<E extends Address> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   Street?: string;
   public $Street() {
     return this.property<string>('Street');
   }
-  public getStreet(options?: HttpOptions) {
+  public getStreet(options?: ODataOptions) {
     return this.getValue<string>('Street', options) as Observable<string>;
   }
   
@@ -35,7 +35,7 @@ export class AddressModel<E extends Address> extends ODataModel<E> {
   public $City() {
     return this.property<string>('City');
   }
-  public getCity(options?: HttpOptions) {
+  public getCity(options?: ODataOptions) {
     return this.getValue<string>('City', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class AddressModel<E extends Address> extends ODataModel<E> {
   public $State() {
     return this.property<string>('State');
   }
-  public getState(options?: HttpOptions) {
+  public getState(options?: ODataOptions) {
     return this.getValue<string>('State', options) as Observable<string>;
   }
   
@@ -53,7 +53,7 @@ export class AddressModel<E extends Address> extends ODataModel<E> {
   public $ZipCode() {
     return this.property<string>('ZipCode');
   }
-  public getZipCode(options?: HttpOptions) {
+  public getZipCode(options?: ODataOptions) {
     return this.getValue<string>('ZipCode', options) as Observable<string>;
   }
   
@@ -62,15 +62,15 @@ export class AddressModel<E extends Address> extends ODataModel<E> {
   public $Country() {
     return this.property<string>('Country');
   }
-  public getCountry(options?: HttpOptions) {
+  public getCountry(options?: ODataOptions) {
     return this.getValue<string>('Country', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

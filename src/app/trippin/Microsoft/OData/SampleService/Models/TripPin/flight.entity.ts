@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { PublicTransportation } from './publictransportation.entity';
 import { Airline } from './airline.entity';
 import { Airport } from './airport.entity';
@@ -16,7 +16,7 @@ import { PublicTransportationCollection } from './publictransportation.collectio
 //#endregion
 
 export interface Flight extends PublicTransportation {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   FlightNumber: string;
   From?: Airport;
   To?: Airport;

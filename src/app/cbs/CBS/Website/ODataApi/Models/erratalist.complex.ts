@@ -1,16 +1,16 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ErratumItem } from './erratumitem.complex';
 import { ErratumItemModel } from './erratumitem.model';
 import { ErratumItemCollection } from './erratumitem.collection';
 //#endregion
 
 export interface ErrataList {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   Items?: ErratumItem[];
   //#endregion
 }

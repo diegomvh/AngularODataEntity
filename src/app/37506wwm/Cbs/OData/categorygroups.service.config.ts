@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  EntitySetConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  EntitySetConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CategoryGroupsService } from './categorygroups.service';
 //#endregion
 
-//#region ODataApi EntitySetConfig
+//#region ODataApiGen EntitySetConfig
 export const CategoryGroupsServiceEntitySetConfig = {
   name: "CategoryGroups",
   entityType: "Cbs.OData.CategoryGroup",

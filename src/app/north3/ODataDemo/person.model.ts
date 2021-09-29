@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Person } from './person.entity';
 import { PersonDetail } from './persondetail.entity';
 import { PersonDetailModel } from './persondetail.model';
@@ -23,13 +23,13 @@ import { PersonDetailCollection } from './persondetail.collection';
 
 @Model()
 export class PersonModel<E extends Person> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   ID!: number;
   public $ID() {
     return this.property<number>('ID');
   }
-  public getID(options?: HttpOptions) {
+  public getID(options?: ODataOptions) {
     return this.getValue<number>('ID', options) as Observable<number>;
   }
   
@@ -38,7 +38,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public $Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: HttpOptions) {
+  public getName(options?: ODataOptions) {
     return this.getValue<string>('Name', options) as Observable<string>;
   }
   
@@ -50,14 +50,14 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   public getPersonDetail() {
     return this.getReference<PersonDetail>('PersonDetail') as PersonDetailModel<PersonDetail>;
   }
-  public setPersonDetail(model: PersonDetailModel<PersonDetail> | null, options?: HttpOptions) {
+  public setPersonDetail(model: PersonDetailModel<PersonDetail> | null, options?: ODataOptions) {
     return this.setReference<PersonDetail>('PersonDetail', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

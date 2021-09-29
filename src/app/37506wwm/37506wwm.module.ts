@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  NgModule 
+﻿//#region ODataApiGen ODataImports
+import {
+  NgModule
 } from '@angular/core';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { WebAPIService } from './Cbs/OData/webapi.service';
 import { TableInfosService } from './Cbs/OData/tableinfos.service';
 import { UntypedDataSetService } from './Cbs/OData/untypeddataset.service';
@@ -17,7 +17,7 @@ import { PeriodenService } from './Cbs/OData/perioden.service';
 
 @NgModule({
   providers: [
-//#region ODataApi Providers
+//#region ODataApiGen Providers
     WebAPIService,
     TableInfosService,
     UntypedDataSetService,

@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { LocationModel } from './location.model';
 import { EventLocation } from './eventlocation.complex';
 import { EventLocationCollection } from './eventlocation.collection';
@@ -21,21 +21,21 @@ import { EventLocationCollection } from './eventlocation.collection';
 
 @Model()
 export class EventLocationModel<E extends EventLocation> extends LocationModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   BuildingInfo?: string;
   public $BuildingInfo() {
     return this.property<string>('BuildingInfo');
   }
-  public getBuildingInfo(options?: HttpOptions) {
+  public getBuildingInfo(options?: ODataOptions) {
     return this.getValue<string>('BuildingInfo', options) as Observable<string>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

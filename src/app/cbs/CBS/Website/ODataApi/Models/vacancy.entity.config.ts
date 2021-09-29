@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Vacancy } from './vacancy.entity';
 import { VacancyModel } from './vacancy.model';
 import { VacancyCollection } from './vacancy.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const VacancyEntityConfig = {
   name: "Vacancy",
   model: VacancyModel,

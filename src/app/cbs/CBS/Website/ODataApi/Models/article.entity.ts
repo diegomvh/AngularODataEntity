@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ArticleType } from './articletype.enum';
 import { ErrataList } from './erratalist.complex';
 import { LinkList } from './linklist.complex';
@@ -14,7 +14,7 @@ import { LinkListCollection } from './linklist.collection';
 //#endregion
 
 export interface Article {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   UniqueId: string;
   ArticleType: ArticleType;
   ArticleTypeInt: number;

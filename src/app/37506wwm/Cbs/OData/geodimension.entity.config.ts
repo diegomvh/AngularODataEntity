@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { GeoDimension } from './geodimension.entity';
 import { GeoDimensionModel } from './geodimension.model';
 import { GeoDimensionCollection } from './geodimension.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const GeoDimensionEntityConfig = {
   name: "GeoDimension",
   base: "Cbs.OData.DimensionOrTopic",

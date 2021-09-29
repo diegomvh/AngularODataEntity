@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { ProductsAboveAveragePrice } from './products_above_average_price.entity';
 import { ProductsAboveAveragePriceModel } from './products_above_average_price.model';
 import { ProductsAboveAveragePriceCollection } from './products_above_average_price.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const ProductsAboveAveragePriceEntityConfig = {
   name: "Products_Above_Average_Price",
   model: ProductsAboveAveragePriceModel,

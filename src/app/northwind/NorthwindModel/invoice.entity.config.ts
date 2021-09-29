@@ -1,15 +1,15 @@
-﻿//#region AngularOData Imports
-import { 
-  StructuredTypeConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  StructuredTypeConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Invoice } from './invoice.entity';
 import { InvoiceModel } from './invoice.model';
 import { InvoiceCollection } from './invoice.collection';
 //#endregion
 
-//#region ODataApi StrucutredTypeConfig
+//#region ODataApiGen StrucutredTypeConfig
 export const InvoiceEntityConfig = {
   name: "Invoice",
   model: InvoiceModel,

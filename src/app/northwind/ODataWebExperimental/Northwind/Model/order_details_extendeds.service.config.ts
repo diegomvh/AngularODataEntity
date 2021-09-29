@@ -1,13 +1,13 @@
-﻿//#region AngularOData Imports
-import { 
-  EntitySetConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  EntitySetConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { OrderDetailsExtendedsService } from './order_details_extendeds.service';
 //#endregion
 
-//#region ODataApi EntitySetConfig
+//#region ODataApiGen EntitySetConfig
 export const OrderDetailsExtendedsServiceEntitySetConfig = {
   name: "Order_Details_Extendeds",
   entityType: "NorthwindModel.Order_Details_Extended",

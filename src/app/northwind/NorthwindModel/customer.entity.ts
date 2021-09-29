@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  Duration 
+﻿//#region ODataApiGen ODataImports
+import {
+  Duration
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CustomerDemographic } from './customerdemographic.entity';
 import { Order } from './order.entity';
 import { CustomerDemographicModel } from './customerdemographic.model';
@@ -13,7 +13,7 @@ import { OrderCollection } from './order.collection';
 //#endregion
 
 export interface Customer {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   CustomerID: string;
   CompanyName: string;
   ContactName?: string;

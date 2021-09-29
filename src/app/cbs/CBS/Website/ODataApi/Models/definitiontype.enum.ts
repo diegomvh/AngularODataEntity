@@ -1,8 +1,8 @@
-﻿//#region ODataApi Imports
+﻿//#region ODataApiGen Imports
 //#endregion
 
 export enum DefinitionType {
-  //#region ODataApi Members
+  //#region ODataApiGen Members
   Any = 0,
   FAQ = 1,
   Explanation = 2,

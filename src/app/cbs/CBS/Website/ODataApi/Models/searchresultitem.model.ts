@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { SearchResultItem } from './searchresultitem.entity';
 import { SearchResultItemCollection } from './searchresultitem.collection';
 //#endregion
 
 @Model()
 export class SearchResultItemModel<E extends SearchResultItem> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   UniqueId!: string;
   public $UniqueId() {
     return this.property<string>('UniqueId');
   }
-  public getUniqueId(options?: HttpOptions) {
+  public getUniqueId(options?: ODataOptions) {
     return this.getValue<string>('UniqueId', options) as Observable<string>;
   }
   
@@ -35,7 +35,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Type() {
     return this.property<string>('Type');
   }
-  public getType(options?: HttpOptions) {
+  public getType(options?: ODataOptions) {
     return this.getValue<string>('Type', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Permalink() {
     return this.property<string>('Permalink');
   }
-  public getPermalink(options?: HttpOptions) {
+  public getPermalink(options?: ODataOptions) {
     return this.getValue<string>('Permalink', options) as Observable<string>;
   }
   
@@ -53,7 +53,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Title() {
     return this.property<string>('Title');
   }
-  public getTitle(options?: HttpOptions) {
+  public getTitle(options?: ODataOptions) {
     return this.getValue<string>('Title', options) as Observable<string>;
   }
   
@@ -62,7 +62,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $ReleaseTime() {
     return this.property<Date>('ReleaseTime');
   }
-  public getReleaseTime(options?: HttpOptions) {
+  public getReleaseTime(options?: ODataOptions) {
     return this.getValue<Date>('ReleaseTime', options) as Observable<Date>;
   }
   
@@ -71,7 +71,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Url() {
     return this.property<string>('Url');
   }
-  public getUrl(options?: HttpOptions) {
+  public getUrl(options?: ODataOptions) {
     return this.getValue<string>('Url', options) as Observable<string>;
   }
   
@@ -80,7 +80,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $MetaDescription() {
     return this.property<string>('MetaDescription');
   }
-  public getMetaDescription(options?: HttpOptions) {
+  public getMetaDescription(options?: ODataOptions) {
     return this.getValue<string>('MetaDescription', options) as Observable<string>;
   }
   
@@ -89,7 +89,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Image() {
     return this.property<string>('Image');
   }
-  public getImage(options?: HttpOptions) {
+  public getImage(options?: ODataOptions) {
     return this.getValue<string>('Image', options) as Observable<string>;
   }
   
@@ -98,7 +98,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $ImageAlt() {
     return this.property<string>('ImageAlt');
   }
-  public getImageAlt(options?: HttpOptions) {
+  public getImageAlt(options?: ODataOptions) {
     return this.getValue<string>('ImageAlt', options) as Observable<string>;
   }
   
@@ -107,7 +107,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: HttpOptions) {
+  public getDescription(options?: ODataOptions) {
     return this.getValue<string>('Description', options) as Observable<string>;
   }
   
@@ -116,7 +116,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $LeadText() {
     return this.property<string>('LeadText');
   }
-  public getLeadText(options?: HttpOptions) {
+  public getLeadText(options?: ODataOptions) {
     return this.getValue<string>('LeadText', options) as Observable<string>;
   }
   
@@ -125,7 +125,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Body() {
     return this.property<string>('Body');
   }
-  public getBody(options?: HttpOptions) {
+  public getBody(options?: ODataOptions) {
     return this.getValue<string>('Body', options) as Observable<string>;
   }
   
@@ -134,7 +134,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Snippet() {
     return this.property<string>('Snippet');
   }
-  public getSnippet(options?: HttpOptions) {
+  public getSnippet(options?: ODataOptions) {
     return this.getValue<string>('Snippet', options) as Observable<string>;
   }
   
@@ -143,7 +143,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Location() {
     return this.property<string>('Location');
   }
-  public getLocation(options?: HttpOptions) {
+  public getLocation(options?: ODataOptions) {
     return this.getValue<string>('Location', options) as Observable<string>;
   }
   
@@ -152,7 +152,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Language() {
     return this.property<string>('Language');
   }
-  public getLanguage(options?: HttpOptions) {
+  public getLanguage(options?: ODataOptions) {
     return this.getValue<string>('Language', options) as Observable<string>;
   }
   
@@ -161,7 +161,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $Themes() {
     return this.property<string[]>('Themes');
   }
-  public getThemes(options?: HttpOptions) {
+  public getThemes(options?: ODataOptions) {
     return this.getValue<string[]>('Themes', options) as Observable<string[]>;
   }
   
@@ -170,7 +170,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $TemplateName() {
     return this.property<string>('TemplateName');
   }
-  public getTemplateName(options?: HttpOptions) {
+  public getTemplateName(options?: ODataOptions) {
     return this.getValue<string>('TemplateName', options) as Observable<string>;
   }
   
@@ -179,7 +179,7 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $ItemNameLowerCase() {
     return this.property<string>('ItemNameLowerCase');
   }
-  public getItemNameLowerCase(options?: HttpOptions) {
+  public getItemNameLowerCase(options?: ODataOptions) {
     return this.getValue<string>('ItemNameLowerCase', options) as Observable<string>;
   }
   
@@ -188,15 +188,15 @@ export class SearchResultItemModel<E extends SearchResultItem> extends ODataMode
   public $SortOrder() {
     return this.property<number>('SortOrder');
   }
-  public getSortOrder(options?: HttpOptions) {
+  public getSortOrder(options?: ODataOptions) {
     return this.getValue<number>('SortOrder', options) as Observable<number>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

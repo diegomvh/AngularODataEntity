@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Employee } from './employee.entity';
 import { Order } from './order.entity';
 import { Territory } from './territory.entity';
@@ -26,13 +26,13 @@ import { TerritoryCollection } from './territory.collection';
 
 @Model()
 export class EmployeeModel<E extends Employee> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   EmployeeID!: number;
   public $EmployeeID() {
     return this.property<number>('EmployeeID');
   }
-  public getEmployeeID(options?: HttpOptions) {
+  public getEmployeeID(options?: ODataOptions) {
     return this.getValue<number>('EmployeeID', options) as Observable<number>;
   }
   
@@ -41,7 +41,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $LastName() {
     return this.property<string>('LastName');
   }
-  public getLastName(options?: HttpOptions) {
+  public getLastName(options?: ODataOptions) {
     return this.getValue<string>('LastName', options) as Observable<string>;
   }
   
@@ -50,7 +50,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $FirstName() {
     return this.property<string>('FirstName');
   }
-  public getFirstName(options?: HttpOptions) {
+  public getFirstName(options?: ODataOptions) {
     return this.getValue<string>('FirstName', options) as Observable<string>;
   }
   
@@ -59,7 +59,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $Title() {
     return this.property<string>('Title');
   }
-  public getTitle(options?: HttpOptions) {
+  public getTitle(options?: ODataOptions) {
     return this.getValue<string>('Title', options) as Observable<string>;
   }
   
@@ -68,7 +68,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $TitleOfCourtesy() {
     return this.property<string>('TitleOfCourtesy');
   }
-  public getTitleOfCourtesy(options?: HttpOptions) {
+  public getTitleOfCourtesy(options?: ODataOptions) {
     return this.getValue<string>('TitleOfCourtesy', options) as Observable<string>;
   }
   
@@ -77,7 +77,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $BirthDate() {
     return this.property<Date>('BirthDate');
   }
-  public getBirthDate(options?: HttpOptions) {
+  public getBirthDate(options?: ODataOptions) {
     return this.getValue<Date>('BirthDate', options) as Observable<Date>;
   }
   
@@ -86,7 +86,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $HireDate() {
     return this.property<Date>('HireDate');
   }
-  public getHireDate(options?: HttpOptions) {
+  public getHireDate(options?: ODataOptions) {
     return this.getValue<Date>('HireDate', options) as Observable<Date>;
   }
   
@@ -95,7 +95,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $Address() {
     return this.property<string>('Address');
   }
-  public getAddress(options?: HttpOptions) {
+  public getAddress(options?: ODataOptions) {
     return this.getValue<string>('Address', options) as Observable<string>;
   }
   
@@ -104,7 +104,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $City() {
     return this.property<string>('City');
   }
-  public getCity(options?: HttpOptions) {
+  public getCity(options?: ODataOptions) {
     return this.getValue<string>('City', options) as Observable<string>;
   }
   
@@ -113,7 +113,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $Region() {
     return this.property<string>('Region');
   }
-  public getRegion(options?: HttpOptions) {
+  public getRegion(options?: ODataOptions) {
     return this.getValue<string>('Region', options) as Observable<string>;
   }
   
@@ -122,7 +122,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $PostalCode() {
     return this.property<string>('PostalCode');
   }
-  public getPostalCode(options?: HttpOptions) {
+  public getPostalCode(options?: ODataOptions) {
     return this.getValue<string>('PostalCode', options) as Observable<string>;
   }
   
@@ -131,7 +131,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $Country() {
     return this.property<string>('Country');
   }
-  public getCountry(options?: HttpOptions) {
+  public getCountry(options?: ODataOptions) {
     return this.getValue<string>('Country', options) as Observable<string>;
   }
   
@@ -140,7 +140,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $HomePhone() {
     return this.property<string>('HomePhone');
   }
-  public getHomePhone(options?: HttpOptions) {
+  public getHomePhone(options?: ODataOptions) {
     return this.getValue<string>('HomePhone', options) as Observable<string>;
   }
   
@@ -149,7 +149,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $Extension() {
     return this.property<string>('Extension');
   }
-  public getExtension(options?: HttpOptions) {
+  public getExtension(options?: ODataOptions) {
     return this.getValue<string>('Extension', options) as Observable<string>;
   }
   
@@ -158,7 +158,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $Photo() {
     return this.property<ArrayBuffer>('Photo');
   }
-  public getPhoto(options?: HttpOptions) {
+  public getPhoto(options?: ODataOptions) {
     return this.getValue<ArrayBuffer>('Photo', options) as Observable<ArrayBuffer>;
   }
   
@@ -167,7 +167,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $Notes() {
     return this.property<string>('Notes');
   }
-  public getNotes(options?: HttpOptions) {
+  public getNotes(options?: ODataOptions) {
     return this.getValue<string>('Notes', options) as Observable<string>;
   }
   
@@ -176,7 +176,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $ReportsTo() {
     return this.property<number>('ReportsTo');
   }
-  public getReportsTo(options?: HttpOptions) {
+  public getReportsTo(options?: ODataOptions) {
     return this.getValue<number>('ReportsTo', options) as Observable<number>;
   }
   
@@ -185,7 +185,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public $PhotoPath() {
     return this.property<string>('PhotoPath');
   }
-  public getPhotoPath(options?: HttpOptions) {
+  public getPhotoPath(options?: ODataOptions) {
     return this.getValue<string>('PhotoPath', options) as Observable<string>;
   }
   
@@ -197,7 +197,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public getEmployees1() {
     return this.getReference<Employee>('Employees1') as EmployeeCollection<Employee, EmployeeModel<Employee>>;
   }
-  public setEmployees1(model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null, options?: HttpOptions) {
+  public setEmployees1(model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null, options?: ODataOptions) {
     return this.setReference<Employee>('Employees1', model, options);
   }
   @ModelField()
@@ -208,7 +208,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public getEmployee1() {
     return this.getReference<Employee>('Employee1') as EmployeeModel<Employee>;
   }
-  public setEmployee1(model: EmployeeModel<Employee> | null, options?: HttpOptions) {
+  public setEmployee1(model: EmployeeModel<Employee> | null, options?: ODataOptions) {
     return this.setReference<Employee>('Employee1', model, options);
   }
   @ModelField()
@@ -219,7 +219,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public getOrders() {
     return this.getReference<Order>('Orders') as OrderCollection<Order, OrderModel<Order>>;
   }
-  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, options?: HttpOptions) {
+  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, options?: ODataOptions) {
     return this.setReference<Order>('Orders', model, options);
   }
   @ModelField()
@@ -230,14 +230,14 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public getTerritories() {
     return this.getReference<Territory>('Territories') as TerritoryCollection<Territory, TerritoryModel<Territory>>;
   }
-  public setTerritories(model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null, options?: HttpOptions) {
+  public setTerritories(model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null, options?: ODataOptions) {
     return this.setReference<Territory>('Territories', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

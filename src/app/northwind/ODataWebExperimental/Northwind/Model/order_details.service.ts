@@ -3,13 +3,13 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
+//#region ODataApiGen ODataImports
+import {
   ODataClient,
-  ODataEntitySetService, 
-  ODataEntity, 
-  ODataEntities, 
-  ODataProperty, 
+  ODataEntitySetService,
+  ODataEntity,
+  ODataEntities,
+  ODataProperty,
   EntityKey,
   Duration,
   ODataEntityResource,
@@ -17,13 +17,11 @@ import {
   ODataNavigationPropertyResource,
   ODataActionResource,
   ODataFunctionResource,
-  Expand, 
-  Select,
-  HttpOptions,
-  HttpQueryOptions
+  ODataOptions,
+  ODataQueryArgumentsOptions
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { OrderDetail } from '../../../NorthwindModel/order_detail.entity';
 import { Order } from '../../../NorthwindModel/order.entity';
 import { Product } from '../../../NorthwindModel/product.entity';
@@ -40,23 +38,23 @@ export class OrderDetailsService extends ODataEntitySetService<OrderDetail> {
   constructor(protected client: ODataClient) {
     super(client, 'Order_Details', 'NorthwindModel.Order_Detail');
   }
-  //#region ODataApi Model
+  //#region ODataApiGen Model
   orderDetailModel(attrs?: Partial<OrderDetail>): OrderDetailModel<OrderDetail> {
     return this.entity().asModel<OrderDetailModel<OrderDetail>>(attrs || {});
   }//#endregion
-  //#region ODataApi Collection
+  //#region ODataApiGen Collection
   orderDetailCollection(models?: Partial<OrderDetail>[]): OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>> {
     return this.entities().asCollection<OrderDetailModel<OrderDetail>, OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>>(models || []);
   }//#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   public order(key: EntityKey<OrderDetail>): ODataNavigationPropertyResource<Order> { 
     return this.entity(key).navigationProperty<Order>('Order'); 
   }
-  public fetchOrder(key: EntityKey<OrderDetail>, options?: HttpQueryOptions<Order>) {
+  public fetchOrder(key: EntityKey<OrderDetail>, options?: ODataQueryArgumentsOptions<Order>) {
     return this.fetchNavigationProperty<Order>(
       this.order(key), 
       'entity', options) as Observable<ODataEntity<Order>>;
@@ -72,7 +70,7 @@ export class OrderDetailsService extends ODataEntitySetService<OrderDetail> {
   public product(key: EntityKey<OrderDetail>): ODataNavigationPropertyResource<Product> { 
     return this.entity(key).navigationProperty<Product>('Product'); 
   }
-  public fetchProduct(key: EntityKey<OrderDetail>, options?: HttpQueryOptions<Product>) {
+  public fetchProduct(key: EntityKey<OrderDetail>, options?: ODataQueryArgumentsOptions<Product>) {
     return this.fetchNavigationProperty<Product>(
       this.product(key), 
       'entity', options) as Observable<ODataEntity<Product>>;

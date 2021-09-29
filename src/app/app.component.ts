@@ -116,7 +116,7 @@ export class AppComponent {
 
     this.productsService
       .entities()
-      .get({ withCount: true, fetchPolicy: 'cache-only' })
+      .fetch({ withCount: true, fetchPolicy: 'cache-only' })
       .subscribe(
         ({ entities, annots }) => {
           console.log(entities);
@@ -126,7 +126,7 @@ export class AppComponent {
 
     // Fetch airports with count
     airports
-      .get({ withCount: true })
+      .fetch({ withCount: true })
       .subscribe(({ entities, annots }) =>
         console.log('Airports: ', entities, 'Annotations: ', annots)
       );
@@ -134,10 +134,10 @@ export class AppComponent {
     // Fetch airport with key
     airports
       .entity('CYYZ')
-      .get()
+      .fetch()
       .pipe(
         switchMap(() =>
-          airports.entity('CYYZ').get({ fetchPolicy: 'cache-first' })
+          airports.entity('CYYZ').fetch({ fetchPolicy: 'cache-first' })
         )
       ) // From Cache!
       .subscribe(({ entity, annots }) =>
@@ -147,7 +147,7 @@ export class AppComponent {
     // Filter airports (inmutable resource)
     airports
       .filter({ Location: { City: { CountryRegion: 'United States' } } })
-      .get()
+      .fetch()
       .subscribe(({ entities, annots }) =>
         console.log(
           'Airports of United States: ',
@@ -162,7 +162,7 @@ export class AppComponent {
       .filter()
       .push({ Location: { City: { Region: 'California' } } });
     airports
-      .get()
+      .fetch()
       .subscribe(({ entities, annots }) =>
         console.log(
           'Airports in California: ',
@@ -178,7 +178,7 @@ export class AppComponent {
     // Remove filter (mutable resource)
     airports.query.filter().clear();
     airports
-      .get()
+      .fetch()
       .subscribe(({ entities, annots }) =>
         console.log('Airports: ', entities, 'Annotations: ', annots)
       );
@@ -193,7 +193,7 @@ export class AppComponent {
         },
         Trips: { select: ['Name', 'Tags'] },
       })
-      .get({ withCount: true })
+      .fetch({ withCount: true })
       .subscribe(({ entities, annots }) =>
         console.log(
           'People with Friends and Trips: ',
@@ -208,10 +208,10 @@ export class AppComponent {
 
     this.odata
       .batch('TripPin')
-      .post((batch) => {
+      .exec((batch) => {
         console.log(batch);
-        people.get().subscribe(console.log);
-        airports.get().subscribe(console.log);
+        people.fetch().subscribe(console.log);
+        airports.fetch().subscribe(console.log);
       })
       .subscribe();
   }
@@ -231,14 +231,14 @@ export class AppComponent {
     let peopleService = this.factory.entitySet<Person>('People', 'TripPin');
     let person = peopleService.entity('scottketchum');
     person
-      .get()
+      .fetch()
       .subscribe(({ entity, annots }) =>
         console.log(annots.property('Emails'))
       );
 
     let friends = person.navigationProperty<Person>('Friends');
     // Use TripPin config
-    friends.get({ responseType: 'entities' }).subscribe(console.log);
+    friends.fetch({ responseType: 'entities' }).subscribe(console.log);
   }
 
   property() {
@@ -365,7 +365,7 @@ export class AppComponent {
     if (person !== null) {
       // Patch Person
       await serviceWithParser
-        .patch('someuser', { LastName: 'LastName' }, { etag })
+        .modify('someuser', { LastName: 'LastName' }, { etag })
         .pipe(
           map(({ entity, annots }) => {
             etag = annots.etag;

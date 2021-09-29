@@ -1,9 +1,9 @@
-﻿//#region AngularOData Imports
-import { 
-  SchemaConfig 
+﻿//#region ODataApiGen ODataImports
+import {
+  SchemaConfig
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { AddressComplexConfig } from './address.complex.config';
 import { ProductEntityConfig } from './product.entity.config';
 import { CategoryEntityConfig } from './category.entity.config';
@@ -11,7 +11,7 @@ import { SupplierEntityConfig } from './supplier.entity.config';
 import { DemoServiceContainer } from './demoservice.container';
 //#endregion
 
-//#region ODataApi SchemaConfig
+//#region ODataApiGen SchemaConfig
 export const ODataDemoSchema = {
   namespace: "ODataDemo",
   enums: [],

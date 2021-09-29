@@ -2,18 +2,18 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { CustomerDemographic } from './customerdemographic.entity';
 import { Customer } from './customer.entity';
 import { CustomerModel } from './customer.model';
@@ -23,13 +23,13 @@ import { CustomerCollection } from './customer.collection';
 
 @Model()
 export class CustomerDemographicModel<E extends CustomerDemographic> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   CustomerTypeID!: string;
   public $CustomerTypeID() {
     return this.property<string>('CustomerTypeID');
   }
-  public getCustomerTypeID(options?: HttpOptions) {
+  public getCustomerTypeID(options?: ODataOptions) {
     return this.getValue<string>('CustomerTypeID', options) as Observable<string>;
   }
   
@@ -38,7 +38,7 @@ export class CustomerDemographicModel<E extends CustomerDemographic> extends ODa
   public $CustomerDesc() {
     return this.property<string>('CustomerDesc');
   }
-  public getCustomerDesc(options?: HttpOptions) {
+  public getCustomerDesc(options?: ODataOptions) {
     return this.getValue<string>('CustomerDesc', options) as Observable<string>;
   }
   
@@ -50,14 +50,14 @@ export class CustomerDemographicModel<E extends CustomerDemographic> extends ODa
   public getCustomers() {
     return this.getReference<Customer>('Customers') as CustomerCollection<Customer, CustomerModel<Customer>>;
   }
-  public setCustomers(model: CustomerCollection<Customer, CustomerModel<Customer>> | null, options?: HttpOptions) {
+  public setCustomers(model: CustomerCollection<Customer, CustomerModel<Customer>> | null, options?: ODataOptions) {
     return this.setReference<Customer>('Customers', model, options);
   }
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }

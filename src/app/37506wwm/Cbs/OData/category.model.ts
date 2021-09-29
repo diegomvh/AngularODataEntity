@@ -2,31 +2,31 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//#region AngularOData Imports
-import { 
-  Model, 
-  ModelField, 
-  ODataModel, 
-  ODataCollection, 
-  HttpOptions, 
-  HttpQueryOptions, 
-  Duration, 
+//#region ODataApiGen ODataImports
+import {
+  Model,
+  ModelField,
+  ODataModel,
+  ODataCollection,
+  ODataOptions,
+  ODataQueryArgumentsOptions,
+  Duration,
 } from 'angular-odata';//#endregion
 
-//#region ODataApi Imports
+//#region ODataApiGen Imports
 import { Category } from './category.entity';
 import { CategoryCollection } from './category.collection';
 //#endregion
 
 @Model()
 export class CategoryModel<E extends Category> extends ODataModel<E> {
-  //#region ODataApi Properties
+  //#region ODataApiGen Properties
   @ModelField()
   Key!: string;
   public $Key() {
     return this.property<string>('Key');
   }
-  public getKey(options?: HttpOptions) {
+  public getKey(options?: ODataOptions) {
     return this.getValue<string>('Key', options) as Observable<string>;
   }
   
@@ -35,7 +35,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   public $Title() {
     return this.property<string>('Title');
   }
-  public getTitle(options?: HttpOptions) {
+  public getTitle(options?: ODataOptions) {
     return this.getValue<string>('Title', options) as Observable<string>;
   }
   
@@ -44,7 +44,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   public $Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: HttpOptions) {
+  public getDescription(options?: ODataOptions) {
     return this.getValue<string>('Description', options) as Observable<string>;
   }
   
@@ -53,15 +53,15 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   public $CategoryGroupID() {
     return this.property<number>('CategoryGroupID');
   }
-  public getCategoryGroupID(options?: HttpOptions) {
+  public getCategoryGroupID(options?: ODataOptions) {
     return this.getValue<number>('CategoryGroupID', options) as Observable<number>;
   }
   
   //#endregion
-  //#region ODataApi Actions
+  //#region ODataApiGen Actions
   //#endregion
-  //#region ODataApi Functions
+  //#region ODataApiGen Functions
   //#endregion
-  //#region ODataApi Navigations
+  //#region ODataApiGen Navigations
   //#endregion
 }
