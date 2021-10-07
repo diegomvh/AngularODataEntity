@@ -12,7 +12,7 @@ import {
   PersonGenderConfig,
 } from './trippin';
 import { OrdersService } from './northwind';
-import { filter, switchMap, map, tap } from 'rxjs/operators';
+import { filter, switchMap, map } from 'rxjs/operators';
 import { DefaultContainerService } from './trippin';
 import { ProductsService } from './north3';
 
@@ -205,15 +205,6 @@ export class AppComponent {
 
     console.log(people.toJSON());
     console.log(this.odata.fromJSON(people.toJSON()));
-
-    this.odata
-      .batch('TripPin')
-      .exec((batch) => {
-        console.log(batch);
-        people.fetch().subscribe(console.log);
-        airports.fetch().subscribe(console.log);
-      })
-      .subscribe();
   }
 
   filterPeopleByGender() {
@@ -469,4 +460,14 @@ export class AppComponent {
       )
       .subscribe(console.log);
   }
+}
+function forkJoin(arg0: {
+  people: import('rxjs').Observable<
+    import('angular-odata').ODataEntities<Person>
+  >;
+  airports: import('rxjs').Observable<
+    import('angular-odata').ODataEntities<Airport>
+  >;
+}) {
+  throw new Error('Function not implemented.');
 }
