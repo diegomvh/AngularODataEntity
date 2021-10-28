@@ -16,15 +16,17 @@ export class PersonComponent {
   show(name: string) {
     this.people
       .entity({ UserName: name })
-      .expand({
-        Photo: {},
-        Friends: { expand: { Emails: {} }, levels: 10 },
-        Trips: {
-          orderBy: ['Photos'],
-          //orderBy: [['Name', 'desc']],
-          expand: { Photos: {}, PlanItems: {} },
-        },
-      })
+      .query((q) =>
+        q.expand({
+          Photo: {},
+          Friends: { expand: { Emails: {} }, levels: 10 },
+          Trips: {
+            orderBy: ['Photos'],
+            //orderBy: [['Name', 'desc']],
+            expand: { Photos: {}, PlanItems: {} },
+          },
+        })
+      )
       .fetch()
       .subscribe(({ entity, annots }) => {
         console.log(entity, annots);

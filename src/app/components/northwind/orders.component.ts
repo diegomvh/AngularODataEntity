@@ -63,11 +63,16 @@ export class OrdersComponent {
   loading: boolean = false;
 
   constructor(private orders: OrdersService) {
-    this.resource = this.orders.entities().top(this.size);
+    this.resource = this.orders.entities().query((q) => q.top(this.size));
     const schema = this.resource.schema();
     this.cols =
       schema !== null
-        ? (schema?.fields() || [])
+        ? (
+            schema?.fields({
+              include_parents: true,
+              include_navigation: false,
+            }) || []
+          )
             .filter((f) => !f.navigation)
             .map((f) => ({
               field: f.name,
@@ -93,9 +98,9 @@ export class OrdersComponent {
     field = `tolower(${field})`;
     if (value) {
       let filter = { [field]: { contains: value.toLowerCase() } };
-      this.resource.query.filter().assign(filter);
+      this.resource.query((q) => q.filter().assign(filter));
     } else {
-      this.resource.query.filter().unset(field);
+      this.resource.query((q) => q.filter().unset(field));
     }
     this.total = 0;
     this.fetch(this.resource);
@@ -103,17 +108,18 @@ export class OrdersComponent {
 
   loadOrdersLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource.clone();
-    if (event.first !== undefined) resource = resource.skip(event.first);
-    if (event.rows !== undefined) resource = resource.top(event.rows);
-    //Ordering
-    if (event.sortField !== undefined)
-      resource = resource.orderBy([
-        [
-          event.sortField as keyof Order,
-          event.sortOrder == -1 ? 'desc' : 'asc',
-        ],
-      ]);
+    let resource = this.resource.clone().query((q) => {
+      if (event.first) q.skip(event.first);
+      if (event.rows) q.top(event.rows);
+      //Ordering
+      if (event.sortField !== undefined)
+        q.orderBy([
+          [
+            event.sortField as keyof Order,
+            event.sortOrder == -1 ? 'desc' : 'asc',
+          ],
+        ]);
+    });
     this.fetch(resource);
   }
 }

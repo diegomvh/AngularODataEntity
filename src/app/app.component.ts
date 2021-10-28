@@ -68,7 +68,7 @@ export class AppComponent {
     // Structured Parser
     let personSchema = this.peopleService.structuredTypeSchema;
     let male = personSchema
-      ?.field('Gender')
+      ?.findFieldByName('Gender')
       ?.enum()
       .encode(PersonGender.Male, { stringAsEnum: false });
     console.log(male);
@@ -144,9 +144,12 @@ export class AppComponent {
         console.log('Airport: ', entity, 'Annotations: ', annots)
       );
 
-    // Filter airports (inmutable resource)
+    // Filter airports (clone resource)
     airports
-      .filter({ Location: { City: { CountryRegion: 'United States' } } })
+      .clone()
+      .query((q) =>
+        q.filter({ Location: { City: { CountryRegion: 'United States' } } })
+      )
       .fetch()
       .subscribe(({ entities, annots }) =>
         console.log(
@@ -158,9 +161,9 @@ export class AppComponent {
       );
 
     // Add filter (mutable resource)
-    airports.query
-      .filter()
-      .push({ Location: { City: { Region: 'California' } } });
+    airports.query((q) =>
+      q.filter().push({ Location: { City: { Region: 'California' } } })
+    );
     airports
       .fetch()
       .subscribe(({ entities, annots }) =>
@@ -176,7 +179,7 @@ export class AppComponent {
     console.log(this.odata.fromJSON(airports.toJSON()));
 
     // Remove filter (mutable resource)
-    airports.query.filter().clear();
+    airports.query((q) => q.filter().clear());
     airports
       .fetch()
       .subscribe(({ entities, annots }) =>
@@ -185,14 +188,17 @@ export class AppComponent {
 
     let people = peopleService.entities();
 
-    // Expand (inmutable resource)
+    // Expand (clone resource)
     people
-      .expand({
-        Friends: {
-          expand: { Friends: { select: ['AddressInfo'] } },
-        },
-        Trips: { select: ['Name', 'Tags'] },
-      })
+      .clone()
+      .query((q) =>
+        q.expand({
+          Friends: {
+            expand: { Friends: { select: ['AddressInfo'] } },
+          },
+          Trips: { select: ['Name', 'Tags'] },
+        })
+      )
       .fetch({ withCount: true })
       .subscribe(({ entities, annots }) =>
         console.log(
@@ -212,7 +218,9 @@ export class AppComponent {
       PersonGenderConfig.name
     );
     let female = personGenderType.encode(PersonGender.Female);
-    let femaleQuery = this.peopleService.entities().filter({ Gender: female });
+    let femaleQuery = this.peopleService
+      .entities()
+      .query((q) => q.filter({ Gender: female }));
     console.log(`${femaleQuery}`);
     femaleQuery.fetchAll().subscribe(console.log);
   }

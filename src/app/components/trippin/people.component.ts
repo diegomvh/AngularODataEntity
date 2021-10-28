@@ -1,12 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { PeopleService, Person, PersonGender } from '../../trippin';
-import {
-  ODataEntitySetResource,
-  ODataSettings,
-  ODataClient,
-} from 'angular-odata';
+import { ODataEntitySetResource, ODataClient } from 'angular-odata';
 import { PersonComponent } from './person.component';
-import { config } from 'rxjs';
 import { LazyLoadEvent } from 'primeng/api';
 
 @Component({
@@ -83,14 +78,17 @@ export class PeopleComponent {
     const schema = this.resource.schema();
     this.cols =
       schema !== null
-        ? (schema?.fields() || [])
-            .filter((f) => !f.navigation)
-            .map((f) => ({
-              field: f.name,
-              header: f.name,
-              sort: !f.collection,
-              filter: f.type === 'Edm.String',
-            }))
+        ? (
+            schema?.fields({
+              include_parents: true,
+              include_navigation: false,
+            }) || []
+          ).map((f) => ({
+            field: f.name,
+            header: f.name,
+            sort: !f.collection,
+            filter: f.type === 'Edm.String',
+          }))
         : [];
     // Try toJSON, fromJSON
     this.resource = this.client.fromJSON<Person>(
@@ -116,9 +114,9 @@ export class PeopleComponent {
     field = `tolower(${field})`;
     if (value) {
       let filter = { [field]: { contains: value.toLowerCase() } };
-      this.resource.query.filter().assign(filter);
+      this.resource.query((q) => q.filter().assign(filter));
     } else {
-      this.resource.query.filter().unset(field);
+      this.resource.query((q) => q.filter().unset(field));
     }
     this.total = 0;
     this.fetch(this.resource);
@@ -126,17 +124,18 @@ export class PeopleComponent {
 
   loadPeopleLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource.clone();
-    if (event.first) resource = resource.skip(event.first);
-    if (event.rows) resource = resource.top(event.rows);
-    //Ordering
-    if (event.sortField !== undefined)
-      resource = resource.orderBy([
-        [
-          event.sortField as keyof Person,
-          event.sortOrder == -1 ? 'desc' : 'asc',
-        ],
-      ]);
+    let resource = this.resource.clone().query((q) => {
+      if (event.first) q.skip(event.first);
+      if (event.rows) q.top(event.rows);
+      //Ordering
+      if (event.sortField !== undefined)
+        q.orderBy([
+          [
+            event.sortField as keyof Person,
+            event.sortOrder == -1 ? 'desc' : 'asc',
+          ],
+        ]);
+    });
     this.fetch(resource);
   }
 

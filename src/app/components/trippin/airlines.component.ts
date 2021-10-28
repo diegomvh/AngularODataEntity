@@ -1,11 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Airline, AirlinesService } from '../../trippin';
-import {
-  ODataEntitySetResource,
-  ODataClient,
-  alias,
-  QueryCustomType,
-} from 'angular-odata';
+import { ODataEntitySetResource, ODataClient } from 'angular-odata';
 import { LazyLoadEvent } from 'primeng/api';
 
 @Component({
@@ -66,14 +61,18 @@ export class AirlinesComponent {
 
   resource: ODataEntitySetResource<Airline>;
   loading: boolean = false;
-  alias: QueryCustomType;
 
   constructor(private client: ODataClient, private airlines: AirlinesService) {
     this.resource = this.airlines.entities();
     const schema = this.resource.schema();
     this.cols =
       schema !== null
-        ? (schema?.fields() || [])
+        ? (
+            schema?.fields({
+              include_parents: true,
+              include_navigation: false,
+            }) || []
+          )
             .filter((f) => !f.navigation)
             .map((f) => ({
               field: f.name,
@@ -86,7 +85,6 @@ export class AirlinesComponent {
     this.resource = this.client.fromJSON<Airline>(
       this.resource.toJSON()
     ) as ODataEntitySetResource<Airline>;
-    this.alias = alias(null);
   }
 
   fetch(resource: ODataEntitySetResource<Airline>) {
@@ -106,11 +104,12 @@ export class AirlinesComponent {
     const value = input.value;
     field = `tolower(${field})`;
     if (value) {
-      this.alias.value = value.toLowerCase();
-      let filter = { [field]: { contains: this.alias } };
-      this.resource.query.filter().assign(filter);
+      this.resource.query((q) => {
+        let alias = q.alias(value.toLowerCase());
+        q.filter().assign({ [field]: { contains: alias } });
+      });
     } else {
-      this.resource.query.filter().unset(field);
+      this.resource.query((q) => q.filter().unset(field));
     }
     this.total = 0;
     this.fetch(this.resource);
@@ -118,17 +117,18 @@ export class AirlinesComponent {
 
   loadAirlinesLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource.clone();
-    if (event.first) resource = resource.skip(event.first);
-    if (event.rows) resource = resource.top(event.rows);
-    //Ordering
-    if (event.sortField !== undefined)
-      resource = resource.orderBy([
-        [
-          event.sortField as keyof Airline,
-          event.sortOrder == -1 ? 'desc' : 'asc',
-        ],
-      ]);
+    let resource = this.resource.clone().query((q) => {
+      if (event.first) q.skip(event.first);
+      if (event.rows) q.top(event.rows);
+      //Ordering
+      if (event.sortField !== undefined)
+        q.orderBy([
+          [
+            event.sortField as keyof Airline,
+            event.sortOrder == -1 ? 'desc' : 'asc',
+          ],
+        ]);
+    });
     this.fetch(resource);
   }
 }
