@@ -5,15 +5,11 @@ import {
 
 //#region ODataApiGen Imports
 import { Trip } from './trip.entity';
-import { TripModel } from './trip.model';
-import { TripCollection } from './trip.collection';
 //#endregion
 
 //#region ODataApiGen StrucutredTypeConfig
 export const TripEntityConfig = {
-  name: "Trip",
-  model: TripModel,
-  collection: TripCollection,
+  name: 'Trip',
   keys: [{name: 'TripId'}],
   fields: {
     TripId: {type: 'Edm.Int32', nullable: false, annotations: [{"term":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},

@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Airline, AirlinesService } from '../../trippin';
-import { ODataEntitySetResource, ODataClient } from 'angular-odata';
+import {
+  ODataEntitySetResource,
+  ODataClient,
+  ODataStructuredType,
+} from 'angular-odata';
 import { LazyLoadEvent } from 'primeng/api';
 
 @Component({
@@ -64,7 +68,7 @@ export class AirlinesComponent {
 
   constructor(private client: ODataClient, private airlines: AirlinesService) {
     this.resource = this.airlines.entities();
-    const schema = this.resource.schema();
+    const schema = this.resource.schema as ODataStructuredType<Airline>;
     this.cols =
       schema !== null
         ? (
@@ -117,18 +121,20 @@ export class AirlinesComponent {
 
   loadAirlinesLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource.clone().query((q) => {
-      if (event.first) q.skip(event.first);
-      if (event.rows) q.top(event.rows);
-      //Ordering
-      if (event.sortField !== undefined)
-        q.orderBy([
-          [
-            event.sortField as keyof Airline,
-            event.sortOrder == -1 ? 'desc' : 'asc',
-          ],
-        ]);
-    });
+    let resource = this.resource
+      .clone<ODataEntitySetResource<Airline>>()
+      .query((q) => {
+        if (event.first) q.skip(event.first);
+        if (event.rows) q.top(event.rows);
+        //Ordering
+        if (event.sortField !== undefined)
+          q.orderBy([
+            [
+              event.sortField as keyof Airline,
+              event.sortOrder == -1 ? 'desc' : 'asc',
+            ],
+          ]);
+      });
     this.fetch(resource);
   }
 }

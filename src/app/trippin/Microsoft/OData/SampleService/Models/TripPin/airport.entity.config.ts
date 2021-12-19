@@ -5,15 +5,11 @@ import {
 
 //#region ODataApiGen Imports
 import { Airport } from './airport.entity';
-import { AirportModel } from './airport.model';
-import { AirportCollection } from './airport.collection';
 //#endregion
 
 //#region ODataApiGen StrucutredTypeConfig
 export const AirportEntityConfig = {
-  name: "Airport",
-  model: AirportModel,
-  collection: AirportCollection,
+  name: 'Airport',
   keys: [{name: 'IcaoCode'}],
   fields: {
     IcaoCode: {type: 'Edm.String', nullable: false, annotations: [{"term":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},

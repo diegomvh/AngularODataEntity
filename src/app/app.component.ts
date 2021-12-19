@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { ODataServiceFactory, ODataClient, ODataSettings } from 'angular-odata';
+import {
+  ODataServiceFactory,
+  ODataClient,
+  ODataSettings,
+  ODataEntitySetResource,
+  ODataModel,
+} from 'angular-odata';
 import {
   PeopleService,
   Airport,
@@ -7,12 +13,11 @@ import {
   PersonGender,
   Photo,
   PhotosService,
-  PersonCollection,
-  PersonModel,
   PersonGenderConfig,
 } from './trippin';
 import { OrdersService } from './northwind';
 import { filter, switchMap, map } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
 import { DefaultContainerService } from './trippin';
 import { ProductsService } from './north3';
 
@@ -32,9 +37,10 @@ export class AppComponent {
     private productsService: ProductsService,
     private ordersService: OrdersService
   ) {
-    this.encode();
-    //this.trippin();
+    //this.encode();
+    this.trippin();
     //this.northwind();
+    //this.queries();
   }
 
   //#region APIs
@@ -43,8 +49,8 @@ export class AppComponent {
     this.api.callResetDataSource().subscribe(() => {
       //this.queries();
       //this.mutate();
-      //this.trippinModels();
-      this.uploadPhotos();
+      this.trippinModels();
+      //this.uploadPhotos();
       //this.filterPeopleByGender();
     });
   }
@@ -102,27 +108,12 @@ export class AppComponent {
       'Airports',
       'Microsoft.OData.SampleService.Models.TripPin.Airport'
     );
-    let peopleService = this.factory.entitySet<Person>(
-      'People',
-      'Microsoft.OData.SampleService.Models.TripPin.Person'
-    );
-
     let airports = airportsService.entities();
 
-    console.log(airportsService.entities());
-
-    // Fetch all airports
-    airports.fetchAll().subscribe((aports) => console.log('All: ', aports));
-
-    this.productsService
-      .entities()
-      .fetch({ withCount: true, fetchPolicy: 'cache-only' })
-      .subscribe(
-        ({ entities, annots }) => {
-          console.log(entities);
-        },
-        (err) => console.log(err)
-      );
+    // Fetch airports
+    airports.fetch().subscribe(({ entities }) => {
+      console.log('Airports: ', entities);
+    });
 
     // Fetch airports with count
     airports
@@ -131,22 +122,28 @@ export class AppComponent {
         console.log('Airports: ', entities, 'Annotations: ', annots)
       );
 
-    // Fetch airport with key
+    // Fetch all airports
+    airports
+      .fetchAll()
+      .subscribe((airports) => console.log('All Airports: ', airports));
+
+    // Fetch airport with key and fetch again from cache
     airports
       .entity('CYYZ')
       .fetch()
       .pipe(
         switchMap(() =>
+          // From Cache!
           airports.entity('CYYZ').fetch({ fetchPolicy: 'cache-first' })
         )
-      ) // From Cache!
+      )
       .subscribe(({ entity, annots }) =>
         console.log('Airport: ', entity, 'Annotations: ', annots)
       );
 
-    // Filter airports (clone resource)
+    // Clone airports resource and filter new resource
     airports
-      .clone()
+      .clone<ODataEntitySetResource<Airport>>()
       .query((q) =>
         q.filter({ Location: { City: { CountryRegion: 'United States' } } })
       )
@@ -160,7 +157,7 @@ export class AppComponent {
         )
       );
 
-    // Add filter (mutable resource)
+    // Change query definition of airports resource and fetch again
     airports.query((q) =>
       q.filter().push({ Location: { City: { Region: 'California' } } })
     );
@@ -175,10 +172,12 @@ export class AppComponent {
         )
       );
 
-    console.log(airports.toJSON());
-    console.log(this.odata.fromJSON(airports.toJSON()));
+    // Store airports resource
+    var json = airports.toJSON();
+    // Load airports resource
+    airports = this.odata.fromJSON(json) as ODataEntitySetResource<Airport>;
 
-    // Remove filter (mutable resource)
+    // Change query definition of airports resource and fetch again
     airports.query((q) => q.filter().clear());
     airports
       .fetch()
@@ -186,11 +185,15 @@ export class AppComponent {
         console.log('Airports: ', entities, 'Annotations: ', annots)
       );
 
+    let peopleService = this.factory.entitySet<Person>(
+      'People',
+      'Microsoft.OData.SampleService.Models.TripPin.Person'
+    );
     let people = peopleService.entities();
 
-    // Expand (clone resource)
+    // Clone people resource and expand and fetch
     people
-      .clone()
+      .clone<ODataEntitySetResource<Person>>()
       .query((q) =>
         q.expand({
           Friends: {
@@ -209,8 +212,33 @@ export class AppComponent {
         )
       );
 
-    console.log(people.toJSON());
-    console.log(this.odata.fromJSON(people.toJSON()));
+    // Clone people resource and filter with expressions
+    people
+      .clone<ODataEntitySetResource<Person>>()
+      .query((q) =>
+        q.filter(({ e }) =>
+          e().eq('Emails', 'john@example.com').or(e().eq('UserName', 'john'))
+        )
+      )
+      .fetch()
+      .subscribe(({ entities, annots }) =>
+        console.log(
+          'People with Friends and Trips: ',
+          entities,
+          'Annotations: ',
+          annots
+        )
+      );
+
+    this.odata
+      .batch('TripPin')
+      .exec(() =>
+        forkJoin({
+          airports: airports.fetch(),
+          people: people.fetch({ withCount: true }),
+        })
+      )
+      .subscribe();
   }
 
   filterPeopleByGender() {
@@ -421,28 +449,27 @@ export class AppComponent {
   }
 
   trippinModels() {
-    const people = this.peopleService.personCollection();
-    people.query((q) => q.expand({ Friends: {} }));
+    const people = this.peopleService.entities().asCollection() as any;
+    //const people = this.peopleService.personCollection();
+    people.query((q: any) => q.expand({ Friends: {} }));
     people
       .fetch()
       .pipe(
-        switchMap((people) => {
+        switchMap((people: any) => {
           const person = people.models()[2];
           person.Gender = PersonGender.Female;
           return person.save();
         }),
-        switchMap((person) => {
-          return (
-            person.Friends as PersonCollection<Person, PersonModel<Person>>
-          ).fetch();
+        switchMap((person: any) => {
+          return person.Friends.fetch();
         })
       )
       .subscribe(console.log);
   }
 
   trippinModelsEvents() {
-    const gender = PersonModel.meta.fields().find((f) => f.name === 'Gender');
-    const people = this.peopleService.personCollection();
+    //const gender = PersonModel.meta.fields().find((f) => f.name === 'Gender');
+    const people = this.peopleService.entities().asCollection();
 
     people.events$
       .pipe(filter((e) => e.name === 'sync'))
@@ -450,8 +477,8 @@ export class AppComponent {
     people.events$
       .pipe(filter((e) => e.name === 'attach'))
       .subscribe((e) => people.fetch().toPromise());
-    people.query((q) => {
-      q.filter({ Gender: gender?.parser.encode(PersonGender.Female) });
+    people.query((q: any) => {
+      q.filter({ Gender: PersonGender.Female });
     });
   }
 
@@ -468,14 +495,4 @@ export class AppComponent {
       )
       .subscribe(console.log);
   }
-}
-function forkJoin(arg0: {
-  people: import('rxjs').Observable<
-    import('angular-odata').ODataEntities<Person>
-  >;
-  airports: import('rxjs').Observable<
-    import('angular-odata').ODataEntities<Airport>
-  >;
-}) {
-  throw new Error('Function not implemented.');
 }

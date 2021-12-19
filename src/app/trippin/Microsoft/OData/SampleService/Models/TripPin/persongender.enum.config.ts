@@ -9,7 +9,7 @@ import { PersonGender } from './persongender.enum';
 
 //#region ODataApiGen EnumTypeConfig
 export const PersonGenderConfig = {
-  name: "PersonGender",
+  name: 'PersonGender',
   members: PersonGender,
   fields: {
     Male: {value: 0},

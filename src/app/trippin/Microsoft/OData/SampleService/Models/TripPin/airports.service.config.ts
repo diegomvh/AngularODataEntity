@@ -9,8 +9,8 @@ import { AirportsService } from './airports.service';
 
 //#region ODataApiGen EntitySetConfig
 export const AirportsServiceEntitySetConfig = {
-  name: "Airports",
-  entityType: "Microsoft.OData.SampleService.Models.TripPin.Airport",
+  name: 'Airports',
+  entityType: 'Microsoft.OData.SampleService.Models.TripPin.Airport',
   annotations: [
   {
     "term": "Org.OData.Core.V1.ResourcePath",

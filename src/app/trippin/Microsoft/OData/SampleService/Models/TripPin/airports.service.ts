@@ -24,10 +24,6 @@ import {
 //#region ODataApiGen Imports
 import { AirportLocation } from './airportlocation.complex';
 import { Airport } from './airport.entity';
-import { AirportLocationModel } from './airportlocation.model';
-import { AirportModel } from './airport.model';
-import { AirportLocationCollection } from './airportlocation.collection';
-import { AirportCollection } from './airport.collection';
 //#endregion
 
 @Injectable()
@@ -35,14 +31,6 @@ export class AirportsService extends ODataEntitySetService<Airport> {
   constructor(protected client: ODataClient) {
     super(client, 'Airports', 'Microsoft.OData.SampleService.Models.TripPin.Airport');
   }
-  //#region ODataApiGen Model
-  airportModel(attrs?: Partial<Airport>): AirportModel<Airport> {
-    return this.entity().asModel<AirportModel<Airport>>(attrs || {});
-  }//#endregion
-  //#region ODataApiGen Collection
-  airportCollection(models?: Partial<Airport>[]): AirportCollection<Airport, AirportModel<Airport>> {
-    return this.entities().asCollection<AirportModel<Airport>, AirportCollection<Airport, AirportModel<Airport>>>(models || []);
-  }//#endregion
   //#region ODataApiGen Actions
   //#endregion
   //#region ODataApiGen Functions

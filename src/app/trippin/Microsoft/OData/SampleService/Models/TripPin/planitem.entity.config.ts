@@ -5,15 +5,11 @@ import {
 
 //#region ODataApiGen Imports
 import { PlanItem } from './planitem.entity';
-import { PlanItemModel } from './planitem.model';
-import { PlanItemCollection } from './planitem.collection';
 //#endregion
 
 //#region ODataApiGen StrucutredTypeConfig
 export const PlanItemEntityConfig = {
-  name: "PlanItem",
-  model: PlanItemModel,
-  collection: PlanItemCollection,
+  name: 'PlanItem',
   keys: [{name: 'PlanItemId'}],
   fields: {
     PlanItemId: {type: 'Edm.Int32', nullable: false, annotations: [{"term":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},

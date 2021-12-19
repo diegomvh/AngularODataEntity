@@ -1,6 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { PeopleService, Person, PersonGender } from '../../trippin';
-import { ODataEntitySetResource, ODataClient } from 'angular-odata';
+import {
+  ODataEntitySetResource,
+  ODataClient,
+  ODataEntity,
+  ODataStructuredType,
+} from 'angular-odata';
 import { PersonComponent } from './person.component';
 import { LazyLoadEvent } from 'primeng/api';
 
@@ -75,7 +80,7 @@ export class PeopleComponent {
 
   constructor(private client: ODataClient, private people: PeopleService) {
     this.resource = this.people.entities();
-    const schema = this.resource.schema();
+    const schema = this.resource.schema as ODataStructuredType<Person>;
     this.cols =
       schema !== null
         ? (
@@ -124,18 +129,20 @@ export class PeopleComponent {
 
   loadPeopleLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource.clone().query((q) => {
-      if (event.first) q.skip(event.first);
-      if (event.rows) q.top(event.rows);
-      //Ordering
-      if (event.sortField !== undefined)
-        q.orderBy([
-          [
-            event.sortField as keyof Person,
-            event.sortOrder == -1 ? 'desc' : 'asc',
-          ],
-        ]);
-    });
+    let resource = this.resource
+      .clone<ODataEntitySetResource<Person>>()
+      .query((q) => {
+        if (event.first) q.skip(event.first);
+        if (event.rows) q.top(event.rows);
+        //Ordering
+        if (event.sortField !== undefined)
+          q.orderBy([
+            [
+              event.sortField as keyof Person,
+              event.sortOrder == -1 ? 'desc' : 'asc',
+            ],
+          ]);
+      });
     this.fetch(resource);
   }
 

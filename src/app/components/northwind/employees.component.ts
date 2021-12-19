@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ODataEntitySetResource } from 'angular-odata';
+import { ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
 import { LazyLoadEvent } from 'primeng/api';
 import { Employee, EmployeesService } from 'src/app/northwind';
 
@@ -64,7 +64,7 @@ export class EmployeesComponent {
 
   constructor(private employees: EmployeesService) {
     this.resource = this.employees.entities().query((q) => q.top(this.size));
-    const schema = this.resource.schema();
+    const schema = this.resource.schema as ODataStructuredType<Employee>;
     this.cols =
       schema !== null
         ? (
@@ -107,19 +107,21 @@ export class EmployeesComponent {
   }
 
   loadEmployeesLazy(event: LazyLoadEvent) {
-    let resource = this.resource.clone().query((q) => {
-      //Pagination
-      if (event.first) q.skip(event.first);
-      if (event.rows) q.top(event.rows);
-      //Ordering
-      if (event.sortField !== undefined)
-        q.orderBy([
-          [
-            event.sortField as keyof Employee,
-            event.sortOrder == -1 ? 'desc' : 'asc',
-          ],
-        ]);
-    });
+    let resource = this.resource
+      .clone<ODataEntitySetResource<Employee>>()
+      .query((q) => {
+        //Pagination
+        if (event.first) q.skip(event.first);
+        if (event.rows) q.top(event.rows);
+        //Ordering
+        if (event.sortField !== undefined)
+          q.orderBy([
+            [
+              event.sortField as keyof Employee,
+              event.sortOrder == -1 ? 'desc' : 'asc',
+            ],
+          ]);
+      });
     this.fetch(resource);
   }
 

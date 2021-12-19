@@ -5,16 +5,12 @@ import {
 
 //#region ODataApiGen Imports
 import { Person } from './person.entity';
-import { PersonModel } from './person.model';
-import { PersonCollection } from './person.collection';
 //#endregion
 
 //#region ODataApiGen StrucutredTypeConfig
 export const PersonEntityConfig = {
-  name: "Person",
+  name: 'Person',
   open: true,
-  model: PersonModel,
-  collection: PersonCollection,
   keys: [{name: 'UserName'}],
   fields: {
     UserName: {type: 'Edm.String', nullable: false, annotations: [{"term":"Org.OData.Core.V1.Permissions","permissions":["Org.OData.Core.V1.Permission/Read"]}]},

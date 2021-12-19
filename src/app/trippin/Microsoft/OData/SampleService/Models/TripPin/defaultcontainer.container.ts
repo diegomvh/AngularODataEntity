@@ -13,7 +13,7 @@ import { MeServiceEntitySetConfig } from './me.service.config';
 
 //#region ODataApiGen EntityContainerConfig
 export const DefaultContainerContainer = {
-  name: "DefaultContainer",
+  name: 'DefaultContainer',
   annotations: [
   {
     "term": "Org.OData.Core.V1.Description",

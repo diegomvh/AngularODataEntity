@@ -6,10 +6,6 @@ import {
 //#region ODataApiGen Imports
 import { Photo } from './photo.entity';
 import { PlanItem } from './planitem.entity';
-import { PhotoModel } from './photo.model';
-import { PlanItemModel } from './planitem.model';
-import { PhotoCollection } from './photo.collection';
-import { PlanItemCollection } from './planitem.collection';
 //#endregion
 
 export interface Trip {

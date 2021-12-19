@@ -26,14 +26,6 @@ import { Location } from './location.complex';
 import { Photo } from './photo.entity';
 import { Person } from './person.entity';
 import { Trip } from './trip.entity';
-import { LocationModel } from './location.model';
-import { PhotoModel } from './photo.model';
-import { PersonModel } from './person.model';
-import { TripModel } from './trip.model';
-import { LocationCollection } from './location.collection';
-import { PhotoCollection } from './photo.collection';
-import { PersonCollection } from './person.collection';
-import { TripCollection } from './trip.collection';
 //#endregion
 
 @Injectable()

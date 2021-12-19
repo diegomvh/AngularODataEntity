@@ -5,15 +5,11 @@ import {
 
 //#region ODataApiGen Imports
 import { Photo } from './photo.entity';
-import { PhotoModel } from './photo.model';
-import { PhotoCollection } from './photo.collection';
 //#endregion
 
 //#region ODataApiGen StrucutredTypeConfig
 export const PhotoEntityConfig = {
-  name: "Photo",
-  model: PhotoModel,
-  collection: PhotoCollection,
+  name: 'Photo',
   annotations: [
   {
     "term": "Org.OData.Core.V1.AcceptableMediaTypes"

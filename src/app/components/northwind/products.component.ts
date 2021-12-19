@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ODataEntitySetResource } from 'angular-odata';
+import { ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
 import { LazyLoadEvent } from 'primeng/api';
 import { Product, ProductsService } from 'src/app/northwind';
 
@@ -64,7 +64,7 @@ export class ProductsComponent {
 
   constructor(private products: ProductsService) {
     this.resource = this.products.entities().query((q) => q.top(this.size));
-    const schema = this.resource.schema();
+    const schema = this.resource.schema as ODataStructuredType<Product>;
     this.cols =
       schema !== null
         ? (
@@ -108,18 +108,20 @@ export class ProductsComponent {
 
   loadProductsLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource.clone().query((q) => {
-      if (event.first) q.skip(event.first);
-      if (event.rows) q.top(event.rows);
-      //Ordering
-      if (event.sortField !== undefined)
-        q.orderBy([
-          [
-            event.sortField as keyof Product,
-            event.sortOrder == -1 ? 'desc' : 'asc',
-          ],
-        ]);
-    });
+    let resource = this.resource
+      .clone<ODataEntitySetResource<Product>>()
+      .query((q) => {
+        if (event.first) q.skip(event.first);
+        if (event.rows) q.top(event.rows);
+        //Ordering
+        if (event.sortField !== undefined)
+          q.orderBy([
+            [
+              event.sortField as keyof Product,
+              event.sortOrder == -1 ? 'desc' : 'asc',
+            ],
+          ]);
+      });
     this.fetch(resource);
   }
 }

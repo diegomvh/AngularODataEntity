@@ -9,8 +9,8 @@ import { PhotosService } from './photos.service';
 
 //#region ODataApiGen EntitySetConfig
 export const PhotosServiceEntitySetConfig = {
-  name: "Photos",
-  entityType: "Microsoft.OData.SampleService.Models.TripPin.Photo",
+  name: 'Photos',
+  entityType: 'Microsoft.OData.SampleService.Models.TripPin.Photo',
   annotations: [
   {
     "term": "Org.OData.Core.V1.ResourcePath",

@@ -6,8 +6,6 @@ import {
 //#region ODataApiGen Imports
 import { Point } from 'geojson';
 import { Location } from './location.complex';
-import { LocationModel } from './location.model';
-import { LocationCollection } from './location.collection';
 //#endregion
 
 export interface AirportLocation extends Location {

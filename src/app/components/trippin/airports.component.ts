@@ -4,6 +4,7 @@ import {
   ODataEntitySetResource,
   ODataSettings,
   ODataClient,
+  ODataStructuredType,
 } from 'angular-odata';
 import { LazyLoadEvent } from 'primeng/api';
 
@@ -71,7 +72,7 @@ export class AirportsComponent {
 
   constructor(private client: ODataClient, private airports: AirportsService) {
     this.resource = this.airports.entities();
-    const schema = this.resource.schema();
+    const schema = this.resource.schema as ODataStructuredType<Airport>;
     this.cols =
       schema !== null
         ? (
@@ -120,18 +121,20 @@ export class AirportsComponent {
 
   loadAirportsLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource.clone().query((q) => {
-      if (event.first) q.skip(event.first);
-      if (event.rows) q.top(event.rows);
-      //Ordering
-      if (event.sortField !== undefined)
-        q.orderBy([
-          [
-            event.sortField as keyof Airport,
-            event.sortOrder == -1 ? 'desc' : 'asc',
-          ],
-        ]);
-    });
+    let resource = this.resource
+      .clone<ODataEntitySetResource<Airport>>()
+      .query((q) => {
+        if (event.first) q.skip(event.first);
+        if (event.rows) q.top(event.rows);
+        //Ordering
+        if (event.sortField !== undefined)
+          q.orderBy([
+            [
+              event.sortField as keyof Airport,
+              event.sortOrder == -1 ? 'desc' : 'asc',
+            ],
+          ]);
+      });
     this.fetch(resource);
   }
 }

@@ -5,15 +5,11 @@ import {
 
 //#region ODataApiGen Imports
 import { City } from './city.complex';
-import { CityModel } from './city.model';
-import { CityCollection } from './city.collection';
 //#endregion
 
 //#region ODataApiGen StrucutredTypeConfig
 export const CityComplexConfig = {
-  name: "City",
-  model: CityModel,
-  collection: CityCollection,
+  name: 'City',
   fields: {
     CountryRegion: {type: 'Edm.String', nullable: false},
     Name: {type: 'Edm.String', nullable: false},

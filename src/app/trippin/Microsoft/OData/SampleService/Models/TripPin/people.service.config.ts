@@ -9,8 +9,8 @@ import { PeopleService } from './people.service';
 
 //#region ODataApiGen EntitySetConfig
 export const PeopleServiceEntitySetConfig = {
-  name: "People",
-  entityType: "Microsoft.OData.SampleService.Models.TripPin.Person",
+  name: 'People',
+  entityType: 'Microsoft.OData.SampleService.Models.TripPin.Person',
   annotations: [
   {
     "term": "Org.OData.Core.V1.OptimisticConcurrency",
