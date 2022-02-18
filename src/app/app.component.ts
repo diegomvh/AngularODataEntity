@@ -143,7 +143,7 @@ export class AppComponent {
 
     // Clone airports resource and filter new resource
     airports
-      .clone<ODataEntitySetResource<Airport>>()
+      .clone()
       .query((q) =>
         q.filter({ Location: { City: { CountryRegion: 'United States' } } })
       )
@@ -193,7 +193,7 @@ export class AppComponent {
 
     // Clone people resource and expand and fetch
     people
-      .clone<ODataEntitySetResource<Person>>()
+      .clone()
       .query((q) =>
         q.expand({
           Friends: {
@@ -214,7 +214,7 @@ export class AppComponent {
 
     // Clone people resource and filter with expressions
     people
-      .clone<ODataEntitySetResource<Person>>()
+      .clone()
       .query((q) =>
         q.filter(({ e }) =>
           e().eq('Emails', 'john@example.com').or(e().eq('UserName', 'john'))

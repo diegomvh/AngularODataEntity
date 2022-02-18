@@ -108,20 +108,18 @@ export class CategoriesComponent {
 
   loadCategoriesLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource
-      .clone<ODataEntitySetResource<Category>>()
-      .query((q) => {
-        if (event.first) q.skip(event.first);
-        if (event.rows) q.top(event.rows);
-        //Ordering
-        if (event.sortField !== undefined)
-          q.orderBy([
-            [
-              event.sortField as keyof Category,
-              event.sortOrder == -1 ? 'desc' : 'asc',
-            ],
-          ]);
-      });
+    let resource = this.resource.clone().query((q) => {
+      if (event.first) q.skip(event.first);
+      if (event.rows) q.top(event.rows);
+      //Ordering
+      if (event.sortField !== undefined)
+        q.orderBy([
+          [
+            event.sortField as keyof Category,
+            event.sortOrder == -1 ? 'desc' : 'asc',
+          ],
+        ]);
+    });
     this.fetch(resource);
   }
 }

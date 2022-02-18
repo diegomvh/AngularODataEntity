@@ -108,20 +108,18 @@ export class ProductsComponent {
 
   loadProductsLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource
-      .clone<ODataEntitySetResource<Product>>()
-      .query((q) => {
-        if (event.first) q.skip(event.first);
-        if (event.rows) q.top(event.rows);
-        //Ordering
-        if (event.sortField !== undefined)
-          q.orderBy([
-            [
-              event.sortField as keyof Product,
-              event.sortOrder == -1 ? 'desc' : 'asc',
-            ],
-          ]);
-      });
+    let resource = this.resource.clone().query((q) => {
+      if (event.first) q.skip(event.first);
+      if (event.rows) q.top(event.rows);
+      //Ordering
+      if (event.sortField !== undefined)
+        q.orderBy([
+          [
+            event.sortField as keyof Product,
+            event.sortOrder == -1 ? 'desc' : 'asc',
+          ],
+        ]);
+    });
     this.fetch(resource);
   }
 }

@@ -121,20 +121,18 @@ export class AirportsComponent {
 
   loadAirportsLazy(event: LazyLoadEvent) {
     //Pagination
-    let resource = this.resource
-      .clone<ODataEntitySetResource<Airport>>()
-      .query((q) => {
-        if (event.first) q.skip(event.first);
-        if (event.rows) q.top(event.rows);
-        //Ordering
-        if (event.sortField !== undefined)
-          q.orderBy([
-            [
-              event.sortField as keyof Airport,
-              event.sortOrder == -1 ? 'desc' : 'asc',
-            ],
-          ]);
-      });
+    let resource = this.resource.clone().query((q) => {
+      if (event.first) q.skip(event.first);
+      if (event.rows) q.top(event.rows);
+      //Ordering
+      if (event.sortField !== undefined)
+        q.orderBy([
+          [
+            event.sortField as keyof Airport,
+            event.sortOrder == -1 ? 'desc' : 'asc',
+          ],
+        ]);
+    });
     this.fetch(resource);
   }
 }

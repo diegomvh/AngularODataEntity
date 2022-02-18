@@ -122,7 +122,7 @@ export class AirlinesComponent {
   loadAirlinesLazy(event: LazyLoadEvent) {
     //Pagination
     let resource = this.resource
-      .clone<ODataEntitySetResource<Airline>>()
+      .clone()
       .query((q) => {
         if (event.first) q.skip(event.first);
         if (event.rows) q.top(event.rows);

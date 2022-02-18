@@ -107,21 +107,19 @@ export class EmployeesComponent {
   }
 
   loadEmployeesLazy(event: LazyLoadEvent) {
-    let resource = this.resource
-      .clone<ODataEntitySetResource<Employee>>()
-      .query((q) => {
-        //Pagination
-        if (event.first) q.skip(event.first);
-        if (event.rows) q.top(event.rows);
-        //Ordering
-        if (event.sortField !== undefined)
-          q.orderBy([
-            [
-              event.sortField as keyof Employee,
-              event.sortOrder == -1 ? 'desc' : 'asc',
-            ],
-          ]);
-      });
+    let resource = this.resource.clone().query((q) => {
+      //Pagination
+      if (event.first) q.skip(event.first);
+      if (event.rows) q.top(event.rows);
+      //Ordering
+      if (event.sortField !== undefined)
+        q.orderBy([
+          [
+            event.sortField as keyof Employee,
+            event.sortOrder == -1 ? 'desc' : 'asc',
+          ],
+        ]);
+    });
     this.fetch(resource);
   }
 
