@@ -76,7 +76,7 @@ export class AppComponent {
     let male = personSchema
       ?.findFieldByName('Gender')
       ?.enum()
-      .encode(PersonGender.Male, { stringAsEnum: false });
+      .encode(PersonGender.Male);
     console.log(male);
   }
 
