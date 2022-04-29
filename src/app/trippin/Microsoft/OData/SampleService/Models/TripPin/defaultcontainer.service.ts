@@ -23,12 +23,14 @@ import {
 
 //#region ODataApiGen Imports
 import { Airport } from './airport.entity';
+import { AirportModel } from './airport.model';
+import { AirportCollection } from './airport.collection';
 //#endregion
 
 @Injectable()
 export class DefaultContainerService extends ODataBaseService {
 
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'DefaultContainerContainer', 'TripPin');
   }
 

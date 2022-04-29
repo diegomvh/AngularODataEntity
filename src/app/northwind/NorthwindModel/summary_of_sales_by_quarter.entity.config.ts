@@ -11,7 +11,7 @@ import { SummaryOfSalesByQuarterCollection } from './summary_of_sales_by_quarter
 
 //#region ODataApiGen StrucutredTypeConfig
 export const SummaryOfSalesByQuarterEntityConfig = {
-  name: "Summary_of_Sales_by_Quarter",
+  name: 'Summary_of_Sales_by_Quarter',
   model: SummaryOfSalesByQuarterModel,
   collection: SummaryOfSalesByQuarterCollection,
   keys: [{name: 'OrderID'}],

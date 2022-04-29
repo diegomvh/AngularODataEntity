@@ -29,7 +29,7 @@ import { CategoryCollection } from './category.collection';
 
 @Injectable()
 export class CategoriesService extends ODataEntitySetService<Category> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Categories', 'ODataDemo.Category');
   }
   //#region ODataApiGen Model

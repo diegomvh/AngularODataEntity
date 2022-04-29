@@ -11,7 +11,7 @@ import { ArticleCollection } from './article.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const ArticleEntityConfig = {
-  name: "Article",
+  name: 'Article',
   model: ArticleModel,
   collection: ArticleCollection,
   keys: [{name: 'UniqueId'}],

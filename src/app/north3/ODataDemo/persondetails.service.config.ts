@@ -9,8 +9,8 @@ import { PersonDetailsService } from './persondetails.service';
 
 //#region ODataApiGen EntitySetConfig
 export const PersonDetailsServiceEntitySetConfig = {
-  name: "PersonDetails",
-  entityType: "ODataDemo.PersonDetail",
+  name: 'PersonDetails',
+  entityType: 'ODataDemo.PersonDetail',
   service: PersonDetailsService
 } as EntitySetConfig;
 //#endregion

@@ -11,7 +11,7 @@ import { CustomerAndSuppliersByCityCollection } from './customer_and_suppliers_b
 
 //#region ODataApiGen StrucutredTypeConfig
 export const CustomerAndSuppliersByCityEntityConfig = {
-  name: "Customer_and_Suppliers_by_City",
+  name: 'Customer_and_Suppliers_by_City',
   model: CustomerAndSuppliersByCityModel,
   collection: CustomerAndSuppliersByCityCollection,
   keys: [{name: 'CompanyName'},{name: 'Relationship'}],

@@ -29,7 +29,7 @@ import { OrderSubtotalCollection } from '../../../NorthwindModel/order_subtotal.
 
 @Injectable()
 export class OrderSubtotalsService extends ODataEntitySetService<OrderSubtotal> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Order_Subtotals', 'NorthwindModel.Order_Subtotal');
   }
   //#region ODataApiGen Model

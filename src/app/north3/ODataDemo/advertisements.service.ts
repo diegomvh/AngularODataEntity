@@ -29,7 +29,7 @@ import { AdvertisementCollection } from './advertisement.collection';
 
 @Injectable()
 export class AdvertisementsService extends ODataEntitySetService<Advertisement> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Advertisements', 'ODataDemo.Advertisement');
   }
   //#region ODataApiGen Model

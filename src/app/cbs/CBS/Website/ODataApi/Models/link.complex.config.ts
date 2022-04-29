@@ -11,7 +11,7 @@ import { LinkCollection } from './link.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const LinkComplexConfig = {
-  name: "Link",
+  name: 'Link',
   model: LinkModel,
   collection: LinkCollection,
   fields: {

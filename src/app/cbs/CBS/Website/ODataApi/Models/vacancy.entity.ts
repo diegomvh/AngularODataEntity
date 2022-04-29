@@ -24,6 +24,7 @@ export interface Vacancy {
   TheWork?: string;
   YourProfile?: string;
   TermsOfEmployment?: string;
+  EmploymentType?: string[];
   MoreInformation?: string;
   PublicationDate: Date;
   ClosingDate: Date;
@@ -31,8 +32,12 @@ export interface Vacancy {
   VacancyCategory?: string[];
   HoursPerWeek?: string;
   Salary?: string;
+  MinSalary: number;
+  MaxSalary: number;
+  SalaryPeriod?: string;
   LevelOfEducation?: string[];
   WorkLocation?: string[];
+  Location?: string;
   References?: LinkList;
   Downloads?: LinkList;
   Links?: LinkList;
@@ -43,5 +48,6 @@ export interface Vacancy {
   Updated: Date;
   Created: Date;
   Permalink?: string;
+  BreadCrumb?: LinkList;
   //#endregion
 }

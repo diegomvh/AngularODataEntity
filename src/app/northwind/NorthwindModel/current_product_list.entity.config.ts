@@ -11,7 +11,7 @@ import { CurrentProductListCollection } from './current_product_list.collection'
 
 //#region ODataApiGen StrucutredTypeConfig
 export const CurrentProductListEntityConfig = {
-  name: "Current_Product_List",
+  name: 'Current_Product_List',
   model: CurrentProductListModel,
   collection: CurrentProductListCollection,
   keys: [{name: 'ProductID'},{name: 'ProductName'}],

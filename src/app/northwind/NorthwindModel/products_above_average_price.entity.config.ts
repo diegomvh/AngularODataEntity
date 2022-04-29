@@ -11,7 +11,7 @@ import { ProductsAboveAveragePriceCollection } from './products_above_average_pr
 
 //#region ODataApiGen StrucutredTypeConfig
 export const ProductsAboveAveragePriceEntityConfig = {
-  name: "Products_Above_Average_Price",
+  name: 'Products_Above_Average_Price',
   model: ProductsAboveAveragePriceModel,
   collection: ProductsAboveAveragePriceCollection,
   keys: [{name: 'ProductName'}],

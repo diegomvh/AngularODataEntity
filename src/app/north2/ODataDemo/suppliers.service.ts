@@ -32,7 +32,7 @@ import { SupplierCollection } from './supplier.collection';
 
 @Injectable()
 export class SuppliersService extends ODataEntitySetService<Supplier> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Suppliers', 'ODataDemo.Supplier');
   }
   //#region ODataApiGen Model

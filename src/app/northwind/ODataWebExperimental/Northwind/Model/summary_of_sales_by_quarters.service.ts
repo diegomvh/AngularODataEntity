@@ -29,7 +29,7 @@ import { SummaryOfSalesByQuarterCollection } from '../../../NorthwindModel/summa
 
 @Injectable()
 export class SummaryOfSalesByQuartersService extends ODataEntitySetService<SummaryOfSalesByQuarter> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Summary_of_Sales_by_Quarters', 'NorthwindModel.Summary_of_Sales_by_Quarter');
   }
   //#region ODataApiGen Model

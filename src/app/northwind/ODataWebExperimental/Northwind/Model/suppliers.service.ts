@@ -32,7 +32,7 @@ import { SupplierCollection } from '../../../NorthwindModel/supplier.collection'
 
 @Injectable()
 export class SuppliersService extends ODataEntitySetService<Supplier> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Suppliers', 'NorthwindModel.Supplier');
   }
   //#region ODataApiGen Model

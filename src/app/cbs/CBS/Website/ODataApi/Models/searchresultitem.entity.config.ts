@@ -11,7 +11,7 @@ import { SearchResultItemCollection } from './searchresultitem.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const SearchResultItemEntityConfig = {
-  name: "SearchResultItem",
+  name: 'SearchResultItem',
   model: SearchResultItemModel,
   collection: SearchResultItemCollection,
   keys: [{name: 'UniqueId'}],

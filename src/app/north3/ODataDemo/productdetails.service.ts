@@ -29,7 +29,7 @@ import { ProductDetailCollection } from './productdetail.collection';
 
 @Injectable()
 export class ProductDetailsService extends ODataEntitySetService<ProductDetail> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'ProductDetails', 'ODataDemo.ProductDetail');
   }
   //#region ODataApiGen Model

@@ -9,8 +9,8 @@ import { AlphabeticalListOfProductsService } from './alphabetical_list_of_produc
 
 //#region ODataApiGen EntitySetConfig
 export const AlphabeticalListOfProductsServiceEntitySetConfig = {
-  name: "Alphabetical_list_of_products",
-  entityType: "NorthwindModel.Alphabetical_list_of_product",
+  name: 'Alphabetical_list_of_products',
+  entityType: 'NorthwindModel.Alphabetical_list_of_product',
   service: AlphabeticalListOfProductsService
 } as EntitySetConfig;
 //#endregion

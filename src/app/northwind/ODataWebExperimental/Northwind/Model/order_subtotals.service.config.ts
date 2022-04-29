@@ -9,8 +9,8 @@ import { OrderSubtotalsService } from './order_subtotals.service';
 
 //#region ODataApiGen EntitySetConfig
 export const OrderSubtotalsServiceEntitySetConfig = {
-  name: "Order_Subtotals",
-  entityType: "NorthwindModel.Order_Subtotal",
+  name: 'Order_Subtotals',
+  entityType: 'NorthwindModel.Order_Subtotal',
   service: OrderSubtotalsService
 } as EntitySetConfig;
 //#endregion

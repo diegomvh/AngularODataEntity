@@ -9,8 +9,8 @@ import { SearchService } from './search.service';
 
 //#region ODataApiGen EntitySetConfig
 export const SearchServiceEntitySetConfig = {
-  name: "Search",
-  entityType: "CBS.Website.ODataApi.Models.SearchResultItem",
+  name: 'Search',
+  entityType: 'CBS.Website.ODataApi.Models.SearchResultItem',
   service: SearchService
 } as EntitySetConfig;
 //#endregion

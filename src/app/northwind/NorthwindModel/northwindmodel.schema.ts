@@ -34,7 +34,7 @@ import { SummaryOfSalesByYearEntityConfig } from './summary_of_sales_by_year.ent
 
 //#region ODataApiGen SchemaConfig
 export const NorthwindModelSchema = {
-  namespace: "NorthwindModel",
+  namespace: 'NorthwindModel',
   enums: [],
   entities: [CategoryEntityConfig,
     CustomerDemographicEntityConfig,

@@ -29,7 +29,7 @@ import { CurrentProductListCollection } from '../../../NorthwindModel/current_pr
 
 @Injectable()
 export class CurrentProductListsService extends ODataEntitySetService<CurrentProductList> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Current_Product_Lists', 'NorthwindModel.Current_Product_List');
   }
   //#region ODataApiGen Model

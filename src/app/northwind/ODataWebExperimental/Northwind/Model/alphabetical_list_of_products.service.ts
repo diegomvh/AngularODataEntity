@@ -29,7 +29,7 @@ import { AlphabeticalListOfProductCollection } from '../../../NorthwindModel/alp
 
 @Injectable()
 export class AlphabeticalListOfProductsService extends ODataEntitySetService<AlphabeticalListOfProduct> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Alphabetical_list_of_products', 'NorthwindModel.Alphabetical_list_of_product');
   }
   //#region ODataApiGen Model

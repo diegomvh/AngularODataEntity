@@ -11,7 +11,7 @@ import { DefinitionCollection } from './definition.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const DefinitionEntityConfig = {
-  name: "Definition",
+  name: 'Definition',
   model: DefinitionModel,
   collection: DefinitionCollection,
   keys: [{name: 'UniqueId'}],

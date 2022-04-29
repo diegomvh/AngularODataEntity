@@ -36,7 +36,7 @@ import { ArticleCollection } from '../CBS/Website/ODataApi/Models/article.collec
 
 @Injectable()
 export class ArticlesService extends ODataEntitySetService<Article> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Articles', 'CBS.Website.ODataApi.Models.Article');
   }
   //#region ODataApiGen Model

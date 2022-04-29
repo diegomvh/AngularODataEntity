@@ -29,7 +29,7 @@ import { ProductsAboveAveragePriceCollection } from '../../../NorthwindModel/pro
 
 @Injectable()
 export class ProductsAboveAveragePricesService extends ODataEntitySetService<ProductsAboveAveragePrice> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Products_Above_Average_Prices', 'NorthwindModel.Products_Above_Average_Price');
   }
   //#region ODataApiGen Model

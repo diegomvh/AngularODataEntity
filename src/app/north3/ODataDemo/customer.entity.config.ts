@@ -11,8 +11,8 @@ import { CustomerCollection } from './customer.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const CustomerEntityConfig = {
-  name: "Customer",
-  base: "ODataDemo.Person",
+  name: 'Customer',
+  base: 'ODataDemo.Person',
   model: CustomerModel,
   collection: CustomerCollection,
   fields: {

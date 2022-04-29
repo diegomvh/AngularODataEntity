@@ -11,7 +11,7 @@ import { MediumCollection } from './medium.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const MediumEntityConfig = {
-  name: "Medium",
+  name: 'Medium',
   model: MediumModel,
   collection: MediumCollection,
   keys: [{name: 'UniqueId'}],

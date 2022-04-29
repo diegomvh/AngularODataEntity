@@ -11,7 +11,7 @@ import { InvoiceCollection } from './invoice.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const InvoiceEntityConfig = {
-  name: "Invoice",
+  name: 'Invoice',
   model: InvoiceModel,
   collection: InvoiceCollection,
   keys: [{name: 'CustomerName'},{name: 'Discount'},{name: 'OrderID'},{name: 'ProductID'},{name: 'ProductName'},{name: 'Quantity'},{name: 'Salesperson'},{name: 'ShipperName'},{name: 'UnitPrice'}],

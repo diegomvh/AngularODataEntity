@@ -11,7 +11,7 @@ import { ErratumItemCollection } from './erratumitem.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const ErratumItemComplexConfig = {
-  name: "ErratumItem",
+  name: 'ErratumItem',
   model: ErratumItemModel,
   collection: ErratumItemCollection,
   fields: {

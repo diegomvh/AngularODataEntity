@@ -9,8 +9,8 @@ import { SuppliersService } from './suppliers.service';
 
 //#region ODataApiGen EntitySetConfig
 export const SuppliersServiceEntitySetConfig = {
-  name: "Suppliers",
-  entityType: "NorthwindModel.Supplier",
+  name: 'Suppliers',
+  entityType: 'NorthwindModel.Supplier',
   service: SuppliersService
 } as EntitySetConfig;
 //#endregion

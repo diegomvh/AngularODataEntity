@@ -9,8 +9,8 @@ import { ProductsAboveAveragePricesService } from './products_above_average_pric
 
 //#region ODataApiGen EntitySetConfig
 export const ProductsAboveAveragePricesServiceEntitySetConfig = {
-  name: "Products_Above_Average_Prices",
-  entityType: "NorthwindModel.Products_Above_Average_Price",
+  name: 'Products_Above_Average_Prices',
+  entityType: 'NorthwindModel.Products_Above_Average_Price',
   service: ProductsAboveAveragePricesService
 } as EntitySetConfig;
 //#endregion

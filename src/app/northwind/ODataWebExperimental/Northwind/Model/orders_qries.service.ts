@@ -29,7 +29,7 @@ import { OrdersQryCollection } from '../../../NorthwindModel/orders_qry.collecti
 
 @Injectable()
 export class OrdersQriesService extends ODataEntitySetService<OrdersQry> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Orders_Qries', 'NorthwindModel.Orders_Qry');
   }
   //#region ODataApiGen Model

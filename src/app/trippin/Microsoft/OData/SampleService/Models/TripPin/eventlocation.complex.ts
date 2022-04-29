@@ -5,6 +5,8 @@ import {
 
 //#region ODataApiGen Imports
 import { Location } from './location.complex';
+import { LocationModel } from './location.model';
+import { LocationCollection } from './location.collection';
 //#endregion
 
 export interface EventLocation extends Location {

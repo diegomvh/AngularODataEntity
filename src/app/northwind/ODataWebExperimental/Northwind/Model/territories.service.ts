@@ -35,7 +35,7 @@ import { TerritoryCollection } from '../../../NorthwindModel/territory.collectio
 
 @Injectable()
 export class TerritoriesService extends ODataEntitySetService<Territory> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Territories', 'NorthwindModel.Territory');
   }
   //#region ODataApiGen Model

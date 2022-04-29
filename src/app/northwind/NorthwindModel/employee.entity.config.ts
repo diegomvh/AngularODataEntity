@@ -11,7 +11,7 @@ import { EmployeeCollection } from './employee.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const EmployeeEntityConfig = {
-  name: "Employee",
+  name: 'Employee',
   model: EmployeeModel,
   collection: EmployeeCollection,
   keys: [{name: 'EmployeeID'}],

@@ -33,7 +33,7 @@ import { DefinitionCollection } from '../CBS/Website/ODataApi/Models/definition.
 
 @Injectable()
 export class DefinitionsService extends ODataEntitySetService<Definition> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Definitions', 'CBS.Website.ODataApi.Models.Definition');
   }
   //#region ODataApiGen Model

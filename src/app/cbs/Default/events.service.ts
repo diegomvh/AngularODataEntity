@@ -29,7 +29,7 @@ import { CalendarEventCollection } from '../CBS/Website/ODataApi/Models/calendar
 
 @Injectable()
 export class EventsService extends ODataEntitySetService<CalendarEvent> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Events', 'CBS.Website.ODataApi.Models.CalendarEvent');
   }
   //#region ODataApiGen Model

@@ -9,8 +9,8 @@ import { EventsService } from './events.service';
 
 //#region ODataApiGen EntitySetConfig
 export const EventsServiceEntitySetConfig = {
-  name: "Events",
-  entityType: "CBS.Website.ODataApi.Models.CalendarEvent",
+  name: 'Events',
+  entityType: 'CBS.Website.ODataApi.Models.CalendarEvent',
   service: EventsService
 } as EntitySetConfig;
 //#endregion

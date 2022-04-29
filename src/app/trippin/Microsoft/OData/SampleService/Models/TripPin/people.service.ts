@@ -30,13 +30,35 @@ import { Airline } from './airline.entity';
 import { Airport } from './airport.entity';
 import { Flight } from './flight.entity';
 import { Trip } from './trip.entity';
+import { LocationModel } from './location.model';
+import { PhotoModel } from './photo.model';
+import { PersonModel } from './person.model';
+import { AirlineModel } from './airline.model';
+import { AirportModel } from './airport.model';
+import { FlightModel } from './flight.model';
+import { TripModel } from './trip.model';
+import { LocationCollection } from './location.collection';
+import { PhotoCollection } from './photo.collection';
+import { PersonCollection } from './person.collection';
+import { AirlineCollection } from './airline.collection';
+import { AirportCollection } from './airport.collection';
+import { FlightCollection } from './flight.collection';
+import { TripCollection } from './trip.collection';
 //#endregion
 
 @Injectable()
 export class PeopleService extends ODataEntitySetService<Person> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'People', 'Microsoft.OData.SampleService.Models.TripPin.Person');
   }
+  //#region ODataApiGen Model
+  personModel(attrs?: Partial<Person>): PersonModel<Person> {
+    return this.entity().asModel<PersonModel<Person>>(attrs || {});
+  }//#endregion
+  //#region ODataApiGen Collection
+  personCollection(models?: Partial<Person>[]): PersonCollection<Person, PersonModel<Person>> {
+    return this.entities().asCollection<PersonModel<Person>, PersonCollection<Person, PersonModel<Person>>>(models || []);
+  }//#endregion
   //#region ODataApiGen Actions
   //#endregion
   //#region ODataApiGen Functions

@@ -27,7 +27,7 @@ import {
 @Injectable()
 export class NorthwindEntitiesService extends ODataBaseService {
 
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'NorthwindEntitiesContainer', 'Northwind');
   }
 

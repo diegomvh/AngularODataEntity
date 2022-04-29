@@ -32,7 +32,7 @@ import { VacancyCollection } from '../CBS/Website/ODataApi/Models/vacancy.collec
 
 @Injectable()
 export class VacanciesService extends ODataEntitySetService<Vacancy> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Vacancies', 'CBS.Website.ODataApi.Models.Vacancy');
   }
   //#region ODataApiGen Model

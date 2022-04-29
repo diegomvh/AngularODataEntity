@@ -9,7 +9,7 @@ import { MediaType } from './mediatype.enum';
 
 //#region ODataApiGen EnumTypeConfig
 export const MediaTypeConfig = {
-  name: "MediaType",
+  name: 'MediaType',
   members: MediaType,
   fields: {
     Any: {value: 0},

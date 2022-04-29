@@ -11,7 +11,7 @@ import { OrderDetailsExtendedCollection } from './order_details_extended.collect
 
 //#region ODataApiGen StrucutredTypeConfig
 export const OrderDetailsExtendedEntityConfig = {
-  name: "Order_Details_Extended",
+  name: 'Order_Details_Extended',
   model: OrderDetailsExtendedModel,
   collection: OrderDetailsExtendedCollection,
   keys: [{name: 'Discount'},{name: 'OrderID'},{name: 'ProductID'},{name: 'ProductName'},{name: 'Quantity'},{name: 'UnitPrice'}],

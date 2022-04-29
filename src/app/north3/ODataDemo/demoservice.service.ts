@@ -27,7 +27,7 @@ import {
 @Injectable()
 export class DemoServiceService extends ODataBaseService {
 
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'DemoServiceContainer', 'North3');
   }
 

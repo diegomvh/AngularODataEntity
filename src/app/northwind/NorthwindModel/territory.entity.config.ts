@@ -11,7 +11,7 @@ import { TerritoryCollection } from './territory.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const TerritoryEntityConfig = {
-  name: "Territory",
+  name: 'Territory',
   model: TerritoryModel,
   collection: TerritoryCollection,
   keys: [{name: 'TerritoryID'}],

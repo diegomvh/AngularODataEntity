@@ -29,7 +29,7 @@ import { CustomerAndSuppliersByCityCollection } from '../../../NorthwindModel/cu
 
 @Injectable()
 export class CustomerAndSuppliersByCitiesService extends ODataEntitySetService<CustomerAndSuppliersByCity> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Customer_and_Suppliers_by_Cities', 'NorthwindModel.Customer_and_Suppliers_by_City');
   }
   //#region ODataApiGen Model

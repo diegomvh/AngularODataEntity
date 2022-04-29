@@ -33,7 +33,7 @@ import { PageCollection } from '../CBS/Website/ODataApi/Models/page.collection';
 
 @Injectable()
 export class PagesService extends ODataEntitySetService<Page> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Pages', 'CBS.Website.ODataApi.Models.Page');
   }
   //#region ODataApiGen Model

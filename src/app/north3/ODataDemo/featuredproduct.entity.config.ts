@@ -11,8 +11,8 @@ import { FeaturedProductCollection } from './featuredproduct.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const FeaturedProductEntityConfig = {
-  name: "FeaturedProduct",
-  base: "ODataDemo.Product",
+  name: 'FeaturedProduct',
+  base: 'ODataDemo.Product',
   model: FeaturedProductModel,
   collection: FeaturedProductCollection,
   fields: {

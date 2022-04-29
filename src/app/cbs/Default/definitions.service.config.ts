@@ -9,8 +9,8 @@ import { DefinitionsService } from './definitions.service';
 
 //#region ODataApiGen EntitySetConfig
 export const DefinitionsServiceEntitySetConfig = {
-  name: "Definitions",
-  entityType: "CBS.Website.ODataApi.Models.Definition",
+  name: 'Definitions',
+  entityType: 'CBS.Website.ODataApi.Models.Definition',
   service: DefinitionsService
 } as EntitySetConfig;
 //#endregion

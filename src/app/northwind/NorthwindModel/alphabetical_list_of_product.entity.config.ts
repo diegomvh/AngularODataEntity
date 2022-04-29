@@ -11,7 +11,7 @@ import { AlphabeticalListOfProductCollection } from './alphabetical_list_of_prod
 
 //#region ODataApiGen StrucutredTypeConfig
 export const AlphabeticalListOfProductEntityConfig = {
-  name: "Alphabetical_list_of_product",
+  name: 'Alphabetical_list_of_product',
   model: AlphabeticalListOfProductModel,
   collection: AlphabeticalListOfProductCollection,
   keys: [{name: 'CategoryName'},{name: 'Discontinued'},{name: 'ProductID'},{name: 'ProductName'}],

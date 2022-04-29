@@ -16,7 +16,7 @@ import { VacanciesServiceEntitySetConfig } from './vacancies.service.config';
 
 //#region ODataApiGen EntityContainerConfig
 export const ContainerContainer = {
-  name: "Container",
+  name: 'Container',
   entitySets: [
     ArticlesServiceEntitySetConfig,
     DefinitionsServiceEntitySetConfig,

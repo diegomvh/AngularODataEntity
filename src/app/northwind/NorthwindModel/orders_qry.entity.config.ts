@@ -11,7 +11,7 @@ import { OrdersQryCollection } from './orders_qry.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const OrdersQryEntityConfig = {
-  name: "Orders_Qry",
+  name: 'Orders_Qry',
   model: OrdersQryModel,
   collection: OrdersQryCollection,
   keys: [{name: 'CompanyName'},{name: 'OrderID'}],

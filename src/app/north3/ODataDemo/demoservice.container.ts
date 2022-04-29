@@ -15,7 +15,7 @@ import { AdvertisementsServiceEntitySetConfig } from './advertisements.service.c
 
 //#region ODataApiGen EntityContainerConfig
 export const DemoServiceContainer = {
-  name: "DemoService",
+  name: 'DemoService',
   entitySets: [
     ProductsServiceEntitySetConfig,
     ProductDetailsServiceEntitySetConfig,

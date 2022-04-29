@@ -9,8 +9,8 @@ import { CategoriesService } from './categories.service';
 
 //#region ODataApiGen EntitySetConfig
 export const CategoriesServiceEntitySetConfig = {
-  name: "Categories",
-  entityType: "NorthwindModel.Category",
+  name: 'Categories',
+  entityType: 'NorthwindModel.Category',
   service: CategoriesService
 } as EntitySetConfig;
 //#endregion

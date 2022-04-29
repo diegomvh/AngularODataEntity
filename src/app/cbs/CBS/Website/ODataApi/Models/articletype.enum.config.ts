@@ -9,7 +9,7 @@ import { ArticleType } from './articletype.enum';
 
 //#region ODataApiGen EnumTypeConfig
 export const ArticleTypeConfig = {
-  name: "ArticleType",
+  name: 'ArticleType',
   members: ArticleType,
   fields: {
     Any: {value: 0},

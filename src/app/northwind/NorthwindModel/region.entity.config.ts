@@ -11,7 +11,7 @@ import { RegionCollection } from './region.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const RegionEntityConfig = {
-  name: "Region",
+  name: 'Region',
   model: RegionModel,
   collection: RegionCollection,
   keys: [{name: 'RegionID'}],

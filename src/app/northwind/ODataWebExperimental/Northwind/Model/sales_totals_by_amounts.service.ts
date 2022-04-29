@@ -29,7 +29,7 @@ import { SalesTotalsByAmountCollection } from '../../../NorthwindModel/sales_tot
 
 @Injectable()
 export class SalesTotalsByAmountsService extends ODataEntitySetService<SalesTotalsByAmount> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Sales_Totals_by_Amounts', 'NorthwindModel.Sales_Totals_by_Amount');
   }
   //#region ODataApiGen Model

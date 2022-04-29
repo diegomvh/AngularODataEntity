@@ -11,7 +11,7 @@ import { SalesTotalsByAmountCollection } from './sales_totals_by_amount.collecti
 
 //#region ODataApiGen StrucutredTypeConfig
 export const SalesTotalsByAmountEntityConfig = {
-  name: "Sales_Totals_by_Amount",
+  name: 'Sales_Totals_by_Amount',
   model: SalesTotalsByAmountModel,
   collection: SalesTotalsByAmountCollection,
   keys: [{name: 'CompanyName'},{name: 'OrderID'}],

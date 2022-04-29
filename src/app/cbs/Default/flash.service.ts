@@ -29,7 +29,7 @@ import { FlashCollection } from '../CBS/Website/ODataApi/Models/flash.collection
 
 @Injectable()
 export class FlashService extends ODataEntitySetService<Flash> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Flash', 'CBS.Website.ODataApi.Models.Flash');
   }
   //#region ODataApiGen Model

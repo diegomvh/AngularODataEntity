@@ -9,8 +9,8 @@ import { MediaService } from './media.service';
 
 //#region ODataApiGen EntitySetConfig
 export const MediaServiceEntitySetConfig = {
-  name: "Media",
-  entityType: "CBS.Website.ODataApi.Models.Medium",
+  name: 'Media',
+  entityType: 'CBS.Website.ODataApi.Models.Medium',
   service: MediaService
 } as EntitySetConfig;
 //#endregion

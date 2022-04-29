@@ -11,7 +11,7 @@ import { FlashCollection } from './flash.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const FlashEntityConfig = {
-  name: "Flash",
+  name: 'Flash',
   model: FlashModel,
   collection: FlashCollection,
   keys: [{name: 'UniqueId'}],

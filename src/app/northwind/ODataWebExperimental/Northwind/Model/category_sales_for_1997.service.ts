@@ -29,7 +29,7 @@ import { CategorySalesFor1997Collection } from '../../../NorthwindModel/category
 
 @Injectable()
 export class CategorySalesFor1997Service extends ODataEntitySetService<CategorySalesFor1997> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Category_Sales_for_1997', 'NorthwindModel.Category_Sales_for_1997');
   }
   //#region ODataApiGen Model

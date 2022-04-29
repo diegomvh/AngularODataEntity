@@ -11,7 +11,7 @@ import { AdvertisementCollection } from './advertisement.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const AdvertisementEntityConfig = {
-  name: "Advertisement",
+  name: 'Advertisement',
   model: AdvertisementModel,
   collection: AdvertisementCollection,
   keys: [{name: 'ID'}],

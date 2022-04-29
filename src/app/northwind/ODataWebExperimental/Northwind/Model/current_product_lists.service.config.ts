@@ -9,8 +9,8 @@ import { CurrentProductListsService } from './current_product_lists.service';
 
 //#region ODataApiGen EntitySetConfig
 export const CurrentProductListsServiceEntitySetConfig = {
-  name: "Current_Product_Lists",
-  entityType: "NorthwindModel.Current_Product_List",
+  name: 'Current_Product_Lists',
+  entityType: 'NorthwindModel.Current_Product_List',
   service: CurrentProductListsService
 } as EntitySetConfig;
 //#endregion

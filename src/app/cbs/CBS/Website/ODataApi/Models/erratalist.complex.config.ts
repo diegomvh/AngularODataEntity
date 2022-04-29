@@ -11,7 +11,7 @@ import { ErrataListCollection } from './erratalist.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const ErrataListComplexConfig = {
-  name: "ErrataList",
+  name: 'ErrataList',
   model: ErrataListModel,
   collection: ErrataListCollection,
   fields: {

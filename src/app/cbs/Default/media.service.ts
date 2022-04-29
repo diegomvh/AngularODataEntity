@@ -30,7 +30,7 @@ import { MediumCollection } from '../CBS/Website/ODataApi/Models/medium.collecti
 
 @Injectable()
 export class MediaService extends ODataEntitySetService<Medium> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Media', 'CBS.Website.ODataApi.Models.Medium');
   }
   //#region ODataApiGen Model

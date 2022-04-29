@@ -11,7 +11,7 @@ import { OrderSubtotalCollection } from './order_subtotal.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const OrderSubtotalEntityConfig = {
-  name: "Order_Subtotal",
+  name: 'Order_Subtotal',
   model: OrderSubtotalModel,
   collection: OrderSubtotalCollection,
   keys: [{name: 'OrderID'}],

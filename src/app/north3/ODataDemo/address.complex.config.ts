@@ -11,7 +11,7 @@ import { AddressCollection } from './address.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const AddressComplexConfig = {
-  name: "Address",
+  name: 'Address',
   model: AddressModel,
   collection: AddressCollection,
   fields: {

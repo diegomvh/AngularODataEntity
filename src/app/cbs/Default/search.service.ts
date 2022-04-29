@@ -30,7 +30,7 @@ import { SearchResultItemCollection } from '../CBS/Website/ODataApi/Models/searc
 
 @Injectable()
 export class SearchService extends ODataEntitySetService<SearchResultItem> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'Search', 'CBS.Website.ODataApi.Models.SearchResultItem');
   }
   //#region ODataApiGen Model

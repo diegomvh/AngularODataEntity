@@ -13,7 +13,7 @@ import { DemoServiceContainer } from './demoservice.container';
 
 //#region ODataApiGen SchemaConfig
 export const ODataDemoSchema = {
-  namespace: "ODataDemo",
+  namespace: 'ODataDemo',
   enums: [],
   entities: [AddressComplexConfig,
     ProductEntityConfig,

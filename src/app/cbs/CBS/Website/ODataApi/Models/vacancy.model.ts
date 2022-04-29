@@ -142,6 +142,15 @@ export class VacancyModel<E extends Vacancy> extends ODataModel<E> {
   }
   
   @ModelField()
+  EmploymentType?: string[];
+  public $EmploymentType() {
+    return this.property<string[]>('EmploymentType');
+  }
+  public getEmploymentType(options?: ODataOptions) {
+    return this.getValue<string[]>('EmploymentType', options) as Observable<string[]>;
+  }
+  
+  @ModelField()
   MoreInformation?: string;
   public $MoreInformation() {
     return this.property<string>('MoreInformation');
@@ -205,6 +214,33 @@ export class VacancyModel<E extends Vacancy> extends ODataModel<E> {
   }
   
   @ModelField()
+  MinSalary!: number;
+  public $MinSalary() {
+    return this.property<number>('MinSalary');
+  }
+  public getMinSalary(options?: ODataOptions) {
+    return this.getValue<number>('MinSalary', options) as Observable<number>;
+  }
+  
+  @ModelField()
+  MaxSalary!: number;
+  public $MaxSalary() {
+    return this.property<number>('MaxSalary');
+  }
+  public getMaxSalary(options?: ODataOptions) {
+    return this.getValue<number>('MaxSalary', options) as Observable<number>;
+  }
+  
+  @ModelField()
+  SalaryPeriod?: string;
+  public $SalaryPeriod() {
+    return this.property<string>('SalaryPeriod');
+  }
+  public getSalaryPeriod(options?: ODataOptions) {
+    return this.getValue<string>('SalaryPeriod', options) as Observable<string>;
+  }
+  
+  @ModelField()
   LevelOfEducation?: string[];
   public $LevelOfEducation() {
     return this.property<string[]>('LevelOfEducation');
@@ -220,6 +256,15 @@ export class VacancyModel<E extends Vacancy> extends ODataModel<E> {
   }
   public getWorkLocation(options?: ODataOptions) {
     return this.getValue<string[]>('WorkLocation', options) as Observable<string[]>;
+  }
+  
+  @ModelField()
+  Location?: string;
+  public $Location() {
+    return this.property<string>('Location');
+  }
+  public getLocation(options?: ODataOptions) {
+    return this.getValue<string>('Location', options) as Observable<string>;
   }
   
   @ModelField()
@@ -310,6 +355,15 @@ export class VacancyModel<E extends Vacancy> extends ODataModel<E> {
   }
   public getPermalink(options?: ODataOptions) {
     return this.getValue<string>('Permalink', options) as Observable<string>;
+  }
+  
+  @ModelField()
+  BreadCrumb?: LinkListModel<LinkList>;
+  public $BreadCrumb() {
+    return this.property<LinkListModel<LinkList>>('BreadCrumb');
+  }
+  public getBreadCrumb(options?: ODataOptions) {
+    return this.getValue<LinkListModel<LinkList>>('BreadCrumb', options) as Observable<LinkListModel<LinkList>>;
   }
   
   //#endregion

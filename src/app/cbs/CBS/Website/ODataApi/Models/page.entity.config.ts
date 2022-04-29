@@ -11,7 +11,7 @@ import { PageCollection } from './page.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const PageEntityConfig = {
-  name: "Page",
+  name: 'Page',
   model: PageModel,
   collection: PageCollection,
   keys: [{name: 'UniqueId'}],

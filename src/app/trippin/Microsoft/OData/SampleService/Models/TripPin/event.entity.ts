@@ -6,6 +6,10 @@ import {
 //#region ODataApiGen Imports
 import { PlanItem } from './planitem.entity';
 import { EventLocation } from './eventlocation.complex';
+import { EventLocationModel } from './eventlocation.model';
+import { PlanItemModel } from './planitem.model';
+import { EventLocationCollection } from './eventlocation.collection';
+import { PlanItemCollection } from './planitem.collection';
 //#endregion
 
 export interface Event extends PlanItem {

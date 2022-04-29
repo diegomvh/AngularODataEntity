@@ -11,7 +11,7 @@ import { ShipperCollection } from './shipper.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const ShipperEntityConfig = {
-  name: "Shipper",
+  name: 'Shipper',
   model: ShipperModel,
   collection: ShipperCollection,
   keys: [{name: 'ShipperID'}],

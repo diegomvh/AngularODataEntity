@@ -9,8 +9,8 @@ import { SummaryOfSalesByYearsService } from './summary_of_sales_by_years.servic
 
 //#region ODataApiGen EntitySetConfig
 export const SummaryOfSalesByYearsServiceEntitySetConfig = {
-  name: "Summary_of_Sales_by_Years",
-  entityType: "NorthwindModel.Summary_of_Sales_by_Year",
+  name: 'Summary_of_Sales_by_Years',
+  entityType: 'NorthwindModel.Summary_of_Sales_by_Year',
   service: SummaryOfSalesByYearsService
 } as EntitySetConfig;
 //#endregion

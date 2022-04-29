@@ -32,7 +32,7 @@ import { PersonDetailCollection } from './persondetail.collection';
 
 @Injectable()
 export class PersonDetailsService extends ODataEntitySetService<PersonDetail> {
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'PersonDetails', 'ODataDemo.PersonDetail');
   }
   //#region ODataApiGen Model

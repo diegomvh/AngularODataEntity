@@ -9,7 +9,7 @@ import { PageType } from './pagetype.enum';
 
 //#region ODataApiGen EnumTypeConfig
 export const PageTypeConfig = {
-  name: "PageType",
+  name: 'PageType',
   members: PageType,
   fields: {
     Any: {value: 0},

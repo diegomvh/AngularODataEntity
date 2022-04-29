@@ -11,7 +11,7 @@ import { ProductDetailCollection } from './productdetail.collection';
 
 //#region ODataApiGen StrucutredTypeConfig
 export const ProductDetailEntityConfig = {
-  name: "ProductDetail",
+  name: 'ProductDetail',
   model: ProductDetailModel,
   collection: ProductDetailCollection,
   keys: [{name: 'ProductID'}],

@@ -24,7 +24,7 @@ import { VacancyEntityConfig } from './vacancy.entity.config';
 
 //#region ODataApiGen SchemaConfig
 export const ModelsSchema = {
-  namespace: "CBS.Website.ODataApi.Models",
+  namespace: 'CBS.Website.ODataApi.Models',
   enums: [ArticleTypeConfig,
     MediaTypeConfig,
     PageTypeConfig,

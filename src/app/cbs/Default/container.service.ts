@@ -42,7 +42,7 @@ import { SearchResultItemCollection } from '../CBS/Website/ODataApi/Models/searc
 @Injectable()
 export class ContainerService extends ODataBaseService {
 
-  constructor(protected client: ODataClient) {
+  constructor(client: ODataClient) {
     super(client, 'ContainerContainer', 'CBS');
   }
 

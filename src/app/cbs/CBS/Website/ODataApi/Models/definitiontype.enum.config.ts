@@ -9,7 +9,7 @@ import { DefinitionType } from './definitiontype.enum';
 
 //#region ODataApiGen EnumTypeConfig
 export const DefinitionTypeConfig = {
-  name: "DefinitionType",
+  name: 'DefinitionType',
   members: DefinitionType,
   fields: {
     Any: {value: 0},
