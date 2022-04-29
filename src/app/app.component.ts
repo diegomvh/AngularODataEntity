@@ -17,7 +17,7 @@ import {
 } from './trippin';
 import { OrdersService } from './northwind';
 import { filter, switchMap, map } from 'rxjs/operators';
-import { forkJoin } from 'rxjs';
+import { firstValueFrom, forkJoin } from 'rxjs';
 import { DefaultContainerService } from './trippin';
 import { ProductsService } from './north3';
 
@@ -308,7 +308,7 @@ export class AppComponent {
       'Photos',
       'Microsoft.OData.SampleService.Models.TripPin.Photo'
     );
-    for (var photo of await photos.entities().fetchAll().toPromise()) {
+    for (var photo of await firstValueFrom(photos.entities().fetchAll())) {
       photos.entity(photo).media().fetchArraybuffer().subscribe(console.log);
       photos.entity(photo).media().fetchBlob().subscribe(console.log);
     }
@@ -319,10 +319,10 @@ export class AppComponent {
       'Photos',
       'Microsoft.OData.SampleService.Models.TripPin.Photo'
     );
-    for (var photo of await photos.entities().fetchAll().toPromise()) {
-      let image = await photos.entity(photo).media().fetchBlob().toPromise();
+    for (var photo of await firstValueFrom(photos.entities().fetchAll())) {
+      let image = await firstValueFrom(photos.entity(photo).media().fetchBlob());
       console.log(image.type);
-      let res = await photos.entity(photo).media().upload(image).toPromise();
+      let res = await firstValueFrom(photos.entity(photo).media().upload(image));
       console.log(res);
     }
   }
@@ -345,7 +345,7 @@ export class AppComponent {
 
     // Use Person Typed Service
     // Create Person
-    let person = await serviceWithParser
+    let person = await firstValueFrom(serviceWithParser
       .create({
         Emails: ['some@email.com'],
         UserName: 'someuser',
@@ -358,65 +358,60 @@ export class AppComponent {
           etag = annots.etag;
           return entity;
         })
-      )
-      .toPromise();
+      ));
     console.log(person, etag);
 
     // Retrieve Person
-    person = await serviceWithParser
+    person = await firstValueFrom(serviceWithParser
       .fetchOne('someuser')
       .pipe(
         map(({ entity, annots }) => {
           etag = annots.etag;
           return entity;
         })
-      )
-      .toPromise();
+      ));
     console.log(person, etag);
 
     if (person !== null) {
       // Update Person
       person.Emails?.push('other@email.com');
-      await serviceWithParser
+      await firstValueFrom(serviceWithParser
         .update('someuser', person, { etag })
         .pipe(
           map(({ entity, annots }) => {
             etag = annots.etag;
             return entity;
           })
-        )
-        .toPromise();
+        ));
     }
     console.log(person, etag);
 
     if (person !== null) {
       // Patch Person
-      await serviceWithParser
+      await firstValueFrom(serviceWithParser
         .modify('someuser', { LastName: 'LastName' }, { etag })
         .pipe(
           map(({ entity, annots }) => {
             etag = annots.etag;
             return entity;
           })
-        )
-        .toPromise();
+        ));
     }
     console.log(person, etag);
 
     // Retrieve Person
-    person = await serviceWithParser
+    person = await firstValueFrom(serviceWithParser
       .fetchOne('someuser', { etag })
       .pipe(
         map(({ entity, annots }) => {
           etag = annots.etag;
           return entity;
         })
-      )
-      .toPromise();
+      ));
     console.log('Fetch', person, etag);
 
     // Delete Person
-    person = await serviceWithParser.destroy('someuser', { etag }).toPromise();
+    person = await firstValueFrom(serviceWithParser.destroy('someuser', { etag }));
     console.log(person);
   }
 
@@ -476,7 +471,7 @@ export class AppComponent {
       .subscribe((e) => console.log(people));
     people.events$
       .pipe(filter((e) => e.name === 'attach'))
-      .subscribe((e) => people.fetch().toPromise());
+      .subscribe((e) => firstValueFrom(people.fetch()));
     people.query((q: any) => {
       q.filter({ Gender: PersonGender.Female });
     });
