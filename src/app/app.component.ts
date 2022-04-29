@@ -14,8 +14,9 @@ import {
   Photo,
   PhotosService,
   PersonGenderConfig,
+  PersonCollection,
 } from './trippin';
-import { OrdersService } from './northwind';
+import { OrdersService, ProductCollection } from './northwind';
 import { filter, switchMap, map } from 'rxjs/operators';
 import { firstValueFrom, forkJoin } from 'rxjs';
 import { DefaultContainerService } from './trippin';
@@ -49,7 +50,7 @@ export class AppComponent {
     this.api.callResetDataSource().subscribe(() => {
       //this.queries();
       //this.mutate();
-      this.trippinModels();
+      this.northwindTypeModels();
       //this.uploadPhotos();
       //this.filterPeopleByGender();
     });
@@ -460,6 +461,22 @@ export class AppComponent {
         })
       )
       .subscribe(console.log);
+  }
+  
+  northwindTypeModels() {
+    const collection = new ProductCollection();
+    collection.query((q) => q.expand({ Category: {} }));
+    collection
+      .fetch()
+      .subscribe((collection) => {
+        const product1 = collection.models()[1];
+        const product2 = collection.models()[2];
+        product1.events$.subscribe(console.log);
+        product2.events$.subscribe(console.log);
+        console.log(product1);
+        console.log(product2);
+        product1.Category = product2.Category;
+      });
   }
 
   trippinModelsEvents() {
