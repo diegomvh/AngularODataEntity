@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ApiConfig, ODataInMemoryCache, ODataInStorageCache, ODataModule } from 'angular-odata';
+import { ApiConfig, ODataInMemoryCache, ODataInStorageCache, ODataModule, QueryOptionNames } from 'angular-odata';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
@@ -84,6 +84,7 @@ import { EmployeesComponent } from './components/northwind/employees.component';
         options: {
           stringAsEnum: true,
           stripMetadata: 'minimal',
+          bodyQueryOptions: [QueryOptionNames.select, QueryOptionNames.expand],
           accept: {
             metadata: 'full',
           },

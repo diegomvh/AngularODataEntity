@@ -5,6 +5,7 @@ import {
   ODataSettings,
   ODataEntitySetResource,
   ODataModel,
+  QueryOptionNames,
 } from 'angular-odata';
 import {
   PeopleService,
@@ -49,8 +50,9 @@ export class AppComponent {
     //this.mutate();
     this.api.callResetDataSource().subscribe(() => {
       //this.queries();
+      this.query();
       //this.mutate();
-      this.northwindTypeModels();
+      //this.northwindTypeModels();
       //this.uploadPhotos();
       //this.filterPeopleByGender();
     });
@@ -442,6 +444,14 @@ export class AppComponent {
 
   batch() {
     let batch = this.odata.batch();
+  }
+
+  query() {
+    this.peopleService
+      .entities()
+      .query(q => q.select('Emails'))
+      .fetchAll()
+      .subscribe(console.log);
   }
 
   trippinModels() {
