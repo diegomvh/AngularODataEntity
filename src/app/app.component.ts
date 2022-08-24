@@ -77,7 +77,7 @@ export class AppComponent {
     // Structured Parser
     let personSchema = this.peopleService.structuredTypeSchema;
     let male = personSchema
-      ?.findFieldByName('Gender')
+      ?.field('Gender')
       ?.enum()
       .encode(PersonGender.Male);
     console.log(male);
