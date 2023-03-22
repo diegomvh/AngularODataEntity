@@ -16,6 +16,7 @@ import {
   PhotosService,
   PersonGenderConfig,
   PersonCollection,
+  PersonModel,
 } from './trippin';
 import { OrdersService, ProductCollection } from './northwind';
 import { filter, switchMap, map } from 'rxjs/operators';
@@ -50,7 +51,8 @@ export class AppComponent {
     //this.mutate();
     this.api.callResetDataSource().subscribe(() => {
       //this.queries();
-      this.query();
+      //this.query();
+      this.trippinModels();
       //this.mutate();
       //this.northwindTypeModels();
       //this.uploadPhotos();
@@ -455,9 +457,9 @@ export class AppComponent {
   }
 
   trippinModels() {
-    const people = this.peopleService.entities().asCollection() as any;
+    const people = this.peopleService.entities().asCollection<PersonModel<Person>, PersonCollection<Person, PersonModel<Person>>>();
     //const people = this.peopleService.personCollection();
-    people.query((q: any) => q.expand({ Friends: {} }));
+    people.query((q) => q.expand({ Friends: {}, Trips: {} }));
     people
       .fetch()
       .pipe(

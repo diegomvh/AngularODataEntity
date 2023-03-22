@@ -84,7 +84,6 @@ import { EmployeesComponent } from './components/northwind/employees.component';
         options: {
           stringAsEnum: true,
           stripMetadata: 'minimal',
-          bodyQueryOptions: [QueryOptionNames.select, QueryOptionNames.expand],
           accept: {
             metadata: 'full',
           },
