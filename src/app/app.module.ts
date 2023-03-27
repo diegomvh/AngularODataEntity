@@ -42,7 +42,8 @@ import { EmployeesComponent } from './components/northwind/employees.component';
     TableModule,
     DialogModule,
     TabViewModule,
-    ODataModule.forRoot(
+    ODataModule.forRoot({
+      config: [
       // North version 2
       Object.assign(North2Config, {
         serviceRootUrl: 'http://localhost:4200/north2/',
@@ -93,7 +94,8 @@ import { EmployeesComponent } from './components/northwind/employees.component';
         }
       } as ApiConfig),
       Object.assign(CBSConfig)
-    ),
+      ] 
+    }),
     TripPinModule,
     NorthwindModule,
     North2Module,

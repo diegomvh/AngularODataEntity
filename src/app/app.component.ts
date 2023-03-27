@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 import {
   ODataServiceFactory,
   ODataClient,
-  ODataSettings,
   ODataEntitySetResource,
-  ODataModel,
-  QueryOptionNames,
 } from 'angular-odata';
 import {
   PeopleService,
@@ -32,7 +29,6 @@ import { ProductsService } from './north3';
 export class AppComponent {
   constructor(
     private odata: ODataClient,
-    private odataSettings: ODataSettings,
     private factory: ODataServiceFactory,
     private api: DefaultContainerService,
     private peopleService: PeopleService,
@@ -67,11 +63,11 @@ export class AppComponent {
 
   encode() {
     // Edm Parser
-    var guidParser = this.odataSettings.parserForType('Edm.Guid');
+    var guidParser = this.odata.parserForType('Edm.Guid');
     var guid = guidParser.encode('12345678-1234-1234-1234-123456789012');
     console.log(guid);
     // Enum Parser
-    let personGenderType = this.odataSettings.enumTypeByName<PersonGender>(
+    let personGenderType = this.odata.enumTypeByName<PersonGender>(
       PersonGenderConfig.name
     );
     let female = personGenderType.encode(PersonGender.Female);
@@ -247,7 +243,7 @@ export class AppComponent {
   }
 
   filterPeopleByGender() {
-    let personGenderType = this.odataSettings.enumTypeByName<PersonGender>(
+    let personGenderType = this.odata.enumTypeByName<PersonGender>(
       PersonGenderConfig.name
     );
     let female = personGenderType.encode(PersonGender.Female);
@@ -265,7 +261,7 @@ export class AppComponent {
     person
       .fetch()
       .subscribe(({ entity, annots }) =>
-        console.log(annots.property('Emails'))
+        console.log(annots.property<Person>('Emails', 'collection'))
       );
 
     let friends = person.navigationProperty<Person>('Friends');
@@ -313,7 +309,7 @@ export class AppComponent {
       'Photos',
       'Microsoft.OData.SampleService.Models.TripPin.Photo'
     );
-    for (var photo of await firstValueFrom(photos.entities().fetchAll())) {
+    for (var photo of await firstValueFrom(photos.entities().fetchAll().pipe(map(({entities}) => entities)))) {
       photos.entity(photo).media().fetchArraybuffer().subscribe(console.log);
       photos.entity(photo).media().fetchBlob().subscribe(console.log);
     }
@@ -324,7 +320,7 @@ export class AppComponent {
       'Photos',
       'Microsoft.OData.SampleService.Models.TripPin.Photo'
     );
-    for (var photo of await firstValueFrom(photos.entities().fetchAll())) {
+    for (var photo of await firstValueFrom(photos.entities().fetchAll().pipe(map(({entities}) => entities)))) {
       let image = await firstValueFrom(photos.entity(photo).media().fetchBlob());
       console.log(image.type);
       let res = await firstValueFrom(photos.entity(photo).media().upload(image));
@@ -368,7 +364,8 @@ export class AppComponent {
 
     // Retrieve Person
     person = await firstValueFrom(serviceWithParser
-      .fetchOne('someuser')
+      .entity('someuser')
+      .fetch()
       .pipe(
         map(({ entity, annots }) => {
           etag = annots.etag;
@@ -406,7 +403,8 @@ export class AppComponent {
 
     // Retrieve Person
     person = await firstValueFrom(serviceWithParser
-      .fetchOne('someuser', { etag })
+      .entity('someuser')
+      .fetch({etag})
       .pipe(
         map(({ entity, annots }) => {
           etag = annots.etag;
