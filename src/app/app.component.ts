@@ -461,8 +461,8 @@ export class AppComponent {
     people
       .fetch()
       .pipe(
-        switchMap((people: any) => {
-          const person = people.models()[2];
+        switchMap((models) => {
+          const person = models[2];
           person.Gender = PersonGender.Female;
           return person.save();
         }),
@@ -478,9 +478,9 @@ export class AppComponent {
     collection.query((q) => q.expand({ Category: {} }));
     collection
       .fetch()
-      .subscribe((collection) => {
-        const product1 = collection.models()[1];
-        const product2 = collection.models()[2];
+      .subscribe((models) => {
+        const product1 = models[1];
+        const product2 = models[2];
         product1.events$.subscribe(console.log);
         product2.events$.subscribe(console.log);
         console.log(product1);
@@ -509,8 +509,8 @@ export class AppComponent {
     orders
       .fetch()
       .pipe(
-        switchMap((orders) => {
-          const order = orders.models()[1];
+        switchMap((models) => {
+          const order = models[1];
           order.ShipPostalCode = '12345';
           return order.save();
         })
