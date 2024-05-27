@@ -2,13 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ODataClient, ODataEntitySetResource, ODataServiceFactory } from 'angular-odata';
 import { Airport, DefaultContainerService, PeopleService, Person, PersonCollection, PersonGender, PersonGenderConfig, PersonModel, Photo, PhotosService, TripPinModule } from './trippin';
-import { North2Module, ProductCollection, ProductsService } from './north2';
-import { NorthwindModule, OrdersService } from './northwind';
+import { NorthwindModule, OrdersService, ProductCollection, ProductsService } from './northwind';
 import { filter, firstValueFrom, forkJoin, map, switchMap } from 'rxjs';
 import { TabViewModule } from 'primeng/tabview';
 import { AirlinesComponent, AirportsComponent, PeopleComponent } from './components/trippin';
 import { CategoriesComponent, EmployeesComponent, OrdersComponent, ProductsComponent } from './components/northwind';
-import { North3Module } from './north3';
 import { TableModule } from 'primeng/table';
 
 @Component({
@@ -20,8 +18,6 @@ import { TableModule } from 'primeng/table';
     TabViewModule,
     TripPinModule,
     NorthwindModule,
-    North2Module,
-    North3Module,
     AirlinesComponent,
     AirportsComponent,
     PeopleComponent,
@@ -53,9 +49,9 @@ export class AppComponent {
   trippin() {
     //this.mutate();
     this.api.callResetDataSource().subscribe(() => {
-      //this.queries();
+      this.queries();
       //this.query();
-      this.trippinModels();
+      //this.trippinModels();
       //this.mutate();
       //this.northwindTypeModels();
       //this.uploadPhotos();
@@ -89,12 +85,13 @@ export class AppComponent {
   }
 
   queries() {
-    this.entitiesWithoutTypes();
-    this.entitiesWithTypes();
-    this.navigation();
-    this.property();
-    this.mediaEntity();
-    this.batch();
+    //this.entitiesWithoutTypes();
+    //this.entitiesWithTypes();
+    //this.navigation();
+    //this.property();
+    //this.mediaEntity();
+    this.aggregations();
+    //this.batch();
   }
 
   entitiesWithoutTypes() {
@@ -447,6 +444,12 @@ export class AppComponent {
       .reference()
       .remove(diego)
       .subscribe(console.log);
+  }
+
+  aggregations() {
+    this.peopleService.entities().query(q => {
+      q.apply(({e, t}) => e().groupBy((e) => [t.Gender])); 
+    }).fetch().subscribe(console.log);
   }
 
   batch() {
