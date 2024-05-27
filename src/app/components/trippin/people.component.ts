@@ -6,10 +6,13 @@ import {
   ODataStructuredType,
 } from 'angular-odata';
 import { PersonComponent } from './person.component';
-import { TableLazyLoadEvent } from 'primeng/table';
+import { TableLazyLoadEvent, TableModule } from 'primeng/table';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'trip-people',
+  standalone: true,
+  imports: [CommonModule, TableModule, PersonComponent],
   template: `<p-table
       #table
       [columns]="cols"
@@ -38,7 +41,7 @@ import { TableLazyLoadEvent } from 'primeng/table';
           </th>
         </tr>
         <tr>
-          <th *ngFor="let col of columns" [ngSwitch]="col.field">
+          <th *ngFor="let col of columns">
             <input
               *ngIf="col.filter"
               pInputText
@@ -50,14 +53,12 @@ import { TableLazyLoadEvent } from 'primeng/table';
       </ng-template>
       <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr (click)="viewPerson(rowData)">
-          <td *ngFor="let col of columns" [ngSwitch]="col.field">
-            <span *ngSwitchCase="'AddressInfo'">{{
-              rowData[col.field] | json
-            }}</span>
-            <span *ngSwitchCase="'Gender'">{{
-              Gender[rowData[col.field]]
-            }}</span>
-            <span *ngSwitchDefault>{{ rowData[col.field] }}</span>
+          <td *ngFor="let col of columns">
+            @switch (col.field) {
+              @case ('AddressInfo') { <span>{{ rowData[col.field] | json }}</span> }
+              @case ('Gender') { <span>{{ Gender[rowData[col.field]] | json }}</span> }
+              @default { <span>{{ rowData[col.field] }}</span> }
+            }
           </td>
         </tr>
       </ng-template>

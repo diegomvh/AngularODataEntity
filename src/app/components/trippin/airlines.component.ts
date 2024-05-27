@@ -5,10 +5,13 @@ import {
   ODataClient,
   ODataStructuredType,
 } from 'angular-odata';
-import { TableLazyLoadEvent } from 'primeng/table';
+import { TableLazyLoadEvent, TableModule } from 'primeng/table';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'trip-airlines',
+  standalone: true,
+  imports: [CommonModule, TableModule],
   template: `<p-table
     #table
     [columns]="cols"
@@ -37,7 +40,7 @@ import { TableLazyLoadEvent } from 'primeng/table';
         </th>
       </tr>
       <tr>
-        <th *ngFor="let col of columns" [ngSwitch]="col.field">
+        <th *ngFor="let col of columns">
           <input
             *ngIf="col.filter"
             pInputText

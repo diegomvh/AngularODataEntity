@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
 import { Order, OrdersService } from '../../northwind';
-import { TableLazyLoadEvent } from 'primeng/table';
+import { TableLazyLoadEvent, TableModule } from 'primeng/table';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'northwind-orders',
+  standalone: true,
+  imports: [CommonModule, TableModule],
   template: `<p-table
     #table
     [columns]="cols"
@@ -33,7 +36,7 @@ import { TableLazyLoadEvent } from 'primeng/table';
         </th>
       </tr>
       <tr>
-        <th *ngFor="let col of columns" [ngSwitch]="col.field">
+        <th *ngFor="let col of columns">
           <input
             *ngIf="col.filter"
             pInputText
@@ -45,7 +48,7 @@ import { TableLazyLoadEvent } from 'primeng/table';
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
       <tr>
-        <td *ngFor="let col of columns" [ngSwitch]="col.field">
+        <td *ngFor="let col of columns">
           <span>{{ rowData[col.field] }}</span>
         </td>
       </tr>

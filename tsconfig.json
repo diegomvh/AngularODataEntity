@@ -4,12 +4,10 @@
   "compilerOptions": {
     "paths": {
       "angular-odata": [
-        "./projects/angular-odata/dist/angular-odata/angular-odata",
         "./projects/angular-odata/dist/angular-odata"
       ]
     },
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,

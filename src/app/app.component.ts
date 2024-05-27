@@ -1,30 +1,37 @@
 import { Component } from '@angular/core';
-import {
-  ODataServiceFactory,
-  ODataClient,
-  ODataEntitySetResource,
-} from 'angular-odata';
-import {
-  PeopleService,
-  Airport,
-  Person,
-  PersonGender,
-  Photo,
-  PhotosService,
-  PersonGenderConfig,
-  PersonCollection,
-  PersonModel,
-} from './trippin';
-import { OrdersService, ProductCollection } from './northwind';
-import { filter, switchMap, map } from 'rxjs/operators';
-import { firstValueFrom, forkJoin } from 'rxjs';
-import { DefaultContainerService } from './trippin';
-import { ProductsService } from './north3';
+import { RouterOutlet } from '@angular/router';
+import { ODataClient, ODataEntitySetResource, ODataServiceFactory } from 'angular-odata';
+import { Airport, DefaultContainerService, PeopleService, Person, PersonCollection, PersonGender, PersonGenderConfig, PersonModel, Photo, PhotosService, TripPinModule } from './trippin';
+import { North2Module, ProductCollection, ProductsService } from './north2';
+import { NorthwindModule, OrdersService } from './northwind';
+import { filter, firstValueFrom, forkJoin, map, switchMap } from 'rxjs';
+import { TabViewModule } from 'primeng/tabview';
+import { AirlinesComponent, AirportsComponent, PeopleComponent } from './components/trippin';
+import { CategoriesComponent, EmployeesComponent, OrdersComponent, ProductsComponent } from './components/northwind';
+import { North3Module } from './north3';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    TableModule,
+    TabViewModule,
+    TripPinModule,
+    NorthwindModule,
+    North2Module,
+    North3Module,
+    AirlinesComponent,
+    AirportsComponent,
+    PeopleComponent,
+    CategoriesComponent,
+    ProductsComponent,
+    OrdersComponent,
+    EmployeesComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   constructor(

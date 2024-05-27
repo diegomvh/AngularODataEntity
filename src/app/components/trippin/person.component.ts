@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { PeopleService, Person, PhotosService } from '../../trippin';
+import { DialogModule } from 'primeng/dialog';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'trip-person',
+  standalone: true,
+  imports: [CommonModule, DialogModule],
   template: `<p-dialog [(visible)]="display">
     {{ person | json }}
   </p-dialog>`,
@@ -17,15 +21,17 @@ export class PersonComponent {
     this.people
       .entity({ UserName: name })
       .query((q) =>
-        q.expand({
-          Photo: {},
-          Friends: { expand: { Emails: {} }, levels: 10 },
-          Trips: {
-            orderBy: ['Photos'],
-            //orderBy: [['Name', 'desc']],
-            expand: { Photos: {}, PlanItems: {} },
-          },
-        })
+        q.expand(({e, t}) => e()
+          .field(t.Photo)
+          .field(t.Friends, f => {
+            f.expand(({e, t}) => e().field(t.Emails)); 
+            f.levels(10);
+          })
+          .field(t.Trips, f => {
+            f.expand(({e, t}) => e().field(t.Photos).field(t.PlanItems));
+            f.orderBy(({e, t}) => e().ascending(t.Photos))
+          })
+        )
       )
       .fetch()
       .subscribe(({ entity, annots }) => {
