@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,22 +25,28 @@ export class AirlineModel<E extends Airline> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   AirlineCode!: string;
-  public $AirlineCode() {
+  public $$AirlineCode() {
     return this.property<string>('AirlineCode');
   }
-  public getAirlineCode(options?: ODataOptions) {
-    return this.getValue<string>('AirlineCode', options) as Observable<string>;
+  public $AirlineCode() {
+    return this.getAttribute<string>('AirlineCode') as string;
   }
   
+  public AirlineCode$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('AirlineCode', options) as Observable<string>;
+  }
   @ModelField()
   Name!: string;
-  public $Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: ODataOptions) {
-    return this.getValue<string>('Name', options) as Observable<string>;
+  public $Name() {
+    return this.getAttribute<string>('Name') as string;
   }
   
+  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Name', options) as Observable<string>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

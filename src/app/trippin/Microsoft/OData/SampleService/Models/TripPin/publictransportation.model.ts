@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -24,13 +26,16 @@ export class PublicTransportationModel<E extends PublicTransportation> extends P
   //#region ODataApiGen Properties
   @ModelField()
   SeatNumber?: string;
-  public $SeatNumber() {
+  public $$SeatNumber() {
     return this.property<string>('SeatNumber');
   }
-  public getSeatNumber(options?: ODataOptions) {
-    return this.getValue<string>('SeatNumber', options) as Observable<string>;
+  public $SeatNumber() {
+    return this.getAttribute<string>('SeatNumber') as string;
   }
   
+  public SeatNumber$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('SeatNumber', options) as Observable<string>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

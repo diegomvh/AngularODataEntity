@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -42,116 +44,146 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   UserName!: string;
-  public $UserName() {
+  public $$UserName() {
     return this.property<string>('UserName');
   }
-  public getUserName(options?: ODataOptions) {
-    return this.getValue<string>('UserName', options) as Observable<string>;
+  public $UserName() {
+    return this.getAttribute<string>('UserName') as string;
   }
   
+  public UserName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('UserName', options) as Observable<string>;
+  }
   @ModelField()
   FirstName!: string;
-  public $FirstName() {
+  public $$FirstName() {
     return this.property<string>('FirstName');
   }
-  public getFirstName(options?: ODataOptions) {
-    return this.getValue<string>('FirstName', options) as Observable<string>;
+  public $FirstName() {
+    return this.getAttribute<string>('FirstName') as string;
   }
   
+  public FirstName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('FirstName', options) as Observable<string>;
+  }
   @ModelField()
   LastName!: string;
-  public $LastName() {
+  public $$LastName() {
     return this.property<string>('LastName');
   }
-  public getLastName(options?: ODataOptions) {
-    return this.getValue<string>('LastName', options) as Observable<string>;
+  public $LastName() {
+    return this.getAttribute<string>('LastName') as string;
   }
   
+  public LastName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('LastName', options) as Observable<string>;
+  }
   @ModelField()
   Emails?: string[];
-  public $Emails() {
+  public $$Emails() {
     return this.property<string[]>('Emails');
   }
-  public getEmails(options?: ODataOptions) {
-    return this.getValue<string[]>('Emails', options) as Observable<string[]>;
+  public $Emails() {
+    return this.getAttribute<string[]>('Emails') as string[];
   }
   
+  public Emails$(options?: ODataQueryArgumentsOptions<string[]>) {
+    return this.fetchAttribute<string[]>('Emails', options) as Observable<string[]>;
+  }
   @ModelField()
   AddressInfo?: LocationCollection<Location, LocationModel<Location>>;
-  public $AddressInfo() {
+  public $$AddressInfo() {
     return this.property<LocationCollection<Location, LocationModel<Location>>>('AddressInfo');
   }
-  public getAddressInfo(options?: ODataOptions) {
-    return this.getValue<LocationCollection<Location, LocationModel<Location>>>('AddressInfo', options) as Observable<LocationCollection<Location, LocationModel<Location>>>;
+  public $AddressInfo() {
+    return this.getAttribute<LocationCollection<Location, LocationModel<Location>>>('AddressInfo') as LocationCollection<Location, LocationModel<Location>>;
   }
   
+  public AddressInfo$(options?: ODataQueryArgumentsOptions<LocationCollection<Location, LocationModel<Location>>>) {
+    return this.fetchAttribute<LocationCollection<Location, LocationModel<Location>>>('AddressInfo', options) as Observable<LocationCollection<Location, LocationModel<Location>>>;
+  }
   @ModelField()
   Gender?: PersonGender;
-  public $Gender() {
+  public $$Gender() {
     return this.property<PersonGender>('Gender');
   }
-  public getGender(options?: ODataOptions) {
-    return this.getValue<PersonGender>('Gender', options) as Observable<PersonGender>;
+  public $Gender() {
+    return this.getAttribute<PersonGender>('Gender') as PersonGender;
   }
   
+  public Gender$(options?: ODataQueryArgumentsOptions<PersonGender>) {
+    return this.fetchAttribute<PersonGender>('Gender', options) as Observable<PersonGender>;
+  }
   @ModelField()
   Concurrency!: number;
-  public $Concurrency() {
+  public $$Concurrency() {
     return this.property<number>('Concurrency');
   }
-  public getConcurrency(options?: ODataOptions) {
-    return this.getValue<number>('Concurrency', options) as Observable<number>;
+  public $Concurrency() {
+    return this.getAttribute<number>('Concurrency') as number;
   }
   
+  public Concurrency$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('Concurrency', options) as Observable<number>;
+  }
   @ModelField()
   Friends?: PersonCollection<Person, PersonModel<Person>>;
-  public $Friends() {
+  public $$Friends() {
     return this.navigationProperty<Person>('Friends');
   }
-  public getFriends() {
-    return this.getReference<Person>('Friends') as PersonCollection<Person, PersonModel<Person>>;
+  public $Friends() {
+    return this.getAttribute<Person>('Friends') as PersonCollection<Person, PersonModel<Person>>;
   }
-  public setFriends(model: PersonCollection<Person, PersonModel<Person>> | null, options?: ODataOptions) {
+  public Friends$$(model: PersonCollection<Person, PersonModel<Person>> | null, options?: ODataOptions) {
     return this.setReference<Person>('Friends', model, options);
   }
+  public Friends$(options?: ODataQueryArgumentsOptions<Person>) {
+      return this.fetchAttribute<Person>('Friends', options) as Observable<PersonCollection<Person, PersonModel<Person>>>;
+    }
   @ModelField()
   Trips?: TripCollection<Trip, TripModel<Trip>>;
-  public $Trips() {
+  public $$Trips() {
     return this.navigationProperty<Trip>('Trips');
   }
-  public getTrips() {
-    return this.getReference<Trip>('Trips') as TripCollection<Trip, TripModel<Trip>>;
+  public $Trips() {
+    return this.getAttribute<Trip>('Trips') as TripCollection<Trip, TripModel<Trip>>;
   }
-  public setTrips(model: TripCollection<Trip, TripModel<Trip>> | null, options?: ODataOptions) {
+  public Trips$$(model: TripCollection<Trip, TripModel<Trip>> | null, options?: ODataOptions) {
     return this.setReference<Trip>('Trips', model, options);
   }
+  public Trips$(options?: ODataQueryArgumentsOptions<Trip>) {
+      return this.fetchAttribute<Trip>('Trips', options) as Observable<TripCollection<Trip, TripModel<Trip>>>;
+    }
   @ModelField()
   Photo?: PhotoModel<Photo>;
-  public $Photo() {
+  public $$Photo() {
     return this.navigationProperty<Photo>('Photo');
   }
-  public getPhoto() {
-    return this.getReference<Photo>('Photo') as PhotoModel<Photo>;
+  public $Photo() {
+    return this.getAttribute<Photo>('Photo') as PhotoModel<Photo>;
   }
-  public setPhoto(model: PhotoModel<Photo> | null, options?: ODataOptions) {
+  public Photo$$(model: PhotoModel<Photo> | null, options?: ODataOptions) {
     return this.setReference<Photo>('Photo', model, options);
   }
+  public Photo$(options?: ODataQueryArgumentsOptions<Photo>) {
+      return this.fetchAttribute<Photo>('Photo', options) as Observable<PhotoModel<Photo>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion
   //#region ODataApiGen Functions
   //#endregion
   //#region ODataApiGen Navigations
-  public airline(options?: ODataQueryArgumentsOptions<Airline>) {
+  public asFlightAirline(options?: ODataQueryArgumentsOptions<Airline>) {
     return this.fetchNavigationProperty<Airline>('Microsoft.OData.SampleService.Models.TripPin.Flight/Airline', 'model', options) as Observable<ODataModel<Airline>>;
   }
-  public from(options?: ODataQueryArgumentsOptions<Airport>) {
+  public asFlightFrom(options?: ODataQueryArgumentsOptions<Airport>) {
     return this.fetchNavigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/From', 'model', options) as Observable<ODataModel<Airport>>;
   }
-  public to(options?: ODataQueryArgumentsOptions<Airport>) {
+  public asFlightTo(options?: ODataQueryArgumentsOptions<Airport>) {
     return this.fetchNavigationProperty<Airport>('Microsoft.OData.SampleService.Models.TripPin.Flight/To', 'model', options) as Observable<ODataModel<Airport>>;
   }
-  public photos(options?: ODataQueryArgumentsOptions<Photo>) {
+  public asTripPhotos(options?: ODataQueryArgumentsOptions<Photo>) {
     return this.fetchNavigationProperty<Photo>('Microsoft.OData.SampleService.Models.TripPin.Trip/Photos', 'collection', options) as Observable<ODataCollection<Photo, ODataModel<Photo>>>;
   }
   //#endregion

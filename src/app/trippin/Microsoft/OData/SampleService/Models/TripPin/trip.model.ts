@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -29,98 +31,128 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   TripId!: number;
-  public $TripId() {
+  public $$TripId() {
     return this.property<number>('TripId');
   }
-  public getTripId(options?: ODataOptions) {
-    return this.getValue<number>('TripId', options) as Observable<number>;
+  public $TripId() {
+    return this.getAttribute<number>('TripId') as number;
   }
   
+  public TripId$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('TripId', options) as Observable<number>;
+  }
   @ModelField()
   ShareId?: string;
-  public $ShareId() {
+  public $$ShareId() {
     return this.property<string>('ShareId');
   }
-  public getShareId(options?: ODataOptions) {
-    return this.getValue<string>('ShareId', options) as Observable<string>;
+  public $ShareId() {
+    return this.getAttribute<string>('ShareId') as string;
   }
   
+  public ShareId$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ShareId', options) as Observable<string>;
+  }
   @ModelField()
   Description?: string;
-  public $Description() {
+  public $$Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: ODataOptions) {
-    return this.getValue<string>('Description', options) as Observable<string>;
+  public $Description() {
+    return this.getAttribute<string>('Description') as string;
   }
   
+  public Description$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Description', options) as Observable<string>;
+  }
   @ModelField()
   Name!: string;
-  public $Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: ODataOptions) {
-    return this.getValue<string>('Name', options) as Observable<string>;
+  public $Name() {
+    return this.getAttribute<string>('Name') as string;
   }
   
+  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Name', options) as Observable<string>;
+  }
   @ModelField()
   Budget!: number;
-  public $Budget() {
+  public $$Budget() {
     return this.property<number>('Budget');
   }
-  public getBudget(options?: ODataOptions) {
-    return this.getValue<number>('Budget', options) as Observable<number>;
+  public $Budget() {
+    return this.getAttribute<number>('Budget') as number;
   }
   
+  public Budget$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('Budget', options) as Observable<number>;
+  }
   @ModelField()
   StartsAt!: Date;
-  public $StartsAt() {
+  public $$StartsAt() {
     return this.property<Date>('StartsAt');
   }
-  public getStartsAt(options?: ODataOptions) {
-    return this.getValue<Date>('StartsAt', options) as Observable<Date>;
+  public $StartsAt() {
+    return this.getAttribute<Date>('StartsAt') as Date;
   }
   
+  public StartsAt$(options?: ODataQueryArgumentsOptions<Date>) {
+    return this.fetchAttribute<Date>('StartsAt', options) as Observable<Date>;
+  }
   @ModelField()
   EndsAt!: Date;
-  public $EndsAt() {
+  public $$EndsAt() {
     return this.property<Date>('EndsAt');
   }
-  public getEndsAt(options?: ODataOptions) {
-    return this.getValue<Date>('EndsAt', options) as Observable<Date>;
+  public $EndsAt() {
+    return this.getAttribute<Date>('EndsAt') as Date;
   }
   
+  public EndsAt$(options?: ODataQueryArgumentsOptions<Date>) {
+    return this.fetchAttribute<Date>('EndsAt', options) as Observable<Date>;
+  }
   @ModelField()
   Tags!: string[];
-  public $Tags() {
+  public $$Tags() {
     return this.property<string[]>('Tags');
   }
-  public getTags(options?: ODataOptions) {
-    return this.getValue<string[]>('Tags', options) as Observable<string[]>;
+  public $Tags() {
+    return this.getAttribute<string[]>('Tags') as string[];
   }
   
+  public Tags$(options?: ODataQueryArgumentsOptions<string[]>) {
+    return this.fetchAttribute<string[]>('Tags', options) as Observable<string[]>;
+  }
   @ModelField()
   Photos?: PhotoCollection<Photo, PhotoModel<Photo>>;
-  public $Photos() {
+  public $$Photos() {
     return this.navigationProperty<Photo>('Photos');
   }
-  public getPhotos() {
-    return this.getReference<Photo>('Photos') as PhotoCollection<Photo, PhotoModel<Photo>>;
+  public $Photos() {
+    return this.getAttribute<Photo>('Photos') as PhotoCollection<Photo, PhotoModel<Photo>>;
   }
-  public setPhotos(model: PhotoCollection<Photo, PhotoModel<Photo>> | null, options?: ODataOptions) {
+  public Photos$$(model: PhotoCollection<Photo, PhotoModel<Photo>> | null, options?: ODataOptions) {
     return this.setReference<Photo>('Photos', model, options);
   }
+  public Photos$(options?: ODataQueryArgumentsOptions<Photo>) {
+      return this.fetchAttribute<Photo>('Photos', options) as Observable<PhotoCollection<Photo, PhotoModel<Photo>>>;
+    }
   @ModelField()
   PlanItems?: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>;
-  public $PlanItems() {
+  public $$PlanItems() {
     return this.navigationProperty<PlanItem>('PlanItems');
   }
-  public getPlanItems() {
-    return this.getReference<PlanItem>('PlanItems') as PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>;
+  public $PlanItems() {
+    return this.getAttribute<PlanItem>('PlanItems') as PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>;
   }
-  public setPlanItems(model: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>> | null, options?: ODataOptions) {
+  public PlanItems$$(model: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>> | null, options?: ODataOptions) {
     return this.setReference<PlanItem>('PlanItems', model, options);
   }
+  public PlanItems$(options?: ODataQueryArgumentsOptions<PlanItem>) {
+      return this.fetchAttribute<PlanItem>('PlanItems', options) as Observable<PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

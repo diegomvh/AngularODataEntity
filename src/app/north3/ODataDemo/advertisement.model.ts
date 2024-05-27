@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -26,42 +28,54 @@ export class AdvertisementModel<E extends Advertisement> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   ID!: string;
-  public $ID() {
+  public $$ID() {
     return this.property<string>('ID');
   }
-  public getID(options?: ODataOptions) {
-    return this.getValue<string>('ID', options) as Observable<string>;
+  public $ID() {
+    return this.getAttribute<string>('ID') as string;
   }
   
+  public ID$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ID', options) as Observable<string>;
+  }
   @ModelField()
   Name?: string;
-  public $Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: ODataOptions) {
-    return this.getValue<string>('Name', options) as Observable<string>;
+  public $Name() {
+    return this.getAttribute<string>('Name') as string;
   }
   
+  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Name', options) as Observable<string>;
+  }
   @ModelField()
   AirDate!: any;
-  public $AirDate() {
+  public $$AirDate() {
     return this.property<any>('AirDate');
   }
-  public getAirDate(options?: ODataOptions) {
-    return this.getValue<any>('AirDate', options) as Observable<any>;
+  public $AirDate() {
+    return this.getAttribute<any>('AirDate') as any;
   }
   
+  public AirDate$(options?: ODataQueryArgumentsOptions<any>) {
+    return this.fetchAttribute<any>('AirDate', options) as Observable<any>;
+  }
   @ModelField()
   FeaturedProduct?: FeaturedProductModel<FeaturedProduct>;
-  public $FeaturedProduct() {
+  public $$FeaturedProduct() {
     return this.navigationProperty<FeaturedProduct>('FeaturedProduct');
   }
-  public getFeaturedProduct() {
-    return this.getReference<FeaturedProduct>('FeaturedProduct') as FeaturedProductModel<FeaturedProduct>;
+  public $FeaturedProduct() {
+    return this.getAttribute<FeaturedProduct>('FeaturedProduct') as FeaturedProductModel<FeaturedProduct>;
   }
-  public setFeaturedProduct(model: FeaturedProductModel<FeaturedProduct> | null, options?: ODataOptions) {
+  public FeaturedProduct$$(model: FeaturedProductModel<FeaturedProduct> | null, options?: ODataOptions) {
     return this.setReference<FeaturedProduct>('FeaturedProduct', model, options);
   }
+  public FeaturedProduct$(options?: ODataQueryArgumentsOptions<FeaturedProduct>) {
+      return this.fetchAttribute<FeaturedProduct>('FeaturedProduct', options) as Observable<FeaturedProductModel<FeaturedProduct>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

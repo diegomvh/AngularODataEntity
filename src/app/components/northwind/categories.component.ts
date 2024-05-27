@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
-import { LazyLoadEvent } from 'primeng/api';
-import { Category, CategoriesService } from 'src/app/northwind';
+import { Category, CategoriesService } from '../../northwind';
+import { TableLazyLoadEvent } from 'primeng/table';
 
 @Component({
   selector: 'northwind-categories',
@@ -106,7 +106,7 @@ export class CategoriesComponent {
     this.fetch(this.resource);
   }
 
-  loadCategoriesLazy(event: LazyLoadEvent) {
+  loadCategoriesLazy(event: TableLazyLoadEvent) {
     //Pagination
     let resource = this.resource.clone().query((q) => {
       if (event.first) q.skip(event.first);

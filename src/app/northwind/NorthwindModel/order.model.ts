@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -35,174 +37,228 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   OrderID!: number;
-  public $OrderID() {
+  public $$OrderID() {
     return this.property<number>('OrderID');
   }
-  public getOrderID(options?: ODataOptions) {
-    return this.getValue<number>('OrderID', options) as Observable<number>;
+  public $OrderID() {
+    return this.getAttribute<number>('OrderID') as number;
   }
   
+  public OrderID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('OrderID', options) as Observable<number>;
+  }
   @ModelField()
   CustomerID?: string;
-  public $CustomerID() {
+  public $$CustomerID() {
     return this.property<string>('CustomerID');
   }
-  public getCustomerID(options?: ODataOptions) {
-    return this.getValue<string>('CustomerID', options) as Observable<string>;
+  public $CustomerID() {
+    return this.getAttribute<string>('CustomerID') as string;
   }
   
+  public CustomerID$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('CustomerID', options) as Observable<string>;
+  }
   @ModelField()
   EmployeeID?: number;
-  public $EmployeeID() {
+  public $$EmployeeID() {
     return this.property<number>('EmployeeID');
   }
-  public getEmployeeID(options?: ODataOptions) {
-    return this.getValue<number>('EmployeeID', options) as Observable<number>;
+  public $EmployeeID() {
+    return this.getAttribute<number>('EmployeeID') as number;
   }
   
+  public EmployeeID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('EmployeeID', options) as Observable<number>;
+  }
   @ModelField()
   OrderDate?: Date;
-  public $OrderDate() {
+  public $$OrderDate() {
     return this.property<Date>('OrderDate');
   }
-  public getOrderDate(options?: ODataOptions) {
-    return this.getValue<Date>('OrderDate', options) as Observable<Date>;
+  public $OrderDate() {
+    return this.getAttribute<Date>('OrderDate') as Date;
   }
   
+  public OrderDate$(options?: ODataQueryArgumentsOptions<Date>) {
+    return this.fetchAttribute<Date>('OrderDate', options) as Observable<Date>;
+  }
   @ModelField()
   RequiredDate?: Date;
-  public $RequiredDate() {
+  public $$RequiredDate() {
     return this.property<Date>('RequiredDate');
   }
-  public getRequiredDate(options?: ODataOptions) {
-    return this.getValue<Date>('RequiredDate', options) as Observable<Date>;
+  public $RequiredDate() {
+    return this.getAttribute<Date>('RequiredDate') as Date;
   }
   
+  public RequiredDate$(options?: ODataQueryArgumentsOptions<Date>) {
+    return this.fetchAttribute<Date>('RequiredDate', options) as Observable<Date>;
+  }
   @ModelField()
   ShippedDate?: Date;
-  public $ShippedDate() {
+  public $$ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
-  public getShippedDate(options?: ODataOptions) {
-    return this.getValue<Date>('ShippedDate', options) as Observable<Date>;
+  public $ShippedDate() {
+    return this.getAttribute<Date>('ShippedDate') as Date;
   }
   
+  public ShippedDate$(options?: ODataQueryArgumentsOptions<Date>) {
+    return this.fetchAttribute<Date>('ShippedDate', options) as Observable<Date>;
+  }
   @ModelField()
   ShipVia?: number;
-  public $ShipVia() {
+  public $$ShipVia() {
     return this.property<number>('ShipVia');
   }
-  public getShipVia(options?: ODataOptions) {
-    return this.getValue<number>('ShipVia', options) as Observable<number>;
+  public $ShipVia() {
+    return this.getAttribute<number>('ShipVia') as number;
   }
   
+  public ShipVia$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('ShipVia', options) as Observable<number>;
+  }
   @ModelField()
   Freight?: number;
-  public $Freight() {
+  public $$Freight() {
     return this.property<number>('Freight');
   }
-  public getFreight(options?: ODataOptions) {
-    return this.getValue<number>('Freight', options) as Observable<number>;
+  public $Freight() {
+    return this.getAttribute<number>('Freight') as number;
   }
   
+  public Freight$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('Freight', options) as Observable<number>;
+  }
   @ModelField()
   ShipName?: string;
-  public $ShipName() {
+  public $$ShipName() {
     return this.property<string>('ShipName');
   }
-  public getShipName(options?: ODataOptions) {
-    return this.getValue<string>('ShipName', options) as Observable<string>;
+  public $ShipName() {
+    return this.getAttribute<string>('ShipName') as string;
   }
   
+  public ShipName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ShipName', options) as Observable<string>;
+  }
   @ModelField()
   ShipAddress?: string;
-  public $ShipAddress() {
+  public $$ShipAddress() {
     return this.property<string>('ShipAddress');
   }
-  public getShipAddress(options?: ODataOptions) {
-    return this.getValue<string>('ShipAddress', options) as Observable<string>;
+  public $ShipAddress() {
+    return this.getAttribute<string>('ShipAddress') as string;
   }
   
+  public ShipAddress$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ShipAddress', options) as Observable<string>;
+  }
   @ModelField()
   ShipCity?: string;
-  public $ShipCity() {
+  public $$ShipCity() {
     return this.property<string>('ShipCity');
   }
-  public getShipCity(options?: ODataOptions) {
-    return this.getValue<string>('ShipCity', options) as Observable<string>;
+  public $ShipCity() {
+    return this.getAttribute<string>('ShipCity') as string;
   }
   
+  public ShipCity$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ShipCity', options) as Observable<string>;
+  }
   @ModelField()
   ShipRegion?: string;
-  public $ShipRegion() {
+  public $$ShipRegion() {
     return this.property<string>('ShipRegion');
   }
-  public getShipRegion(options?: ODataOptions) {
-    return this.getValue<string>('ShipRegion', options) as Observable<string>;
+  public $ShipRegion() {
+    return this.getAttribute<string>('ShipRegion') as string;
   }
   
+  public ShipRegion$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ShipRegion', options) as Observable<string>;
+  }
   @ModelField()
   ShipPostalCode?: string;
-  public $ShipPostalCode() {
+  public $$ShipPostalCode() {
     return this.property<string>('ShipPostalCode');
   }
-  public getShipPostalCode(options?: ODataOptions) {
-    return this.getValue<string>('ShipPostalCode', options) as Observable<string>;
+  public $ShipPostalCode() {
+    return this.getAttribute<string>('ShipPostalCode') as string;
   }
   
+  public ShipPostalCode$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ShipPostalCode', options) as Observable<string>;
+  }
   @ModelField()
   ShipCountry?: string;
-  public $ShipCountry() {
+  public $$ShipCountry() {
     return this.property<string>('ShipCountry');
   }
-  public getShipCountry(options?: ODataOptions) {
-    return this.getValue<string>('ShipCountry', options) as Observable<string>;
+  public $ShipCountry() {
+    return this.getAttribute<string>('ShipCountry') as string;
   }
   
+  public ShipCountry$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ShipCountry', options) as Observable<string>;
+  }
   @ModelField()
   Customer?: CustomerModel<Customer>;
-  public $Customer() {
+  public $$Customer() {
     return this.navigationProperty<Customer>('Customer');
   }
-  public getCustomer() {
-    return this.getReference<Customer>('Customer') as CustomerModel<Customer>;
+  public $Customer() {
+    return this.getAttribute<Customer>('Customer') as CustomerModel<Customer>;
   }
-  public setCustomer(model: CustomerModel<Customer> | null, options?: ODataOptions) {
+  public Customer$$(model: CustomerModel<Customer> | null, options?: ODataOptions) {
     return this.setReference<Customer>('Customer', model, options);
   }
+  public Customer$(options?: ODataQueryArgumentsOptions<Customer>) {
+      return this.fetchAttribute<Customer>('Customer', options) as Observable<CustomerModel<Customer>>;
+    }
   @ModelField()
   Employee?: EmployeeModel<Employee>;
-  public $Employee() {
+  public $$Employee() {
     return this.navigationProperty<Employee>('Employee');
   }
-  public getEmployee() {
-    return this.getReference<Employee>('Employee') as EmployeeModel<Employee>;
+  public $Employee() {
+    return this.getAttribute<Employee>('Employee') as EmployeeModel<Employee>;
   }
-  public setEmployee(model: EmployeeModel<Employee> | null, options?: ODataOptions) {
+  public Employee$$(model: EmployeeModel<Employee> | null, options?: ODataOptions) {
     return this.setReference<Employee>('Employee', model, options);
   }
+  public Employee$(options?: ODataQueryArgumentsOptions<Employee>) {
+      return this.fetchAttribute<Employee>('Employee', options) as Observable<EmployeeModel<Employee>>;
+    }
   @ModelField()
   Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
-  public $Order_Details() {
+  public $$Order_Details() {
     return this.navigationProperty<OrderDetail>('Order_Details');
   }
-  public getOrder_Details() {
-    return this.getReference<OrderDetail>('Order_Details') as OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
+  public $Order_Details() {
+    return this.getAttribute<OrderDetail>('Order_Details') as OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
   }
-  public setOrder_Details(model: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>> | null, options?: ODataOptions) {
+  public Order_Details$$(model: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>> | null, options?: ODataOptions) {
     return this.setReference<OrderDetail>('Order_Details', model, options);
   }
+  public Order_Details$(options?: ODataQueryArgumentsOptions<OrderDetail>) {
+      return this.fetchAttribute<OrderDetail>('Order_Details', options) as Observable<OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>>;
+    }
   @ModelField()
   Shipper?: ShipperModel<Shipper>;
-  public $Shipper() {
+  public $$Shipper() {
     return this.navigationProperty<Shipper>('Shipper');
   }
-  public getShipper() {
-    return this.getReference<Shipper>('Shipper') as ShipperModel<Shipper>;
+  public $Shipper() {
+    return this.getAttribute<Shipper>('Shipper') as ShipperModel<Shipper>;
   }
-  public setShipper(model: ShipperModel<Shipper> | null, options?: ODataOptions) {
+  public Shipper$$(model: ShipperModel<Shipper> | null, options?: ODataOptions) {
     return this.setReference<Shipper>('Shipper', model, options);
   }
+  public Shipper$(options?: ODataQueryArgumentsOptions<Shipper>) {
+      return this.fetchAttribute<Shipper>('Shipper', options) as Observable<ShipperModel<Shipper>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

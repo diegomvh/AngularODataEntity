@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -29,71 +31,92 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   OrderID!: number;
-  public $OrderID() {
+  public $$OrderID() {
     return this.property<number>('OrderID');
   }
-  public getOrderID(options?: ODataOptions) {
-    return this.getValue<number>('OrderID', options) as Observable<number>;
+  public $OrderID() {
+    return this.getAttribute<number>('OrderID') as number;
   }
   
+  public OrderID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('OrderID', options) as Observable<number>;
+  }
   @ModelField()
   ProductID!: number;
-  public $ProductID() {
+  public $$ProductID() {
     return this.property<number>('ProductID');
   }
-  public getProductID(options?: ODataOptions) {
-    return this.getValue<number>('ProductID', options) as Observable<number>;
+  public $ProductID() {
+    return this.getAttribute<number>('ProductID') as number;
   }
   
+  public ProductID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('ProductID', options) as Observable<number>;
+  }
   @ModelField()
   UnitPrice!: number;
-  public $UnitPrice() {
+  public $$UnitPrice() {
     return this.property<number>('UnitPrice');
   }
-  public getUnitPrice(options?: ODataOptions) {
-    return this.getValue<number>('UnitPrice', options) as Observable<number>;
+  public $UnitPrice() {
+    return this.getAttribute<number>('UnitPrice') as number;
   }
   
+  public UnitPrice$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('UnitPrice', options) as Observable<number>;
+  }
   @ModelField()
   Quantity!: number;
-  public $Quantity() {
+  public $$Quantity() {
     return this.property<number>('Quantity');
   }
-  public getQuantity(options?: ODataOptions) {
-    return this.getValue<number>('Quantity', options) as Observable<number>;
+  public $Quantity() {
+    return this.getAttribute<number>('Quantity') as number;
   }
   
+  public Quantity$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('Quantity', options) as Observable<number>;
+  }
   @ModelField()
   Discount!: number;
-  public $Discount() {
+  public $$Discount() {
     return this.property<number>('Discount');
   }
-  public getDiscount(options?: ODataOptions) {
-    return this.getValue<number>('Discount', options) as Observable<number>;
+  public $Discount() {
+    return this.getAttribute<number>('Discount') as number;
   }
   
+  public Discount$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('Discount', options) as Observable<number>;
+  }
   @ModelField()
   Order?: OrderModel<Order>;
-  public $Order() {
+  public $$Order() {
     return this.navigationProperty<Order>('Order');
   }
-  public getOrder() {
-    return this.getReference<Order>('Order') as OrderModel<Order>;
+  public $Order() {
+    return this.getAttribute<Order>('Order') as OrderModel<Order>;
   }
-  public setOrder(model: OrderModel<Order> | null, options?: ODataOptions) {
+  public Order$$(model: OrderModel<Order> | null, options?: ODataOptions) {
     return this.setReference<Order>('Order', model, options);
   }
+  public Order$(options?: ODataQueryArgumentsOptions<Order>) {
+      return this.fetchAttribute<Order>('Order', options) as Observable<OrderModel<Order>>;
+    }
   @ModelField()
   Product?: ProductModel<Product>;
-  public $Product() {
+  public $$Product() {
     return this.navigationProperty<Product>('Product');
   }
-  public getProduct() {
-    return this.getReference<Product>('Product') as ProductModel<Product>;
+  public $Product() {
+    return this.getAttribute<Product>('Product') as ProductModel<Product>;
   }
-  public setProduct(model: ProductModel<Product> | null, options?: ODataOptions) {
+  public Product$$(model: ProductModel<Product> | null, options?: ODataOptions) {
     return this.setReference<Product>('Product', model, options);
   }
+  public Product$(options?: ODataQueryArgumentsOptions<Product>) {
+      return this.fetchAttribute<Product>('Product', options) as Observable<ProductModel<Product>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

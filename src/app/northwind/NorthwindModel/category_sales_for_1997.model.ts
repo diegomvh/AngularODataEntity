@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,22 +25,28 @@ export class CategorySalesFor1997Model<E extends CategorySalesFor1997> extends O
   //#region ODataApiGen Properties
   @ModelField()
   CategoryName!: string;
-  public $CategoryName() {
+  public $$CategoryName() {
     return this.property<string>('CategoryName');
   }
-  public getCategoryName(options?: ODataOptions) {
-    return this.getValue<string>('CategoryName', options) as Observable<string>;
+  public $CategoryName() {
+    return this.getAttribute<string>('CategoryName') as string;
   }
   
+  public CategoryName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('CategoryName', options) as Observable<string>;
+  }
   @ModelField()
   CategorySales?: number;
-  public $CategorySales() {
+  public $$CategorySales() {
     return this.property<number>('CategorySales');
   }
-  public getCategorySales(options?: ODataOptions) {
-    return this.getValue<number>('CategorySales', options) as Observable<number>;
+  public $CategorySales() {
+    return this.getAttribute<number>('CategorySales') as number;
   }
   
+  public CategorySales$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('CategorySales', options) as Observable<number>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

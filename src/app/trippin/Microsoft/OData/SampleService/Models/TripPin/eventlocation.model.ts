@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -24,13 +26,16 @@ export class EventLocationModel<E extends EventLocation> extends LocationModel<E
   //#region ODataApiGen Properties
   @ModelField()
   BuildingInfo?: string;
-  public $BuildingInfo() {
+  public $$BuildingInfo() {
     return this.property<string>('BuildingInfo');
   }
-  public getBuildingInfo(options?: ODataOptions) {
-    return this.getValue<string>('BuildingInfo', options) as Observable<string>;
+  public $BuildingInfo() {
+    return this.getAttribute<string>('BuildingInfo') as string;
   }
   
+  public BuildingInfo$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('BuildingInfo', options) as Observable<string>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

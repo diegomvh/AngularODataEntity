@@ -12,18 +12,14 @@ import { TripPinConfig, TripPinModule } from './trippin';
 import { NorthwindConfig, NorthwindModule } from './northwind';
 import { North2Config, North2Module } from './north2';
 import { North3Config, North3Module } from './north3';
-import { CBSConfig, CBSModule } from './cbs';
 import { PeopleComponent, AirlinesComponent, AirportsComponent, PersonComponent } from './components/trippin';
 import { ProductsComponent, CategoriesComponent } from './components/northwind';
-import { ArticlesComponent } from './components/cbs';
 import { OrdersComponent } from './components/northwind/orders.component';
 import { EmployeesComponent } from './components/northwind/employees.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //CBS
-    ArticlesComponent,
     //TripPin
     PeopleComponent,
     AirlinesComponent,
@@ -93,14 +89,12 @@ import { EmployeesComponent } from './components/northwind/employees.component';
           }
         }
       } as ApiConfig),
-      Object.assign(CBSConfig)
       ] 
     }),
     TripPinModule,
     NorthwindModule,
     North2Module,
     North3Module,
-    CBSModule
   ],
   providers: [],
   bootstrap: [AppComponent]

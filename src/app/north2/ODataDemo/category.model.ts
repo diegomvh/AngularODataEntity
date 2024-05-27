@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -26,33 +28,42 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   ID!: number;
-  public $ID() {
+  public $$ID() {
     return this.property<number>('ID');
   }
-  public getID(options?: ODataOptions) {
-    return this.getValue<number>('ID', options) as Observable<number>;
+  public $ID() {
+    return this.getAttribute<number>('ID') as number;
   }
   
+  public ID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('ID', options) as Observable<number>;
+  }
   @ModelField()
   Name?: string;
-  public $Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: ODataOptions) {
-    return this.getValue<string>('Name', options) as Observable<string>;
+  public $Name() {
+    return this.getAttribute<string>('Name') as string;
   }
   
+  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Name', options) as Observable<string>;
+  }
   @ModelField()
   Products?: ProductCollection<Product, ProductModel<Product>>;
-  public $Products() {
+  public $$Products() {
     return this.navigationProperty<Product>('Products');
   }
-  public getProducts() {
-    return this.getReference<Product>('Products') as ProductCollection<Product, ProductModel<Product>>;
+  public $Products() {
+    return this.getAttribute<Product>('Products') as ProductCollection<Product, ProductModel<Product>>;
   }
-  public setProducts(model: ProductCollection<Product, ProductModel<Product>> | null, options?: ODataOptions) {
+  public Products$$(model: ProductCollection<Product, ProductModel<Product>> | null, options?: ODataOptions) {
     return this.setReference<Product>('Products', model, options);
   }
+  public Products$(options?: ODataQueryArgumentsOptions<Product>) {
+      return this.fetchAttribute<Product>('Products', options) as Observable<ProductCollection<Product, ProductModel<Product>>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

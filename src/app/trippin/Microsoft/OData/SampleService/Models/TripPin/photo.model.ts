@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,22 +25,28 @@ export class PhotoModel<E extends Photo> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   Id!: number;
-  public $Id() {
+  public $$Id() {
     return this.property<number>('Id');
   }
-  public getId(options?: ODataOptions) {
-    return this.getValue<number>('Id', options) as Observable<number>;
+  public $Id() {
+    return this.getAttribute<number>('Id') as number;
   }
   
+  public Id$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('Id', options) as Observable<number>;
+  }
   @ModelField()
   Name?: string;
-  public $Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: ODataOptions) {
-    return this.getValue<string>('Name', options) as Observable<string>;
+  public $Name() {
+    return this.getAttribute<string>('Name') as string;
   }
   
+  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Name', options) as Observable<string>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

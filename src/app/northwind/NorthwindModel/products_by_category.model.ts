@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,49 +25,64 @@ export class ProductsByCategoryModel<E extends ProductsByCategory> extends OData
   //#region ODataApiGen Properties
   @ModelField()
   CategoryName!: string;
-  public $CategoryName() {
+  public $$CategoryName() {
     return this.property<string>('CategoryName');
   }
-  public getCategoryName(options?: ODataOptions) {
-    return this.getValue<string>('CategoryName', options) as Observable<string>;
+  public $CategoryName() {
+    return this.getAttribute<string>('CategoryName') as string;
   }
   
+  public CategoryName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('CategoryName', options) as Observable<string>;
+  }
   @ModelField()
   ProductName!: string;
-  public $ProductName() {
+  public $$ProductName() {
     return this.property<string>('ProductName');
   }
-  public getProductName(options?: ODataOptions) {
-    return this.getValue<string>('ProductName', options) as Observable<string>;
+  public $ProductName() {
+    return this.getAttribute<string>('ProductName') as string;
   }
   
+  public ProductName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ProductName', options) as Observable<string>;
+  }
   @ModelField()
   QuantityPerUnit?: string;
-  public $QuantityPerUnit() {
+  public $$QuantityPerUnit() {
     return this.property<string>('QuantityPerUnit');
   }
-  public getQuantityPerUnit(options?: ODataOptions) {
-    return this.getValue<string>('QuantityPerUnit', options) as Observable<string>;
+  public $QuantityPerUnit() {
+    return this.getAttribute<string>('QuantityPerUnit') as string;
   }
   
+  public QuantityPerUnit$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('QuantityPerUnit', options) as Observable<string>;
+  }
   @ModelField()
   UnitsInStock?: number;
-  public $UnitsInStock() {
+  public $$UnitsInStock() {
     return this.property<number>('UnitsInStock');
   }
-  public getUnitsInStock(options?: ODataOptions) {
-    return this.getValue<number>('UnitsInStock', options) as Observable<number>;
+  public $UnitsInStock() {
+    return this.getAttribute<number>('UnitsInStock') as number;
   }
   
+  public UnitsInStock$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('UnitsInStock', options) as Observable<number>;
+  }
   @ModelField()
   Discontinued!: boolean;
-  public $Discontinued() {
+  public $$Discontinued() {
     return this.property<boolean>('Discontinued');
   }
-  public getDiscontinued(options?: ODataOptions) {
-    return this.getValue<boolean>('Discontinued', options) as Observable<boolean>;
+  public $Discontinued() {
+    return this.getAttribute<boolean>('Discontinued') as boolean;
   }
   
+  public Discontinued$(options?: ODataQueryArgumentsOptions<boolean>) {
+    return this.fetchAttribute<boolean>('Discontinued', options) as Observable<boolean>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

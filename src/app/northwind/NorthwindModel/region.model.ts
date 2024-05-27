@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -26,33 +28,42 @@ export class RegionModel<E extends Region> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   RegionID!: number;
-  public $RegionID() {
+  public $$RegionID() {
     return this.property<number>('RegionID');
   }
-  public getRegionID(options?: ODataOptions) {
-    return this.getValue<number>('RegionID', options) as Observable<number>;
+  public $RegionID() {
+    return this.getAttribute<number>('RegionID') as number;
   }
   
+  public RegionID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('RegionID', options) as Observable<number>;
+  }
   @ModelField()
   RegionDescription!: string;
-  public $RegionDescription() {
+  public $$RegionDescription() {
     return this.property<string>('RegionDescription');
   }
-  public getRegionDescription(options?: ODataOptions) {
-    return this.getValue<string>('RegionDescription', options) as Observable<string>;
+  public $RegionDescription() {
+    return this.getAttribute<string>('RegionDescription') as string;
   }
   
+  public RegionDescription$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('RegionDescription', options) as Observable<string>;
+  }
   @ModelField()
   Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
-  public $Territories() {
+  public $$Territories() {
     return this.navigationProperty<Territory>('Territories');
   }
-  public getTerritories() {
-    return this.getReference<Territory>('Territories') as TerritoryCollection<Territory, TerritoryModel<Territory>>;
+  public $Territories() {
+    return this.getAttribute<Territory>('Territories') as TerritoryCollection<Territory, TerritoryModel<Territory>>;
   }
-  public setTerritories(model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null, options?: ODataOptions) {
+  public Territories$$(model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null, options?: ODataOptions) {
     return this.setReference<Territory>('Territories', model, options);
   }
+  public Territories$(options?: ODataQueryArgumentsOptions<Territory>) {
+      return this.fetchAttribute<Territory>('Territories', options) as Observable<TerritoryCollection<Territory, TerritoryModel<Territory>>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

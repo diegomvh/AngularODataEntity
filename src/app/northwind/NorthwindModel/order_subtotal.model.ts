@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,22 +25,28 @@ export class OrderSubtotalModel<E extends OrderSubtotal> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   OrderID!: number;
-  public $OrderID() {
+  public $$OrderID() {
     return this.property<number>('OrderID');
   }
-  public getOrderID(options?: ODataOptions) {
-    return this.getValue<number>('OrderID', options) as Observable<number>;
+  public $OrderID() {
+    return this.getAttribute<number>('OrderID') as number;
   }
   
+  public OrderID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('OrderID', options) as Observable<number>;
+  }
   @ModelField()
   Subtotal?: number;
-  public $Subtotal() {
+  public $$Subtotal() {
     return this.property<number>('Subtotal');
   }
-  public getSubtotal(options?: ODataOptions) {
-    return this.getValue<number>('Subtotal', options) as Observable<number>;
+  public $Subtotal() {
+    return this.getAttribute<number>('Subtotal') as number;
   }
   
+  public Subtotal$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('Subtotal', options) as Observable<number>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

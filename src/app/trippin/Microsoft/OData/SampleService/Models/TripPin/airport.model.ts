@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -26,40 +28,52 @@ export class AirportModel<E extends Airport> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   IcaoCode!: string;
-  public $IcaoCode() {
+  public $$IcaoCode() {
     return this.property<string>('IcaoCode');
   }
-  public getIcaoCode(options?: ODataOptions) {
-    return this.getValue<string>('IcaoCode', options) as Observable<string>;
+  public $IcaoCode() {
+    return this.getAttribute<string>('IcaoCode') as string;
   }
   
+  public IcaoCode$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('IcaoCode', options) as Observable<string>;
+  }
   @ModelField()
   Name!: string;
-  public $Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: ODataOptions) {
-    return this.getValue<string>('Name', options) as Observable<string>;
+  public $Name() {
+    return this.getAttribute<string>('Name') as string;
   }
   
+  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Name', options) as Observable<string>;
+  }
   @ModelField()
   IataCode!: string;
-  public $IataCode() {
+  public $$IataCode() {
     return this.property<string>('IataCode');
   }
-  public getIataCode(options?: ODataOptions) {
-    return this.getValue<string>('IataCode', options) as Observable<string>;
+  public $IataCode() {
+    return this.getAttribute<string>('IataCode') as string;
   }
   
+  public IataCode$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('IataCode', options) as Observable<string>;
+  }
   @ModelField()
   Location!: AirportLocationModel<AirportLocation>;
-  public $Location() {
+  public $$Location() {
     return this.property<AirportLocationModel<AirportLocation>>('Location');
   }
-  public getLocation(options?: ODataOptions) {
-    return this.getValue<AirportLocationModel<AirportLocation>>('Location', options) as Observable<AirportLocationModel<AirportLocation>>;
+  public $Location() {
+    return this.getAttribute<AirportLocationModel<AirportLocation>>('Location') as AirportLocationModel<AirportLocation>;
   }
   
+  public Location$(options?: ODataQueryArgumentsOptions<AirportLocationModel<AirportLocation>>) {
+    return this.fetchAttribute<AirportLocationModel<AirportLocation>>('Location', options) as Observable<AirportLocationModel<AirportLocation>>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

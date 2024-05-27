@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,40 +25,52 @@ export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODa
   //#region ODataApiGen Properties
   @ModelField()
   SaleAmount?: number;
-  public $SaleAmount() {
+  public $$SaleAmount() {
     return this.property<number>('SaleAmount');
   }
-  public getSaleAmount(options?: ODataOptions) {
-    return this.getValue<number>('SaleAmount', options) as Observable<number>;
+  public $SaleAmount() {
+    return this.getAttribute<number>('SaleAmount') as number;
   }
   
+  public SaleAmount$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('SaleAmount', options) as Observable<number>;
+  }
   @ModelField()
   OrderID!: number;
-  public $OrderID() {
+  public $$OrderID() {
     return this.property<number>('OrderID');
   }
-  public getOrderID(options?: ODataOptions) {
-    return this.getValue<number>('OrderID', options) as Observable<number>;
+  public $OrderID() {
+    return this.getAttribute<number>('OrderID') as number;
   }
   
+  public OrderID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('OrderID', options) as Observable<number>;
+  }
   @ModelField()
   CompanyName!: string;
-  public $CompanyName() {
+  public $$CompanyName() {
     return this.property<string>('CompanyName');
   }
-  public getCompanyName(options?: ODataOptions) {
-    return this.getValue<string>('CompanyName', options) as Observable<string>;
+  public $CompanyName() {
+    return this.getAttribute<string>('CompanyName') as string;
   }
   
+  public CompanyName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('CompanyName', options) as Observable<string>;
+  }
   @ModelField()
   ShippedDate?: Date;
-  public $ShippedDate() {
+  public $$ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
-  public getShippedDate(options?: ODataOptions) {
-    return this.getValue<Date>('ShippedDate', options) as Observable<Date>;
+  public $ShippedDate() {
+    return this.getAttribute<Date>('ShippedDate') as Date;
   }
   
+  public ShippedDate$(options?: ODataQueryArgumentsOptions<Date>) {
+    return this.fetchAttribute<Date>('ShippedDate', options) as Observable<Date>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

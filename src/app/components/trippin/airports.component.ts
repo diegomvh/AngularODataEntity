@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Airport, AirportsService } from '../../trippin';
 import {
   ODataEntitySetResource,
-  ODataSettings,
   ODataClient,
   ODataStructuredType,
 } from 'angular-odata';
-import { LazyLoadEvent } from 'primeng/api';
+import { TableLazyLoadEvent } from 'primeng/table';
 
 @Component({
   selector: 'trip-airports',
@@ -88,8 +87,8 @@ export class AirportsComponent {
           }))
         : [];
     // Try toJSON, fromJSON
-    this.resource = this.client.fromJSON<Airport>(
-      this.resource.toJSON()
+    this.resource = this.client.fromJson<Airport>(
+      this.resource.toJson()
     ) as ODataEntitySetResource<Airport>;
   }
 
@@ -119,7 +118,7 @@ export class AirportsComponent {
     this.fetch(this.resource);
   }
 
-  loadAirportsLazy(event: LazyLoadEvent) {
+  loadAirportsLazy(event: TableLazyLoadEvent) {
     //Pagination
     let resource = this.resource.clone().query((q) => {
       if (event.first) q.skip(event.first);

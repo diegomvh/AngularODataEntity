@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -25,13 +27,16 @@ export class AirportLocationModel<E extends AirportLocation> extends LocationMod
   //#region ODataApiGen Properties
   @ModelField()
   Loc!: Point;
-  public $Loc() {
+  public $$Loc() {
     return this.property<Point>('Loc');
   }
-  public getLoc(options?: ODataOptions) {
-    return this.getValue<Point>('Loc', options) as Observable<Point>;
+  public $Loc() {
+    return this.getAttribute<Point>('Loc') as Point;
   }
   
+  public Loc$(options?: ODataQueryArgumentsOptions<Point>) {
+    return this.fetchAttribute<Point>('Loc', options) as Observable<Point>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

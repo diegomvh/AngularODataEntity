@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -32,100 +34,130 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   ID!: number;
-  public $ID() {
+  public $$ID() {
     return this.property<number>('ID');
   }
-  public getID(options?: ODataOptions) {
-    return this.getValue<number>('ID', options) as Observable<number>;
+  public $ID() {
+    return this.getAttribute<number>('ID') as number;
   }
   
+  public ID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('ID', options) as Observable<number>;
+  }
   @ModelField()
   Name?: string;
-  public $Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: ODataOptions) {
-    return this.getValue<string>('Name', options) as Observable<string>;
+  public $Name() {
+    return this.getAttribute<string>('Name') as string;
   }
   
+  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Name', options) as Observable<string>;
+  }
   @ModelField()
   Description?: string;
-  public $Description() {
+  public $$Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: ODataOptions) {
-    return this.getValue<string>('Description', options) as Observable<string>;
+  public $Description() {
+    return this.getAttribute<string>('Description') as string;
   }
   
+  public Description$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Description', options) as Observable<string>;
+  }
   @ModelField()
   ReleaseDate!: any;
-  public $ReleaseDate() {
+  public $$ReleaseDate() {
     return this.property<any>('ReleaseDate');
   }
-  public getReleaseDate(options?: ODataOptions) {
-    return this.getValue<any>('ReleaseDate', options) as Observable<any>;
+  public $ReleaseDate() {
+    return this.getAttribute<any>('ReleaseDate') as any;
   }
   
+  public ReleaseDate$(options?: ODataQueryArgumentsOptions<any>) {
+    return this.fetchAttribute<any>('ReleaseDate', options) as Observable<any>;
+  }
   @ModelField()
   DiscontinuedDate?: any;
-  public $DiscontinuedDate() {
+  public $$DiscontinuedDate() {
     return this.property<any>('DiscontinuedDate');
   }
-  public getDiscontinuedDate(options?: ODataOptions) {
-    return this.getValue<any>('DiscontinuedDate', options) as Observable<any>;
+  public $DiscontinuedDate() {
+    return this.getAttribute<any>('DiscontinuedDate') as any;
   }
   
+  public DiscontinuedDate$(options?: ODataQueryArgumentsOptions<any>) {
+    return this.fetchAttribute<any>('DiscontinuedDate', options) as Observable<any>;
+  }
   @ModelField()
   Rating!: number;
-  public $Rating() {
+  public $$Rating() {
     return this.property<number>('Rating');
   }
-  public getRating(options?: ODataOptions) {
-    return this.getValue<number>('Rating', options) as Observable<number>;
+  public $Rating() {
+    return this.getAttribute<number>('Rating') as number;
   }
   
+  public Rating$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('Rating', options) as Observable<number>;
+  }
   @ModelField()
   Price!: number;
-  public $Price() {
+  public $$Price() {
     return this.property<number>('Price');
   }
-  public getPrice(options?: ODataOptions) {
-    return this.getValue<number>('Price', options) as Observable<number>;
+  public $Price() {
+    return this.getAttribute<number>('Price') as number;
   }
   
+  public Price$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('Price', options) as Observable<number>;
+  }
   @ModelField()
   Categories?: CategoryCollection<Category, CategoryModel<Category>>;
-  public $Categories() {
+  public $$Categories() {
     return this.navigationProperty<Category>('Categories');
   }
-  public getCategories() {
-    return this.getReference<Category>('Categories') as CategoryCollection<Category, CategoryModel<Category>>;
+  public $Categories() {
+    return this.getAttribute<Category>('Categories') as CategoryCollection<Category, CategoryModel<Category>>;
   }
-  public setCategories(model: CategoryCollection<Category, CategoryModel<Category>> | null, options?: ODataOptions) {
+  public Categories$$(model: CategoryCollection<Category, CategoryModel<Category>> | null, options?: ODataOptions) {
     return this.setReference<Category>('Categories', model, options);
   }
+  public Categories$(options?: ODataQueryArgumentsOptions<Category>) {
+      return this.fetchAttribute<Category>('Categories', options) as Observable<CategoryCollection<Category, CategoryModel<Category>>>;
+    }
   @ModelField()
   Supplier?: SupplierModel<Supplier>;
-  public $Supplier() {
+  public $$Supplier() {
     return this.navigationProperty<Supplier>('Supplier');
   }
-  public getSupplier() {
-    return this.getReference<Supplier>('Supplier') as SupplierModel<Supplier>;
+  public $Supplier() {
+    return this.getAttribute<Supplier>('Supplier') as SupplierModel<Supplier>;
   }
-  public setSupplier(model: SupplierModel<Supplier> | null, options?: ODataOptions) {
+  public Supplier$$(model: SupplierModel<Supplier> | null, options?: ODataOptions) {
     return this.setReference<Supplier>('Supplier', model, options);
   }
+  public Supplier$(options?: ODataQueryArgumentsOptions<Supplier>) {
+      return this.fetchAttribute<Supplier>('Supplier', options) as Observable<SupplierModel<Supplier>>;
+    }
   @ModelField()
   ProductDetail?: ProductDetailModel<ProductDetail>;
-  public $ProductDetail() {
+  public $$ProductDetail() {
     return this.navigationProperty<ProductDetail>('ProductDetail');
   }
-  public getProductDetail() {
-    return this.getReference<ProductDetail>('ProductDetail') as ProductDetailModel<ProductDetail>;
+  public $ProductDetail() {
+    return this.getAttribute<ProductDetail>('ProductDetail') as ProductDetailModel<ProductDetail>;
   }
-  public setProductDetail(model: ProductDetailModel<ProductDetail> | null, options?: ODataOptions) {
+  public ProductDetail$$(model: ProductDetailModel<ProductDetail> | null, options?: ODataOptions) {
     return this.setReference<ProductDetail>('ProductDetail', model, options);
   }
+  public ProductDetail$(options?: ODataQueryArgumentsOptions<ProductDetail>) {
+      return this.fetchAttribute<ProductDetail>('ProductDetail', options) as Observable<ProductDetailModel<ProductDetail>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

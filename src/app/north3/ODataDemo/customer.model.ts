@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -24,13 +26,16 @@ export class CustomerModel<E extends Customer> extends PersonModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   TotalExpense!: number;
-  public $TotalExpense() {
+  public $$TotalExpense() {
     return this.property<number>('TotalExpense');
   }
-  public getTotalExpense(options?: ODataOptions) {
-    return this.getValue<number>('TotalExpense', options) as Observable<number>;
+  public $TotalExpense() {
+    return this.getAttribute<number>('TotalExpense') as number;
   }
   
+  public TotalExpense$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('TotalExpense', options) as Observable<number>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

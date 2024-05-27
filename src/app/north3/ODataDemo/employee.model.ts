@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -24,31 +26,40 @@ export class EmployeeModel<E extends Employee> extends PersonModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   EmployeeID!: number;
-  public $EmployeeID() {
+  public $$EmployeeID() {
     return this.property<number>('EmployeeID');
   }
-  public getEmployeeID(options?: ODataOptions) {
-    return this.getValue<number>('EmployeeID', options) as Observable<number>;
+  public $EmployeeID() {
+    return this.getAttribute<number>('EmployeeID') as number;
   }
   
+  public EmployeeID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('EmployeeID', options) as Observable<number>;
+  }
   @ModelField()
   HireDate!: any;
-  public $HireDate() {
+  public $$HireDate() {
     return this.property<any>('HireDate');
   }
-  public getHireDate(options?: ODataOptions) {
-    return this.getValue<any>('HireDate', options) as Observable<any>;
+  public $HireDate() {
+    return this.getAttribute<any>('HireDate') as any;
   }
   
+  public HireDate$(options?: ODataQueryArgumentsOptions<any>) {
+    return this.fetchAttribute<any>('HireDate', options) as Observable<any>;
+  }
   @ModelField()
   Salary!: number;
-  public $Salary() {
+  public $$Salary() {
     return this.property<number>('Salary');
   }
-  public getSalary(options?: ODataOptions) {
-    return this.getValue<number>('Salary', options) as Observable<number>;
+  public $Salary() {
+    return this.getAttribute<number>('Salary') as number;
   }
   
+  public Salary$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('Salary', options) as Observable<number>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

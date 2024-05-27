@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -26,22 +28,28 @@ export class LocationModel<E extends Location> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   Address!: string;
-  public $Address() {
+  public $$Address() {
     return this.property<string>('Address');
   }
-  public getAddress(options?: ODataOptions) {
-    return this.getValue<string>('Address', options) as Observable<string>;
+  public $Address() {
+    return this.getAttribute<string>('Address') as string;
   }
   
+  public Address$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Address', options) as Observable<string>;
+  }
   @ModelField()
   City!: CityModel<City>;
-  public $City() {
+  public $$City() {
     return this.property<CityModel<City>>('City');
   }
-  public getCity(options?: ODataOptions) {
-    return this.getValue<CityModel<City>>('City', options) as Observable<CityModel<City>>;
+  public $City() {
+    return this.getAttribute<CityModel<City>>('City') as CityModel<City>;
   }
   
+  public City$(options?: ODataQueryArgumentsOptions<CityModel<City>>) {
+    return this.fetchAttribute<CityModel<City>>('City', options) as Observable<CityModel<City>>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

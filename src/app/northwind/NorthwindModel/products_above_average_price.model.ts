@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,22 +25,28 @@ export class ProductsAboveAveragePriceModel<E extends ProductsAboveAveragePrice>
   //#region ODataApiGen Properties
   @ModelField()
   ProductName!: string;
-  public $ProductName() {
+  public $$ProductName() {
     return this.property<string>('ProductName');
   }
-  public getProductName(options?: ODataOptions) {
-    return this.getValue<string>('ProductName', options) as Observable<string>;
+  public $ProductName() {
+    return this.getAttribute<string>('ProductName') as string;
   }
   
+  public ProductName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ProductName', options) as Observable<string>;
+  }
   @ModelField()
   UnitPrice?: number;
-  public $UnitPrice() {
+  public $$UnitPrice() {
     return this.property<number>('UnitPrice');
   }
-  public getUnitPrice(options?: ODataOptions) {
-    return this.getValue<number>('UnitPrice', options) as Observable<number>;
+  public $UnitPrice() {
+    return this.getAttribute<number>('UnitPrice') as number;
   }
   
+  public UnitPrice$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('UnitPrice', options) as Observable<number>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

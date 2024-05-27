@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -26,42 +28,54 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   ShipperID!: number;
-  public $ShipperID() {
+  public $$ShipperID() {
     return this.property<number>('ShipperID');
   }
-  public getShipperID(options?: ODataOptions) {
-    return this.getValue<number>('ShipperID', options) as Observable<number>;
+  public $ShipperID() {
+    return this.getAttribute<number>('ShipperID') as number;
   }
   
+  public ShipperID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('ShipperID', options) as Observable<number>;
+  }
   @ModelField()
   CompanyName!: string;
-  public $CompanyName() {
+  public $$CompanyName() {
     return this.property<string>('CompanyName');
   }
-  public getCompanyName(options?: ODataOptions) {
-    return this.getValue<string>('CompanyName', options) as Observable<string>;
+  public $CompanyName() {
+    return this.getAttribute<string>('CompanyName') as string;
   }
   
+  public CompanyName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('CompanyName', options) as Observable<string>;
+  }
   @ModelField()
   Phone?: string;
-  public $Phone() {
+  public $$Phone() {
     return this.property<string>('Phone');
   }
-  public getPhone(options?: ODataOptions) {
-    return this.getValue<string>('Phone', options) as Observable<string>;
+  public $Phone() {
+    return this.getAttribute<string>('Phone') as string;
   }
   
+  public Phone$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Phone', options) as Observable<string>;
+  }
   @ModelField()
   Orders?: OrderCollection<Order, OrderModel<Order>>;
-  public $Orders() {
+  public $$Orders() {
     return this.navigationProperty<Order>('Orders');
   }
-  public getOrders() {
-    return this.getReference<Order>('Orders') as OrderCollection<Order, OrderModel<Order>>;
+  public $Orders() {
+    return this.getAttribute<Order>('Orders') as OrderCollection<Order, OrderModel<Order>>;
   }
-  public setOrders(model: OrderCollection<Order, OrderModel<Order>> | null, options?: ODataOptions) {
+  public Orders$$(model: OrderCollection<Order, OrderModel<Order>> | null, options?: ODataOptions) {
     return this.setReference<Order>('Orders', model, options);
   }
+  public Orders$(options?: ODataQueryArgumentsOptions<Order>) {
+      return this.fetchAttribute<Order>('Orders', options) as Observable<OrderCollection<Order, OrderModel<Order>>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

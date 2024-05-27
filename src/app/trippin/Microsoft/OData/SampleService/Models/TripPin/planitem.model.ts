@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,49 +25,64 @@ export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   PlanItemId!: number;
-  public $PlanItemId() {
+  public $$PlanItemId() {
     return this.property<number>('PlanItemId');
   }
-  public getPlanItemId(options?: ODataOptions) {
-    return this.getValue<number>('PlanItemId', options) as Observable<number>;
+  public $PlanItemId() {
+    return this.getAttribute<number>('PlanItemId') as number;
   }
   
+  public PlanItemId$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('PlanItemId', options) as Observable<number>;
+  }
   @ModelField()
   ConfirmationCode?: string;
-  public $ConfirmationCode() {
+  public $$ConfirmationCode() {
     return this.property<string>('ConfirmationCode');
   }
-  public getConfirmationCode(options?: ODataOptions) {
-    return this.getValue<string>('ConfirmationCode', options) as Observable<string>;
+  public $ConfirmationCode() {
+    return this.getAttribute<string>('ConfirmationCode') as string;
   }
   
+  public ConfirmationCode$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ConfirmationCode', options) as Observable<string>;
+  }
   @ModelField()
   StartsAt?: Date;
-  public $StartsAt() {
+  public $$StartsAt() {
     return this.property<Date>('StartsAt');
   }
-  public getStartsAt(options?: ODataOptions) {
-    return this.getValue<Date>('StartsAt', options) as Observable<Date>;
+  public $StartsAt() {
+    return this.getAttribute<Date>('StartsAt') as Date;
   }
   
+  public StartsAt$(options?: ODataQueryArgumentsOptions<Date>) {
+    return this.fetchAttribute<Date>('StartsAt', options) as Observable<Date>;
+  }
   @ModelField()
   EndsAt?: Date;
-  public $EndsAt() {
+  public $$EndsAt() {
     return this.property<Date>('EndsAt');
   }
-  public getEndsAt(options?: ODataOptions) {
-    return this.getValue<Date>('EndsAt', options) as Observable<Date>;
+  public $EndsAt() {
+    return this.getAttribute<Date>('EndsAt') as Date;
   }
   
+  public EndsAt$(options?: ODataQueryArgumentsOptions<Date>) {
+    return this.fetchAttribute<Date>('EndsAt', options) as Observable<Date>;
+  }
   @ModelField()
   Duration?: Duration;
-  public $Duration() {
+  public $$Duration() {
     return this.property<Duration>('Duration');
   }
-  public getDuration(options?: ODataOptions) {
-    return this.getValue<Duration>('Duration', options) as Observable<Duration>;
+  public $Duration() {
+    return this.getAttribute<Duration>('Duration') as Duration;
   }
   
+  public Duration$(options?: ODataQueryArgumentsOptions<Duration>) {
+    return this.fetchAttribute<Duration>('Duration', options) as Observable<Duration>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

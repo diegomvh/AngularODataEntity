@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -27,22 +29,28 @@ export class EventModel<E extends Event> extends PlanItemModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   Description?: string;
-  public $Description() {
+  public $$Description() {
     return this.property<string>('Description');
   }
-  public getDescription(options?: ODataOptions) {
-    return this.getValue<string>('Description', options) as Observable<string>;
+  public $Description() {
+    return this.getAttribute<string>('Description') as string;
   }
   
+  public Description$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Description', options) as Observable<string>;
+  }
   @ModelField()
   OccursAt!: EventLocationModel<EventLocation>;
-  public $OccursAt() {
+  public $$OccursAt() {
     return this.property<EventLocationModel<EventLocation>>('OccursAt');
   }
-  public getOccursAt(options?: ODataOptions) {
-    return this.getValue<EventLocationModel<EventLocation>>('OccursAt', options) as Observable<EventLocationModel<EventLocation>>;
+  public $OccursAt() {
+    return this.getAttribute<EventLocationModel<EventLocation>>('OccursAt') as EventLocationModel<EventLocation>;
   }
   
+  public OccursAt$(options?: ODataQueryArgumentsOptions<EventLocationModel<EventLocation>>) {
+    return this.fetchAttribute<EventLocationModel<EventLocation>>('OccursAt', options) as Observable<EventLocationModel<EventLocation>>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

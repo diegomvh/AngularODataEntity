@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,31 +25,40 @@ export class CityModel<E extends City> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   CountryRegion!: string;
-  public $CountryRegion() {
+  public $$CountryRegion() {
     return this.property<string>('CountryRegion');
   }
-  public getCountryRegion(options?: ODataOptions) {
-    return this.getValue<string>('CountryRegion', options) as Observable<string>;
+  public $CountryRegion() {
+    return this.getAttribute<string>('CountryRegion') as string;
   }
   
+  public CountryRegion$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('CountryRegion', options) as Observable<string>;
+  }
   @ModelField()
   Name!: string;
-  public $Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: ODataOptions) {
-    return this.getValue<string>('Name', options) as Observable<string>;
+  public $Name() {
+    return this.getAttribute<string>('Name') as string;
   }
   
+  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Name', options) as Observable<string>;
+  }
   @ModelField()
   Region!: string;
-  public $Region() {
+  public $$Region() {
     return this.property<string>('Region');
   }
-  public getRegion(options?: ODataOptions) {
-    return this.getValue<string>('Region', options) as Observable<string>;
+  public $Region() {
+    return this.getAttribute<string>('Region') as string;
   }
   
+  public Region$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Region', options) as Observable<string>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

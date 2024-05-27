@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,31 +25,40 @@ export class ProductSalesFor1997Model<E extends ProductSalesFor1997> extends ODa
   //#region ODataApiGen Properties
   @ModelField()
   CategoryName!: string;
-  public $CategoryName() {
+  public $$CategoryName() {
     return this.property<string>('CategoryName');
   }
-  public getCategoryName(options?: ODataOptions) {
-    return this.getValue<string>('CategoryName', options) as Observable<string>;
+  public $CategoryName() {
+    return this.getAttribute<string>('CategoryName') as string;
   }
   
+  public CategoryName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('CategoryName', options) as Observable<string>;
+  }
   @ModelField()
   ProductName!: string;
-  public $ProductName() {
+  public $$ProductName() {
     return this.property<string>('ProductName');
   }
-  public getProductName(options?: ODataOptions) {
-    return this.getValue<string>('ProductName', options) as Observable<string>;
+  public $ProductName() {
+    return this.getAttribute<string>('ProductName') as string;
   }
   
+  public ProductName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ProductName', options) as Observable<string>;
+  }
   @ModelField()
   ProductSales?: number;
-  public $ProductSales() {
+  public $$ProductSales() {
     return this.property<number>('ProductSales');
   }
-  public getProductSales(options?: ODataOptions) {
-    return this.getValue<number>('ProductSales', options) as Observable<number>;
+  public $ProductSales() {
+    return this.getAttribute<number>('ProductSales') as number;
   }
   
+  public ProductSales$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('ProductSales', options) as Observable<number>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

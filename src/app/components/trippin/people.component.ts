@@ -3,11 +3,10 @@ import { PeopleService, Person, PersonGender } from '../../trippin';
 import {
   ODataEntitySetResource,
   ODataClient,
-  ODataEntity,
   ODataStructuredType,
 } from 'angular-odata';
 import { PersonComponent } from './person.component';
-import { LazyLoadEvent } from 'primeng/api';
+import { TableLazyLoadEvent } from 'primeng/table';
 
 @Component({
   selector: 'trip-people',
@@ -96,8 +95,8 @@ export class PeopleComponent {
           }))
         : [];
     // Try toJSON, fromJSON
-    this.resource = this.client.fromJSON<Person>(
-      this.resource.toJSON()
+    this.resource = this.client.fromJson<Person>(
+      this.resource.toJson()
     ) as ODataEntitySetResource<Person>;
   }
 
@@ -127,7 +126,7 @@ export class PeopleComponent {
     this.fetch(this.resource);
   }
 
-  loadPeopleLazy(event: LazyLoadEvent) {
+  loadPeopleLazy(event: TableLazyLoadEvent) {
     //Pagination
     let resource = this.resource.clone().query((q) => {
       if (event.first) q.skip(event.first);

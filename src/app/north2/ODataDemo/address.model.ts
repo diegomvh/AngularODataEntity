@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,49 +25,64 @@ export class AddressModel<E extends Address> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   Street?: string;
-  public $Street() {
+  public $$Street() {
     return this.property<string>('Street');
   }
-  public getStreet(options?: ODataOptions) {
-    return this.getValue<string>('Street', options) as Observable<string>;
+  public $Street() {
+    return this.getAttribute<string>('Street') as string;
   }
   
+  public Street$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Street', options) as Observable<string>;
+  }
   @ModelField()
   City?: string;
-  public $City() {
+  public $$City() {
     return this.property<string>('City');
   }
-  public getCity(options?: ODataOptions) {
-    return this.getValue<string>('City', options) as Observable<string>;
+  public $City() {
+    return this.getAttribute<string>('City') as string;
   }
   
+  public City$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('City', options) as Observable<string>;
+  }
   @ModelField()
   State?: string;
-  public $State() {
+  public $$State() {
     return this.property<string>('State');
   }
-  public getState(options?: ODataOptions) {
-    return this.getValue<string>('State', options) as Observable<string>;
+  public $State() {
+    return this.getAttribute<string>('State') as string;
   }
   
+  public State$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('State', options) as Observable<string>;
+  }
   @ModelField()
   ZipCode?: string;
-  public $ZipCode() {
+  public $$ZipCode() {
     return this.property<string>('ZipCode');
   }
-  public getZipCode(options?: ODataOptions) {
-    return this.getValue<string>('ZipCode', options) as Observable<string>;
+  public $ZipCode() {
+    return this.getAttribute<string>('ZipCode') as string;
   }
   
+  public ZipCode$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ZipCode', options) as Observable<string>;
+  }
   @ModelField()
   Country?: string;
-  public $Country() {
+  public $$Country() {
     return this.property<string>('Country');
   }
-  public getCountry(options?: ODataOptions) {
-    return this.getValue<string>('Country', options) as Observable<string>;
+  public $Country() {
+    return this.getAttribute<string>('Country') as string;
   }
   
+  public Country$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Country', options) as Observable<string>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

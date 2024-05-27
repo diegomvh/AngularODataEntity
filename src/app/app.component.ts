@@ -174,9 +174,9 @@ export class AppComponent {
       );
 
     // Store airports resource
-    var json = airports.toJSON();
+    var json = airports.toJson();
     // Load airports resource
-    airports = this.odata.fromJSON(json) as ODataEntitySetResource<Airport>;
+    airports = this.odata.fromJson(json) as ODataEntitySetResource<Airport>;
 
     // Change query definition of airports resource and fetch again
     airports.query((q) => q.filter().clear());
@@ -494,10 +494,10 @@ export class AppComponent {
     const people = this.peopleService.entities().asCollection();
 
     people.events$
-      .pipe(filter((e) => e.name === 'sync'))
+      .pipe(filter((e) => e.type === 'sync'))
       .subscribe((e) => console.log(people));
     people.events$
-      .pipe(filter((e) => e.name === 'attach'))
+      .pipe(filter((e) => e.type === 'attach'))
       .subscribe((e) => firstValueFrom(people.fetch()));
     people.query((q: any) => {
       q.filter({ Gender: PersonGender.Female });

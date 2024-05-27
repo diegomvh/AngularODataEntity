@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,40 +25,52 @@ export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCit
   //#region ODataApiGen Properties
   @ModelField()
   City?: string;
-  public $City() {
+  public $$City() {
     return this.property<string>('City');
   }
-  public getCity(options?: ODataOptions) {
-    return this.getValue<string>('City', options) as Observable<string>;
+  public $City() {
+    return this.getAttribute<string>('City') as string;
   }
   
+  public City$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('City', options) as Observable<string>;
+  }
   @ModelField()
   CompanyName!: string;
-  public $CompanyName() {
+  public $$CompanyName() {
     return this.property<string>('CompanyName');
   }
-  public getCompanyName(options?: ODataOptions) {
-    return this.getValue<string>('CompanyName', options) as Observable<string>;
+  public $CompanyName() {
+    return this.getAttribute<string>('CompanyName') as string;
   }
   
+  public CompanyName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('CompanyName', options) as Observable<string>;
+  }
   @ModelField()
   ContactName?: string;
-  public $ContactName() {
+  public $$ContactName() {
     return this.property<string>('ContactName');
   }
-  public getContactName(options?: ODataOptions) {
-    return this.getValue<string>('ContactName', options) as Observable<string>;
+  public $ContactName() {
+    return this.getAttribute<string>('ContactName') as string;
   }
   
+  public ContactName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ContactName', options) as Observable<string>;
+  }
   @ModelField()
   Relationship!: string;
-  public $Relationship() {
+  public $$Relationship() {
     return this.property<string>('Relationship');
   }
-  public getRelationship(options?: ODataOptions) {
-    return this.getValue<string>('Relationship', options) as Observable<string>;
+  public $Relationship() {
+    return this.getAttribute<string>('Relationship') as string;
   }
   
+  public Relationship$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Relationship', options) as Observable<string>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

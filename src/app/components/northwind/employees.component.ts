@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
-import { LazyLoadEvent } from 'primeng/api';
-import { Employee, EmployeesService } from 'src/app/northwind';
+import { Employee, EmployeesService } from '../../northwind';
+import { TableLazyLoadEvent } from 'primeng/table';
 
 @Component({
   selector: 'northwind-employees',
@@ -106,7 +106,7 @@ export class EmployeesComponent {
     this.fetch(this.resource);
   }
 
-  loadEmployeesLazy(event: LazyLoadEvent) {
+  loadEmployeesLazy(event: TableLazyLoadEvent) {
     let resource = this.resource.clone().query((q) => {
       //Pagination
       if (event.first) q.skip(event.first);

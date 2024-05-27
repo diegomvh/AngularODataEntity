@@ -5,7 +5,7 @@ import {
   ODataClient,
   ODataStructuredType,
 } from 'angular-odata';
-import { LazyLoadEvent } from 'primeng/api';
+import { TableLazyLoadEvent } from 'primeng/table';
 
 @Component({
   selector: 'trip-airlines',
@@ -86,8 +86,8 @@ export class AirlinesComponent {
             }))
         : [];
     // Try toJSON, fromJSON
-    this.resource = this.client.fromJSON<Airline>(
-      this.resource.toJSON()
+    this.resource = this.client.fromJson<Airline>(
+      this.resource.toJson()
     ) as ODataEntitySetResource<Airline>;
   }
 
@@ -119,7 +119,7 @@ export class AirlinesComponent {
     this.fetch(this.resource);
   }
 
-  loadAirlinesLazy(event: LazyLoadEvent) {
+  loadAirlinesLazy(event: TableLazyLoadEvent) {
     //Pagination
     let resource = this.resource
       .clone()

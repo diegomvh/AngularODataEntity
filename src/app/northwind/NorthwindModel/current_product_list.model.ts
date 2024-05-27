@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -23,22 +25,28 @@ export class CurrentProductListModel<E extends CurrentProductList> extends OData
   //#region ODataApiGen Properties
   @ModelField()
   ProductID!: number;
-  public $ProductID() {
+  public $$ProductID() {
     return this.property<number>('ProductID');
   }
-  public getProductID(options?: ODataOptions) {
-    return this.getValue<number>('ProductID', options) as Observable<number>;
+  public $ProductID() {
+    return this.getAttribute<number>('ProductID') as number;
   }
   
+  public ProductID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('ProductID', options) as Observable<number>;
+  }
   @ModelField()
   ProductName!: string;
-  public $ProductName() {
+  public $$ProductName() {
     return this.property<string>('ProductName');
   }
-  public getProductName(options?: ODataOptions) {
-    return this.getValue<string>('ProductName', options) as Observable<string>;
+  public $ProductName() {
+    return this.getAttribute<string>('ProductName') as string;
   }
   
+  public ProductName$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('ProductName', options) as Observable<string>;
+  }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

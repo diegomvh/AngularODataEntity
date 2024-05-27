@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -26,33 +28,42 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   //#region ODataApiGen Properties
   @ModelField()
   ID!: number;
-  public $ID() {
+  public $$ID() {
     return this.property<number>('ID');
   }
-  public getID(options?: ODataOptions) {
-    return this.getValue<number>('ID', options) as Observable<number>;
+  public $ID() {
+    return this.getAttribute<number>('ID') as number;
   }
   
+  public ID$(options?: ODataQueryArgumentsOptions<number>) {
+    return this.fetchAttribute<number>('ID', options) as Observable<number>;
+  }
   @ModelField()
   Name?: string;
-  public $Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
-  public getName(options?: ODataOptions) {
-    return this.getValue<string>('Name', options) as Observable<string>;
+  public $Name() {
+    return this.getAttribute<string>('Name') as string;
   }
   
+  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+    return this.fetchAttribute<string>('Name', options) as Observable<string>;
+  }
   @ModelField()
   PersonDetail?: PersonDetailModel<PersonDetail>;
-  public $PersonDetail() {
+  public $$PersonDetail() {
     return this.navigationProperty<PersonDetail>('PersonDetail');
   }
-  public getPersonDetail() {
-    return this.getReference<PersonDetail>('PersonDetail') as PersonDetailModel<PersonDetail>;
+  public $PersonDetail() {
+    return this.getAttribute<PersonDetail>('PersonDetail') as PersonDetailModel<PersonDetail>;
   }
-  public setPersonDetail(model: PersonDetailModel<PersonDetail> | null, options?: ODataOptions) {
+  public PersonDetail$$(model: PersonDetailModel<PersonDetail> | null, options?: ODataOptions) {
     return this.setReference<PersonDetail>('PersonDetail', model, options);
   }
+  public PersonDetail$(options?: ODataQueryArgumentsOptions<PersonDetail>) {
+      return this.fetchAttribute<PersonDetail>('PersonDetail', options) as Observable<PersonDetailModel<PersonDetail>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

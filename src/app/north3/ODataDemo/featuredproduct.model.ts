@@ -10,6 +10,8 @@ import {
   ODataCollection,
   ODataOptions,
   ODataQueryArgumentsOptions,
+  ODataFunctionOptions,
+  ODataActionOptions,
   Duration,
 } from 'angular-odata';//#endregion
 
@@ -27,15 +29,18 @@ export class FeaturedProductModel<E extends FeaturedProduct> extends ProductMode
   //#region ODataApiGen Properties
   @ModelField()
   Advertisement?: AdvertisementModel<Advertisement>;
-  public $Advertisement() {
+  public $$Advertisement() {
     return this.navigationProperty<Advertisement>('Advertisement');
   }
-  public getAdvertisement() {
-    return this.getReference<Advertisement>('Advertisement') as AdvertisementModel<Advertisement>;
+  public $Advertisement() {
+    return this.getAttribute<Advertisement>('Advertisement') as AdvertisementModel<Advertisement>;
   }
-  public setAdvertisement(model: AdvertisementModel<Advertisement> | null, options?: ODataOptions) {
+  public Advertisement$$(model: AdvertisementModel<Advertisement> | null, options?: ODataOptions) {
     return this.setReference<Advertisement>('Advertisement', model, options);
   }
+  public Advertisement$(options?: ODataQueryArgumentsOptions<Advertisement>) {
+      return this.fetchAttribute<Advertisement>('Advertisement', options) as Observable<AdvertisementModel<Advertisement>>;
+    }
   //#endregion
   //#region ODataApiGen Actions
   //#endregion

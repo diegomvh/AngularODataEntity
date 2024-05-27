@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
-import { LazyLoadEvent } from 'primeng/api';
-import { Order, OrdersService } from 'src/app/northwind';
+import { Order, OrdersService } from '../../northwind';
+import { TableLazyLoadEvent } from 'primeng/table';
 
 @Component({
   selector: 'northwind-orders',
@@ -106,7 +106,7 @@ export class OrdersComponent {
     this.fetch(this.resource);
   }
 
-  loadOrdersLazy(event: LazyLoadEvent) {
+  loadOrdersLazy(event: TableLazyLoadEvent) {
     //Pagination
     let resource = this.resource.clone().query((q) => {
       if (event.first) q.skip(event.first);
