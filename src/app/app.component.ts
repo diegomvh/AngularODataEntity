@@ -471,6 +471,9 @@ export class AppComponent {
   tripPinDynamic() {
     const api = this.odata.apiFor("TripPinDynamic");
     api.metadata().fetch().subscribe(metadata => {
+      const username = metadata.schemas
+        .find(s => s.namespace === "Microsoft.OData.SampleService.Models.TripPin")?.entityTypes?.find(e => e.name === "Person")?.properties?.find(p => p.name === "UserName");
+      console.log(username?.annotations?.find(a => a.term === "Org.OData.Core.V1.Permissions")?.members?.map((m: any) => m.text));
       api.populate(metadata); 
       const entitySet = api.entitySet<Person>("People");
       const schema = api.structuredType("Person");
@@ -478,7 +481,9 @@ export class AppComponent {
       const person = entitySet.entity("scottketchum");
       person.query(q => q.expand(({e, t}) => 
         e()
-        .field(t.Trips, f => f.expand(({e, t}) => e().field(t.Photos)))));
+        .field(t.Trips, f => f.expand(({e, t}) => e().field(t.Photos)))
+        .field(t.Friends, f => f.expand(({e, t}) => e().field(t.Friends)))
+      ));
       person.fetchModel().subscribe(console.log);
     });
   }
