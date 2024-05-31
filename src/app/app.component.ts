@@ -33,7 +33,7 @@ export class AppComponent {
   constructor(
     private odata: ODataClient,
     private factory: ODataServiceFactory,
-    private api: DefaultContainerService,
+    private tripPinContainer: DefaultContainerService,
     private peopleService: PeopleService,
     private photosService: PhotosService,
     private productsService: ProductsService,
@@ -48,7 +48,7 @@ export class AppComponent {
   //#region APIs
   trippin() {
     //this.mutate();
-    this.api.callResetDataSource().subscribe(() => {
+    this.tripPinContainer.callResetDataSource().subscribe(() => {
       this.queries();
       //this.query();
       //this.trippinModels();
@@ -92,7 +92,8 @@ export class AppComponent {
     //this.mediaEntity();
     //this.aggregations();
     //this.batch();
-    this.metadata();
+    //this.microsoftGraph();
+    this.tripPinDynamic();
   }
 
   entitiesWithoutTypes() {
@@ -457,10 +458,29 @@ export class AppComponent {
     let batch = this.odata.batch();
   }
 
-  metadata() {
+  microsoftGraph() {
+    const api = this.odata.apiFor("MicrosoftGraph");
+    api.metadata().fetch().subscribe(metadata => {
+      console.log("ready");
+      api.populate(metadata); 
+      (<any>window).METADATA = metadata;
+      (<any>window).API = api;
+    });
+  }
+
+  tripPinDynamic() {
     const api = this.odata.apiFor("TripPinDynamic");
-    this.odata.apiFor("TripPin").metadata().fetch().subscribe(console.log);
-    console.log(api);
+    api.metadata().fetch().subscribe(metadata => {
+      api.populate(metadata); 
+      const entitySet = api.entitySet<Person>("People");
+      const schema = api.structuredType("Person");
+      console.log(schema);
+      const person = entitySet.entity("scottketchum");
+      person.query(q => q.expand(({e, t}) => 
+        e()
+        .field(t.Trips, f => f.expand(({e, t}) => e().field(t.Photos)))));
+      person.fetchModel().subscribe(console.log);
+    });
   }
 
   query() {

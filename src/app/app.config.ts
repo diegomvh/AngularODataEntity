@@ -18,7 +18,10 @@ export const appConfig: ApplicationConfig = {
         {
           name: "TripPinDynamic",
           serviceRootUrl: 'http://localhost:4200/trippin/',
-          dynamic: true,
+        },
+        {
+          name: "MicrosoftGraph",
+          serviceRootUrl: 'https://graph.microsoft.com/v1.0/',
           options: {
             stringAsEnum: true,
             stripMetadata: 'minimal',
