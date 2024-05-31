@@ -90,8 +90,9 @@ export class AppComponent {
     //this.navigation();
     //this.property();
     //this.mediaEntity();
-    this.aggregations();
+    //this.aggregations();
     //this.batch();
+    this.metadata();
   }
 
   entitiesWithoutTypes() {
@@ -454,6 +455,12 @@ export class AppComponent {
 
   batch() {
     let batch = this.odata.batch();
+  }
+
+  metadata() {
+    const api = this.odata.apiFor("TripPinDynamic");
+    this.odata.apiFor("TripPin").metadata().fetch().subscribe(console.log);
+    console.log(api);
   }
 
   query() {

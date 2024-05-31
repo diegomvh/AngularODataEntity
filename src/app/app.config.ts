@@ -2,7 +2,7 @@ import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { ApiConfig, ODataInMemoryCache, ODataInStorageCache, provideODataClient } from 'angular-odata';
+import { ApiConfig, ODataInMemoryCache, ODataInStorageCache, PassedInitialConfig, provideODataClient } from 'angular-odata';
 import { TripPinConfig } from './trippin';
 import { North2Config } from './north2';
 import { North3Config } from './north3';
@@ -15,6 +15,21 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideODataClient({
       config: [
+        {
+          name: "TripPinDynamic",
+          serviceRootUrl: 'http://localhost:4200/trippin/',
+          dynamic: true,
+          options: {
+            stringAsEnum: true,
+            stripMetadata: 'minimal',
+            accept: {
+              metadata: 'minimal',
+            },
+            prefer: {
+              return: 'representation'
+            }
+          }
+        },
         // North version 2
         Object.assign(North2Config, {
           serviceRootUrl: 'http://localhost:4200/north2/',
@@ -57,7 +72,7 @@ export const appConfig: ApplicationConfig = {
             stringAsEnum: true,
             stripMetadata: 'minimal',
             accept: {
-              metadata: 'full',
+              metadata: 'minimal',
             },
             prefer: {
               return: 'representation'
