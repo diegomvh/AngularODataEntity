@@ -477,7 +477,6 @@ export class AppComponent {
       api.populate(metadata); 
       const entitySet = api.entitySet<Person>("People");
       const schema = api.structuredType("Person");
-      console.log(schema);
       const person = entitySet.entity("scottketchum");
       person.query(q => q.expand(({e, t}) => 
         e()
