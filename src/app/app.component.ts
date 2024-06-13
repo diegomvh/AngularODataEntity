@@ -79,7 +79,7 @@ export class AppComponent {
     let personSchema = this.peopleService.structuredTypeSchema;
     let male = personSchema
       ?.field('Gender')
-      ?.enum()
+      ?.enumType()
       .encode(PersonGender.Male);
     console.log(male);
   }
@@ -90,10 +90,10 @@ export class AppComponent {
     //this.navigation();
     //this.property();
     //this.mediaEntity();
-    //this.aggregations();
+    this.aggregations();
     //this.batch();
     //this.microsoftGraph();
-    this.tripPinDynamic();
+    //this.tripPinDynamic();
   }
 
   entitiesWithoutTypes() {
@@ -449,9 +449,8 @@ export class AppComponent {
   }
 
   aggregations() {
-    this.peopleService.entities().query(q => {
-      q.apply(({e, t}) => e().groupBy((e) => [t.Gender])); 
-    }).fetch().subscribe(console.log);
+    var genders = this.peopleService.entities().transform<{Gender: PersonGender}>(({e, t}) => e().groupBy((e) => [t.Gender])); 
+    genders.fetch().subscribe(console.log);
   }
 
   batch() {

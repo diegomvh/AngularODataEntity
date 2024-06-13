@@ -4,6 +4,7 @@ import {
   ODataEntitySetResource,
   ODataClient,
   ODataStructuredType,
+  EdmType,
 } from 'angular-odata';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
@@ -74,7 +75,7 @@ export class AirportsComponent {
 
   constructor(private client: ODataClient, private airports: AirportsService) {
     this.resource = this.airports.entities();
-    const schema = this.resource.schema as ODataStructuredType<Airport>;
+    const schema = this.resource.structuredType();
     this.cols =
       schema !== null
         ? (
@@ -86,7 +87,7 @@ export class AirportsComponent {
             field: f.name,
             header: f.name,
             sort: !f.collection,
-            filter: f.type === 'Edm.String',
+            filter: f.type === EdmType.String,
           }))
         : [];
     // Try toJSON, fromJSON

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
+import { EdmType, ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
 import { Product, ProductsService } from '../../northwind';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
@@ -67,7 +67,7 @@ export class ProductsComponent {
 
   constructor(private products: ProductsService) {
     this.resource = this.products.entities().query((q) => q.top(this.size));
-    const schema = this.resource.schema as ODataStructuredType<Product>;
+    const schema = this.resource.structuredType();
     this.cols =
       schema !== null
         ? (
@@ -81,7 +81,7 @@ export class ProductsComponent {
               field: f.name,
               header: f.name,
               sort: !f.collection,
-              filter: f.type === 'Edm.String',
+              filter: f.type === EdmType.String,
             }))
         : [];
   }

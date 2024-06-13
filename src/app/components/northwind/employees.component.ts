@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
+import { EdmType, ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
 import { Employee, EmployeesService } from '../../northwind';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
@@ -67,21 +67,21 @@ export class EmployeesComponent {
 
   constructor(private employees: EmployeesService) {
     this.resource = this.employees.entities().query((q) => q.top(this.size));
-    const schema = this.resource.schema as ODataStructuredType<Employee>;
+    const schema = this.resource.structuredType();
     this.cols =
       schema !== null
         ? (
             schema?.fields({
               include_parents: true,
               include_navigation: false,
-            }) || []
+            }) ?? []
           )
             .filter((f) => !f.navigation)
             .map((f) => ({
               field: f.name,
               header: f.name,
               sort: !f.collection,
-              filter: f.type === 'Edm.String',
+              filter: f.type === EdmType.String,
             }))
         : [];
   }
