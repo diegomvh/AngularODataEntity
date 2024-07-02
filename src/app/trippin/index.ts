@@ -64,6 +64,7 @@ export * from './Microsoft/OData/SampleService/Models/TripPin/people.service.con
 export * from './Microsoft/OData/SampleService/Models/TripPin/airlines.service.config';
 export * from './Microsoft/OData/SampleService/Models/TripPin/airports.service.config';
 export * from './Microsoft/OData/SampleService/Models/TripPin/me.service.config';
+export * from './trippin.api';
 export * from './trippin.config';
 export * from './trippin.module';
 //#endregion

@@ -1,16 +1,16 @@
 ﻿//#region ODataApiGen ODataImports
 import {
-  EntitySetConfig
+  SingletonConfig
 } from 'angular-odata';//#endregion
 
 //#region ODataApiGen Imports
 import { MeService } from './me.service';
 //#endregion
 
-//#region ODataApiGen EntitySetConfig
-export const MeServiceEntitySetConfig = {
+//#region ODataApiGen SingletonConfig
+export const MeServiceSingletonConfig = {
   name: 'Me',
-  entityType: 'Microsoft.OData.SampleService.Models.TripPin.Person',
+  type: 'Microsoft.OData.SampleService.Models.TripPin.Person',
   annotations: [
   {
     "term": "Org.OData.Core.V1.ResourcePath",
@@ -18,5 +18,5 @@ export const MeServiceEntitySetConfig = {
   }
 ],
   service: MeService
-} as EntitySetConfig;
+} as SingletonConfig;
 //#endregion

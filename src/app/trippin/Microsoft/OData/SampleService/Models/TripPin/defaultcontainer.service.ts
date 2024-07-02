@@ -33,7 +33,7 @@ import { AirportCollection } from './airport.collection';
 export class DefaultContainerService extends ODataBaseService {
 
   constructor(client: ODataClient) {
-    super(client, 'DefaultContainerContainer', 'TripPin');
+    super(client, 'DefaultContainerEntityContainerConfig', 'TripPin');
   }
 
   //#region ODataApiGen Actions

@@ -8,11 +8,11 @@ import { PhotosServiceEntitySetConfig } from './photos.service.config';
 import { PeopleServiceEntitySetConfig } from './people.service.config';
 import { AirlinesServiceEntitySetConfig } from './airlines.service.config';
 import { AirportsServiceEntitySetConfig } from './airports.service.config';
-import { MeServiceEntitySetConfig } from './me.service.config';
+import { MeServiceSingletonConfig } from './me.service.config';
 //#endregion
 
 //#region ODataApiGen EntityContainerConfig
-export const DefaultContainerContainer = {
+export const DefaultContainerEntityContainerConfig = {
   name: 'DefaultContainer',
   annotations: [
   {
@@ -80,8 +80,10 @@ export const DefaultContainerContainer = {
     PhotosServiceEntitySetConfig,
     PeopleServiceEntitySetConfig,
     AirlinesServiceEntitySetConfig,
-    AirportsServiceEntitySetConfig,
-    MeServiceEntitySetConfig
+    AirportsServiceEntitySetConfig
+  ],
+  singletons: [
+    MeServiceSingletonConfig
   ]
 } as EntityContainerConfig;
 //#endregion

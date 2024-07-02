@@ -18,26 +18,14 @@ import { PublicTransportationEntityConfig } from './publictransportation.entity.
 import { FlightEntityConfig } from './flight.entity.config';
 import { EventEntityConfig } from './event.entity.config';
 import { TripEntityConfig } from './trip.entity.config';
-import { DefaultContainerContainer } from './defaultcontainer.container';
+import { DefaultContainerEntityContainerConfig } from './defaultcontainer.entitycontainer.config';
 //#endregion
 
 //#region ODataApiGen SchemaConfig
-export const TripPinSchema = {
+export const TripPinSchemaConfig = {
   namespace: 'Microsoft.OData.SampleService.Models.TripPin',
-  enums: [PersonGenderConfig],
-  entities: [CityComplexConfig,
-    LocationComplexConfig,
-    EventLocationComplexConfig,
-    AirportLocationComplexConfig,
-    PhotoEntityConfig,
-    PersonEntityConfig,
-    AirlineEntityConfig,
-    AirportEntityConfig,
-    PlanItemEntityConfig,
-    PublicTransportationEntityConfig,
-    FlightEntityConfig,
-    EventEntityConfig,
-    TripEntityConfig],
+  enums: [],
+  entities: [],
   callables: [{
     name: 'GetFavoriteAirline',
     entitySetPath: 'person/Trips/PlanItems/Microsoft.OData.SampleService.Models.TripPin.Flight/Airline',
@@ -74,6 +62,6 @@ export const TripPinSchema = {
     composable: false,
     parameters: { person: {type: 'Microsoft.OData.SampleService.Models.TripPin.Person', nullable: false}, userName: {type: 'Edm.String', nullable: false}, tripId: {type: 'Edm.Int32', nullable: false} },
   }],
-  containers: [DefaultContainerContainer]
+  containers: [DefaultContainerEntityContainerConfig]
 } as SchemaConfig;
 //#endregion
