@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ODataClient, ODataEntitySetResource, ODataServiceFactory } from 'angular-odata';
-import { Airport, DefaultContainerService, PeopleService, Person, PersonCollection, PersonGender, PersonGenderConfig, PersonModel, Photo, PhotosService, TripPinApi, TripPinModule } from './trippin';
+import { Airport, DefaultContainerService, PeopleService, Person, PersonCollection, PersonGender, PersonGenderType, PersonModel, Photo, PhotosService, TripPinModule } from './trippin';
 import { NorthwindModule, OrdersService, ProductCollection, ProductsService } from './northwind';
 import { filter, firstValueFrom, forkJoin, map, switchMap } from 'rxjs';
 import { TabViewModule } from 'primeng/tabview';
@@ -70,9 +70,7 @@ export class AppComponent {
     var guid = guidParser.encode('12345678-1234-1234-1234-123456789012');
     console.log(guid);
     // Enum Parser
-    let personGenderType = this.odata.enumTypeForType<PersonGender>(
-      TripPinApi.EnumTypes.PersonGender
-    );
+    let personGenderType = this.odata.enumTypeForType<PersonGender>(PersonGenderType);
     let female = personGenderType.encode(PersonGender.Female);
     console.log(female);
     // Structured Parser
@@ -249,9 +247,7 @@ export class AppComponent {
   }
 
   filterPeopleByGender() {
-    let personGenderType = this.odata.enumTypeForType<PersonGender>(
-      TripPinApi.EnumTypes.PersonGender
-    );
+    let personGenderType = this.odata.enumTypeForType<PersonGender>(PersonGenderType);
     let female = personGenderType.encode(PersonGender.Female);
     let femaleQuery = this.peopleService
       .entities()
