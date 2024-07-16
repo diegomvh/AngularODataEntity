@@ -1,0 +1,3 @@
+[submodule "angular-odata"]
+ path = projects/angular-odata
+ url = https://github.com/diegomvh/angular-odata.git
