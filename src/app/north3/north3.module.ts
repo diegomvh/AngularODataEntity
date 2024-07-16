@@ -4,13 +4,13 @@ import {
 } from '@angular/core';//#endregion
 
 //#region ODataApiGen Imports
-import { DemoServiceService } from './ODataDemo/demoservice.service';
+import { DemoServiceService } from './ODataDemo/demo-service.service';
 import { ProductsService } from './ODataDemo/products.service';
-import { ProductDetailsService } from './ODataDemo/productdetails.service';
+import { ProductDetailsService } from './ODataDemo/product-details.service';
 import { CategoriesService } from './ODataDemo/categories.service';
 import { SuppliersService } from './ODataDemo/suppliers.service';
 import { PersonsService } from './ODataDemo/persons.service';
-import { PersonDetailsService } from './ODataDemo/persondetails.service';
+import { PersonDetailsService } from './ODataDemo/person-details.service';
 import { AdvertisementsService } from './ODataDemo/advertisements.service';
 //#endregion
 

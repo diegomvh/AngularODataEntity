@@ -14,15 +14,15 @@ import {
 
 //#region ODataApiGen Imports
 import { Category } from './category.entity';
-import { OrderDetail } from './order_detail.entity';
+import { OrderDetail } from './order-detail.entity';
 import { Product } from './product.entity';
 import { Supplier } from './supplier.entity';
 import { CategoryModel } from './category.model';
-import { OrderDetailModel } from './order_detail.model';
+import { OrderDetailModel } from './order-detail.model';
 import { ProductModel } from './product.model';
 import { SupplierModel } from './supplier.model';
 import { CategoryCollection } from './category.collection';
-import { OrderDetailCollection } from './order_detail.collection';
+import { OrderDetailCollection } from './order-detail.collection';
 import { SupplierCollection } from './supplier.collection';
 //#endregion
 

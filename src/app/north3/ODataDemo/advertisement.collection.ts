@@ -13,11 +13,11 @@ import {
 } from 'angular-odata';//#endregion
 
 //#region ODataApiGen Imports
-import { FeaturedProduct } from './featuredproduct.entity';
+import { FeaturedProduct } from './featured-product.entity';
 import { Advertisement } from './advertisement.entity';
-import { FeaturedProductModel } from './featuredproduct.model';
+import { FeaturedProductModel } from './featured-product.model';
 import { AdvertisementModel } from './advertisement.model';
-import { FeaturedProductCollection } from './featuredproduct.collection';
+import { FeaturedProductCollection } from './featured-product.collection';
 //#endregion
 
 export class AdvertisementCollection<E extends Advertisement, M extends AdvertisementModel<E>> extends ODataCollection<E, M> {

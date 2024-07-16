@@ -12,6 +12,8 @@ import { EmployeeCollection } from './employee.collection';
 import { RegionCollection } from './region.collection';
 //#endregion
 
+//#region ODataApiGen Type
+export const TerritoryType = 'NorthwindModel.Territory';//#endregion
 export interface Territory {
   //#region ODataApiGen Properties
   TerritoryID: string;

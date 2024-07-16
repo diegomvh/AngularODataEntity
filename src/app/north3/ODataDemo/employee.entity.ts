@@ -9,6 +9,8 @@ import { PersonModel } from './person.model';
 import { PersonCollection } from './person.collection';
 //#endregion
 
+//#region ODataApiGen Type
+export const EmployeeType = 'ODataDemo.Employee';//#endregion
 export interface Employee extends Person {
   //#region ODataApiGen Properties
   EmployeeID: number;

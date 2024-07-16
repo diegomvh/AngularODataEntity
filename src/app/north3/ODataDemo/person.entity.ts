@@ -4,11 +4,13 @@ import {
 } from 'angular-odata';//#endregion
 
 //#region ODataApiGen Imports
-import { PersonDetail } from './persondetail.entity';
-import { PersonDetailModel } from './persondetail.model';
-import { PersonDetailCollection } from './persondetail.collection';
+import { PersonDetail } from './person-detail.entity';
+import { PersonDetailModel } from './person-detail.model';
+import { PersonDetailCollection } from './person-detail.collection';
 //#endregion
 
+//#region ODataApiGen Type
+export const PersonType = 'ODataDemo.Person';//#endregion
 export interface Person {
   //#region ODataApiGen Properties
   ID: number;

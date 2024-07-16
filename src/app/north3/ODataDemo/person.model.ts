@@ -17,10 +17,10 @@ import {
 
 //#region ODataApiGen Imports
 import { Person } from './person.entity';
-import { PersonDetail } from './persondetail.entity';
-import { PersonDetailModel } from './persondetail.model';
+import { PersonDetail } from './person-detail.entity';
+import { PersonDetailModel } from './person-detail.model';
 import { PersonCollection } from './person.collection';
-import { PersonDetailCollection } from './persondetail.collection';
+import { PersonDetailCollection } from './person-detail.collection';
 //#endregion
 
 @Model()

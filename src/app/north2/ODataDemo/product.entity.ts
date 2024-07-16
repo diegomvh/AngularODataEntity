@@ -12,6 +12,8 @@ import { CategoryCollection } from './category.collection';
 import { SupplierCollection } from './supplier.collection';
 //#endregion
 
+//#region ODataApiGen Type
+export const ProductType = 'ODataDemo.Product';//#endregion
 export interface Product {
   //#region ODataApiGen Properties
   ID: number;

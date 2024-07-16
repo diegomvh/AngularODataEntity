@@ -9,6 +9,8 @@ import { ProductModel } from './product.model';
 import { ProductCollection } from './product.collection';
 //#endregion
 
+//#region ODataApiGen Type
+export const CategoryType = 'NorthwindModel.Category';//#endregion
 export interface Category {
   //#region ODataApiGen Properties
   CategoryID: number;

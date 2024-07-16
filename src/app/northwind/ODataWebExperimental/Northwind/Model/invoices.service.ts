@@ -35,12 +35,12 @@ export class InvoicesService extends ODataEntitySetService<Invoice> {
     super(client, 'Invoices', 'NorthwindModel.Invoice');
   }
   //#region ODataApiGen Model
-  invoiceModel(attrs?: Partial<Invoice>): InvoiceModel<Invoice> {
-    return this.entity().asModel<InvoiceModel<Invoice>>(attrs || {});
+  invoiceModel(entity?: Partial<Invoice>): InvoiceModel<Invoice> {
+    return this.entity().asModel<InvoiceModel<Invoice>>(entity);
   }//#endregion
   //#region ODataApiGen Collection
-  invoiceCollection(models?: Partial<Invoice>[]): InvoiceCollection<Invoice, InvoiceModel<Invoice>> {
-    return this.entities().asCollection<InvoiceModel<Invoice>, InvoiceCollection<Invoice, InvoiceModel<Invoice>>>(models || []);
+  invoiceCollection(entities?: Partial<Invoice>[]): InvoiceCollection<Invoice, InvoiceModel<Invoice>> {
+    return this.entities().asCollection<InvoiceModel<Invoice>, InvoiceCollection<Invoice, InvoiceModel<Invoice>>>(entities);
   }//#endregion
   //#region ODataApiGen Actions
   //#endregion

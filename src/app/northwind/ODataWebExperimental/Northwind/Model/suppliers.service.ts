@@ -38,12 +38,12 @@ export class SuppliersService extends ODataEntitySetService<Supplier> {
     super(client, 'Suppliers', 'NorthwindModel.Supplier');
   }
   //#region ODataApiGen Model
-  supplierModel(attrs?: Partial<Supplier>): SupplierModel<Supplier> {
-    return this.entity().asModel<SupplierModel<Supplier>>(attrs || {});
+  supplierModel(entity?: Partial<Supplier>): SupplierModel<Supplier> {
+    return this.entity().asModel<SupplierModel<Supplier>>(entity);
   }//#endregion
   //#region ODataApiGen Collection
-  supplierCollection(models?: Partial<Supplier>[]): SupplierCollection<Supplier, SupplierModel<Supplier>> {
-    return this.entities().asCollection<SupplierModel<Supplier>, SupplierCollection<Supplier, SupplierModel<Supplier>>>(models || []);
+  supplierCollection(entities?: Partial<Supplier>[]): SupplierCollection<Supplier, SupplierModel<Supplier>> {
+    return this.entities().asCollection<SupplierModel<Supplier>, SupplierCollection<Supplier, SupplierModel<Supplier>>>(entities);
   }//#endregion
   //#region ODataApiGen Actions
   //#endregion

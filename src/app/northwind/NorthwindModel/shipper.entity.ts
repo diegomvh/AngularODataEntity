@@ -9,6 +9,8 @@ import { OrderModel } from './order.model';
 import { OrderCollection } from './order.collection';
 //#endregion
 
+//#region ODataApiGen Type
+export const ShipperType = 'NorthwindModel.Shipper';//#endregion
 export interface Shipper {
   //#region ODataApiGen Properties
   ShipperID: number;

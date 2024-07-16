@@ -38,12 +38,12 @@ export class RegionsService extends ODataEntitySetService<Region> {
     super(client, 'Regions', 'NorthwindModel.Region');
   }
   //#region ODataApiGen Model
-  regionModel(attrs?: Partial<Region>): RegionModel<Region> {
-    return this.entity().asModel<RegionModel<Region>>(attrs || {});
+  regionModel(entity?: Partial<Region>): RegionModel<Region> {
+    return this.entity().asModel<RegionModel<Region>>(entity);
   }//#endregion
   //#region ODataApiGen Collection
-  regionCollection(models?: Partial<Region>[]): RegionCollection<Region, RegionModel<Region>> {
-    return this.entities().asCollection<RegionModel<Region>, RegionCollection<Region, RegionModel<Region>>>(models || []);
+  regionCollection(entities?: Partial<Region>[]): RegionCollection<Region, RegionModel<Region>> {
+    return this.entities().asCollection<RegionModel<Region>, RegionCollection<Region, RegionModel<Region>>>(entities);
   }//#endregion
   //#region ODataApiGen Actions
   //#endregion

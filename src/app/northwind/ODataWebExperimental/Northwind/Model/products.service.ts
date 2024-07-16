@@ -25,15 +25,15 @@ import {
 
 //#region ODataApiGen Imports
 import { Category } from '../../../NorthwindModel/category.entity';
-import { OrderDetail } from '../../../NorthwindModel/order_detail.entity';
+import { OrderDetail } from '../../../NorthwindModel/order-detail.entity';
 import { Product } from '../../../NorthwindModel/product.entity';
 import { Supplier } from '../../../NorthwindModel/supplier.entity';
 import { CategoryModel } from '../../../NorthwindModel/category.model';
-import { OrderDetailModel } from '../../../NorthwindModel/order_detail.model';
+import { OrderDetailModel } from '../../../NorthwindModel/order-detail.model';
 import { ProductModel } from '../../../NorthwindModel/product.model';
 import { SupplierModel } from '../../../NorthwindModel/supplier.model';
 import { CategoryCollection } from '../../../NorthwindModel/category.collection';
-import { OrderDetailCollection } from '../../../NorthwindModel/order_detail.collection';
+import { OrderDetailCollection } from '../../../NorthwindModel/order-detail.collection';
 import { ProductCollection } from '../../../NorthwindModel/product.collection';
 import { SupplierCollection } from '../../../NorthwindModel/supplier.collection';
 //#endregion
@@ -44,12 +44,12 @@ export class ProductsService extends ODataEntitySetService<Product> {
     super(client, 'Products', 'NorthwindModel.Product');
   }
   //#region ODataApiGen Model
-  productModel(attrs?: Partial<Product>): ProductModel<Product> {
-    return this.entity().asModel<ProductModel<Product>>(attrs || {});
+  productModel(entity?: Partial<Product>): ProductModel<Product> {
+    return this.entity().asModel<ProductModel<Product>>(entity);
   }//#endregion
   //#region ODataApiGen Collection
-  productCollection(models?: Partial<Product>[]): ProductCollection<Product, ProductModel<Product>> {
-    return this.entities().asCollection<ProductModel<Product>, ProductCollection<Product, ProductModel<Product>>>(models || []);
+  productCollection(entities?: Partial<Product>[]): ProductCollection<Product, ProductModel<Product>> {
+    return this.entities().asCollection<ProductModel<Product>, ProductCollection<Product, ProductModel<Product>>>(entities);
   }//#endregion
   //#region ODataApiGen Actions
   //#endregion

@@ -24,13 +24,13 @@ import {
 } from 'angular-odata';//#endregion
 
 //#region ODataApiGen Imports
-import { CustomerDemographic } from '../../../NorthwindModel/customerdemographic.entity';
+import { CustomerDemographic } from '../../../NorthwindModel/customer-demographic.entity';
 import { Customer } from '../../../NorthwindModel/customer.entity';
 import { Order } from '../../../NorthwindModel/order.entity';
-import { CustomerDemographicModel } from '../../../NorthwindModel/customerdemographic.model';
+import { CustomerDemographicModel } from '../../../NorthwindModel/customer-demographic.model';
 import { CustomerModel } from '../../../NorthwindModel/customer.model';
 import { OrderModel } from '../../../NorthwindModel/order.model';
-import { CustomerDemographicCollection } from '../../../NorthwindModel/customerdemographic.collection';
+import { CustomerDemographicCollection } from '../../../NorthwindModel/customer-demographic.collection';
 import { CustomerCollection } from '../../../NorthwindModel/customer.collection';
 import { OrderCollection } from '../../../NorthwindModel/order.collection';
 //#endregion
@@ -41,12 +41,12 @@ export class CustomersService extends ODataEntitySetService<Customer> {
     super(client, 'Customers', 'NorthwindModel.Customer');
   }
   //#region ODataApiGen Model
-  customerModel(attrs?: Partial<Customer>): CustomerModel<Customer> {
-    return this.entity().asModel<CustomerModel<Customer>>(attrs || {});
+  customerModel(entity?: Partial<Customer>): CustomerModel<Customer> {
+    return this.entity().asModel<CustomerModel<Customer>>(entity);
   }//#endregion
   //#region ODataApiGen Collection
-  customerCollection(models?: Partial<Customer>[]): CustomerCollection<Customer, CustomerModel<Customer>> {
-    return this.entities().asCollection<CustomerModel<Customer>, CustomerCollection<Customer, CustomerModel<Customer>>>(models || []);
+  customerCollection(entities?: Partial<Customer>[]): CustomerCollection<Customer, CustomerModel<Customer>> {
+    return this.entities().asCollection<CustomerModel<Customer>, CustomerCollection<Customer, CustomerModel<Customer>>>(entities);
   }//#endregion
   //#region ODataApiGen Actions
   //#endregion

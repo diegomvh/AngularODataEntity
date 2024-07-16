@@ -26,17 +26,17 @@ import {
 //#region ODataApiGen Imports
 import { Customer } from '../../../NorthwindModel/customer.entity';
 import { Employee } from '../../../NorthwindModel/employee.entity';
-import { OrderDetail } from '../../../NorthwindModel/order_detail.entity';
+import { OrderDetail } from '../../../NorthwindModel/order-detail.entity';
 import { Order } from '../../../NorthwindModel/order.entity';
 import { Shipper } from '../../../NorthwindModel/shipper.entity';
 import { CustomerModel } from '../../../NorthwindModel/customer.model';
 import { EmployeeModel } from '../../../NorthwindModel/employee.model';
-import { OrderDetailModel } from '../../../NorthwindModel/order_detail.model';
+import { OrderDetailModel } from '../../../NorthwindModel/order-detail.model';
 import { OrderModel } from '../../../NorthwindModel/order.model';
 import { ShipperModel } from '../../../NorthwindModel/shipper.model';
 import { CustomerCollection } from '../../../NorthwindModel/customer.collection';
 import { EmployeeCollection } from '../../../NorthwindModel/employee.collection';
-import { OrderDetailCollection } from '../../../NorthwindModel/order_detail.collection';
+import { OrderDetailCollection } from '../../../NorthwindModel/order-detail.collection';
 import { OrderCollection } from '../../../NorthwindModel/order.collection';
 import { ShipperCollection } from '../../../NorthwindModel/shipper.collection';
 //#endregion
@@ -47,12 +47,12 @@ export class OrdersService extends ODataEntitySetService<Order> {
     super(client, 'Orders', 'NorthwindModel.Order');
   }
   //#region ODataApiGen Model
-  orderModel(attrs?: Partial<Order>): OrderModel<Order> {
-    return this.entity().asModel<OrderModel<Order>>(attrs || {});
+  orderModel(entity?: Partial<Order>): OrderModel<Order> {
+    return this.entity().asModel<OrderModel<Order>>(entity);
   }//#endregion
   //#region ODataApiGen Collection
-  orderCollection(models?: Partial<Order>[]): OrderCollection<Order, OrderModel<Order>> {
-    return this.entities().asCollection<OrderModel<Order>, OrderCollection<Order, OrderModel<Order>>>(models || []);
+  orderCollection(entities?: Partial<Order>[]): OrderCollection<Order, OrderModel<Order>> {
+    return this.entities().asCollection<OrderModel<Order>, OrderCollection<Order, OrderModel<Order>>>(entities);
   }//#endregion
   //#region ODataApiGen Actions
   //#endregion

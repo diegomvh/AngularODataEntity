@@ -35,12 +35,12 @@ export class PersonsService extends ODataEntitySetService<Person> {
     super(client, 'Persons', 'ODataDemo.Person');
   }
   //#region ODataApiGen Model
-  personModel(attrs?: Partial<Person>): PersonModel<Person> {
-    return this.entity().asModel<PersonModel<Person>>(attrs || {});
+  personModel(entity?: Partial<Person>): PersonModel<Person> {
+    return this.entity().asModel<PersonModel<Person>>(entity);
   }//#endregion
   //#region ODataApiGen Collection
-  personCollection(models?: Partial<Person>[]): PersonCollection<Person, PersonModel<Person>> {
-    return this.entities().asCollection<PersonModel<Person>, PersonCollection<Person, PersonModel<Person>>>(models || []);
+  personCollection(entities?: Partial<Person>[]): PersonCollection<Person, PersonModel<Person>> {
+    return this.entities().asCollection<PersonModel<Person>, PersonCollection<Person, PersonModel<Person>>>(entities);
   }//#endregion
   //#region ODataApiGen Actions
   //#endregion

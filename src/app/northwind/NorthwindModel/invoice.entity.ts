@@ -6,6 +6,8 @@ import {
 //#region ODataApiGen Imports
 //#endregion
 
+//#region ODataApiGen Type
+export const InvoiceType = 'NorthwindModel.Invoice';//#endregion
 export interface Invoice {
   //#region ODataApiGen Properties
   ShipName?: string;

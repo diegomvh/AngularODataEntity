@@ -16,10 +16,10 @@ import {
 } from 'angular-odata';//#endregion
 
 //#region ODataApiGen Imports
-import { FeaturedProduct } from './featuredproduct.entity';
+import { FeaturedProduct } from './featured-product.entity';
 import { Advertisement } from './advertisement.entity';
-import { FeaturedProductModel } from './featuredproduct.model';
-import { FeaturedProductCollection } from './featuredproduct.collection';
+import { FeaturedProductModel } from './featured-product.model';
+import { FeaturedProductCollection } from './featured-product.collection';
 import { AdvertisementCollection } from './advertisement.collection';
 //#endregion
 

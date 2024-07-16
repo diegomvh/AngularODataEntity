@@ -41,12 +41,12 @@ export class TerritoriesService extends ODataEntitySetService<Territory> {
     super(client, 'Territories', 'NorthwindModel.Territory');
   }
   //#region ODataApiGen Model
-  territoryModel(attrs?: Partial<Territory>): TerritoryModel<Territory> {
-    return this.entity().asModel<TerritoryModel<Territory>>(attrs || {});
+  territoryModel(entity?: Partial<Territory>): TerritoryModel<Territory> {
+    return this.entity().asModel<TerritoryModel<Territory>>(entity);
   }//#endregion
   //#region ODataApiGen Collection
-  territoryCollection(models?: Partial<Territory>[]): TerritoryCollection<Territory, TerritoryModel<Territory>> {
-    return this.entities().asCollection<TerritoryModel<Territory>, TerritoryCollection<Territory, TerritoryModel<Territory>>>(models || []);
+  territoryCollection(entities?: Partial<Territory>[]): TerritoryCollection<Territory, TerritoryModel<Territory>> {
+    return this.entities().asCollection<TerritoryModel<Territory>, TerritoryCollection<Territory, TerritoryModel<Territory>>>(entities);
   }//#endregion
   //#region ODataApiGen Actions
   //#endregion

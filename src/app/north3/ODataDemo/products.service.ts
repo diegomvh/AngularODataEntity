@@ -35,12 +35,12 @@ export class ProductsService extends ODataEntitySetService<Product> {
     super(client, 'Products', 'ODataDemo.Product');
   }
   //#region ODataApiGen Model
-  productModel(attrs?: Partial<Product>): ProductModel<Product> {
-    return this.entity().asModel<ProductModel<Product>>(attrs || {});
+  productModel(entity?: Partial<Product>): ProductModel<Product> {
+    return this.entity().asModel<ProductModel<Product>>(entity);
   }//#endregion
   //#region ODataApiGen Collection
-  productCollection(models?: Partial<Product>[]): ProductCollection<Product, ProductModel<Product>> {
-    return this.entities().asCollection<ProductModel<Product>, ProductCollection<Product, ProductModel<Product>>>(models || []);
+  productCollection(entities?: Partial<Product>[]): ProductCollection<Product, ProductModel<Product>> {
+    return this.entities().asCollection<ProductModel<Product>, ProductCollection<Product, ProductModel<Product>>>(entities);
   }//#endregion
   //#region ODataApiGen Actions
   //#endregion

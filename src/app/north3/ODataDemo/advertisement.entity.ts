@@ -4,11 +4,13 @@ import {
 } from 'angular-odata';//#endregion
 
 //#region ODataApiGen Imports
-import { FeaturedProduct } from './featuredproduct.entity';
-import { FeaturedProductModel } from './featuredproduct.model';
-import { FeaturedProductCollection } from './featuredproduct.collection';
+import { FeaturedProduct } from './featured-product.entity';
+import { FeaturedProductModel } from './featured-product.model';
+import { FeaturedProductCollection } from './featured-product.collection';
 //#endregion
 
+//#region ODataApiGen Type
+export const AdvertisementType = 'ODataDemo.Advertisement';//#endregion
 export interface Advertisement {
   //#region ODataApiGen Properties
   ID: string;

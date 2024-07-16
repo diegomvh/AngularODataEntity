@@ -15,7 +15,7 @@ export * from './ODataDemo/address.complex.config';
 export * from './ODataDemo/product.entity.config';
 export * from './ODataDemo/category.entity.config';
 export * from './ODataDemo/supplier.entity.config';
-export * from './ODataDemo/demoservice.service';
+export * from './ODataDemo/demo-service.service';
 export * from './ODataDemo/products.service';
 export * from './ODataDemo/categories.service';
 export * from './ODataDemo/suppliers.service';

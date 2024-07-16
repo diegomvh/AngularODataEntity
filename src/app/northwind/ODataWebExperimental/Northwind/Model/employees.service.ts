@@ -41,12 +41,12 @@ export class EmployeesService extends ODataEntitySetService<Employee> {
     super(client, 'Employees', 'NorthwindModel.Employee');
   }
   //#region ODataApiGen Model
-  employeeModel(attrs?: Partial<Employee>): EmployeeModel<Employee> {
-    return this.entity().asModel<EmployeeModel<Employee>>(attrs || {});
+  employeeModel(entity?: Partial<Employee>): EmployeeModel<Employee> {
+    return this.entity().asModel<EmployeeModel<Employee>>(entity);
   }//#endregion
   //#region ODataApiGen Collection
-  employeeCollection(models?: Partial<Employee>[]): EmployeeCollection<Employee, EmployeeModel<Employee>> {
-    return this.entities().asCollection<EmployeeModel<Employee>, EmployeeCollection<Employee, EmployeeModel<Employee>>>(models || []);
+  employeeCollection(entities?: Partial<Employee>[]): EmployeeCollection<Employee, EmployeeModel<Employee>> {
+    return this.entities().asCollection<EmployeeModel<Employee>, EmployeeCollection<Employee, EmployeeModel<Employee>>>(entities);
   }//#endregion
   //#region ODataApiGen Actions
   //#endregion

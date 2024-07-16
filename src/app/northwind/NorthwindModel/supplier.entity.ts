@@ -9,6 +9,8 @@ import { ProductModel } from './product.model';
 import { ProductCollection } from './product.collection';
 //#endregion
 
+//#region ODataApiGen Type
+export const SupplierType = 'NorthwindModel.Supplier';//#endregion
 export interface Supplier {
   //#region ODataApiGen Properties
   SupplierID: number;

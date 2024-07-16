@@ -5,7 +5,7 @@ import {
 } from 'angular-odata';//#endregion
 
 //#region ODataApiGen Imports
-import { ODataDemoSchema } from './ODataDemo/odatademo.schema';
+import { ODataDemoSchemaConfig } from './ODataDemo/o-data-demo.schema.config';
 //#endregion
 
 //#region ODataApiGen ApiConfig
@@ -13,9 +13,9 @@ export const North2Config = {
   serviceRootUrl: 'https://services.odata.org/V2/(S(hovbiiwxashh0qaz2p0p5go0))/OData/OData.svc/',
   name: 'North2',
   version: '2.0',
-  creation: new Date('2024-05-27T08:58:30.0992501-03:00'),
+  creation: new Date('2024-07-16T11:36:14.7501083-03:00'),
   schemas: [
-    ODataDemoSchema
+    ODataDemoSchemaConfig
   ],
   parsers: EDM_PARSERS
 } as ApiConfig;

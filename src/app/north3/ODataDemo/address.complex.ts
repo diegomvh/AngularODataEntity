@@ -6,6 +6,8 @@ import {
 //#region ODataApiGen Imports
 //#endregion
 
+//#region ODataApiGen Type
+export const AddressType = 'ODataDemo.Address';//#endregion
 export interface Address {
   //#region ODataApiGen Properties
   Street?: string;
