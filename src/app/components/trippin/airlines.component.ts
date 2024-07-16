@@ -3,7 +3,6 @@ import { Airline, AirlinesService } from '../../trippin';
 import {
   ODataEntitySetResource,
   ODataClient,
-  ODataStructuredType,
   EdmType,
 } from 'angular-odata';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
@@ -13,7 +12,7 @@ import { CommonModule } from '@angular/common';
   selector: 'trip-airlines',
   standalone: true,
   imports: [CommonModule, TableModule],
-  template: `<p-table
+  template: `<p-table *ngIf="cols"
     #table
     [columns]="cols"
     [value]="rows"
@@ -72,6 +71,7 @@ export class AirlinesComponent {
 
   constructor(private client: ODataClient, private airlines: AirlinesService) {
     this.resource = this.airlines.entities();
+    console.log(this.resource);
     const schema = this.resource.structuredType();
     this.cols =
       schema !== null

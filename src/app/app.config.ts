@@ -16,10 +16,6 @@ export const appConfig: ApplicationConfig = {
     provideODataClient({
       config: [
         {
-          name: "TripPinDynamic",
-          serviceRootUrl: 'http://localhost:4200/trippin/',
-        },
-        {
           name: "MicrosoftGraph",
           serviceRootUrl: 'https://graph.microsoft.com/v1.0/',
           options: {

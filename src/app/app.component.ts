@@ -40,7 +40,7 @@ export class AppComponent {
     private ordersService: OrdersService
   ) {
     //this.encode();
-    this.trippin();
+    //this.trippin();
     //this.northwind();
     //this.queries();
   }
@@ -48,15 +48,13 @@ export class AppComponent {
   //#region APIs
   trippin() {
     //this.mutate();
-    this.tripPinContainer.callResetDataSource().subscribe(() => {
-      this.queries();
-      //this.query();
-      //this.trippinModels();
-      //this.mutate();
-      //this.northwindTypeModels();
-      //this.uploadPhotos();
-      //this.filterPeopleByGender();
-    });
+    //this.queries();
+    //this.query();
+    //this.trippinModels();
+    //this.mutate();
+    //this.northwindTypeModels();
+    //this.uploadPhotos();
+    //this.filterPeopleByGender();
   }
 
   northwind() {
@@ -90,7 +88,7 @@ export class AppComponent {
     //this.navigation();
     //this.property();
     //this.mediaEntity();
-    this.aggregations();
+    //this.aggregations();
     //this.batch();
     //this.microsoftGraph();
     //this.tripPinDynamic();
@@ -470,9 +468,9 @@ export class AppComponent {
   tripPinDynamic() {
     const api = this.odata.apiFor("TripPinDynamic");
     api.metadata().fetch().subscribe(metadata => {
-      const username = metadata.schemas
-        .find(s => s.namespace === "Microsoft.OData.SampleService.Models.TripPin")?.entityTypes?.find(e => e.name === "Person")?.properties?.find(p => p.name === "UserName");
-      console.log(username?.annotations?.find(a => a.term === "Org.OData.Core.V1.Permissions")?.members?.map((m: any) => m.text));
+      const username = metadata.Schemas
+        .find(s => s.Namespace === "Microsoft.OData.SampleService.Models.TripPin")?.EntityType?.find(e => e.Name === "Person")?.Property?.find(p => p.Name === "UserName");
+      console.log(username?.Annotation?.find(a => a.Term === "Org.OData.Core.V1.Permissions")?.Members?.map((m: any) => m.text));
       api.populate(metadata); 
       const entitySet = api.entitySet<Person>("People");
       const schema = api.structuredType("Person");
