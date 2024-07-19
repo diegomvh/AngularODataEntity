@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { PeopleService, Person, PersonGender } from '../../trippin';
+import { PeopleService, Person, PersonGender } from '../../trip-pin';
 import {
   ODataEntitySetResource,
   ODataClient,

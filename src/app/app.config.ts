@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { ApiConfig, ODataInMemoryCache, ODataInStorageCache, PassedInitialConfig, provideODataClient } from 'angular-odata';
-import { TripPinConfig } from './trippin';
+import { TripPinConfig } from './trip-pin';
 import { North2Config } from './north2';
 import { North3Config } from './north3';
 import { NorthwindConfig } from './northwind';

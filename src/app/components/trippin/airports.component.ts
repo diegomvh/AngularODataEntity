@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Airport, AirportsService } from '../../trippin';
+import { Airport, AirportsService } from '../../trip-pin';
 import {
   ODataEntitySetResource,
   ODataClient,

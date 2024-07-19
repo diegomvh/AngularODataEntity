@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ODataClient, ODataEntitySetResource, ODataServiceFactory } from 'angular-odata';
-import { Airport, DefaultContainerService, PeopleService, Person, PersonCollection, PersonGender, PersonGenderType, PersonModel, Photo, PhotosService, TripPinModule } from './trippin';
+import { Airport, DefaultContainerService, PeopleService, Person, PersonCollection, PersonGender, PersonGenderType, PersonModel, Photo, PhotosService, TripPinModule } from './trip-pin';
 import { NorthwindModule, OrdersService, ProductCollection, ProductsService } from './northwind';
 import { filter, firstValueFrom, forkJoin, map, switchMap } from 'rxjs';
 import { TabViewModule } from 'primeng/tabview';
@@ -466,7 +466,7 @@ export class AppComponent {
     api.metadata().fetch().subscribe(metadata => {
       const username = metadata.Schemas
         .find(s => s.Namespace === "Microsoft.OData.SampleService.Models.TripPin")?.EntityType?.find(e => e.Name === "Person")?.Property?.find(p => p.Name === "UserName");
-      console.log(username?.Annotation?.find(a => a.Term === "Org.OData.Core.V1.Permissions")?.Members?.map((m: any) => m.text));
+      console.log(username?.Annotation?.find(a => a.Term === "Org.OData.Core.V1.Permissions")?.EnumMember?.map((m: any) => m.text));
       api.populate(metadata); 
       const entitySet = api.entitySet<Person>("People");
       const schema = api.structuredType("Person");

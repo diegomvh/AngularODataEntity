@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PeopleService, Person, PhotosService } from '../../trippin';
+import { PeopleService, Person, PhotosService } from '../../trip-pin';
 import { DialogModule } from 'primeng/dialog';
 import { CommonModule } from '@angular/common';
 
