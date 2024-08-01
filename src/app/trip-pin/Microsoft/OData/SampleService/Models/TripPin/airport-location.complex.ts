@@ -1,19 +1,8 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
-
-//#region ODataApiGen Imports
-import { Point } from 'geojson';
+import { Duration } from 'angular-odata';
 import { Location } from './location.complex';
-import { LocationModel } from './location.model';
-import { LocationCollection } from './location.collection';
-//#endregion
+import { Point } from 'geojson';
 
-//#region ODataApiGen Type
-export const AirportLocationType = 'Microsoft.OData.SampleService.Models.TripPin.AirportLocation';//#endregion
+export const AirportLocationType = 'Microsoft.OData.SampleService.Models.TripPin.AirportLocation';
 export interface AirportLocation extends Location {
-  //#region ODataApiGen Properties
   Loc: Point;
-  //#endregion
 }

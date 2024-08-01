@@ -24,7 +24,7 @@ import { SupplierCollection } from './supplier.collection';
 //#endregion
 
 @Model()
-export class SupplierModel<E extends Supplier> extends ODataModel<E> {
+export class SupplierModel<E extends Supplier> extends ODataModel<E> implements Supplier {
   //#region ODataApiGen Properties
   @ModelField()
   SupplierID!: number;

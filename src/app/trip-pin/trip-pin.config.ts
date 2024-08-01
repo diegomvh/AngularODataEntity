@@ -1,22 +1,11 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  ApiConfig,
-  EDM_PARSERS
-} from 'angular-odata';//#endregion
+import { ApiConfig, EDM_PARSERS, ODataMetadata, ODataVersion } from 'angular-odata';
+import * as json from './metadata.json';
 
-//#region ODataApiGen Imports
-import { TripPinSchemaConfig } from './Microsoft/OData/SampleService/Models/TripPin/trip-pin.schema.config';
-//#endregion
-
-//#region ODataApiGen ApiConfig
-export const TripPinConfig = {
-  serviceRootUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
+export const TripPinConfig = ODataMetadata.fromJson(json).toConfig({
+  serviceRootUrl: 'https://services.odata.org/V4/TripPinServiceRW/', 
+  metadataUrl: 'https://services.odata.org/V4/TripPinServiceRW/$metadata', 
   name: 'TripPin',
-  version: '4.0',
-  creation: new Date('2024-07-16T11:28:24.0578803-03:00'),
-  schemas: [
-    TripPinSchemaConfig
-  ],
+  version: '4.0' as ODataVersion,
+  creation: new Date('2024-07-31T14:16:41.456Z'),
   parsers: EDM_PARSERS
-} as ApiConfig;
-//#endregion
+}) as ApiConfig;

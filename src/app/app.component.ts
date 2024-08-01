@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ODataClient, ODataEntitySetResource, ODataServiceFactory } from 'angular-odata';
-import { Airport, DefaultContainerService, PeopleService, Person, PersonCollection, PersonGender, PersonGenderType, PersonModel, Photo, PhotosService, TripPinModule } from './trip-pin';
+import { ODataClient, ODataEntitySetResource, ODataModel, ODataServiceFactory } from 'angular-odata';
+import { Airport, DefaultContainerService, PeopleService, Person, PersonGender, PersonGenderType, Photo, PhotosService, TripPinModule } from './trip-pin';
 import { NorthwindModule, OrdersService, ProductCollection, ProductsService } from './northwind';
 import { filter, firstValueFrom, forkJoin, map, switchMap } from 'rxjs';
 import { TabViewModule } from 'primeng/tabview';
 import { AirlinesComponent, AirportsComponent, PeopleComponent } from './components/trippin';
 import { CategoriesComponent, EmployeesComponent, OrdersComponent, ProductsComponent } from './components/northwind';
 import { TableModule } from 'primeng/table';
+import { PersonCollection } from './north3';
 
 @Component({
   selector: 'app-root',
@@ -489,7 +490,7 @@ export class AppComponent {
   }
 
   trippinModels() {
-    const people = this.peopleService.entities().asCollection<PersonModel<Person>, PersonCollection<Person, PersonModel<Person>>>();
+    const people = this.peopleService.entities().asCollection();
     //const people = this.peopleService.personCollection();
     people.query((q) => q.expand({ Friends: {}, Trips: {} }));
     people

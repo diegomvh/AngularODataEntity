@@ -1,17 +1,8 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
+import { Duration } from 'angular-odata';
 
-//#region ODataApiGen Imports
-//#endregion
-
-//#region ODataApiGen Type
-export const CityType = 'Microsoft.OData.SampleService.Models.TripPin.City';//#endregion
+export const CityType = 'Microsoft.OData.SampleService.Models.TripPin.City';
 export interface City {
-  //#region ODataApiGen Properties
   CountryRegion: string;
   Name: string;
   Region: string;
-  //#endregion
 }

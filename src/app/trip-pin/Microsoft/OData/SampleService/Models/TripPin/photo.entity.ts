@@ -1,16 +1,7 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
+import { Duration } from 'angular-odata';
 
-//#region ODataApiGen Imports
-//#endregion
-
-//#region ODataApiGen Type
-export const PhotoType = 'Microsoft.OData.SampleService.Models.TripPin.Photo';//#endregion
+export const PhotoType = 'Microsoft.OData.SampleService.Models.TripPin.Photo';
 export interface Photo {
-  //#region ODataApiGen Properties
   Id: number;
-  Name?: string;
-  //#endregion
+  Name: string;
 }

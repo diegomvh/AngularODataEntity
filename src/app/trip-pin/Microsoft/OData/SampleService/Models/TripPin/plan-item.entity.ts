@@ -1,19 +1,10 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
+import { Duration } from 'angular-odata';
 
-//#region ODataApiGen Imports
-//#endregion
-
-//#region ODataApiGen Type
-export const PlanItemType = 'Microsoft.OData.SampleService.Models.TripPin.PlanItem';//#endregion
+export const PlanItemType = 'Microsoft.OData.SampleService.Models.TripPin.PlanItem';
 export interface PlanItem {
-  //#region ODataApiGen Properties
   PlanItemId: number;
-  ConfirmationCode?: string;
-  StartsAt?: Date;
-  EndsAt?: Date;
-  Duration?: Duration;
-  //#endregion
+  ConfirmationCode: string;
+  StartsAt: Date;
+  EndsAt: Date;
+  Duration: Duration;
 }
