@@ -16,10 +16,10 @@ export const SalesTotalsByAmountEntityConfig = {
   collection: SalesTotalsByAmountCollection,
   keys: [{name: 'CompanyName'},{name: 'OrderID'}],
   fields: {
-    SaleAmount: {type: 'Edm.Decimal', precition: 19, scale: 4},
+    SaleAmount: {type: 'Edm.Decimal'},
     OrderID: {type: 'Edm.Int32', nullable: false},
-    CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},
+    CompanyName: {type: 'Edm.String', nullable: false},
     ShippedDate: {type: 'Edm.DateTimeOffset'}
   }
-} as StructuredTypeConfig<SalesTotalsByAmount>;
+} as StructuredTypeConfig;
 //#endregion

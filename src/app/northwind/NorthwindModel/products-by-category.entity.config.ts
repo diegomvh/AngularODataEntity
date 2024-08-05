@@ -16,11 +16,11 @@ export const ProductsByCategoryEntityConfig = {
   collection: ProductsByCategoryCollection,
   keys: [{name: 'CategoryName'},{name: 'Discontinued'},{name: 'ProductName'}],
   fields: {
-    CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
-    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
-    QuantityPerUnit: {type: 'Edm.String', maxLength: 20},
+    CategoryName: {type: 'Edm.String', nullable: false},
+    ProductName: {type: 'Edm.String', nullable: false},
+    QuantityPerUnit: {type: 'Edm.String'},
     UnitsInStock: {type: 'Edm.Int16'},
     Discontinued: {type: 'Edm.Boolean', nullable: false}
   }
-} as StructuredTypeConfig<ProductsByCategory>;
+} as StructuredTypeConfig;
 //#endregion

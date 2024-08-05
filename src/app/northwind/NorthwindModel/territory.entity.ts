@@ -17,7 +17,7 @@ export const TerritoryType = 'NorthwindModel.Territory';//#endregion
 export interface Territory {
   //#region ODataApiGen Properties
   TerritoryID: string;
-  TerritoryDescription: string;
+  TerritoryDescription?: string;
   RegionID: number;
   Region?: Region;
   Employees?: Employee[];

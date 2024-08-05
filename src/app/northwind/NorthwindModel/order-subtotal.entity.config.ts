@@ -17,7 +17,7 @@ export const OrderSubtotalEntityConfig = {
   keys: [{name: 'OrderID'}],
   fields: {
     OrderID: {type: 'Edm.Int32', nullable: false},
-    Subtotal: {type: 'Edm.Decimal', precition: 19, scale: 4}
+    Subtotal: {type: 'Edm.Decimal'}
   }
-} as StructuredTypeConfig<OrderSubtotal>;
+} as StructuredTypeConfig;
 //#endregion

@@ -20,5 +20,5 @@ export const ProductDetailEntityConfig = {
     Details: {type: 'Edm.String'},
     Product: {type: 'ODataDemo.Product', navigation: true}
   }
-} as StructuredTypeConfig<ProductDetail>;
+} as StructuredTypeConfig;
 //#endregion

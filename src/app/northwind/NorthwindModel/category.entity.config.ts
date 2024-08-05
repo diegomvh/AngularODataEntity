@@ -17,10 +17,10 @@ export const CategoryEntityConfig = {
   keys: [{name: 'CategoryID'}],
   fields: {
     CategoryID: {type: 'Edm.Int32', nullable: false},
-    CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
+    CategoryName: {type: 'Edm.String'},
     Description: {type: 'Edm.String'},
     Picture: {type: 'Edm.Binary'},
     Products: {type: 'NorthwindModel.Product', collection: true, navigation: true}
   }
-} as StructuredTypeConfig<Category>;
+} as StructuredTypeConfig;
 //#endregion

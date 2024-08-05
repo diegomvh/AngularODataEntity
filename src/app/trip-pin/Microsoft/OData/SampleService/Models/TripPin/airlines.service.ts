@@ -12,7 +12,7 @@ import { Airline } from './airline.entity';
 @Injectable()
 export class AirlinesService extends ODataEntitySetService<Airline> {
   constructor(client: ODataClient) {
-    super(client, 'AirlinesService', 'Microsoft.OData.SampleService.Models.TripPin.Airline');
+    super(client, 'Airlines', 'Microsoft.OData.SampleService.Models.TripPin.Airline');
   }
   airlineModel(entity?: Partial<Airline>) {
     return this.model(entity);

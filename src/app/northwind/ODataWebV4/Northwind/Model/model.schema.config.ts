@@ -9,7 +9,7 @@ import { NorthwindEntitiesEntityContainerConfig } from './northwind-entities.ent
 
 //#region ODataApiGen SchemaConfig
 export const ModelSchemaConfig = {
-  namespace: 'ODataWebExperimental.Northwind.Model',
+  namespace: 'ODataWebV4.Northwind.Model',
   enums: [],
   entities: [],
   callables: [],

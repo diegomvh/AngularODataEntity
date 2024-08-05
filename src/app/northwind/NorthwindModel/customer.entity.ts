@@ -17,7 +17,7 @@ export const CustomerType = 'NorthwindModel.Customer';//#endregion
 export interface Customer {
   //#region ODataApiGen Properties
   CustomerID: string;
-  CompanyName: string;
+  CompanyName?: string;
   ContactName?: string;
   ContactTitle?: string;
   Address?: string;

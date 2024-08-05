@@ -16,9 +16,9 @@ export const CustomerDemographicEntityConfig = {
   collection: CustomerDemographicCollection,
   keys: [{name: 'CustomerTypeID'}],
   fields: {
-    CustomerTypeID: {type: 'Edm.String', nullable: false, maxLength: 10},
+    CustomerTypeID: {type: 'Edm.String', nullable: false},
     CustomerDesc: {type: 'Edm.String'},
     Customers: {type: 'NorthwindModel.Customer', collection: true, navigation: true}
   }
-} as StructuredTypeConfig<CustomerDemographic>;
+} as StructuredTypeConfig;
 //#endregion

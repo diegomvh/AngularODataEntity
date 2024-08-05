@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ODataClient, ODataEntitySetResource, ODataModel, ODataServiceFactory } from 'angular-odata';
+import { EdmType, ODataClient, ODataEntitySetResource, ODataModel, ODataServiceFactory } from 'angular-odata';
 import { Airport, DefaultContainerService, PeopleService, Person, PersonGender, PersonGenderType, Photo, PhotosService, TripPinModule } from './trip-pin';
 import { NorthwindModule, OrdersService, ProductCollection, ProductsService } from './northwind';
 import { filter, firstValueFrom, forkJoin, map, switchMap } from 'rxjs';
@@ -40,7 +40,7 @@ export class AppComponent {
     private productsService: ProductsService,
     private ordersService: OrdersService
   ) {
-    //this.encode();
+    this.encode();
     //this.trippin();
     //this.northwind();
     //this.queries();
@@ -64,8 +64,9 @@ export class AppComponent {
   //#endregion
 
   encode() {
+    debugger;
     // Edm Parser
-    var guidParser = this.odata.parserForType('Edm.Guid');
+    var guidParser = this.odata.parserForType(EdmType.Guid);
     var guid = guidParser.encode('12345678-1234-1234-1234-123456789012');
     console.log(guid);
     // Enum Parser

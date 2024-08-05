@@ -19,8 +19,8 @@ export const EmployeeType = 'NorthwindModel.Employee';//#endregion
 export interface Employee {
   //#region ODataApiGen Properties
   EmployeeID: number;
-  LastName: string;
-  FirstName: string;
+  LastName?: string;
+  FirstName?: string;
   Title?: string;
   TitleOfCourtesy?: string;
   BirthDate?: Date;

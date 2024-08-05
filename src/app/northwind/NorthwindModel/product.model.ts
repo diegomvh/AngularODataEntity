@@ -45,7 +45,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
     return this.fetchAttribute<number>('ProductID', options) as Observable<number>;
   }
   @ModelField()
-  ProductName!: string;
+  ProductName?: string;
   public $$ProductName() {
     return this.property<string>('ProductName');
   }

@@ -16,11 +16,11 @@ export const TerritoryEntityConfig = {
   collection: TerritoryCollection,
   keys: [{name: 'TerritoryID'}],
   fields: {
-    TerritoryID: {type: 'Edm.String', nullable: false, maxLength: 20},
-    TerritoryDescription: {type: 'Edm.String', nullable: false, maxLength: 50},
+    TerritoryID: {type: 'Edm.String', nullable: false},
+    TerritoryDescription: {type: 'Edm.String'},
     RegionID: {type: 'Edm.Int32', nullable: false},
-    Region: {type: 'NorthwindModel.Region', navigation: true, referentials: [{property: 'RegionID', referencedProperty: 'RegionID'}]},
+    Region: {type: 'NorthwindModel.Region', navigation: true},
     Employees: {type: 'NorthwindModel.Employee', collection: true, navigation: true}
   }
-} as StructuredTypeConfig<Territory>;
+} as StructuredTypeConfig;
 //#endregion

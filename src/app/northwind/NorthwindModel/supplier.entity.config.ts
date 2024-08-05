@@ -17,18 +17,18 @@ export const SupplierEntityConfig = {
   keys: [{name: 'SupplierID'}],
   fields: {
     SupplierID: {type: 'Edm.Int32', nullable: false},
-    CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},
-    ContactName: {type: 'Edm.String', maxLength: 30},
-    ContactTitle: {type: 'Edm.String', maxLength: 30},
-    Address: {type: 'Edm.String', maxLength: 60},
-    City: {type: 'Edm.String', maxLength: 15},
-    Region: {type: 'Edm.String', maxLength: 15},
-    PostalCode: {type: 'Edm.String', maxLength: 10},
-    Country: {type: 'Edm.String', maxLength: 15},
-    Phone: {type: 'Edm.String', maxLength: 24},
-    Fax: {type: 'Edm.String', maxLength: 24},
+    CompanyName: {type: 'Edm.String'},
+    ContactName: {type: 'Edm.String'},
+    ContactTitle: {type: 'Edm.String'},
+    Address: {type: 'Edm.String'},
+    City: {type: 'Edm.String'},
+    Region: {type: 'Edm.String'},
+    PostalCode: {type: 'Edm.String'},
+    Country: {type: 'Edm.String'},
+    Phone: {type: 'Edm.String'},
+    Fax: {type: 'Edm.String'},
     HomePage: {type: 'Edm.String'},
     Products: {type: 'NorthwindModel.Product', collection: true, navigation: true}
   }
-} as StructuredTypeConfig<Supplier>;
+} as StructuredTypeConfig;
 //#endregion

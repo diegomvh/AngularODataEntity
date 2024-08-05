@@ -39,7 +39,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
     return this.fetchAttribute<number>('CategoryID', options) as Observable<number>;
   }
   @ModelField()
-  CategoryName!: string;
+  CategoryName?: string;
   public $$CategoryName() {
     return this.property<string>('CategoryName');
   }

@@ -17,9 +17,9 @@ export const SalesByCategoryEntityConfig = {
   keys: [{name: 'CategoryID'},{name: 'CategoryName'},{name: 'ProductName'}],
   fields: {
     CategoryID: {type: 'Edm.Int32', nullable: false},
-    CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
-    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
-    ProductSales: {type: 'Edm.Decimal', precition: 19, scale: 4}
+    CategoryName: {type: 'Edm.String', nullable: false},
+    ProductName: {type: 'Edm.String', nullable: false},
+    ProductSales: {type: 'Edm.Decimal'}
   }
-} as StructuredTypeConfig<SalesByCategory>;
+} as StructuredTypeConfig;
 //#endregion

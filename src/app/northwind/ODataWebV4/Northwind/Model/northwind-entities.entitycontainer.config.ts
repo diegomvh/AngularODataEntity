@@ -35,6 +35,12 @@ import { SummaryOfSalesByYearsServiceEntitySetConfig } from './summary-of-sales-
 //#region ODataApiGen EntityContainerConfig
 export const NorthwindEntitiesEntityContainerConfig = {
   name: 'NorthwindEntities',
+  annotations: [
+  {
+    "term": "Com.Microsoft.OData.Service.Conventions.V1.UrlConventions",
+    "string": "KeyAsSegment"
+  }
+],
   entitySets: [
     CategoriesServiceEntitySetConfig,
     CustomerDemographicsServiceEntitySetConfig,

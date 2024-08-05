@@ -16,8 +16,8 @@ export const ProductsAboveAveragePriceEntityConfig = {
   collection: ProductsAboveAveragePriceCollection,
   keys: [{name: 'ProductName'}],
   fields: {
-    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
-    UnitPrice: {type: 'Edm.Decimal', precition: 19, scale: 4}
+    ProductName: {type: 'Edm.String', nullable: false},
+    UnitPrice: {type: 'Edm.Decimal'}
   }
-} as StructuredTypeConfig<ProductsAboveAveragePrice>;
+} as StructuredTypeConfig;
 //#endregion

@@ -12,7 +12,7 @@ import { Person } from './person.entity';
 @Injectable()
 export class PeopleService extends ODataEntitySetService<Person> {
   constructor(client: ODataClient) {
-    super(client, 'PeopleService', 'Microsoft.OData.SampleService.Models.TripPin.Person');
+    super(client, 'People', 'Microsoft.OData.SampleService.Models.TripPin.Person');
   }
   personModel(entity?: Partial<Person>) {
     return this.model(entity);

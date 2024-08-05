@@ -22,5 +22,5 @@ export const SupplierEntityConfig = {
     Concurrency: {type: 'Edm.Int32', nullable: false},
     Products: {type: 'ODataDemo.Product', collection: true, navigation: true}
   }
-} as StructuredTypeConfig<Supplier>;
+} as StructuredTypeConfig;
 //#endregion

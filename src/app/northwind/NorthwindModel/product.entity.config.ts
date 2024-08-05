@@ -17,18 +17,18 @@ export const ProductEntityConfig = {
   keys: [{name: 'ProductID'}],
   fields: {
     ProductID: {type: 'Edm.Int32', nullable: false},
-    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
+    ProductName: {type: 'Edm.String'},
     SupplierID: {type: 'Edm.Int32'},
     CategoryID: {type: 'Edm.Int32'},
-    QuantityPerUnit: {type: 'Edm.String', maxLength: 20},
-    UnitPrice: {type: 'Edm.Decimal', precition: 19, scale: 4},
+    QuantityPerUnit: {type: 'Edm.String'},
+    UnitPrice: {type: 'Edm.Decimal'},
     UnitsInStock: {type: 'Edm.Int16'},
     UnitsOnOrder: {type: 'Edm.Int16'},
     ReorderLevel: {type: 'Edm.Int16'},
     Discontinued: {type: 'Edm.Boolean', nullable: false},
-    Category: {type: 'NorthwindModel.Category', navigation: true, referentials: [{property: 'CategoryID', referencedProperty: 'CategoryID'}]},
+    Category: {type: 'NorthwindModel.Category', navigation: true},
     Order_Details: {type: 'NorthwindModel.Order_Detail', collection: true, navigation: true},
-    Supplier: {type: 'NorthwindModel.Supplier', navigation: true, referentials: [{property: 'SupplierID', referencedProperty: 'SupplierID'}]}
+    Supplier: {type: 'NorthwindModel.Supplier', navigation: true}
   }
-} as StructuredTypeConfig<Product>;
+} as StructuredTypeConfig;
 //#endregion

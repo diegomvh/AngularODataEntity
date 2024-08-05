@@ -16,8 +16,8 @@ export const CategorySalesFor1997EntityConfig = {
   collection: CategorySalesFor1997Collection,
   keys: [{name: 'CategoryName'}],
   fields: {
-    CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15},
-    CategorySales: {type: 'Edm.Decimal', precition: 19, scale: 4}
+    CategoryName: {type: 'Edm.String', nullable: false},
+    CategorySales: {type: 'Edm.Decimal'}
   }
-} as StructuredTypeConfig<CategorySalesFor1997>;
+} as StructuredTypeConfig;
 //#endregion

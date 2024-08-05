@@ -14,7 +14,7 @@ export const ShipperType = 'NorthwindModel.Shipper';//#endregion
 export interface Shipper {
   //#region ODataApiGen Properties
   ShipperID: number;
-  CompanyName: string;
+  CompanyName?: string;
   Phone?: string;
   Orders?: Order[];
   //#endregion

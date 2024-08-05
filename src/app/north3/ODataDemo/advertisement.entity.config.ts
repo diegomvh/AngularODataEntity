@@ -21,5 +21,5 @@ export const AdvertisementEntityConfig = {
     AirDate: {type: 'Edm.DateTime', nullable: false},
     FeaturedProduct: {type: 'ODataDemo.FeaturedProduct', navigation: true}
   }
-} as StructuredTypeConfig<Advertisement>;
+} as StructuredTypeConfig;
 //#endregion

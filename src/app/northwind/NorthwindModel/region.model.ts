@@ -39,7 +39,7 @@ export class RegionModel<E extends Region> extends ODataModel<E> {
     return this.fetchAttribute<number>('RegionID', options) as Observable<number>;
   }
   @ModelField()
-  RegionDescription!: string;
+  RegionDescription?: string;
   public $$RegionDescription() {
     return this.property<string>('RegionDescription');
   }

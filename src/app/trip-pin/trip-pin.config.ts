@@ -6,6 +6,6 @@ export const TripPinConfig = ODataMetadata.fromJson(json).toConfig({
   metadataUrl: 'https://services.odata.org/V4/TripPinServiceRW/$metadata', 
   name: 'TripPin',
   version: '4.0' as ODataVersion,
-  creation: new Date('2024-07-31T14:16:41.456Z'),
+  creation: new Date('2024-08-05T13:54:41.432Z'),
   parsers: EDM_PARSERS
 }) as ApiConfig;

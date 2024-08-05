@@ -42,7 +42,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
     return this.fetchAttribute<string>('TerritoryID', options) as Observable<string>;
   }
   @ModelField()
-  TerritoryDescription!: string;
+  TerritoryDescription?: string;
   public $$TerritoryDescription() {
     return this.property<string>('TerritoryDescription');
   }

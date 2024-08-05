@@ -20,5 +20,5 @@ export const EmployeeEntityConfig = {
     HireDate: {type: 'Edm.DateTime', nullable: false},
     Salary: {type: 'Edm.Single', nullable: false}
   }
-} as StructuredTypeConfig<Employee>;
+} as StructuredTypeConfig;
 //#endregion

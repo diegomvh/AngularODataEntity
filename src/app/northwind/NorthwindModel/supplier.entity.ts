@@ -14,7 +14,7 @@ export const SupplierType = 'NorthwindModel.Supplier';//#endregion
 export interface Supplier {
   //#region ODataApiGen Properties
   SupplierID: number;
-  CompanyName: string;
+  CompanyName?: string;
   ContactName?: string;
   ContactTitle?: string;
   Address?: string;

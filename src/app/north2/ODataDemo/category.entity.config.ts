@@ -20,5 +20,5 @@ export const CategoryEntityConfig = {
     Name: {type: 'Edm.String'},
     Products: {type: 'ODataDemo.Product', collection: true, navigation: true}
   }
-} as StructuredTypeConfig<Category>;
+} as StructuredTypeConfig;
 //#endregion

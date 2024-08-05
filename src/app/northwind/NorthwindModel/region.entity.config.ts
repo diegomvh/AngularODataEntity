@@ -17,8 +17,8 @@ export const RegionEntityConfig = {
   keys: [{name: 'RegionID'}],
   fields: {
     RegionID: {type: 'Edm.Int32', nullable: false},
-    RegionDescription: {type: 'Edm.String', nullable: false, maxLength: 50},
+    RegionDescription: {type: 'Edm.String'},
     Territories: {type: 'NorthwindModel.Territory', collection: true, navigation: true}
   }
-} as StructuredTypeConfig<Region>;
+} as StructuredTypeConfig;
 //#endregion

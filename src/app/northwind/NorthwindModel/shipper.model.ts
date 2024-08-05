@@ -39,7 +39,7 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
     return this.fetchAttribute<number>('ShipperID', options) as Observable<number>;
   }
   @ModelField()
-  CompanyName!: string;
+  CompanyName?: string;
   public $$CompanyName() {
     return this.property<string>('CompanyName');
   }

@@ -20,7 +20,7 @@ export const ProductType = 'NorthwindModel.Product';//#endregion
 export interface Product {
   //#region ODataApiGen Properties
   ProductID: number;
-  ProductName: string;
+  ProductName?: string;
   SupplierID?: number;
   CategoryID?: number;
   QuantityPerUnit?: string;

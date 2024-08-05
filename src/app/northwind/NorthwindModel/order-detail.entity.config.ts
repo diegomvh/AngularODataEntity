@@ -18,11 +18,11 @@ export const OrderDetailEntityConfig = {
   fields: {
     OrderID: {type: 'Edm.Int32', nullable: false},
     ProductID: {type: 'Edm.Int32', nullable: false},
-    UnitPrice: {type: 'Edm.Decimal', nullable: false, precition: 19, scale: 4},
+    UnitPrice: {type: 'Edm.Decimal', nullable: false},
     Quantity: {type: 'Edm.Int16', nullable: false},
     Discount: {type: 'Edm.Single', nullable: false},
-    Order: {type: 'NorthwindModel.Order', navigation: true, referentials: [{property: 'OrderID', referencedProperty: 'OrderID'}]},
-    Product: {type: 'NorthwindModel.Product', navigation: true, referentials: [{property: 'ProductID', referencedProperty: 'ProductID'}]}
+    Order: {type: 'NorthwindModel.Order', navigation: true},
+    Product: {type: 'NorthwindModel.Product', navigation: true}
   }
-} as StructuredTypeConfig<OrderDetail>;
+} as StructuredTypeConfig;
 //#endregion

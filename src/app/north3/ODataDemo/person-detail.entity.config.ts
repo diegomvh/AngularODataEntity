@@ -24,5 +24,5 @@ export const PersonDetailEntityConfig = {
     Photo: {type: 'Edm.Stream', nullable: false},
     Person: {type: 'ODataDemo.Person', navigation: true}
   }
-} as StructuredTypeConfig<PersonDetail>;
+} as StructuredTypeConfig;
 //#endregion

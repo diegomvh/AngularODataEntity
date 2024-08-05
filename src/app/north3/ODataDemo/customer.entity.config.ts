@@ -18,5 +18,5 @@ export const CustomerEntityConfig = {
   fields: {
     TotalExpense: {type: 'Edm.Decimal', nullable: false}
   }
-} as StructuredTypeConfig<Customer>;
+} as StructuredTypeConfig;
 //#endregion

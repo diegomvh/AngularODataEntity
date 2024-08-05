@@ -42,7 +42,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
     return this.fetchAttribute<string>('CustomerID', options) as Observable<string>;
   }
   @ModelField()
-  CompanyName!: string;
+  CompanyName?: string;
   public $$CompanyName() {
     return this.property<string>('CompanyName');
   }

@@ -39,7 +39,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
     return this.fetchAttribute<number>('SupplierID', options) as Observable<number>;
   }
   @ModelField()
-  CompanyName!: string;
+  CompanyName?: string;
   public $$CompanyName() {
     return this.property<string>('CompanyName');
   }

@@ -20,5 +20,5 @@ export const PersonEntityConfig = {
     Name: {type: 'Edm.String'},
     PersonDetail: {type: 'ODataDemo.PersonDetail', navigation: true}
   }
-} as StructuredTypeConfig<Person>;
+} as StructuredTypeConfig;
 //#endregion

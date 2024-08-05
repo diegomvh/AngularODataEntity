@@ -14,7 +14,7 @@ export const CategoryType = 'NorthwindModel.Category';//#endregion
 export interface Category {
   //#region ODataApiGen Properties
   CategoryID: number;
-  CategoryName: string;
+  CategoryName?: string;
   Description?: string;
   Picture?: ArrayBuffer;
   Products?: Product[];

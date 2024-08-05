@@ -17,9 +17,9 @@ export const ShipperEntityConfig = {
   keys: [{name: 'ShipperID'}],
   fields: {
     ShipperID: {type: 'Edm.Int32', nullable: false},
-    CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},
-    Phone: {type: 'Edm.String', maxLength: 24},
+    CompanyName: {type: 'Edm.String'},
+    Phone: {type: 'Edm.String'},
     Orders: {type: 'NorthwindModel.Order', collection: true, navigation: true}
   }
-} as StructuredTypeConfig<Shipper>;
+} as StructuredTypeConfig;
 //#endregion

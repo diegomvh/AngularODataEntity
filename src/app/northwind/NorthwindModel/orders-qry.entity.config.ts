@@ -17,25 +17,25 @@ export const OrdersQryEntityConfig = {
   keys: [{name: 'CompanyName'},{name: 'OrderID'}],
   fields: {
     OrderID: {type: 'Edm.Int32', nullable: false},
-    CustomerID: {type: 'Edm.String', maxLength: 5},
+    CustomerID: {type: 'Edm.String'},
     EmployeeID: {type: 'Edm.Int32'},
     OrderDate: {type: 'Edm.DateTimeOffset'},
     RequiredDate: {type: 'Edm.DateTimeOffset'},
     ShippedDate: {type: 'Edm.DateTimeOffset'},
     ShipVia: {type: 'Edm.Int32'},
-    Freight: {type: 'Edm.Decimal', precition: 19, scale: 4},
-    ShipName: {type: 'Edm.String', maxLength: 40},
-    ShipAddress: {type: 'Edm.String', maxLength: 60},
-    ShipCity: {type: 'Edm.String', maxLength: 15},
-    ShipRegion: {type: 'Edm.String', maxLength: 15},
-    ShipPostalCode: {type: 'Edm.String', maxLength: 10},
-    ShipCountry: {type: 'Edm.String', maxLength: 15},
-    CompanyName: {type: 'Edm.String', nullable: false, maxLength: 40},
-    Address: {type: 'Edm.String', maxLength: 60},
-    City: {type: 'Edm.String', maxLength: 15},
-    Region: {type: 'Edm.String', maxLength: 15},
-    PostalCode: {type: 'Edm.String', maxLength: 10},
-    Country: {type: 'Edm.String', maxLength: 15}
+    Freight: {type: 'Edm.Decimal'},
+    ShipName: {type: 'Edm.String'},
+    ShipAddress: {type: 'Edm.String'},
+    ShipCity: {type: 'Edm.String'},
+    ShipRegion: {type: 'Edm.String'},
+    ShipPostalCode: {type: 'Edm.String'},
+    ShipCountry: {type: 'Edm.String'},
+    CompanyName: {type: 'Edm.String', nullable: false},
+    Address: {type: 'Edm.String'},
+    City: {type: 'Edm.String'},
+    Region: {type: 'Edm.String'},
+    PostalCode: {type: 'Edm.String'},
+    Country: {type: 'Edm.String'}
   }
-} as StructuredTypeConfig<OrdersQry>;
+} as StructuredTypeConfig;
 //#endregion

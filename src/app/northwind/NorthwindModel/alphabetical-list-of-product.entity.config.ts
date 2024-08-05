@@ -17,16 +17,16 @@ export const AlphabeticalListOfProductEntityConfig = {
   keys: [{name: 'CategoryName'},{name: 'Discontinued'},{name: 'ProductID'},{name: 'ProductName'}],
   fields: {
     ProductID: {type: 'Edm.Int32', nullable: false},
-    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
+    ProductName: {type: 'Edm.String', nullable: false},
     SupplierID: {type: 'Edm.Int32'},
     CategoryID: {type: 'Edm.Int32'},
-    QuantityPerUnit: {type: 'Edm.String', maxLength: 20},
-    UnitPrice: {type: 'Edm.Decimal', precition: 19, scale: 4},
+    QuantityPerUnit: {type: 'Edm.String'},
+    UnitPrice: {type: 'Edm.Decimal'},
     UnitsInStock: {type: 'Edm.Int16'},
     UnitsOnOrder: {type: 'Edm.Int16'},
     ReorderLevel: {type: 'Edm.Int16'},
     Discontinued: {type: 'Edm.Boolean', nullable: false},
-    CategoryName: {type: 'Edm.String', nullable: false, maxLength: 15}
+    CategoryName: {type: 'Edm.String', nullable: false}
   }
-} as StructuredTypeConfig<AlphabeticalListOfProduct>;
+} as StructuredTypeConfig;
 //#endregion

@@ -12,7 +12,7 @@ import { Photo } from './photo.entity';
 @Injectable()
 export class PhotosService extends ODataEntitySetService<Photo> {
   constructor(client: ODataClient) {
-    super(client, 'PhotosService', 'Microsoft.OData.SampleService.Models.TripPin.Photo');
+    super(client, 'Photos', 'Microsoft.OData.SampleService.Models.TripPin.Photo');
   }
   photoModel(entity?: Partial<Photo>) {
     return this.model(entity);

@@ -18,7 +18,7 @@ export const SummaryOfSalesByQuarterEntityConfig = {
   fields: {
     ShippedDate: {type: 'Edm.DateTimeOffset'},
     OrderID: {type: 'Edm.Int32', nullable: false},
-    Subtotal: {type: 'Edm.Decimal', precition: 19, scale: 4}
+    Subtotal: {type: 'Edm.Decimal'}
   }
-} as StructuredTypeConfig<SummaryOfSalesByQuarter>;
+} as StructuredTypeConfig;
 //#endregion

@@ -17,7 +17,7 @@ export const CurrentProductListEntityConfig = {
   keys: [{name: 'ProductID'},{name: 'ProductName'}],
   fields: {
     ProductID: {type: 'Edm.Int32', nullable: false},
-    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40}
+    ProductName: {type: 'Edm.String', nullable: false}
   }
-} as StructuredTypeConfig<CurrentProductList>;
+} as StructuredTypeConfig;
 //#endregion

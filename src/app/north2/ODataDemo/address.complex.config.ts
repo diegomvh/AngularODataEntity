@@ -21,5 +21,5 @@ export const AddressComplexConfig = {
     ZipCode: {type: 'Edm.String'},
     Country: {type: 'Edm.String'}
   }
-} as StructuredTypeConfig<Address>;
+} as StructuredTypeConfig;
 //#endregion

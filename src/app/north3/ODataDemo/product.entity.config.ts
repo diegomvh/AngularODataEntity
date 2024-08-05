@@ -27,5 +27,5 @@ export const ProductEntityConfig = {
     Supplier: {type: 'ODataDemo.Supplier', navigation: true},
     ProductDetail: {type: 'ODataDemo.ProductDetail', navigation: true}
   }
-} as StructuredTypeConfig<Product>;
+} as StructuredTypeConfig;
 //#endregion

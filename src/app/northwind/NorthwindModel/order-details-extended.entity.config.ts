@@ -18,11 +18,11 @@ export const OrderDetailsExtendedEntityConfig = {
   fields: {
     OrderID: {type: 'Edm.Int32', nullable: false},
     ProductID: {type: 'Edm.Int32', nullable: false},
-    ProductName: {type: 'Edm.String', nullable: false, maxLength: 40},
-    UnitPrice: {type: 'Edm.Decimal', nullable: false, precition: 19, scale: 4},
+    ProductName: {type: 'Edm.String', nullable: false},
+    UnitPrice: {type: 'Edm.Decimal', nullable: false},
     Quantity: {type: 'Edm.Int16', nullable: false},
     Discount: {type: 'Edm.Single', nullable: false},
-    ExtendedPrice: {type: 'Edm.Decimal', precition: 19, scale: 4}
+    ExtendedPrice: {type: 'Edm.Decimal'}
   }
-} as StructuredTypeConfig<OrderDetailsExtended>;
+} as StructuredTypeConfig;
 //#endregion

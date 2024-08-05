@@ -42,7 +42,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
     return this.fetchAttribute<number>('EmployeeID', options) as Observable<number>;
   }
   @ModelField()
-  LastName!: string;
+  LastName?: string;
   public $$LastName() {
     return this.property<string>('LastName');
   }
@@ -54,7 +54,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
     return this.fetchAttribute<string>('LastName', options) as Observable<string>;
   }
   @ModelField()
-  FirstName!: string;
+  FirstName?: string;
   public $$FirstName() {
     return this.property<string>('FirstName');
   }

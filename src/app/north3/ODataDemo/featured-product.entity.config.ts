@@ -18,5 +18,5 @@ export const FeaturedProductEntityConfig = {
   fields: {
     Advertisement: {type: 'ODataDemo.Advertisement', navigation: true}
   }
-} as StructuredTypeConfig<FeaturedProduct>;
+} as StructuredTypeConfig;
 //#endregion
