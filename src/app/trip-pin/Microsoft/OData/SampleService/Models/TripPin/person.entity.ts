@@ -9,11 +9,11 @@ export interface Person {
   UserName: string;
   FirstName: string;
   LastName: string;
-  Emails: string;
+  Emails: string[];
   AddressInfo: Location;
   Gender: PersonGender;
   Concurrency: number;
-  Friends: Person;
-  Trips: Trip;
+  Friends: Person[];
+  Trips: Trip[];
   Photo: Photo;
 }
