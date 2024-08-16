@@ -3,7 +3,6 @@ import { PeopleService, Person, PersonGender } from '../../trip-pin';
 import {
   ODataEntitySetResource,
   ODataClient,
-  ODataStructuredType,
   EdmType,
 } from 'angular-odata';
 import { PersonComponent } from './person.component';

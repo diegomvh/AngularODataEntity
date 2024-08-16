@@ -2,7 +2,7 @@ import { Duration } from 'angular-odata';
 import { Photo } from './photo.entity';
 import { PlanItem } from './plan-item.entity';
 
-export const TripType = 'Microsoft.OData.SampleService.Models.TripPin.Trip';
+export const TripEntityType = 'Microsoft.OData.SampleService.Models.TripPin.Trip';
 export interface Trip {
   TripId: number;
   ShareId: string;
@@ -11,7 +11,7 @@ export interface Trip {
   Budget: number;
   StartsAt: Date;
   EndsAt: Date;
-  Tags: string;
-  Photos: Photo;
-  PlanItems: PlanItem;
+  Tags: string[];
+  Photos?: Photo[];
+  PlanItems?: PlanItem[];
 }

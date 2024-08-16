@@ -12,6 +12,6 @@ import { ODataClient,
 @Injectable()
 export class DefaultContainerService extends ODataBaseService {
   constructor(client: ODataClient) {
-    super(client, 'DefaultContainerService', 'TripPin');
+    super(client, 'DefaultContainer', 'TripPin');
   }
 }

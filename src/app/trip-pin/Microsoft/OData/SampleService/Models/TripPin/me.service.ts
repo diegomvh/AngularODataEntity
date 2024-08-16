@@ -13,6 +13,6 @@ import { Person } from './person.entity';
 @Injectable()
 export class MeService extends ODataSingletonService<Person> {
   constructor(client: ODataClient) {
-    super(client, 'MeService', 'Microsoft.OData.SampleService.Models.TripPin.Person');
+    super(client, 'Me', 'Microsoft.OData.SampleService.Models.TripPin.Person');
   }
 }

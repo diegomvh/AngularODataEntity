@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Inject, Injector, INJECTOR } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { EdmType, ODataClient, ODataEntitySetResource, ODataModel, ODataServiceFactory } from 'angular-odata';
-import { Airport, DefaultContainerService, PeopleService, Person, PersonGender, PersonGenderType, Photo, PhotosService, TripPinModule } from './trip-pin';
+import { EdmType, ODataClient, ODataServiceFactory } from 'angular-odata';
+import { Airport, DefaultContainerService, PeopleService, Person, PersonGender, PersonGenderEnumType, Photo, PhotosService, TripPinModule } from './trip-pin';
 import { NorthwindModule, OrdersService, ProductCollection, ProductsService } from './northwind';
-import { filter, firstValueFrom, forkJoin, map, switchMap } from 'rxjs';
+import { filter, firstValueFrom, map, switchMap } from 'rxjs';
 import { TabViewModule } from 'primeng/tabview';
 import { AirlinesComponent, AirportsComponent, PeopleComponent } from './components/trippin';
 import { CategoriesComponent, EmployeesComponent, OrdersComponent, ProductsComponent } from './components/northwind';
 import { TableModule } from 'primeng/table';
-import { PersonCollection } from './north3';
+import trippinQueries from './examples/trippin/queries';
+import trippinCache from './examples/trippin/cache';
+import trippinJson from './examples/trippin/json';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +34,8 @@ import { PersonCollection } from './north3';
 })
 export class AppComponent {
   constructor(
-    private odata: ODataClient,
+    @Inject(INJECTOR) private injector: Injector,
+    private client: ODataClient,
     private factory: ODataServiceFactory,
     private tripPinContainer: DefaultContainerService,
     private peopleService: PeopleService,
@@ -40,8 +43,8 @@ export class AppComponent {
     private productsService: ProductsService,
     private ordersService: OrdersService
   ) {
-    this.encode();
-    //this.trippin();
+    this.queries();
+    //this.encode();
     //this.northwind();
     //this.queries();
   }
@@ -49,7 +52,6 @@ export class AppComponent {
   //#region APIs
   trippin() {
     //this.mutate();
-    //this.queries();
     //this.query();
     //this.trippinModels();
     //this.mutate();
@@ -64,13 +66,12 @@ export class AppComponent {
   //#endregion
 
   encode() {
-    debugger;
     // Edm Parser
-    var guidParser = this.odata.parserForType(EdmType.Guid);
+    var guidParser = this.client.parserForType(EdmType.Guid);
     var guid = guidParser.encode('12345678-1234-1234-1234-123456789012');
     console.log(guid);
     // Enum Parser
-    let personGenderType = this.odata.enumTypeForType<PersonGender>(PersonGenderType);
+    let personGenderType = this.client.enumTypeForType<PersonGender>(PersonGenderEnumType);
     let female = personGenderType.encode(PersonGender.Female);
     console.log(female);
     // Structured Parser
@@ -84,7 +85,9 @@ export class AppComponent {
 
   queries() {
     //this.entitiesWithoutTypes();
-    //this.entitiesWithTypes();
+    trippinQueries(this.injector);
+    trippinCache(this.injector);
+    trippinJson(this.injector);
     //this.navigation();
     //this.property();
     //this.mediaEntity();
@@ -107,147 +110,8 @@ export class AppComponent {
     airports.fetchAll().subscribe(console.log);
   }
 
-  entitiesWithTypes() {
-    // Use OData Service Factory
-    let airportsService = this.factory.entitySet<Airport>(
-      'Airports',
-      'Microsoft.OData.SampleService.Models.TripPin.Airport'
-    );
-    let airports = airportsService.entities();
-
-    // Fetch airports
-    airports.fetch().subscribe(({ entities }) => {
-      console.log('Airports: ', entities);
-    });
-
-    // Fetch airports with count
-    airports
-      .fetch({ withCount: true })
-      .subscribe(({ entities, annots }) =>
-        console.log('Airports: ', entities, 'Annotations: ', annots)
-      );
-
-    // Fetch all airports
-    airports
-      .fetchAll()
-      .subscribe((airports) => console.log('All Airports: ', airports));
-
-    // Fetch airport with key and fetch again from cache
-    airports
-      .entity('CYYZ')
-      .fetch()
-      .pipe(
-        switchMap(() =>
-          // From Cache!
-          airports.entity('CYYZ').fetch({ fetchPolicy: 'cache-first' })
-        )
-      )
-      .subscribe(({ entity, annots }) =>
-        console.log('Airport: ', entity, 'Annotations: ', annots)
-      );
-
-    // Clone airports resource and filter new resource
-    airports
-      .clone()
-      .query((q) =>
-        q.filter({ Location: { City: { CountryRegion: 'United States' } } })
-      )
-      .fetch()
-      .subscribe(({ entities, annots }) =>
-        console.log(
-          'Airports of United States: ',
-          entities,
-          'Annotations: ',
-          annots
-        )
-      );
-
-    // Change query definition of airports resource and fetch again
-    airports.query((q) =>
-      q.filter().push({ Location: { City: { Region: 'California' } } })
-    );
-    airports
-      .fetch()
-      .subscribe(({ entities, annots }) =>
-        console.log(
-          'Airports in California: ',
-          entities,
-          'Annotations: ',
-          annots
-        )
-      );
-
-    // Store airports resource
-    var json = airports.toJson();
-    // Load airports resource
-    airports = this.odata.fromJson(json) as ODataEntitySetResource<Airport>;
-
-    // Change query definition of airports resource and fetch again
-    airports.query((q) => q.filter().clear());
-    airports
-      .fetch()
-      .subscribe(({ entities, annots }) =>
-        console.log('Airports: ', entities, 'Annotations: ', annots)
-      );
-
-    let peopleService = this.factory.entitySet<Person>(
-      'People',
-      'Microsoft.OData.SampleService.Models.TripPin.Person'
-    );
-    let people = peopleService.entities();
-
-    // Clone people resource and expand and fetch
-    people
-      .clone()
-      .query((q) =>
-        q.expand({
-          Friends: {
-            expand: { Friends: { select: ['AddressInfo'] } },
-          },
-          Trips: { select: ['Name', 'Tags'] },
-        })
-      )
-      .fetch({ withCount: true })
-      .subscribe(({ entities, annots }) =>
-        console.log(
-          'People with Friends and Trips: ',
-          entities,
-          'Annotations: ',
-          annots
-        )
-      );
-
-    // Clone people resource and filter with expressions
-    people
-      .clone()
-      .query((q) =>
-        q.filter(({ e }) =>
-          e().eq('Emails', 'john@example.com').or(e().eq('UserName', 'john'))
-        )
-      )
-      .fetch()
-      .subscribe(({ entities, annots }) =>
-        console.log(
-          'People with Friends and Trips: ',
-          entities,
-          'Annotations: ',
-          annots
-        )
-      );
-
-    this.odata
-      .batch('TripPin')
-      .exec(() =>
-        forkJoin({
-          airports: airports.fetch(),
-          people: people.fetch({ withCount: true }),
-        })
-      )
-      .subscribe();
-  }
-
   filterPeopleByGender() {
-    let personGenderType = this.odata.enumTypeForType<PersonGender>(PersonGenderType);
+    let personGenderType = this.client.enumTypeForType<PersonGender>(PersonGenderEnumType);
     let female = personGenderType.encode(PersonGender.Female);
     let femaleQuery = this.peopleService
       .entities()
@@ -450,11 +314,11 @@ export class AppComponent {
   }
 
   batch() {
-    let batch = this.odata.batch();
+    let batch = this.client.batch();
   }
 
   microsoftGraph() {
-    const api = this.odata.apiFor("MicrosoftGraph");
+    const api = this.client.apiFor("MicrosoftGraph");
     api.metadata().fetch().subscribe(metadata => {
       console.log("ready");
       api.populate(metadata); 
@@ -464,7 +328,7 @@ export class AppComponent {
   }
 
   tripPinDynamic() {
-    const api = this.odata.apiFor("TripPinDynamic");
+    const api = this.client.apiFor("TripPinDynamic");
     api.metadata().fetch().subscribe(metadata => {
       const username = metadata.Schemas
         .find(s => s.Namespace === "Microsoft.OData.SampleService.Models.TripPin")?.EntityType?.find(e => e.Name === "Person")?.Property?.find(p => p.Name === "UserName");
