@@ -11,6 +11,7 @@ import { TableModule } from 'primeng/table';
 import trippinQueries from './examples/trippin/queries';
 import trippinCache from './examples/trippin/cache';
 import trippinJson from './examples/trippin/json';
+import trippinModels from './examples/trippin/models';
 
 @Component({
   selector: 'app-root',
@@ -85,9 +86,10 @@ export class AppComponent {
 
   queries() {
     //this.entitiesWithoutTypes();
-    trippinQueries(this.injector);
-    trippinCache(this.injector);
-    trippinJson(this.injector);
+    //trippinCache(this.injector);
+    //trippinJson(this.injector);
+    //trippinQueries(this.injector);
+    trippinModels(this.injector);
     //this.navigation();
     //this.property();
     //this.mediaEntity();
