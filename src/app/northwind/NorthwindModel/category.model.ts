@@ -68,7 +68,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
     return this.property<ArrayBuffer>('Picture');
   }
   public $Picture() {
-    return this.getAttribute<ArrayBuffer>('Picture') as ArrayBuffer;
+    return this.getAttribute<ArrayBuffer>('Picture');
   }
   
   public Picture$(options?: ODataQueryArgumentsOptions<ArrayBuffer>) {
@@ -80,7 +80,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
     return this.navigationProperty<Product>('Products');
   }
   public $Products() {
-    return this.getAttribute<Product>('Products') as ProductCollection<Product, ProductModel<Product>>;
+    return this.getAttribute<Product>('Products');
   }
   public Products$$(model: ProductCollection<Product, ProductModel<Product>> | null, options?: ODataOptions) {
     return this.setReference<Product>('Products', model, options);

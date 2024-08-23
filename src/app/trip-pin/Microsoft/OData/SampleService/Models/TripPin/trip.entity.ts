@@ -12,6 +12,6 @@ export interface Trip {
   StartsAt: Date;
   EndsAt: Date;
   Tags: string[];
-  Photos?: Photo[];
-  PlanItems?: PlanItem[];
+  Photos: Photo[];
+  PlanItems: PlanItem[];
 }

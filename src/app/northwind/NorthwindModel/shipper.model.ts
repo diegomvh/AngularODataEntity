@@ -68,7 +68,7 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
     return this.navigationProperty<Order>('Orders');
   }
   public $Orders() {
-    return this.getAttribute<Order>('Orders') as OrderCollection<Order, OrderModel<Order>>;
+    return this.getAttribute<OrderCollection<Order, OrderModel<Order>>>('Orders');
   }
   public Orders$$(model: OrderCollection<Order, OrderModel<Order>> | null, options?: ODataOptions) {
     return this.setReference<Order>('Orders', model, options);

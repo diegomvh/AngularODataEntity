@@ -13,7 +13,7 @@ export interface Person {
   AddressInfo: Location[];
   Gender: PersonGender;
   Concurrency: number;
-  Friends?: Person[];
-  Trips?: Trip[];
-  Photo?: Photo;
+  Friends: Person[];
+  Trips: Trip[];
+  Photo: Photo;
 }

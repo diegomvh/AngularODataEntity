@@ -16,7 +16,7 @@ export interface Category {
   CategoryID: number;
   CategoryName?: string;
   Description?: string;
-  Picture?: ArrayBuffer;
-  Products?: Product[];
+  Picture: ArrayBuffer;
+  Products: Product[];
   //#endregion
 }
