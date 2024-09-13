@@ -12,6 +12,7 @@ import trippinQueries from './examples/trippin/queries';
 import trippinCache from './examples/trippin/cache';
 import trippinJson from './examples/trippin/json';
 import trippinModels from './examples/trippin/models';
+import northwindCompute from './examples/northwind/compute';
 
 @Component({
   selector: 'app-root',
@@ -89,7 +90,8 @@ export class AppComponent {
     //trippinCache(this.injector);
     //trippinJson(this.injector);
     //trippinQueries(this.injector);
-    trippinModels(this.injector);
+    //trippinModels(this.injector);
+    northwindCompute(this.injector);
     //this.navigation();
     //this.property();
     //this.mediaEntity();
