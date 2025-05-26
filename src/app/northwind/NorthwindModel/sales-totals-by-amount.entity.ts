@@ -1,18 +1,9 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
+import { Duration } from 'angular-odata';
 
-//#region ODataApiGen Imports
-//#endregion
-
-//#region ODataApiGen Type
-export const SalesTotalsByAmountType = 'NorthwindModel.Sales_Totals_by_Amount';//#endregion
+export const SalesTotalsByAmountEntityType = 'NorthwindModel.Sales_Totals_by_Amount';
 export interface SalesTotalsByAmount {
-  //#region ODataApiGen Properties
-  SaleAmount?: number;
+  SaleAmount: number;
   OrderID: number;
   CompanyName: string;
-  ShippedDate?: Date;
-  //#endregion
+  ShippedDate: Date;
 }

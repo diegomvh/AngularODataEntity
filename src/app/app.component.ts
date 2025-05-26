@@ -2,7 +2,7 @@ import { Component, Inject, Injector, INJECTOR } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { EdmType, ODataClient, ODataServiceFactory } from 'angular-odata';
 import { Airport, DefaultContainerService, PeopleService, Person, PersonGender, PersonGenderEnumType, Photo, PhotosService, TripPinModule } from './trip-pin';
-import { NorthwindModule, OrdersService, ProductCollection, ProductsService } from './northwind';
+import { NorthwindModule, OrdersService, ProductsService } from './northwind';
 import { filter, firstValueFrom, map, switchMap } from 'rxjs';
 import { TabViewModule } from 'primeng/tabview';
 import { AirlinesComponent, AirportsComponent, PeopleComponent } from './components/trippin';
@@ -313,7 +313,7 @@ export class AppComponent {
   }
 
   aggregations() {
-    var genders = this.peopleService.entities().transform<{Gender: PersonGender}>(({e, t}) => e().groupBy((e) => [t.Gender])); 
+    var genders = this.peopleService.entities().transform<{Gender: PersonGender}>(({e, t}) => e().groupBy((e) => [t.Gender]));
     genders.fetch().subscribe(console.log);
   }
 
@@ -325,7 +325,7 @@ export class AppComponent {
     const api = this.client.apiFor("MicrosoftGraph");
     api.metadata().fetch().subscribe(metadata => {
       console.log("ready");
-      api.populate(metadata); 
+      api.populate(metadata);
       (<any>window).METADATA = metadata;
       (<any>window).API = api;
     });
@@ -337,11 +337,11 @@ export class AppComponent {
       const username = metadata.Schemas
         .find(s => s.Namespace === "Microsoft.OData.SampleService.Models.TripPin")?.EntityType?.find(e => e.Name === "Person")?.Property?.find(p => p.Name === "UserName");
       console.log(username?.Annotation?.find(a => a.Term === "Org.OData.Core.V1.Permissions")?.EnumMember?.map((m: any) => m.text));
-      api.populate(metadata); 
+      api.populate(metadata);
       const entitySet = api.entitySet<Person>("People");
       const schema = api.structuredType("Person");
       const person = entitySet.entity("scottketchum");
-      person.query(q => q.expand(({e, t}) => 
+      person.query(q => q.expand(({e, t}) =>
         e()
         .field(t.Trips, f => f.expand(({e, t}) => e().field(t.Photos)))
         .field(t.Friends, f => f.expand(({e, t}) => e().field(t.Friends)))
@@ -376,9 +376,9 @@ export class AppComponent {
       )
       .subscribe(console.log);
   }
-  
+
   northwindTypeModels() {
-    const collection = new ProductCollection();
+    const collection = this.productsService.collection();
     collection.query((q) => q.expand({ Category: {} }));
     collection
       .fetch()

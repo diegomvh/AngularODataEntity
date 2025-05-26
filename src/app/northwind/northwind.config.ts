@@ -1,24 +1,11 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  ApiConfig,
-  EDM_PARSERS
-} from 'angular-odata';//#endregion
+import { ODataApiConfig, EDM_PARSERS, ODataMetadata, ODataVersion } from 'angular-odata';
+import * as json from './metadata.json';
 
-//#region ODataApiGen Imports
-import { NorthwindModelSchemaConfig } from './NorthwindModel/northwind-model.schema.config';
-import { ModelSchemaConfig } from './ODataWebV4/Northwind/Model/model.schema.config';
-//#endregion
-
-//#region ODataApiGen ApiConfig
-export const NorthwindConfig = {
+export const NorthwindConfig = ODataMetadata.fromJson(json).toConfig({
   serviceRootUrl: 'https://services.odata.org/V4/Northwind/Northwind.svc/',
+  metadataUrl: 'https://services.odata.org/V4/Northwind/Northwind.svc/$metadata',
   name: 'Northwind',
-  version: '4.0',
-  creation: new Date('2024-08-05T10:00:41.0670587-03:00'),
-  schemas: [
-    NorthwindModelSchemaConfig,
-    ModelSchemaConfig
-  ],
+  version: '4.0' as ODataVersion,
+  creation: new Date('2025-05-26T12:13:35.566Z'),
   parsers: EDM_PARSERS
-} as ApiConfig;
-//#endregion
+}) as ODataApiConfig;

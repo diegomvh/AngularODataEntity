@@ -1,9 +1,4 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  NgModule
-} from '@angular/core';//#endregion
-
-//#region ODataApiGen Imports
+import { NgModule } from '@angular/core';
 import { NorthwindEntitiesService } from './ODataWebV4/Northwind/Model/northwind-entities.service';
 import { CategoriesService } from './ODataWebV4/Northwind/Model/categories.service';
 import { CustomerDemographicsService } from './ODataWebV4/Northwind/Model/customer-demographics.service';
@@ -31,11 +26,9 @@ import { SalesByCategoriesService } from './ODataWebV4/Northwind/Model/sales-by-
 import { SalesTotalsByAmountsService } from './ODataWebV4/Northwind/Model/sales-totals-by-amounts.service';
 import { SummaryOfSalesByQuartersService } from './ODataWebV4/Northwind/Model/summary-of-sales-by-quarters.service';
 import { SummaryOfSalesByYearsService } from './ODataWebV4/Northwind/Model/summary-of-sales-by-years.service';
-//#endregion
 
 @NgModule({
   providers: [
-//#region ODataApiGen Providers
     NorthwindEntitiesService,
     CategoriesService,
     CustomerDemographicsService,
@@ -62,7 +55,7 @@ import { SummaryOfSalesByYearsService } from './ODataWebV4/Northwind/Model/summa
     SalesByCategoriesService,
     SalesTotalsByAmountsService,
     SummaryOfSalesByQuartersService,
-    SummaryOfSalesByYearsService//#endregion
+    SummaryOfSalesByYearsService,
   ]
 })
 export class NorthwindModule { }

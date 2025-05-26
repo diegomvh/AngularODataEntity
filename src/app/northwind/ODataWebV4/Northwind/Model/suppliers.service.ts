@@ -1,70 +1,23 @@
-﻿import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-
-//#region ODataApiGen ODataImports
-import {
-  ODataClient,
-  ODataEntitySetService,
-  ODataEntity,
-  ODataEntities,
-  ODataProperty,
-  EntityKey,
-  Duration,
-  ODataEntityResource,
-  ODataEntitySetResource,
-  ODataNavigationPropertyResource,
-  ODataActionResource,
-  ODataFunctionResource,
+import { Injectable } from '@angular/core';
+import { ODataClient, 
+  ODataActionResource, 
+  ODataActionOptions, 
+  ODataFunctionResource, 
+  ODataFunctionOptions, 
+  ODataEntitySetService, 
   ODataOptions,
-  ODataQueryArgumentsOptions,
-  ODataFunctionOptions,
-  ODataActionOptions
-} from 'angular-odata';//#endregion
-
-//#region ODataApiGen Imports
-import { Product } from '../../../NorthwindModel/product.entity';
+  EntityKey } from 'angular-odata';
 import { Supplier } from '../../../NorthwindModel/supplier.entity';
-import { ProductModel } from '../../../NorthwindModel/product.model';
-import { SupplierModel } from '../../../NorthwindModel/supplier.model';
-import { ProductCollection } from '../../../NorthwindModel/product.collection';
-import { SupplierCollection } from '../../../NorthwindModel/supplier.collection';
-//#endregion
 
 @Injectable()
 export class SuppliersService extends ODataEntitySetService<Supplier> {
   constructor(client: ODataClient) {
     super(client, 'Suppliers', 'NorthwindModel.Supplier');
   }
-  //#region ODataApiGen Model
-  supplierModel(entity?: Partial<Supplier>): SupplierModel<Supplier> {
-    return this.entity().asModel<SupplierModel<Supplier>>(entity);
-  }//#endregion
-  //#region ODataApiGen Collection
-  supplierCollection(entities?: Partial<Supplier>[]): SupplierCollection<Supplier, SupplierModel<Supplier>> {
-    return this.entities().asCollection<SupplierModel<Supplier>, SupplierCollection<Supplier, SupplierModel<Supplier>>>(entities);
-  }//#endregion
-  //#region ODataApiGen Actions
-  //#endregion
-  //#region ODataApiGen Functions
-  //#endregion
-  //#region ODataApiGen Navigations
-  public products(key: EntityKey<Supplier>): ODataNavigationPropertyResource<Product> { 
-    return this.entity(key).navigationProperty<Product>('Products'); 
+  supplierModel(entity?: Partial<Supplier>) {
+    return this.model(entity);
   }
-  public fetchProducts(key: EntityKey<Supplier>, options?: ODataQueryArgumentsOptions<Product>) {
-    return this.fetchNavigationProperty<Product>(
-      this.products(key), 
-      'entities', options) as Observable<ODataEntities<Product>>;
+  supplierCollection(entities?: Partial<Supplier>[]) {
+    return this.collection(entities);
   }
-  public addProductToProducts(key: EntityKey<Supplier>, target: ODataEntityResource<ODataEntities<Product>>, {etag}: {etag?: string} = {}): Observable<any> {
-    return this.products(key).reference()
-      .add(target);
-  }
-  public removeProductFromProducts(key: EntityKey<Supplier>, {target, etag}: {target?: ODataEntityResource<ODataEntities<Product>>, etag?: string} = {}): Observable<any> {
-    return this.products(key).reference()
-      .remove(target);
-  }
-  //#endregion
 }

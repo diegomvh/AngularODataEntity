@@ -1,19 +1,10 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
+import { Duration } from 'angular-odata';
 
-//#region ODataApiGen Imports
-//#endregion
-
-//#region ODataApiGen Type
-export const ProductsByCategoryType = 'NorthwindModel.Products_by_Category';//#endregion
+export const ProductsByCategoryEntityType = 'NorthwindModel.Products_by_Category';
 export interface ProductsByCategory {
-  //#region ODataApiGen Properties
   CategoryName: string;
   ProductName: string;
-  QuantityPerUnit?: string;
-  UnitsInStock?: number;
+  QuantityPerUnit: string;
+  UnitsInStock: number;
   Discontinued: boolean;
-  //#endregion
 }

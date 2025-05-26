@@ -1,16 +1,7 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
+import { Duration } from 'angular-odata';
 
-//#region ODataApiGen Imports
-//#endregion
-
-//#region ODataApiGen Type
-export const ProductsAboveAveragePriceType = 'NorthwindModel.Products_Above_Average_Price';//#endregion
+export const ProductsAboveAveragePriceEntityType = 'NorthwindModel.Products_Above_Average_Price';
 export interface ProductsAboveAveragePrice {
-  //#region ODataApiGen Properties
   ProductName: string;
-  UnitPrice?: number;
-  //#endregion
+  UnitPrice: number;
 }

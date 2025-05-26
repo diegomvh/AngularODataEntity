@@ -1,20 +1,9 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
-
-//#region ODataApiGen Imports
+import { Duration } from 'angular-odata';
 import { Customer } from './customer.entity';
-import { CustomerModel } from './customer.model';
-import { CustomerCollection } from './customer.collection';
-//#endregion
 
-//#region ODataApiGen Type
-export const CustomerDemographicType = 'NorthwindModel.CustomerDemographic';//#endregion
+export const CustomerDemographicEntityType = 'NorthwindModel.CustomerDemographic';
 export interface CustomerDemographic {
-  //#region ODataApiGen Properties
   CustomerTypeID: string;
-  CustomerDesc?: string;
-  Customers?: Customer[];
-  //#endregion
+  CustomerDesc: string;
+  Customers: Customer[];
 }

@@ -1,17 +1,8 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
+import { Duration } from 'angular-odata';
 
-//#region ODataApiGen Imports
-//#endregion
-
-//#region ODataApiGen Type
-export const SummaryOfSalesByYearType = 'NorthwindModel.Summary_of_Sales_by_Year';//#endregion
+export const SummaryOfSalesByYearEntityType = 'NorthwindModel.Summary_of_Sales_by_Year';
 export interface SummaryOfSalesByYear {
-  //#region ODataApiGen Properties
-  ShippedDate?: Date;
+  ShippedDate: Date;
   OrderID: number;
-  Subtotal?: number;
-  //#endregion
+  Subtotal: number;
 }

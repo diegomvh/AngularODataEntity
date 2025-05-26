@@ -1,18 +1,9 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
+import { Duration } from 'angular-odata';
 
-//#region ODataApiGen Imports
-//#endregion
-
-//#region ODataApiGen Type
-export const CustomerAndSuppliersByCityType = 'NorthwindModel.Customer_and_Suppliers_by_City';//#endregion
+export const CustomerAndSuppliersByCityEntityType = 'NorthwindModel.Customer_and_Suppliers_by_City';
 export interface CustomerAndSuppliersByCity {
-  //#region ODataApiGen Properties
-  City?: string;
+  City: string;
   CompanyName: string;
-  ContactName?: string;
+  ContactName: string;
   Relationship: string;
-  //#endregion
 }

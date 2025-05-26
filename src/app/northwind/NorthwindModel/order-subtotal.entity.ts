@@ -1,16 +1,7 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
+import { Duration } from 'angular-odata';
 
-//#region ODataApiGen Imports
-//#endregion
-
-//#region ODataApiGen Type
-export const OrderSubtotalType = 'NorthwindModel.Order_Subtotal';//#endregion
+export const OrderSubtotalEntityType = 'NorthwindModel.Order_Subtotal';
 export interface OrderSubtotal {
-  //#region ODataApiGen Properties
   OrderID: number;
-  Subtotal?: number;
-  //#endregion
+  Subtotal: number;
 }

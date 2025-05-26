@@ -1,20 +1,9 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
-
-//#region ODataApiGen Imports
+import { Duration } from 'angular-odata';
 import { Territory } from './territory.entity';
-import { TerritoryModel } from './territory.model';
-import { TerritoryCollection } from './territory.collection';
-//#endregion
 
-//#region ODataApiGen Type
-export const RegionType = 'NorthwindModel.Region';//#endregion
+export const RegionEntityType = 'NorthwindModel.Region';
 export interface Region {
-  //#region ODataApiGen Properties
   RegionID: number;
-  RegionDescription?: string;
-  Territories?: Territory[];
-  //#endregion
+  RegionDescription: string;
+  Territories: Territory[];
 }

@@ -1,16 +1,7 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
+import { Duration } from 'angular-odata';
 
-//#region ODataApiGen Imports
-//#endregion
-
-//#region ODataApiGen Type
-export const CategorySalesFor1997Type = 'NorthwindModel.Category_Sales_for_1997';//#endregion
+export const CategorySalesFor1997EntityType = 'NorthwindModel.Category_Sales_for_1997';
 export interface CategorySalesFor1997 {
-  //#region ODataApiGen Properties
   CategoryName: string;
-  CategorySales?: number;
-  //#endregion
+  CategorySales: number;
 }

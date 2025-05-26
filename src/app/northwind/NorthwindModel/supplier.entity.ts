@@ -1,30 +1,19 @@
-﻿//#region ODataApiGen ODataImports
-import {
-  Duration
-} from 'angular-odata';//#endregion
-
-//#region ODataApiGen Imports
+import { Duration } from 'angular-odata';
 import { Product } from './product.entity';
-import { ProductModel } from './product.model';
-import { ProductCollection } from './product.collection';
-//#endregion
 
-//#region ODataApiGen Type
-export const SupplierType = 'NorthwindModel.Supplier';//#endregion
+export const SupplierEntityType = 'NorthwindModel.Supplier';
 export interface Supplier {
-  //#region ODataApiGen Properties
   SupplierID: number;
-  CompanyName?: string;
-  ContactName?: string;
-  ContactTitle?: string;
-  Address?: string;
-  City?: string;
-  Region?: string;
-  PostalCode?: string;
-  Country?: string;
-  Phone?: string;
-  Fax?: string;
-  HomePage?: string;
-  Products?: Product[];
-  //#endregion
+  CompanyName: string;
+  ContactName: string;
+  ContactTitle: string;
+  Address: string;
+  City: string;
+  Region: string;
+  PostalCode: string;
+  Country: string;
+  Phone: string;
+  Fax: string;
+  HomePage: string;
+  Products: Product[];
 }
