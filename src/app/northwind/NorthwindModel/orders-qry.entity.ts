@@ -1,5 +1,6 @@
 import { Duration } from 'angular-odata';
 
+
 export const OrdersQryEntityType = 'NorthwindModel.Orders_Qry';
 export interface OrdersQry {
   OrderID: number;

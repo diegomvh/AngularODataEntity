@@ -1,5 +1,6 @@
 import { Duration } from 'angular-odata';
 
+
 export const InvoiceEntityType = 'NorthwindModel.Invoice';
 export interface Invoice {
   ShipName: string;

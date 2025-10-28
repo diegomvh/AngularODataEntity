@@ -1,4 +1,5 @@
 import { Duration } from 'angular-odata';
+
 import { Customer } from './customer.entity';
 import { Employee } from './employee.entity';
 import { OrderDetail } from './order-detail.entity';
@@ -20,8 +21,8 @@ export interface Order {
   ShipRegion: string;
   ShipPostalCode: string;
   ShipCountry: string;
-  Customer: Customer;
-  Employee: Employee;
-  Order_Details: OrderDetail[];
-  Shipper: Shipper;
+  Customer?: Customer;
+  Employee?: Employee;
+  Order_Details?: OrderDetail[];
+  Shipper?: Shipper;
 }

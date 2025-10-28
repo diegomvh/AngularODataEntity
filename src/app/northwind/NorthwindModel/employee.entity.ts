@@ -1,4 +1,5 @@
 import { Duration } from 'angular-odata';
+
 import { Order } from './order.entity';
 import { Territory } from './territory.entity';
 
@@ -22,8 +23,8 @@ export interface Employee {
   Notes: string;
   ReportsTo: number;
   PhotoPath: string;
-  Employees1: Employee[];
-  Employee1: Employee;
-  Orders: Order[];
-  Territories: Territory[];
+  Employees1?: Employee[];
+  Employee1?: Employee;
+  Orders?: Order[];
+  Territories?: Territory[];
 }

@@ -1,4 +1,5 @@
 import { Duration } from 'angular-odata';
+
 import { Order } from './order.entity';
 import { CustomerDemographic } from './customer-demographic.entity';
 
@@ -15,6 +16,6 @@ export interface Customer {
   Country: string;
   Phone: string;
   Fax: string;
-  Orders: Order[];
-  CustomerDemographics: CustomerDemographic[];
+  Orders?: Order[];
+  CustomerDemographics?: CustomerDemographic[];
 }

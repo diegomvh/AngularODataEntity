@@ -1,4 +1,5 @@
 import { Duration } from 'angular-odata';
+
 import { Category } from './category.entity';
 import { OrderDetail } from './order-detail.entity';
 import { Supplier } from './supplier.entity';
@@ -15,7 +16,7 @@ export interface Product {
   UnitsOnOrder: number;
   ReorderLevel: number;
   Discontinued: boolean;
-  Category: Category;
-  Order_Details: OrderDetail[];
-  Supplier: Supplier;
+  Category?: Category;
+  Order_Details?: OrderDetail[];
+  Supplier?: Supplier;
 }

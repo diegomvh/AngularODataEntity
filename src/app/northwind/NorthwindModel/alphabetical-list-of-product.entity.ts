@@ -1,5 +1,6 @@
 import { Duration } from 'angular-odata';
 
+
 export const AlphabeticalListOfProductEntityType = 'NorthwindModel.Alphabetical_list_of_product';
 export interface AlphabeticalListOfProduct {
   ProductID: number;

@@ -88,8 +88,9 @@ export class AppComponent {
     //trippinCache(this.injector);
     //trippinJson(this.injector);
     //trippinQueries(this.injector);
-    //trippinModels(this.injector);
-    northwindCompute(this.injector);
+    debugger;
+    trippinModels(this.injector);
+    //northwindCompute(this.injector);
     //this.navigation();
     //this.property();
     //this.mediaEntity();
@@ -392,7 +393,6 @@ export class AppComponent {
   }
 
   trippinModelsEvents() {
-    //const gender = PersonModel.meta.fields().find((f) => f.name === 'Gender');
     const people = this.peopleService.entities().asCollection();
 
     people.events$

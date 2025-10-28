@@ -1,4 +1,5 @@
 import { Duration } from 'angular-odata';
+
 import { Order } from './order.entity';
 import { Product } from './product.entity';
 
@@ -9,6 +10,6 @@ export interface OrderDetail {
   UnitPrice: number;
   Quantity: number;
   Discount: number;
-  Order: Order;
-  Product: Product;
+  Order?: Order;
+  Product?: Product;
 }

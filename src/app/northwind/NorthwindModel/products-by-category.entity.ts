@@ -1,5 +1,6 @@
 import { Duration } from 'angular-odata';
 
+
 export const ProductsByCategoryEntityType = 'NorthwindModel.Products_by_Category';
 export interface ProductsByCategory {
   CategoryName: string;

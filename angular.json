@@ -24,7 +24,12 @@
                 "input": "public"
               }
             ],
+<<<<<<< HEAD
             "styles": [],
+=======
+            "styles": [
+            ],
+>>>>>>> ca7975f2 (Update Demo)
             "scripts": []
           },
           "configurations": {
