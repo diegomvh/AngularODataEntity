@@ -1,4 +1,5 @@
 import { Duration } from 'angular-odata';
+
 import { PlanItem } from './plan-item.entity';
 import { EventLocation } from './event-location.complex';
 

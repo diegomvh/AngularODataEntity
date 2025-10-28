@@ -1,4 +1,5 @@
 import { Duration } from 'angular-odata';
+
 import { Photo } from './photo.entity';
 import { PlanItem } from './plan-item.entity';
 
@@ -12,6 +13,6 @@ export interface Trip {
   StartsAt: Date;
   EndsAt: Date;
   Tags: string[];
-  Photos: Photo[];
-  PlanItems: PlanItem[];
+  Photos?: Photo[];
+  PlanItems?: PlanItem[];
 }

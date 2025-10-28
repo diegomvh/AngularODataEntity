@@ -1,4 +1,5 @@
 import { Duration } from 'angular-odata';
+
 import { Location } from './location.complex';
 import { PersonGender } from './person-gender.enum';
 import { Trip } from './trip.entity';
@@ -13,7 +14,7 @@ export interface Person {
   AddressInfo: Location[];
   Gender: PersonGender;
   Concurrency: number;
-  Friends: Person[];
-  Trips: Trip[];
-  Photo: Photo;
+  Friends?: Person[];
+  Trips?: Trip[];
+  Photo?: Photo;
 }
