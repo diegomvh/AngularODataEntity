@@ -21,7 +21,7 @@ import { LocationModel } from './location.model';
 @Model()
 export class AirportLocationModel<E extends AirportLocation> extends LocationModel<E> {
   @ModelField()
-  Loc!: Point;
+  declare Loc: Point;
   public $$Loc() {
     return this.property<Point>('Loc');
   }

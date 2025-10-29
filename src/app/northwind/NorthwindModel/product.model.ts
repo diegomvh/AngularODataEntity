@@ -26,7 +26,7 @@ import { SupplierModel } from './supplier.model';
 @Model()
 export class ProductModel<E extends Product> extends ODataModel<E> {
   @ModelField()
-  ProductID!: number;
+  declare ProductID: number;
   public $$ProductID() {
     return this.property<number>('ProductID');
   }
@@ -39,7 +39,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  ProductName!: string;
+  declare ProductName: string;
   public $$ProductName() {
     return this.property<string>('ProductName');
   }
@@ -52,7 +52,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  SupplierID!: number;
+  declare SupplierID: number;
   public $$SupplierID() {
     return this.property<number>('SupplierID');
   }
@@ -65,7 +65,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  CategoryID!: number;
+  declare CategoryID: number;
   public $$CategoryID() {
     return this.property<number>('CategoryID');
   }
@@ -78,7 +78,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  QuantityPerUnit!: string;
+  declare QuantityPerUnit: string;
   public $$QuantityPerUnit() {
     return this.property<string>('QuantityPerUnit');
   }
@@ -91,7 +91,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  UnitPrice!: number;
+  declare UnitPrice: number;
   public $$UnitPrice() {
     return this.property<number>('UnitPrice');
   }
@@ -104,7 +104,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  UnitsInStock!: number;
+  declare UnitsInStock: number;
   public $$UnitsInStock() {
     return this.property<number>('UnitsInStock');
   }
@@ -117,7 +117,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  UnitsOnOrder!: number;
+  declare UnitsOnOrder: number;
   public $$UnitsOnOrder() {
     return this.property<number>('UnitsOnOrder');
   }
@@ -130,7 +130,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  ReorderLevel!: number;
+  declare ReorderLevel: number;
   public $$ReorderLevel() {
     return this.property<number>('ReorderLevel');
   }
@@ -143,7 +143,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  Discontinued!: boolean;
+  declare Discontinued: boolean;
   public $$Discontinued() {
     return this.property<boolean>('Discontinued');
   }
@@ -156,7 +156,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  Category?: CategoryModel<Category>;
+  declare Category?: CategoryModel<Category>;
   public $$Category() {
     return this.navigationProperty<Category>('Category');
   }
@@ -171,7 +171,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
+  declare Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
   public $$Order_Details() {
     return this.navigationProperty<OrderDetail>('Order_Details');
   }
@@ -186,7 +186,7 @@ export class ProductModel<E extends Product> extends ODataModel<E> {
   }
 
   @ModelField()
-  Supplier?: SupplierModel<Supplier>;
+  declare Supplier?: SupplierModel<Supplier>;
   public $$Supplier() {
     return this.navigationProperty<Supplier>('Supplier');
   }

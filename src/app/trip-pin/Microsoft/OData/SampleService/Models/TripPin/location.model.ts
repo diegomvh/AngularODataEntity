@@ -21,7 +21,7 @@ import { CityModel } from './city.model';
 @Model()
 export class LocationModel<E extends Location> extends ODataModel<E> {
   @ModelField()
-  Address!: string;
+  declare Address: string;
   public $$Address() {
     return this.property<string>('Address');
   }
@@ -34,7 +34,7 @@ export class LocationModel<E extends Location> extends ODataModel<E> {
   }
 
   @ModelField()
-  City!: CityModel<City>;
+  declare City: CityModel<City>;
   public $$City() {
     return this.property<CityModel<City>>('City');
   }

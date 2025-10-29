@@ -19,7 +19,7 @@ import { SalesTotalsByAmount } from './sales-totals-by-amount.entity';
 @Model()
 export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODataModel<E> {
   @ModelField()
-  SaleAmount!: number;
+  declare SaleAmount: number;
   public $$SaleAmount() {
     return this.property<number>('SaleAmount');
   }
@@ -32,7 +32,7 @@ export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODa
   }
 
   @ModelField()
-  OrderID!: number;
+  declare OrderID: number;
   public $$OrderID() {
     return this.property<number>('OrderID');
   }
@@ -45,7 +45,7 @@ export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODa
   }
 
   @ModelField()
-  CompanyName!: string;
+  declare CompanyName: string;
   public $$CompanyName() {
     return this.property<string>('CompanyName');
   }
@@ -58,7 +58,7 @@ export class SalesTotalsByAmountModel<E extends SalesTotalsByAmount> extends ODa
   }
 
   @ModelField()
-  ShippedDate!: Date;
+  declare ShippedDate: Date;
   public $$ShippedDate() {
     return this.property<Date>('ShippedDate');
   }

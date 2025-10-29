@@ -19,7 +19,7 @@ import { Photo } from './photo.entity';
 @Model()
 export class PhotoModel<E extends Photo> extends ODataModel<E> {
   @ModelField()
-  Id!: number;
+  declare Id: number;
   public $$Id() {
     return this.property<number>('Id');
   }
@@ -32,7 +32,7 @@ export class PhotoModel<E extends Photo> extends ODataModel<E> {
   }
 
   @ModelField()
-  Name!: string;
+  declare Name: string;
   public $$Name() {
     return this.property<string>('Name');
   }

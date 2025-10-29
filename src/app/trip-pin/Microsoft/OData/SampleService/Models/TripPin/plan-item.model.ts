@@ -19,7 +19,7 @@ import { PlanItem } from './plan-item.entity';
 @Model()
 export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   @ModelField()
-  PlanItemId!: number;
+  declare PlanItemId: number;
   public $$PlanItemId() {
     return this.property<number>('PlanItemId');
   }
@@ -32,7 +32,7 @@ export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   }
 
   @ModelField()
-  ConfirmationCode!: string;
+  declare ConfirmationCode: string;
   public $$ConfirmationCode() {
     return this.property<string>('ConfirmationCode');
   }
@@ -45,7 +45,7 @@ export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   }
 
   @ModelField()
-  StartsAt!: Date;
+  declare StartsAt: Date;
   public $$StartsAt() {
     return this.property<Date>('StartsAt');
   }
@@ -58,7 +58,7 @@ export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   }
 
   @ModelField()
-  EndsAt!: Date;
+  declare EndsAt: Date;
   public $$EndsAt() {
     return this.property<Date>('EndsAt');
   }
@@ -71,7 +71,7 @@ export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   }
 
   @ModelField()
-  Duration!: Duration;
+  declare Duration: Duration;
   public $$Duration() {
     return this.property<Duration>('Duration');
   }

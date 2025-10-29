@@ -26,7 +26,7 @@ import { TerritoryCollection } from './territory.collection';
 @Model()
 export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   @ModelField()
-  EmployeeID!: number;
+  declare EmployeeID: number;
   public $$EmployeeID() {
     return this.property<number>('EmployeeID');
   }
@@ -39,7 +39,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  LastName!: string;
+  declare LastName: string;
   public $$LastName() {
     return this.property<string>('LastName');
   }
@@ -52,7 +52,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  FirstName!: string;
+  declare FirstName: string;
   public $$FirstName() {
     return this.property<string>('FirstName');
   }
@@ -65,7 +65,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Title!: string;
+  declare Title: string;
   public $$Title() {
     return this.property<string>('Title');
   }
@@ -78,7 +78,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  TitleOfCourtesy!: string;
+  declare TitleOfCourtesy: string;
   public $$TitleOfCourtesy() {
     return this.property<string>('TitleOfCourtesy');
   }
@@ -91,7 +91,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  BirthDate!: Date;
+  declare BirthDate: Date;
   public $$BirthDate() {
     return this.property<Date>('BirthDate');
   }
@@ -104,7 +104,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  HireDate!: Date;
+  declare HireDate: Date;
   public $$HireDate() {
     return this.property<Date>('HireDate');
   }
@@ -117,7 +117,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Address!: string;
+  declare Address: string;
   public $$Address() {
     return this.property<string>('Address');
   }
@@ -130,7 +130,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  City!: string;
+  declare City: string;
   public $$City() {
     return this.property<string>('City');
   }
@@ -143,7 +143,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Region!: string;
+  declare Region: string;
   public $$Region() {
     return this.property<string>('Region');
   }
@@ -156,7 +156,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  PostalCode!: string;
+  declare PostalCode: string;
   public $$PostalCode() {
     return this.property<string>('PostalCode');
   }
@@ -169,7 +169,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Country!: string;
+  declare Country: string;
   public $$Country() {
     return this.property<string>('Country');
   }
@@ -182,7 +182,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  HomePhone!: string;
+  declare HomePhone: string;
   public $$HomePhone() {
     return this.property<string>('HomePhone');
   }
@@ -195,7 +195,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Extension!: string;
+  declare Extension: string;
   public $$Extension() {
     return this.property<string>('Extension');
   }
@@ -208,7 +208,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Photo!: ArrayBuffer;
+  declare Photo: ArrayBuffer;
   public $$Photo() {
     return this.property<ArrayBuffer>('Photo');
   }
@@ -221,7 +221,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Notes!: string;
+  declare Notes: string;
   public $$Notes() {
     return this.property<string>('Notes');
   }
@@ -234,7 +234,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  ReportsTo!: number;
+  declare ReportsTo: number;
   public $$ReportsTo() {
     return this.property<number>('ReportsTo');
   }
@@ -247,7 +247,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  PhotoPath!: string;
+  declare PhotoPath: string;
   public $$PhotoPath() {
     return this.property<string>('PhotoPath');
   }
@@ -260,7 +260,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Employees1?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
+  declare Employees1?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
   public $$Employees1() {
     return this.navigationProperty<Employee>('Employees1');
   }
@@ -275,7 +275,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Employee1?: EmployeeModel<Employee>;
+  declare Employee1?: EmployeeModel<Employee>;
   public $$Employee1() {
     return this.navigationProperty<Employee>('Employee1');
   }
@@ -290,7 +290,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Orders?: OrderCollection<Order, OrderModel<Order>>;
+  declare Orders?: OrderCollection<Order, OrderModel<Order>>;
   public $$Orders() {
     return this.navigationProperty<Order>('Orders');
   }
@@ -305,7 +305,7 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   }
 
   @ModelField()
-  Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
+  declare Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
   public $$Territories() {
     return this.navigationProperty<Territory>('Territories');
   }

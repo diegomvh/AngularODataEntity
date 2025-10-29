@@ -19,7 +19,7 @@ import { OrdersQry } from './orders-qry.entity';
 @Model()
 export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   @ModelField()
-  OrderID!: number;
+  declare OrderID: number;
   public $$OrderID() {
     return this.property<number>('OrderID');
   }
@@ -32,7 +32,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  CustomerID!: string;
+  declare CustomerID: string;
   public $$CustomerID() {
     return this.property<string>('CustomerID');
   }
@@ -45,7 +45,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  EmployeeID!: number;
+  declare EmployeeID: number;
   public $$EmployeeID() {
     return this.property<number>('EmployeeID');
   }
@@ -58,7 +58,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  OrderDate!: Date;
+  declare OrderDate: Date;
   public $$OrderDate() {
     return this.property<Date>('OrderDate');
   }
@@ -71,7 +71,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  RequiredDate!: Date;
+  declare RequiredDate: Date;
   public $$RequiredDate() {
     return this.property<Date>('RequiredDate');
   }
@@ -84,7 +84,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShippedDate!: Date;
+  declare ShippedDate: Date;
   public $$ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
@@ -97,7 +97,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipVia!: number;
+  declare ShipVia: number;
   public $$ShipVia() {
     return this.property<number>('ShipVia');
   }
@@ -110,7 +110,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  Freight!: number;
+  declare Freight: number;
   public $$Freight() {
     return this.property<number>('Freight');
   }
@@ -123,7 +123,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipName!: string;
+  declare ShipName: string;
   public $$ShipName() {
     return this.property<string>('ShipName');
   }
@@ -136,7 +136,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipAddress!: string;
+  declare ShipAddress: string;
   public $$ShipAddress() {
     return this.property<string>('ShipAddress');
   }
@@ -149,7 +149,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipCity!: string;
+  declare ShipCity: string;
   public $$ShipCity() {
     return this.property<string>('ShipCity');
   }
@@ -162,7 +162,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipRegion!: string;
+  declare ShipRegion: string;
   public $$ShipRegion() {
     return this.property<string>('ShipRegion');
   }
@@ -175,7 +175,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipPostalCode!: string;
+  declare ShipPostalCode: string;
   public $$ShipPostalCode() {
     return this.property<string>('ShipPostalCode');
   }
@@ -188,7 +188,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipCountry!: string;
+  declare ShipCountry: string;
   public $$ShipCountry() {
     return this.property<string>('ShipCountry');
   }
@@ -201,7 +201,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  CompanyName!: string;
+  declare CompanyName: string;
   public $$CompanyName() {
     return this.property<string>('CompanyName');
   }
@@ -214,7 +214,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  Address!: string;
+  declare Address: string;
   public $$Address() {
     return this.property<string>('Address');
   }
@@ -227,7 +227,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  City!: string;
+  declare City: string;
   public $$City() {
     return this.property<string>('City');
   }
@@ -240,7 +240,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  Region!: string;
+  declare Region: string;
   public $$Region() {
     return this.property<string>('Region');
   }
@@ -253,7 +253,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  PostalCode!: string;
+  declare PostalCode: string;
   public $$PostalCode() {
     return this.property<string>('PostalCode');
   }
@@ -266,7 +266,7 @@ export class OrdersQryModel<E extends OrdersQry> extends ODataModel<E> {
   }
 
   @ModelField()
-  Country!: string;
+  declare Country: string;
   public $$Country() {
     return this.property<string>('Country');
   }

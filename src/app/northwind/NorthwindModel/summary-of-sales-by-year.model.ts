@@ -19,7 +19,7 @@ import { SummaryOfSalesByYear } from './summary-of-sales-by-year.entity';
 @Model()
 export class SummaryOfSalesByYearModel<E extends SummaryOfSalesByYear> extends ODataModel<E> {
   @ModelField()
-  ShippedDate!: Date;
+  declare ShippedDate: Date;
   public $$ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
@@ -32,7 +32,7 @@ export class SummaryOfSalesByYearModel<E extends SummaryOfSalesByYear> extends O
   }
 
   @ModelField()
-  OrderID!: number;
+  declare OrderID: number;
   public $$OrderID() {
     return this.property<number>('OrderID');
   }
@@ -45,7 +45,7 @@ export class SummaryOfSalesByYearModel<E extends SummaryOfSalesByYear> extends O
   }
 
   @ModelField()
-  Subtotal!: number;
+  declare Subtotal: number;
   public $$Subtotal() {
     return this.property<number>('Subtotal');
   }

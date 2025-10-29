@@ -58,7 +58,7 @@ export const NorthwindConfig = ODataMetadata.fromJson(json).toConfig({
   metadataUrl: 'https://services.odata.org/V4/Northwind/Northwind.svc/$metadata',
   name: 'Northwind',
   version: '4.0' as ODataVersion,
-  creation: new Date('2025-10-28T15:03:09.941Z'),
+  creation: new Date('2025-10-29T13:06:49.436Z'),
   parsers: EDM_PARSERS,
   models: {
     'NorthwindModel.Category': CategoryModel, 

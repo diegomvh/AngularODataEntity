@@ -22,7 +22,7 @@ import { CustomerCollection } from './customer.collection';
 @Model()
 export class CustomerDemographicModel<E extends CustomerDemographic> extends ODataModel<E> {
   @ModelField()
-  CustomerTypeID!: string;
+  declare CustomerTypeID: string;
   public $$CustomerTypeID() {
     return this.property<string>('CustomerTypeID');
   }
@@ -35,7 +35,7 @@ export class CustomerDemographicModel<E extends CustomerDemographic> extends ODa
   }
 
   @ModelField()
-  CustomerDesc!: string;
+  declare CustomerDesc: string;
   public $$CustomerDesc() {
     return this.property<string>('CustomerDesc');
   }
@@ -48,7 +48,7 @@ export class CustomerDemographicModel<E extends CustomerDemographic> extends ODa
   }
 
   @ModelField()
-  Customers?: CustomerCollection<Customer, CustomerModel<Customer>>;
+  declare Customers?: CustomerCollection<Customer, CustomerModel<Customer>>;
   public $$Customers() {
     return this.navigationProperty<Customer>('Customers');
   }

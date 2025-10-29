@@ -19,7 +19,7 @@ import { CurrentProductList } from './current-product-list.entity';
 @Model()
 export class CurrentProductListModel<E extends CurrentProductList> extends ODataModel<E> {
   @ModelField()
-  ProductID!: number;
+  declare ProductID: number;
   public $$ProductID() {
     return this.property<number>('ProductID');
   }
@@ -32,7 +32,7 @@ export class CurrentProductListModel<E extends CurrentProductList> extends OData
   }
 
   @ModelField()
-  ProductName!: string;
+  declare ProductName: string;
   public $$ProductName() {
     return this.property<string>('ProductName');
   }

@@ -28,7 +28,7 @@ import { ShipperModel } from './shipper.model';
 @Model()
 export class OrderModel<E extends Order> extends ODataModel<E> {
   @ModelField()
-  OrderID!: number;
+  declare OrderID: number;
   public $$OrderID() {
     return this.property<number>('OrderID');
   }
@@ -41,7 +41,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  CustomerID!: string;
+  declare CustomerID: string;
   public $$CustomerID() {
     return this.property<string>('CustomerID');
   }
@@ -54,7 +54,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  EmployeeID!: number;
+  declare EmployeeID: number;
   public $$EmployeeID() {
     return this.property<number>('EmployeeID');
   }
@@ -67,7 +67,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  OrderDate!: Date;
+  declare OrderDate: Date;
   public $$OrderDate() {
     return this.property<Date>('OrderDate');
   }
@@ -80,7 +80,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  RequiredDate!: Date;
+  declare RequiredDate: Date;
   public $$RequiredDate() {
     return this.property<Date>('RequiredDate');
   }
@@ -93,7 +93,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShippedDate!: Date;
+  declare ShippedDate: Date;
   public $$ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
@@ -106,7 +106,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipVia!: number;
+  declare ShipVia: number;
   public $$ShipVia() {
     return this.property<number>('ShipVia');
   }
@@ -119,7 +119,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  Freight!: number;
+  declare Freight: number;
   public $$Freight() {
     return this.property<number>('Freight');
   }
@@ -132,7 +132,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipName!: string;
+  declare ShipName: string;
   public $$ShipName() {
     return this.property<string>('ShipName');
   }
@@ -145,7 +145,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipAddress!: string;
+  declare ShipAddress: string;
   public $$ShipAddress() {
     return this.property<string>('ShipAddress');
   }
@@ -158,7 +158,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipCity!: string;
+  declare ShipCity: string;
   public $$ShipCity() {
     return this.property<string>('ShipCity');
   }
@@ -171,7 +171,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipRegion!: string;
+  declare ShipRegion: string;
   public $$ShipRegion() {
     return this.property<string>('ShipRegion');
   }
@@ -184,7 +184,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipPostalCode!: string;
+  declare ShipPostalCode: string;
   public $$ShipPostalCode() {
     return this.property<string>('ShipPostalCode');
   }
@@ -197,7 +197,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipCountry!: string;
+  declare ShipCountry: string;
   public $$ShipCountry() {
     return this.property<string>('ShipCountry');
   }
@@ -210,7 +210,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  Customer?: CustomerModel<Customer>;
+  declare Customer?: CustomerModel<Customer>;
   public $$Customer() {
     return this.navigationProperty<Customer>('Customer');
   }
@@ -225,7 +225,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  Employee?: EmployeeModel<Employee>;
+  declare Employee?: EmployeeModel<Employee>;
   public $$Employee() {
     return this.navigationProperty<Employee>('Employee');
   }
@@ -240,7 +240,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
+  declare Order_Details?: OrderDetailCollection<OrderDetail, OrderDetailModel<OrderDetail>>;
   public $$Order_Details() {
     return this.navigationProperty<OrderDetail>('Order_Details');
   }
@@ -255,7 +255,7 @@ export class OrderModel<E extends Order> extends ODataModel<E> {
   }
 
   @ModelField()
-  Shipper?: ShipperModel<Shipper>;
+  declare Shipper?: ShipperModel<Shipper>;
   public $$Shipper() {
     return this.navigationProperty<Shipper>('Shipper');
   }

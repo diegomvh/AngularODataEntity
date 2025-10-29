@@ -25,7 +25,7 @@ import { CustomerDemographicCollection } from './customer-demographic.collection
 @Model()
 export class CustomerModel<E extends Customer> extends ODataModel<E> {
   @ModelField()
-  CustomerID!: string;
+  declare CustomerID: string;
   public $$CustomerID() {
     return this.property<string>('CustomerID');
   }
@@ -38,7 +38,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  CompanyName!: string;
+  declare CompanyName: string;
   public $$CompanyName() {
     return this.property<string>('CompanyName');
   }
@@ -51,7 +51,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  ContactName!: string;
+  declare ContactName: string;
   public $$ContactName() {
     return this.property<string>('ContactName');
   }
@@ -64,7 +64,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  ContactTitle!: string;
+  declare ContactTitle: string;
   public $$ContactTitle() {
     return this.property<string>('ContactTitle');
   }
@@ -77,7 +77,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  Address!: string;
+  declare Address: string;
   public $$Address() {
     return this.property<string>('Address');
   }
@@ -90,7 +90,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  City!: string;
+  declare City: string;
   public $$City() {
     return this.property<string>('City');
   }
@@ -103,7 +103,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  Region!: string;
+  declare Region: string;
   public $$Region() {
     return this.property<string>('Region');
   }
@@ -116,7 +116,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  PostalCode!: string;
+  declare PostalCode: string;
   public $$PostalCode() {
     return this.property<string>('PostalCode');
   }
@@ -129,7 +129,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  Country!: string;
+  declare Country: string;
   public $$Country() {
     return this.property<string>('Country');
   }
@@ -142,7 +142,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  Phone!: string;
+  declare Phone: string;
   public $$Phone() {
     return this.property<string>('Phone');
   }
@@ -155,7 +155,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  Fax!: string;
+  declare Fax: string;
   public $$Fax() {
     return this.property<string>('Fax');
   }
@@ -168,7 +168,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  Orders?: OrderCollection<Order, OrderModel<Order>>;
+  declare Orders?: OrderCollection<Order, OrderModel<Order>>;
   public $$Orders() {
     return this.navigationProperty<Order>('Orders');
   }
@@ -183,7 +183,7 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   }
 
   @ModelField()
-  CustomerDemographics?: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
+  declare CustomerDemographics?: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
   public $$CustomerDemographics() {
     return this.navigationProperty<CustomerDemographic>('CustomerDemographics');
   }

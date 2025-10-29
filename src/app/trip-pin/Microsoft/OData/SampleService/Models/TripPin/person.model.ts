@@ -32,7 +32,7 @@ import { Airport } from './airport.entity';
 @Model()
 export class PersonModel<E extends Person> extends ODataModel<E> {
   @ModelField()
-  UserName!: string;
+  declare UserName: string;
   public $$UserName() {
     return this.property<string>('UserName');
   }
@@ -45,7 +45,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
 
   @ModelField()
-  FirstName!: string;
+  declare FirstName: string;
   public $$FirstName() {
     return this.property<string>('FirstName');
   }
@@ -58,7 +58,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
 
   @ModelField()
-  LastName!: string;
+  declare LastName: string;
   public $$LastName() {
     return this.property<string>('LastName');
   }
@@ -71,7 +71,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
 
   @ModelField()
-  Emails!: string[];
+  declare Emails: string[];
   public $$Emails() {
     return this.property<string[]>('Emails');
   }
@@ -84,7 +84,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
 
   @ModelField()
-  AddressInfo!: LocationCollection<Location, LocationModel<Location>>;
+  declare AddressInfo: LocationCollection<Location, LocationModel<Location>>;
   public $$AddressInfo() {
     return this.property<LocationCollection<Location, LocationModel<Location>>>('AddressInfo');
   }
@@ -97,7 +97,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
 
   @ModelField()
-  Gender!: PersonGender;
+  declare Gender: PersonGender;
   public $$Gender() {
     return this.property<PersonGender>('Gender');
   }
@@ -110,7 +110,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
 
   @ModelField()
-  Concurrency!: number;
+  declare Concurrency: number;
   public $$Concurrency() {
     return this.property<number>('Concurrency');
   }
@@ -123,7 +123,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
 
   @ModelField()
-  Friends?: PersonCollection<Person, PersonModel<Person>>;
+  declare Friends?: PersonCollection<Person, PersonModel<Person>>;
   public $$Friends() {
     return this.navigationProperty<Person>('Friends');
   }
@@ -138,7 +138,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
 
   @ModelField()
-  Trips?: TripCollection<Trip, TripModel<Trip>>;
+  declare Trips?: TripCollection<Trip, TripModel<Trip>>;
   public $$Trips() {
     return this.navigationProperty<Trip>('Trips');
   }
@@ -153,7 +153,7 @@ export class PersonModel<E extends Person> extends ODataModel<E> {
   }
 
   @ModelField()
-  Photo?: PhotoModel<Photo>;
+  declare Photo?: PhotoModel<Photo>;
   public $$Photo() {
     return this.navigationProperty<Photo>('Photo');
   }

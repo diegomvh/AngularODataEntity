@@ -23,7 +23,7 @@ import { EventLocationModel } from './event-location.model';
 @Model()
 export class EventModel<E extends Event> extends PlanItemModel<E> {
   @ModelField()
-  Description!: string;
+  declare Description: string;
   public $$Description() {
     return this.property<string>('Description');
   }
@@ -36,7 +36,7 @@ export class EventModel<E extends Event> extends PlanItemModel<E> {
   }
 
   @ModelField()
-  OccursAt!: EventLocationModel<EventLocation>;
+  declare OccursAt: EventLocationModel<EventLocation>;
   public $$OccursAt() {
     return this.property<EventLocationModel<EventLocation>>('OccursAt');
   }

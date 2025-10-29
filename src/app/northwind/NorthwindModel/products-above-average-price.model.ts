@@ -19,7 +19,7 @@ import { ProductsAboveAveragePrice } from './products-above-average-price.entity
 @Model()
 export class ProductsAboveAveragePriceModel<E extends ProductsAboveAveragePrice> extends ODataModel<E> {
   @ModelField()
-  ProductName!: string;
+  declare ProductName: string;
   public $$ProductName() {
     return this.property<string>('ProductName');
   }
@@ -32,7 +32,7 @@ export class ProductsAboveAveragePriceModel<E extends ProductsAboveAveragePrice>
   }
 
   @ModelField()
-  UnitPrice!: number;
+  declare UnitPrice: number;
   public $$UnitPrice() {
     return this.property<number>('UnitPrice');
   }

@@ -25,7 +25,7 @@ import { AirlineModel } from './airline.model';
 @Model()
 export class FlightModel<E extends Flight> extends PublicTransportationModel<E> {
   @ModelField()
-  FlightNumber!: string;
+  declare FlightNumber: string;
   public $$FlightNumber() {
     return this.property<string>('FlightNumber');
   }
@@ -38,7 +38,7 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   }
 
   @ModelField()
-  From?: AirportModel<Airport>;
+  declare From?: AirportModel<Airport>;
   public $$From() {
     return this.navigationProperty<Airport>('From');
   }
@@ -53,7 +53,7 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   }
 
   @ModelField()
-  To?: AirportModel<Airport>;
+  declare To?: AirportModel<Airport>;
   public $$To() {
     return this.navigationProperty<Airport>('To');
   }
@@ -68,7 +68,7 @@ export class FlightModel<E extends Flight> extends PublicTransportationModel<E> 
   }
 
   @ModelField()
-  Airline?: AirlineModel<Airline>;
+  declare Airline?: AirlineModel<Airline>;
   public $$Airline() {
     return this.navigationProperty<Airline>('Airline');
   }

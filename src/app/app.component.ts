@@ -1,6 +1,6 @@
 import { Component, Inject, Injector, INJECTOR } from '@angular/core';
 import { EdmType, ODataClient, ODataServiceFactory } from 'angular-odata';
-import { Airport, DefaultContainerService, PeopleService, Person, PersonGender, PersonGenderEnumType, Photo, PhotosService, TripPinModule } from './trip-pin';
+import { Airport, DefaultContainerService, PeopleService, Person, PersonGender, PersonGenderEnumType, PersonModel, Photo, PhotosService, TripPinModule } from './trip-pin';
 import { NorthwindModule, OrdersService, ProductsService } from './northwind';
 import { filter, firstValueFrom, map, switchMap } from 'rxjs';
 import { TabsModule } from 'primeng/tabs';
@@ -88,7 +88,6 @@ export class AppComponent {
     //trippinCache(this.injector);
     //trippinJson(this.injector);
     //trippinQueries(this.injector);
-    debugger;
     trippinModels(this.injector);
     //northwindCompute(this.injector);
     //this.navigation();

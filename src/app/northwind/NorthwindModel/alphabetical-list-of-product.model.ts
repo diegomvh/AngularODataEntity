@@ -19,7 +19,7 @@ import { AlphabeticalListOfProduct } from './alphabetical-list-of-product.entity
 @Model()
 export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct> extends ODataModel<E> {
   @ModelField()
-  ProductID!: number;
+  declare ProductID: number;
   public $$ProductID() {
     return this.property<number>('ProductID');
   }
@@ -32,7 +32,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   }
 
   @ModelField()
-  ProductName!: string;
+  declare ProductName: string;
   public $$ProductName() {
     return this.property<string>('ProductName');
   }
@@ -45,7 +45,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   }
 
   @ModelField()
-  SupplierID!: number;
+  declare SupplierID: number;
   public $$SupplierID() {
     return this.property<number>('SupplierID');
   }
@@ -58,7 +58,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   }
 
   @ModelField()
-  CategoryID!: number;
+  declare CategoryID: number;
   public $$CategoryID() {
     return this.property<number>('CategoryID');
   }
@@ -71,7 +71,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   }
 
   @ModelField()
-  QuantityPerUnit!: string;
+  declare QuantityPerUnit: string;
   public $$QuantityPerUnit() {
     return this.property<string>('QuantityPerUnit');
   }
@@ -84,7 +84,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   }
 
   @ModelField()
-  UnitPrice!: number;
+  declare UnitPrice: number;
   public $$UnitPrice() {
     return this.property<number>('UnitPrice');
   }
@@ -97,7 +97,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   }
 
   @ModelField()
-  UnitsInStock!: number;
+  declare UnitsInStock: number;
   public $$UnitsInStock() {
     return this.property<number>('UnitsInStock');
   }
@@ -110,7 +110,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   }
 
   @ModelField()
-  UnitsOnOrder!: number;
+  declare UnitsOnOrder: number;
   public $$UnitsOnOrder() {
     return this.property<number>('UnitsOnOrder');
   }
@@ -123,7 +123,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   }
 
   @ModelField()
-  ReorderLevel!: number;
+  declare ReorderLevel: number;
   public $$ReorderLevel() {
     return this.property<number>('ReorderLevel');
   }
@@ -136,7 +136,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   }
 
   @ModelField()
-  Discontinued!: boolean;
+  declare Discontinued: boolean;
   public $$Discontinued() {
     return this.property<boolean>('Discontinued');
   }
@@ -149,7 +149,7 @@ export class AlphabeticalListOfProductModel<E extends AlphabeticalListOfProduct>
   }
 
   @ModelField()
-  CategoryName!: string;
+  declare CategoryName: string;
   public $$CategoryName() {
     return this.property<string>('CategoryName');
   }

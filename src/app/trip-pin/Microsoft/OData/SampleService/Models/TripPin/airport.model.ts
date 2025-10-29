@@ -21,7 +21,7 @@ import { AirportLocationModel } from './airport-location.model';
 @Model()
 export class AirportModel<E extends Airport> extends ODataModel<E> {
   @ModelField()
-  IcaoCode!: string;
+  declare IcaoCode: string;
   public $$IcaoCode() {
     return this.property<string>('IcaoCode');
   }
@@ -34,7 +34,7 @@ export class AirportModel<E extends Airport> extends ODataModel<E> {
   }
 
   @ModelField()
-  Name!: string;
+  declare Name: string;
   public $$Name() {
     return this.property<string>('Name');
   }
@@ -47,7 +47,7 @@ export class AirportModel<E extends Airport> extends ODataModel<E> {
   }
 
   @ModelField()
-  IataCode!: string;
+  declare IataCode: string;
   public $$IataCode() {
     return this.property<string>('IataCode');
   }
@@ -60,7 +60,7 @@ export class AirportModel<E extends Airport> extends ODataModel<E> {
   }
 
   @ModelField()
-  Location!: AirportLocationModel<AirportLocation>;
+  declare Location: AirportLocationModel<AirportLocation>;
   public $$Location() {
     return this.property<AirportLocationModel<AirportLocation>>('Location');
   }

@@ -19,7 +19,7 @@ import { City } from './city.complex';
 @Model()
 export class CityModel<E extends City> extends ODataModel<E> {
   @ModelField()
-  CountryRegion!: string;
+  declare CountryRegion: string;
   public $$CountryRegion() {
     return this.property<string>('CountryRegion');
   }
@@ -32,7 +32,7 @@ export class CityModel<E extends City> extends ODataModel<E> {
   }
 
   @ModelField()
-  Name!: string;
+  declare Name: string;
   public $$Name() {
     return this.property<string>('Name');
   }
@@ -45,7 +45,7 @@ export class CityModel<E extends City> extends ODataModel<E> {
   }
 
   @ModelField()
-  Region!: string;
+  declare Region: string;
   public $$Region() {
     return this.property<string>('Region');
   }

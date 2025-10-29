@@ -22,7 +22,7 @@ import { TerritoryCollection } from './territory.collection';
 @Model()
 export class RegionModel<E extends Region> extends ODataModel<E> {
   @ModelField()
-  RegionID!: number;
+  declare RegionID: number;
   public $$RegionID() {
     return this.property<number>('RegionID');
   }
@@ -35,7 +35,7 @@ export class RegionModel<E extends Region> extends ODataModel<E> {
   }
 
   @ModelField()
-  RegionDescription!: string;
+  declare RegionDescription: string;
   public $$RegionDescription() {
     return this.property<string>('RegionDescription');
   }
@@ -48,7 +48,7 @@ export class RegionModel<E extends Region> extends ODataModel<E> {
   }
 
   @ModelField()
-  Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
+  declare Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
   public $$Territories() {
     return this.navigationProperty<Territory>('Territories');
   }

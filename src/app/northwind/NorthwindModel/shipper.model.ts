@@ -22,7 +22,7 @@ import { OrderCollection } from './order.collection';
 @Model()
 export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   @ModelField()
-  ShipperID!: number;
+  declare ShipperID: number;
   public $$ShipperID() {
     return this.property<number>('ShipperID');
   }
@@ -35,7 +35,7 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   }
 
   @ModelField()
-  CompanyName!: string;
+  declare CompanyName: string;
   public $$CompanyName() {
     return this.property<string>('CompanyName');
   }
@@ -48,7 +48,7 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   }
 
   @ModelField()
-  Phone!: string;
+  declare Phone: string;
   public $$Phone() {
     return this.property<string>('Phone');
   }
@@ -61,7 +61,7 @@ export class ShipperModel<E extends Shipper> extends ODataModel<E> {
   }
 
   @ModelField()
-  Orders?: OrderCollection<Order, OrderModel<Order>>;
+  declare Orders?: OrderCollection<Order, OrderModel<Order>>;
   public $$Orders() {
     return this.navigationProperty<Order>('Orders');
   }

@@ -24,7 +24,7 @@ import { EmployeeCollection } from './employee.collection';
 @Model()
 export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   @ModelField()
-  TerritoryID!: string;
+  declare TerritoryID: string;
   public $$TerritoryID() {
     return this.property<string>('TerritoryID');
   }
@@ -37,7 +37,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   }
 
   @ModelField()
-  TerritoryDescription!: string;
+  declare TerritoryDescription: string;
   public $$TerritoryDescription() {
     return this.property<string>('TerritoryDescription');
   }
@@ -50,7 +50,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   }
 
   @ModelField()
-  RegionID!: number;
+  declare RegionID: number;
   public $$RegionID() {
     return this.property<number>('RegionID');
   }
@@ -63,7 +63,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   }
 
   @ModelField()
-  Region?: RegionModel<Region>;
+  declare Region?: RegionModel<Region>;
   public $$Region() {
     return this.navigationProperty<Region>('Region');
   }
@@ -78,7 +78,7 @@ export class TerritoryModel<E extends Territory> extends ODataModel<E> {
   }
 
   @ModelField()
-  Employees?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
+  declare Employees?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
   public $$Employees() {
     return this.navigationProperty<Employee>('Employees');
   }

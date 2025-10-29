@@ -19,7 +19,7 @@ import { CategorySalesFor1997 } from './category-sales-for-1997.entity';
 @Model()
 export class CategorySalesFor1997Model<E extends CategorySalesFor1997> extends ODataModel<E> {
   @ModelField()
-  CategoryName!: string;
+  declare CategoryName: string;
   public $$CategoryName() {
     return this.property<string>('CategoryName');
   }
@@ -32,7 +32,7 @@ export class CategorySalesFor1997Model<E extends CategorySalesFor1997> extends O
   }
 
   @ModelField()
-  CategorySales!: number;
+  declare CategorySales: number;
   public $$CategorySales() {
     return this.property<number>('CategorySales');
   }

@@ -23,7 +23,7 @@ import { ProductModel } from './product.model';
 @Model()
 export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   @ModelField()
-  OrderID!: number;
+  declare OrderID: number;
   public $$OrderID() {
     return this.property<number>('OrderID');
   }
@@ -36,7 +36,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   }
 
   @ModelField()
-  ProductID!: number;
+  declare ProductID: number;
   public $$ProductID() {
     return this.property<number>('ProductID');
   }
@@ -49,7 +49,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   }
 
   @ModelField()
-  UnitPrice!: number;
+  declare UnitPrice: number;
   public $$UnitPrice() {
     return this.property<number>('UnitPrice');
   }
@@ -62,7 +62,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   }
 
   @ModelField()
-  Quantity!: number;
+  declare Quantity: number;
   public $$Quantity() {
     return this.property<number>('Quantity');
   }
@@ -75,7 +75,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   }
 
   @ModelField()
-  Discount!: number;
+  declare Discount: number;
   public $$Discount() {
     return this.property<number>('Discount');
   }
@@ -88,7 +88,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   }
 
   @ModelField()
-  Order?: OrderModel<Order>;
+  declare Order?: OrderModel<Order>;
   public $$Order() {
     return this.navigationProperty<Order>('Order');
   }
@@ -103,7 +103,7 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   }
 
   @ModelField()
-  Product?: ProductModel<Product>;
+  declare Product?: ProductModel<Product>;
   public $$Product() {
     return this.navigationProperty<Product>('Product');
   }

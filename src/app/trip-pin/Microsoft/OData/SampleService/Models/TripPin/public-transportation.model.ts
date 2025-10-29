@@ -21,7 +21,7 @@ import { PlanItemModel } from './plan-item.model';
 @Model()
 export class PublicTransportationModel<E extends PublicTransportation> extends PlanItemModel<E> {
   @ModelField()
-  SeatNumber!: string;
+  declare SeatNumber: string;
   public $$SeatNumber() {
     return this.property<string>('SeatNumber');
   }

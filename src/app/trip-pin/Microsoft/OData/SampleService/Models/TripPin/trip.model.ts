@@ -25,7 +25,7 @@ import { PlanItemCollection } from './plan-item.collection';
 @Model()
 export class TripModel<E extends Trip> extends ODataModel<E> {
   @ModelField()
-  TripId!: number;
+  declare TripId: number;
   public $$TripId() {
     return this.property<number>('TripId');
   }
@@ -38,7 +38,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShareId!: string;
+  declare ShareId: string;
   public $$ShareId() {
     return this.property<string>('ShareId');
   }
@@ -51,7 +51,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   }
 
   @ModelField()
-  Description!: string;
+  declare Description: string;
   public $$Description() {
     return this.property<string>('Description');
   }
@@ -64,7 +64,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   }
 
   @ModelField()
-  Name!: string;
+  declare Name: string;
   public $$Name() {
     return this.property<string>('Name');
   }
@@ -77,7 +77,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   }
 
   @ModelField()
-  Budget!: number;
+  declare Budget: number;
   public $$Budget() {
     return this.property<number>('Budget');
   }
@@ -90,7 +90,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   }
 
   @ModelField()
-  StartsAt!: Date;
+  declare StartsAt: Date;
   public $$StartsAt() {
     return this.property<Date>('StartsAt');
   }
@@ -103,7 +103,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   }
 
   @ModelField()
-  EndsAt!: Date;
+  declare EndsAt: Date;
   public $$EndsAt() {
     return this.property<Date>('EndsAt');
   }
@@ -116,7 +116,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   }
 
   @ModelField()
-  Tags!: string[];
+  declare Tags: string[];
   public $$Tags() {
     return this.property<string[]>('Tags');
   }
@@ -129,7 +129,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   }
 
   @ModelField()
-  Photos?: PhotoCollection<Photo, PhotoModel<Photo>>;
+  declare Photos?: PhotoCollection<Photo, PhotoModel<Photo>>;
   public $$Photos() {
     return this.navigationProperty<Photo>('Photos');
   }
@@ -144,7 +144,7 @@ export class TripModel<E extends Trip> extends ODataModel<E> {
   }
 
   @ModelField()
-  PlanItems?: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>;
+  declare PlanItems?: PlanItemCollection<PlanItem, PlanItemModel<PlanItem>>;
   public $$PlanItems() {
     return this.navigationProperty<PlanItem>('PlanItems');
   }

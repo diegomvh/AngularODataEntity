@@ -19,7 +19,7 @@ import { SalesByCategory } from './sales-by-category.entity';
 @Model()
 export class SalesByCategoryModel<E extends SalesByCategory> extends ODataModel<E> {
   @ModelField()
-  CategoryID!: number;
+  declare CategoryID: number;
   public $$CategoryID() {
     return this.property<number>('CategoryID');
   }
@@ -32,7 +32,7 @@ export class SalesByCategoryModel<E extends SalesByCategory> extends ODataModel<
   }
 
   @ModelField()
-  CategoryName!: string;
+  declare CategoryName: string;
   public $$CategoryName() {
     return this.property<string>('CategoryName');
   }
@@ -45,7 +45,7 @@ export class SalesByCategoryModel<E extends SalesByCategory> extends ODataModel<
   }
 
   @ModelField()
-  ProductName!: string;
+  declare ProductName: string;
   public $$ProductName() {
     return this.property<string>('ProductName');
   }
@@ -58,7 +58,7 @@ export class SalesByCategoryModel<E extends SalesByCategory> extends ODataModel<
   }
 
   @ModelField()
-  ProductSales!: number;
+  declare ProductSales: number;
   public $$ProductSales() {
     return this.property<number>('ProductSales');
   }

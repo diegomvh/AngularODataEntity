@@ -19,7 +19,7 @@ import { OrderSubtotal } from './order-subtotal.entity';
 @Model()
 export class OrderSubtotalModel<E extends OrderSubtotal> extends ODataModel<E> {
   @ModelField()
-  OrderID!: number;
+  declare OrderID: number;
   public $$OrderID() {
     return this.property<number>('OrderID');
   }
@@ -32,7 +32,7 @@ export class OrderSubtotalModel<E extends OrderSubtotal> extends ODataModel<E> {
   }
 
   @ModelField()
-  Subtotal!: number;
+  declare Subtotal: number;
   public $$Subtotal() {
     return this.property<number>('Subtotal');
   }

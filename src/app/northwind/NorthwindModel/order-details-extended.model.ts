@@ -19,7 +19,7 @@ import { OrderDetailsExtended } from './order-details-extended.entity';
 @Model()
 export class OrderDetailsExtendedModel<E extends OrderDetailsExtended> extends ODataModel<E> {
   @ModelField()
-  OrderID!: number;
+  declare OrderID: number;
   public $$OrderID() {
     return this.property<number>('OrderID');
   }
@@ -32,7 +32,7 @@ export class OrderDetailsExtendedModel<E extends OrderDetailsExtended> extends O
   }
 
   @ModelField()
-  ProductID!: number;
+  declare ProductID: number;
   public $$ProductID() {
     return this.property<number>('ProductID');
   }
@@ -45,7 +45,7 @@ export class OrderDetailsExtendedModel<E extends OrderDetailsExtended> extends O
   }
 
   @ModelField()
-  ProductName!: string;
+  declare ProductName: string;
   public $$ProductName() {
     return this.property<string>('ProductName');
   }
@@ -58,7 +58,7 @@ export class OrderDetailsExtendedModel<E extends OrderDetailsExtended> extends O
   }
 
   @ModelField()
-  UnitPrice!: number;
+  declare UnitPrice: number;
   public $$UnitPrice() {
     return this.property<number>('UnitPrice');
   }
@@ -71,7 +71,7 @@ export class OrderDetailsExtendedModel<E extends OrderDetailsExtended> extends O
   }
 
   @ModelField()
-  Quantity!: number;
+  declare Quantity: number;
   public $$Quantity() {
     return this.property<number>('Quantity');
   }
@@ -84,7 +84,7 @@ export class OrderDetailsExtendedModel<E extends OrderDetailsExtended> extends O
   }
 
   @ModelField()
-  Discount!: number;
+  declare Discount: number;
   public $$Discount() {
     return this.property<number>('Discount');
   }
@@ -97,7 +97,7 @@ export class OrderDetailsExtendedModel<E extends OrderDetailsExtended> extends O
   }
 
   @ModelField()
-  ExtendedPrice!: number;
+  declare ExtendedPrice: number;
   public $$ExtendedPrice() {
     return this.property<number>('ExtendedPrice');
   }

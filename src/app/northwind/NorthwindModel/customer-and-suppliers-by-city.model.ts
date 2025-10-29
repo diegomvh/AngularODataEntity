@@ -19,7 +19,7 @@ import { CustomerAndSuppliersByCity } from './customer-and-suppliers-by-city.ent
 @Model()
 export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCity> extends ODataModel<E> {
   @ModelField()
-  City!: string;
+  declare City: string;
   public $$City() {
     return this.property<string>('City');
   }
@@ -32,7 +32,7 @@ export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCit
   }
 
   @ModelField()
-  CompanyName!: string;
+  declare CompanyName: string;
   public $$CompanyName() {
     return this.property<string>('CompanyName');
   }
@@ -45,7 +45,7 @@ export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCit
   }
 
   @ModelField()
-  ContactName!: string;
+  declare ContactName: string;
   public $$ContactName() {
     return this.property<string>('ContactName');
   }
@@ -58,7 +58,7 @@ export class CustomerAndSuppliersByCityModel<E extends CustomerAndSuppliersByCit
   }
 
   @ModelField()
-  Relationship!: string;
+  declare Relationship: string;
   public $$Relationship() {
     return this.property<string>('Relationship');
   }

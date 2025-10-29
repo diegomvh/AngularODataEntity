@@ -22,7 +22,7 @@ import { ProductCollection } from './product.collection';
 @Model()
 export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   @ModelField()
-  SupplierID!: number;
+  declare SupplierID: number;
   public $$SupplierID() {
     return this.property<number>('SupplierID');
   }
@@ -35,7 +35,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  CompanyName!: string;
+  declare CompanyName: string;
   public $$CompanyName() {
     return this.property<string>('CompanyName');
   }
@@ -48,7 +48,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  ContactName!: string;
+  declare ContactName: string;
   public $$ContactName() {
     return this.property<string>('ContactName');
   }
@@ -61,7 +61,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  ContactTitle!: string;
+  declare ContactTitle: string;
   public $$ContactTitle() {
     return this.property<string>('ContactTitle');
   }
@@ -74,7 +74,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  Address!: string;
+  declare Address: string;
   public $$Address() {
     return this.property<string>('Address');
   }
@@ -87,7 +87,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  City!: string;
+  declare City: string;
   public $$City() {
     return this.property<string>('City');
   }
@@ -100,7 +100,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  Region!: string;
+  declare Region: string;
   public $$Region() {
     return this.property<string>('Region');
   }
@@ -113,7 +113,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  PostalCode!: string;
+  declare PostalCode: string;
   public $$PostalCode() {
     return this.property<string>('PostalCode');
   }
@@ -126,7 +126,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  Country!: string;
+  declare Country: string;
   public $$Country() {
     return this.property<string>('Country');
   }
@@ -139,7 +139,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  Phone!: string;
+  declare Phone: string;
   public $$Phone() {
     return this.property<string>('Phone');
   }
@@ -152,7 +152,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  Fax!: string;
+  declare Fax: string;
   public $$Fax() {
     return this.property<string>('Fax');
   }
@@ -165,7 +165,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  HomePage!: string;
+  declare HomePage: string;
   public $$HomePage() {
     return this.property<string>('HomePage');
   }
@@ -178,7 +178,7 @@ export class SupplierModel<E extends Supplier> extends ODataModel<E> {
   }
 
   @ModelField()
-  Products?: ProductCollection<Product, ProductModel<Product>>;
+  declare Products?: ProductCollection<Product, ProductModel<Product>>;
   public $$Products() {
     return this.navigationProperty<Product>('Products');
   }

@@ -19,7 +19,7 @@ import { Airline } from './airline.entity';
 @Model()
 export class AirlineModel<E extends Airline> extends ODataModel<E> {
   @ModelField()
-  AirlineCode!: string;
+  declare AirlineCode: string;
   public $$AirlineCode() {
     return this.property<string>('AirlineCode');
   }
@@ -32,7 +32,7 @@ export class AirlineModel<E extends Airline> extends ODataModel<E> {
   }
 
   @ModelField()
-  Name!: string;
+  declare Name: string;
   public $$Name() {
     return this.property<string>('Name');
   }

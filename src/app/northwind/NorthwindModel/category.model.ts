@@ -22,7 +22,7 @@ import { ProductCollection } from './product.collection';
 @Model()
 export class CategoryModel<E extends Category> extends ODataModel<E> {
   @ModelField()
-  CategoryID!: number;
+  declare CategoryID: number;
   public $$CategoryID() {
     return this.property<number>('CategoryID');
   }
@@ -35,7 +35,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   }
 
   @ModelField()
-  CategoryName!: string;
+  declare CategoryName: string;
   public $$CategoryName() {
     return this.property<string>('CategoryName');
   }
@@ -48,7 +48,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   }
 
   @ModelField()
-  Description!: string;
+  declare Description: string;
   public $$Description() {
     return this.property<string>('Description');
   }
@@ -61,7 +61,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   }
 
   @ModelField()
-  Picture!: ArrayBuffer;
+  declare Picture: ArrayBuffer;
   public $$Picture() {
     return this.property<ArrayBuffer>('Picture');
   }
@@ -74,7 +74,7 @@ export class CategoryModel<E extends Category> extends ODataModel<E> {
   }
 
   @ModelField()
-  Products?: ProductCollection<Product, ProductModel<Product>>;
+  declare Products?: ProductCollection<Product, ProductModel<Product>>;
   public $$Products() {
     return this.navigationProperty<Product>('Products');
   }

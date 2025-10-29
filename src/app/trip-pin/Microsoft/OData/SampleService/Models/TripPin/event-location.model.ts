@@ -21,7 +21,7 @@ import { LocationModel } from './location.model';
 @Model()
 export class EventLocationModel<E extends EventLocation> extends LocationModel<E> {
   @ModelField()
-  BuildingInfo!: string;
+  declare BuildingInfo: string;
   public $$BuildingInfo() {
     return this.property<string>('BuildingInfo');
   }

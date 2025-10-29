@@ -19,7 +19,7 @@ import { Invoice } from './invoice.entity';
 @Model()
 export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   @ModelField()
-  ShipName!: string;
+  declare ShipName: string;
   public $$ShipName() {
     return this.property<string>('ShipName');
   }
@@ -32,7 +32,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipAddress!: string;
+  declare ShipAddress: string;
   public $$ShipAddress() {
     return this.property<string>('ShipAddress');
   }
@@ -45,7 +45,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipCity!: string;
+  declare ShipCity: string;
   public $$ShipCity() {
     return this.property<string>('ShipCity');
   }
@@ -58,7 +58,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipRegion!: string;
+  declare ShipRegion: string;
   public $$ShipRegion() {
     return this.property<string>('ShipRegion');
   }
@@ -71,7 +71,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipPostalCode!: string;
+  declare ShipPostalCode: string;
   public $$ShipPostalCode() {
     return this.property<string>('ShipPostalCode');
   }
@@ -84,7 +84,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipCountry!: string;
+  declare ShipCountry: string;
   public $$ShipCountry() {
     return this.property<string>('ShipCountry');
   }
@@ -97,7 +97,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  CustomerID!: string;
+  declare CustomerID: string;
   public $$CustomerID() {
     return this.property<string>('CustomerID');
   }
@@ -110,7 +110,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  CustomerName!: string;
+  declare CustomerName: string;
   public $$CustomerName() {
     return this.property<string>('CustomerName');
   }
@@ -123,7 +123,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  Address!: string;
+  declare Address: string;
   public $$Address() {
     return this.property<string>('Address');
   }
@@ -136,7 +136,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  City!: string;
+  declare City: string;
   public $$City() {
     return this.property<string>('City');
   }
@@ -149,7 +149,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  Region!: string;
+  declare Region: string;
   public $$Region() {
     return this.property<string>('Region');
   }
@@ -162,7 +162,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  PostalCode!: string;
+  declare PostalCode: string;
   public $$PostalCode() {
     return this.property<string>('PostalCode');
   }
@@ -175,7 +175,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  Country!: string;
+  declare Country: string;
   public $$Country() {
     return this.property<string>('Country');
   }
@@ -188,7 +188,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  Salesperson!: string;
+  declare Salesperson: string;
   public $$Salesperson() {
     return this.property<string>('Salesperson');
   }
@@ -201,7 +201,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  OrderID!: number;
+  declare OrderID: number;
   public $$OrderID() {
     return this.property<number>('OrderID');
   }
@@ -214,7 +214,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  OrderDate!: Date;
+  declare OrderDate: Date;
   public $$OrderDate() {
     return this.property<Date>('OrderDate');
   }
@@ -227,7 +227,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  RequiredDate!: Date;
+  declare RequiredDate: Date;
   public $$RequiredDate() {
     return this.property<Date>('RequiredDate');
   }
@@ -240,7 +240,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShippedDate!: Date;
+  declare ShippedDate: Date;
   public $$ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
@@ -253,7 +253,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  ShipperName!: string;
+  declare ShipperName: string;
   public $$ShipperName() {
     return this.property<string>('ShipperName');
   }
@@ -266,7 +266,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  ProductID!: number;
+  declare ProductID: number;
   public $$ProductID() {
     return this.property<number>('ProductID');
   }
@@ -279,7 +279,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  ProductName!: string;
+  declare ProductName: string;
   public $$ProductName() {
     return this.property<string>('ProductName');
   }
@@ -292,7 +292,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  UnitPrice!: number;
+  declare UnitPrice: number;
   public $$UnitPrice() {
     return this.property<number>('UnitPrice');
   }
@@ -305,7 +305,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  Quantity!: number;
+  declare Quantity: number;
   public $$Quantity() {
     return this.property<number>('Quantity');
   }
@@ -318,7 +318,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  Discount!: number;
+  declare Discount: number;
   public $$Discount() {
     return this.property<number>('Discount');
   }
@@ -331,7 +331,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  ExtendedPrice!: number;
+  declare ExtendedPrice: number;
   public $$ExtendedPrice() {
     return this.property<number>('ExtendedPrice');
   }
@@ -344,7 +344,7 @@ export class InvoiceModel<E extends Invoice> extends ODataModel<E> {
   }
 
   @ModelField()
-  Freight!: number;
+  declare Freight: number;
   public $$Freight() {
     return this.property<number>('Freight');
   }
