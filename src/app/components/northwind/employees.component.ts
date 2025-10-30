@@ -21,36 +21,44 @@ import { CommonModule } from '@angular/common';
   >
     <ng-template pTemplate="header" let-columns>
       <tr>
+        @for (col of columns; track col) {
         <th
-          *ngFor="let col of columns"
           [pSortableColumn]="col.sort ? col.field : ''"
         >
           {{ col.header }}
+          @if (col.sort) {
           <p-sortIcon
-            *ngIf="col.sort"
             [field]="col.field"
             ariaLabel="Activate to sort"
             ariaLabelDesc="Activate to sort in descending order"
             ariaLabelAsc="Activate to sort in ascending order"
           ></p-sortIcon>
+          }
         </th>
+        }
       </tr>
       <tr>
-        <th *ngFor="let col of columns">
+        @for (col of columns; track col) {
+        <th>
+          @if (col.filter) {
           <input
             *ngIf="col.filter"
             pInputText
             type="text"
             (input)="filter($event, col.field)"
           />
+          }
         </th>
+        }
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
       <tr>
-        <td *ngFor="let col of columns">
+        @for (col of columns; track col) {
+        <td>
           <span>{{ rowData[col.field] }}</span>
         </td>
+        }
       </tr>
     </ng-template>
   </p-table>`,

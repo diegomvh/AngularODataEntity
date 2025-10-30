@@ -1,4 +1,4 @@
-import { AirportsService, PeopleService, PersonGender } from "../../trip-pin";
+import { AirportCollection, AirportsService, PeopleService, PersonGender, PersonModel } from "../../trip-pin";
 import { Injector } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
@@ -23,6 +23,12 @@ async function usingAirportsServiceForFetching(injector: Injector) {
   console.log('Airports: ', airports.models());
 }
 
+async function usingAirportsCollectionForFetching(injector: Injector) {
+  const airports = new AirportCollection();
+  await firstValueFrom(airports.fetch());
+  console.log('Airports: ', airports.models());
+}
+
 async function usingPeopleServiceForFetchingWithFriends(injector: Injector) {
   const peopleService = injector.get(PeopleService);
 
@@ -32,8 +38,29 @@ async function usingPeopleServiceForFetchingWithFriends(injector: Injector) {
   console.log('Scott Friends: ', scott.Friends);
 }
 
+async function usingPersonModelForFetchingWithFriendsAndChangeGender(injector: Injector) {
+  const scott = new PersonModel({UserName: 'scottketchum'});
+  scott.query(q => q.expand(({e, t}) => e().field(t.Friends)));
+  await firstValueFrom(scott.fetch());
+  const friend = scott.Friends?.first();
+  if (friend) {
+    // Change friend gender
+    friend.Gender = PersonGender.Female;
+    // Save changes
+    // The friend is referred to through Scott
+    console.log(friend.resource()?.toString());
+    // Change the reference using the `asEntity` method
+    await firstValueFrom(friend.asEntity(f => {
+      console.log(f.resource()?.toString());
+      return f.save(); 
+    }));
+  }
+}
+
 export default async (injector: Injector) => {
   await usingPeopleServiceForChangingGender(injector);
   await usingAirportsServiceForFetching(injector);
   await usingPeopleServiceForFetchingWithFriends(injector);
+  await usingPersonModelForFetchingWithFriendsAndChangeGender(injector);
+  await usingAirportsCollectionForFetching(injector);
 }
