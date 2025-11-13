@@ -1,6 +1,6 @@
-import { Component, Inject, Injector, INJECTOR } from '@angular/core';
+import { Component, Inject, Injector, INJECTOR, OnInit } from '@angular/core';
 import { EdmType, ODataClient, ODataServiceFactory } from 'angular-odata';
-import { Airport, DefaultContainerService, PeopleService, Person, PersonGender, PersonGenderEnumType, PersonModel, Photo, PhotosService, TripPinModule } from './trip-pin';
+import { Airport, DefaultContainerService, PeopleService, Person, PersonCollection, PersonGender, PersonGenderEnumType, PersonModel, Photo, PhotosService, TripPinModule } from './trip-pin';
 import { NorthwindModule, OrdersService, ProductsService } from './northwind';
 import { filter, firstValueFrom, map, switchMap } from 'rxjs';
 import { TabsModule } from 'primeng/tabs';
@@ -32,7 +32,7 @@ import northwindCompute from './examples/northwind/compute';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(
     @Inject(INJECTOR) private injector: Injector,
     private client: ODataClient,
@@ -43,10 +43,14 @@ export class AppComponent {
     private productsService: ProductsService,
     private ordersService: OrdersService
   ) {
-    this.queries();
+    //this.queries();
     //this.encode();
     //this.northwind();
     //this.queries();
+  }
+  ngOnInit(): void {
+    var col = new PersonCollection();
+    col.fetchAll().subscribe(console.log);
   }
 
   //#region APIs
@@ -282,7 +286,7 @@ export class AppComponent {
     console.log('Fetch', person, etag);
 
     // Delete Person
-    person = await firstValueFrom(serviceWithParser.destroy('someuser', { etag }));
+    person = await firstValueFrom(serviceWithParser.destroy('someuser', { etag }).pipe(map(({entity}) => entity)));
     console.log(person);
   }
 
