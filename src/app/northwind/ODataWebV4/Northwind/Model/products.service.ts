@@ -8,6 +8,8 @@ import { ODataClient,
   ODataOptions,
   EntityKey } from 'angular-odata';
 import { Product } from '../../../NorthwindModel/product.entity';
+import { ProductModel } from '../../../NorthwindModel/product.model';
+import { ProductCollection } from '../../../NorthwindModel/product.collection';
 
 @Injectable()
 export class ProductsService extends ODataEntitySetService<Product> {
@@ -15,9 +17,9 @@ export class ProductsService extends ODataEntitySetService<Product> {
     super(client, 'Products', 'NorthwindModel.Product');
   }
   productModel(entity?: Partial<Product>) {
-    return this.model(entity);
+    return this.model<ProductModel<Product>>(entity);
   }
   productCollection(entities?: Partial<Product>[]) {
-    return this.collection(entities);
+    return this.collection<ProductModel<Product>, ProductCollection<Product, ProductModel<Product>>>(entities);
   }
 }

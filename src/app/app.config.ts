@@ -38,7 +38,7 @@ export const appConfig: ApplicationConfig = {
         },
         // Northwind version 4
         Object.assign(NorthwindConfig, {
-          cache: new ODataInMemoryCache({ timeout: 60 }),
+          cache: new ODataInMemoryCache({ maxAge: 60 }),
           options: {
             accept: {
               ieee754Compatible: true
@@ -48,7 +48,7 @@ export const appConfig: ApplicationConfig = {
         // TripPin
         Object.assign(TripPinConfig, {
           serviceRootUrl: 'http://localhost:4200/trippin/',
-          cache: new ODataInStorageCache({ timeout: 60, name: "TripPinCache" }),
+          cache: new ODataInStorageCache({ maxAge: 60, name: "TripPinCache", storage: localStorage }),
           default: true,
           options: {
             stringAsEnum: true,

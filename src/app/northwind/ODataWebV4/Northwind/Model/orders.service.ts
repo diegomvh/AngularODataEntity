@@ -8,6 +8,8 @@ import { ODataClient,
   ODataOptions,
   EntityKey } from 'angular-odata';
 import { Order } from '../../../NorthwindModel/order.entity';
+import { OrderCollection } from '../../../NorthwindModel/order.collection';
+import { OrderModel } from '../../../NorthwindModel/order.model';
 
 @Injectable()
 export class OrdersService extends ODataEntitySetService<Order> {
@@ -15,9 +17,9 @@ export class OrdersService extends ODataEntitySetService<Order> {
     super(client, 'Orders', 'NorthwindModel.Order');
   }
   orderModel(entity?: Partial<Order>) {
-    return this.model(entity);
+    return this.model<OrderModel<Order>>(entity);
   }
   orderCollection(entities?: Partial<Order>[]) {
-    return this.collection(entities);
+    return this.collection<OrderModel<Order>, OrderCollection<Order, OrderModel<Order>>>(entities);
   }
 }

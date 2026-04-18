@@ -1,11 +1,11 @@
-import { AirportCollection, AirportsService, PeopleService, PersonGender, PersonModel } from "../../trip-pin";
+import { AirportCollection, AirportsService, PeopleService, Person, PersonGender, PersonModel } from "../../trip-pin";
 import { Injector } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
 async function usingPeopleServiceForChangingGender(injector: Injector) {
   const peopleService = injector.get(PeopleService);
 
-  const scott = peopleService.model({UserName: 'scottketchum'});
+  const scott = peopleService.model<PersonModel<Person>>({UserName: 'scottketchum'});
   await firstValueFrom(scott.fetch());
   console.log('Scott: ', scott.Gender);
   // Change gender
@@ -32,7 +32,7 @@ async function usingAirportsCollectionForFetching(injector: Injector) {
 async function usingPeopleServiceForFetchingWithFriends(injector: Injector) {
   const peopleService = injector.get(PeopleService);
 
-  const scott = peopleService.model({UserName: 'scottketchum'});
+  const scott = peopleService.model<PersonModel<Person>>({UserName: 'scottketchum'});
   scott.query(q => q.expand(({e, t}) => e().field(t.Friends)));
   await firstValueFrom(scott.fetch());
   console.log('Scott Friends: ', scott.Friends);

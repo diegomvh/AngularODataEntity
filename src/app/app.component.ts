@@ -380,7 +380,7 @@ export class AppComponent implements OnInit {
   }
 
   northwindTypeModels() {
-    const collection = this.productsService.collection();
+    const collection = this.productsService.productCollection();
     collection.query((q) => q.expand({ Category: {} }));
     collection
       .fetch()
