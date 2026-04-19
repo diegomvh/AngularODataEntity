@@ -43,13 +43,16 @@ export class AppComponent implements OnInit {
     private productsService: ProductsService,
     private ordersService: OrdersService
   ) {
+    (<any>window).APP = this;
     //this.queries();
     //this.encode();
     //this.northwind();
     //this.queries();
   }
   ngOnInit(): void {
-    var col = new PersonCollection();
+    let col = new PersonCollection();
+    col.fetchAll().subscribe(console.log);
+    col = new PersonCollection();
     col.fetchAll().subscribe(console.log);
   }
 
