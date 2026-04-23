@@ -1,6 +1,6 @@
 import { Component, Inject, Injector, INJECTOR, OnInit } from '@angular/core';
 import { EdmType, ODataClient, ODataServiceFactory } from 'angular-odata';
-import { Airport, DefaultContainerService, PeopleService, Person, PersonCollection, PersonGender, PersonGenderEnumType, PersonModel, Photo, PhotosService, TripPinModule } from './trip-pin';
+import { Airport, DefaultContainerService, Flight, Event as PlanEvent, PeopleService, Person, PersonCollection, PersonGender, PersonGenderEnumType, PersonModel, Photo, PhotosService, TripPinModule } from './trip-pin';
 import { NorthwindModule, OrdersService, ProductsService } from './northwind';
 import { filter, firstValueFrom, map, switchMap } from 'rxjs';
 import { TabsModule } from 'primeng/tabs';
@@ -53,7 +53,15 @@ export class AppComponent implements OnInit {
     let col = new PersonCollection();
     col.fetchAll().subscribe(console.log);
     col = new PersonCollection();
-    col.fetchAll().subscribe(console.log);
+    col.fetchAll().subscribe(people => {
+      people[0].query(q => 
+        q.expand(({e, t}) => 
+          e().field(t.Trips, f => f.expand(({e, t, o}) => e().field(t.Photos).field(t.PlanItems, 
+            f => f.expand(({e, t, o}) => 
+              e()
+                .field(o.cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').Airline)
+            )))))).fetch().subscribe(console.log);
+    });
   }
 
   //#region APIs
