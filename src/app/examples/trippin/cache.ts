@@ -55,7 +55,7 @@ export default async (injector: Injector) => {
     // Fetch from network only and not store in cache
     ({entity, annots} = await firstValueFrom(airports.entity('CYYZ').fetch({ fetchPolicy: 'no-cache' })));
     console.log('CYYZ Airport: ', entity, 'Annotations: ', annots);
-    console.log("Cache Size After Fetch: ", tripPinCache.entries.size);
+    console.log("Cache Size After Fetch: ", tripPinCache.size());
 
     // Fetch airport with key CYYZ
     // Fetch from cache and then from network,

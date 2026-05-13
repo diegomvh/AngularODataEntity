@@ -5,7 +5,7 @@ import { providePrimeNG } from 'primeng/config';
 import Material from '@primeng/themes/material';
 
 import { routes } from './app.routes';
-import { ODataApiConfig, ODataInMemoryCache, ODataInStorageCache, PassedInitialConfig, provideODataClient } from 'angular-odata';
+import { ODataApiConfig, ODataIndexedDBCache, ODataInMemoryCache, provideODataClient } from 'angular-odata';
 import { TripPinConfig } from './trip-pin';
 import { NorthwindConfig } from './northwind';
 import { provideHttpClient } from '@angular/common/http';
@@ -48,7 +48,7 @@ export const appConfig: ApplicationConfig = {
         // TripPin
         Object.assign(TripPinConfig, {
           serviceRootUrl: 'http://localhost:4200/trippin/',
-          cache: new ODataInStorageCache({ maxAge: 60, name: "TripPinCache", storage: localStorage }),
+          cache: new ODataIndexedDBCache({ maxAge: 60, name: "TripPinCache", version: 1 }),
           default: true,
           options: {
             stringAsEnum: true,

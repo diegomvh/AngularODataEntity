@@ -1,0 +1,19 @@
+﻿//#region ODataApiGen Imports
+import { Region } from './region.entity';
+import { RegionModel } from './region.model';
+import { RegionCollection } from './region.collection';
+//#endregion
+
+//#region ODataApiGen ODataStrucutredTypeConfig
+export const RegionEntityConfig = {
+  name: 'Region',
+  model: RegionModel,
+  collection: RegionCollection,
+  keys: [{name: 'RegionID'}],
+  fields: {
+    RegionID: {type: 'Edm.Int32', nullable: false},
+    RegionDescription: {type: 'Edm.String'},
+    Territories: {type: 'NorthwindModel.Territory', collection: true, navigation: true}
+  }
+};
+//#endregion
