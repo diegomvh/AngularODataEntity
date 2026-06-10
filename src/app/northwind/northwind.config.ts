@@ -53,12 +53,14 @@ import { SalesTotalsByAmountCollection } from './NorthwindModel/sales-totals-by-
 import { SummaryOfSalesByQuarterCollection } from './NorthwindModel/summary-of-sales-by-quarter.collection';
 import { SummaryOfSalesByYearCollection } from './NorthwindModel/summary-of-sales-by-year.collection';
 
+// #region Custom
+// #endregion Custom
 export const NorthwindConfig = ODataMetadata.fromJson(json).toConfig({
   serviceRootUrl: 'https://services.odata.org/V4/Northwind/Northwind.svc/',
   metadataUrl: 'https://services.odata.org/V4/Northwind/Northwind.svc/$metadata',
   name: 'Northwind',
   version: '4.0' as ODataVersion,
-  creation: new Date('2025-10-29T13:06:49.436Z'),
+  creation: new Date('2026-06-10T12:49:51.798Z'),
   parsers: EDM_PARSERS,
   models: {
     'NorthwindModel.Category': CategoryModel, 

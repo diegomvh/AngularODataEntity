@@ -13,6 +13,10 @@ import {
 import { OrdersQry } from './orders-qry.entity';
 import { OrdersQryModel } from './orders-qry.model';
 
+// #region Custom
+// #endregion Custom
 export class OrdersQryCollection<E extends OrdersQry, M extends OrdersQryModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

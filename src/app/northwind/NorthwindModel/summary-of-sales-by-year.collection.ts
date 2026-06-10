@@ -13,6 +13,10 @@ import {
 import { SummaryOfSalesByYear } from './summary-of-sales-by-year.entity';
 import { SummaryOfSalesByYearModel } from './summary-of-sales-by-year.model';
 
+// #region Custom
+// #endregion Custom
 export class SummaryOfSalesByYearCollection<E extends SummaryOfSalesByYear, M extends SummaryOfSalesByYearModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

@@ -13,6 +13,10 @@ import {
 import { ProductSalesFor1997 } from './product-sales-for-1997.entity';
 import { ProductSalesFor1997Model } from './product-sales-for-1997.model';
 
+// #region Custom
+// #endregion Custom
 export class ProductSalesFor1997Collection<E extends ProductSalesFor1997, M extends ProductSalesFor1997Model<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

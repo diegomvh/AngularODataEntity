@@ -13,6 +13,10 @@ import {
 import { Photo } from './photo.entity';
 import { PhotoModel } from './photo.model';
 
+// #region Custom
+// #endregion Custom
 export class PhotoCollection<E extends Photo, M extends PhotoModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

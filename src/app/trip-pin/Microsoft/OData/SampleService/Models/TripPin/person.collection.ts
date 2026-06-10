@@ -22,6 +22,10 @@ import { TripCollection } from './trip.collection';
 import { Photo } from './photo.entity';
 import { PhotoModel } from './photo.model';
 
+// #region Custom
+// #endregion Custom
 export class PersonCollection<E extends Person, M extends PersonModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

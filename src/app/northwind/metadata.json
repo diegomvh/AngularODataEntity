@@ -11,47 +11,35 @@
             {
               "Name": "CategoryID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CategoryName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Description",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Picture",
-              "Type": "Edm.Binary",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Binary"
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Products",
               "Type": "Collection(NorthwindModel.Product)",
-              "Nullable": false,
-              "Partner": "Category",
-              "ContainsTarget": false
+              "Partner": "Category"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "CategoryID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "CustomerDemographic",
@@ -59,35 +47,27 @@
             {
               "Name": "CustomerTypeID",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CustomerDesc",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Customers",
               "Type": "Collection(NorthwindModel.Customer)",
-              "Nullable": false,
-              "Partner": "CustomerDemographics",
-              "ContainsTarget": false
+              "Partner": "CustomerDemographics"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "CustomerTypeID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Customer",
@@ -95,96 +75,68 @@
             {
               "Name": "CustomerID",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CompanyName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ContactName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ContactTitle",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Address",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "City",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Region",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "PostalCode",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Country",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Phone",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Fax",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Orders",
               "Type": "Collection(NorthwindModel.Order)",
-              "Nullable": false,
-              "Partner": "Customer",
-              "ContainsTarget": false
+              "Partner": "Customer"
             },
             {
               "Name": "CustomerDemographics",
               "Type": "Collection(NorthwindModel.CustomerDemographic)",
-              "Nullable": false,
-              "Partner": "Customers",
-              "ContainsTarget": false
+              "Partner": "Customers"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "CustomerID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Employee",
@@ -192,152 +144,106 @@
             {
               "Name": "EmployeeID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "LastName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "FirstName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Title",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "TitleOfCourtesy",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "BirthDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "HireDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "Address",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "City",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Region",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "PostalCode",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Country",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "HomePhone",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Extension",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Photo",
-              "Type": "Edm.Binary",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Binary"
             },
             {
               "Name": "Notes",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ReportsTo",
-              "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int32"
             },
             {
               "Name": "PhotoPath",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Employees1",
               "Type": "Collection(NorthwindModel.Employee)",
-              "Nullable": false,
-              "Partner": "Employee1",
-              "ContainsTarget": false
+              "Partner": "Employee1"
             },
             {
               "Name": "Employee1",
               "Type": "NorthwindModel.Employee",
-              "Nullable": false,
-              "Partner": "Employees1",
-              "ContainsTarget": false
+              "Partner": "Employees1"
             },
             {
               "Name": "Orders",
               "Type": "Collection(NorthwindModel.Order)",
-              "Nullable": false,
-              "Partner": "Employee",
-              "ContainsTarget": false
+              "Partner": "Employee"
             },
             {
               "Name": "Territories",
               "Type": "Collection(NorthwindModel.Territory)",
-              "Nullable": false,
-              "Partner": "Employees",
-              "ContainsTarget": false
+              "Partner": "Employees"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "EmployeeID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Order_Detail",
@@ -345,52 +251,41 @@
             {
               "Name": "OrderID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "UnitPrice",
               "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Quantity",
               "Type": "Edm.Int16",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Discount",
               "Type": "Edm.Single",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Order",
               "Type": "NorthwindModel.Order",
-              "Nullable": false,
-              "Partner": "Order_Details",
-              "ContainsTarget": false
+              "Partner": "Order_Details"
             },
             {
               "Name": "Product",
               "Type": "NorthwindModel.Product",
-              "Nullable": false,
-              "Partner": "Order_Details",
-              "ContainsTarget": false
+              "Partner": "Order_Details"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -400,8 +295,7 @@
                 "Name": "ProductID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Order",
@@ -409,128 +303,90 @@
             {
               "Name": "OrderID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CustomerID",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "EmployeeID",
-              "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int32"
             },
             {
               "Name": "OrderDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "RequiredDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "ShippedDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "ShipVia",
-              "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int32"
             },
             {
               "Name": "Freight",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             },
             {
               "Name": "ShipName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipAddress",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipCity",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipRegion",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipPostalCode",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipCountry",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Customer",
               "Type": "NorthwindModel.Customer",
-              "Nullable": false,
-              "Partner": "Orders",
-              "ContainsTarget": false
+              "Partner": "Orders"
             },
             {
               "Name": "Employee",
               "Type": "NorthwindModel.Employee",
-              "Nullable": false,
-              "Partner": "Orders",
-              "ContainsTarget": false
+              "Partner": "Orders"
             },
             {
               "Name": "Order_Details",
               "Type": "Collection(NorthwindModel.Order_Detail)",
-              "Nullable": false,
-              "Partner": "Order",
-              "ContainsTarget": false
+              "Partner": "Order"
             },
             {
               "Name": "Shipper",
               "Type": "NorthwindModel.Shipper",
-              "Nullable": false,
-              "Partner": "Orders",
-              "ContainsTarget": false
+              "Partner": "Orders"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "OrderID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Product",
@@ -538,97 +394,70 @@
             {
               "Name": "ProductID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "SupplierID",
-              "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int32"
             },
             {
               "Name": "CategoryID",
-              "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int32"
             },
             {
               "Name": "QuantityPerUnit",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "UnitPrice",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             },
             {
               "Name": "UnitsInStock",
-              "Type": "Edm.Int16",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int16"
             },
             {
               "Name": "UnitsOnOrder",
-              "Type": "Edm.Int16",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int16"
             },
             {
               "Name": "ReorderLevel",
-              "Type": "Edm.Int16",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int16"
             },
             {
               "Name": "Discontinued",
               "Type": "Edm.Boolean",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Category",
               "Type": "NorthwindModel.Category",
-              "Nullable": false,
-              "Partner": "Products",
-              "ContainsTarget": false
+              "Partner": "Products"
             },
             {
               "Name": "Order_Details",
               "Type": "Collection(NorthwindModel.Order_Detail)",
-              "Nullable": false,
-              "Partner": "Product",
-              "ContainsTarget": false
+              "Partner": "Product"
             },
             {
               "Name": "Supplier",
               "Type": "NorthwindModel.Supplier",
-              "Nullable": false,
-              "Partner": "Products",
-              "ContainsTarget": false
+              "Partner": "Products"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "ProductID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Region",
@@ -636,35 +465,27 @@
             {
               "Name": "RegionID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "RegionDescription",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Territories",
               "Type": "Collection(NorthwindModel.Territory)",
-              "Nullable": false,
-              "Partner": "Region",
-              "ContainsTarget": false
+              "Partner": "Region"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "RegionID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Shipper",
@@ -672,41 +493,31 @@
             {
               "Name": "ShipperID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CompanyName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Phone",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Orders",
               "Type": "Collection(NorthwindModel.Order)",
-              "Nullable": false,
-              "Partner": "Shipper",
-              "ContainsTarget": false
+              "Partner": "Shipper"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "ShipperID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Supplier",
@@ -714,95 +525,67 @@
             {
               "Name": "SupplierID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CompanyName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ContactName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ContactTitle",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Address",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "City",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Region",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "PostalCode",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Country",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Phone",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Fax",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "HomePage",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Products",
               "Type": "Collection(NorthwindModel.Product)",
-              "Nullable": false,
-              "Partner": "Supplier",
-              "ContainsTarget": false
+              "Partner": "Supplier"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "SupplierID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Territory",
@@ -810,48 +593,37 @@
             {
               "Name": "TerritoryID",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "TerritoryDescription",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "RegionID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Region",
               "Type": "NorthwindModel.Region",
-              "Nullable": false,
-              "Partner": "Territories",
-              "ContainsTarget": false
+              "Partner": "Territories"
             },
             {
               "Name": "Employees",
               "Type": "Collection(NorthwindModel.Employee)",
-              "Nullable": false,
-              "Partner": "Territories",
-              "ContainsTarget": false
+              "Partner": "Territories"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "TerritoryID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Alphabetical_list_of_product",
@@ -859,72 +631,52 @@
             {
               "Name": "ProductID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "SupplierID",
-              "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int32"
             },
             {
               "Name": "CategoryID",
-              "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int32"
             },
             {
               "Name": "QuantityPerUnit",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "UnitPrice",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             },
             {
               "Name": "UnitsInStock",
-              "Type": "Edm.Int16",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int16"
             },
             {
               "Name": "UnitsOnOrder",
-              "Type": "Edm.Int16",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int16"
             },
             {
               "Name": "ReorderLevel",
-              "Type": "Edm.Int16",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int16"
             },
             {
               "Name": "Discontinued",
               "Type": "Edm.Boolean",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CategoryName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -940,8 +692,7 @@
                 "Name": "ProductName"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Category_Sales_for_1997",
@@ -949,26 +700,20 @@
             {
               "Name": "CategoryName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CategorySales",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "CategoryName"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Current_Product_List",
@@ -976,18 +721,14 @@
             {
               "Name": "ProductID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -997,39 +738,30 @@
                 "Name": "ProductName"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Customer_and_Suppliers_by_City",
           "Property": [
             {
               "Name": "City",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "CompanyName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ContactName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Relationship",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -1039,171 +771,125 @@
                 "Name": "Relationship"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Invoice",
           "Property": [
             {
               "Name": "ShipName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipAddress",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipCity",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipRegion",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipPostalCode",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipCountry",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "CustomerID",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "CustomerName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Address",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "City",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Region",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "PostalCode",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Country",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Salesperson",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "OrderID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "OrderDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "RequiredDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "ShippedDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "ShipperName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "UnitPrice",
               "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Quantity",
               "Type": "Edm.Int16",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Discount",
               "Type": "Edm.Single",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ExtendedPrice",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             },
             {
               "Name": "Freight",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -1234,8 +920,7 @@
                 "Name": "UnitPrice"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Order_Details_Extended",
@@ -1243,48 +928,38 @@
             {
               "Name": "OrderID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "UnitPrice",
               "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Quantity",
               "Type": "Edm.Int16",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Discount",
               "Type": "Edm.Single",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ExtendedPrice",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -1306,8 +981,7 @@
                 "Name": "UnitPrice"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Order_Subtotal",
@@ -1315,26 +989,20 @@
             {
               "Name": "OrderID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Subtotal",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "OrderID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Orders_Qry",
@@ -1342,126 +1010,86 @@
             {
               "Name": "OrderID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CustomerID",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "EmployeeID",
-              "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int32"
             },
             {
               "Name": "OrderDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "RequiredDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "ShippedDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "ShipVia",
-              "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int32"
             },
             {
               "Name": "Freight",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             },
             {
               "Name": "ShipName",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipAddress",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipCity",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipRegion",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipPostalCode",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "ShipCountry",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "CompanyName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Address",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "City",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Region",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "PostalCode",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Country",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -1471,8 +1099,7 @@
                 "Name": "OrderID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Product_Sales_for_1997",
@@ -1480,24 +1107,18 @@
             {
               "Name": "CategoryName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductSales",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -1507,8 +1128,7 @@
                 "Name": "ProductName"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Products_Above_Average_Price",
@@ -1516,26 +1136,20 @@
             {
               "Name": "ProductName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "UnitPrice",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "ProductName"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Products_by_Category",
@@ -1543,36 +1157,27 @@
             {
               "Name": "CategoryName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "QuantityPerUnit",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "UnitsInStock",
-              "Type": "Edm.Int16",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Int16"
             },
             {
               "Name": "Discontinued",
               "Type": "Edm.Boolean",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -1585,8 +1190,7 @@
                 "Name": "ProductName"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Sales_by_Category",
@@ -1594,30 +1198,23 @@
             {
               "Name": "CategoryID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CategoryName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ProductSales",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -1630,39 +1227,30 @@
                 "Name": "ProductName"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Sales_Totals_by_Amount",
           "Property": [
             {
               "Name": "SaleAmount",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             },
             {
               "Name": "OrderID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "CompanyName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ShippedDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -1672,74 +1260,57 @@
                 "Name": "OrderID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Summary_of_Sales_by_Quarter",
           "Property": [
             {
               "Name": "ShippedDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "OrderID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Subtotal",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "OrderID"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Summary_of_Sales_by_Year",
           "Property": [
             {
               "Name": "ShippedDate",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "OrderID",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Subtotal",
-              "Type": "Edm.Decimal",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Decimal"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "OrderID"
               }
             ]
-          },
-          "HasStream": false
+          }
         }
       ],
       "Annotations": [
@@ -1767,8 +1338,7 @@
                   "Path": "Products",
                   "Target": "Products"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "CustomerDemographics",
@@ -1778,8 +1348,7 @@
                   "Path": "Customers",
                   "Target": "Customers"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "Customers",
@@ -1793,8 +1362,7 @@
                   "Path": "Orders",
                   "Target": "Orders"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "Employees",
@@ -1816,8 +1384,7 @@
                   "Path": "Territories",
                   "Target": "Territories"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "Order_Details",
@@ -1831,8 +1398,7 @@
                   "Path": "Product",
                   "Target": "Products"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "Orders",
@@ -1854,8 +1420,7 @@
                   "Path": "Shipper",
                   "Target": "Shippers"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "Products",
@@ -1873,8 +1438,7 @@
                   "Path": "Supplier",
                   "Target": "Suppliers"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "Regions",
@@ -1884,8 +1448,7 @@
                   "Path": "Territories",
                   "Target": "Territories"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "Shippers",
@@ -1895,8 +1458,7 @@
                   "Path": "Orders",
                   "Target": "Orders"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "Suppliers",
@@ -1906,8 +1468,7 @@
                   "Path": "Products",
                   "Target": "Products"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "Territories",
@@ -1921,83 +1482,67 @@
                   "Path": "Region",
                   "Target": "Regions"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Name": "Alphabetical_list_of_products",
-              "EntityType": "NorthwindModel.Alphabetical_list_of_product",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Alphabetical_list_of_product"
             },
             {
               "Name": "Category_Sales_for_1997",
-              "EntityType": "NorthwindModel.Category_Sales_for_1997",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Category_Sales_for_1997"
             },
             {
               "Name": "Current_Product_Lists",
-              "EntityType": "NorthwindModel.Current_Product_List",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Current_Product_List"
             },
             {
               "Name": "Customer_and_Suppliers_by_Cities",
-              "EntityType": "NorthwindModel.Customer_and_Suppliers_by_City",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Customer_and_Suppliers_by_City"
             },
             {
               "Name": "Invoices",
-              "EntityType": "NorthwindModel.Invoice",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Invoice"
             },
             {
               "Name": "Order_Details_Extendeds",
-              "EntityType": "NorthwindModel.Order_Details_Extended",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Order_Details_Extended"
             },
             {
               "Name": "Order_Subtotals",
-              "EntityType": "NorthwindModel.Order_Subtotal",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Order_Subtotal"
             },
             {
               "Name": "Orders_Qries",
-              "EntityType": "NorthwindModel.Orders_Qry",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Orders_Qry"
             },
             {
               "Name": "Product_Sales_for_1997",
-              "EntityType": "NorthwindModel.Product_Sales_for_1997",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Product_Sales_for_1997"
             },
             {
               "Name": "Products_Above_Average_Prices",
-              "EntityType": "NorthwindModel.Products_Above_Average_Price",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Products_Above_Average_Price"
             },
             {
               "Name": "Products_by_Categories",
-              "EntityType": "NorthwindModel.Products_by_Category",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Products_by_Category"
             },
             {
               "Name": "Sales_by_Categories",
-              "EntityType": "NorthwindModel.Sales_by_Category",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Sales_by_Category"
             },
             {
               "Name": "Sales_Totals_by_Amounts",
-              "EntityType": "NorthwindModel.Sales_Totals_by_Amount",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Sales_Totals_by_Amount"
             },
             {
               "Name": "Summary_of_Sales_by_Quarters",
-              "EntityType": "NorthwindModel.Summary_of_Sales_by_Quarter",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Summary_of_Sales_by_Quarter"
             },
             {
               "Name": "Summary_of_Sales_by_Years",
-              "EntityType": "NorthwindModel.Summary_of_Sales_by_Year",
-              "IncludeInServiceDocument": false
+              "EntityType": "NorthwindModel.Summary_of_Sales_by_Year"
             }
           ]
         }

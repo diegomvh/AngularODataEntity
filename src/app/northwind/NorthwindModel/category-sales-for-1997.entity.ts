@@ -1,8 +1,12 @@
-import { Duration } from 'angular-odata';
 
 
+
+// #region Custom
+// #endregion Custom
 export const CategorySalesFor1997EntityType = 'NorthwindModel.Category_Sales_for_1997';
 export interface CategorySalesFor1997 {
   CategoryName: string;
   CategorySales: number;
+// #region Custom
+// #endregion Custom
 }

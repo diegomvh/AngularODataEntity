@@ -19,6 +19,10 @@ import { PlanItem } from './plan-item.entity';
 import { PlanItemModel } from './plan-item.model';
 import { PlanItemCollection } from './plan-item.collection';
 
+// #region Custom
+// #endregion Custom
 export class TripCollection<E extends Trip, M extends TripModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

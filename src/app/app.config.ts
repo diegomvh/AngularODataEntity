@@ -1,26 +1,81 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { providePrimeNG } from 'primeng/config';
-import Material from '@primeng/themes/material';
 
 import { routes } from './app.routes';
-import { ODataApiConfig, ODataIndexedDBCache, ODataInMemoryCache, provideODataClient } from 'angular-odata';
-import { TripPinConfig } from './trip-pin';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { providePrimeNG } from 'primeng/config';
 import { NorthwindConfig } from './northwind';
-import { provideHttpClient } from '@angular/common/http';
+import { TripPinConfig } from './trip-pin';
+import Material from '@primeuix/themes/material';
+import { provideODataClient, ODataInMemoryCache, ODataIndexedDBCache, ODataApiConfig, ODataLoader, ODataMetadataLoader, ODataRequest, ODataAsyncLoader, ODataMetadataParser, PassedInitialConfig, ODATA_CONFIG } from 'angular-odata';
+import { map, Observable } from 'rxjs';
+
+export function createMetadataLoader(httpClient: HttpClient) {
+  const serviceRootUrl = 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW';
+  const meta$ = httpClient.get(`${serviceRootUrl}/$metadata`, {responseType: 'text'});
+  return new ODataMetadataLoader(meta$, { serviceRootUrl, name: "TrippinAsync" },
+    (req: ODataRequest<any>): Observable<any> =>
+      httpClient.request(req.method, `${req.url}`, {
+        body: req.body,
+        context: req.context as any,
+        headers: req.headers as any,
+        observe: req.observe,
+        params: req.params as any,
+        reportProgress: req.reportProgress,
+        responseType: req.responseType,
+        withCredentials: req.withCredentials,
+      }),
+    ); 
+}
+
+export function createCustomMixedLoader(syncConfig: ODataApiConfig | ODataApiConfig[], httpClient: HttpClient) {
+  const serviceRootUrl = 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW';
+  const configs$ = httpClient.get(`${serviceRootUrl}/$metadata`, {responseType: 'text'}).pipe(map(meta => {
+    let configs = [new ODataMetadataParser(meta).metadata().toConfig({ serviceRootUrl, name: "TrippinAsync" })];
+    if (Array.isArray(syncConfig)) {
+      configs = [...configs, ...syncConfig];
+    } else {
+      configs = [...configs, syncConfig];
+    }
+    return configs;
+  }))
+  return new ODataAsyncLoader(configs$, 
+    (req: ODataRequest<any>): Observable<any> =>
+      httpClient.request(req.method, `${req.url}`, {
+        body: req.body,
+        context: req.context as any,
+        headers: req.headers as any,
+        observe: req.observe,
+        params: req.params as any,
+        reportProgress: req.reportProgress,
+        responseType: req.responseType,
+        withCredentials: req.withCredentials,
+      }),
+    ); 
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient(),
-    provideAnimationsAsync(),
     providePrimeNG({
       theme: {
         preset: Material,
       }
     }),
     provideODataClient({
+      /*
+      loader: {
+        provide: ODataLoader,
+        useFactory: createMetadataLoader,
+        deps: [HttpClient],
+      },
+      */
+      loader: {
+        provide: ODataLoader,
+        useFactory: createCustomMixedLoader,
+        deps: [ODATA_CONFIG, HttpClient],
+      },
       config: [
         {
           name: "MicrosoftGraph",

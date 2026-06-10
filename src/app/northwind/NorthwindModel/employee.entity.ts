@@ -1,8 +1,10 @@
-import { Duration } from 'angular-odata';
+
 
 import { Order } from './order.entity';
 import { Territory } from './territory.entity';
 
+// #region Custom
+// #endregion Custom
 export const EmployeeEntityType = 'NorthwindModel.Employee';
 export interface Employee {
   EmployeeID: number;
@@ -27,4 +29,6 @@ export interface Employee {
   Employee1?: Employee;
   Orders?: Order[];
   Territories?: Territory[];
+// #region Custom
+// #endregion Custom
 }

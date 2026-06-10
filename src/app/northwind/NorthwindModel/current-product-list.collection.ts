@@ -13,6 +13,10 @@ import {
 import { CurrentProductList } from './current-product-list.entity';
 import { CurrentProductListModel } from './current-product-list.model';
 
+// #region Custom
+// #endregion Custom
 export class CurrentProductListCollection<E extends CurrentProductList, M extends CurrentProductListModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

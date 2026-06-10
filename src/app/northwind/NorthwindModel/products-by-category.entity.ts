@@ -1,6 +1,8 @@
-import { Duration } from 'angular-odata';
 
 
+
+// #region Custom
+// #endregion Custom
 export const ProductsByCategoryEntityType = 'NorthwindModel.Products_by_Category';
 export interface ProductsByCategory {
   CategoryName: string;
@@ -8,4 +10,6 @@ export interface ProductsByCategory {
   QuantityPerUnit: string;
   UnitsInStock: number;
   Discontinued: boolean;
+// #region Custom
+// #endregion Custom
 }

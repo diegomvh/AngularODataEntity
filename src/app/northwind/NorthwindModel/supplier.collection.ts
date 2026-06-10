@@ -16,6 +16,10 @@ import { Product } from './product.entity';
 import { ProductModel } from './product.model';
 import { ProductCollection } from './product.collection';
 
+// #region Custom
+// #endregion Custom
 export class SupplierCollection<E extends Supplier, M extends SupplierModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

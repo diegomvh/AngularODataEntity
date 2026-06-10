@@ -22,6 +22,10 @@ import { OrderDetailCollection } from './order-detail.collection';
 import { Shipper } from './shipper.entity';
 import { ShipperModel } from './shipper.model';
 
+// #region Custom
+// #endregion Custom
 export class OrderCollection<E extends Order, M extends OrderModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

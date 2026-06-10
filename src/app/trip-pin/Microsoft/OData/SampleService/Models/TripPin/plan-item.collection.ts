@@ -13,6 +13,10 @@ import {
 import { PlanItem } from './plan-item.entity';
 import { PlanItemModel } from './plan-item.model';
 
+// #region Custom
+// #endregion Custom
 export class PlanItemCollection<E extends PlanItem, M extends PlanItemModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

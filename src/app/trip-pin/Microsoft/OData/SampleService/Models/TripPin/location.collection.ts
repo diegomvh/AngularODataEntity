@@ -15,6 +15,10 @@ import { LocationModel } from './location.model';
 import { City } from './city.complex';
 import { CityModel } from './city.model';
 
+// #region Custom
+// #endregion Custom
 export class LocationCollection<E extends Location, M extends LocationModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

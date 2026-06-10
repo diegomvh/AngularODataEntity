@@ -47,3 +47,5 @@ export * from './Microsoft/OData/SampleService/Models/TripPin/airlines.service';
 export * from './Microsoft/OData/SampleService/Models/TripPin/airports.service';
 export * from './Microsoft/OData/SampleService/Models/TripPin/me.service';
 
+// #region Custom
+// #endregion Custom

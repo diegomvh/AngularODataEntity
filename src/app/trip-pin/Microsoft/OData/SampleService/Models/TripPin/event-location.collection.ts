@@ -16,6 +16,10 @@ import { Location } from './location.complex';
 import { LocationCollection } from './location.collection';
 import { LocationModel } from './location.model';
 
+// #region Custom
+// #endregion Custom
 export class EventLocationCollection<E extends EventLocation, M extends EventLocationModel<E>> extends LocationCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

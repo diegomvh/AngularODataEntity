@@ -19,6 +19,10 @@ import { CustomerDemographic } from './customer-demographic.entity';
 import { CustomerDemographicModel } from './customer-demographic.model';
 import { CustomerDemographicCollection } from './customer-demographic.collection';
 
+// #region Custom
+// #endregion Custom
 export class CustomerCollection<E extends Customer, M extends CustomerModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

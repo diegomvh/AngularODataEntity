@@ -1,4 +1,4 @@
-import { Component, Inject, Injector, INJECTOR, OnInit } from '@angular/core';
+import { afterRenderEffect, Component, Inject, Injector, INJECTOR, OnInit } from '@angular/core';
 import { EdmType, ODataClient, ODataServiceFactory } from 'angular-odata';
 import { Airport, DefaultContainerService, Flight, Event as PlanEvent, PeopleService, Person, PersonCollection, PersonGender, PersonGenderEnumType, PersonModel, Photo, PhotosService, TripPinModule } from './trip-pin';
 import { NorthwindModule, OrdersService, ProductsService } from './northwind';
@@ -29,10 +29,10 @@ import northwindCompute from './examples/northwind/compute';
     OrdersComponent,
     EmployeesComponent
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './app.html',
+  styleUrl: './app.css'
 })
-export class AppComponent implements OnInit {
+export class App {
   constructor(
     @Inject(INJECTOR) private injector: Injector,
     private client: ODataClient,
@@ -48,19 +48,20 @@ export class AppComponent implements OnInit {
     //this.encode();
     //this.northwind();
     //this.queries();
-  }
-  ngOnInit(): void {
-    let col = new PersonCollection();
-    col.fetchAll().subscribe(console.log);
-    col = new PersonCollection();
-    col.fetchAll().subscribe(people => {
-      people[0].query(q => 
-        q.expand(({e, t}) => 
-          e().field(t.Trips, f => f.expand(({e, t, o}) => e().field(t.Photos).field(t.PlanItems, 
-            f => f.expand(({e, t, o}) => 
-              e()
-                .field(o.cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').Airline)
-            )))))).fetch().subscribe(console.log);
+
+    afterRenderEffect(() => {
+      let col = new PersonCollection();
+      col.fetchAll().subscribe(console.log);
+      col = new PersonCollection();
+      col.fetchAll().subscribe(people => {
+        people[0].query(q => 
+          q.expand(({e, t}) => 
+            e().field(t.Trips, f => f.expand(({e, t, o}) => e().field(t.Photos).field(t.PlanItems, 
+              f => f.expand(({e, t, o}) => 
+                e()
+                  .field(o.cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').Airline)
+              )))))).fetch().subscribe(console.log);
+      });
     });
   }
 

@@ -1,6 +1,8 @@
-import { Duration } from 'angular-odata';
 
 
+
+// #region Custom
+// #endregion Custom
 export const InvoiceEntityType = 'NorthwindModel.Invoice';
 export interface Invoice {
   ShipName: string;
@@ -29,4 +31,6 @@ export interface Invoice {
   Discount: number;
   ExtendedPrice: number;
   Freight: number;
+// #region Custom
+// #endregion Custom
 }

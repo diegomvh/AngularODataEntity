@@ -13,6 +13,10 @@ import {
 import { AlphabeticalListOfProduct } from './alphabetical-list-of-product.entity';
 import { AlphabeticalListOfProductModel } from './alphabetical-list-of-product.model';
 
+// #region Custom
+// #endregion Custom
 export class AlphabeticalListOfProductCollection<E extends AlphabeticalListOfProduct, M extends AlphabeticalListOfProductModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

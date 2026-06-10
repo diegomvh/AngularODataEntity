@@ -20,6 +20,10 @@ import { OrderDetailCollection } from './order-detail.collection';
 import { Supplier } from './supplier.entity';
 import { SupplierModel } from './supplier.model';
 
+// #region Custom
+// #endregion Custom
 export class ProductCollection<E extends Product, M extends ProductModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

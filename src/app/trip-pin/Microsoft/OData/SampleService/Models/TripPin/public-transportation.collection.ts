@@ -16,6 +16,10 @@ import { PlanItem } from './plan-item.entity';
 import { PlanItemCollection } from './plan-item.collection';
 import { PlanItemModel } from './plan-item.model';
 
+// #region Custom
+// #endregion Custom
 export class PublicTransportationCollection<E extends PublicTransportation, M extends PublicTransportationModel<E>> extends PlanItemCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

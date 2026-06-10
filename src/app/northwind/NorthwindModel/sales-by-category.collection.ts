@@ -13,6 +13,10 @@ import {
 import { SalesByCategory } from './sales-by-category.entity';
 import { SalesByCategoryModel } from './sales-by-category.model';
 
+// #region Custom
+// #endregion Custom
 export class SalesByCategoryCollection<E extends SalesByCategory, M extends SalesByCategoryModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

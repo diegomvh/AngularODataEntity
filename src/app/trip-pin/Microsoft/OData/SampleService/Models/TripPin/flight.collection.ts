@@ -20,6 +20,10 @@ import { AirportModel } from './airport.model';
 import { Airline } from './airline.entity';
 import { AirlineModel } from './airline.model';
 
+// #region Custom
+// #endregion Custom
 export class FlightCollection<E extends Flight, M extends FlightModel<E>> extends PublicTransportationCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

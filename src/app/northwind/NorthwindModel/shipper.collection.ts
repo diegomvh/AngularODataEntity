@@ -16,6 +16,10 @@ import { Order } from './order.entity';
 import { OrderModel } from './order.model';
 import { OrderCollection } from './order.collection';
 
+// #region Custom
+// #endregion Custom
 export class ShipperCollection<E extends Shipper, M extends ShipperModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

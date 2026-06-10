@@ -49,8 +49,7 @@
                 }
               ],
               "Name": "Photos",
-              "EntityType": "Microsoft.OData.SampleService.Models.TripPin.Photo",
-              "IncludeInServiceDocument": false
+              "EntityType": "Microsoft.OData.SampleService.Models.TripPin.Photo"
             },
             {
               "Annotation": [
@@ -143,8 +142,7 @@
                   "Path": "Microsoft.OData.SampleService.Models.TripPin.Trip/Photos",
                   "Target": "Photos"
                 }
-              ],
-              "IncludeInServiceDocument": false
+              ]
             },
             {
               "Annotation": [
@@ -182,8 +180,7 @@
                 }
               ],
               "Name": "Airlines",
-              "EntityType": "Microsoft.OData.SampleService.Models.TripPin.Airline",
-              "IncludeInServiceDocument": false
+              "EntityType": "Microsoft.OData.SampleService.Models.TripPin.Airline"
             },
             {
               "Annotation": [
@@ -232,8 +229,7 @@
                 }
               ],
               "Name": "Airports",
-              "EntityType": "Microsoft.OData.SampleService.Models.TripPin.Airport",
-              "IncludeInServiceDocument": false
+              "EntityType": "Microsoft.OData.SampleService.Models.TripPin.Airport"
             }
           ],
           "Singleton": [
@@ -294,18 +290,13 @@
               ],
               "Name": "Id",
               "Type": "Edm.Int64",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Name",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
@@ -331,38 +322,29 @@
               ],
               "Name": "UserName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "FirstName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "LastName",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Emails",
-              "Type": "Collection(Edm.String)",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Collection(Edm.String)"
             },
             {
               "Name": "AddressInfo",
-              "Type": "Collection(Microsoft.OData.SampleService.Models.TripPin.Location)",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Collection(Microsoft.OData.SampleService.Models.TripPin.Location)"
             },
             {
               "Name": "Gender",
-              "Type": "Microsoft.OData.SampleService.Models.TripPin.PersonGender",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Microsoft.OData.SampleService.Models.TripPin.PersonGender"
             },
             {
               "Annotation": [
@@ -373,40 +355,32 @@
               ],
               "Name": "Concurrency",
               "Type": "Edm.Int64",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Friends",
-              "Type": "Collection(Microsoft.OData.SampleService.Models.TripPin.Person)",
-              "Nullable": false,
-              "ContainsTarget": false
+              "Type": "Collection(Microsoft.OData.SampleService.Models.TripPin.Person)"
             },
             {
               "Name": "Trips",
               "Type": "Collection(Microsoft.OData.SampleService.Models.TripPin.Trip)",
-              "Nullable": false,
               "ContainsTarget": true
             },
             {
               "Name": "Photo",
-              "Type": "Microsoft.OData.SampleService.Models.TripPin.Photo",
-              "Nullable": false,
-              "ContainsTarget": false
+              "Type": "Microsoft.OData.SampleService.Models.TripPin.Photo"
             }
           ],
           "OpenType": true,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "UserName"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Airline",
@@ -424,26 +398,21 @@
               ],
               "Name": "AirlineCode",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Name",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "AirlineCode"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "Airport",
@@ -461,14 +430,12 @@
               ],
               "Name": "IcaoCode",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Name",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Annotation": [
@@ -479,26 +446,21 @@
               ],
               "Name": "IataCode",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Location",
               "Type": "Microsoft.OData.SampleService.Models.TripPin.AirportLocation",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "IcaoCode"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "PlanItem",
@@ -516,59 +478,42 @@
               ],
               "Name": "PlanItemId",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ConfirmationCode",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "StartsAt",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "EndsAt",
-              "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.DateTimeOffset"
             },
             {
               "Name": "Duration",
-              "Type": "Edm.Duration",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Duration"
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "PlanItemId"
               }
             ]
-          },
-          "HasStream": false
+          }
         },
         {
           "Name": "PublicTransportation",
           "Property": [
             {
               "Name": "SeatNumber",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
-          "BaseType": "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
-          "OpenType": false,
-          "Abstract": false,
-          "HasStream": false
+          "BaseType": "Microsoft.OData.SampleService.Models.TripPin.PlanItem"
         },
         {
           "Name": "Flight",
@@ -576,55 +521,43 @@
             {
               "Name": "FlightNumber",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
           "NavigationProperty": [
             {
               "Name": "From",
               "Type": "Microsoft.OData.SampleService.Models.TripPin.Airport",
-              "Nullable": false,
-              "ContainsTarget": false
+              "Nullable": false
             },
             {
               "Name": "To",
               "Type": "Microsoft.OData.SampleService.Models.TripPin.Airport",
-              "Nullable": false,
-              "ContainsTarget": false
+              "Nullable": false
             },
             {
               "Name": "Airline",
               "Type": "Microsoft.OData.SampleService.Models.TripPin.Airline",
-              "Nullable": false,
-              "ContainsTarget": false
+              "Nullable": false
             }
           ],
-          "BaseType": "Microsoft.OData.SampleService.Models.TripPin.PublicTransportation",
-          "OpenType": false,
-          "Abstract": false,
-          "HasStream": false
+          "BaseType": "Microsoft.OData.SampleService.Models.TripPin.PublicTransportation"
         },
         {
           "Name": "Event",
           "Property": [
             {
               "Name": "Description",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "OccursAt",
               "Type": "Microsoft.OData.SampleService.Models.TripPin.EventLocation",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
           "BaseType": "Microsoft.OData.SampleService.Models.TripPin.PlanItem",
-          "OpenType": true,
-          "Abstract": false,
-          "HasStream": false
+          "OpenType": true
         },
         {
           "Name": "Trip",
@@ -642,26 +575,20 @@
               ],
               "Name": "TripId",
               "Type": "Edm.Int32",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "ShareId",
-              "Type": "Edm.Guid",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.Guid"
             },
             {
               "Name": "Description",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             },
             {
               "Name": "Name",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Annotation": [
@@ -676,52 +603,42 @@
               ],
               "Name": "Budget",
               "Type": "Edm.Single",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "StartsAt",
               "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "EndsAt",
               "Type": "Edm.DateTimeOffset",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Tags",
               "Type": "Collection(Edm.String)",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
           "NavigationProperty": [
             {
               "Name": "Photos",
-              "Type": "Collection(Microsoft.OData.SampleService.Models.TripPin.Photo)",
-              "Nullable": false,
-              "ContainsTarget": false
+              "Type": "Collection(Microsoft.OData.SampleService.Models.TripPin.Photo)"
             },
             {
               "Name": "PlanItems",
               "Type": "Collection(Microsoft.OData.SampleService.Models.TripPin.PlanItem)",
-              "Nullable": false,
               "ContainsTarget": true
             }
           ],
-          "OpenType": false,
-          "Abstract": false,
           "Key": {
             "PropertyRef": [
               {
                 "Name": "TripId"
               }
             ]
-          },
-          "HasStream": false
+          }
         }
       ],
       "ComplexType": [
@@ -731,24 +648,19 @@
             {
               "Name": "CountryRegion",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Name",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "Region",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
-          ],
-          "OpenType": false,
-          "Abstract": false
+          ]
         },
         {
           "Name": "Location",
@@ -756,32 +668,26 @@
             {
               "Name": "Address",
               "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             },
             {
               "Name": "City",
               "Type": "Microsoft.OData.SampleService.Models.TripPin.City",
-              "Nullable": false,
-              "Unicode": false
+              "Nullable": false
             }
           ],
-          "OpenType": true,
-          "Abstract": false
+          "OpenType": true
         },
         {
           "Name": "EventLocation",
           "Property": [
             {
               "Name": "BuildingInfo",
-              "Type": "Edm.String",
-              "Nullable": false,
-              "Unicode": false
+              "Type": "Edm.String"
             }
           ],
           "BaseType": "Microsoft.OData.SampleService.Models.TripPin.Location",
-          "OpenType": true,
-          "Abstract": false
+          "OpenType": true
         },
         {
           "Name": "AirportLocation",
@@ -790,13 +696,11 @@
               "Name": "Loc",
               "Type": "Edm.GeographyPoint",
               "Nullable": false,
-              "Unicode": false,
               "SRID": "4326"
             }
           ],
           "BaseType": "Microsoft.OData.SampleService.Models.TripPin.Location",
-          "OpenType": true,
-          "Abstract": false
+          "OpenType": true
         }
       ],
       "EnumType": [
@@ -815,8 +719,7 @@
               "Name": "Unknown",
               "Value": 2
             }
-          ],
-          "IsFlags": false
+          ]
         }
       ],
       "Annotations": [
@@ -942,8 +845,7 @@
       ],
       "Action": [
         {
-          "Name": "ResetDataSource",
-          "IsBound": false
+          "Name": "ResetDataSource"
         },
         {
           "Name": "ShareTrip",
@@ -1029,7 +931,6 @@
             "Type": "Microsoft.OData.SampleService.Models.TripPin.Airport",
             "Nullable": false
           },
-          "IsBound": false,
           "Parameter": [
             {
               "Name": "lat",

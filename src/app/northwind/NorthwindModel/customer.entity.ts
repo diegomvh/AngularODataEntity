@@ -1,8 +1,10 @@
-import { Duration } from 'angular-odata';
+
 
 import { Order } from './order.entity';
 import { CustomerDemographic } from './customer-demographic.entity';
 
+// #region Custom
+// #endregion Custom
 export const CustomerEntityType = 'NorthwindModel.Customer';
 export interface Customer {
   CustomerID: string;
@@ -18,4 +20,6 @@ export interface Customer {
   Fax: string;
   Orders?: Order[];
   CustomerDemographics?: CustomerDemographic[];
+// #region Custom
+// #endregion Custom
 }

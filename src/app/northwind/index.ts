@@ -106,3 +106,5 @@ export * from './ODataWebV4/Northwind/Model/sales-totals-by-amounts.service';
 export * from './ODataWebV4/Northwind/Model/summary-of-sales-by-quarters.service';
 export * from './ODataWebV4/Northwind/Model/summary-of-sales-by-years.service';
 
+// #region Custom
+// #endregion Custom

@@ -18,6 +18,10 @@ import { PlanItemModel } from './plan-item.model';
 import { EventLocation } from './event-location.complex';
 import { EventLocationModel } from './event-location.model';
 
+// #region Custom
+// #endregion Custom
 export class EventCollection<E extends Event, M extends EventModel<E>> extends PlanItemCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

@@ -11,24 +11,24 @@ import {
   ODataQueryArgumentsOptions,
   ODataFunctionOptions,
   ODataActionOptions,
-  Duration,
 } from 'angular-odata';
 
 import { PublicTransportation } from './public-transportation.entity';
 import { PlanItem } from './plan-item.entity';
 import { PlanItemModel } from './plan-item.model';
 
+// #region Custom
+// #endregion Custom
 @Model()
 export class PublicTransportationModel<E extends PublicTransportation> extends PlanItemModel<E> {
   @ModelField()
   declare SeatNumber: string;
-  public $$SeatNumber() {
+    public $$SeatNumber() {
     return this.property<string>('SeatNumber');
   }
   public $SeatNumber() {
     return this.getAttribute<string>('SeatNumber') as string;
   }
-  
   public SeatNumber$(options?: ODataQueryArgumentsOptions<string>) {
     return this.fetchAttribute<string>('SeatNumber', options) as Observable<string>;
   }
@@ -36,4 +36,6 @@ export class PublicTransportationModel<E extends PublicTransportation> extends P
   
   
   
+// #region Custom
+// #endregion Custom
 }

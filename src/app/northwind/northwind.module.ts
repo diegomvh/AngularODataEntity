@@ -27,6 +27,8 @@ import { SalesTotalsByAmountsService } from './ODataWebV4/Northwind/Model/sales-
 import { SummaryOfSalesByQuartersService } from './ODataWebV4/Northwind/Model/summary-of-sales-by-quarters.service';
 import { SummaryOfSalesByYearsService } from './ODataWebV4/Northwind/Model/summary-of-sales-by-years.service';
 
+// #region Custom
+// #endregion Custom
 @NgModule({
   providers: [
     NorthwindEntitiesService,

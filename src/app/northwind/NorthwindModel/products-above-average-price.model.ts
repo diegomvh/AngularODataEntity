@@ -11,35 +11,34 @@ import {
   ODataQueryArgumentsOptions,
   ODataFunctionOptions,
   ODataActionOptions,
-  Duration,
 } from 'angular-odata';
 
 import { ProductsAboveAveragePrice } from './products-above-average-price.entity';
 
+// #region Custom
+// #endregion Custom
 @Model()
 export class ProductsAboveAveragePriceModel<E extends ProductsAboveAveragePrice> extends ODataModel<E> {
   @ModelField()
   declare ProductName: string;
-  public $$ProductName() {
+    public $$ProductName() {
     return this.property<string>('ProductName');
   }
   public $ProductName() {
     return this.getAttribute<string>('ProductName') as string;
   }
-  
   public ProductName$(options?: ODataQueryArgumentsOptions<string>) {
     return this.fetchAttribute<string>('ProductName', options) as Observable<string>;
   }
 
   @ModelField()
   declare UnitPrice: number;
-  public $$UnitPrice() {
+    public $$UnitPrice() {
     return this.property<number>('UnitPrice');
   }
   public $UnitPrice() {
     return this.getAttribute<number>('UnitPrice') as number;
   }
-  
   public UnitPrice$(options?: ODataQueryArgumentsOptions<number>) {
     return this.fetchAttribute<number>('UnitPrice', options) as Observable<number>;
   }
@@ -47,4 +46,6 @@ export class ProductsAboveAveragePriceModel<E extends ProductsAboveAveragePrice>
   
   
   
+// #region Custom
+// #endregion Custom
 }

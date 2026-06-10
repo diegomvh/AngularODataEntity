@@ -1,7 +1,9 @@
-import { Duration } from 'angular-odata';
+
 
 import { Product } from './product.entity';
 
+// #region Custom
+// #endregion Custom
 export const SupplierEntityType = 'NorthwindModel.Supplier';
 export interface Supplier {
   SupplierID: number;
@@ -17,4 +19,6 @@ export interface Supplier {
   Fax: string;
   HomePage: string;
   Products?: Product[];
+// #region Custom
+// #endregion Custom
 }

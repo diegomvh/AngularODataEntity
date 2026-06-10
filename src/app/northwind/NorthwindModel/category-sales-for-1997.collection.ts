@@ -13,6 +13,10 @@ import {
 import { CategorySalesFor1997 } from './category-sales-for-1997.entity';
 import { CategorySalesFor1997Model } from './category-sales-for-1997.model';
 
+// #region Custom
+// #endregion Custom
 export class CategorySalesFor1997Collection<E extends CategorySalesFor1997, M extends CategorySalesFor1997Model<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

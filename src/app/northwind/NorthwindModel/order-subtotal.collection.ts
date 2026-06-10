@@ -13,6 +13,10 @@ import {
 import { OrderSubtotal } from './order-subtotal.entity';
 import { OrderSubtotalModel } from './order-subtotal.model';
 
+// #region Custom
+// #endregion Custom
 export class OrderSubtotalCollection<E extends OrderSubtotal, M extends OrderSubtotalModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

@@ -13,6 +13,10 @@ import {
 import { City } from './city.complex';
 import { CityModel } from './city.model';
 
+// #region Custom
+// #endregion Custom
 export class CityCollection<E extends City, M extends CityModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

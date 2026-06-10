@@ -27,12 +27,14 @@ import { LocationCollection } from './Microsoft/OData/SampleService/Models/TripP
 import { EventLocationCollection } from './Microsoft/OData/SampleService/Models/TripPin/event-location.collection';
 import { AirportLocationCollection } from './Microsoft/OData/SampleService/Models/TripPin/airport-location.collection';
 
+// #region Custom
+// #endregion Custom
 export const TripPinConfig = ODataMetadata.fromJson(json).toConfig({
   serviceRootUrl: 'https://services.odata.org/V4/TripPinServiceRW/',
   metadataUrl: 'https://services.odata.org/V4/TripPinServiceRW/$metadata',
   name: 'TripPin',
   version: '4.0' as ODataVersion,
-  creation: new Date('2025-10-29T13:06:57.169Z'),
+  creation: new Date('2026-06-10T12:49:35.658Z'),
   parsers: EDM_PARSERS,
   models: {
     'Microsoft.OData.SampleService.Models.TripPin.Photo': PhotoModel, 

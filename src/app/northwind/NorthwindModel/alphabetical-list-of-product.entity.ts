@@ -1,6 +1,8 @@
-import { Duration } from 'angular-odata';
 
 
+
+// #region Custom
+// #endregion Custom
 export const AlphabeticalListOfProductEntityType = 'NorthwindModel.Alphabetical_list_of_product';
 export interface AlphabeticalListOfProduct {
   ProductID: number;
@@ -14,4 +16,6 @@ export interface AlphabeticalListOfProduct {
   ReorderLevel: number;
   Discontinued: boolean;
   CategoryName: string;
+// #region Custom
+// #endregion Custom
 }

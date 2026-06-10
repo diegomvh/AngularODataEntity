@@ -1,7 +1,9 @@
-import { Duration } from 'angular-odata';
+
 
 import { Product } from './product.entity';
 
+// #region Custom
+// #endregion Custom
 export const CategoryEntityType = 'NorthwindModel.Category';
 export interface Category {
   CategoryID: number;
@@ -9,4 +11,6 @@ export interface Category {
   Description: string;
   Picture: ArrayBuffer;
   Products?: Product[];
+// #region Custom
+// #endregion Custom
 }

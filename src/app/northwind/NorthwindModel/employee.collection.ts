@@ -19,6 +19,10 @@ import { Territory } from './territory.entity';
 import { TerritoryModel } from './territory.model';
 import { TerritoryCollection } from './territory.collection';
 
+// #region Custom
+// #endregion Custom
 export class EmployeeCollection<E extends Employee, M extends EmployeeModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

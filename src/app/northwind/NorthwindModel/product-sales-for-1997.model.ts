@@ -11,48 +11,46 @@ import {
   ODataQueryArgumentsOptions,
   ODataFunctionOptions,
   ODataActionOptions,
-  Duration,
 } from 'angular-odata';
 
 import { ProductSalesFor1997 } from './product-sales-for-1997.entity';
 
+// #region Custom
+// #endregion Custom
 @Model()
 export class ProductSalesFor1997Model<E extends ProductSalesFor1997> extends ODataModel<E> {
   @ModelField()
   declare CategoryName: string;
-  public $$CategoryName() {
+    public $$CategoryName() {
     return this.property<string>('CategoryName');
   }
   public $CategoryName() {
     return this.getAttribute<string>('CategoryName') as string;
   }
-  
   public CategoryName$(options?: ODataQueryArgumentsOptions<string>) {
     return this.fetchAttribute<string>('CategoryName', options) as Observable<string>;
   }
 
   @ModelField()
   declare ProductName: string;
-  public $$ProductName() {
+    public $$ProductName() {
     return this.property<string>('ProductName');
   }
   public $ProductName() {
     return this.getAttribute<string>('ProductName') as string;
   }
-  
   public ProductName$(options?: ODataQueryArgumentsOptions<string>) {
     return this.fetchAttribute<string>('ProductName', options) as Observable<string>;
   }
 
   @ModelField()
   declare ProductSales: number;
-  public $$ProductSales() {
+    public $$ProductSales() {
     return this.property<number>('ProductSales');
   }
   public $ProductSales() {
     return this.getAttribute<number>('ProductSales') as number;
   }
-  
   public ProductSales$(options?: ODataQueryArgumentsOptions<number>) {
     return this.fetchAttribute<number>('ProductSales', options) as Observable<number>;
   }
@@ -60,4 +58,6 @@ export class ProductSalesFor1997Model<E extends ProductSalesFor1997> extends ODa
   
   
   
+// #region Custom
+// #endregion Custom
 }

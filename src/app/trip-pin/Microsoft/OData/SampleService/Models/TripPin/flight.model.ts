@@ -11,7 +11,6 @@ import {
   ODataQueryArgumentsOptions,
   ODataFunctionOptions,
   ODataActionOptions,
-  Duration,
 } from 'angular-odata';
 
 import { Flight } from './flight.entity';
@@ -22,67 +21,70 @@ import { AirportModel } from './airport.model';
 import { Airline } from './airline.entity';
 import { AirlineModel } from './airline.model';
 
+// #region Custom
+// #endregion Custom
 @Model()
 export class FlightModel<E extends Flight> extends PublicTransportationModel<E> {
   @ModelField()
   declare FlightNumber: string;
-  public $$FlightNumber() {
+    public $$FlightNumber() {
     return this.property<string>('FlightNumber');
   }
   public $FlightNumber() {
     return this.getAttribute<string>('FlightNumber') as string;
   }
-  
   public FlightNumber$(options?: ODataQueryArgumentsOptions<string>) {
     return this.fetchAttribute<string>('FlightNumber', options) as Observable<string>;
   }
 
   @ModelField()
   declare From?: AirportModel<Airport>;
-  public $$From() {
+    public $$From() {
     return this.navigationProperty<Airport>('From');
   }
   public $From() {
-    return this.getAttribute<Airport>('From') as Airport;
+    return this.getAttribute<Airport>('From') as AirportModel<Airport>;
   }
   public From$$(model: AirportModel<Airport> | null, options?: ODataOptions) {
     return this.setReference<Airport>('From', model, options);
   }
   public From$(options?: ODataQueryArgumentsOptions<Airport>) {
-    return this.fetchAttribute<Airport>('From', options) as Observable<Airport>;
+    return this.fetchAttribute<Airport>('From', options) as Observable<AirportModel<Airport>>;
   }
 
   @ModelField()
   declare To?: AirportModel<Airport>;
-  public $$To() {
+    public $$To() {
     return this.navigationProperty<Airport>('To');
   }
   public $To() {
-    return this.getAttribute<Airport>('To') as Airport;
+    return this.getAttribute<Airport>('To') as AirportModel<Airport>;
   }
   public To$$(model: AirportModel<Airport> | null, options?: ODataOptions) {
     return this.setReference<Airport>('To', model, options);
   }
   public To$(options?: ODataQueryArgumentsOptions<Airport>) {
-    return this.fetchAttribute<Airport>('To', options) as Observable<Airport>;
+    return this.fetchAttribute<Airport>('To', options) as Observable<AirportModel<Airport>>;
   }
 
   @ModelField()
   declare Airline?: AirlineModel<Airline>;
-  public $$Airline() {
+    public $$Airline() {
     return this.navigationProperty<Airline>('Airline');
   }
   public $Airline() {
-    return this.getAttribute<Airline>('Airline') as Airline;
+    return this.getAttribute<Airline>('Airline') as AirlineModel<Airline>;
   }
   public Airline$$(model: AirlineModel<Airline> | null, options?: ODataOptions) {
     return this.setReference<Airline>('Airline', model, options);
   }
   public Airline$(options?: ODataQueryArgumentsOptions<Airline>) {
-    return this.fetchAttribute<Airline>('Airline', options) as Observable<Airline>;
+    return this.fetchAttribute<Airline>('Airline', options) as Observable<AirlineModel<Airline>>;
   }
 
   
   
   
+// #region Custom
+// #endregion Custom
 }

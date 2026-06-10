@@ -15,6 +15,10 @@ import { AirportModel } from './airport.model';
 import { AirportLocation } from './airport-location.complex';
 import { AirportLocationModel } from './airport-location.model';
 
+// #region Custom
+// #endregion Custom
 export class AirportCollection<E extends Airport, M extends AirportModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

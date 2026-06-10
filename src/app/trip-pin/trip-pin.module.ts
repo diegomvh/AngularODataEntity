@@ -6,6 +6,8 @@ import { AirlinesService } from './Microsoft/OData/SampleService/Models/TripPin/
 import { AirportsService } from './Microsoft/OData/SampleService/Models/TripPin/airports.service';
 import { MeService } from './Microsoft/OData/SampleService/Models/TripPin/me.service';
 
+// #region Custom
+// #endregion Custom
 @NgModule({
   providers: [
     DefaultContainerService,

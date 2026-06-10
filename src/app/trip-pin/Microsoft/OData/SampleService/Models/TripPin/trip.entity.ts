@@ -1,8 +1,10 @@
-import { Duration } from 'angular-odata';
+
 
 import { Photo } from './photo.entity';
 import { PlanItem } from './plan-item.entity';
 
+// #region Custom
+// #endregion Custom
 export const TripEntityType = 'Microsoft.OData.SampleService.Models.TripPin.Trip';
 export interface Trip {
   TripId: number;
@@ -15,4 +17,6 @@ export interface Trip {
   Tags: string[];
   Photos?: Photo[];
   PlanItems?: PlanItem[];
+// #region Custom
+// #endregion Custom
 }

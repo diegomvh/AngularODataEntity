@@ -17,6 +17,10 @@ import { OrderModel } from './order.model';
 import { Product } from './product.entity';
 import { ProductModel } from './product.model';
 
+// #region Custom
+// #endregion Custom
 export class OrderDetailCollection<E extends OrderDetail, M extends OrderDetailModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

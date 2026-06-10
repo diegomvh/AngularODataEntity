@@ -13,6 +13,10 @@ import {
 import { SalesTotalsByAmount } from './sales-totals-by-amount.entity';
 import { SalesTotalsByAmountModel } from './sales-totals-by-amount.model';
 
+// #region Custom
+// #endregion Custom
 export class SalesTotalsByAmountCollection<E extends SalesTotalsByAmount, M extends SalesTotalsByAmountModel<E>> extends ODataCollection<E, M> {
   
+// #region Custom
+// #endregion Custom
 }

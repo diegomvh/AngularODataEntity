@@ -1,6 +1,8 @@
-import { Duration } from 'angular-odata';
 
 
+
+// #region Custom
+// #endregion Custom
 export const OrdersQryEntityType = 'NorthwindModel.Orders_Qry';
 export interface OrdersQry {
   OrderID: number;
@@ -23,4 +25,6 @@ export interface OrdersQry {
   Region: string;
   PostalCode: string;
   Country: string;
+// #region Custom
+// #endregion Custom
 }

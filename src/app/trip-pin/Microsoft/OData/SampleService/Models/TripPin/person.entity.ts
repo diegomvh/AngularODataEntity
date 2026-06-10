@@ -1,10 +1,12 @@
-import { Duration } from 'angular-odata';
+
 
 import { Location } from './location.complex';
 import { PersonGender } from './person-gender.enum';
 import { Trip } from './trip.entity';
 import { Photo } from './photo.entity';
 
+// #region Custom
+// #endregion Custom
 export const PersonEntityType = 'Microsoft.OData.SampleService.Models.TripPin.Person';
 export interface Person {
   UserName: string;
@@ -17,4 +19,6 @@ export interface Person {
   Friends?: Person[];
   Trips?: Trip[];
   Photo?: Photo;
+// #region Custom
+// #endregion Custom
 }
