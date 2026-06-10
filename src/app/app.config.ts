@@ -2,18 +2,33 @@ import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withXhr } from '@angular/common/http';
 import { providePrimeNG } from 'primeng/config';
 import { NorthwindConfig } from './northwind';
 import { TripPinConfig } from './trip-pin';
 import Material from '@primeuix/themes/material';
-import { provideODataClient, ODataInMemoryCache, ODataIndexedDBCache, ODataApiConfig, ODataLoader, ODataMetadataLoader, ODataRequest, ODataAsyncLoader, ODataMetadataParser, PassedInitialConfig, ODATA_CONFIG } from 'angular-odata';
+import {
+  provideODataClient,
+  ODataInMemoryCache,
+  ODataIndexedDBCache,
+  ODataApiConfig,
+  ODataLoader,
+  ODataMetadataLoader,
+  ODataRequest,
+  ODataAsyncLoader,
+  ODataMetadataParser,
+  PassedInitialConfig,
+  ODATA_CONFIG,
+} from 'angular-odata';
 import { map, Observable } from 'rxjs';
 
 export function createMetadataLoader(httpClient: HttpClient) {
-  const serviceRootUrl = 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW';
-  const meta$ = httpClient.get(`${serviceRootUrl}/$metadata`, {responseType: 'text'});
-  return new ODataMetadataLoader(meta$, { serviceRootUrl, name: "TrippinAsync" },
+  const serviceRootUrl =
+    'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW';
+  const meta$ = httpClient.get(`${serviceRootUrl}/$metadata`, { responseType: 'text' });
+  return new ODataMetadataLoader(
+    meta$,
+    { serviceRootUrl, name: 'TrippinAsync' },
     (req: ODataRequest<any>): Observable<any> =>
       httpClient.request(req.method, `${req.url}`, {
         body: req.body,
@@ -25,21 +40,30 @@ export function createMetadataLoader(httpClient: HttpClient) {
         responseType: req.responseType,
         withCredentials: req.withCredentials,
       }),
-    ); 
+  );
 }
 
-export function createCustomMixedLoader(syncConfig: ODataApiConfig | ODataApiConfig[], httpClient: HttpClient) {
-  const serviceRootUrl = 'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW';
-  const configs$ = httpClient.get(`${serviceRootUrl}/$metadata`, {responseType: 'text'}).pipe(map(meta => {
-    let configs = [new ODataMetadataParser(meta).metadata().toConfig({ serviceRootUrl, name: "TrippinAsync" })];
-    if (Array.isArray(syncConfig)) {
-      configs = [...configs, ...syncConfig];
-    } else {
-      configs = [...configs, syncConfig];
-    }
-    return configs;
-  }))
-  return new ODataAsyncLoader(configs$, 
+export function createCustomMixedLoader(
+  syncConfig: ODataApiConfig | ODataApiConfig[],
+  httpClient: HttpClient,
+) {
+  const serviceRootUrl =
+    'https://services.odata.org/V4/(S(4m0tuxtnhcfctl4gzem3gr10))/TripPinServiceRW';
+  const configs$ = httpClient.get(`${serviceRootUrl}/$metadata`, { responseType: 'text' }).pipe(
+    map((meta) => {
+      let configs = [
+        new ODataMetadataParser(meta).metadata().toConfig({ serviceRootUrl, name: 'TrippinAsync' }),
+      ];
+      if (Array.isArray(syncConfig)) {
+        configs = [...configs, ...syncConfig];
+      } else {
+        configs = [...configs, syncConfig];
+      }
+      return configs;
+    }),
+  );
+  return new ODataAsyncLoader(
+    configs$,
     (req: ODataRequest<any>): Observable<any> =>
       httpClient.request(req.method, `${req.url}`, {
         body: req.body,
@@ -51,17 +75,17 @@ export function createCustomMixedLoader(syncConfig: ODataApiConfig | ODataApiCon
         responseType: req.responseType,
         withCredentials: req.withCredentials,
       }),
-    ); 
+  );
 }
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient(withXhr()),
     providePrimeNG({
       theme: {
         preset: Material,
-      }
+      },
     }),
     provideODataClient({
       /*
@@ -78,7 +102,7 @@ export const appConfig: ApplicationConfig = {
       },
       config: [
         {
-          name: "MicrosoftGraph",
+          name: 'MicrosoftGraph',
           serviceRootUrl: 'https://graph.microsoft.com/v1.0/',
           options: {
             stringAsEnum: true,
@@ -87,23 +111,23 @@ export const appConfig: ApplicationConfig = {
               metadata: 'minimal',
             },
             prefer: {
-              return: 'representation'
-            }
-          }
+              return: 'representation',
+            },
+          },
         },
         // Northwind version 4
         Object.assign(NorthwindConfig, {
           cache: new ODataInMemoryCache({ maxAge: 60 }),
           options: {
             accept: {
-              ieee754Compatible: true
+              ieee754Compatible: true,
             },
-          }
+          },
         }),
         // TripPin
         Object.assign(TripPinConfig, {
           serviceRootUrl: 'http://localhost:4200/trippin/',
-          cache: new ODataIndexedDBCache({ maxAge: 60, name: "TripPinCache", version: 1 }),
+          cache: new ODataIndexedDBCache({ maxAge: 60, name: 'TripPinCache', version: 1 }),
           default: true,
           options: {
             stringAsEnum: true,
@@ -112,11 +136,11 @@ export const appConfig: ApplicationConfig = {
               metadata: 'minimal',
             },
             prefer: {
-              return: 'representation'
-            }
-          }
+              return: 'representation',
+            },
+          },
         } as ODataApiConfig),
-      ]
-    })
-  ]
+      ],
+    }),
+  ],
 };

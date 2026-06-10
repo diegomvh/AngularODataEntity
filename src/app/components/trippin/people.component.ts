@@ -1,10 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { PeopleService, Person, PersonGender } from '../../trip-pin';
-import {
-  ODataEntitySetResource,
-  ODataClient,
-  EdmType,
-} from 'angular-odata';
+import { ODataEntitySetResource, ODataClient, EdmType } from 'angular-odata';
 import { PersonComponent } from './person.component';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
@@ -13,6 +9,7 @@ import { CommonModule } from '@angular/common';
   selector: 'trip-people',
   standalone: true,
   imports: [CommonModule, TableModule, PersonComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<p-table
       #table
       [columns]="cols"
@@ -26,46 +23,46 @@ import { CommonModule } from '@angular/common';
     >
       <ng-template pTemplate="header" let-columns>
         <tr>
-        @for (col of columns; track col) {
-          <th
-            [pSortableColumn]="col.sort ? col.field : ''"
-          >
-            {{ col.header }}
-          @if (col.sort) {
-            <p-sortIcon
-              [field]="col.field"
-              ariaLabel="Activate to sort"
-              ariaLabelDesc="Activate to sort in descending order"
-              ariaLabelAsc="Activate to sort in ascending order"
-            ></p-sortIcon>
-          }
-          </th>
+          @for (col of columns; track col) {
+            <th [pSortableColumn]="col.sort ? col.field : ''">
+              {{ col.header }}
+              @if (col.sort) {
+                <p-sortIcon
+                  [field]="col.field"
+                  ariaLabel="Activate to sort"
+                  ariaLabelDesc="Activate to sort in descending order"
+                  ariaLabelAsc="Activate to sort in ascending order"
+                ></p-sortIcon>
+              }
+            </th>
           }
         </tr>
         <tr>
-        @for (col of columns; track col) {
-          <th>
-          @if (col.filter) {
-            <input
-              pInputText
-              type="text"
-              (input)="filter($event, col.field)"
-            />
-          }
-          </th>
+          @for (col of columns; track col) {
+            <th>
+              @if (col.filter) {
+                <input pInputText type="text" (input)="filter($event, col.field)" />
+              }
+            </th>
           }
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr (click)="viewPerson(rowData)">
-        @for (col of columns; track col) {
-          <td>
-            @switch (col.field) {
-              @case ('AddressInfo') { <span>{{ rowData[col.field] | json }}</span> }
-              @case ('Gender') { <span>{{ Gender[rowData[col.field]] | json }}</span> }
-              @default { <span>{{ rowData[col.field] }}</span> }
-            }
-          </td>
+          @for (col of columns; track col) {
+            <td>
+              @switch (col.field) {
+                @case ('AddressInfo') {
+                  <span>{{ rowData[col.field] | json }}</span>
+                }
+                @case ('Gender') {
+                  <span>{{ Gender[rowData[col.field]] | json }}</span>
+                }
+                @default {
+                  <span>{{ rowData[col.field] }}</span>
+                }
+              }
+            </td>
           }
         </tr>
       </ng-template>
@@ -85,7 +82,10 @@ export class PeopleComponent {
 
   @ViewChild('person') person!: PersonComponent;
 
-  constructor(private client: ODataClient, private people: PeopleService) {
+  constructor(
+    private client: ODataClient,
+    private people: PeopleService,
+  ) {
     this.resource = this.people.entities();
     const schema = this.resource.structuredType();
     this.cols =
@@ -104,7 +104,7 @@ export class PeopleComponent {
         : [];
     // Try toJSON, fromJSON
     this.resource = this.client.fromJson<Person>(
-      this.resource.toJson()
+      this.resource.toJson(),
     ) as ODataEntitySetResource<Person>;
   }
 
@@ -141,12 +141,7 @@ export class PeopleComponent {
       if (event.rows) q.top(event.rows);
       //Ordering
       if (event.sortField !== undefined)
-        q.orderBy([
-          [
-            event.sortField as keyof Person,
-            event.sortOrder == -1 ? 'desc' : 'asc',
-          ],
-        ]);
+        q.orderBy([[event.sortField as keyof Person, event.sortOrder == -1 ? 'desc' : 'asc']]);
     });
     this.fetch(resource);
   }

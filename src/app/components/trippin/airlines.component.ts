@@ -1,10 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Airline, AirlinesService } from '../../trip-pin';
-import {
-  ODataEntitySetResource,
-  ODataClient,
-  EdmType,
-} from 'angular-odata';
+import { ODataEntitySetResource, ODataClient, EdmType } from 'angular-odata';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 
@@ -12,7 +8,9 @@ import { CommonModule } from '@angular/common';
   selector: 'trip-airlines',
   standalone: true,
   imports: [CommonModule, TableModule],
-  template: `<p-table *ngIf="cols"
+  changeDetection: ChangeDetectionStrategy.Eager,
+  template: `<p-table
+    *ngIf="cols"
     #table
     [columns]="cols"
     [value]="rows"
@@ -26,41 +24,35 @@ import { CommonModule } from '@angular/common';
     <ng-template pTemplate="header" let-columns>
       <tr>
         @for (col of columns; track col) {
-        <th
-          [pSortableColumn]="col.sort ? col.field : ''"
-        >
-          {{ col.header }}
-          @if (col.sort) {
-          <p-sortIcon
-            [field]="col.field"
-            ariaLabel="Activate to sort"
-            ariaLabelDesc="Activate to sort in descending order"
-            ariaLabelAsc="Activate to sort in ascending order"
-          ></p-sortIcon>
-        }
-        </th>
+          <th [pSortableColumn]="col.sort ? col.field : ''">
+            {{ col.header }}
+            @if (col.sort) {
+              <p-sortIcon
+                [field]="col.field"
+                ariaLabel="Activate to sort"
+                ariaLabelDesc="Activate to sort in descending order"
+                ariaLabelAsc="Activate to sort in ascending order"
+              ></p-sortIcon>
+            }
+          </th>
         }
       </tr>
       <tr>
         @for (col of columns; track col) {
-        <th>
-          @if (col.filter) {
-          <input
-            pInputText
-            type="text"
-            (input)="filter($event, col.field)"
-          />
-        }
-        </th>
+          <th>
+            @if (col.filter) {
+              <input pInputText type="text" (input)="filter($event, col.field)" />
+            }
+          </th>
         }
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
       <tr>
         @for (col of columns; track col) {
-        <td>
-          {{ rowData[col.field] }}
-        </td>
+          <td>
+            {{ rowData[col.field] }}
+          </td>
         }
       </tr>
     </ng-template>
@@ -76,7 +68,10 @@ export class AirlinesComponent {
   resource: ODataEntitySetResource<Airline>;
   loading: boolean = false;
 
-  constructor(private client: ODataClient, private airlines: AirlinesService) {
+  constructor(
+    private client: ODataClient,
+    private airlines: AirlinesService,
+  ) {
     this.resource = this.airlines.entities();
     console.log(this.resource);
     const schema = this.resource.structuredType();
@@ -98,7 +93,7 @@ export class AirlinesComponent {
         : [];
     // Try toJSON, fromJSON
     this.resource = this.client.fromJson<Airline>(
-      this.resource.toJson()
+      this.resource.toJson(),
     ) as ODataEntitySetResource<Airline>;
   }
 
@@ -132,20 +127,13 @@ export class AirlinesComponent {
 
   loadAirlinesLazy(event: TableLazyLoadEvent) {
     //Pagination
-    let resource = this.resource
-      .clone()
-      .query((q) => {
-        if (event.first) q.skip(event.first);
-        if (event.rows) q.top(event.rows);
-        //Ordering
-        if (event.sortField !== undefined)
-          q.orderBy([
-            [
-              event.sortField as keyof Airline,
-              event.sortOrder == -1 ? 'desc' : 'asc',
-            ],
-          ]);
-      });
+    let resource = this.resource.clone().query((q) => {
+      if (event.first) q.skip(event.first);
+      if (event.rows) q.top(event.rows);
+      //Ordering
+      if (event.sortField !== undefined)
+        q.orderBy([[event.sortField as keyof Airline, event.sortOrder == -1 ? 'desc' : 'asc']]);
+    });
     this.fetch(resource);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { EdmType, ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
 import { Category, CategoriesService } from '../../northwind';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
   selector: 'northwind-categories',
   standalone: true,
   imports: [CommonModule, TableModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<p-table
     #table
     [columns]="cols"
@@ -22,41 +23,35 @@ import { CommonModule } from '@angular/common';
     <ng-template pTemplate="header" let-columns>
       <tr>
         @for (col of columns; track col) {
-          <th
-            [pSortableColumn]="col.sort ? col.field : ''"
-          >
+          <th [pSortableColumn]="col.sort ? col.field : ''">
             {{ col.header }}
-          @if (col.sort) {
-            <p-sortIcon
-              [field]="col.field"
-              ariaLabel="Activate to sort"
-              ariaLabelDesc="Activate to sort in descending order"
-              ariaLabelAsc="Activate to sort in ascending order"
-            ></p-sortIcon>
-          }
+            @if (col.sort) {
+              <p-sortIcon
+                [field]="col.field"
+                ariaLabel="Activate to sort"
+                ariaLabelDesc="Activate to sort in descending order"
+                ariaLabelAsc="Activate to sort in ascending order"
+              ></p-sortIcon>
+            }
           </th>
         }
       </tr>
       <tr>
         @for (col of columns; track col) {
-        <th>
-          @if (col.filter) {
-          <input
-            pInputText
-            type="text"
-            (input)="filter($event, col.field)"
-          />
-          }
-        </th>
+          <th>
+            @if (col.filter) {
+              <input pInputText type="text" (input)="filter($event, col.field)" />
+            }
+          </th>
         }
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
       <tr>
         @for (col of columns; track col) {
-        <td>
-          <span>{{ rowData[col.field] }}</span>
-        </td>
+          <td>
+            <span>{{ rowData[col.field] }}</span>
+          </td>
         }
       </tr>
     </ng-template>
@@ -78,18 +73,18 @@ export class CategoriesComponent {
     this.cols =
       structured !== null
         ? (
-          structured?.fields({
-            include_parents: true,
-            include_navigation: false,
-          }) || []
-        )
-          .filter((f) => !f.navigation)
-          .map((f) => ({
-            field: f.name,
-            header: f.name,
-            sort: !f.collection,
-            filter: f.type === EdmType.String,
-          }))
+            structured?.fields({
+              include_parents: true,
+              include_navigation: false,
+            }) || []
+          )
+            .filter((f) => !f.navigation)
+            .map((f) => ({
+              field: f.name,
+              header: f.name,
+              sort: !f.collection,
+              filter: f.type === EdmType.String,
+            }))
         : [];
   }
 
@@ -123,12 +118,7 @@ export class CategoriesComponent {
       if (event.rows) q.top(event.rows);
       //Ordering
       if (event.sortField !== undefined)
-        q.orderBy([
-          [
-            event.sortField as keyof Category,
-            event.sortOrder == -1 ? 'desc' : 'asc',
-          ],
-        ]);
+        q.orderBy([[event.sortField as keyof Category, event.sortOrder == -1 ? 'desc' : 'asc']]);
     });
     this.fetch(resource);
   }
