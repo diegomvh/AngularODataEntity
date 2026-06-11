@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Airline, AirlinesService } from '../../trip-pin';
 import { ODataEntitySetResource, ODataClient, EdmType } from 'angular-odata';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
@@ -8,18 +8,16 @@ import { CommonModule } from '@angular/common';
   selector: 'trip-airlines',
   standalone: true,
   imports: [CommonModule, TableModule],
-  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<p-table
-    *ngIf="cols"
     #table
-    [columns]="cols"
-    [value]="rows"
+    [columns]="cols()"
+    [value]="rows()"
     [lazy]="true"
     (onLazyLoad)="loadAirlinesLazy($event)"
     [paginator]="true"
-    [rows]="size"
-    [totalRecords]="total"
-    [loading]="loading"
+    [rows]="size()"
+    [totalRecords]="total()"
+    [loading]="loading()"
   >
     <ng-template pTemplate="header" let-columns>
       <tr>
@@ -59,53 +57,33 @@ import { CommonModule } from '@angular/common';
   </p-table>`,
 })
 export class AirlinesComponent {
-  rows: Airline[] = [];
-  cols: any[];
+  odataClient = inject(ODataClient);
+  airlinesService = inject(AirlinesService);
+  rows = signal<Airline[]>([]);
+  loading = signal<boolean>(false);
+  total = signal<number>(0);
+  size = signal<number>(0);
+  cols = signal<any[]>([]);
 
-  total: number = 0;
-  size!: number;
-
-  resource: ODataEntitySetResource<Airline>;
-  loading: boolean = false;
-
-  constructor(
-    private client: ODataClient,
-    private airlines: AirlinesService,
-  ) {
-    this.resource = this.airlines.entities();
-    console.log(this.resource);
-    const schema = this.resource.structuredType();
-    this.cols =
-      schema !== null
-        ? (
-            schema?.fields({
-              include_parents: true,
-              include_navigation: false,
-            }) || []
-          )
-            .filter((f) => !f.navigation)
-            .map((f) => ({
-              field: f.name,
-              header: f.name,
-              sort: !f.collection,
-              filter: f.type === EdmType.String,
-            }))
-        : [];
-    // Try toJSON, fromJSON
-    this.resource = this.client.fromJson<Airline>(
-      this.resource.toJson(),
-    ) as ODataEntitySetResource<Airline>;
+  constructor() {
+    const schema = this.airlinesService.structuredTypeSchema;
+    if (schema !== null) {
+      const cols = (schema?.fields({ include_parents: true, include_navigation: false }) ?? [])
+        .filter((f) => !f.navigation)
+        .map((f) => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === EdmType.String }));
+      this.cols.set(cols);
+    }
   }
 
   fetch(resource: ODataEntitySetResource<Airline>) {
-    this.loading = true;
+    this.loading.set(true);
     resource
       .fetch({ withCount: true, fetchPolicy: 'cache-and-network' })
       .subscribe(({ entities, annots }) => {
-        this.rows = entities || [];
-        if (!this.total) this.total = annots.count as number;
-        if (!this.size) this.size = annots.skip || this.rows.length;
-        this.loading = false;
+        this.rows.set(entities ?? []);
+        this.total.set(annots.count ?? entities?.length ?? 0);
+        this.size.set(annots.skip ?? entities?.length ?? 0);
+        this.loading.set(false);
       });
   }
 
@@ -113,26 +91,26 @@ export class AirlinesComponent {
     const input = event.target as HTMLInputElement;
     const value = input.value;
     field = `tolower(${field})`;
+    const resource = this.airlinesService.entities();
     if (value) {
-      this.resource.query((q) => {
+      resource.query((q) => {
         let alias = q.alias(value.toLowerCase());
         q.filter().assign({ [field]: { contains: alias } });
       });
     } else {
-      this.resource.query((q) => q.filter().unset(field));
+      resource.query((q) => q.filter().unset(field));
     }
-    this.total = 0;
-    this.fetch(this.resource);
+    this.fetch(resource);
   }
 
   loadAirlinesLazy(event: TableLazyLoadEvent) {
-    //Pagination
-    let resource = this.resource.clone().query((q) => {
+    const resource = this.airlinesService.entities().query((q) => {
+      //Pagination
       if (event.first) q.skip(event.first);
       if (event.rows) q.top(event.rows);
       //Ordering
       if (event.sortField !== undefined)
-        q.orderBy([[event.sortField as keyof Airline, event.sortOrder == -1 ? 'desc' : 'asc']]);
+        q.orderBy(({e, t}) => (event.sortOrder == 1) ? e().ascending(event.sortField) : e().descending(event.sortField))
     });
     this.fetch(resource);
   }

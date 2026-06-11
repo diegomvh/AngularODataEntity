@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, inject, signal } from '@angular/core';
 import { PeopleService, Person, PersonGender } from '../../trip-pin';
 import { ODataEntitySetResource, ODataClient, EdmType } from 'angular-odata';
 import { PersonComponent } from './person.component';
@@ -9,17 +9,16 @@ import { CommonModule } from '@angular/common';
   selector: 'trip-people',
   standalone: true,
   imports: [CommonModule, TableModule, PersonComponent],
-  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<p-table
       #table
-      [columns]="cols"
-      [value]="rows"
+      [columns]="cols()"
+      [value]="rows()"
       [lazy]="true"
       (onLazyLoad)="loadPeopleLazy($event)"
       [paginator]="true"
-      [rows]="size"
-      [totalRecords]="total"
-      [loading]="loading"
+      [rows]="size()"
+      [totalRecords]="total()"
+      [loading]="loading()"
     >
       <ng-template pTemplate="header" let-columns>
         <tr>
@@ -71,52 +70,34 @@ import { CommonModule } from '@angular/common';
 })
 export class PeopleComponent {
   Gender = PersonGender;
-  rows!: Person[];
-  cols: any[];
-
-  total: number = 0;
-  size!: number;
-
-  resource: ODataEntitySetResource<Person>;
-  loading: boolean = false;
+  odataClient = inject(ODataClient);
+  peopleService = inject(PeopleService);
+  rows = signal<Person[]>([]);
+  loading = signal<boolean>(false);
+  total = signal<number>(0);
+  size = signal<number>(0);
+  cols = signal<any[]>([]);
 
   @ViewChild('person') person!: PersonComponent;
 
-  constructor(
-    private client: ODataClient,
-    private people: PeopleService,
-  ) {
-    this.resource = this.people.entities();
-    const schema = this.resource.structuredType();
-    this.cols =
-      schema !== null
-        ? (
-            schema?.fields({
-              include_parents: true,
-              include_navigation: false,
-            }) || []
-          ).map((f) => ({
-            field: f.name,
-            header: f.name,
-            sort: !f.collection,
-            filter: f.type === EdmType.String,
-          }))
-        : [];
-    // Try toJSON, fromJSON
-    this.resource = this.client.fromJson<Person>(
-      this.resource.toJson(),
-    ) as ODataEntitySetResource<Person>;
+  constructor() {
+    const schema = this.peopleService.structuredTypeSchema;
+    if (schema !== null) {
+      const cols = (schema?.fields({ include_parents: true, include_navigation: false }) ?? [])
+        .map((f) => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === EdmType.String }));
+      this.cols.set(cols);
+    }
   }
 
   fetch(resource: ODataEntitySetResource<Person>) {
-    this.loading = true;
+    this.loading.set(true);
     resource
       .fetch({ withCount: true, fetchPolicy: 'cache-and-network' })
       .subscribe(({ entities, annots }) => {
-        this.rows = entities || [];
-        if (!this.total) this.total = annots.count as number;
-        if (!this.size) this.size = annots.skip || this.rows.length;
-        this.loading = false;
+        this.rows.set(entities ?? []);
+        this.total.set(annots.count ?? entities?.length ?? 0);
+        this.size.set(annots.skip ?? entities?.length ?? 0);
+        this.loading.set(false);
       });
   }
 
@@ -124,24 +105,24 @@ export class PeopleComponent {
     const input = event.target as HTMLInputElement;
     const value = input.value;
     field = `tolower(${field})`;
+    const resource = this.peopleService.entities();
     if (value) {
-      let filter = { [field]: { contains: value.toLowerCase() } };
-      this.resource.query((q) => q.filter().assign(filter));
+      resource.query((q) => {
+        let alias = q.alias(value.toLowerCase());
+        q.filter().assign({ [field]: { contains: alias } });
+      });
     } else {
-      this.resource.query((q) => q.filter().unset(field));
+      resource.query((q) => q.filter().unset(field));
     }
-    this.total = 0;
-    this.fetch(this.resource);
+    this.fetch(resource);
   }
 
   loadPeopleLazy(event: TableLazyLoadEvent) {
-    //Pagination
-    let resource = this.resource.clone().query((q) => {
+    const resource = this.peopleService.entities().query((q) => {
       if (event.first) q.skip(event.first);
       if (event.rows) q.top(event.rows);
-      //Ordering
       if (event.sortField !== undefined)
-        q.orderBy([[event.sortField as keyof Person, event.sortOrder == -1 ? 'desc' : 'asc']]);
+        q.orderBy(({e, t}) => (event.sortOrder == 1) ? e().ascending(event.sortField) : e().descending(event.sortField))
     });
     this.fetch(resource);
   }
