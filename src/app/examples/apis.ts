@@ -1,6 +1,8 @@
 import { ODataClient, ODataServiceFactory } from "angular-odata";
 import { Injector } from "@angular/core";
 import { firstValueFrom } from "rxjs";
+import { Airport } from "../trip-pin";
+import { Order } from "../northwind";
 
 async function usingODataClientForQueryingAirportsUsingTripPinAsyncApi(injector: Injector) {
   const client = injector.get(ODataClient);
@@ -12,10 +14,9 @@ async function usingODataClientForQueryingAirportsUsingTripPinAsyncApi(injector:
       api.populate(metadata);
     });
   }
-  const service = factory.entitySet("Airports", "TripPinAsync");
-  const airports = service.collection();
-  airports.fetch().subscribe(console.log);
-  console.log(service);
+  const entitySet = api.entitySet<Airport>("Airports")
+  const entities = await firstValueFrom(entitySet.fetchEntities());
+  console.log(entities);
 }
 
 async function usingODataClientForQueryingAirportsUsingMicrosoftGraph(injector: Injector) {
@@ -38,6 +39,9 @@ async function usingODataClientForQueryingAirportsUsingTripPin(injector: Injecto
       api.populate(metadata);
     });
   }
+  const entitySet = api.entitySet<Airport>("Airports")
+  const entities = await firstValueFrom(entitySet.fetchEntities());
+  console.log(entities);
 }
 
 
@@ -50,6 +54,9 @@ async function usingODataClientForQueryingUsingNorthwind(injector: Injector) {
       api.populate(metadata);
     });
   }
+  const entitySet = api.entitySet<Order>("Orders")
+  const entities = await firstValueFrom(entitySet.fetchEntities());
+  console.log(entities);
 }
 
 export default async (injector: Injector) => {
