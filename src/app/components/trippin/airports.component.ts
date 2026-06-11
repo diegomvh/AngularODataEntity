@@ -67,7 +67,7 @@ export class AirportsComponent {
   odataClient = inject(ODataClient);
   airportsService = inject(AirportsService);
   rows = signal<Airport[]>([]);
-  loading = signal<boolean>(false);
+  loading = signal<boolean | null>(null);
   total = signal<number>(0);
   size = signal<number>(0);
   cols = signal<any[]>([]);
@@ -82,13 +82,16 @@ export class AirportsComponent {
   }
 
   fetch(resource: ODataEntitySetResource<Airport>) {
+    const firstFetch = this.loading() === null; 
     this.loading.set(true);
     resource
-      .fetch({ withCount: true, fetchPolicy: 'cache-and-network' })
+      .fetch({ withCount: firstFetch, fetchPolicy: 'cache-and-network' })
       .subscribe(({ entities, annots }) => {
         this.rows.set(entities ?? []);
-        this.total.set(annots.count ?? entities?.length ?? 0);
-        this.size.set(annots.skip ?? entities?.length ?? 0);
+        if (firstFetch) {
+          this.total.set(annots.count ?? entities?.length ?? 0);
+          this.size.set(annots.skip ?? entities?.length ?? 0);
+        }
         this.loading.set(false);
       });
   }
@@ -96,16 +99,12 @@ export class AirportsComponent {
   filter(event: Event, field: string) {
     const input = event.target as HTMLInputElement;
     const value = input.value;
-    field = `tolower(${field})`;
     const resource = this.airportsService.entities();
     if (value) {
       resource.query((q) => {
-        let alias = q.alias(value.toLowerCase());
-        q.filter().assign({ [field]: { contains: alias } });
+        q.filter(({e, t, f}) => e().contains(f.toLower(field), value.toLowerCase()));
       });
-    } else {
-      resource.query((q) => q.filter().unset(field));
-    }
+    } 
     this.fetch(resource);
   }
 

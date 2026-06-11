@@ -24,14 +24,10 @@ export class PersonComponent {
         q.expand(({ e, t }) =>
           e()
             .field(t.Photo)
+            .field(t.Trips)
             .field(t.Friends, (f) => {
-              f.expand(({ e, t }) => e().field(t.Emails));
-              f.levels(10);
+              f.levels(2);
             })
-            .field(t.Trips, (f) => {
-              f.expand(({ e, t }) => e().field(t.Photos).field(t.PlanItems));
-              f.orderBy(({ e, t }) => e().ascending(t.Photos));
-            }),
         ),
       )
       .fetch()

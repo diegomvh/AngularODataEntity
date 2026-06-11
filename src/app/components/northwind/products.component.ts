@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { EdmType, ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
+import { Component, inject, signal } from '@angular/core';
+import { EdmType, ODataEntitySetResource } from 'angular-odata';
 import { Product, ProductsService } from '../../northwind';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
@@ -8,17 +8,16 @@ import { CommonModule } from '@angular/common';
   selector: 'northwind-products',
   standalone: true,
   imports: [CommonModule, TableModule],
-  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<p-table
     #table
-    [columns]="cols"
-    [value]="rows"
+    [columns]="cols()"
+    [value]="rows()"
     [lazy]="true"
     (onLazyLoad)="loadProductsLazy($event)"
     [paginator]="true"
-    [rows]="size"
-    [totalRecords]="total"
-    [loading]="loading"
+    [rows]="size()"
+    [totalRecords]="total()"
+    [loading]="loading()"
   >
     <ng-template pTemplate="header" let-columns>
       <tr>
@@ -27,7 +26,6 @@ import { CommonModule } from '@angular/common';
             {{ col.header }}
             @if (col.sort) {
               <p-sortIcon
-                *ngIf="col.sort"
                 [field]="col.field"
                 ariaLabel="Activate to sort"
                 ariaLabelDesc="Activate to sort in descending order"
@@ -41,12 +39,7 @@ import { CommonModule } from '@angular/common';
         @for (col of columns; track col) {
           <th>
             @if (col.filter) {
-              <input
-                *ngIf="col.filter"
-                pInputText
-                type="text"
-                (input)="filter($event, col.field)"
-              />
+              <input pInputText type="text" (input)="filter($event, col.field)" />
             }
           </th>
         }
@@ -64,67 +57,54 @@ import { CommonModule } from '@angular/common';
   </p-table>`,
 })
 export class ProductsComponent {
-  rows: Product[] = [];
-  cols: any[];
+  productsService = inject(ProductsService);
+  rows = signal<Product[]>([]);
+  loading = signal<boolean | null>(null);
+  total = signal<number>(0);
+  size = signal<number>(6);
+  cols = signal<any[]>([]);
 
-  total: number = 0;
-  size: number = 6;
-
-  resource: ODataEntitySetResource<Product>;
-  loading: boolean = false;
-
-  constructor(private products: ProductsService) {
-    this.resource = this.products.entities().query((q) => q.top(this.size));
-    const schema = this.resource.structuredType();
-    this.cols =
-      schema !== null
-        ? (
-            schema?.fields({
-              include_parents: true,
-              include_navigation: false,
-            }) || []
-          )
-            .filter((f) => !f.navigation)
-            .map((f) => ({
-              field: f.name,
-              header: f.name,
-              sort: !f.collection,
-              filter: f.type === EdmType.String,
-            }))
-        : [];
+  constructor() {
+    const schema = this.productsService.structuredTypeSchema;
+    if (schema !== null) {
+      const cols = (schema?.fields({ include_parents: true, include_navigation: false }) ?? [])
+        .filter((f) => !f.navigation)
+        .map((f) => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === EdmType.String }));
+      this.cols.set(cols);
+    }
   }
 
   fetch(resource: ODataEntitySetResource<Product>) {
-    this.loading = true;
-    resource.fetch({ withCount: true }).subscribe(({ entities, annots }) => {
-      this.rows = entities || [];
-      if (!this.total) this.total = annots.count as number;
-      this.loading = false;
+    const firstFetch = this.loading() === null;
+    this.loading.set(true);
+    resource.fetch({ withCount: firstFetch, fetchPolicy: 'cache-and-network' }).subscribe(({ entities, annots }) => {
+      this.rows.set(entities ?? []);
+      if (firstFetch) {
+        this.total.set(annots.count ?? entities?.length ?? 0);
+        this.size.set(annots.skip ?? entities?.length ?? 0);
+      }
+      this.loading.set(false);
     });
   }
 
   filter(event: Event, field: string) {
     const input = event.target as HTMLInputElement;
     const value = input.value;
-    field = `tolower(${field})`;
+    const resource = this.productsService.entities();
     if (value) {
-      let filter = { [field]: { contains: value.toLowerCase() } };
-      this.resource.query((q) => q.filter().assign(filter));
-    } else {
-      this.resource.query((q) => q.filter().unset(field));
+      resource.query((q) => {
+        q.filter(({e, t, f}) => e().contains(f.toLower(field), value.toLowerCase()));
+      });
     }
-    this.total = 0;
-    this.fetch(this.resource);
+    this.fetch(resource);
   }
 
   loadProductsLazy(event: TableLazyLoadEvent) {
-    //Pagination
-    let resource = this.resource.clone().query((q) => {
+    const resource = this.productsService.entities().query((q) => {
       if (event.first) q.skip(event.first);
       if (event.rows) q.top(event.rows);
-      //Ordering
       if (event.sortField !== undefined)
-        q.orderBy([[event.sortField as keyof Product, event.sortOrder == -1 ? 'desc' : 'asc']]);
+        q.orderBy(({e, t}) => (event.sortOrder == 1) ? e().ascending(event.sortField) : e().descending(event.sortField))
     });
     this.fetch(resource);
   }

@@ -1,4 +1,4 @@
-import { Component, ViewChild, inject, signal } from '@angular/core';
+import { Component, inject, signal, viewChild } from '@angular/core';
 import { PeopleService, Person, PersonGender } from '../../trip-pin';
 import { ODataEntitySetResource, ODataClient, EdmType } from 'angular-odata';
 import { PersonComponent } from './person.component';
@@ -73,12 +73,12 @@ export class PeopleComponent {
   odataClient = inject(ODataClient);
   peopleService = inject(PeopleService);
   rows = signal<Person[]>([]);
-  loading = signal<boolean>(false);
+  loading = signal<boolean | null>(null);
   total = signal<number>(0);
   size = signal<number>(0);
   cols = signal<any[]>([]);
 
-  @ViewChild('person') person!: PersonComponent;
+  person = viewChild.required<PersonComponent>('person');
 
   constructor() {
     const schema = this.peopleService.structuredTypeSchema;
@@ -90,13 +90,16 @@ export class PeopleComponent {
   }
 
   fetch(resource: ODataEntitySetResource<Person>) {
+    const firstFetch = this.loading() === null; 
     this.loading.set(true);
     resource
-      .fetch({ withCount: true, fetchPolicy: 'cache-and-network' })
+      .fetch({ withCount: firstFetch, fetchPolicy: 'cache-and-network' })
       .subscribe(({ entities, annots }) => {
         this.rows.set(entities ?? []);
-        this.total.set(annots.count ?? entities?.length ?? 0);
-        this.size.set(annots.skip ?? entities?.length ?? 0);
+        if (firstFetch) {
+          this.total.set(annots.count ?? entities?.length ?? 0);
+          this.size.set(annots.skip ?? entities?.length ?? 0);
+        }
         this.loading.set(false);
       });
   }
@@ -104,15 +107,11 @@ export class PeopleComponent {
   filter(event: Event, field: string) {
     const input = event.target as HTMLInputElement;
     const value = input.value;
-    field = `tolower(${field})`;
     const resource = this.peopleService.entities();
     if (value) {
       resource.query((q) => {
-        let alias = q.alias(value.toLowerCase());
-        q.filter().assign({ [field]: { contains: alias } });
+        q.filter(({e, t, f}) => e().contains(f.toLower(field), value.toLowerCase()));
       });
-    } else {
-      resource.query((q) => q.filter().unset(field));
     }
     this.fetch(resource);
   }
@@ -128,6 +127,6 @@ export class PeopleComponent {
   }
 
   viewPerson(person: Person) {
-    this.person.show(person.UserName);
+    this.person().show(person.UserName);
   }
 }
