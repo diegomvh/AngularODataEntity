@@ -51,7 +51,7 @@ export function createCustomMixedLoader(
   const configs$ = httpClient.get(`${serviceRootUrl}/$metadata`, { responseType: 'text' }).pipe(
     map((meta) => {
       let configs = [
-        new ODataMetadataParser(meta).metadata().toConfig({ serviceRootUrl, name: 'TrippinAsync' }),
+        new ODataMetadataParser(meta).metadata().toConfig({ serviceRootUrl, name: 'TripPinAsync' }),
       ];
       if (Array.isArray(syncConfig)) {
         configs = [...configs, ...syncConfig];

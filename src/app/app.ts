@@ -33,11 +33,12 @@ import {
   ProductsComponent,
 } from './components/northwind';
 import { TableModule } from 'primeng/table';
-import trippinQueries from './examples/trippin/queries';
-import trippinCache from './examples/trippin/cache';
-import trippinJson from './examples/trippin/json';
-import trippinModels from './examples/trippin/models';
-import northwindCompute from './examples/northwind/compute';
+import trippinQueriesExample from './examples/trippin/queries';
+import trippinCacheExample from './examples/trippin/cache';
+import trippinJsonExample from './examples/trippin/json';
+import trippinModelsExample from './examples/trippin/models';
+import northwindComputeExample from './examples/northwind/compute';
+import apisExample from './examples/apis';
 
 @Component({
   selector: 'app-root',
@@ -70,10 +71,9 @@ export class App {
     private ordersService: OrdersService,
   ) {
     (<any>window).APP = this;
-    //this.queries();
+    this.queries();
     //this.encode();
     //this.northwind();
-    //this.queries();
 
     afterRenderEffect(() => {
       let col = new PersonCollection();
@@ -138,11 +138,12 @@ export class App {
 
   queries() {
     //this.entitiesWithoutTypes();
-    //trippinCache(this.injector);
-    //trippinJson(this.injector);
-    //trippinQueries(this.injector);
-    trippinModels(this.injector);
-    //northwindCompute(this.injector);
+    apisExample(this.injector);
+    //trippinCacheExample(this.injector);
+    //trippinJsonExample(this.injector);
+    //trippinQueriesExample(this.injector);
+    //trippinModelsExample(this.injector);
+    //northwindComputeExample(this.injector);
     //this.navigation();
     //this.property();
     //this.mediaEntity();
