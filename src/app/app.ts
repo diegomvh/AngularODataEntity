@@ -5,7 +5,6 @@ import {
   Injector,
   INJECTOR,
   OnInit,
-  ChangeDetectionStrategy,
 } from '@angular/core';
 import { EdmType, ODataClient, ODataServiceFactory } from 'angular-odata';
 import {
@@ -57,7 +56,6 @@ import northwindCompute from './examples/northwind/compute';
     EmployeesComponent,
   ],
   templateUrl: './app.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.css',
 })
 export class App {

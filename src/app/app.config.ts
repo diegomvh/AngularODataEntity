@@ -17,7 +17,6 @@ import {
   ODataRequest,
   ODataAsyncLoader,
   ODataMetadataParser,
-  PassedInitialConfig,
   ODATA_CONFIG,
 } from 'angular-odata';
 import { map, Observable } from 'rxjs';
