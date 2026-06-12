@@ -103,6 +103,7 @@ export const appConfig: ApplicationConfig = {
         {
           name: 'MicrosoftGraph',
           serviceRootUrl: 'https://graph.microsoft.com/v1.0/',
+          populateFromMetadata: true,
           options: {
             stringAsEnum: true,
             stripMetadata: 'minimal',
