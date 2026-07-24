@@ -26,12 +26,12 @@ import { CommonModule } from '@angular/common';
             <th [pSortableColumn]="col.sort ? col.field : ''">
               {{ col.header }}
               @if (col.sort) {
-                <p-sortIcon
+                <p-sorticon
                   [field]="col.field"
                   ariaLabel="Activate to sort"
                   ariaLabelDesc="Activate to sort in descending order"
                   ariaLabelAsc="Activate to sort in ascending order"
-                ></p-sortIcon>
+                ></p-sorticon>
               }
             </th>
           }

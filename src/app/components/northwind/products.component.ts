@@ -1,5 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
-import { EdmType, ODataEntitySetResource } from 'angular-odata';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { EdmType, ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
 import { Product, ProductsService } from '../../northwind';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
   selector: 'northwind-products',
   standalone: true,
   imports: [CommonModule, TableModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<p-table
     #table
     [columns]="cols()"
@@ -25,12 +26,12 @@ import { CommonModule } from '@angular/common';
           <th [pSortableColumn]="col.sort ? col.field : ''">
             {{ col.header }}
             @if (col.sort) {
-              <p-sortIcon
+              <p-sorticon
                 [field]="col.field"
                 ariaLabel="Activate to sort"
                 ariaLabelDesc="Activate to sort in descending order"
                 ariaLabelAsc="Activate to sort in ascending order"
-              ></p-sortIcon>
+              ></p-sorticon>
             }
           </th>
         }
@@ -103,6 +104,7 @@ export class ProductsComponent {
     const resource = this.productsService.entities().query((q) => {
       if (event.first) q.skip(event.first);
       if (event.rows) q.top(event.rows);
+      //Ordering
       if (event.sortField !== undefined)
         q.orderBy(({e, t}) => (event.sortOrder == 1) ? e().ascending(event.sortField) : e().descending(event.sortField))
     });

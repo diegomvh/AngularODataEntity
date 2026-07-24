@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Airline, AirlinesService } from '../../trip-pin';
 import { ODataEntitySetResource, ODataClient, EdmType } from 'angular-odata';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
   selector: 'trip-airlines',
   standalone: true,
   imports: [CommonModule, TableModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<p-table
     #table
     [columns]="cols()"
@@ -25,12 +26,12 @@ import { CommonModule } from '@angular/common';
           <th [pSortableColumn]="col.sort ? col.field : ''">
             {{ col.header }}
             @if (col.sort) {
-              <p-sortIcon
+              <p-sorticon
                 [field]="col.field"
                 ariaLabel="Activate to sort"
                 ariaLabelDesc="Activate to sort in descending order"
                 ariaLabelAsc="Activate to sort in ascending order"
-              ></p-sortIcon>
+              ></p-sorticon>
             }
           </th>
         }

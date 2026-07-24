@@ -82,6 +82,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(withXhr()),
     providePrimeNG({
+      license: "eyJpZCI6ImQ1ZDA3MzRlLWM2ZjMtNGNhNi04YTRjLWMzMTA3YTJlNWQ3YiIsInByb2R1Y3QiOiJwcmltZXVpIiwidGllciI6ImNvbW11bml0eSIsInR5cGUiOiJkZXYiLCJpYXQiOjE3ODQ4OTU2NTUsImV4cCI6MTgxNjQzMTY1NX0.2S-NDcgXxSZLiqerg9b8gfQOgi1jm4W0cHw-6GRNVn0teXS578qSf2NcBXvAJ1bWER_vBcOu4OpONf_ECoikCQ",
       theme: {
         preset: Material,
       },
