@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { EdmType, ODataEntitySetResource, ODataStructuredType } from 'angular-odata';
+import { Component, inject, signal } from '@angular/core';
+import { EdmType, ODataEntitySetResource } from 'angular-odata';
 import { Employee, EmployeesService } from '../../northwind';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, TableModule],
   template: `<p-table
     #table
-    [columns]="cols()"
     [value]="rows()"
     [lazy]="true"
     (onLazyLoad)="loadEmployeesLazy($event)"
@@ -19,9 +18,9 @@ import { CommonModule } from '@angular/common';
     [totalRecords]="total()"
     [loading]="loading()"
   >
-    <ng-template pTemplate="header" let-columns>
+    <ng-template #header>
       <tr>
-        @for (col of columns; track col) {
+        @for (col of columns(); track col) {
           <th [pSortableColumn]="col.sort ? col.field : ''">
             {{ col.header }}
             @if (col.sort) {
@@ -36,7 +35,7 @@ import { CommonModule } from '@angular/common';
         }
       </tr>
       <tr>
-        @for (col of columns; track col) {
+        @for (col of columns(); track col) {
           <th>
             @if (col.filter) {
               <input pInputText type="text" (input)="filter($event, col.field)" />
@@ -45,11 +44,11 @@ import { CommonModule } from '@angular/common';
         }
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <ng-template #body let-employee>
       <tr>
-        @for (col of columns; track col) {
+        @for (col of columns(); track col) {
           <td>
-            <span>{{ rowData[col.field] }}</span>
+            <span>{{ employee[col.field] }}</span>
           </td>
         }
       </tr>
@@ -62,7 +61,7 @@ export class EmployeesComponent {
   loading = signal<boolean | null>(null);
   total = signal<number>(0);
   size = signal<number>(6);
-  cols = signal<any[]>([]);
+  columns = signal<any[]>([]);
 
   constructor() {
     const schema = this.employeesService.structuredTypeSchema;
@@ -75,7 +74,7 @@ export class EmployeesComponent {
           sort: !f.collection,
           filter: f.type === EdmType.String,
         }));
-      this.cols.set(cols);
+      this.columns.set(cols);
     }
   }
 
