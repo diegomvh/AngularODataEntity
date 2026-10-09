@@ -11,7 +11,16 @@ import trippinQueries from './examples/trippin/queries';
 import trippinCache from './examples/trippin/cache';
 import trippinJson from './examples/trippin/json';
 import trippinModels from './examples/trippin/models';
+import trippinFunctions from './examples/trippin/functions';
+import trippinActions from './examples/trippin/actions';
+import trippinBatch from './examples/trippin/batch';
+import trippinSingleton from './examples/trippin/singleton';
+import trippinNavigation from './examples/trippin/navigation';
+import trippinEvents from './examples/trippin/events';
+import trippinAggregations from './examples/trippin/aggregations';
 import northwindCompute from './examples/northwind/compute';
+import northwindQueries from './examples/northwind/queries';
+import northwindAggregations from './examples/northwind/aggregations';
 
 @Component({
   selector: 'app-root',
@@ -43,8 +52,8 @@ export class App implements OnInit {
     private productsService: ProductsService,
     private ordersService: OrdersService
   ) {
-    (<any>window).APP = this;
-    //this.queries();
+    (<any>globalThis).APP = this;
+    this.queries();
     //this.encode();
     //this.northwind();
     //this.queries();
@@ -100,11 +109,20 @@ export class App implements OnInit {
 
   queries() {
     //this.entitiesWithoutTypes();
-    //trippinCache(this.injector);
-    //trippinJson(this.injector);
-    //trippinQueries(this.injector);
+    trippinActions(this.injector);
+    trippinAggregations(this.injector);
+    trippinBatch(this.injector);
+    trippinCache(this.injector);
+    trippinEvents(this.injector);
+    trippinFunctions(this.injector);
+    trippinJson(this.injector);
     trippinModels(this.injector);
-    //northwindCompute(this.injector);
+    trippinNavigation(this.injector);
+    trippinQueries(this.injector);
+    trippinSingleton(this.injector);
+    northwindCompute(this.injector);
+    northwindQueries(this.injector);
+    northwindAggregations(this.injector);
     //this.navigation();
     //this.property();
     //this.mediaEntity();

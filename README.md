@@ -21,6 +21,14 @@ The demo connects to two public OData reference services:
 | In-memory and IndexedDB caching, with the different `fetchPolicy` options | `src/app/examples/trippin/cache.ts` |
 | Aggregations (`$apply` / `groupBy`) | `src/app/examples/trippin/aggregations.ts` |
 | Computed properties (`$compute`) | `src/app/examples/northwind/compute.ts` |
+| Bound and unbound functions (`GetNearestAirport`, `GetFavoriteAirline`, ...) | `src/app/examples/trippin/functions.ts` |
+| Bound and unbound actions (`ShareTrip`, `ResetDataSource`) | `src/app/examples/trippin/actions.ts` |
+| Grouping reads and writes in a single `$batch` request | `src/app/examples/trippin/batch.ts` |
+| Singletons (`Me`): fetch, navigate and modify | `src/app/examples/trippin/singleton.ts` |
+| Navigation properties, `cast` to derived types, `$count` and `$ref` links | `src/app/examples/trippin/navigation.ts` |
+| Model and collection events, change tracking, `reset` and validation | `src/app/examples/trippin/events.ts` |
+| Typed filters, sorting, `$select`, `$expand` with nested options, `any`/`all` lambdas and paging | `src/app/examples/northwind/queries.ts` |
+| `$apply` with `filter`, `groupby` and `aggregate` | `src/app/examples/northwind/aggregations.ts` |
 | Serializing and restoring resources (`toJson` / `fromJson`) | `src/app/examples/trippin/json.ts` |
 | CRUD with ETags, references, properties, EDM parsers, dynamic metadata | `src/app/app.ts` |
 
@@ -94,11 +102,12 @@ const peopleService = inject(PeopleService);
 
 peopleService
   .entities()
-  .query((q) => q
-    .filter(({ e, t }) => e().contains(t.UserName, 'russell'))
-    .expand(({ e, t }) => e().field(t.Friends))
-    .orderBy([['LastName', 'asc']])
-    .top(10))
+  .query((q) => {
+    q.filter(({ e, t }) => e().contains(t.UserName, 'russell'));
+    q.expand(({ e, t }) => e().field(t.Friends));
+    q.orderBy([['LastName', 'asc']]);
+    q.top(10);
+  })
   .fetch({ withCount: true })
   .subscribe(({ entities, annots }) => console.log(entities, annots.count));
 ```
