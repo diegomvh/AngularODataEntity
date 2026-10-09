@@ -1,5 +1,3 @@
-
-
 import { City } from './city.complex';
 
 // #region Custom
@@ -8,6 +6,8 @@ export const LocationComplexType = 'Microsoft.OData.SampleService.Models.TripPin
 export interface Location {
   Address: string;
   City: City;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

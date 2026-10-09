@@ -1,44 +1,17 @@
-import {
-  afterRenderEffect,
-  Component,
-  Inject,
-  Injector,
-  INJECTOR,
-  OnInit,
-} from '@angular/core';
+import { Component, Inject, Injector, INJECTOR, OnInit } from '@angular/core';
 import { EdmType, ODataClient, ODataServiceFactory } from 'angular-odata';
-import {
-  Airport,
-  DefaultContainerService,
-  Flight,
-  Event as PlanEvent,
-  PeopleService,
-  Person,
-  PersonCollection,
-  PersonGender,
-  PersonGenderEnumType,
-  PersonModel,
-  Photo,
-  PhotosService,
-  TripPinModule,
-} from './trip-pin';
+import { Airport, DefaultContainerService, Flight, Event as PlanEvent, PeopleService, Person, PersonCollection, PersonGender, PersonGenderEnumType, PersonModel, Photo, PhotosService, TripPinModule } from './trip-pin';
 import { NorthwindModule, OrdersService, ProductsService } from './northwind';
 import { filter, firstValueFrom, map, switchMap } from 'rxjs';
 import { TabsModule } from 'primeng/tabs';
 import { AirlinesComponent, AirportsComponent, PeopleComponent } from './components/trippin';
-import {
-  CategoriesComponent,
-  EmployeesComponent,
-  OrdersComponent,
-  ProductsComponent,
-} from './components/northwind';
+import { CategoriesComponent, EmployeesComponent, OrdersComponent, ProductsComponent } from './components/northwind';
 import { TableModule } from 'primeng/table';
-import trippinQueriesExample from './examples/trippin/queries';
-import trippinCacheExample from './examples/trippin/cache';
-import trippinJsonExample from './examples/trippin/json';
-import trippinModelsExample from './examples/trippin/models';
-import northwindComputeExample from './examples/northwind/compute';
-import apisExample from './examples/apis';
+import trippinQueries from './examples/trippin/queries';
+import trippinCache from './examples/trippin/cache';
+import trippinJson from './examples/trippin/json';
+import trippinModels from './examples/trippin/models';
+import northwindCompute from './examples/northwind/compute';
 
 @Component({
   selector: 'app-root',
@@ -54,12 +27,12 @@ import apisExample from './examples/apis';
     CategoriesComponent,
     ProductsComponent,
     OrdersComponent,
-    EmployeesComponent,
+    EmployeesComponent
   ],
   templateUrl: './app.html',
-  styleUrl: './app.css',
+  styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   constructor(
     @Inject(INJECTOR) private injector: Injector,
     private client: ODataClient,
@@ -68,40 +41,26 @@ export class App {
     private peopleService: PeopleService,
     private photosService: PhotosService,
     private productsService: ProductsService,
-    private ordersService: OrdersService,
+    private ordersService: OrdersService
   ) {
     (<any>window).APP = this;
-    this.queries();
+    //this.queries();
     //this.encode();
     //this.northwind();
-
-    afterRenderEffect(() => {
-      let col = new PersonCollection();
-      col.fetchAll().subscribe(console.log);
-      col = new PersonCollection();
-      col.fetchAll().subscribe((people) => {
-        people[0]
-          .query((q) =>
-            q.expand(({ e, t }) =>
-              e().field(t.Trips, (f) =>
-                f.expand(({ e, t, o }) =>
-                  e()
-                    .field(t.Photos)
-                    .field(t.PlanItems, (f) =>
-                      f.expand(({ e, t, o }) =>
-                        e().field(
-                          o.cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight')
-                            .Airline,
-                        ),
-                      ),
-                    ),
-                ),
-              ),
-            ),
-          )
-          .fetch()
-          .subscribe(console.log);
-      });
+    //this.queries();
+  }
+  ngOnInit(): void {
+    let col = new PersonCollection();
+    col.fetchAll().subscribe(console.log);
+    col = new PersonCollection();
+    col.fetchAll().subscribe(people => {
+      people[0].query(q => 
+        q.expand(({e, t}) => 
+          e().field(t.Trips, f => f.expand(({e, t, o}) => e().field(t.Photos).field(t.PlanItems, 
+            f => f.expand(({e, t, o}) => 
+              e()
+                .field(o.cast<Flight>('Microsoft.OData.SampleService.Models.TripPin.Flight').Airline)
+            )))))).fetch().subscribe(console.log);
     });
   }
 
@@ -132,18 +91,20 @@ export class App {
     console.log(female);
     // Structured Parser
     let personSchema = this.peopleService.structuredTypeSchema;
-    let male = personSchema?.field('Gender')?.enumType().encode(PersonGender.Male);
+    let male = personSchema
+      ?.field('Gender')
+      ?.enumType()
+      .encode(PersonGender.Male);
     console.log(male);
   }
 
   queries() {
     //this.entitiesWithoutTypes();
-    apisExample(this.injector);
-    //trippinCacheExample(this.injector);
-    //trippinJsonExample(this.injector);
-    //trippinQueriesExample(this.injector);
-    //trippinModelsExample(this.injector);
-    //northwindComputeExample(this.injector);
+    //trippinCache(this.injector);
+    //trippinJson(this.injector);
+    //trippinQueries(this.injector);
+    trippinModels(this.injector);
+    //northwindCompute(this.injector);
     //this.navigation();
     //this.property();
     //this.mediaEntity();
@@ -169,7 +130,9 @@ export class App {
   filterPeopleByGender() {
     let personGenderType = this.client.enumTypeForType<PersonGender>(PersonGenderEnumType);
     let female = personGenderType.encode(PersonGender.Female);
-    let femaleQuery = this.peopleService.entities().query((q) => q.filter({ Gender: female }));
+    let femaleQuery = this.peopleService
+      .entities()
+      .query((q) => q.filter({ Gender: female }));
     console.log(`${femaleQuery}`);
     femaleQuery.fetchAll().subscribe(console.log);
   }
@@ -181,7 +144,7 @@ export class App {
     person
       .fetch()
       .subscribe(({ entity, annots }) =>
-        console.log(annots.property<Person>('Emails', 'collection')),
+        console.log(annots.property<Person>('Emails', 'collection'))
       );
 
     let friends = person.navigationProperty<Person>('Friends');
@@ -193,7 +156,7 @@ export class App {
     // Create Service with Type
     let peopleService = this.factory.entitySet<Person>(
       'People',
-      'Microsoft.OData.SampleService.Models.TripPin.Person',
+      'Microsoft.OData.SampleService.Models.TripPin.Person'
     );
     let person = peopleService.entity('scottketchum');
     person.property<string[]>('Emails').fetch().subscribe(console.log);
@@ -227,14 +190,9 @@ export class App {
   async mediaEntity() {
     let photos = this.factory.entitySet<Photo>(
       'Photos',
-      'Microsoft.OData.SampleService.Models.TripPin.Photo',
+      'Microsoft.OData.SampleService.Models.TripPin.Photo'
     );
-    for (var photo of await firstValueFrom(
-      photos
-        .entities()
-        .fetchAll()
-        .pipe(map(({ entities }) => entities)),
-    )) {
+    for (var photo of await firstValueFrom(photos.entities().fetchAll().pipe(map(({entities}) => entities)))) {
       photos.entity(photo).media().fetchArraybuffer().subscribe(console.log);
       photos.entity(photo).media().fetchBlob().subscribe(console.log);
     }
@@ -243,14 +201,9 @@ export class App {
   async uploadPhotos() {
     let photos = this.factory.entitySet<Photo>(
       'Photos',
-      'Microsoft.OData.SampleService.Models.TripPin.Photo',
+      'Microsoft.OData.SampleService.Models.TripPin.Photo'
     );
-    for (var photo of await firstValueFrom(
-      photos
-        .entities()
-        .fetchAll()
-        .pipe(map(({ entities }) => entities)),
-    )) {
+    for (var photo of await firstValueFrom(photos.entities().fetchAll().pipe(map(({entities}) => entities)))) {
       let image = await firstValueFrom(photos.entity(photo).media().fetchBlob());
       console.log(image.type);
       let res = await firstValueFrom(photos.entity(photo).media().upload(image));
@@ -267,89 +220,84 @@ export class App {
     let etag;
 
     // Service With Parser From Factory
-    const serviceWithParser = this.factory.entitySet<Person>('People', 'TripPin');
+    const serviceWithParser = this.factory.entitySet<Person>(
+      'People',
+      'TripPin'
+    );
     //Or Use PersonsService Injected
     //const serviceWithParser = this.peopleService;
 
     // Use Person Typed Service
     // Create Person
-    let person = await firstValueFrom(
-      serviceWithParser
-        .create({
-          Emails: ['some@email.com'],
-          UserName: 'someuser',
-          Gender: PersonGender.Male,
-          FirstName: 'Some',
-          LastName: 'User',
+    let person = await firstValueFrom(serviceWithParser
+      .create({
+        Emails: ['some@email.com'],
+        UserName: 'someuser',
+        Gender: PersonGender.Male,
+        FirstName: 'Some',
+        LastName: 'User',
+      })
+      .pipe(
+        map(({ entity, annots }) => {
+          etag = annots.etag;
+          return entity;
         })
-        .pipe(
-          map(({ entity, annots }) => {
-            etag = annots.etag;
-            return entity;
-          }),
-        ),
-    );
+      ));
     console.log(person, etag);
 
     // Retrieve Person
-    person = await firstValueFrom(
-      serviceWithParser
-        .entity('someuser')
-        .fetch()
-        .pipe(
-          map(({ entity, annots }) => {
-            etag = annots.etag;
-            return entity;
-          }),
-        ),
-    );
+    person = await firstValueFrom(serviceWithParser
+      .entity('someuser')
+      .fetch()
+      .pipe(
+        map(({ entity, annots }) => {
+          etag = annots.etag;
+          return entity;
+        })
+      ));
     console.log(person, etag);
 
     if (person !== null) {
       // Update Person
       person.Emails?.push('other@email.com');
-      await firstValueFrom(
-        serviceWithParser.update('someuser', person, { etag }).pipe(
+      await firstValueFrom(serviceWithParser
+        .update('someuser', person, { etag })
+        .pipe(
           map(({ entity, annots }) => {
             etag = annots.etag;
             return entity;
-          }),
-        ),
-      );
+          })
+        ));
     }
     console.log(person, etag);
 
     if (person !== null) {
       // Patch Person
-      await firstValueFrom(
-        serviceWithParser.modify('someuser', { LastName: 'LastName' }, { etag }).pipe(
-          map(({ entity, annots }) => {
-            etag = annots.etag;
-            return entity;
-          }),
-        ),
-      );
-    }
-    console.log(person, etag);
-
-    // Retrieve Person
-    person = await firstValueFrom(
-      serviceWithParser
-        .entity('someuser')
-        .fetch({ etag })
+      await firstValueFrom(serviceWithParser
+        .modify('someuser', { LastName: 'LastName' }, { etag })
         .pipe(
           map(({ entity, annots }) => {
             etag = annots.etag;
             return entity;
-          }),
-        ),
-    );
+          })
+        ));
+    }
+    console.log(person, etag);
+
+    // Retrieve Person
+    person = await firstValueFrom(serviceWithParser
+      .entity('someuser')
+      .fetch({etag})
+      .pipe(
+        map(({ entity, annots }) => {
+          etag = annots.etag;
+          return entity;
+        })
+      ));
     console.log('Fetch', person, etag);
 
     // Delete Person
-    person = await firstValueFrom(
-      serviceWithParser.destroy('someuser', { etag }).pipe(map(({ entity }) => entity)),
-    );
+    person = await firstValueFrom(serviceWithParser.destroy('someuser', { etag }).pipe(map(({entity}) => entity)));
     console.log(person);
   }
 
@@ -370,13 +318,15 @@ export class App {
       .add(diego) // Add is a shortcut for .post()
       .subscribe(console.log);
     // Remove Friend
-    scott.navigationProperty<Person>('Firends').reference().remove(diego).subscribe(console.log);
+    scott
+      .navigationProperty<Person>('Firends')
+      .reference()
+      .remove(diego)
+      .subscribe(console.log);
   }
 
   aggregations() {
-    var genders = this.peopleService
-      .entities()
-      .transform<{ Gender: PersonGender }>(({ e, t }) => e().groupBy((e) => [t.Gender]));
+    var genders = this.peopleService.entities().transform<{Gender: PersonGender}>(({e, t}) => e().groupBy((e) => [t.Gender]));
     genders.fetch().subscribe(console.log);
   }
 
@@ -385,53 +335,36 @@ export class App {
   }
 
   microsoftGraph() {
-    const api = this.client.apiFor('MicrosoftGraph');
-    api
-      .metadata()
-      .fetch()
-      .subscribe((metadata) => {
-        console.log('ready');
-        api.populate(metadata);
-        (<any>window).METADATA = metadata;
-        (<any>window).API = api;
-      });
+    const api = this.client.apiFor("MicrosoftGraph");
+    api.metadata().fetch().subscribe(metadata => {
+      console.log("ready");
+      (<any>window).METADATA = metadata;
+      (<any>window).API = api;
+    });
   }
 
   tripPinDynamic() {
-    const api = this.client.apiFor('TripPinDynamic');
-    api
-      .metadata()
-      .fetch()
-      .subscribe((metadata) => {
-        const username = metadata.Schemas.find(
-          (s) => s.Namespace === 'Microsoft.OData.SampleService.Models.TripPin',
-        )
-          ?.EntityType?.find((e) => e.Name === 'Person')
-          ?.Property?.find((p) => p.Name === 'UserName');
-        console.log(
-          username?.Annotation?.find(
-            (a) => a.Term === 'Org.OData.Core.V1.Permissions',
-          )?.EnumMember?.map((m: any) => m.text),
-        );
-        api.populate(metadata);
-        const entitySet = api.entitySet<Person>('People');
-        const schema = api.structuredType('Person');
-        const person = entitySet.entity('scottketchum');
-        person.query((q) =>
-          q.expand(({ e, t }) =>
-            e()
-              .field(t.Trips, (f) => f.expand(({ e, t }) => e().field(t.Photos)))
-              .field(t.Friends, (f) => f.expand(({ e, t }) => e().field(t.Friends))),
-          ),
-        );
-        person.fetchModel().subscribe(console.log);
-      });
+    const api = this.client.apiFor("TripPinDynamic");
+    api.metadata().fetch().subscribe(metadata => {
+      const username = metadata.Schemas
+        .find(s => s.Namespace === "Microsoft.OData.SampleService.Models.TripPin")?.EntityType?.find(e => e.Name === "Person")?.Property?.find(p => p.Name === "UserName");
+      console.log(username?.Annotation?.find(a => a.Term === "Org.OData.Core.V1.Permissions")?.EnumMember?.map((m: any) => m.text));
+      const entitySet = api.entitySet<Person>("People");
+      const schema = api.structuredType("Person");
+      const person = entitySet.entity("scottketchum");
+      person.query(q => q.expand(({e, t}) =>
+        e()
+        .field(t.Trips, f => f.expand(({e, t}) => e().field(t.Photos)))
+        .field(t.Friends, f => f.expand(({e, t}) => e().field(t.Friends)))
+      ));
+      person.fetchModel().subscribe(console.log);
+    });
   }
 
   query() {
     this.peopleService
       .entities()
-      .query((q) => q.select('Emails'))
+      .query(q => q.select('Emails'))
       .fetchAll()
       .subscribe(console.log);
   }
@@ -450,7 +383,7 @@ export class App {
         }),
         switchMap((person: any) => {
           return person.Friends.fetch();
-        }),
+        })
       )
       .subscribe(console.log);
   }
@@ -458,21 +391,25 @@ export class App {
   northwindTypeModels() {
     const collection = this.productsService.productCollection();
     collection.query((q) => q.expand({ Category: {} }));
-    collection.fetch().subscribe((models) => {
-      const product1 = models[1];
-      const product2 = models[2];
-      product1.events$.subscribe(console.log);
-      product2.events$.subscribe(console.log);
-      console.log(product1);
-      console.log(product2);
-      product1.Category = product2.Category;
-    });
+    collection
+      .fetch()
+      .subscribe((models) => {
+        const product1 = models[1];
+        const product2 = models[2];
+        product1.events$.subscribe(console.log);
+        product2.events$.subscribe(console.log);
+        console.log(product1);
+        console.log(product2);
+        product1.Category = product2.Category;
+      });
   }
 
   trippinModelsEvents() {
     const people = this.peopleService.entities().asCollection();
 
-    people.events$.pipe(filter((e) => e.type === 'sync')).subscribe((e) => console.log(people));
+    people.events$
+      .pipe(filter((e) => e.type === 'sync'))
+      .subscribe((e) => console.log(people));
     people.events$
       .pipe(filter((e) => e.type === 'attach'))
       .subscribe((e) => firstValueFrom(people.fetch()));
@@ -490,7 +427,7 @@ export class App {
           const order = models[1];
           order.ShipPostalCode = '12345';
           return order.save();
-        }),
+        })
       )
       .subscribe(console.log);
   }

@@ -16,6 +16,8 @@ import { MeService } from './Microsoft/OData/SampleService/Models/TripPin/me.ser
     AirlinesService,
     AirportsService,
     MeService,
-  ]
+  ],
 })
-export class TripPinModule { }
+export class TripPinModule {}
+// #region Custom
+// #endregion Custom

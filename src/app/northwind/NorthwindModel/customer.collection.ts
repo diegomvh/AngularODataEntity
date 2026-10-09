@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Customer } from './customer.entity';
 import { CustomerModel } from './customer.model';
@@ -21,8 +21,12 @@ import { CustomerDemographicCollection } from './customer-demographic.collection
 
 // #region Custom
 // #endregion Custom
-export class CustomerCollection<E extends Customer, M extends CustomerModel<E>> extends ODataCollection<E, M> {
-  
+export class CustomerCollection<
+  E extends Customer,
+  M extends CustomerModel<E>,
+> extends ODataCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

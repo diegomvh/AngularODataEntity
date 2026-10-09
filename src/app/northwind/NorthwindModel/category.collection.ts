@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Category } from './category.entity';
 import { CategoryModel } from './category.model';
@@ -18,8 +18,12 @@ import { ProductCollection } from './product.collection';
 
 // #region Custom
 // #endregion Custom
-export class CategoryCollection<E extends Category, M extends CategoryModel<E>> extends ODataCollection<E, M> {
-  
+export class CategoryCollection<
+  E extends Category,
+  M extends CategoryModel<E>,
+> extends ODataCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

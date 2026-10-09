@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -21,31 +21,30 @@ import { CurrentProductList } from './current-product-list.entity';
 export class CurrentProductListModel<E extends CurrentProductList> extends ODataModel<E> {
   @ModelField()
   declare ProductID: number;
-    public $$ProductID() {
+  public $$ProductID() {
     return this.property<number>('ProductID');
   }
   public $ProductID() {
     return this.getAttribute<number>('ProductID') as number;
   }
-  public ProductID$(options?: ODataQueryArgumentsOptions<number>) {
+  public ProductID$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('ProductID', options) as Observable<number>;
   }
 
   @ModelField()
   declare ProductName: string;
-    public $$ProductName() {
+  public $$ProductName() {
     return this.property<string>('ProductName');
   }
   public $ProductName() {
     return this.getAttribute<string>('ProductName') as string;
   }
-  public ProductName$(options?: ODataQueryArgumentsOptions<string>) {
+  public ProductName$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('ProductName', options) as Observable<string>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

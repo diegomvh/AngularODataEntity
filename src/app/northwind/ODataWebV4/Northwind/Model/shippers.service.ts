@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ODataClient, 
-  ODataActionResource, 
-  ODataActionOptions, 
-  ODataFunctionResource, 
-  ODataFunctionOptions, 
-  ODataEntitySetService, 
+import {
+  ODataClient,
+  ODataActionResource,
+  ODataActionOptions,
+  ODataFunctionResource,
+  ODataFunctionOptions,
+  ODataEntitySetService,
   ODataOptions,
-  EntityKey } from 'angular-odata';
+  EntityKey,
+} from 'angular-odata';
 import { ShipperModel } from '../../../NorthwindModel/shipper.model';
 import { ShipperCollection } from '../../../NorthwindModel/shipper.collection';
 import { Shipper } from '../../../NorthwindModel/shipper.entity';
 
 // #region Custom
 // #endregion Custom
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ShippersService extends ODataEntitySetService<Shipper> {
   constructor(client: ODataClient) {
     super(client, 'Shippers', 'NorthwindModel.Shipper');
@@ -22,8 +24,13 @@ export class ShippersService extends ODataEntitySetService<Shipper> {
     return this.model<ShipperModel<Shipper>>(entity);
   }
   shipperCollection(entities?: Partial<Shipper>[]) {
-    return this.collection<ShipperModel<Shipper>, ShipperCollection<Shipper, ShipperModel<Shipper>>>(entities);
+    return this.collection<
+      ShipperModel<Shipper>,
+      ShipperCollection<Shipper, ShipperModel<Shipper>>
+    >(entities);
   }
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

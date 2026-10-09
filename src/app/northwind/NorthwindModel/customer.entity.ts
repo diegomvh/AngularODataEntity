@@ -1,5 +1,3 @@
-
-
 import { Order } from './order.entity';
 import { CustomerDemographic } from './customer-demographic.entity';
 
@@ -20,6 +18,8 @@ export interface Customer {
   Fax: string;
   Orders?: Order[];
   CustomerDemographics?: CustomerDemographic[];
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

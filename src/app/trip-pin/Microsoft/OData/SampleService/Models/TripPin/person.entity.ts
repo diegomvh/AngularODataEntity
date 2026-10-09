@@ -1,5 +1,3 @@
-
-
 import { Location } from './location.complex';
 import { PersonGender } from './person-gender.enum';
 import { Trip } from './trip.entity';
@@ -19,6 +17,8 @@ export interface Person {
   Friends?: Person[];
   Trips?: Trip[];
   Photo?: Photo;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

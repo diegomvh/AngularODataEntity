@@ -8,11 +8,11 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
-import { Point, } from 'geojson';
+import { Point } from 'geojson';
 import { AirportLocation } from './airport-location.complex';
 import { Location } from './location.complex';
 import { LocationModel } from './location.model';
@@ -23,19 +23,18 @@ import { LocationModel } from './location.model';
 export class AirportLocationModel<E extends AirportLocation> extends LocationModel<E> {
   @ModelField()
   declare Loc: Point;
-    public $$Loc() {
+  public $$Loc() {
     return this.property<Point>('Loc');
   }
   public $Loc() {
     return this.getAttribute<Point>('Loc') as Point;
   }
-  public Loc$(options?: ODataQueryArgumentsOptions<Point>) {
+  public Loc$(options?: ODataQueryableOptions<Point>) {
     return this.fetchAttribute<Point>('Loc', options) as Observable<Point>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

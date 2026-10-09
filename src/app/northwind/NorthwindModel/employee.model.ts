@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -28,238 +28,246 @@ import { TerritoryCollection } from './territory.collection';
 export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   @ModelField()
   declare EmployeeID: number;
-    public $$EmployeeID() {
+  public $$EmployeeID() {
     return this.property<number>('EmployeeID');
   }
   public $EmployeeID() {
     return this.getAttribute<number>('EmployeeID') as number;
   }
-  public EmployeeID$(options?: ODataQueryArgumentsOptions<number>) {
+  public EmployeeID$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('EmployeeID', options) as Observable<number>;
   }
 
   @ModelField()
   declare LastName: string;
-    public $$LastName() {
+  public $$LastName() {
     return this.property<string>('LastName');
   }
   public $LastName() {
     return this.getAttribute<string>('LastName') as string;
   }
-  public LastName$(options?: ODataQueryArgumentsOptions<string>) {
+  public LastName$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('LastName', options) as Observable<string>;
   }
 
   @ModelField()
   declare FirstName: string;
-    public $$FirstName() {
+  public $$FirstName() {
     return this.property<string>('FirstName');
   }
   public $FirstName() {
     return this.getAttribute<string>('FirstName') as string;
   }
-  public FirstName$(options?: ODataQueryArgumentsOptions<string>) {
+  public FirstName$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('FirstName', options) as Observable<string>;
   }
 
   @ModelField()
   declare Title: string;
-    public $$Title() {
+  public $$Title() {
     return this.property<string>('Title');
   }
   public $Title() {
     return this.getAttribute<string>('Title') as string;
   }
-  public Title$(options?: ODataQueryArgumentsOptions<string>) {
+  public Title$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Title', options) as Observable<string>;
   }
 
   @ModelField()
   declare TitleOfCourtesy: string;
-    public $$TitleOfCourtesy() {
+  public $$TitleOfCourtesy() {
     return this.property<string>('TitleOfCourtesy');
   }
   public $TitleOfCourtesy() {
     return this.getAttribute<string>('TitleOfCourtesy') as string;
   }
-  public TitleOfCourtesy$(options?: ODataQueryArgumentsOptions<string>) {
+  public TitleOfCourtesy$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('TitleOfCourtesy', options) as Observable<string>;
   }
 
   @ModelField()
   declare BirthDate: Date;
-    public $$BirthDate() {
+  public $$BirthDate() {
     return this.property<Date>('BirthDate');
   }
   public $BirthDate() {
     return this.getAttribute<Date>('BirthDate') as Date;
   }
-  public BirthDate$(options?: ODataQueryArgumentsOptions<Date>) {
+  public BirthDate$(options?: ODataQueryableOptions<Date>) {
     return this.fetchAttribute<Date>('BirthDate', options) as Observable<Date>;
   }
 
   @ModelField()
   declare HireDate: Date;
-    public $$HireDate() {
+  public $$HireDate() {
     return this.property<Date>('HireDate');
   }
   public $HireDate() {
     return this.getAttribute<Date>('HireDate') as Date;
   }
-  public HireDate$(options?: ODataQueryArgumentsOptions<Date>) {
+  public HireDate$(options?: ODataQueryableOptions<Date>) {
     return this.fetchAttribute<Date>('HireDate', options) as Observable<Date>;
   }
 
   @ModelField()
   declare Address: string;
-    public $$Address() {
+  public $$Address() {
     return this.property<string>('Address');
   }
   public $Address() {
     return this.getAttribute<string>('Address') as string;
   }
-  public Address$(options?: ODataQueryArgumentsOptions<string>) {
+  public Address$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Address', options) as Observable<string>;
   }
 
   @ModelField()
   declare City: string;
-    public $$City() {
+  public $$City() {
     return this.property<string>('City');
   }
   public $City() {
     return this.getAttribute<string>('City') as string;
   }
-  public City$(options?: ODataQueryArgumentsOptions<string>) {
+  public City$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('City', options) as Observable<string>;
   }
 
   @ModelField()
   declare Region: string;
-    public $$Region() {
+  public $$Region() {
     return this.property<string>('Region');
   }
   public $Region() {
     return this.getAttribute<string>('Region') as string;
   }
-  public Region$(options?: ODataQueryArgumentsOptions<string>) {
+  public Region$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Region', options) as Observable<string>;
   }
 
   @ModelField()
   declare PostalCode: string;
-    public $$PostalCode() {
+  public $$PostalCode() {
     return this.property<string>('PostalCode');
   }
   public $PostalCode() {
     return this.getAttribute<string>('PostalCode') as string;
   }
-  public PostalCode$(options?: ODataQueryArgumentsOptions<string>) {
+  public PostalCode$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('PostalCode', options) as Observable<string>;
   }
 
   @ModelField()
   declare Country: string;
-    public $$Country() {
+  public $$Country() {
     return this.property<string>('Country');
   }
   public $Country() {
     return this.getAttribute<string>('Country') as string;
   }
-  public Country$(options?: ODataQueryArgumentsOptions<string>) {
+  public Country$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Country', options) as Observable<string>;
   }
 
   @ModelField()
   declare HomePhone: string;
-    public $$HomePhone() {
+  public $$HomePhone() {
     return this.property<string>('HomePhone');
   }
   public $HomePhone() {
     return this.getAttribute<string>('HomePhone') as string;
   }
-  public HomePhone$(options?: ODataQueryArgumentsOptions<string>) {
+  public HomePhone$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('HomePhone', options) as Observable<string>;
   }
 
   @ModelField()
   declare Extension: string;
-    public $$Extension() {
+  public $$Extension() {
     return this.property<string>('Extension');
   }
   public $Extension() {
     return this.getAttribute<string>('Extension') as string;
   }
-  public Extension$(options?: ODataQueryArgumentsOptions<string>) {
+  public Extension$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Extension', options) as Observable<string>;
   }
 
   @ModelField()
   declare Photo: ArrayBuffer;
-    public $$Photo() {
+  public $$Photo() {
     return this.property<ArrayBuffer>('Photo');
   }
   public $Photo() {
     return this.getAttribute<ArrayBuffer>('Photo') as ArrayBuffer;
   }
-  public Photo$(options?: ODataQueryArgumentsOptions<ArrayBuffer>) {
+  public Photo$(options?: ODataQueryableOptions<ArrayBuffer>) {
     return this.fetchAttribute<ArrayBuffer>('Photo', options) as Observable<ArrayBuffer>;
   }
 
   @ModelField()
   declare Notes: string;
-    public $$Notes() {
+  public $$Notes() {
     return this.property<string>('Notes');
   }
   public $Notes() {
     return this.getAttribute<string>('Notes') as string;
   }
-  public Notes$(options?: ODataQueryArgumentsOptions<string>) {
+  public Notes$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Notes', options) as Observable<string>;
   }
 
   @ModelField()
   declare ReportsTo: number;
-    public $$ReportsTo() {
+  public $$ReportsTo() {
     return this.property<number>('ReportsTo');
   }
   public $ReportsTo() {
     return this.getAttribute<number>('ReportsTo') as number;
   }
-  public ReportsTo$(options?: ODataQueryArgumentsOptions<number>) {
+  public ReportsTo$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('ReportsTo', options) as Observable<number>;
   }
 
   @ModelField()
   declare PhotoPath: string;
-    public $$PhotoPath() {
+  public $$PhotoPath() {
     return this.property<string>('PhotoPath');
   }
   public $PhotoPath() {
     return this.getAttribute<string>('PhotoPath') as string;
   }
-  public PhotoPath$(options?: ODataQueryArgumentsOptions<string>) {
+  public PhotoPath$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('PhotoPath', options) as Observable<string>;
   }
 
   @ModelField()
   declare Employees1?: EmployeeCollection<Employee, EmployeeModel<Employee>>;
-    public $$Employees1() {
+  public $$Employees1() {
     return this.navigationProperty<Employee>('Employees1');
   }
   public $Employees1() {
-    return this.getAttribute<Employee>('Employees1') as EmployeeCollection<Employee, EmployeeModel<Employee>>;
+    return this.getAttribute<Employee>('Employees1') as EmployeeCollection<
+      Employee,
+      EmployeeModel<Employee>
+    >;
   }
-  public Employees1$$(model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null, options?: ODataOptions) {
+  public Employees1$$(
+    model: EmployeeCollection<Employee, EmployeeModel<Employee>> | null,
+    options?: ODataOptions,
+  ) {
     return this.setReference<Employee>('Employees1', model, options);
   }
-  public Employees1$(options?: ODataQueryArgumentsOptions<Employee>) {
-    return this.fetchAttribute<Employee>('Employees1', options) as Observable<EmployeeCollection<Employee, EmployeeModel<Employee>>>;
+  public Employees1$(options?: ODataQueryableOptions<Employee>) {
+    return this.fetchAttribute<Employee>('Employees1', options) as Observable<
+      EmployeeCollection<Employee, EmployeeModel<Employee>>
+    >;
   }
 
   @ModelField()
   declare Employee1?: EmployeeModel<Employee>;
-    public $$Employee1() {
+  public $$Employee1() {
     return this.navigationProperty<Employee>('Employee1');
   }
   public $Employee1() {
@@ -268,13 +276,15 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public Employee1$$(model: EmployeeModel<Employee> | null, options?: ODataOptions) {
     return this.setReference<Employee>('Employee1', model, options);
   }
-  public Employee1$(options?: ODataQueryArgumentsOptions<Employee>) {
-    return this.fetchAttribute<Employee>('Employee1', options) as Observable<EmployeeModel<Employee>>;
+  public Employee1$(options?: ODataQueryableOptions<Employee>) {
+    return this.fetchAttribute<Employee>('Employee1', options) as Observable<
+      EmployeeModel<Employee>
+    >;
   }
 
   @ModelField()
   declare Orders?: OrderCollection<Order, OrderModel<Order>>;
-    public $$Orders() {
+  public $$Orders() {
     return this.navigationProperty<Order>('Orders');
   }
   public $Orders() {
@@ -283,28 +293,37 @@ export class EmployeeModel<E extends Employee> extends ODataModel<E> {
   public Orders$$(model: OrderCollection<Order, OrderModel<Order>> | null, options?: ODataOptions) {
     return this.setReference<Order>('Orders', model, options);
   }
-  public Orders$(options?: ODataQueryArgumentsOptions<Order>) {
-    return this.fetchAttribute<Order>('Orders', options) as Observable<OrderCollection<Order, OrderModel<Order>>>;
+  public Orders$(options?: ODataQueryableOptions<Order>) {
+    return this.fetchAttribute<Order>('Orders', options) as Observable<
+      OrderCollection<Order, OrderModel<Order>>
+    >;
   }
 
   @ModelField()
   declare Territories?: TerritoryCollection<Territory, TerritoryModel<Territory>>;
-    public $$Territories() {
+  public $$Territories() {
     return this.navigationProperty<Territory>('Territories');
   }
   public $Territories() {
-    return this.getAttribute<Territory>('Territories') as TerritoryCollection<Territory, TerritoryModel<Territory>>;
+    return this.getAttribute<Territory>('Territories') as TerritoryCollection<
+      Territory,
+      TerritoryModel<Territory>
+    >;
   }
-  public Territories$$(model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null, options?: ODataOptions) {
+  public Territories$$(
+    model: TerritoryCollection<Territory, TerritoryModel<Territory>> | null,
+    options?: ODataOptions,
+  ) {
     return this.setReference<Territory>('Territories', model, options);
   }
-  public Territories$(options?: ODataQueryArgumentsOptions<Territory>) {
-    return this.fetchAttribute<Territory>('Territories', options) as Observable<TerritoryCollection<Territory, TerritoryModel<Territory>>>;
+  public Territories$(options?: ODataQueryableOptions<Territory>) {
+    return this.fetchAttribute<Territory>('Territories', options) as Observable<
+      TerritoryCollection<Territory, TerritoryModel<Territory>>
+    >;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

@@ -6,17 +6,21 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Invoice } from './invoice.entity';
 import { InvoiceModel } from './invoice.model';
 
 // #region Custom
 // #endregion Custom
-export class InvoiceCollection<E extends Invoice, M extends InvoiceModel<E>> extends ODataCollection<E, M> {
-  
+export class InvoiceCollection<
+  E extends Invoice,
+  M extends InvoiceModel<E>,
+> extends ODataCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

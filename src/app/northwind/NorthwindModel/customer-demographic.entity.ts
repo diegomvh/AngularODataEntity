@@ -1,5 +1,3 @@
-
-
 import { Customer } from './customer.entity';
 
 // #region Custom
@@ -9,6 +7,8 @@ export interface CustomerDemographic {
   CustomerTypeID: string;
   CustomerDesc: string;
   Customers?: Customer[];
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

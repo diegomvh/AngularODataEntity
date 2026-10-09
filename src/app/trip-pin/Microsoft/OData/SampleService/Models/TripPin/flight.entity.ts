@@ -1,5 +1,3 @@
-
-
 import { PublicTransportation } from './public-transportation.entity';
 import { Airport } from './airport.entity';
 import { Airline } from './airline.entity';
@@ -12,6 +10,8 @@ export interface Flight extends PublicTransportation {
   From?: Airport;
   To?: Airport;
   Airline?: Airline;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

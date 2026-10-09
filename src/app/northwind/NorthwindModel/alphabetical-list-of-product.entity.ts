@@ -1,6 +1,3 @@
-
-
-
 // #region Custom
 // #endregion Custom
 export const AlphabeticalListOfProductEntityType = 'NorthwindModel.Alphabetical_list_of_product';
@@ -16,6 +13,8 @@ export interface AlphabeticalListOfProduct {
   ReorderLevel: number;
   Discontinued: boolean;
   CategoryName: string;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

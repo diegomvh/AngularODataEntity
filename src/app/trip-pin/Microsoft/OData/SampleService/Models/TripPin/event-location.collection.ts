@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { EventLocation } from './event-location.complex';
 import { EventLocationModel } from './event-location.model';
@@ -18,8 +18,12 @@ import { LocationModel } from './location.model';
 
 // #region Custom
 // #endregion Custom
-export class EventLocationCollection<E extends EventLocation, M extends EventLocationModel<E>> extends LocationCollection<E, M> {
-  
+export class EventLocationCollection<
+  E extends EventLocation,
+  M extends EventLocationModel<E>,
+> extends LocationCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

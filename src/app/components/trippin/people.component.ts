@@ -1,6 +1,10 @@
-import { Component, inject, signal, viewChild } from '@angular/core';
+import { Component, inject, signal, viewChild, ViewChild } from '@angular/core';
 import { PeopleService, Person, PersonGender } from '../../trip-pin';
-import { ODataEntitySetResource, ODataClient, EdmType } from 'angular-odata';
+import {
+  ODataEntitySetResource,
+  ODataClient,
+  EdmType,
+} from 'angular-odata';
 import { PersonComponent } from './person.component';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
@@ -11,7 +15,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, TableModule, PersonComponent],
   template: `<p-table
       #table
-      [value]="rows()"
+      [columns]="columns()"
+      [value]="people()"
       [lazy]="true"
       (onLazyLoad)="loadPeopleLazy($event)"
       [paginator]="true"
@@ -19,48 +24,48 @@ import { CommonModule } from '@angular/common';
       [totalRecords]="total()"
       [loading]="loading()"
     >
-      <ng-template #header>
+      <ng-template #header let-columns>
         <tr>
-          @for (col of columns(); track col) {
-            <th [pSortableColumn]="col.sort ? col.field : ''">
-              {{ col.header }}
-              @if (col.sort) {
-                <p-sorticon
-                  [field]="col.field"
-                  ariaLabel="Activate to sort"
-                  ariaLabelDesc="Activate to sort in descending order"
-                  ariaLabelAsc="Activate to sort in ascending order"
-                ></p-sorticon>
-              }
-            </th>
+        @for (col of columns; track col) {
+          <th
+            [pSortableColumn]="col.sort ? col.field : ''"
+          >
+            {{ col.header }}
+          @if (col.sort) {
+            <p-sorticon
+              [field]="col.field"
+              ariaLabel="Activate to sort"
+              ariaLabelDesc="Activate to sort in descending order"
+              ariaLabelAsc="Activate to sort in ascending order"
+            ></p-sorticon>
+          }
+          </th>
           }
         </tr>
         <tr>
-          @for (col of columns(); track col) {
-            <th>
-              @if (col.filter) {
-                <input pInputText type="text" (input)="filter($event, col.field)" />
-              }
-            </th>
+        @for (col of columns; track col) {
+          <th>
+          @if (col.filter) {
+            <input
+              pInputText
+              type="text"
+              (input)="filter($event, col.field)"
+            />
+          }
+          </th>
           }
         </tr>
       </ng-template>
-      <ng-template #body let-person>
+      <ng-template #body let-person let-columns="columns">
         <tr (click)="viewPerson(person)">
-          @for (col of columns(); track col) {
-            <td>
-              @switch (col.field) {
-                @case ('AddressInfo') {
-                  <span>{{ person[col.field] | json }}</span>
-                }
-                @case ('Gender') {
-                  <span>{{ Gender[person[col.field]] | json }}</span>
-                }
-                @default {
-                  <span>{{ person[col.field] }}</span>
-                }
-              }
-            </td>
+        @for (col of columns; track col) {
+          <td>
+            @switch (col.field) {
+              @case ('AddressInfo') { <span>{{ person[col.field] | json }}</span> }
+              @case ('Gender') { <span>{{ Gender[person[col.field]] | json }}</span> }
+              @default { <span>{{ person[col.field] }}</span> }
+            }
+          </td>
           }
         </tr>
       </ng-template>
@@ -68,37 +73,48 @@ import { CommonModule } from '@angular/common';
     <trip-person #person></trip-person>`,
 })
 export class PeopleComponent {
-  Gender = PersonGender;
-  odataClient = inject(ODataClient);
   peopleService = inject(PeopleService);
-  rows = signal<Person[]>([]);
-  loading = signal<boolean | null>(null);
-  total = signal<number>(0);
-  size = signal<number>(0);
-  columns = signal<any[]>([]);
 
-  person = viewChild.required<PersonComponent>('person');
+  people = signal<Person[]>([]);
+  columns = signal<{ field: string; header: string; sort: boolean; filter: boolean }[]>([]);
+
+  total = signal<number>(0);
+  size =  signal<number>(0);
+
+  resource: ODataEntitySetResource<Person>;
+  loading = signal<boolean>(false);
+  Gender = PersonGender;
+
+  person = viewChild.required(PersonComponent);
 
   constructor() {
-    const schema = this.peopleService.structuredTypeSchema;
-    if (schema !== null) {
-      const cols = (schema?.fields({ include_parents: true, include_navigation: false }) ?? [])
-        .map((f) => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === EdmType.String }));
-      this.columns.set(cols);
-    }
+    this.resource = this.peopleService.entities();
+    const schema = this.resource.structuredType();
+    const columns =
+      schema !== null
+        ? (
+            schema?.fields({
+              include_parents: true,
+              include_navigation: false,
+            }) || []
+          ).map((f) => ({
+            field: f.name,
+            header: f.name,
+            sort: !f.collection,
+            filter: f.type === EdmType.String,
+          }))
+        : [];
+    this.columns.set(columns);
   }
 
   fetch(resource: ODataEntitySetResource<Person>) {
-    const firstFetch = this.loading() === null; 
     this.loading.set(true);
     resource
-      .fetch({ withCount: firstFetch, fetchPolicy: 'cache-and-network' })
-      .subscribe(({ entities, annots }) => {
-        this.rows.set(entities ?? []);
-        if (firstFetch) {
-          this.total.set(annots.count ?? entities?.length ?? 0);
-          this.size.set(annots.skip ?? entities?.length ?? 0);
-        }
+      .fetch({ withCount: true, fetchPolicy: 'cache-and-network' })
+      .subscribe(({ entities: people, annots }) => {
+        this.people.set(people ?? []);
+        if (this.total() === 0) this.total.set(annots.count as number);
+        if (this.size() === 0) this.size.set(annots.skip ?? this.people().length);
         this.loading.set(false);
       });
   }
@@ -106,21 +122,30 @@ export class PeopleComponent {
   filter(event: Event, field: string) {
     const input = event.target as HTMLInputElement;
     const value = input.value;
-    const resource = this.peopleService.entities();
+    field = `tolower(${field})`;
     if (value) {
-      resource.query((q) => {
-        q.filter(({e, t, f}) => e().contains(f.toLower(field), value.toLowerCase()));
-      });
+      let filter = { [field]: { contains: value.toLowerCase() } };
+      this.resource.query((q) => q.filter().assign(filter));
+    } else {
+      this.resource.query((q) => q.filter().unset(field));
     }
-    this.fetch(resource);
+    this.total.set(0);
+    this.fetch(this.resource);
   }
 
   loadPeopleLazy(event: TableLazyLoadEvent) {
-    const resource = this.peopleService.entities().query((q) => {
+    //Pagination
+    let resource = this.resource.clone().query((q) => {
       if (event.first) q.skip(event.first);
       if (event.rows) q.top(event.rows);
+      //Ordering
       if (event.sortField !== undefined)
-        q.orderBy(({e, t}) => (event.sortOrder == 1) ? e().ascending(event.sortField) : e().descending(event.sortField))
+        q.orderBy([
+          [
+            event.sortField as keyof Person,
+            event.sortOrder == -1 ? 'desc' : 'asc',
+          ],
+        ]);
     });
     this.fetch(resource);
   }

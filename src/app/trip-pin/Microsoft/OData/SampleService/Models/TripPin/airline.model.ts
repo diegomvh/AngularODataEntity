@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -21,31 +21,30 @@ import { Airline } from './airline.entity';
 export class AirlineModel<E extends Airline> extends ODataModel<E> {
   @ModelField()
   declare AirlineCode: string;
-    public $$AirlineCode() {
+  public $$AirlineCode() {
     return this.property<string>('AirlineCode');
   }
   public $AirlineCode() {
     return this.getAttribute<string>('AirlineCode') as string;
   }
-  public AirlineCode$(options?: ODataQueryArgumentsOptions<string>) {
+  public AirlineCode$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('AirlineCode', options) as Observable<string>;
   }
 
   @ModelField()
   declare Name: string;
-    public $$Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
   public $Name() {
     return this.getAttribute<string>('Name') as string;
   }
-  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+  public Name$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Name', options) as Observable<string>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

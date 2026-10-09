@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ODataClient, 
-  ODataActionResource, 
-  ODataActionOptions, 
-  ODataFunctionResource, 
-  ODataFunctionOptions, 
-  ODataEntitySetService, 
+import {
+  ODataClient,
+  ODataActionResource,
+  ODataActionOptions,
+  ODataFunctionResource,
+  ODataFunctionOptions,
+  ODataEntitySetService,
   ODataOptions,
-  EntityKey } from 'angular-odata';
+  EntityKey,
+} from 'angular-odata';
 import { CategoryModel } from '../../../NorthwindModel/category.model';
 import { CategoryCollection } from '../../../NorthwindModel/category.collection';
 import { Category } from '../../../NorthwindModel/category.entity';
 
 // #region Custom
 // #endregion Custom
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class CategoriesService extends ODataEntitySetService<Category> {
   constructor(client: ODataClient) {
     super(client, 'Categories', 'NorthwindModel.Category');
@@ -22,8 +24,13 @@ export class CategoriesService extends ODataEntitySetService<Category> {
     return this.model<CategoryModel<Category>>(entity);
   }
   categoryCollection(entities?: Partial<Category>[]) {
-    return this.collection<CategoryModel<Category>, CategoryCollection<Category, CategoryModel<Category>>>(entities);
+    return this.collection<
+      CategoryModel<Category>,
+      CategoryCollection<Category, CategoryModel<Category>>
+    >(entities);
   }
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

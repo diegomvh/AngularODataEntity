@@ -24,13 +24,18 @@
                   "Record": [
                     {
                       "PropertyValue": [
-                        {},
                         {
+                          "Property": "Searchable",
+                          "TextContent": ""
+                        },
+                        {
+                          "Property": "UnsupportedExpressions",
                           "EnumMember": [
                             {
                               "TextContent": "Org.OData.Capabilities.V1.SearchExpressions/none"
                             }
-                          ]
+                          ],
+                          "TextContent": "Org.OData.Capabilities.V1.SearchExpressions/none"
                         }
                       ]
                     }
@@ -41,8 +46,14 @@
                   "Record": [
                     {
                       "PropertyValue": [
-                        {},
-                        {}
+                        {
+                          "Property": "Insertable",
+                          "TextContent": ""
+                        },
+                        {
+                          "Property": "NonInsertableNavigationProperties",
+                          "TextContent": ""
+                        }
                       ]
                     }
                   ]
@@ -75,13 +86,18 @@
                     {
                       "PropertyValue": [
                         {
+                          "Property": "Navigability",
                           "EnumMember": [
                             {
                               "TextContent": "Org.OData.Capabilities.V1.NavigationType/None"
                             }
-                          ]
+                          ],
+                          "TextContent": "Org.OData.Capabilities.V1.NavigationType/None"
                         },
-                        {}
+                        {
+                          "Property": "RestrictedProperties",
+                          "TextContent": "Org.OData.Capabilities.V1.NavigationType/Recursive"
+                        }
                       ]
                     }
                   ]
@@ -91,13 +107,18 @@
                   "Record": [
                     {
                       "PropertyValue": [
-                        {},
                         {
+                          "Property": "Searchable",
+                          "TextContent": ""
+                        },
+                        {
+                          "Property": "UnsupportedExpressions",
                           "EnumMember": [
                             {
                               "TextContent": "Org.OData.Capabilities.V1.SearchExpressions/none"
                             }
-                          ]
+                          ],
+                          "TextContent": "Org.OData.Capabilities.V1.SearchExpressions/none"
                         }
                       ]
                     }
@@ -108,8 +129,14 @@
                   "Record": [
                     {
                       "PropertyValue": [
-                        {},
-                        {}
+                        {
+                          "Property": "Insertable",
+                          "TextContent": ""
+                        },
+                        {
+                          "Property": "NonInsertableNavigationProperties",
+                          "TextContent": "TripsFriends"
+                        }
                       ]
                     }
                   ]
@@ -155,13 +182,18 @@
                   "Record": [
                     {
                       "PropertyValue": [
-                        {},
                         {
+                          "Property": "Searchable",
+                          "TextContent": ""
+                        },
+                        {
+                          "Property": "UnsupportedExpressions",
                           "EnumMember": [
                             {
                               "TextContent": "Org.OData.Capabilities.V1.SearchExpressions/none"
                             }
-                          ]
+                          ],
+                          "TextContent": "Org.OData.Capabilities.V1.SearchExpressions/none"
                         }
                       ]
                     }
@@ -172,8 +204,14 @@
                   "Record": [
                     {
                       "PropertyValue": [
-                        {},
-                        {}
+                        {
+                          "Property": "Insertable",
+                          "TextContent": ""
+                        },
+                        {
+                          "Property": "NonInsertableNavigationProperties",
+                          "TextContent": ""
+                        }
                       ]
                     }
                   ]
@@ -193,13 +231,18 @@
                   "Record": [
                     {
                       "PropertyValue": [
-                        {},
                         {
+                          "Property": "Searchable",
+                          "TextContent": ""
+                        },
+                        {
+                          "Property": "UnsupportedExpressions",
                           "EnumMember": [
                             {
                               "TextContent": "Org.OData.Capabilities.V1.SearchExpressions/none"
                             }
-                          ]
+                          ],
+                          "TextContent": "Org.OData.Capabilities.V1.SearchExpressions/none"
                         }
                       ]
                     }
@@ -210,8 +253,14 @@
                   "Record": [
                     {
                       "PropertyValue": [
-                        {},
-                        {}
+                        {
+                          "Property": "Insertable",
+                          "TextContent": ""
+                        },
+                        {
+                          "Property": "NonInsertableNavigationProperties",
+                          "TextContent": ""
+                        }
                       ]
                     }
                   ]
@@ -221,8 +270,14 @@
                   "Record": [
                     {
                       "PropertyValue": [
-                        {},
-                        {}
+                        {
+                          "Property": "Deletable",
+                          "TextContent": ""
+                        },
+                        {
+                          "Property": "NonDeletableNavigationProperties",
+                          "TextContent": ""
+                        }
                       ]
                     }
                   ]
@@ -350,7 +405,7 @@
               "Annotation": [
                 {
                   "Term": "Org.OData.Core.V1.Computed",
-                  "Bool": "true"
+                  "Bool": true
                 }
               ],
               "Name": "Concurrency",
@@ -441,7 +496,7 @@
               "Annotation": [
                 {
                   "Term": "Org.OData.Core.V1.Immutable",
-                  "Bool": "true"
+                  "Bool": true
                 }
               ],
               "Name": "IataCode",
@@ -598,7 +653,7 @@
                 },
                 {
                   "Term": "Org.OData.Measures.V1.Scale",
-                  "Int": "2"
+                  "Int": 2
                 }
               ],
               "Name": "Budget",
@@ -727,11 +782,11 @@
           "Annotation": [
             {
               "Term": "Org.OData.Core.V1.DereferenceableIDs",
-              "Bool": "true"
+              "Bool": true
             },
             {
               "Term": "Org.OData.Core.V1.ConventionalIDs",
-              "Bool": "true"
+              "Bool": true
             },
             {
               "Term": "Org.OData.Capabilities.V1.ConformanceLevel",
@@ -761,11 +816,11 @@
             },
             {
               "Term": "Org.OData.Capabilities.V1.AsynchronousRequestsSupported",
-              "Bool": "true"
+              "Bool": true
             },
             {
               "Term": "Org.OData.Capabilities.V1.BatchContinueOnErrorSupported",
-              "Bool": "false"
+              "Bool": false
             },
             {
               "Term": "Org.OData.Capabilities.V1.FilterFunctions",

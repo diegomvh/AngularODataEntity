@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ODataClient, 
-  ODataActionResource, 
-  ODataActionOptions, 
-  ODataFunctionResource, 
-  ODataFunctionOptions, 
-  ODataEntitySetService, 
+import {
+  ODataClient,
+  ODataActionResource,
+  ODataActionOptions,
+  ODataFunctionResource,
+  ODataFunctionOptions,
+  ODataEntitySetService,
   ODataOptions,
-  EntityKey } from 'angular-odata';
+  EntityKey,
+} from 'angular-odata';
 import { PhotoModel } from './photo.model';
 import { PhotoCollection } from './photo.collection';
 import { Photo } from './photo.entity';
 
 // #region Custom
 // #endregion Custom
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class PhotosService extends ODataEntitySetService<Photo> {
   constructor(client: ODataClient) {
     super(client, 'Photos', 'Microsoft.OData.SampleService.Models.TripPin.Photo');
@@ -24,6 +26,8 @@ export class PhotosService extends ODataEntitySetService<Photo> {
   photoCollection(entities?: Partial<Photo>[]) {
     return this.collection<PhotoModel<Photo>, PhotoCollection<Photo, PhotoModel<Photo>>>(entities);
   }
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

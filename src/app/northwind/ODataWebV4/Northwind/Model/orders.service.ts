@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ODataClient, 
-  ODataActionResource, 
-  ODataActionOptions, 
-  ODataFunctionResource, 
-  ODataFunctionOptions, 
-  ODataEntitySetService, 
+import {
+  ODataClient,
+  ODataActionResource,
+  ODataActionOptions,
+  ODataFunctionResource,
+  ODataFunctionOptions,
+  ODataEntitySetService,
   ODataOptions,
-  EntityKey } from 'angular-odata';
+  EntityKey,
+} from 'angular-odata';
 import { OrderModel } from '../../../NorthwindModel/order.model';
 import { OrderCollection } from '../../../NorthwindModel/order.collection';
 import { Order } from '../../../NorthwindModel/order.entity';
 
 // #region Custom
 // #endregion Custom
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class OrdersService extends ODataEntitySetService<Order> {
   constructor(client: ODataClient) {
     super(client, 'Orders', 'NorthwindModel.Order');
@@ -24,6 +26,8 @@ export class OrdersService extends ODataEntitySetService<Order> {
   orderCollection(entities?: Partial<Order>[]) {
     return this.collection<OrderModel<Order>, OrderCollection<Order, OrderModel<Order>>>(entities);
   }
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

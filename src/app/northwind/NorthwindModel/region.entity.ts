@@ -1,5 +1,3 @@
-
-
 import { Territory } from './territory.entity';
 
 // #region Custom
@@ -9,6 +7,8 @@ export interface Region {
   RegionID: number;
   RegionDescription: string;
   Territories?: Territory[];
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

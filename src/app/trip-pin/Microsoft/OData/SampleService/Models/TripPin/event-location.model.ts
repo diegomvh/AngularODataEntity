@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -23,19 +23,18 @@ import { LocationModel } from './location.model';
 export class EventLocationModel<E extends EventLocation> extends LocationModel<E> {
   @ModelField()
   declare BuildingInfo: string;
-    public $$BuildingInfo() {
+  public $$BuildingInfo() {
     return this.property<string>('BuildingInfo');
   }
   public $BuildingInfo() {
     return this.getAttribute<string>('BuildingInfo') as string;
   }
-  public BuildingInfo$(options?: ODataQueryArgumentsOptions<string>) {
+  public BuildingInfo$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('BuildingInfo', options) as Observable<string>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

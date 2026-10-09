@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -21,43 +21,42 @@ import { SummaryOfSalesByQuarter } from './summary-of-sales-by-quarter.entity';
 export class SummaryOfSalesByQuarterModel<E extends SummaryOfSalesByQuarter> extends ODataModel<E> {
   @ModelField()
   declare ShippedDate: Date;
-    public $$ShippedDate() {
+  public $$ShippedDate() {
     return this.property<Date>('ShippedDate');
   }
   public $ShippedDate() {
     return this.getAttribute<Date>('ShippedDate') as Date;
   }
-  public ShippedDate$(options?: ODataQueryArgumentsOptions<Date>) {
+  public ShippedDate$(options?: ODataQueryableOptions<Date>) {
     return this.fetchAttribute<Date>('ShippedDate', options) as Observable<Date>;
   }
 
   @ModelField()
   declare OrderID: number;
-    public $$OrderID() {
+  public $$OrderID() {
     return this.property<number>('OrderID');
   }
   public $OrderID() {
     return this.getAttribute<number>('OrderID') as number;
   }
-  public OrderID$(options?: ODataQueryArgumentsOptions<number>) {
+  public OrderID$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('OrderID', options) as Observable<number>;
   }
 
   @ModelField()
   declare Subtotal: number;
-    public $$Subtotal() {
+  public $$Subtotal() {
     return this.property<number>('Subtotal');
   }
   public $Subtotal() {
     return this.getAttribute<number>('Subtotal') as number;
   }
-  public Subtotal$(options?: ODataQueryArgumentsOptions<number>) {
+  public Subtotal$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('Subtotal', options) as Observable<number>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

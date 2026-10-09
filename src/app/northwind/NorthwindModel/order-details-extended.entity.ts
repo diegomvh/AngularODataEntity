@@ -1,6 +1,3 @@
-
-
-
 // #region Custom
 // #endregion Custom
 export const OrderDetailsExtendedEntityType = 'NorthwindModel.Order_Details_Extended';
@@ -12,6 +9,8 @@ export interface OrderDetailsExtended {
   Quantity: number;
   Discount: number;
   ExtendedPrice: number;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

@@ -1,6 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
 import { Airport, AirportsService } from '../../trip-pin';
-import { ODataEntitySetResource, ODataClient, EdmType } from 'angular-odata';
+import {
+  ODataEntitySetResource,
+  EdmType,
+} from 'angular-odata';
 import { TableLazyLoadEvent, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +13,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, TableModule],
   template: `<p-table
     #table
-    [value]="rows()"
+    [columns]="columns()"
+    [value]="airports()"
     [lazy]="true"
     (onLazyLoad)="loadAirportsLazy($event)"
     [paginator]="true"
@@ -18,79 +22,92 @@ import { CommonModule } from '@angular/common';
     [totalRecords]="total()"
     [loading]="loading()"
   >
-    <ng-template #header>
+    <ng-template #header let-columns>
       <tr>
-        @for (col of columns(); track col) {
-          <th [pSortableColumn]="col.sort ? col.field : ''">
-            {{ col.header }}
-            @if (col.sort) {
-              <p-sorticon
-                [field]="col.field"
-                ariaLabel="Activate to sort"
-                ariaLabelDesc="Activate to sort in descending order"
-                ariaLabelAsc="Activate to sort in ascending order"
-              ></p-sorticon>
-            }
-          </th>
+        @for (col of columns; track col) {
+        <th
+          [pSortableColumn]="col.sort ? col.field : ''"
+        >
+          {{ col.header }}
+          @if (col.sort) {
+          <p-sorticon
+            [field]="col.field"
+            ariaLabel="Activate to sort"
+            ariaLabelDesc="Activate to sort in descending order"
+            ariaLabelAsc="Activate to sort in ascending order"
+          ></p-sorticon>
+          }
+        </th>
         }
       </tr>
       <tr>
-        @for (col of columns(); track col) {
-          <th>
-            @if (col.filter) {
-              <input pInputText type="text" (input)="filter($event, col.field)" />
-            }
-          </th>
+        @for (col of columns; track col) {
+        <th>
+          @if (col.filter) {
+          <input
+            pInputText
+            type="text"
+            (input)="filter($event, col.field)"
+          />
+          }
+        </th>
         }
       </tr>
     </ng-template>
-    <ng-template #body let-airport>
+    <ng-template #body let-airport let-columns="columns">
       <tr>
-        @for (col of columns(); track col) {
-          <td>
-            @switch (col.field) {
-              @case ('Location') {
-                <span>{{ airport[col.field] | json }}</span>
-              }
-              @default {
-                <span>{{ airport[col.field] }}</span>
-              }
-            }
-          </td>
+        @for (col of columns; track col) {
+        <td>
+          @switch (col.field) {
+            @case ('Location') { <span>{{ airport[col.field] | json }}</span> }
+            @default { <span>{{ airport[col.field] }}</span> }
+          }
+        </td>
         }
       </tr>
     </ng-template>
   </p-table>`,
 })
 export class AirportsComponent {
-  odataClient = inject(ODataClient);
   airportsService = inject(AirportsService);
-  rows = signal<Airport[]>([]);
-  loading = signal<boolean | null>(null);
+
+  airports = signal<Airport[]>([]);
+  columns = signal<{ field: string; header: string; sort: boolean; filter: boolean }[]>([]);
+
   total = signal<number>(0);
-  size = signal<number>(0);
-  columns = signal<any[]>([]);
+  size =  signal<number>(0);
+
+  resource: ODataEntitySetResource<Airport>;
+  loading = signal<boolean>(false);
 
   constructor() {
-    const schema = this.airportsService.structuredTypeSchema;
-    if (schema !== null) {
-      const cols = (schema?.fields({ include_parents: true, include_navigation: false }) ?? [])
-        .map((f) => ({ field: f.name, header: f.name, sort: !f.collection, filter: f.type === EdmType.String }));
-      this.columns.set(cols);
-    }
+    this.resource = this.airportsService.entities();
+    const schema = this.resource.structuredType();
+    const columns =
+      schema !== null
+        ? (
+            schema?.fields({
+              include_parents: true,
+              include_navigation: false,
+            }) || []
+          ).map((f) => ({
+            field: f.name,
+            header: f.name,
+            sort: !f.collection,
+            filter: f.type === EdmType.String,
+          }))
+        : [];
+        this.columns.set(columns);
   }
 
   fetch(resource: ODataEntitySetResource<Airport>) {
-    const firstFetch = this.loading() === null; 
     this.loading.set(true);
     resource
-      .fetch({ withCount: firstFetch, fetchPolicy: 'cache-and-network' })
-      .subscribe(({ entities, annots }) => {
-        this.rows.set(entities ?? []);
-        if (firstFetch) {
-          this.total.set(annots.count ?? entities?.length ?? 0);
-          this.size.set(annots.skip ?? entities?.length ?? 0);
-        }
+      .fetch({ withCount: true, fetchPolicy: 'cache-and-network' })
+      .subscribe(({ entities: airports, annots }) => {
+        this.airports.set(airports ?? []);
+        if (this.total() === 0) this.total.set(annots.count as number);
+        if (this.size() === 0) this.size.set(annots.skip ?? this.airports().length);
         this.loading.set(false);
       });
   }
@@ -98,21 +115,30 @@ export class AirportsComponent {
   filter(event: Event, field: string) {
     const input = event.target as HTMLInputElement;
     const value = input.value;
-    const resource = this.airportsService.entities();
+    field = `tolower(${field})`;
     if (value) {
-      resource.query((q) => {
-        q.filter(({e, t, f}) => e().contains(f.toLower(field), value.toLowerCase()));
-      });
-    } 
-    this.fetch(resource);
+      let filter = { [field]: { contains: value.toLowerCase() } };
+      this.resource.query((q) => q.filter().assign(filter));
+    } else {
+      this.resource.query((q) => q.filter().unset(field));
+    }
+    this.total.set(0);
+    this.fetch(this.resource);
   }
 
   loadAirportsLazy(event: TableLazyLoadEvent) {
-    const resource = this.airportsService.entities().query((q) => {
+    //Pagination
+    let resource = this.resource.clone().query((q) => {
       if (event.first) q.skip(event.first);
       if (event.rows) q.top(event.rows);
+      //Ordering
       if (event.sortField !== undefined)
-        q.orderBy(({e, t}) => (event.sortOrder == 1) ? e().ascending(event.sortField) : e().descending(event.sortField))
+        q.orderBy([
+          [
+            event.sortField as keyof Airport,
+            event.sortOrder == -1 ? 'desc' : 'asc',
+          ],
+        ]);
     });
     this.fetch(resource);
   }

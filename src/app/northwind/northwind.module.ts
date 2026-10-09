@@ -58,6 +58,8 @@ import { SummaryOfSalesByYearsService } from './ODataWebV4/Northwind/Model/summa
     SalesTotalsByAmountsService,
     SummaryOfSalesByQuartersService,
     SummaryOfSalesByYearsService,
-  ]
+  ],
 })
-export class NorthwindModule { }
+export class NorthwindModule {}
+// #region Custom
+// #endregion Custom

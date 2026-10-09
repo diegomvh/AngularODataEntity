@@ -6,17 +6,21 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { SummaryOfSalesByQuarter } from './summary-of-sales-by-quarter.entity';
 import { SummaryOfSalesByQuarterModel } from './summary-of-sales-by-quarter.model';
 
 // #region Custom
 // #endregion Custom
-export class SummaryOfSalesByQuarterCollection<E extends SummaryOfSalesByQuarter, M extends SummaryOfSalesByQuarterModel<E>> extends ODataCollection<E, M> {
-  
+export class SummaryOfSalesByQuarterCollection<
+  E extends SummaryOfSalesByQuarter,
+  M extends SummaryOfSalesByQuarterModel<E>,
+> extends ODataCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

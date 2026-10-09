@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -25,31 +25,35 @@ import { EventLocationModel } from './event-location.model';
 export class EventModel<E extends Event> extends PlanItemModel<E> {
   @ModelField()
   declare Description: string;
-    public $$Description() {
+  public $$Description() {
     return this.property<string>('Description');
   }
   public $Description() {
     return this.getAttribute<string>('Description') as string;
   }
-  public Description$(options?: ODataQueryArgumentsOptions<string>) {
+  public Description$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Description', options) as Observable<string>;
   }
 
   @ModelField()
   declare OccursAt: EventLocationModel<EventLocation>;
-    public $$OccursAt() {
+  public $$OccursAt() {
     return this.property<EventLocationModel<EventLocation>>('OccursAt');
   }
   public $OccursAt() {
-    return this.getAttribute<EventLocationModel<EventLocation>>('OccursAt') as EventLocationModel<EventLocation>;
+    return this.getAttribute<EventLocationModel<EventLocation>>(
+      'OccursAt',
+    ) as EventLocationModel<EventLocation>;
   }
-  public OccursAt$(options?: ODataQueryArgumentsOptions<EventLocationModel<EventLocation>>) {
-    return this.fetchAttribute<EventLocationModel<EventLocation>>('OccursAt', options) as Observable<EventLocationModel<EventLocation>>;
+  public OccursAt$(options?: ODataQueryableOptions<EventLocationModel<EventLocation>>) {
+    return this.fetchAttribute<EventLocationModel<EventLocation>>(
+      'OccursAt',
+      options,
+    ) as Observable<EventLocationModel<EventLocation>>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

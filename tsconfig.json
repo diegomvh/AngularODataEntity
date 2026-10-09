@@ -3,11 +3,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "paths": {
-      "angular-odata": [
-        "./projects/angular-odata/dist/angular-odata"
-      ]
-    },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -31,12 +26,6 @@
     },
     {
       "path": "./tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/angular-odata/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/angular-odata/tsconfig.spec.json"
     }
   ]
 }

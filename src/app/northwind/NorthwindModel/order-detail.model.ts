@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -25,67 +25,67 @@ import { ProductModel } from './product.model';
 export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   @ModelField()
   declare OrderID: number;
-    public $$OrderID() {
+  public $$OrderID() {
     return this.property<number>('OrderID');
   }
   public $OrderID() {
     return this.getAttribute<number>('OrderID') as number;
   }
-  public OrderID$(options?: ODataQueryArgumentsOptions<number>) {
+  public OrderID$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('OrderID', options) as Observable<number>;
   }
 
   @ModelField()
   declare ProductID: number;
-    public $$ProductID() {
+  public $$ProductID() {
     return this.property<number>('ProductID');
   }
   public $ProductID() {
     return this.getAttribute<number>('ProductID') as number;
   }
-  public ProductID$(options?: ODataQueryArgumentsOptions<number>) {
+  public ProductID$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('ProductID', options) as Observable<number>;
   }
 
   @ModelField()
   declare UnitPrice: number;
-    public $$UnitPrice() {
+  public $$UnitPrice() {
     return this.property<number>('UnitPrice');
   }
   public $UnitPrice() {
     return this.getAttribute<number>('UnitPrice') as number;
   }
-  public UnitPrice$(options?: ODataQueryArgumentsOptions<number>) {
+  public UnitPrice$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('UnitPrice', options) as Observable<number>;
   }
 
   @ModelField()
   declare Quantity: number;
-    public $$Quantity() {
+  public $$Quantity() {
     return this.property<number>('Quantity');
   }
   public $Quantity() {
     return this.getAttribute<number>('Quantity') as number;
   }
-  public Quantity$(options?: ODataQueryArgumentsOptions<number>) {
+  public Quantity$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('Quantity', options) as Observable<number>;
   }
 
   @ModelField()
   declare Discount: number;
-    public $$Discount() {
+  public $$Discount() {
     return this.property<number>('Discount');
   }
   public $Discount() {
     return this.getAttribute<number>('Discount') as number;
   }
-  public Discount$(options?: ODataQueryArgumentsOptions<number>) {
+  public Discount$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('Discount', options) as Observable<number>;
   }
 
   @ModelField()
   declare Order?: OrderModel<Order>;
-    public $$Order() {
+  public $$Order() {
     return this.navigationProperty<Order>('Order');
   }
   public $Order() {
@@ -94,13 +94,13 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   public Order$$(model: OrderModel<Order> | null, options?: ODataOptions) {
     return this.setReference<Order>('Order', model, options);
   }
-  public Order$(options?: ODataQueryArgumentsOptions<Order>) {
+  public Order$(options?: ODataQueryableOptions<Order>) {
     return this.fetchAttribute<Order>('Order', options) as Observable<OrderModel<Order>>;
   }
 
   @ModelField()
   declare Product?: ProductModel<Product>;
-    public $$Product() {
+  public $$Product() {
     return this.navigationProperty<Product>('Product');
   }
   public $Product() {
@@ -109,13 +109,12 @@ export class OrderDetailModel<E extends OrderDetail> extends ODataModel<E> {
   public Product$$(model: ProductModel<Product> | null, options?: ODataOptions) {
     return this.setReference<Product>('Product', model, options);
   }
-  public Product$(options?: ODataQueryArgumentsOptions<Product>) {
+  public Product$(options?: ODataQueryableOptions<Product>) {
     return this.fetchAttribute<Product>('Product', options) as Observable<ProductModel<Product>>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

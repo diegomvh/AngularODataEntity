@@ -1,4 +1,5 @@
-import { ODataApiConfig, EDM_PARSERS, ODataMetadata, ODataVersion } from 'angular-odata';
+import { ODataApiConfig, EDM_PARSERS, ODataVersion } from 'angular-odata';
+import { ODataMetadata } from 'angular-odata';
 import * as json from './metadata.json';
 import { PhotoModel } from './Microsoft/OData/SampleService/Models/TripPin/photo.model';
 import { PersonModel } from './Microsoft/OData/SampleService/Models/TripPin/person.model';
@@ -34,36 +35,40 @@ export const TripPinConfig = ODataMetadata.fromJson(json).toConfig({
   metadataUrl: 'https://services.odata.org/V4/TripPinServiceRW/$metadata',
   name: 'TripPin',
   version: '4.0' as ODataVersion,
-  creation: new Date('2026-06-10T12:49:35.658Z'),
+  creation: new Date('2026-10-08T12:19:12.182Z'),
   parsers: EDM_PARSERS,
+  populateFromMetadata: false,
   models: {
-    'Microsoft.OData.SampleService.Models.TripPin.Photo': PhotoModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.Person': PersonModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.Airline': AirlineModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.Airport': AirportModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.PlanItem': PlanItemModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.PublicTransportation': PublicTransportationModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.Flight': FlightModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.Event': EventModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.Trip': TripModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.City': CityModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.Location': LocationModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.EventLocation': EventLocationModel, 
-    'Microsoft.OData.SampleService.Models.TripPin.AirportLocation': AirportLocationModel, 
+    'Microsoft.OData.SampleService.Models.TripPin.Photo': PhotoModel,
+    'Microsoft.OData.SampleService.Models.TripPin.Person': PersonModel,
+    'Microsoft.OData.SampleService.Models.TripPin.Airline': AirlineModel,
+    'Microsoft.OData.SampleService.Models.TripPin.Airport': AirportModel,
+    'Microsoft.OData.SampleService.Models.TripPin.PlanItem': PlanItemModel,
+    'Microsoft.OData.SampleService.Models.TripPin.PublicTransportation': PublicTransportationModel,
+    'Microsoft.OData.SampleService.Models.TripPin.Flight': FlightModel,
+    'Microsoft.OData.SampleService.Models.TripPin.Event': EventModel,
+    'Microsoft.OData.SampleService.Models.TripPin.Trip': TripModel,
+    'Microsoft.OData.SampleService.Models.TripPin.City': CityModel,
+    'Microsoft.OData.SampleService.Models.TripPin.Location': LocationModel,
+    'Microsoft.OData.SampleService.Models.TripPin.EventLocation': EventLocationModel,
+    'Microsoft.OData.SampleService.Models.TripPin.AirportLocation': AirportLocationModel,
   },
   collections: {
-    'Microsoft.OData.SampleService.Models.TripPin.Photo': PhotoCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.Person': PersonCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.Airline': AirlineCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.Airport': AirportCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.PlanItem': PlanItemCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.PublicTransportation': PublicTransportationCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.Flight': FlightCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.Event': EventCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.Trip': TripCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.City': CityCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.Location': LocationCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.EventLocation': EventLocationCollection, 
-    'Microsoft.OData.SampleService.Models.TripPin.AirportLocation': AirportLocationCollection, 
-  }
+    'Microsoft.OData.SampleService.Models.TripPin.Photo': PhotoCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.Person': PersonCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.Airline': AirlineCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.Airport': AirportCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.PlanItem': PlanItemCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.PublicTransportation':
+      PublicTransportationCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.Flight': FlightCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.Event': EventCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.Trip': TripCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.City': CityCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.Location': LocationCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.EventLocation': EventLocationCollection,
+    'Microsoft.OData.SampleService.Models.TripPin.AirportLocation': AirportLocationCollection,
+  },
 }) as ODataApiConfig;
+// #region Custom
+// #endregion Custom

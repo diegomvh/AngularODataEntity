@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
   Duration,
@@ -22,67 +22,66 @@ import { PlanItem } from './plan-item.entity';
 export class PlanItemModel<E extends PlanItem> extends ODataModel<E> {
   @ModelField()
   declare PlanItemId: number;
-    public $$PlanItemId() {
+  public $$PlanItemId() {
     return this.property<number>('PlanItemId');
   }
   public $PlanItemId() {
     return this.getAttribute<number>('PlanItemId') as number;
   }
-  public PlanItemId$(options?: ODataQueryArgumentsOptions<number>) {
+  public PlanItemId$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('PlanItemId', options) as Observable<number>;
   }
 
   @ModelField()
   declare ConfirmationCode: string;
-    public $$ConfirmationCode() {
+  public $$ConfirmationCode() {
     return this.property<string>('ConfirmationCode');
   }
   public $ConfirmationCode() {
     return this.getAttribute<string>('ConfirmationCode') as string;
   }
-  public ConfirmationCode$(options?: ODataQueryArgumentsOptions<string>) {
+  public ConfirmationCode$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('ConfirmationCode', options) as Observable<string>;
   }
 
   @ModelField()
   declare StartsAt: Date;
-    public $$StartsAt() {
+  public $$StartsAt() {
     return this.property<Date>('StartsAt');
   }
   public $StartsAt() {
     return this.getAttribute<Date>('StartsAt') as Date;
   }
-  public StartsAt$(options?: ODataQueryArgumentsOptions<Date>) {
+  public StartsAt$(options?: ODataQueryableOptions<Date>) {
     return this.fetchAttribute<Date>('StartsAt', options) as Observable<Date>;
   }
 
   @ModelField()
   declare EndsAt: Date;
-    public $$EndsAt() {
+  public $$EndsAt() {
     return this.property<Date>('EndsAt');
   }
   public $EndsAt() {
     return this.getAttribute<Date>('EndsAt') as Date;
   }
-  public EndsAt$(options?: ODataQueryArgumentsOptions<Date>) {
+  public EndsAt$(options?: ODataQueryableOptions<Date>) {
     return this.fetchAttribute<Date>('EndsAt', options) as Observable<Date>;
   }
 
   @ModelField()
   declare Duration: Duration;
-    public $$Duration() {
+  public $$Duration() {
     return this.property<Duration>('Duration');
   }
   public $Duration() {
     return this.getAttribute<Duration>('Duration') as Duration;
   }
-  public Duration$(options?: ODataQueryArgumentsOptions<Duration>) {
+  public Duration$(options?: ODataQueryableOptions<Duration>) {
     return this.fetchAttribute<Duration>('Duration', options) as Observable<Duration>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

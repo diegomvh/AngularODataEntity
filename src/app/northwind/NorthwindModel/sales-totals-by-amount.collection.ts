@@ -6,17 +6,21 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { SalesTotalsByAmount } from './sales-totals-by-amount.entity';
 import { SalesTotalsByAmountModel } from './sales-totals-by-amount.model';
 
 // #region Custom
 // #endregion Custom
-export class SalesTotalsByAmountCollection<E extends SalesTotalsByAmount, M extends SalesTotalsByAmountModel<E>> extends ODataCollection<E, M> {
-  
+export class SalesTotalsByAmountCollection<
+  E extends SalesTotalsByAmount,
+  M extends SalesTotalsByAmountModel<E>,
+> extends ODataCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

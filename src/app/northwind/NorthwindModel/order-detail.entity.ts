@@ -1,5 +1,3 @@
-
-
 import { Order } from './order.entity';
 import { Product } from './product.entity';
 
@@ -14,6 +12,8 @@ export interface OrderDetail {
   Discount: number;
   Order?: Order;
   Product?: Product;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

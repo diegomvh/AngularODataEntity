@@ -1,6 +1,3 @@
-
-
-
 // #region Custom
 // #endregion Custom
 export const OrdersQryEntityType = 'NorthwindModel.Orders_Qry';
@@ -25,6 +22,8 @@ export interface OrdersQry {
   Region: string;
   PostalCode: string;
   Country: string;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

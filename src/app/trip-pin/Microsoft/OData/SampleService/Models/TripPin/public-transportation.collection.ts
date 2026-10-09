@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { PublicTransportation } from './public-transportation.entity';
 import { PublicTransportationModel } from './public-transportation.model';
@@ -18,8 +18,12 @@ import { PlanItemModel } from './plan-item.model';
 
 // #region Custom
 // #endregion Custom
-export class PublicTransportationCollection<E extends PublicTransportation, M extends PublicTransportationModel<E>> extends PlanItemCollection<E, M> {
-  
+export class PublicTransportationCollection<
+  E extends PublicTransportation,
+  M extends PublicTransportationModel<E>,
+> extends PlanItemCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

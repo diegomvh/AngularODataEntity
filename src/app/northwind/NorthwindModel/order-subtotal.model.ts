@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -21,31 +21,30 @@ import { OrderSubtotal } from './order-subtotal.entity';
 export class OrderSubtotalModel<E extends OrderSubtotal> extends ODataModel<E> {
   @ModelField()
   declare OrderID: number;
-    public $$OrderID() {
+  public $$OrderID() {
     return this.property<number>('OrderID');
   }
   public $OrderID() {
     return this.getAttribute<number>('OrderID') as number;
   }
-  public OrderID$(options?: ODataQueryArgumentsOptions<number>) {
+  public OrderID$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('OrderID', options) as Observable<number>;
   }
 
   @ModelField()
   declare Subtotal: number;
-    public $$Subtotal() {
+  public $$Subtotal() {
     return this.property<number>('Subtotal');
   }
   public $Subtotal() {
     return this.getAttribute<number>('Subtotal') as number;
   }
-  public Subtotal$(options?: ODataQueryArgumentsOptions<number>) {
+  public Subtotal$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('Subtotal', options) as Observable<number>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

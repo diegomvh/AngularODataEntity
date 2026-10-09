@@ -1,6 +1,3 @@
-
-
-
 // #region Custom
 // #endregion Custom
 export const InvoiceEntityType = 'NorthwindModel.Invoice';
@@ -31,6 +28,8 @@ export interface Invoice {
   Discount: number;
   ExtendedPrice: number;
   Freight: number;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

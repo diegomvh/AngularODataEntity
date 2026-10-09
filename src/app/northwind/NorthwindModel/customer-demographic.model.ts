@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -24,46 +24,53 @@ import { CustomerCollection } from './customer.collection';
 export class CustomerDemographicModel<E extends CustomerDemographic> extends ODataModel<E> {
   @ModelField()
   declare CustomerTypeID: string;
-    public $$CustomerTypeID() {
+  public $$CustomerTypeID() {
     return this.property<string>('CustomerTypeID');
   }
   public $CustomerTypeID() {
     return this.getAttribute<string>('CustomerTypeID') as string;
   }
-  public CustomerTypeID$(options?: ODataQueryArgumentsOptions<string>) {
+  public CustomerTypeID$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('CustomerTypeID', options) as Observable<string>;
   }
 
   @ModelField()
   declare CustomerDesc: string;
-    public $$CustomerDesc() {
+  public $$CustomerDesc() {
     return this.property<string>('CustomerDesc');
   }
   public $CustomerDesc() {
     return this.getAttribute<string>('CustomerDesc') as string;
   }
-  public CustomerDesc$(options?: ODataQueryArgumentsOptions<string>) {
+  public CustomerDesc$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('CustomerDesc', options) as Observable<string>;
   }
 
   @ModelField()
   declare Customers?: CustomerCollection<Customer, CustomerModel<Customer>>;
-    public $$Customers() {
+  public $$Customers() {
     return this.navigationProperty<Customer>('Customers');
   }
   public $Customers() {
-    return this.getAttribute<Customer>('Customers') as CustomerCollection<Customer, CustomerModel<Customer>>;
+    return this.getAttribute<Customer>('Customers') as CustomerCollection<
+      Customer,
+      CustomerModel<Customer>
+    >;
   }
-  public Customers$$(model: CustomerCollection<Customer, CustomerModel<Customer>> | null, options?: ODataOptions) {
+  public Customers$$(
+    model: CustomerCollection<Customer, CustomerModel<Customer>> | null,
+    options?: ODataOptions,
+  ) {
     return this.setReference<Customer>('Customers', model, options);
   }
-  public Customers$(options?: ODataQueryArgumentsOptions<Customer>) {
-    return this.fetchAttribute<Customer>('Customers', options) as Observable<CustomerCollection<Customer, CustomerModel<Customer>>>;
+  public Customers$(options?: ODataQueryableOptions<Customer>) {
+    return this.fetchAttribute<Customer>('Customers', options) as Observable<
+      CustomerCollection<Customer, CustomerModel<Customer>>
+    >;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

@@ -1,5 +1,3 @@
-
-
 import { Product } from './product.entity';
 
 // #region Custom
@@ -11,6 +9,8 @@ export interface Category {
   Description: string;
   Picture: ArrayBuffer;
   Products?: Product[];
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

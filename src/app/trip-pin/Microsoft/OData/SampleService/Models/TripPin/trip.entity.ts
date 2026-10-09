@@ -1,5 +1,3 @@
-
-
 import { Photo } from './photo.entity';
 import { PlanItem } from './plan-item.entity';
 
@@ -17,6 +15,8 @@ export interface Trip {
   Tags: string[];
   Photos?: Photo[];
   PlanItems?: PlanItem[];
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

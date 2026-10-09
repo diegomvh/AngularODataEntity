@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Event } from './event.entity';
 import { EventModel } from './event.model';
@@ -20,8 +20,12 @@ import { EventLocationModel } from './event-location.model';
 
 // #region Custom
 // #endregion Custom
-export class EventCollection<E extends Event, M extends EventModel<E>> extends PlanItemCollection<E, M> {
-  
+export class EventCollection<E extends Event, M extends EventModel<E>> extends PlanItemCollection<
+  E,
+  M
+> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Flight } from './flight.entity';
 import { FlightModel } from './flight.model';
@@ -22,8 +22,12 @@ import { AirlineModel } from './airline.model';
 
 // #region Custom
 // #endregion Custom
-export class FlightCollection<E extends Flight, M extends FlightModel<E>> extends PublicTransportationCollection<E, M> {
-  
+export class FlightCollection<
+  E extends Flight,
+  M extends FlightModel<E>,
+> extends PublicTransportationCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

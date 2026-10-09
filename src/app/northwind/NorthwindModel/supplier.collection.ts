@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Supplier } from './supplier.entity';
 import { SupplierModel } from './supplier.model';
@@ -18,8 +18,12 @@ import { ProductCollection } from './product.collection';
 
 // #region Custom
 // #endregion Custom
-export class SupplierCollection<E extends Supplier, M extends SupplierModel<E>> extends ODataCollection<E, M> {
-  
+export class SupplierCollection<
+  E extends Supplier,
+  M extends SupplierModel<E>,
+> extends ODataCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

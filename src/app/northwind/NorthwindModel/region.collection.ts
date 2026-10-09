@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Region } from './region.entity';
 import { RegionModel } from './region.model';
@@ -18,8 +18,12 @@ import { TerritoryCollection } from './territory.collection';
 
 // #region Custom
 // #endregion Custom
-export class RegionCollection<E extends Region, M extends RegionModel<E>> extends ODataCollection<E, M> {
-  
+export class RegionCollection<E extends Region, M extends RegionModel<E>> extends ODataCollection<
+  E,
+  M
+> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

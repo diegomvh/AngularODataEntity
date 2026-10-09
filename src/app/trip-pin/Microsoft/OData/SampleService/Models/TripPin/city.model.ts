@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -21,43 +21,42 @@ import { City } from './city.complex';
 export class CityModel<E extends City> extends ODataModel<E> {
   @ModelField()
   declare CountryRegion: string;
-    public $$CountryRegion() {
+  public $$CountryRegion() {
     return this.property<string>('CountryRegion');
   }
   public $CountryRegion() {
     return this.getAttribute<string>('CountryRegion') as string;
   }
-  public CountryRegion$(options?: ODataQueryArgumentsOptions<string>) {
+  public CountryRegion$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('CountryRegion', options) as Observable<string>;
   }
 
   @ModelField()
   declare Name: string;
-    public $$Name() {
+  public $$Name() {
     return this.property<string>('Name');
   }
   public $Name() {
     return this.getAttribute<string>('Name') as string;
   }
-  public Name$(options?: ODataQueryArgumentsOptions<string>) {
+  public Name$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Name', options) as Observable<string>;
   }
 
   @ModelField()
   declare Region: string;
-    public $$Region() {
+  public $$Region() {
     return this.property<string>('Region');
   }
   public $Region() {
     return this.getAttribute<string>('Region') as string;
   }
-  public Region$(options?: ODataQueryArgumentsOptions<string>) {
+  public Region$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Region', options) as Observable<string>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Trip } from './trip.entity';
 import { TripModel } from './trip.model';
@@ -22,7 +22,8 @@ import { PlanItemCollection } from './plan-item.collection';
 // #region Custom
 // #endregion Custom
 export class TripCollection<E extends Trip, M extends TripModel<E>> extends ODataCollection<E, M> {
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

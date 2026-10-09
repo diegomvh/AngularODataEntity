@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Location } from './location.complex';
 import { LocationModel } from './location.model';
@@ -17,8 +17,12 @@ import { CityModel } from './city.model';
 
 // #region Custom
 // #endregion Custom
-export class LocationCollection<E extends Location, M extends LocationModel<E>> extends ODataCollection<E, M> {
-  
+export class LocationCollection<
+  E extends Location,
+  M extends LocationModel<E>,
+> extends ODataCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

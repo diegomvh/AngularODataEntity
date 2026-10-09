@@ -5,6 +5,8 @@ export enum PersonGender {
   Male = 0,
   Female = 1,
   Unknown = 2,
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

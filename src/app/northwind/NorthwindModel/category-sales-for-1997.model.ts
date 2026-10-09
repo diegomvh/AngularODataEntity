@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -21,31 +21,30 @@ import { CategorySalesFor1997 } from './category-sales-for-1997.entity';
 export class CategorySalesFor1997Model<E extends CategorySalesFor1997> extends ODataModel<E> {
   @ModelField()
   declare CategoryName: string;
-    public $$CategoryName() {
+  public $$CategoryName() {
     return this.property<string>('CategoryName');
   }
   public $CategoryName() {
     return this.getAttribute<string>('CategoryName') as string;
   }
-  public CategoryName$(options?: ODataQueryArgumentsOptions<string>) {
+  public CategoryName$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('CategoryName', options) as Observable<string>;
   }
 
   @ModelField()
   declare CategorySales: number;
-    public $$CategorySales() {
+  public $$CategorySales() {
     return this.property<number>('CategorySales');
   }
   public $CategorySales() {
     return this.getAttribute<number>('CategorySales') as number;
   }
-  public CategorySales$(options?: ODataQueryArgumentsOptions<number>) {
+  public CategorySales$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('CategorySales', options) as Observable<number>;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

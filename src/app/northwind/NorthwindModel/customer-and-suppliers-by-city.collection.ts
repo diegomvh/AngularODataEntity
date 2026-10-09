@@ -6,17 +6,21 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { CustomerAndSuppliersByCity } from './customer-and-suppliers-by-city.entity';
 import { CustomerAndSuppliersByCityModel } from './customer-and-suppliers-by-city.model';
 
 // #region Custom
 // #endregion Custom
-export class CustomerAndSuppliersByCityCollection<E extends CustomerAndSuppliersByCity, M extends CustomerAndSuppliersByCityModel<E>> extends ODataCollection<E, M> {
-  
+export class CustomerAndSuppliersByCityCollection<
+  E extends CustomerAndSuppliersByCity,
+  M extends CustomerAndSuppliersByCityModel<E>,
+> extends ODataCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

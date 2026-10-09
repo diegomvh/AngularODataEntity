@@ -1,6 +1,3 @@
-
-
-
 // #region Custom
 // #endregion Custom
 export const SalesByCategoryEntityType = 'NorthwindModel.Sales_by_Category';
@@ -9,6 +6,8 @@ export interface SalesByCategory {
   CategoryName: string;
   ProductName: string;
   ProductSales: number;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

@@ -1,5 +1,3 @@
-
-
 import { Product } from './product.entity';
 
 // #region Custom
@@ -19,6 +17,8 @@ export interface Supplier {
   Fax: string;
   HomePage: string;
   Products?: Product[];
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

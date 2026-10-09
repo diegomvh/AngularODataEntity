@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Airport } from './airport.entity';
 import { AirportModel } from './airport.model';
@@ -17,8 +17,12 @@ import { AirportLocationModel } from './airport-location.model';
 
 // #region Custom
 // #endregion Custom
-export class AirportCollection<E extends Airport, M extends AirportModel<E>> extends ODataCollection<E, M> {
-  
+export class AirportCollection<
+  E extends Airport,
+  M extends AirportModel<E>,
+> extends ODataCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

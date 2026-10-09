@@ -6,17 +6,21 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { Photo } from './photo.entity';
 import { PhotoModel } from './photo.model';
 
 // #region Custom
 // #endregion Custom
-export class PhotoCollection<E extends Photo, M extends PhotoModel<E>> extends ODataCollection<E, M> {
-  
+export class PhotoCollection<E extends Photo, M extends PhotoModel<E>> extends ODataCollection<
+  E,
+  M
+> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

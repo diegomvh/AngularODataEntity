@@ -1,5 +1,3 @@
-
-
 import { AirportLocation } from './airport-location.complex';
 
 // #region Custom
@@ -10,6 +8,8 @@ export interface Airport {
   Name: string;
   IataCode: string;
   Location: AirportLocation;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

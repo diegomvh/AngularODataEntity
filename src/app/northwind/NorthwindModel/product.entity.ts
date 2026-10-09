@@ -1,5 +1,3 @@
-
-
 import { Category } from './category.entity';
 import { OrderDetail } from './order-detail.entity';
 import { Supplier } from './supplier.entity';
@@ -21,6 +19,8 @@ export interface Product {
   Category?: Category;
   Order_Details?: OrderDetail[];
   Supplier?: Supplier;
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

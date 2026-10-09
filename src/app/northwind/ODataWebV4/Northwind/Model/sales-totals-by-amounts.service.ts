@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ODataClient, 
-  ODataActionResource, 
-  ODataActionOptions, 
-  ODataFunctionResource, 
-  ODataFunctionOptions, 
-  ODataEntitySetService, 
+import {
+  ODataClient,
+  ODataActionResource,
+  ODataActionOptions,
+  ODataFunctionResource,
+  ODataFunctionOptions,
+  ODataEntitySetService,
   ODataOptions,
-  EntityKey } from 'angular-odata';
+  EntityKey,
+} from 'angular-odata';
 import { SalesTotalsByAmountModel } from '../../../NorthwindModel/sales-totals-by-amount.model';
 import { SalesTotalsByAmountCollection } from '../../../NorthwindModel/sales-totals-by-amount.collection';
 import { SalesTotalsByAmount } from '../../../NorthwindModel/sales-totals-by-amount.entity';
 
 // #region Custom
 // #endregion Custom
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class SalesTotalsByAmountsService extends ODataEntitySetService<SalesTotalsByAmount> {
   constructor(client: ODataClient) {
     super(client, 'Sales_Totals_by_Amounts', 'NorthwindModel.Sales_Totals_by_Amount');
@@ -22,8 +24,16 @@ export class SalesTotalsByAmountsService extends ODataEntitySetService<SalesTota
     return this.model<SalesTotalsByAmountModel<SalesTotalsByAmount>>(entity);
   }
   salesTotalsByAmountCollection(entities?: Partial<SalesTotalsByAmount>[]) {
-    return this.collection<SalesTotalsByAmountModel<SalesTotalsByAmount>, SalesTotalsByAmountCollection<SalesTotalsByAmount, SalesTotalsByAmountModel<SalesTotalsByAmount>>>(entities);
+    return this.collection<
+      SalesTotalsByAmountModel<SalesTotalsByAmount>,
+      SalesTotalsByAmountCollection<
+        SalesTotalsByAmount,
+        SalesTotalsByAmountModel<SalesTotalsByAmount>
+      >
+    >(entities);
   }
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

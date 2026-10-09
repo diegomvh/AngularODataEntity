@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -24,70 +24,77 @@ import { ProductCollection } from './product.collection';
 export class CategoryModel<E extends Category> extends ODataModel<E> {
   @ModelField()
   declare CategoryID: number;
-    public $$CategoryID() {
+  public $$CategoryID() {
     return this.property<number>('CategoryID');
   }
   public $CategoryID() {
     return this.getAttribute<number>('CategoryID') as number;
   }
-  public CategoryID$(options?: ODataQueryArgumentsOptions<number>) {
+  public CategoryID$(options?: ODataQueryableOptions<number>) {
     return this.fetchAttribute<number>('CategoryID', options) as Observable<number>;
   }
 
   @ModelField()
   declare CategoryName: string;
-    public $$CategoryName() {
+  public $$CategoryName() {
     return this.property<string>('CategoryName');
   }
   public $CategoryName() {
     return this.getAttribute<string>('CategoryName') as string;
   }
-  public CategoryName$(options?: ODataQueryArgumentsOptions<string>) {
+  public CategoryName$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('CategoryName', options) as Observable<string>;
   }
 
   @ModelField()
   declare Description: string;
-    public $$Description() {
+  public $$Description() {
     return this.property<string>('Description');
   }
   public $Description() {
     return this.getAttribute<string>('Description') as string;
   }
-  public Description$(options?: ODataQueryArgumentsOptions<string>) {
+  public Description$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Description', options) as Observable<string>;
   }
 
   @ModelField()
   declare Picture: ArrayBuffer;
-    public $$Picture() {
+  public $$Picture() {
     return this.property<ArrayBuffer>('Picture');
   }
   public $Picture() {
     return this.getAttribute<ArrayBuffer>('Picture') as ArrayBuffer;
   }
-  public Picture$(options?: ODataQueryArgumentsOptions<ArrayBuffer>) {
+  public Picture$(options?: ODataQueryableOptions<ArrayBuffer>) {
     return this.fetchAttribute<ArrayBuffer>('Picture', options) as Observable<ArrayBuffer>;
   }
 
   @ModelField()
   declare Products?: ProductCollection<Product, ProductModel<Product>>;
-    public $$Products() {
+  public $$Products() {
     return this.navigationProperty<Product>('Products');
   }
   public $Products() {
-    return this.getAttribute<Product>('Products') as ProductCollection<Product, ProductModel<Product>>;
+    return this.getAttribute<Product>('Products') as ProductCollection<
+      Product,
+      ProductModel<Product>
+    >;
   }
-  public Products$$(model: ProductCollection<Product, ProductModel<Product>> | null, options?: ODataOptions) {
+  public Products$$(
+    model: ProductCollection<Product, ProductModel<Product>> | null,
+    options?: ODataOptions,
+  ) {
     return this.setReference<Product>('Products', model, options);
   }
-  public Products$(options?: ODataQueryArgumentsOptions<Product>) {
-    return this.fetchAttribute<Product>('Products', options) as Observable<ProductCollection<Product, ProductModel<Product>>>;
+  public Products$(options?: ODataQueryableOptions<Product>) {
+    return this.fetchAttribute<Product>('Products', options) as Observable<
+      ProductCollection<Product, ProductModel<Product>>
+    >;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

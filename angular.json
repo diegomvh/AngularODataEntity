@@ -24,7 +24,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css"]
+            "styles": [
+              "src/styles.css"
+            ]
           },
           "configurations": {
             "production": {
@@ -64,32 +66,6 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
-        }
-      }
-    },
-    "angular-odata": {
-      "projectType": "library",
-      "root": "projects/angular-odata/projects/angular-odata",
-      "sourceRoot": "projects/angular-odata/projects/angular-odata/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:ng-packagr",
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/angular-odata/projects/angular-odata/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/angular-odata/projects/angular-odata/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test",
-          "options": {
-            "tsConfig": "projects/angular-odata/tsconfig.spec.json"
-          }
         }
       }
     }

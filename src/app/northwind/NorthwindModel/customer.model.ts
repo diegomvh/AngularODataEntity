@@ -8,7 +8,7 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
   ODataActionOptions,
 } from 'angular-odata';
@@ -27,139 +27,139 @@ import { CustomerDemographicCollection } from './customer-demographic.collection
 export class CustomerModel<E extends Customer> extends ODataModel<E> {
   @ModelField()
   declare CustomerID: string;
-    public $$CustomerID() {
+  public $$CustomerID() {
     return this.property<string>('CustomerID');
   }
   public $CustomerID() {
     return this.getAttribute<string>('CustomerID') as string;
   }
-  public CustomerID$(options?: ODataQueryArgumentsOptions<string>) {
+  public CustomerID$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('CustomerID', options) as Observable<string>;
   }
 
   @ModelField()
   declare CompanyName: string;
-    public $$CompanyName() {
+  public $$CompanyName() {
     return this.property<string>('CompanyName');
   }
   public $CompanyName() {
     return this.getAttribute<string>('CompanyName') as string;
   }
-  public CompanyName$(options?: ODataQueryArgumentsOptions<string>) {
+  public CompanyName$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('CompanyName', options) as Observable<string>;
   }
 
   @ModelField()
   declare ContactName: string;
-    public $$ContactName() {
+  public $$ContactName() {
     return this.property<string>('ContactName');
   }
   public $ContactName() {
     return this.getAttribute<string>('ContactName') as string;
   }
-  public ContactName$(options?: ODataQueryArgumentsOptions<string>) {
+  public ContactName$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('ContactName', options) as Observable<string>;
   }
 
   @ModelField()
   declare ContactTitle: string;
-    public $$ContactTitle() {
+  public $$ContactTitle() {
     return this.property<string>('ContactTitle');
   }
   public $ContactTitle() {
     return this.getAttribute<string>('ContactTitle') as string;
   }
-  public ContactTitle$(options?: ODataQueryArgumentsOptions<string>) {
+  public ContactTitle$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('ContactTitle', options) as Observable<string>;
   }
 
   @ModelField()
   declare Address: string;
-    public $$Address() {
+  public $$Address() {
     return this.property<string>('Address');
   }
   public $Address() {
     return this.getAttribute<string>('Address') as string;
   }
-  public Address$(options?: ODataQueryArgumentsOptions<string>) {
+  public Address$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Address', options) as Observable<string>;
   }
 
   @ModelField()
   declare City: string;
-    public $$City() {
+  public $$City() {
     return this.property<string>('City');
   }
   public $City() {
     return this.getAttribute<string>('City') as string;
   }
-  public City$(options?: ODataQueryArgumentsOptions<string>) {
+  public City$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('City', options) as Observable<string>;
   }
 
   @ModelField()
   declare Region: string;
-    public $$Region() {
+  public $$Region() {
     return this.property<string>('Region');
   }
   public $Region() {
     return this.getAttribute<string>('Region') as string;
   }
-  public Region$(options?: ODataQueryArgumentsOptions<string>) {
+  public Region$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Region', options) as Observable<string>;
   }
 
   @ModelField()
   declare PostalCode: string;
-    public $$PostalCode() {
+  public $$PostalCode() {
     return this.property<string>('PostalCode');
   }
   public $PostalCode() {
     return this.getAttribute<string>('PostalCode') as string;
   }
-  public PostalCode$(options?: ODataQueryArgumentsOptions<string>) {
+  public PostalCode$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('PostalCode', options) as Observable<string>;
   }
 
   @ModelField()
   declare Country: string;
-    public $$Country() {
+  public $$Country() {
     return this.property<string>('Country');
   }
   public $Country() {
     return this.getAttribute<string>('Country') as string;
   }
-  public Country$(options?: ODataQueryArgumentsOptions<string>) {
+  public Country$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Country', options) as Observable<string>;
   }
 
   @ModelField()
   declare Phone: string;
-    public $$Phone() {
+  public $$Phone() {
     return this.property<string>('Phone');
   }
   public $Phone() {
     return this.getAttribute<string>('Phone') as string;
   }
-  public Phone$(options?: ODataQueryArgumentsOptions<string>) {
+  public Phone$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Phone', options) as Observable<string>;
   }
 
   @ModelField()
   declare Fax: string;
-    public $$Fax() {
+  public $$Fax() {
     return this.property<string>('Fax');
   }
   public $Fax() {
     return this.getAttribute<string>('Fax') as string;
   }
-  public Fax$(options?: ODataQueryArgumentsOptions<string>) {
+  public Fax$(options?: ODataQueryableOptions<string>) {
     return this.fetchAttribute<string>('Fax', options) as Observable<string>;
   }
 
   @ModelField()
   declare Orders?: OrderCollection<Order, OrderModel<Order>>;
-    public $$Orders() {
+  public $$Orders() {
     return this.navigationProperty<Order>('Orders');
   }
   public $Orders() {
@@ -168,28 +168,48 @@ export class CustomerModel<E extends Customer> extends ODataModel<E> {
   public Orders$$(model: OrderCollection<Order, OrderModel<Order>> | null, options?: ODataOptions) {
     return this.setReference<Order>('Orders', model, options);
   }
-  public Orders$(options?: ODataQueryArgumentsOptions<Order>) {
-    return this.fetchAttribute<Order>('Orders', options) as Observable<OrderCollection<Order, OrderModel<Order>>>;
+  public Orders$(options?: ODataQueryableOptions<Order>) {
+    return this.fetchAttribute<Order>('Orders', options) as Observable<
+      OrderCollection<Order, OrderModel<Order>>
+    >;
   }
 
   @ModelField()
-  declare CustomerDemographics?: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
-    public $$CustomerDemographics() {
+  declare CustomerDemographics?: CustomerDemographicCollection<
+    CustomerDemographic,
+    CustomerDemographicModel<CustomerDemographic>
+  >;
+  public $$CustomerDemographics() {
     return this.navigationProperty<CustomerDemographic>('CustomerDemographics');
   }
   public $CustomerDemographics() {
-    return this.getAttribute<CustomerDemographic>('CustomerDemographics') as CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>;
+    return this.getAttribute<CustomerDemographic>(
+      'CustomerDemographics',
+    ) as CustomerDemographicCollection<
+      CustomerDemographic,
+      CustomerDemographicModel<CustomerDemographic>
+    >;
   }
-  public CustomerDemographics$$(model: CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>> | null, options?: ODataOptions) {
+  public CustomerDemographics$$(
+    model: CustomerDemographicCollection<
+      CustomerDemographic,
+      CustomerDemographicModel<CustomerDemographic>
+    > | null,
+    options?: ODataOptions,
+  ) {
     return this.setReference<CustomerDemographic>('CustomerDemographics', model, options);
   }
-  public CustomerDemographics$(options?: ODataQueryArgumentsOptions<CustomerDemographic>) {
-    return this.fetchAttribute<CustomerDemographic>('CustomerDemographics', options) as Observable<CustomerDemographicCollection<CustomerDemographic, CustomerDemographicModel<CustomerDemographic>>>;
+  public CustomerDemographics$(options?: ODataQueryableOptions<CustomerDemographic>) {
+    return this.fetchAttribute<CustomerDemographic>('CustomerDemographics', options) as Observable<
+      CustomerDemographicCollection<
+        CustomerDemographic,
+        CustomerDemographicModel<CustomerDemographic>
+      >
+    >;
   }
 
-  
-  
-  
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

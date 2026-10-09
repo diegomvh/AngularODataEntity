@@ -6,9 +6,9 @@ import {
   ODataModel,
   ODataCollection,
   ODataOptions,
-  ODataQueryArgumentsOptions,
+  ODataQueryableOptions,
   ODataFunctionOptions,
-  ODataActionOptions
+  ODataActionOptions,
 } from 'angular-odata';
 import { OrderDetail } from './order-detail.entity';
 import { OrderDetailModel } from './order-detail.model';
@@ -19,8 +19,12 @@ import { ProductModel } from './product.model';
 
 // #region Custom
 // #endregion Custom
-export class OrderDetailCollection<E extends OrderDetail, M extends OrderDetailModel<E>> extends ODataCollection<E, M> {
-  
+export class OrderDetailCollection<
+  E extends OrderDetail,
+  M extends OrderDetailModel<E>,
+> extends ODataCollection<E, M> {
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

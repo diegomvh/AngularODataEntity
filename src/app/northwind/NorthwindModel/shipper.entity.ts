@@ -1,5 +1,3 @@
-
-
 import { Order } from './order.entity';
 
 // #region Custom
@@ -10,6 +8,8 @@ export interface Shipper {
   CompanyName: string;
   Phone: string;
   Orders?: Order[];
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}

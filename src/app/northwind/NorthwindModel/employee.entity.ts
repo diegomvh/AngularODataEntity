@@ -1,5 +1,3 @@
-
-
 import { Order } from './order.entity';
 import { Territory } from './territory.entity';
 
@@ -29,6 +27,8 @@ export interface Employee {
   Employee1?: Employee;
   Orders?: Order[];
   Territories?: Territory[];
+  // #region Custom
+  // #endregion Custom
+}
 // #region Custom
 // #endregion Custom
-}
