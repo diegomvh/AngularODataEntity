@@ -1,59 +1,131 @@
-# AngularODataEntity
+# Angular OData — Demo Project
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.1.
+A sample application showing how to use [**angular-odata**](https://github.com/diegomvh/angular-odata), a library for consuming [OData](https://www.odata.org/) services from Angular in a typed, declarative and reactive way.
 
-## Development server
+The demo connects to two public OData reference services:
 
-To start a local development server, run:
+- **TripPin** (`TripPinServiceRW`): people, airlines, airports, trips and photos. This service supports both reads and writes.
+- **Northwind** (V4): categories, products, orders and employees.
 
-```bash
-ng serve
-```
+## What does this project show?
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+| Feature | Where to look |
+| --- | --- |
+| Configuring multiple OData APIs with `provideODataClient` | `src/app/app.config.ts` |
+| Code generated from `$metadata` (entities, models, collections and services) | `src/app/trip-pin/`, `src/app/northwind/` |
+| Tables with server-side paging, sorting and filtering (`$top`, `$skip`, `$orderby`, `$filter`, `$count`) | `src/app/components/` |
+| Columns built dynamically from the schema (`structuredType().fields()`) | `src/app/components/` |
+| Nested `$expand`, `levels` and media entity downloads (photos) | `src/app/components/trippin/person.component.ts` |
+| Queries, filters with `any` lambdas, `$select` and `$expand` | `src/app/examples/trippin/queries.ts` |
+| Models and collections: `fetch`, `save` and navigating between entities | `src/app/examples/trippin/models.ts` |
+| In-memory and IndexedDB caching, with the different `fetchPolicy` options | `src/app/examples/trippin/cache.ts` |
+| Aggregations (`$apply` / `groupBy`) | `src/app/examples/trippin/aggregations.ts` |
+| Computed properties (`$compute`) | `src/app/examples/northwind/compute.ts` |
+| Serializing and restoring resources (`toJson` / `fromJson`) | `src/app/examples/trippin/json.ts` |
+| CRUD with ETags, references, properties, EDM parsers, dynamic metadata | `src/app/app.ts` |
 
-## Code scaffolding
+## Stack
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Angular 22 (standalone components, signals, `inject()`, `@if` / `@for` control flow)
+- angular-odata
+- PrimeNG 22 (tables, tabs, dialogs) and Tailwind CSS 4
 
-```bash
-ng generate component component-name
-```
+## Getting started
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Requirements: Node.js and npm.
 
 ```bash
-ng test
+npm install
+npm start
 ```
 
-## Running end-to-end tests
+Then open `http://localhost:4200/`. The app has two tabs, **TripPin** and **Northwind**, with tables that run live OData queries against the public services.
 
-For end-to-end (e2e) testing, run:
+> `npm start` runs `ng serve` with `proxy.conf.json`. The proxy forwards `/trippin` to the TripPin service to avoid CORS issues. TripPin RW uses a session URL (`(S(...))`); if the session expires, get a new one by visiting `https://services.odata.org/V4/TripPinServiceRW/` and update the `target` in `proxy.conf.json`.
+
+## Project structure
+
+```
+src/app/
+├── app.config.ts          # OData API registration (TripPin, Northwind, dynamic APIs)
+├── app.ts / app.html      # Tabbed shell + client usage examples
+├── components/
+│   ├── trippin/           # Airlines, Airports, People, Person (detail)
+│   └── northwind/         # Categories, Products, Orders, Employees
+├── examples/              # Self-contained examples of the angular-odata API
+├── trip-pin/              # Generated code for TripPin
+└── northwind/             # Generated code for Northwind
+```
+
+## How angular-odata works
+
+### 1. Generate code from the metadata
+
+The library ships with a schematic (`apigen`) that reads a service's `$metadata` document and generates interfaces, models, collections, services and the API configuration:
 
 ```bash
-ng e2e
+npm run apigen:trippin
+npm run apigen:northwind
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 2. Register the APIs
 
-## Additional Resources
+```ts
+provideODataClient({
+  config: [
+    Object.assign(NorthwindConfig, {
+      cache: new ODataInMemoryCache({ maxAge: 60 }),
+    }),
+    Object.assign(TripPinConfig, {
+      serviceRootUrl: 'http://localhost:4200/trippin/',
+      cache: new ODataIndexedDBCache({ maxAge: 60, name: 'TripPinCache', version: 1 }),
+      default: true,
+    }),
+  ],
+});
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+You can also register an API without generated code and populate it at runtime from its metadata (`populateFromMetadata: true`). This is how `TripPinDynamic` and `MicrosoftGraph` are configured.
+
+### 3. Query with typed services
+
+```ts
+const peopleService = inject(PeopleService);
+
+peopleService
+  .entities()
+  .query((q) => q
+    .filter(({ e, t }) => e().contains(t.UserName, 'russell'))
+    .expand(({ e, t }) => e().field(t.Friends))
+    .orderBy([['LastName', 'asc']])
+    .top(10))
+  .fetch({ withCount: true })
+  .subscribe(({ entities, annots }) => console.log(entities, annots.count));
+```
+
+### 4. Work with models
+
+```ts
+const scott = peopleService.model<PersonModel<Person>>({ UserName: 'scottketchum' });
+await firstValueFrom(scott.fetch());
+scott.Gender = PersonGender.Female;
+await firstValueFrom(scott.save());
+```
+
+## Running the examples
+
+The examples in `src/app/examples/` and the `App` methods print their results to the browser console. The root component instance is exposed as `window.APP`, so you can run them from DevTools:
+
+```js
+APP.queries();     // runs the active example inside queries()
+APP.personCRUD();  // creates, reads, updates and deletes a person in TripPin
+APP.encode();      // EDM and enum parsers
+```
+
+To choose which example runs, comment or uncomment the corresponding lines in `App.queries()` (`src/app/app.ts`).
+
+## Resources
+
+- angular-odata: https://github.com/diegomvh/angular-odata
+- npm package: https://www.npmjs.com/package/angular-odata
+- OData specification: https://www.odata.org/documentation/
